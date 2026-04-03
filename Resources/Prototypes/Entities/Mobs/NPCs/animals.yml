@@ -1,6 +1,6 @@
 - type: entity
   name: bat
-  parent: [ SimpleMobBase, FlyingMobBase, MobCombat ]
+  parent: [ SimpleMobBase, FlyingMobBase, MobCombat, SlicingRefinableBase ]
   id: MobBat
   description: Some cultures find them terrifying, others crunchy on the teeth.
   components:
@@ -36,8 +36,8 @@
         Base: dead
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 1
   - type: InteractionPopup
@@ -84,7 +84,7 @@
 
 - type: entity
   name: bee
-  parent: [ SimpleMobBase, FlyingMobBase ]
+  parent: [ SimpleMobBase, FlyingMobBase, SlicingRefinableBase ]
   id: MobBee
   description: Nice to have, but you can't build a civilization on a foundation of honey alone.
   components:
@@ -133,8 +133,8 @@
         reagents:
         - ReagentId: GroundBee
           Quantity: 1
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: null # Should give nothing when you butcher it so we set the item id it needs to spawn to null
   - type: Item
     size: Tiny
@@ -201,7 +201,7 @@
 
 - type: entity
   name: chicken
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, SlicingRefinableBase]
   id: MobChicken
   description: Comes before an egg, and IS a dinosaur!
   components:
@@ -257,8 +257,8 @@
         Base: dead-0
       Dead:
         Base: dead-0
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatChicken
       amount: 1
   - type: InteractionPopup
@@ -346,14 +346,12 @@
     - MobChicken1
     - MobChicken2
     intervalSeconds: 20
-    minimumEntitiesSpawned: 1
-    maximumEntitiesSpawned: 1
   - type: TimedDespawn #delete the egg after the chicken spawns
     lifetime: 21
 
 - type: entity
   name: cockroach
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, SlicingRefinableBase]
   id: MobCockroach
   description: This station is just crawling with bugs.
   components:
@@ -418,8 +416,8 @@
         reagents:
         - ReagentId: Slime
           Quantity: 5
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatSlime
   - type: Damageable
     damageContainer: Biological
@@ -456,7 +454,7 @@
 
 - type: entity
   name: glockroach
-  parent: MobCockroach
+  parent: [MobCockroach, SlicingRefinableBase]
   suffix: Admeme
   id: MobGlockroach
   description: This station is just crawling with bu- OH GOD THAT COCKROACH HAS A GUN!!!
@@ -482,13 +480,13 @@
   - type: NpcFactionMember
     factions:
     - SimpleHostile
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatSlime
 
 - type: entity
   name: mothroach
-  parent: [ BaseMobMothroach, MobCockroach ]
+  parent: [ BaseMobMothroach, MobCockroach, SlicingRefinableBase ]
   id: MobMothroach
   description: This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches.
   components:
@@ -576,8 +574,8 @@
       types:
         Asphyxiation: -0.5
   - type: CombatMode
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatSlime
       amount: 2
   - type: Extractable
@@ -661,7 +659,7 @@
 
 - type: entity
   name: mallard duck #Quack
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, SlicingRefinableBase]
   id: MobDuckMallard
   description: An adorable mallard duck, it's fluffy and soft!
   components:
@@ -707,8 +705,8 @@
         Base: dead-0
       Dead:
         Base: dead-0
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatDuck
       amount: 1
   - type: InteractionPopup
@@ -784,14 +782,12 @@
       - MobDuckWhite
       - MobDuckBrown
       intervalSeconds: 20
-      minimumEntitiesSpawned: 1
-      maximumEntitiesSpawned: 1
     - type: TimedDespawn #delete the egg after the chicken spawns
       lifetime: 21
 
 - type: entity
   name: butterfly
-  parent: [ SimpleMobBase, FlyingMobBase ]
+  parent: [ SimpleMobBase, FlyingMobBase, SlicingRefinableBase ]
   id: MobButterfly
   description: Despite popular misconceptions, it's not actually made of butter.
   components:
@@ -840,8 +836,8 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 1
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: null # Should give nothing when you butcher it so we set the item id it needs to spawn to null
   - type: Item
     size: Tiny
@@ -868,7 +864,7 @@
 
 - type: entity
   name: cow
-  parent: [ SimpleMobBase, BaseMobRuminant ]
+  parent: [ SimpleMobBase, BaseMobRuminant, SlicingRefinableBase ]
   id: MobCow
   description: Moo.
   components:
@@ -921,8 +917,8 @@
     quantityPerUpdate: 25
     growthDelay: 30
   - type: ExaminableHunger
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 5
   - type: Grammar
@@ -951,7 +947,7 @@
 
 - type: entity
   name: crab
-  parent: [ SimpleMobBase, BaseMobHemocyanin ]
+  parent: [ SimpleMobBase, BaseMobHemocyanin, SlicingRefinableBase ]
   id: MobCrab
   description: A folk legend goes around that his claw snaps spacemen out of existence over distasteful remarks. Be polite and tolerant for your own safety.
   components:
@@ -992,8 +988,8 @@
         Base: dead
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatCrab
       amount: 2
   - type: InteractionPopup
@@ -1019,7 +1015,7 @@
 
 - type: entity
   name: goat
-  parent: [ SimpleMobBase, BaseMobRuminant ]
+  parent: [ SimpleMobBase, BaseMobRuminant, SlicingRefinableBase ]
   id: MobGoat
   description: Her spine consists of long sharp segments, no wonder she is so grumpy.
   components:
@@ -1085,8 +1081,8 @@
   - type: FlavorProfile
     flavors:
     - fiber
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 4
   - type: Grammar
@@ -1121,7 +1117,7 @@
 # Note that we gotta make this bitch vomit someday when you feed it anthrax or sumthin. Needs to be a small item thief too and aggressive if attacked.
 - type: entity
   name: goose
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, SlicingRefinableBase]
   id: MobGoose
   description: Its stomach and mind are an enigma beyond human comprehension.
   components:
@@ -1150,8 +1146,8 @@
         Base: dead
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatChicken
       amount: 2
   - type: InteractionPopup # TODO: Make it so there's a separate chance to make certain animals outright hostile towards you.
@@ -1172,7 +1168,7 @@
 
 - type: entity
   name: gorilla
-  parent: [ SimpleMobBase, MobCombat ]
+  parent: [ SimpleMobBase, MobCombat, SlicingRefinableBase ]
   id: MobGorilla
   description: Smashes, roars, looks cool. Don't stand near one.
   components:
@@ -1202,8 +1198,8 @@
         Base: dead
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 4
   - type: Bloodstream
@@ -1256,6 +1252,7 @@
   - SimpleMobBase
   - MobCombat
   - StripableInventoryBase
+  - SlicingRefinableBase
   id: MobKangaroo
   description: A large marsupial herbivore. It has powerful hind legs, with nails that resemble long claws.
   components:
@@ -1285,8 +1282,8 @@
     templateId: kangaroo
   - type: ReplacementAccent
     accent: kangaroo
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
   - type: DamageStateVisuals
     states:
@@ -1431,7 +1428,6 @@
         Blunt: 3
         Piercing: 3
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeat
       amount: 3
@@ -1650,7 +1646,6 @@
           horns_double: Inherit
           horns_kobold_ears: Inherit
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeat
       amount: 2
@@ -1729,6 +1724,7 @@
   parent:
   - SimpleMobBase
   - BaseMobAnimal
+  - SlicingRefinableBase
   id: MobMouse
   description: Squeak!
   components:
@@ -1842,8 +1838,8 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatRat
       amount: 1
   - type: ReplacementAccent
@@ -2003,7 +1999,7 @@
 - type: entity
   name: cancer mouse
   description: Toxic. Squeak!
-  parent: MobMouse
+  parent: [MobMouse, SlicingRefinableBase]
   id: MobMouseCancer
   components:
   - type: GhostRole
@@ -2035,8 +2031,8 @@
           Quantity: 3
         - ReagentId: Uranium
           Quantity: 10
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatRat
       amount: 1
     - id: SheetUranium1
@@ -2047,7 +2043,7 @@
 
 - type: entity
   name: lizard #Weh
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, SlicingRefinableBase]
   id: MobLizard
   description: A harmless dragon.
   components:
@@ -2080,8 +2076,8 @@
         Base: dead
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatLizard
       amount: 1
   - type: InteractionPopup
@@ -2106,7 +2102,7 @@
 
 - type: entity
   name: slug
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, SlicingRefinableBase]
   id: MobSlug
   description: And they called this a lizard?
   components:
@@ -2139,8 +2135,8 @@
         Base: dead
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 1
   - type: InteractionPopup
@@ -2156,7 +2152,7 @@
 
 - type: entity
   name: frog
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, SlicingRefinableBase]
   id: MobFrog
   description: Hop hop hop. Lookin' moist.
   components:
@@ -2196,8 +2192,8 @@
         Base: dead
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 1
   - type: InteractionPopup
@@ -2227,7 +2223,7 @@
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
 - type: entity
-  parent: [ SimpleMobBase, FlyingMobBase ]
+  parent: [ SimpleMobBase, FlyingMobBase, SlicingRefinableBase ]
   id: MobParrotBase
   name: parrot
   abstract: true
@@ -2261,8 +2257,8 @@
         Base: dead
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 1
   - type: Speech
@@ -2315,7 +2311,7 @@
 
 - type: entity
   name: penguin
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, SlicingRefinableBase]
   id: MobPenguin
   description: Their lives are constant pain due to their inner-body knees.
   components:
@@ -2345,8 +2341,8 @@
         Base: penguin_dead
       Dead:
         Base: penguin_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatPenguin
       amount: 3
   - type: InteractionPopup
@@ -2454,7 +2450,7 @@
   # I have included a snake_hiss.ogg sound file so if you want to use that be my guest
 - type: entity
   name: snake
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, SlicingRefinableBase]
   id: MobSnake
   description: Hissss! Bites aren't poisonous.
   components:
@@ -2484,8 +2480,8 @@
         Base: dead
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatSnake
       amount: 1
   - type: InteractionPopup
@@ -2505,7 +2501,7 @@
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
 - type: entity
-  parent: [ SimpleMobBase, BaseMobHemocyanin, MobCombat ]
+  parent: [ SimpleMobBase, BaseMobHemocyanin, MobCombat, SlicingRefinableBase ]
   id: MobSpiderBase
   abstract: true
   components:
@@ -2521,8 +2517,8 @@
         - MobMask
         layer:
         - MobLayer
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatSpider
       amount: 2
   - type: CombatMode
@@ -2666,7 +2662,7 @@
 
 - type: entity
   name: clown spider
-  parent: MobSpiderAngryBase
+  parent: [MobSpiderAngryBase, SlicingRefinableBase]
   id: MobClownSpider
   description: Combines the two most terrifying things in existence, spiders and clowns.
   components:
@@ -2676,8 +2672,8 @@
       - map: ["enum.DamageStateVisualLayers.Base"]
         state: clown
         sprite: Mobs/Animals/clownspider.rsi
-    - type: Butcherable
-      spawned:
+    - type: ToolRefinable
+      refineResult:
         - id: MaterialBananium1
           amount: 1
     - type: DamageStateVisuals
@@ -2727,7 +2723,7 @@
 
 - type: entity
   name: possum
-  parent: [SimpleMobBase, StripableInventoryBase]
+  parent: [SimpleMobBase, StripableInventoryBase, SlicingRefinableBase]
   id: MobPossum
   description: '"O Possum! My Possum!" -- Walt Whitman, 1865'
   components:
@@ -2760,8 +2756,8 @@
         Base: possum_dead
       Dead:
         Base: possum_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 3
   - type: InteractionPopup
@@ -2800,7 +2796,7 @@
 
 - type: entity
   name: raccoon
-  parent: [SimpleMobBase, StripableInventoryBase]
+  parent: [SimpleMobBase, StripableInventoryBase, SlicingRefinableBase]
   id: MobRaccoon
   description: Trash panda!
   components:
@@ -2833,8 +2829,8 @@
         Base: raccoon_dead
       Dead:
         Base: raccoon_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 3
   - type: InteractionPopup
@@ -2853,7 +2849,7 @@
 
 - type: entity
   name: fox
-  parent: [SimpleMobBase, StripableInventoryBase]
+  parent: [SimpleMobBase, StripableInventoryBase, SlicingRefinableBase]
   id: MobFox
   description: They're a fox.
   components:
@@ -2893,8 +2889,8 @@
         Base: fox_dead
       Dead:
         Base: fox_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 3
   - type: InteractionPopup
@@ -2978,7 +2974,7 @@
   - type: MessyDrinker
 
 - type: entity
-  parent: MobCorgiBase
+  parent: [MobCorgiBase, SlicingRefinableBase]
   id: MobCorgi
   components:
   - type: DamageStateVisuals
@@ -2989,8 +2985,8 @@
         Base: corgi_dead
       Dead:
         Base: corgi_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 2
   - type: ReplacementAccent
@@ -3093,7 +3089,7 @@
 
 - type: entity
   name: cat
-  parent: [SimpleMobBase, StripableInventoryBase]
+  parent: [SimpleMobBase, StripableInventoryBase, SlicingRefinableBase]
   id: MobCat
   description: Feline pet, very funny.
   components:
@@ -3129,8 +3125,8 @@
   - type: Speech
     speechSounds: Cat
     speechVerb: SmallMob
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 3
   - type: ReplacementAccent
@@ -3296,7 +3292,7 @@
 
 - type: entity
   name: kitten
-  parent: MobCat
+  parent: [MobCat, SlicingRefinableBase]
   id: MobCatKitten
   description: Small and fluffy.
   components:
@@ -3312,8 +3308,8 @@
         Base: kitten_dead
       Dead:
         Base: kitten_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 1
   - type: MobPrice
@@ -3329,7 +3325,7 @@
 
 - type: entity
   name: sloth
-  parent: [SimpleMobBase, StripableInventoryBase]
+  parent: [SimpleMobBase, StripableInventoryBase, SlicingRefinableBase]
   id: MobSloth
   description: Very slow animal. For people with low energy.
   components:
@@ -3365,8 +3361,8 @@
         Base: sloth_dead
       Dead:
         Base: sloth_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 3
   - type: InteractionPopup
@@ -3386,7 +3382,7 @@
 
 - type: entity
   name: ferret
-  parent: [SimpleMobBase, StripableInventoryBase]
+  parent: [SimpleMobBase, StripableInventoryBase, SlicingRefinableBase]
   id: MobFerret
   description: Just a silly little guy!
   components:
@@ -3419,8 +3415,8 @@
         Base: ferret_dead
       Dead:
         Base: ferret_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 3
   - type: InteractionPopup
@@ -3440,7 +3436,7 @@
 
 - type: entity
   name: hamster
-  parent: [ SimpleMobBase, MobCombat, StripableInventoryBase]
+  parent: [ SimpleMobBase, MobCombat, StripableInventoryBase, SlicingRefinableBase]
   id: MobHamster
   description: A cute, fluffy, robust hamster.
   components:
@@ -3530,8 +3526,8 @@
           Quantity: 55
         - ReagentId: Fat
           Quantity: 5
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 1
   - type: ReplacementAccent
@@ -3595,7 +3591,7 @@
 
 - type: entity
   name: pig
-  parent: [SimpleMobBase, StripableInventoryBase]
+  parent: [SimpleMobBase, StripableInventoryBase, SlicingRefinableBase]
   id: MobPig
   description: Oink.
   components:
@@ -3639,8 +3635,8 @@
         Base: dead
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatBacon
       amount: 6
   - type: Grammar
@@ -3666,7 +3662,7 @@
 
 - type: entity
   name: diona nymph
-  parent: [BaseMobAnimal, SimpleMobBase, StripableInventoryBase]
+  parent: [BaseMobAnimal, SimpleMobBase, StripableInventoryBase, SlicingRefinableBase]
   id: MobDionaNymph
   description: It's like a cat, only.... branch-ier.
   components:
@@ -3704,8 +3700,8 @@
         Base: nymph_sleep
       Dead:
         Base: nymph_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: MaterialWoodPlank1
       amount: 2
   - type: InteractionPopup
@@ -3757,7 +3753,7 @@
 
 - type: entity
   name: reindeer buck
-  parent: [ SimpleMobBase, MobCombat ]
+  parent: [ SimpleMobBase, MobCombat, SlicingRefinableBase ]
   id: MobReindeerBuck
   description: You think it can pull a sleigh?
   components:
@@ -3794,8 +3790,8 @@
         Base: reindeer_buck_dead
       Dead:
         Base: reindeer_buck_dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeat
       amount: 4
   - type: Bloodstream
