@@ -312,12 +312,9 @@ namespace Content.Server.Construction
             if (GetCurrentNode(uid, construction)?.DoNotReplaceInheritingEntities == true &&
                 metaData.EntityPrototype?.ID != null)
             {
-                var parents = PrototypeManager
-                    .EnumerateAllParents<EntityPrototype>(metaData.EntityPrototype.ID)?
-                    .Select(parent => parent.id)
-                    .ToList();
+                var parents = PrototypeManager.EnumerateAllParents<EntityPrototype>(metaData.EntityPrototype.ID)?.ToList();
 
-                if (parents != null && parents.Any(entity => entity == newEntity))
+                if (parents != null && parents.Any(x => x.id == newEntity))
                     return null;
             }
 
