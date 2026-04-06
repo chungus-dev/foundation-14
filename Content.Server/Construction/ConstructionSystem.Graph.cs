@@ -314,7 +314,7 @@ namespace Content.Server.Construction
             {
                 var parents = PrototypeManager.EnumerateAllParents<EntityPrototype>(metaData.EntityPrototype.ID)?.ToList();
 
-                if (parents != null && parents.Any(x => x.id == newEntity))
+                if (parents != null && parents.Any(parent => parent.id == newEntity))
                     return null;
             }
 
