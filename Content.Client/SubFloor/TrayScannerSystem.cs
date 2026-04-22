@@ -1,5 +1,6 @@
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
+using Content.Shared.Item.ItemToggle;
 using Content.Shared.SubFloor;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
@@ -15,6 +16,7 @@ public sealed class TrayScannerSystem : SharedTrayScannerSystem
     [Dependency] private readonly AnimationPlayerSystem _animation = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -57,7 +59,7 @@ public sealed class TrayScannerSystem : SharedTrayScannerSystem
             {
                 foreach (var ent in slot.ContainedEntities)
                 {
-                    if (!_trayScannerQuery.TryGetComponent(ent, out var sneakScanner) || !sneakScanner.Enabled)
+                    if (!_trayScannerQuery.TryGetComponent(ent, out var sneakScanner) || !_itemToggle.IsActivated(ent))
                         continue;
 
                     canSee = true;
@@ -71,7 +73,7 @@ public sealed class TrayScannerSystem : SharedTrayScannerSystem
             if (!_hands.TryGetHeldItem(player.Value, hand, out var heldEntity))
                 continue;
 
-            if (!_trayScannerQuery.TryGetComponent(heldEntity, out var heldScanner) || !heldScanner.Enabled)
+            if (!_trayScannerQuery.TryGetComponent(heldEntity, out var heldScanner) || !_itemToggle.IsActivated(heldEntity.Value))
                 continue;
 
             range = MathF.Max(heldScanner.Range, range);
