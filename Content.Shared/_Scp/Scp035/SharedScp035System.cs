@@ -1,8 +1,8 @@
-﻿using Content.Shared._Scp.Fear.Components;
+﻿using System.Linq;
+using Content.Shared._Scp.Fear.Components;
 using Content.Shared.Actions;
 using Content.Shared.Clothing;
 using Content.Shared.Damage.Components;
-using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction.Components;
@@ -16,7 +16,6 @@ using Content.Shared.Popups;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee.Events;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
@@ -26,13 +25,12 @@ using Robust.Shared.Random;
 
 namespace Content.Shared._Scp.Scp035;
 
-// TODO: Рефактор с целью анхардкода всяких значений в прототипы, перевод строк на EntProtoId, а переводов на локаль
-// TODO: А еще чето с акшенами придумать, не очень смотрятся эти AddAction x6
+// TODO: Придумать что-то с акшенами, не очень смотрятся эти AddAction x6
 public abstract class SharedScp035System : EntitySystem
 {
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedContainerSystem _container= default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedActionsSystem _action = default!;
@@ -43,17 +41,6 @@ public abstract class SharedScp035System : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-
-    private readonly SoundSpecifier _equipSound = new SoundCollectionSpecifier("EquipScp035");
-
-    private static readonly EntProtoId RaiseArmyActionId = "ActionScp035RaiseArmy";
-    private static readonly EntProtoId OrderStayActionId = "ActionScp035OrderStay";
-    private static readonly EntProtoId OrderFollowActionId = "ActionScp035OrderFollow";
-    private static readonly EntProtoId OrderKillActionId = "ActionScp035OrderKill";
-    private static readonly EntProtoId OrderLooseActionId = "ActionScp035OrderLoose";
-    private static readonly EntProtoId StunActionId = "ActionScp035Stun";
-
-    private static readonly ProtoId<NpcFactionPrototype> WearerFaction = "SimpleHostile";
 
     public override void Initialize()
     {
@@ -73,7 +60,7 @@ public abstract class SharedScp035System : EntitySystem
         SubscribeLocalEvent<Scp035ServantComponent, ComponentShutdown>(OnServantShutdown);
     }
 
-    private void OnMaskEquipped(Entity<Scp035MaskComponent> ent, ref ClothingGotEquippedEvent args)
+    protected virtual void OnMaskEquipped(Entity<Scp035MaskComponent> ent, ref ClothingGotEquippedEvent args)
     {
         EnsureComp<UnremoveableComponent>(ent);
 
@@ -83,28 +70,23 @@ public abstract class SharedScp035System : EntitySystem
         var maskUserComponent = EnsureComp<Scp035MaskUserComponent>(args.Wearer);
         maskUserComponent.Mask = ent;
 
-        _action.AddAction(args.Wearer, RaiseArmyActionId, maskUserComponent.ActionRaiseArmy);
-        _action.AddAction(args.Wearer, OrderStayActionId, maskUserComponent.ActionOrderStayEntity);
-        _action.AddAction(args.Wearer, OrderFollowActionId, maskUserComponent.ActionOrderFollowEntity);
-        _action.AddAction(args.Wearer, OrderKillActionId, maskUserComponent.ActionOrderKillEmEntity);
-        _action.AddAction(args.Wearer, OrderLooseActionId, maskUserComponent.ActionOrderLooseEntity);
-        _action.AddAction(args.Wearer, StunActionId, maskUserComponent.ActionStunEntity);
+        ToggleActions(maskUserComponent, ent.Comp, ent, true);
         Dirty(args.Wearer, maskUserComponent);
 
         _faction.ClearFactions(args.Wearer);
-        _faction.AddFaction(args.Wearer, WearerFaction);
+        _faction.AddFaction(args.Wearer, ent.Comp.NewUserFaction);
 
-        _mobThreshold.SetMobStateThreshold(args.Wearer, FixedPoint2.New(800), MobState.Critical);
-        _mobThreshold.SetMobStateThreshold(args.Wearer, FixedPoint2.New(800), MobState.Dead);
+        _mobThreshold.SetMobStateThreshold(args.Wearer, ent.Comp.NewCriticalThreshold, MobState.Critical);
+        _mobThreshold.SetMobStateThreshold(args.Wearer, ent.Comp.NewDeadThreshold, MobState.Dead);
         RemComp<SlowOnDamageComponent>(args.Wearer);
 
-        _stun.TryAddParalyzeDuration(args.Wearer, TimeSpan.FromSeconds(5));
+        _stun.TryAddParalyzeDuration(args.Wearer, ent.Comp.EquippedParalyzeDuration);
 
-        _popup.PopupClient("Вы ошеломлены!", args.Wearer, args.Wearer, PopupType.LargeCaution);
-        _audio.PlayEntity(_equipSound, args.Wearer, args.Wearer);
+        _popup.PopupClient(Loc.GetString("scp-035-paralyze-effect"), args.Wearer, args.Wearer, PopupType.LargeCaution);
+        _audio.PlayEntity(ent.Comp.EquipSound, args.Wearer, args.Wearer);
 
-        var chainsaw = Spawn("Chainsaw", Transform(args.Wearer).Coordinates);
-        _hands.TryForcePickupAnyHand(args.Wearer, chainsaw, false);
+        var weapon = Spawn(ent.Comp.SpawnWeaponProto, Transform(args.Wearer).Coordinates);
+        _hands.TryForcePickupAnyHand(args.Wearer, weapon, false);
 
         var toggleUsed = new ItemToggledEvent(true, false, null);
         RaiseLocalEvent(ent, ref toggleUsed);
@@ -130,14 +112,14 @@ public abstract class SharedScp035System : EntitySystem
         {
             args.Cancel();
 
-            _stun.TryAddParalyzeDuration(args.User, TimeSpan.FromSeconds(10));
+            _stun.TryAddParalyzeDuration(args.Equipee, ent.Comp.EquipAttemptParalyzeDuration);
 
             if (_net.IsServer)
             {
-                _popup.PopupEntity("Маска отвергает вас!", args.User, args.User, PopupType.LargeCaution);
+                _popup.PopupEntity(Loc.GetString("scp-035-reject-you"), args.Equipee, args.Equipee, PopupType.LargeCaution);
 
-                var impulse = _random.NextVector2() * 10000;
-                _physics.ApplyLinearImpulse(args.User, impulse);
+                var impulse = _random.NextVector2() * ent.Comp.ImpulseModificator;
+                _physics.ApplyLinearImpulse(args.Equipee, impulse);
             }
         }
     }
@@ -156,15 +138,15 @@ public abstract class SharedScp035System : EntitySystem
         _container.TryRemoveFromContainer(maskEntity, true);
         _transform.AttachToGridOrMap(maskEntity);
 
-        var ash = Spawn("Ash", Transform(maskEntity).Coordinates);
-        _transform.AttachToGridOrMap(ash);
+        var deadEnt = Spawn(ent.Comp.DeadSpawnProto, Transform(maskEntity).Coordinates);
+        _transform.AttachToGridOrMap(deadEnt);
 
         QueueDel(ent);
     }
 
     private void OnMeleeHit(Entity<Scp035MaskUserComponent> ent, ref MeleeHitEvent args)
     {
-        args.BonusDamage = args.BaseDamage * 4;
+        args.BonusDamage = args.BaseDamage * ent.Comp.MeleeDamageModificator;
     }
 
     private void OnStun(Entity<Scp035MaskUserComponent> ent, ref MaskStunActionEvent args)
@@ -174,16 +156,16 @@ public abstract class SharedScp035System : EntitySystem
 
         if (!HasComp<HumanoidProfileComponent>(args.Target))
         {
-            if(_net.IsServer)
-                _popup.PopupEntity("Работает только на людей.", args.Performer, args.Performer, PopupType.LargeCaution);
+            if (_net.IsServer)
+                _popup.PopupEntity(Loc.GetString("scp-035-reject-target"), args.Performer, args.Performer, PopupType.LargeCaution);
 
             return;
         }
 
-        _stun.TryAddParalyzeDuration(args.Target, TimeSpan.FromSeconds(10));
+        _stun.TryAddParalyzeDuration(args.Target, ent.Comp.ActionStunDuration);
 
         if (_net.IsServer)
-            _popup.PopupEntity("ваше тело онемело!", args.Target, args.Target, PopupType.LargeCaution);
+            _popup.PopupEntity(Loc.GetString("scp-035-stun-effect"), args.Target, args.Target, PopupType.LargeCaution);
 
         args.Handled = true;
     }
@@ -193,7 +175,7 @@ public abstract class SharedScp035System : EntitySystem
         RaiseLocalEvent(ent, new RejuvenateEvent());
 
         // Маска овладевает разумом человека и блокирует страх.
-        // ЧТО БУДЕТ ЕСЛИ ЧЕЛОВЕК ОВЛАДЕЕТ РАЗУМОМ НА ВСЕ 100????!!
+        // ЧТО БУДЕТ ЕСЛИ ЧЕЛОВЕК ОВЛАДЕЕТ РАЗУМОМ НА ВСЕ 100????!! - УЖАС!!
         RemCompDeferred<FearComponent>(ent);
     }
 
@@ -207,12 +189,7 @@ public abstract class SharedScp035System : EntitySystem
             _mobState.ChangeMobState(servant, MobState.Dead);
         }
 
-        _action.RemoveAction(ent.Owner, ent.Comp.ActionRaiseArmy);
-        _action.RemoveAction(ent.Owner, ent.Comp.ActionOrderStayEntity);
-        _action.RemoveAction(ent.Owner, ent.Comp.ActionOrderFollowEntity);
-        _action.RemoveAction(ent.Owner, ent.Comp.ActionOrderKillEmEntity);
-        _action.RemoveAction(ent.Owner, ent.Comp.ActionOrderLooseEntity);
-        _action.RemoveAction(ent.Owner, ent.Comp.ActionStunEntity);
+        ToggleActions(ent.Comp, null, ent, false);
     }
 
     private void OnServantShutdown(Entity<Scp035ServantComponent> ent, ref ComponentShutdown args)
@@ -243,15 +220,67 @@ public abstract class SharedScp035System : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        _action.SetToggled(component.ActionOrderStayEntity, component.CurrentOrder == MaskOrderType.Stay);
-        _action.SetToggled(component.ActionOrderFollowEntity, component.CurrentOrder == MaskOrderType.Follow);
-        _action.SetToggled(component.ActionOrderKillEmEntity, component.CurrentOrder == MaskOrderType.Kill);
-        _action.SetToggled(component.ActionOrderLooseEntity, component.CurrentOrder == MaskOrderType.Loose);
+        foreach (var (order, actionUid) in component.OrderActions)
+        {
+            _action.SetToggled(actionUid, component.CurrentOrder == order);
+            _action.StartUseDelay(actionUid);
+        }
+    }
 
-        _action.StartUseDelay(component.ActionOrderStayEntity);
-        _action.StartUseDelay(component.ActionOrderFollowEntity);
-        _action.StartUseDelay(component.ActionOrderKillEmEntity);
-        _action.StartUseDelay(component.ActionOrderLooseEntity);
+    private void ToggleActions(
+        Scp035MaskUserComponent maskUserComponent,
+        Scp035MaskComponent? maskComponent,
+        EntityUid user,
+        bool active)
+    {
+        var existingActions = maskUserComponent.Actions;
+        var existingOrderActions = maskUserComponent.OrderActions;
+
+        var newActions = active ? maskComponent?.Actions : null;
+        var newOrderActions = active ? maskComponent?.OrderActions : null;
+
+        var orderKeys = newOrderActions != null
+            ? newOrderActions.Keys.ToList()
+            : existingOrderActions.Keys.ToList();
+
+        var count = Math.Max(
+            Math.Max(existingActions.Count, newActions?.Count ?? 0),
+            orderKeys.Count
+        );
+
+        for (int i = 0; i < count; i++)
+        {
+            if (i < existingActions.Count)
+                _action.RemoveAction(existingActions[i]);
+
+            if (newActions != null && i < newActions.Count)
+            {
+                var uid = _action.AddAction(user, newActions[i]);
+                if (uid != null)
+                    existingActions.Add(uid.Value);
+            }
+
+            if (i < orderKeys.Count)
+            {
+                var key = orderKeys[i];
+
+                if (existingOrderActions.TryGetValue(key, out var existingUid))
+                    _action.RemoveAction(existingUid);
+
+                if (newOrderActions != null && newOrderActions.TryGetValue(key, out var proto))
+                {
+                    var uid = _action.AddAction(user, proto);
+                    if (uid != null)
+                        existingOrderActions[key] = uid.Value;
+                }
+            }
+        }
+
+        if (!active)
+        {
+            existingActions.Clear();
+            existingOrderActions.Clear();
+        }
     }
 
     public void UpdateAllServants(EntityUid uid, Scp035MaskUserComponent component)

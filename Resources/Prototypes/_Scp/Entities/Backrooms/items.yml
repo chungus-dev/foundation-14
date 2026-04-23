@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseItem
   id: ScpAnomalyPainting
   name: strange painting
@@ -187,6 +187,13 @@
   name: strange dollar
   suffix: SCP Item
   components:
+  - type: LimitedTimedSpawn
+    prototype: ScpAnomalyDollar
+    copyCopies: false
+    chance: 1 #0.4
+    entitiesLimit: 10
+    impulseStrength: 200
+    intervalSeconds: 5 #900
   - type: Sprite
     sprite: _Scp/Objects/Items/dollar.rsi
     state: icon
@@ -231,6 +238,14 @@
     - Scream
     cooldownVariations: 10
     mode: Random
+  - type: TriggerOnIgnite
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: DefaultStandardEffect
+    maxIntensity: 15
+    intensitySlope: 5
+    totalIntensity: 50
+    canCreateVacuum: false
 
 - type: entity # TODO: Сделать парента этой штуки бьющимся
   parent: DrinkHotCoffee
