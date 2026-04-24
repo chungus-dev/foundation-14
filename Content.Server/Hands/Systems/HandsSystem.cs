@@ -32,8 +32,7 @@ namespace Content.Server.Hands.Systems
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
         [Dependency] private readonly PullingSystem _pullingSystem = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
-
-        private EntityQuery<PhysicsComponent> _physicsQuery;
+        [Dependency] private readonly EntityQuery<PhysicsComponent> _physicsQuery = default!;
 
         /// <summary>
         /// Items dropped when the holder falls down will be launched in
@@ -57,8 +56,6 @@ namespace Content.Server.Hands.Systems
             CommandBinds.Builder
                 .Bind(ContentKeyFunctions.ThrowItemInHand, new PointerInputCmdHandler(HandleThrowItem))
                 .Register<HandsSystem>();
-
-            _physicsQuery = GetEntityQuery<PhysicsComponent>();
         }
 
         public override void Shutdown()

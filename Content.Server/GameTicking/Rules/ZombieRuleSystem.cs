@@ -34,6 +34,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
     [Dependency] private readonly SharedRoleSystem _roles = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly ZombieSystem _zombie = default!;
+    [Dependency] private readonly EntityQuery<ZombieComponent> _zombieQuery = default!;
 
     public override void Initialize()
     {
@@ -197,13 +198,12 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
         }
 
         var players = AllEntityQuery<HumanoidProfileComponent, ActorComponent, MobStateComponent, TransformComponent>();
-        var zombers = GetEntityQuery<ZombieComponent>();
         while (players.MoveNext(out var uid, out _, out _, out var mob, out var xform))
         {
             if (!_mobState.IsAlive(uid, mob))
                 continue;
 
-            if (zombers.HasComponent(uid))
+            if (_zombieQuery.HasComponent(uid))
                 continue;
 
             if (!includeOffStation && !stationGrids.Contains(xform.GridUid ?? EntityUid.Invalid))

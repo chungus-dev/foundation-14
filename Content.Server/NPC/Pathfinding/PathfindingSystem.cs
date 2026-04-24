@@ -53,6 +53,13 @@ namespace Content.Server.NPC.Pathfinding
         [Dependency] private readonly SharedPhysicsSystem _physics = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
 
+        [Dependency] private readonly EntityQuery<AccessReaderComponent> _accessReaderQuery = default!;
+        [Dependency] private readonly EntityQuery<DestructibleComponent> _destructibleQuery = default!;
+        [Dependency] private readonly EntityQuery<DoorComponent> _doorQuery = default!;
+        [Dependency] private readonly EntityQuery<ClimbableComponent> _climbableQuery = default!;
+        [Dependency] private readonly EntityQuery<FixturesComponent> _fixturesQuery = default!;
+        [Dependency] private readonly EntityQuery<MapGridComponent> _mapGridQuery = default!;
+
         private readonly Dictionary<ICommonSession, PathfindingDebugMode> _subscribedSessions = new();
 
         [ViewVariables]
@@ -68,26 +75,9 @@ namespace Content.Server.NPC.Pathfinding
         private int _portalIndex;
         private readonly Dictionary<int, PathPortal> _portals = new();
 
-        private EntityQuery<AccessReaderComponent> _accessQuery;
-        private EntityQuery<DestructibleComponent> _destructibleQuery;
-        private EntityQuery<DoorComponent> _doorQuery;
-        private EntityQuery<ClimbableComponent> _climbableQuery;
-        private EntityQuery<FixturesComponent> _fixturesQuery;
-        private EntityQuery<MapGridComponent> _gridQuery;
-        private EntityQuery<TransformComponent> _xformQuery;
-
         public override void Initialize()
         {
             base.Initialize();
-
-            _accessQuery = GetEntityQuery<AccessReaderComponent>();
-            _destructibleQuery = GetEntityQuery<DestructibleComponent>();
-            _doorQuery = GetEntityQuery<DoorComponent>();
-            _climbableQuery = GetEntityQuery<ClimbableComponent>();
-            _fixturesQuery = GetEntityQuery<FixturesComponent>();
-            _gridQuery = GetEntityQuery<MapGridComponent>();
-            _xformQuery = GetEntityQuery<TransformComponent>();
-
             _playerManager.PlayerStatusChanged += OnPlayerChange;
             InitializeGrid();
             SubscribeNetworkEvent<RequestPathfindingDebugMessage>(OnBreadcrumbs);

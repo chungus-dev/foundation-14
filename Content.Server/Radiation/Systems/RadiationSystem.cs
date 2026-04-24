@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Server.Radiation.Components;
 using Content.Shared.Radiation.Components;
 using Content.Shared.Radiation.Events;
@@ -6,7 +7,6 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Threading;
-using System.Numerics;
 using Content.Shared.Radiation.Systems;
 
 namespace Content.Server.Radiation.Systems;
@@ -21,8 +21,8 @@ public sealed partial class RadiationSystem : SharedRadiationSystem
     [Dependency] private readonly IParallelManager _parallel = default!;
 
     [Dependency] private readonly EntityQuery<RadiationReceiverComponent> _receiverQuery = default!;
-    [Dependency] private EntityQuery<RadiationBlockingContainerComponent> _blockerQuery = default;
-    [Dependency] private EntityQuery<RadiationGridResistanceComponent> _resistanceQuery = default;
+    [Dependency] private readonly EntityQuery<RadiationBlockingContainerComponent> _blockerQuery = default!;
+    [Dependency] private readonly EntityQuery<RadiationGridResistanceComponent> _resistanceQuery = default!;
 
     private readonly B2DynamicTree<EntityUid> _sourceTree = new();
     private readonly Dictionary<EntityUid, SourceData> _sourceDataMap = new();

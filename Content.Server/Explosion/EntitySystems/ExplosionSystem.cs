@@ -59,14 +59,13 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
     [Dependency] private readonly DestructibleSystem _destructibleSystem = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
 
-    private EntityQuery<FlammableComponent> _flammableQuery;
-    private EntityQuery<PhysicsComponent> _physicsQuery;
-    private EntityQuery<ProjectileComponent> _projectileQuery;
-    private EntityQuery<ActorComponent> _actorQuery;
-    private EntityQuery<DestructibleComponent> _destructibleQuery;
-    private EntityQuery<DamageableComponent> _damageableQuery;
-    private EntityQuery<AirtightComponent> _airtightQuery;
-    private EntityQuery<TileHistoryComponent> _tileHistoryQuery;
+    [Dependency] private readonly EntityQuery<FlammableComponent> _flammableQuery = default!;
+    [Dependency] private readonly EntityQuery<PhysicsComponent> _physicsQuery = default!;
+    [Dependency] private readonly EntityQuery<ActorComponent> _actorQuery = default!;
+    [Dependency] private readonly EntityQuery<DestructibleComponent> _destructibleQuery = default!;
+    [Dependency] private readonly EntityQuery<DamageableComponent> _damageableQuery = default!;
+    [Dependency] private readonly EntityQuery<AirtightComponent> _airtightQuery = default!;
+    [Dependency] private readonly EntityQuery<TileHistoryComponent> _tileHistoryQuery = default!;
 
     /// <summary>
     ///     "Tile-size" for space when there are no nearby grids to use as a reference.
@@ -101,15 +100,6 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         SubscribeCvars();
         InitAirtightMap();
         InitVisuals();
-
-        _flammableQuery = GetEntityQuery<FlammableComponent>();
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
-        _projectileQuery = GetEntityQuery<ProjectileComponent>();
-        _actorQuery = GetEntityQuery<ActorComponent>();
-        _destructibleQuery = GetEntityQuery<DestructibleComponent>();
-        _damageableQuery = GetEntityQuery<DamageableComponent>();
-        _airtightQuery = GetEntityQuery<AirtightComponent>();
-        _tileHistoryQuery = GetEntityQuery<TileHistoryComponent>();
 
         _prototypeManager.PrototypesReloaded += ReloadExplosionPrototypes;
     }

@@ -15,19 +15,10 @@ public sealed class XAEIgniteSystem : BaseXAESystem<XAEIgniteComponent>
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly FlammableSystem _flammable = default!;
-
-    private EntityQuery<FlammableComponent> _flammables;
+    [Dependency] private readonly EntityQuery<FlammableComponent> _flammables = default!;
 
     /// <summary> Pre-allocated and re-used collection.</summary>
     private readonly HashSet<EntityUid> _entities = new();
-
-    /// <inheritdoc />
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        _flammables = GetEntityQuery<FlammableComponent>();
-    }
 
     /// <inheritdoc />
     protected override void OnActivated(Entity<XAEIgniteComponent> ent, ref XenoArtifactNodeActivatedEvent args)

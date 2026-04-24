@@ -3,7 +3,6 @@ using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Station.Systems;
 using Content.Shared.Database;
-using Content.Shared.Examine;
 using Content.Shared.Localizations;
 using Content.Shared.Maps;
 using Content.Shared.Pinpointer;
@@ -19,7 +18,7 @@ namespace Content.Server.Pinpointer;
 /// <summary>
 /// Handles data to be used for in-grid map displays.
 /// </summary>
-public sealed partial class NavMapSystem : SharedNavMapSystem
+public sealed class NavMapSystem : SharedNavMapSystem
 {
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
@@ -29,12 +28,12 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly TurfSystem _turfSystem = default!;
 
+    [Dependency] private readonly EntityQuery<AirtightComponent> _airtightQuery = default!;
+    [Dependency] private readonly EntityQuery<MapGridComponent> _gridQuery = default!;
+    [Dependency] private readonly EntityQuery<NavMapComponent> _navQuery = default!;
+
     public const float CloseDistance = 15f;
     public const float FarDistance = 30f;
-
-    private EntityQuery<AirtightComponent> _airtightQuery;
-    private EntityQuery<MapGridComponent> _gridQuery;
-    private EntityQuery<NavMapComponent> _navQuery;
 
     public override void Initialize()
     {
@@ -43,10 +42,6 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         var categories = Enum.GetNames(typeof(NavMapChunkType)).Length - 1; // -1 due to "Invalid" entry.
         if (Categories != categories)
             throw new Exception($"{nameof(Categories)} must be equal to the number of chunk types");
-
-        _airtightQuery = GetEntityQuery<AirtightComponent>();
-        _gridQuery = GetEntityQuery<MapGridComponent>();
-        _navQuery = GetEntityQuery<NavMapComponent>();
 
         // Initialization events
         SubscribeLocalEvent<StationGridAddedEvent>(OnStationInit);

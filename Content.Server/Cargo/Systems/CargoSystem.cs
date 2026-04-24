@@ -40,10 +40,9 @@ public sealed partial class CargoSystem : SharedCargoSystem
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
 
-    private EntityQuery<TransformComponent> _xformQuery;
-    private EntityQuery<CargoSellBlacklistComponent> _blacklistQuery;
-    private EntityQuery<MobStateComponent> _mobQuery;
-    private EntityQuery<TradeStationComponent> _tradeQuery;
+    [Dependency] private readonly EntityQuery<CargoSellBlacklistComponent> _cargoSellBlacklistQuery = default!;
+    [Dependency] private readonly EntityQuery<MobStateComponent> _mobStateQuery = default!;
+    [Dependency] private readonly EntityQuery<TradeStationComponent> _tradeStationQuery = default!;
 
     private HashSet<EntityUid> _setEnts = new();
     private List<EntityUid> _listEnts = new();
@@ -52,12 +51,6 @@ public sealed partial class CargoSystem : SharedCargoSystem
     public override void Initialize()
     {
         base.Initialize();
-
-        _xformQuery = GetEntityQuery<TransformComponent>();
-        _blacklistQuery = GetEntityQuery<CargoSellBlacklistComponent>();
-        _mobQuery = GetEntityQuery<MobStateComponent>();
-        _tradeQuery = GetEntityQuery<TradeStationComponent>();
-
         InitializeConsole();
         InitializeShuttle();
         InitializeTelepad();

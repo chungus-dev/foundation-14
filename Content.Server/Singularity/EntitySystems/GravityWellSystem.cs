@@ -26,6 +26,11 @@ public sealed class GravityWellSystem : SharedGravityWellSystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+
+    [Dependency] private readonly EntityQuery<GravityWellComponent> _wellQuery = default!;
+    [Dependency] private readonly EntityQuery<MapComponent> _mapQuery = default!;
+    [Dependency] private readonly EntityQuery<MapGridComponent> _gridQuery = default!;
+    [Dependency] private readonly EntityQuery<PhysicsComponent> _physicsQuery = default!;
     #endregion Dependencies
 
     /// <summary>
@@ -34,20 +39,11 @@ public sealed class GravityWellSystem : SharedGravityWellSystem
     /// </summary>
     public const float MinGravPulseRange = 0.00001f;
 
-    private EntityQuery<GravityWellComponent> _wellQuery;
-    private EntityQuery<MapComponent> _mapQuery;
-    private EntityQuery<MapGridComponent> _gridQuery;
-    private EntityQuery<PhysicsComponent> _physicsQuery;
-
     private HashSet<EntityUid> _entSet = new();
 
     public override void Initialize()
     {
         base.Initialize();
-        _wellQuery = GetEntityQuery<GravityWellComponent>();
-        _mapQuery = GetEntityQuery<MapComponent>();
-        _gridQuery = GetEntityQuery<MapGridComponent>();
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
         SubscribeLocalEvent<GravityWellComponent, MapInitEvent>(OnGravityWellMapInit);
 
         var vvHandle = _vvManager.GetTypeHandler<GravityWellComponent>();

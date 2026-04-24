@@ -24,8 +24,7 @@ public sealed class StealConditionSystem : EntitySystem
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-
-    private EntityQuery<ContainerManagerComponent> _containerQuery;
+    [Dependency] private readonly EntityQuery<ContainerManagerComponent> _containerQuery = default!;
 
     private HashSet<Entity<TransformComponent>> _nearestEnts = new();
     private HashSet<EntityUid> _countedItems = new();
@@ -33,8 +32,6 @@ public sealed class StealConditionSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
-        _containerQuery = GetEntityQuery<ContainerManagerComponent>();
 
         SubscribeLocalEvent<StealConditionComponent, ObjectiveAssignedEvent>(OnAssigned);
         SubscribeLocalEvent<StealConditionComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);

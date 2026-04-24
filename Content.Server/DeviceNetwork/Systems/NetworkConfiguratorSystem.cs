@@ -37,6 +37,7 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly EntityQuery<DeviceNetworkComponent> _deviceNetworkQuery = default!;
 
     public override void Initialize()
     {
@@ -632,10 +633,9 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
 
     private void ClearDevices(EntityUid uid, NetworkConfiguratorComponent component)
     {
-        var query = GetEntityQuery<DeviceNetworkComponent>();
         foreach (var device in component.Devices.Values)
         {
-            if (query.TryGetComponent(device, out var comp))
+            if (_deviceNetworkQuery.TryGetComponent(device, out var comp))
                 comp.Configurators.Remove(uid);
         }
 
@@ -794,10 +794,9 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
 
                 ClearDevices(uid, component);
 
-                var query = GetEntityQuery<DeviceNetworkComponent>();
                 foreach (var (addr, device) in _deviceListSystem.GetDeviceList(component.ActiveDeviceList.Value))
                 {
-                    if (query.TryGetComponent(device, out var comp))
+                    if (_deviceNetworkQuery.TryGetComponent(device, out var comp))
                     {
                         component.Devices.Add(addr, device);
                         comp.Configurators.Add(uid);

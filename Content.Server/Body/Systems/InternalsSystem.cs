@@ -14,14 +14,9 @@ public sealed class InternalsSystem : SharedInternalsSystem
     [Dependency] private readonly GasTankSystem _gasTank = default!;
     [Dependency] private readonly RespiratorSystem _respirator = default!;
 
-    private EntityQuery<InternalsComponent> _internalsQuery;
-
     public override void Initialize()
     {
         base.Initialize();
-
-        _internalsQuery = GetEntityQuery<InternalsComponent>();
-
         SubscribeLocalEvent<InternalsComponent, InhaleLocationEvent>(OnInhaleLocation);
         SubscribeLocalEvent<InternalsComponent, StartingGearEquippedEvent>(OnStartingGear);
     }

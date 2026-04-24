@@ -164,7 +164,7 @@ public sealed partial class DockingSystem
             return validDockConfigs;
 
         var targetGridGrid = _gridQuery.GetComponent(targetGrid);
-        var targetGridXform = _xformQuery.GetComponent(targetGrid);
+        var targetGridXform = Transform(targetGrid);
         var targetGridAngle = _transform.GetWorldRotation(targetGridXform).Reduced();
         var shuttleFixturesComp = Comp<FixturesComponent>(shuttleUid);
         var shuttleAABB = _gridQuery.GetComponent(shuttleUid).LocalAABB;
@@ -177,11 +177,11 @@ public sealed partial class DockingSystem
             // We'll try all combinations of shuttle docks and see which one is most suitable
             foreach (var (dockUid, shuttleDock) in shuttleDocks)
             {
-                var shuttleDockXform = _xformQuery.GetComponent(dockUid);
+                var shuttleDockXform = Transform(dockUid);
 
                 foreach (var (gridDockUid, gridDock) in gridDocks)
                 {
-                    var gridXform = _xformQuery.GetComponent(gridDockUid);
+                    var gridXform = Transform(gridDockUid);
 
                     if (!CanDock(
                             shuttleDock, shuttleDockXform,
@@ -237,9 +237,9 @@ public sealed partial class DockingSystem
 
                             if (!CanDock(
                                     other,
-                                    _xformQuery.GetComponent(otherUid),
+                                    Transform(otherUid),
                                     otherGrid,
-                                    _xformQuery.GetComponent(otherGridUid),
+                                    Transform(otherGridUid),
                                     shuttleAABB,
                                     targetGridAngle,
                                     shuttleFixturesComp,
