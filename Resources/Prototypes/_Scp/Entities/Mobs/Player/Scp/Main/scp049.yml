@@ -22,6 +22,8 @@
     canPull: true
     canMobCollide: true
   - type: ScpShow049Hud
+  - type: ScpPossibilities
+    canEjectPilotFromMech: false
   - type: FearSource
     uponSeenState: Anxiety
     uponComeCloser: Anxiety

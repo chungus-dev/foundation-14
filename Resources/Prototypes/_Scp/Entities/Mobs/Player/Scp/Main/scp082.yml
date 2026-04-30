@@ -24,13 +24,12 @@
       9500: Critical
       10000: Dead
   - type: Body
-    # Scp edit - Body prototypes/requiredLegs were removed; custom organs need a separate port.
-    # prototype: Human
-    # requiredLegs: 2
   - type: Inventory
     templateId: scp082
   - type: FieldOfView
     angle: 240
+  - type: ScpPossibilities
+    canEjectPilotFromMech: false
   - type: Sprite
     noRot: true
     drawdepth: Mobs
