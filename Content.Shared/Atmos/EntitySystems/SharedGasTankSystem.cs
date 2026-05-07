@@ -158,7 +158,7 @@ public abstract class SharedGasTankSystem : GasMaxPressureSystem<GasTankComponen
             return false;
 
         component.DisconnectStream = Audio.Stop(component.DisconnectStream);
-        component.ConnectStream = Audio.PlayPredicted(component.ConnectSound, owner, user)?.Entity;
+        component.ConnectStream ??= Audio.PlayPredicted(component.ConnectSound, owner, user)?.Entity;
         UpdateUserInterface(ent);
         return true;
     }
@@ -227,7 +227,7 @@ public abstract class SharedGasTankSystem : GasMaxPressureSystem<GasTankComponen
             _internals.DisconnectTank((internalsUid.Value, internalsComp), forced: forced);
 
         component.ConnectStream = Audio.Stop(component.ConnectStream);
-        component.DisconnectStream = Audio.PlayPredicted(component.DisconnectSound, owner, user)?.Entity;
+        component.DisconnectStream ??= Audio.PlayPredicted(component.DisconnectSound, owner, user)?.Entity;
         UpdateUserInterface(ent);
         return true;
     }
