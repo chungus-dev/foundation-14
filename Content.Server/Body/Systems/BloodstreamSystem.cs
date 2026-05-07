@@ -1,4 +1,4 @@
-using Content.Shared.Body.Components;
+﻿using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Forensics;
@@ -14,7 +14,9 @@ public sealed class BloodstreamSystem : SharedBloodstreamSystem
         SubscribeLocalEvent<BloodstreamComponent, GenerateDnaEvent>(OnDnaGenerated);
     }
 
-    // forensics is not predicted yet
+
+    // Better to play it safe and leave it here in server, makes the code in NewEntityBloodData turn the blood puddles DNA string into "unknown dna",
+    // rather than the players actual dna. If put into shared.
     private void OnDnaGenerated(Entity<BloodstreamComponent> entity, ref GenerateDnaEvent args)
     {
         if (SolutionContainer.ResolveSolution(entity.Owner, entity.Comp.BloodSolutionName, ref entity.Comp.BloodSolution, out var bloodSolution))
