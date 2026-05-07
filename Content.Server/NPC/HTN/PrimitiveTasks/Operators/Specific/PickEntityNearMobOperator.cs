@@ -15,10 +15,10 @@ namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 public sealed partial class PickEntityNearMobOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    private EntityLookupSystem _lookup = default!;
-    private PathfindingSystem _pathfinding = default!;
-    private ContainerSystem _container = default!;
-    private EntityWhitelistSystem _entityWhitelist = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly PathfindingSystem _pathfinding = default!;
+    [Dependency] private readonly ContainerSystem _container = default!;
+    [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
 
     /// <summary>
     /// Range to search for entities
@@ -67,15 +67,6 @@ public sealed partial class PickEntityNearMobOperator : HTNOperator
     /// </summary>
     [DataField]
     public MobState? MobState;
-
-    public override void Initialize(IEntitySystemManager sysManager)
-    {
-        base.Initialize(sysManager);
-        _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
-        _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
-        _container = sysManager.GetEntitySystem<ContainerSystem>();
-        _entityWhitelist = sysManager.GetEntitySystem<EntityWhitelistSystem>();
-    }
 
     public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard,
         CancellationToken cancelToken)

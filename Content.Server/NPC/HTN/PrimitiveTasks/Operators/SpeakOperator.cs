@@ -1,4 +1,3 @@
-using Content.Server.Chat.Systems;
 using Robust.Shared.Timing;
 using Content.Shared.Chat;
 using Content.Shared.Dataset;
@@ -14,7 +13,7 @@ public sealed partial class SpeakOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
-    private ChatSystem _chat = default!;
+    [Dependency] private readonly SharedChatSystem _chat = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
@@ -38,12 +37,6 @@ public sealed partial class SpeakOperator : HTNOperator
     /// </summary>
     [DataField]
     public string CooldownID = string.Empty;
-
-    public override void Initialize(IEntitySystemManager sysManager)
-    {
-        base.Initialize(sysManager);
-        _chat = sysManager.GetEntitySystem<ChatSystem>();
-    }
 
     public override HTNOperatorStatus Update(NPCBlackboard blackboard, float frameTime)
     {
