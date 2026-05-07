@@ -133,7 +133,9 @@ namespace Content.Server.Cargo.Systems
                 bank.NextIncomeTime += bank.IncomeDelay;
 
                 var balanceToAdd = (int) Math.Round(bank.IncreasePerSecond * bank.IncomeDelay.TotalSeconds);
-                UpdateBankAccount((uid, bank), balanceToAdd, bank.RevenueDistribution);
+
+                var revenueDistribution = CreateAccountDistribution((uid, bank), false);
+                UpdateBankAccount((uid, bank), balanceToAdd, revenueDistribution);
             }
         }
 
@@ -203,10 +205,9 @@ namespace Content.Server.Cargo.Systems
             }
 
             var cost = product.Cost * order.OrderQuantity;
-            var accountBalance = GetBalanceFromAccount((station.Value, bank), order.Account);
 
-            // Not enough balance
-            if (cost > accountBalance)
+            // Balance doesn't exist or not enough balance
+            if (!TryGetAccountBalance((station.Value, bank), order.Account, out var accountBalance) || cost > accountBalance)
             {
                 ConsolePopup(args.Actor, Loc.GetString("cargo-console-insufficient-funds", ("cost", cost)));
                 PlayDenySound(uid, component);
