@@ -43,6 +43,7 @@ namespace Content.Client.ContextMenu.UI
         public Action<ContextMenuElement>? OnSubMenuOpened;
         public Action<ContextMenuElement, GUIBoundKeyEventArgs>? OnContextKeyEvent;
 
+        private readonly Dictionary<ContextMenuElement, Action<GUIBoundKeyEventArgs>> _keyHandlers = new();
         private bool _setup;
 
         public void OnStateEntered(GameplayState state)
@@ -85,8 +86,9 @@ namespace Content.Client.ContextMenu.UI
             _setup = false;
 
             Close();
+            Menus.Clear();
             RootMenu.OnPopupHide -= Close;
-            RootMenu.Dispose();
+            RootMenu.Orphan();
             RootMenu = default!;
         }
 
@@ -99,6 +101,8 @@ namespace Content.Client.ContextMenu.UI
             CancelOpen?.Cancel();
             CancelClose?.Cancel();
             OnContextClosed?.Invoke();
+            while (Menus.TryPeek(out var top) && top != RootMenu)
+                Menus.Pop();
             RootMenu.Close();
         }
 
@@ -221,9 +225,11 @@ namespace Content.Client.ContextMenu.UI
         /// </summary>
         public void AddElement(ContextMenuPopup menu, ContextMenuElement element)
         {
-            element.OnMouseEntered += _ => OnMouseEntered(element);
-            element.OnMouseExited += _ => OnMouseExited(element);
-            element.OnKeyBindDown += args => OnKeyBindDown(element, args);
+            element.OnMouseEntered += OnElementMouseEntered;
+            element.OnMouseExited += OnElementMouseExited;
+            var keyHandler = new Action<GUIBoundKeyEventArgs>(args => OnKeyBindDown(element, args));
+            _keyHandlers[element] = keyHandler;
+            element.OnKeyBindDown += keyHandler;
             element.ParentMenu = menu;
             menu.MenuBody.AddChild(element);
             menu.InvalidateMeasure();
@@ -237,11 +243,24 @@ namespace Content.Client.ContextMenu.UI
             if (control is not ContextMenuElement element)
                 return;
 
-            element.OnMouseEntered -= _ => OnMouseEntered(element);
-            element.OnMouseExited -= _ => OnMouseExited(element);
-            element.OnKeyBindDown -= args => OnKeyBindDown(element, args);
+            element.OnMouseEntered -= OnElementMouseEntered;
+            element.OnMouseExited -= OnElementMouseExited;
+            if (_keyHandlers.Remove(element, out var keyHandler))
+                element.OnKeyBindDown -= keyHandler;
 
             menu.InvalidateMeasure();
+        }
+
+        private void OnElementMouseEntered(GUIMouseHoverEventArgs args)
+        {
+            if (args.SourceControl is ContextMenuElement element)
+                OnMouseEntered(element);
+        }
+
+        private void OnElementMouseExited(GUIMouseHoverEventArgs args)
+        {
+            if (args.SourceControl is ContextMenuElement element)
+                OnMouseExited(element);
         }
 
         private void OnCombatModeUpdated(bool inCombatMode)

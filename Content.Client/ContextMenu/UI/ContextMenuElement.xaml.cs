@@ -55,10 +55,10 @@ namespace Content.Client.ContextMenu.UI
                 Text = text;
         }
 
-        protected override void Dispose(bool disposing)
+        protected override void ExitedTree()
         {
-            base.Dispose(disposing);
-            _subMenu?.Dispose();
+            base.ExitedTree();
+            _subMenu?.Orphan();
             _subMenu = null;
             ParentMenu = null;
         }
@@ -87,7 +87,7 @@ namespace Content.Client.ContextMenu.UI
             if (DrawMode == DrawModeEnum.Hover)
                 return;
 
-            if (_subMenu?.Visible ?? true)
+            if (_subMenu?.Visible ?? false)
                 return;
 
             if (HasStylePseudoClass(StylePseudoClassHover))
