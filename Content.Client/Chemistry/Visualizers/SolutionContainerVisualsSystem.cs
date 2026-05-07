@@ -44,7 +44,7 @@ public sealed class SolutionContainerVisualsSystem : VisualizerSystem<SolutionCo
         }
 
         if (!AppearanceSystem.TryGetData<float>(uid, SolutionContainerVisuals.FillFraction, out var fraction, args.Component))
-            return;
+            fraction = 0f;
 
         if (args.Sprite == null)
             return;
