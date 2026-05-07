@@ -149,6 +149,10 @@ namespace Content.Client.Entry
             _configManager.SetCVar("interface.resolutionAutoScaleLowerCutoffX", 520);
             _configManager.SetCVar("interface.resolutionAutoScaleLowerCutoffY", 240);
             _configManager.SetCVar("interface.resolutionAutoScaleMinimum", 0.5f);
+
+            // Foundation14 edit
+            _configManager.OverrideDefault(CVars.XamlHotReloadMarkerName, "Foundation14.slnx");
+            // Foundation14 edit
         }
 
         public override void PostInit()
