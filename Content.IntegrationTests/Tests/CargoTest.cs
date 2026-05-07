@@ -14,6 +14,8 @@ using Content.Shared.Whitelist;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Server.Containers;
+using Content.Shared.Cargo;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -33,13 +35,15 @@ public sealed class CargoTest : GameTest
         var server = pair.Server;
 
         var testMap = await pair.CreateTestMap();
-
         var entManager = server.ResolveDependency<IEntityManager>();
+        var mapSystem = server.System<SharedMapSystem>();
         var protoManager = server.ResolveDependency<IPrototypeManager>();
         var pricing = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<PricingSystem>();
+        var cargo = entManager.System<CargoSystem>();
 
         await server.WaitAssertion(() =>
         {
+            var mapId = testMap.MapId;
             Assert.Multiple(() =>
             {
                 foreach (var proto in protoManager.EnumeratePrototypes<CargoProductPrototype>())
@@ -47,13 +51,27 @@ public sealed class CargoTest : GameTest
                     if (Ignored.Contains(proto.ID))
                         continue;
 
-                    var ent = entManager.SpawnEntity(proto.Product, testMap.MapCoords);
-                    var price = pricing.GetPrice(ent);
-
-                    Assert.That(price, Is.AtMost(proto.Cost), $"Found arbitrage on {proto.ID} cargo product! Cost is {proto.Cost} but sell is {price}!");
-                    entManager.DeleteEntity(ent);
+                    if (proto.SpawnList.Count == 0)
+                    {
+                        Assert.Fail($"CargoProductPrototype {proto.ID} has no products defined.");
+                        continue;
+                    }
+                    List<CargoOrderItemData> basket = [new CargoOrderItemData(proto.ID, 1)];
+                    var containers = cargo.PackBasketIntoContainers(ref basket);
+                    if (containers.Count() != 1)
+                    {
+                        Assert.Fail($"CargoProductPrototype {proto.ID} spawns packs into multiple containers.");
+                        continue;
+                    }
+                    if (!cargo.SpawnContainer(containers.First(), testMap.GridCoords, out var containerEntity))
+                        Assert.Fail($"CargoProductPrototype {proto.ID} could not spawn.");
+                    var price = pricing.GetPrice(containerEntity);
+                    Assert.That(price, Is.AtMost(cargo.GetBasketTotalCost(basket)),
+                        $"Found arbitrage on {proto.ID} cargo product! Cost is {cargo.GetBasketTotalCost(basket)} but sell price is {price}!");
+                    entManager.DeleteEntity(containerEntity);
                 }
             });
+            mapSystem.DeleteMap(mapId);
         });
     }
     [Test]
@@ -68,6 +86,7 @@ public sealed class CargoTest : GameTest
         var mapSystem = server.System<SharedMapSystem>();
         var protoManager = server.ResolveDependency<IPrototypeManager>();
         var cargo = entManager.System<CargoSystem>();
+        var container = entManager.System<ContainerSystem>();
 
         var bounties = protoManager.EnumeratePrototypes<CargoBountyPrototype>().ToList();
 
@@ -79,15 +98,37 @@ public sealed class CargoTest : GameTest
             {
                 foreach (var proto in protoManager.EnumeratePrototypes<CargoProductPrototype>())
                 {
-                    var ent = entManager.SpawnEntity(proto.Product, new MapCoordinates(Vector2.Zero, mapId));
+                    if (proto.SpawnList.Count == 0)
+                    {
+                        Assert.Fail($"CargoProductPrototype {proto.ID} has no products defined.");
+                        continue;
+                    }
+
+                    List<CargoOrderItemData> basket = [new CargoOrderItemData(proto.ID, 10)];
+                    var containers = cargo.PackBasketIntoContainers(ref basket);
+                    if (!cargo.SpawnContainer(containers.First(), testMap.GridCoords, out var containerEntity))
+                        Assert.Fail($"CargoProductPrototype {proto.ID} could not spawn.");
 
                     foreach (var bounty in bounties)
                     {
-                        if (cargo.IsBountyComplete(ent, bounty))
-                            Assert.That(proto.Cost, Is.GreaterThanOrEqualTo(bounty.Reward), $"Found arbitrage on {bounty.ID} cargo bounty! Product {proto.ID} costs {proto.Cost} but fulfills bounty {bounty.ID} with reward {bounty.Reward}!");
+                        if (cargo.IsBountyComplete(containerEntity, bounty))
+                        {
+                            basket.First().Quantity = bounty.Entries.First().Amount;
+                            basket.First().NumOrdered = 0;
+                            containers = cargo.PackBasketIntoContainers(ref basket);
+                            if (!cargo.SpawnContainer(containers.First(), testMap.GridCoords, out var containerEntity1))
+                                Assert.Fail($"CargoProductPrototype {proto.ID} could not spawn.");
+                            var cost = cargo.GetBasketCost(basket) + cargo.GetContainersCost(containers);
+                            if (cargo.IsBountyComplete(containerEntity1, bounty))
+                            {
+                                Assert.That(cost, Is.GreaterThanOrEqualTo(bounty.Reward),
+                                    $"Found arbitrage on {bounty.ID} cargo bounty! Product {proto.ID} costs {cost} when buying {basket.First().Quantity} " +
+                                    $"but fulfills bounty {bounty.ID} with reward {bounty.Reward}!");
+                            }
+                            entManager.DeleteEntity(containerEntity1);
+                        }
                     }
-
-                    entManager.DeleteEntity(ent);
+                    entManager.DeleteEntity(containerEntity);
                 }
             });
 
