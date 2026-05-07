@@ -515,6 +515,10 @@
       damageContainer: StructuralInorganic
     - type: RadiationBlocker
       resistance: 5
+    - type: Tag
+      tags:
+      - Wall
+      - SmeltingImmune
 
 - type: entity
   parent: WallPlastitaniumIndestructible
@@ -555,6 +559,11 @@
     damageContainer: StructuralInorganic
   - type: RadiationBlocker
     resistance: 5
+  - type: Tag
+    tags:
+    - Wall
+    - Diagonal
+    - SmeltingImmune
 
 - type: entity
   parent: WallPlastitaniumDiagonalIndestructible

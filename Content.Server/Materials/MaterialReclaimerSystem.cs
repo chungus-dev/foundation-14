@@ -41,7 +41,6 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly GibbingSystem _gibbing = default!;
     [Dependency] private readonly PuddleSystem _puddle = default!;
-    [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
 
@@ -226,19 +225,7 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
             _materialStorage.TryChangeMaterialAmount(reclaimer, material, outputAmount, storage);
         }
 
-        foreach (var (storedMaterial, storedAmount) in storage.Storage)
-        {
-            var stacks = _materialStorage.SpawnMultipleFromMaterial(storedAmount,
-                storedMaterial,
-                xform.Coordinates,
-                out var materialOverflow);
-            var amountConsumed = storedAmount - materialOverflow;
-            _materialStorage.TryChangeMaterialAmount(reclaimer, storedMaterial, -amountConsumed, storage);
-            foreach (var stack in stacks)
-            {
-                _stack.TryMergeToContacts(stack);
-            }
-        }
+        _materialStorage.EjectAllMaterial(reclaimer, xform.Coordinates, storage, true);
     }
 
     private void SpawnChemicalsFromComposition(EntityUid reclaimer,
