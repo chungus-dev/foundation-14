@@ -1,0 +1,7 @@
+- type: soundCollection
+  id: FireAlarm
+  files:
+  - /Audio/Machines/FireAlarm/FireAlarm1.ogg
+  - /Audio/Machines/FireAlarm/FireAlarm2.ogg
+  - /Audio/Machines/FireAlarm/FireAlarm3.ogg
+  - /Audio/Machines/FireAlarm/FireAlarm4.ogg

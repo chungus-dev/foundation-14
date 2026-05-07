@@ -1,0 +1,8 @@
+- files:
+  - FireAlarm1.ogg
+  - FireAlarm2.ogg
+  - FireAlarm3.ogg
+  - FireAlarm4.ogg
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from /tg/station. Converted to mono by JessicaMaybe"
+  source: "https://github.com/tgstation/tgstation/tree/436ba869ebcd0b60b63973fb7562f447ee655205/sound/machines/fire_alarm"
