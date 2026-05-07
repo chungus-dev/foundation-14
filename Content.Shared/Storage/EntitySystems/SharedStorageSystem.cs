@@ -113,6 +113,8 @@ public abstract class SharedStorageSystem : EntitySystem
     /// </summary>
     private int _openStorageLimit = -1;
 
+    private readonly List<EntityUid> _openStorageUis = new();
+
     protected readonly List<string> CantFillReasons = [];
 
     // Caching for various checks
@@ -868,7 +870,7 @@ public abstract class SharedStorageSystem : EntitySystem
 
         var uid = args.Target;
         var actor = args.Actor;
-        var count = 0;
+        _openStorageUis.Clear();
 
         if (_userQuery.TryComp(actor, out var userComp))
         {
@@ -882,16 +884,16 @@ public abstract class SharedStorageSystem : EntitySystem
                     if (key is not StorageComponent.StorageUiKey)
                         continue;
 
-                    count++;
-
-                    if (count >= _openStorageLimit)
-                    {
-                        args.Cancel();
-                    }
-
+                    _openStorageUis.Add(ui);
                     break;
                 }
             }
+        }
+
+        // If we're at or over the limit, close the oldest storage UI
+        if (_openStorageUis.Count >= _openStorageLimit)
+        {
+            UI.CloseUi(_openStorageUis[0], StorageComponent.StorageUiKey.Key, actor);
         }
     }
 
