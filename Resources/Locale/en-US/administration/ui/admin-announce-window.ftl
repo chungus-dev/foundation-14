@@ -6,6 +6,17 @@ admin-announce-button = Announce
 admin-announce-type-station = Station
 admin-announce-type-server = Server
 admin-announce-keep-open = Keep open
+admin-announce-global = Global
+admin-announce-global-tooltip = Send to all players on all maps
+admin-announce-palette-button = Palette
+admin-announce-hex = HEX
+admin-announce-hex-color = Color...
+admin-announce-sound-placeholder = Audio Path
+admin-announce-sender-placeholder = Sent by...
+admin-announce-sender-default = CentComm Operator
+admin-announce-enable-sender-tooltip = Enable sender signature
+admin-announce-sent-by = Sent by
+admin-announce-presets = Presets
 
 cmd-announceui-desc = Opens the announcement UI.
 cmd-announceui-help = Usage: announceui
