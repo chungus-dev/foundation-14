@@ -85,6 +85,7 @@ namespace Content.Shared.Interaction
         [Dependency] private readonly EntityQuery<WallMountComponent> _wallMountQuery = default!;
         [Dependency] private readonly EntityQuery<UseDelayComponent> _delayQuery = default!;
         [Dependency] private readonly EntityQuery<ActivatableUIComponent> _uiQuery = default!;
+        [Dependency] private readonly EntityQuery<InteractionIgnoreAnchoredInTileComponent> _interactionIgnoreAnchoredInTileQuery = default!;
 
         /// <summary>
         /// The collision mask used by default for
@@ -901,6 +902,11 @@ namespace Content.Shared.Interaction
                 }
 
                 if (ignoreAnchored && _mapManager.TryFindGridAt(targetCoords, out var gridUid, out var grid))
+                    ignored.UnionWith(_map.GetAnchoredEntities((gridUid, grid), targetCoords));
+            }
+            else if (_interactionIgnoreAnchoredInTileQuery.HasComp(target))
+            {
+                if (_mapManager.TryFindGridAt(targetCoords, out var gridUid, out var grid))
                     ignored.UnionWith(_map.GetAnchoredEntities((gridUid, grid), targetCoords));
             }
 
