@@ -5,17 +5,13 @@ using Robust.Shared.Console;
 namespace Content.Server.Administration.Commands;
 
 [AdminCommand(AdminFlags.Fun)]
-public sealed class OwoifyCommand : IConsoleCommand
+public sealed class OwoifyCommand : LocalizedCommands
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
 
-    public string Command => "owoify";
+    public override string Command => "owoify";
 
-    public string Description => "For when you need everything to be cat. Uses OwOAccent's formatting on the name and description of an entity.";
-
-    public string Help => "owoify <id>";
-
-    public void Execute(IConsoleShell shell, string argStr, string[] args)
+    public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         if (args.Length != 1)
         {

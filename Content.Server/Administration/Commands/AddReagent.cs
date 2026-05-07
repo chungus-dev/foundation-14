@@ -13,26 +13,25 @@ namespace Content.Server.Administration.Commands
     ///     Command that allows you to edit an existing solution by adding (or removing) reagents.
     /// </summary>
     [AdminCommand(AdminFlags.Admin)]
-    public sealed class AddReagent : IConsoleCommand
+    public sealed class AddReagent : LocalizedCommands
     {
         [Dependency] private readonly IEntityManager _entManager = default!;
         [Dependency] private readonly IPrototypeManager _protomanager = default!;
 
-        public string Command => "addreagent";
-        public string Description => "Add (or remove) some amount of reagent from some solution.";
-        public string Help => $"Usage: {Command} <target> <solution> <reagent> <quantity>";
+        public override string Command => "addreagent";
 
-        public void Execute(IConsoleShell shell, string argStr, string[] args)
+        public override void Execute(IConsoleShell shell, string argStr, string[] args)
         {
             if (args.Length < 4)
             {
-                shell.WriteLine($"Not enough arguments.\n{Help}");
+                shell.WriteLine(Loc.GetString("shell-need-minimum-arguments", ("minimum", 4)));
+                shell.WriteLine(Help);
                 return;
             }
 
             if (!NetEntity.TryParse(args[0], out var uidNet) || !_entManager.TryGetEntity(uidNet, out var uid))
             {
-                shell.WriteLine($"Invalid entity id.");
+                shell.WriteLine(Loc.GetString("shell-invalid-entity-uid", ("uid", args[0])));
                 return;
             }
 
@@ -42,24 +41,24 @@ namespace Content.Server.Administration.Commands
                 var solutions = solutionContainerSystem.EnumerateSolutions(uid.Value).ToArray();
                 if (!solutions.Any())
                 {
-                    shell.WriteLine("Entity does not have any solutions!");
+                    shell.WriteLine(Loc.GetString("cmd-addreagent-no-solutions"));
                     return;
                 }
 
                 var validSolutions = string.Join(", ", solutions.Select(s => s.Name));
-                shell.WriteLine($"Entity does not have a \"{args[1]}\" solution. Valid solutions are:\n{validSolutions}");
+                shell.WriteLine(Loc.GetString("cmd-addreagent-no-solution", ("solution", args[1]), ("validSolutions", validSolutions)));
                 return;
             }
 
             if (!_protomanager.HasIndex<ReagentPrototype>(args[2]))
             {
-                shell.WriteLine($"Unknown reagent prototype");
+                shell.WriteLine(Loc.GetString("cmd-addreagent-unknown-reagent"));
                 return;
             }
 
             if (!float.TryParse(args[3], out var quantityFloat))
             {
-                shell.WriteLine($"Failed to parse quantity");
+                shell.WriteLine(Loc.GetString("cmd-addreagent-bad-quantity"));
                 return;
             }
             var quantity = FixedPoint2.New(MathF.Abs(quantityFloat));
