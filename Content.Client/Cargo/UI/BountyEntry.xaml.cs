@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Client.Message;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Prototypes;
@@ -17,6 +18,8 @@ public sealed partial class BountyEntry : BoxContainer
 
     public Action? OnLabelButtonPressed;
     public Action? OnSkipButtonPressed;
+    public Action? OnClaimButtonPressed;
+    public Action? OnStatusOptionSelected;
 
     public TimeSpan EndTime;
     public TimeSpan UntilNextSkip;
@@ -45,6 +48,22 @@ public sealed partial class BountyEntry : BoxContainer
 
         PrintButton.OnPressed += _ => OnLabelButtonPressed?.Invoke();
         SkipButton.OnPressed += _ => OnSkipButtonPressed?.Invoke();
+        ClaimButton.OnPressed += _ => OnClaimButtonPressed?.Invoke();
+
+
+        var allStates = _prototype.EnumeratePrototypes<CargoBountyStatusPrototype>().OrderBy(s => s.Index);
+        foreach (var status in allStates)
+        {
+            BountyStatusSelector.AddItem(Loc.GetString("bounty-console-status", ("status", status.ID)), status.Index);
+        }
+        if (!_prototype.Resolve<CargoBountyStatusPrototype>(bounty.Status, out var bountyStatusPrototype))
+            return;
+        BountyStatusSelector.Select(BountyStatusSelector.GetIdx(bountyStatusPrototype.Index));
+        BountyStatusSelector.ToolTip = Loc.GetString("bounty-console-status-tooltip", ("status", bountyStatusPrototype.ID));
+
+        var claimedByText = string.IsNullOrEmpty(bounty.ClaimedBy) ? Loc.GetString("bounty-console-claimed-by-none") : bounty.ClaimedBy;
+        ClaimedBylabel.SetMarkup(Loc.GetString("bounty-console-claimed-by", ("claimant", claimedByText)));
+        StatusLabel.SetMarkup(Loc.GetString("bounty-console-status-label", ("status", bountyStatusPrototype.ID)));
     }
 
     private void UpdateSkipButton(float deltaSeconds)
