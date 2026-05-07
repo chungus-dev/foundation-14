@@ -11,6 +11,8 @@
     - type: Item
       sprite: Objects/Weapons/Melee/shields.rsi
       size: Ginormous
+      shape:
+      - 0,0,4,5
       heldPrefix: riot
     - type: Blocking
       passiveBlockModifier:
@@ -455,6 +457,8 @@
         path: /Audio/Weapons/ebladehum.ogg
     - type: ItemToggleSize
       activatedSize: Huge
+      activatedShape:
+      - 0,0,3,3
     - type: ComponentToggler
       components:
       - type: DisarmMalus
@@ -576,6 +580,8 @@
         malus: 0.6
     - type: ItemToggleSize
       activatedSize: Huge
+      activatedShape:
+      - 0,0,3,3
     - type: Sprite
       sprite: Objects/Weapons/Melee/teleriot_shield.rsi
       layers:
@@ -585,6 +591,8 @@
           map: [ "shield" ]
     - type: Item
       size: Small
+      shape:
+      - 0,0,1,1
       sprite: Objects/Weapons/Melee/teleriot_shield.rsi
       heldPrefix: teleriot
     - type: UseDelay
