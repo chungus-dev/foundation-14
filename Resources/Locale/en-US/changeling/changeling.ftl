@@ -44,6 +44,7 @@ changeling-biodegrade-used-popup-self = We vomit acid over our {$restraint}!
 
 # stings
 changeling-sting-success = We silently sting {THE($target)}!
+changeling-sting-attempt-failed-dead = It has to be alive so we can get stung.
 
 # other
 changeling-paused-map-name = Changeling identity storage map

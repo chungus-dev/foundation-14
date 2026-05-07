@@ -38,6 +38,121 @@
   - type: ChangelingBiodegradeAbility
 
 - type: entity
+  parent: BaseAction
+  id: ActionChangelingMuteSting
+  name: "[color=red]Mute Sting[/color]"
+  description: Silently sting a target and inject mute toxin.
+  components:
+  - type: Action
+    useDelay: 40
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/changeling2.rsi
+      state: mute_sting
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+      - Bloodstream
+    event: !type:ChangelingStingActionEvent
+  - type: ChangelingStingAbility
+    injectSolution:
+      reagents:
+      - ReagentId: StealthMuteToxin
+        Quantity: 5
+
+- type: entity
+  parent: BaseAction
+  id: ActionChangelingBlindSting
+  name: "[color=red]Blind Sting[/color]"
+  description: Silently sting a target and worsen their sight after a short delay.
+  components:
+  - type: Action
+    useDelay: 40
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/changeling2.rsi
+      state: blind_sting
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+      - Bloodstream
+    event: !type:ChangelingStingActionEvent
+  - type: ChangelingStingAbility
+    injectSolution:
+      reagents:
+      - ReagentId: NorepinephricAcid
+        Quantity: 25
+
+# TODO: It's almost useless right now because of the hallucinations
+- type: entity
+  parent: BaseAction
+  id: ActionChangelingHallucinationSting
+  name: "[color=red]Hallucination Sting[/color]"
+  description: Silently sting a target and flood their mind with hallucinogens.
+  components:
+  - type: Action
+    useDelay: 40
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/changeling2.rsi
+      state: hallucination_sting
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+      - Bloodstream
+    event: !type:ChangelingStingActionEvent
+  - type: ChangelingStingAbility
+    injectSolution:
+      reagents:
+      - ReagentId: MindbreakerToxin
+        Quantity: 10
+      - ReagentId: Psicodine
+        Quantity: 10
+
+- type: entity
+  parent: BaseAction
+  id: ActionChangelingNeurodepressantSting
+  name: "[color=red]Neurodepressant Sting[/color]"
+  description: Silently sting a target and inject neurodepressant.
+  components:
+  - type: Action
+    useDelay: 40
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/changeling2.rsi
+      state: neurodepressant_sting
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+      - Bloodstream
+    event: !type:ChangelingStingActionEvent
+  - type: ChangelingStingAbility
+    injectSolution:
+      reagents:
+      - ReagentId: Neurodepressant
+        Quantity: 5
+
+- type: entity
   id: ActionChangelingDevour
   name: "[color=red]Devour[/color]"
   description: Consume the essence of your victims and subsume their identity and mind into your own.
