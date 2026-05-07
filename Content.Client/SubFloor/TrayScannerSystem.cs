@@ -7,6 +7,7 @@ using Content.Shared.Atmos.Components;
 using Content.Shared.Disposal.Components;
 using Content.Shared.Input;
 using Content.Shared.Inventory;
+using Content.Shared.Item.ItemToggle;
 using Content.Shared.SubFloor;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
@@ -25,6 +26,7 @@ public sealed class TrayScannerSystem : SharedTrayScannerSystem
     [Dependency] private readonly AnimationPlayerSystem _animation = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
@@ -69,7 +71,7 @@ public sealed class TrayScannerSystem : SharedTrayScannerSystem
 
         foreach (var item in _inventory.GetHandOrInventoryEntities(player.Value, SlotFlags.POCKET))
         {
-            if (!_trayScannerQuery.TryGetComponent(item, out var scanner) || !scanner.Enabled)
+            if (!_trayScannerQuery.TryGetComponent(item, out var scanner) || !_itemToggle.IsActivated(item))
                 continue;
 
             range = MathF.Max(scanner.Range, range);

@@ -25,7 +25,6 @@ public abstract class SharedTrayScannerSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
         SubscribeLocalEvent<TrayScannerComponent, ActivateInWorldEvent>(OnTrayScannerActivate);
         SubscribeLocalEvent<TrayScannerComponent, GetVerbsEvent<AlternativeVerb>>(OnAddSwitchModeVerb);
         SubscribeLocalEvent<TrayScannerComponent, GotEquippedHandEvent>(OnTrayHandEquipped);
