@@ -167,7 +167,9 @@
         sprite: Mobs/Effects/burn_damage.rsi
   - type: MothAccent
   - type: Vocal
-    sounds:
+    voices:
+      UnisexMoth: humanoid-profile-editor-voice-neutral
+    default:
       Male: UnisexMoth
       Female: UnisexMoth
       Unsexed: UnisexMoth

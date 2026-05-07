@@ -132,7 +132,9 @@
     speechSounds: Arachnid
     allowedEmotes: ['Click', 'Chitter']
   - type: Vocal
-    sounds:
+    voices:
+      UnisexArachnid: humanoid-profile-editor-voice-neutral
+    default:
       Male: UnisexArachnid
       Female: UnisexArachnid
       Unsexed: UnisexArachnid

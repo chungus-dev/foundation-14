@@ -176,7 +176,9 @@
       sprite: Effects/creampie.rsi
       state: creampie_vox
   - type: Vocal
-    sounds:
+    voices:
+      UnisexVox: humanoid-profile-editor-voice-neutral
+    default:
       Male: UnisexVox
       Female: UnisexVox
       Unsexed: UnisexVox
