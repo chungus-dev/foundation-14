@@ -96,9 +96,9 @@ public sealed class MagnetPickupSystem : EntitySystem
 
                 // Play pickup animation for either the stack entity or the original entity.
                 if (stacked != null)
-                    _storage.PlayPickupAnimation(stacked.Value, nearCoords, finalCoords, nearXform.LocalRotation);
+                    _storage.PlayPickupAnimation(stacked.Value, nearCoords, finalCoords, nearXform.LocalRotation, parentUid);
                 else
-                    _storage.PlayPickupAnimation(near, nearCoords, finalCoords, nearXform.LocalRotation);
+                    _storage.PlayPickupAnimation(near, nearCoords, finalCoords, nearXform.LocalRotation, parentUid);
 
                 playedSound = true;
             }
