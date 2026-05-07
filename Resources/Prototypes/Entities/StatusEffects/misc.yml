@@ -63,6 +63,36 @@
   - type: StunnedStatusEffect
   - type: KnockdownStatusEffect
 
+# Prevents speaking and vocal emotes.
+- type: entity
+  abstract: true
+  parent: MobStatusEffectDebuff
+  id: StatusEffectMutedBase
+  name: muted
+  components:
+  - type: StatusEffectAlert
+    alert: Muted
+  - type: MutedStatusEffect
+
+- type: entity
+  parent: StatusEffectMutedBase
+  id: StatusEffectMuted
+
+- type: entity
+  parent: StatusEffectMutedBase
+  id: StatusEffectMimeMuted
+  components:
+  - type: MutedStatusEffect
+    speakPopup: mime-cant-speak
+    screamPopup: mime-cant-speak
+
+- type: entity
+  parent: StatusEffectMutedBase
+  id: StatusEffectVentriloquistPuppetMuted
+  components:
+  - type: MutedStatusEffect
+    speakPopup: ventriloquist-puppet-cant-speak
+
 # Blurs your vision and makes you randomly fall asleep
 - type: entity
   parent: MobStatusEffectDebuff
