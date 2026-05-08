@@ -1,3 +1,2 @@
-diona-gib-action-use = {$name} splits apart in an instant!
-
-diona-reform-attempt = {$name} attempts to reform!
+diona-gib-action-use = {$name} мгновенно распадается!
+diona-reform-attempt = {$name} пытается восстановиться!
