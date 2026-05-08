@@ -90,7 +90,7 @@ async def translate_file(
     dry_run: bool = False,
 ) -> tuple[int, bool]:
     text = read_text(path)
-    messages = _messages_to_translate(path, source_text, target_culture)
+    messages = _messages_to_translate(text, source_text, target_culture)
     translated_messages: dict[str, str] = {}
     changed = False
 
@@ -137,8 +137,8 @@ def run_translate_files(
     ))
 
 
-def _messages_to_translate(path: Path, source_text: str | None, target_culture: str | None) -> list[FluentMessage]:
-    target_messages = message_map(read_text(path))
+def _messages_to_translate(text: str, source_text: str | None, target_culture: str | None) -> list[FluentMessage]:
+    target_messages = message_map(text)
     if source_text is None:
         return [
             message
@@ -206,7 +206,8 @@ async def _translate_chunk(
             return _parse_translation_response(response, expected)
         except ValueError as error:
             last_error = error
-            await asyncio.sleep(cooldown_seconds)
+            if max_attempts <= 0 or attempts < max_attempts:
+                await asyncio.sleep(cooldown_seconds)
 
     raise TranslationValidationError("AI returned invalid translation repeatedly.") from last_error
 

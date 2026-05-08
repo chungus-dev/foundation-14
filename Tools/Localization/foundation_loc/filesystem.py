@@ -11,7 +11,7 @@ def read_text(path: Path) -> str:
 
 
 def write_text_if_changed(path: Path, text: str, dry_run: bool = False) -> bool:
-    normalized = text.replace("\r\n", "\n")
+    normalized = text.replace("\r\n", "\n").rstrip("\n") + "\n"
     if path.exists() and read_text(path) == normalized:
         return False
 
@@ -56,15 +56,21 @@ def remove_empty_files_and_dirs(root: Path, dry_run: bool = False) -> tuple[int,
 
     paths = sorted(root.rglob("*"), key=lambda item: len(item.parts), reverse=True)
 
+    zero_size_files = {
+        path for path in paths if path.is_file() and path.stat().st_size == 0
+    }
+
     for path in paths:
-        if path.is_file() and path.stat().st_size == 0:
+        if path in zero_size_files:
             removed_files += 1
             if not dry_run:
                 path.unlink()
-        elif path.is_dir() and not any(path.iterdir()):
-            removed_dirs += 1
-            if not dry_run:
-                path.rmdir()
+        elif path.is_dir():
+            children = list(path.iterdir())
+            if all(child in zero_size_files for child in children):
+                removed_dirs += 1
+                if not dry_run:
+                    path.rmdir()
 
     return removed_files, removed_dirs
 
