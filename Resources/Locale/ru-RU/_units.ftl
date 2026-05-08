@@ -43,7 +43,6 @@ units-pascal = Pa
 units-k-pascal = kPa
 units-m-pascal = MPa
 units-g-pascal = GPa
-
 units-u--pascal-long = Micropascal
 units-m--pascal-long = Millipascal
 units-pascal-long = Pascal
@@ -58,7 +57,6 @@ units-watt = W
 units-k-watt = kW
 units-m-watt = MW
 units-g-watt = GW
-
 units-u--watt-long = Microwatt
 units-m--watt-long = Milliwatt
 units-watt-long = Watt
@@ -72,7 +70,6 @@ units-m--joule = mJ
 units-joule = J
 units-k-joule = kJ
 units-m-joule = MJ
-
 units-u--joule-long = Microjoule
 units-m--joule-long = Millijoule
 units-joule-long = Joule
@@ -86,7 +83,6 @@ units-kelvin = K
 units-k-kelvin = kK
 units-m-kelvin = MK
 units-g-kelvin = GK
-
 units-u--kelvin-long = Microkelvin
 units-m--kelvin-long = Millikelvin
 units-kelvin-long = Kelvin
