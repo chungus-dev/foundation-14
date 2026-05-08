@@ -16,8 +16,71 @@ on:
         required: true
         type: boolean
         default: false
+      translate_source_culture:
+        description: Also translate suspicious strings in the source locale.
+        required: false
+        type: boolean
+        default: false
+      auto_continue:
+        description: Restart this workflow automatically when AI translation stops without progress.
+        required: false
+        type: boolean
+        default: true
+      ai_base_url:
+        description: OpenAI-compatible base URL. Empty uses repository variable/secret/default.
+        required: false
+        default: ""
+      ai_model:
+        description: AI model id. Empty uses repository variable/secret/default.
+        required: false
+        default: ""
+      continuation_attempt:
+        description: Current auto-continuation attempt. Leave at 1 for manual runs.
+        required: false
+        default: "1"
+      max_continuation_attempts:
+        description: Maximum auto-continuation attempts before stopping.
+        required: false
+        default: ""
+      ai_max_attempts:
+        description: Provider retry attempts per request. Empty uses repository variable/default.
+        required: false
+        default: ""
+      ai_response_max_attempts:
+        description: Invalid AI response retry attempts per chunk. Empty uses repository variable/default.
+        required: false
+        default: ""
+      ai_timeout_seconds:
+        description: AI provider request timeout in seconds. Empty uses repository variable/default.
+        required: false
+        default: ""
+      ai_max_output_tokens:
+        description: Maximum output tokens per AI request. Empty uses repository variable/default.
+        required: false
+        default: ""
+      ai_cooldown_seconds:
+        description: Provider retry cooldown in seconds. Empty uses repository variable/default.
+        required: false
+        default: ""
+      ai_response_cooldown_seconds:
+        description: Invalid response retry cooldown in seconds. Empty uses repository variable/default.
+        required: false
+        default: ""
+      checkpoint_file_batch_size:
+        description: Number of files per translation checkpoint batch. Empty uses repository variable/default.
+        required: false
+        default: ""
+      translation_chunk_size:
+        description: Approximate source characters per AI chunk. Empty uses repository variable/default.
+        required: false
+        default: ""
+      translation_concurrency:
+        description: Concurrent file translations. Empty uses repository variable/default.
+        required: false
+        default: ""
 
 permissions:
+  actions: write
   contents: write
   models: read
   pull-requests: write
@@ -67,22 +130,43 @@ jobs:
           CONFIGURED_TRANSLATE_AI_MODEL: ${{ secrets.TRANSLATE_AI_MODEL }}
           CONFIGURED_TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS }}
           CONFIGURED_TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
-          CONFIGURED_TRANSLATE_AI_MAX_ATTEMPTS: ${{ vars.TRANSLATE_AI_MAX_ATTEMPTS }}
-          CONFIGURED_TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS: ${{ vars.TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS }}
-          CONFIGURED_TRANSLATE_AI_COOLDOWN_SECONDS: ${{ vars.TRANSLATE_AI_COOLDOWN_SECONDS }}
-          CONFIGURED_TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS: ${{ vars.TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS }}
-          CONFIGURED_LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE: ${{ vars.LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE }}
+          INPUT_TRANSLATE_AI_BASE_URL: ${{ inputs.ai_base_url }}
+          INPUT_TRANSLATE_AI_MODEL: ${{ inputs.ai_model }}
+          INPUT_TRANSLATE_AI_MAX_ATTEMPTS: ${{ inputs.ai_max_attempts }}
+          INPUT_TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS: ${{ inputs.ai_response_max_attempts }}
+          INPUT_TRANSLATE_AI_TIMEOUT_SECONDS: ${{ inputs.ai_timeout_seconds }}
+          INPUT_TRANSLATE_AI_MAX_OUTPUT_TOKENS: ${{ inputs.ai_max_output_tokens }}
+          INPUT_TRANSLATE_AI_COOLDOWN_SECONDS: ${{ inputs.ai_cooldown_seconds }}
+          INPUT_TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS: ${{ inputs.ai_response_cooldown_seconds }}
+          INPUT_LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE: ${{ inputs.checkpoint_file_batch_size }}
+          INPUT_LOCALIZATION_TRANSLATION_CHUNK_SIZE: ${{ inputs.translation_chunk_size }}
+          INPUT_LOCALIZATION_TRANSLATION_CONCURRENCY: ${{ inputs.translation_concurrency }}
+          VAR_TRANSLATE_AI_BASE_URL: ${{ vars.TRANSLATE_AI_BASE_URL }}
+          VAR_TRANSLATE_AI_MODEL: ${{ vars.TRANSLATE_AI_MODEL }}
+          VAR_TRANSLATE_AI_MAX_ATTEMPTS: ${{ vars.TRANSLATE_AI_MAX_ATTEMPTS }}
+          VAR_TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS: ${{ vars.TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS }}
+          VAR_TRANSLATE_AI_TIMEOUT_SECONDS: ${{ vars.TRANSLATE_AI_TIMEOUT_SECONDS }}
+          VAR_TRANSLATE_AI_MAX_OUTPUT_TOKENS: ${{ vars.TRANSLATE_AI_MAX_OUTPUT_TOKENS }}
+          VAR_TRANSLATE_AI_COOLDOWN_SECONDS: ${{ vars.TRANSLATE_AI_COOLDOWN_SECONDS }}
+          VAR_TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS: ${{ vars.TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS }}
+          VAR_LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE: ${{ vars.LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE }}
+          VAR_LOCALIZATION_TRANSLATION_CHUNK_SIZE: ${{ vars.LOCALIZATION_TRANSLATION_CHUNK_SIZE }}
+          VAR_LOCALIZATION_TRANSLATION_CONCURRENCY: ${{ vars.LOCALIZATION_TRANSLATION_CONCURRENCY }}
           GH_MODELS_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          base_url="${CONFIGURED_TRANSLATE_AI_BASE_URL:-https://models.github.ai/inference}"
-          model="${CONFIGURED_TRANSLATE_AI_MODEL:-openai/gpt-4o-mini}"
+          base_url="${INPUT_TRANSLATE_AI_BASE_URL:-${VAR_TRANSLATE_AI_BASE_URL:-${CONFIGURED_TRANSLATE_AI_BASE_URL:-https://models.github.ai/inference}}}"
+          model="${INPUT_TRANSLATE_AI_MODEL:-${VAR_TRANSLATE_AI_MODEL:-${CONFIGURED_TRANSLATE_AI_MODEL:-openai/gpt-4o-mini}}}"
           keys="$CONFIGURED_TRANSLATE_AI_KEYS"
-          max_attempts="${CONFIGURED_TRANSLATE_AI_MAX_ATTEMPTS:-5}"
-          response_max_attempts="${CONFIGURED_TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS:-2}"
-          cooldown_seconds="${CONFIGURED_TRANSLATE_AI_COOLDOWN_SECONDS:-60}"
-          response_cooldown_seconds="${CONFIGURED_TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS:-60}"
-          checkpoint_batch_size="${CONFIGURED_LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE:-10}"
+          max_attempts="${INPUT_TRANSLATE_AI_MAX_ATTEMPTS:-${VAR_TRANSLATE_AI_MAX_ATTEMPTS:-5}}"
+          response_max_attempts="${INPUT_TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS:-${VAR_TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS:-2}}"
+          timeout_seconds="${INPUT_TRANSLATE_AI_TIMEOUT_SECONDS:-${VAR_TRANSLATE_AI_TIMEOUT_SECONDS:-300}}"
+          max_output_tokens="${INPUT_TRANSLATE_AI_MAX_OUTPUT_TOKENS:-${VAR_TRANSLATE_AI_MAX_OUTPUT_TOKENS:-8192}}"
+          cooldown_seconds="${INPUT_TRANSLATE_AI_COOLDOWN_SECONDS:-${VAR_TRANSLATE_AI_COOLDOWN_SECONDS:-60}}"
+          response_cooldown_seconds="${INPUT_TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS:-${VAR_TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS:-60}}"
+          checkpoint_batch_size="${INPUT_LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE:-${VAR_LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE:-10}}"
+          translation_chunk_size="${INPUT_LOCALIZATION_TRANSLATION_CHUNK_SIZE:-${VAR_LOCALIZATION_TRANSLATION_CHUNK_SIZE:-4000}}"
+          translation_concurrency="${INPUT_LOCALIZATION_TRANSLATION_CONCURRENCY:-${VAR_LOCALIZATION_TRANSLATION_CONCURRENCY:-2}}"
           normalized_base_url="$(printf '%s' "$base_url" | tr -d '\r' | sed 's#/*$##')"
 
           if [ -z "$keys" ]; then
@@ -106,16 +190,36 @@ jobs:
             echo "TRANSLATE_ENV_EOF"
             echo "TRANSLATE_AI_MAX_ATTEMPTS=$max_attempts"
             echo "TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS=$response_max_attempts"
+            echo "TRANSLATE_AI_TIMEOUT_SECONDS=$timeout_seconds"
+            echo "TRANSLATE_AI_MAX_OUTPUT_TOKENS=$max_output_tokens"
             echo "TRANSLATE_AI_COOLDOWN_SECONDS=$cooldown_seconds"
             echo "TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS=$response_cooldown_seconds"
             echo "LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE=$checkpoint_batch_size"
+            echo "LOCALIZATION_TRANSLATION_CHUNK_SIZE=$translation_chunk_size"
+            echo "LOCALIZATION_TRANSLATION_CONCURRENCY=$translation_concurrency"
             echo "LOCALIZATION_AI_STOP_FILE=$RUNNER_TEMP/localization-ai-stop"
+            echo "LOCALIZATION_CONTINUE_FILE=$RUNNER_TEMP/localization-continue-needed"
             if [ -n "$CONFIGURED_TRANSLATE_AI_PROXIES" ]; then
               echo "TRANSLATE_AI_PROXIES<<TRANSLATE_ENV_EOF"
               echo "$CONFIGURED_TRANSLATE_AI_PROXIES"
               echo "TRANSLATE_ENV_EOF"
             fi
           } >> "$GITHUB_ENV"
+
+          {
+            echo "### AI localization settings"
+            echo "- base_url: \`$base_url\`"
+            echo "- model: \`$model\`"
+            echo "- max_attempts: \`$max_attempts\`"
+            echo "- response_max_attempts: \`$response_max_attempts\`"
+            echo "- timeout_seconds: \`$timeout_seconds\`"
+            echo "- max_output_tokens: \`$max_output_tokens\`"
+            echo "- cooldown_seconds: \`$cooldown_seconds\`"
+            echo "- response_cooldown_seconds: \`$response_cooldown_seconds\`"
+            echo "- checkpoint_file_batch_size: \`$checkpoint_batch_size\`"
+            echo "- translation_chunk_size: \`$translation_chunk_size\`"
+            echo "- translation_concurrency: \`$translation_concurrency\`"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Translate existing target locale
         if: ${{ inputs.translate }}
@@ -138,11 +242,13 @@ jobs:
               --target-culture "${{ inputs.target_culture }}" \
               --branch "${{ steps.branch.outputs.branch }}" \
               --base "${{ steps.branch.outputs.base }}" \
+              --chunk-size "${LOCALIZATION_TRANSLATION_CHUNK_SIZE}" \
+              --concurrency "${LOCALIZATION_TRANSLATION_CONCURRENCY}" \
               "${files[@]}"
           fi
 
       - name: Translate existing source locale
-        if: ${{ inputs.translate }}
+        if: ${{ inputs.translate && inputs.translate_source_culture }}
         shell: bash
         run: |
           locale_dir="Resources/Locale/${{ inputs.source_culture }}"
@@ -162,6 +268,8 @@ jobs:
               --target-culture "${{ inputs.source_culture }}" \
               --branch "${{ steps.branch.outputs.branch }}" \
               --base "${{ steps.branch.outputs.base }}" \
+              --chunk-size "${LOCALIZATION_TRANSLATION_CHUNK_SIZE}" \
+              --concurrency "${LOCALIZATION_TRANSLATION_CONCURRENCY}" \
               "${files[@]}"
           fi
 
@@ -178,7 +286,7 @@ jobs:
           --culture "${{ inputs.target_culture }}"
 
       - name: Translate reverse-synced source files
-        if: ${{ inputs.translate }}
+        if: ${{ inputs.translate && inputs.translate_source_culture }}
         shell: bash
         run: |
           mapfile -t files < <(git diff --name-only -- "Resources/Locale/${{ inputs.source_culture }}" | grep '\.ftl$' | sort || true)
@@ -193,6 +301,8 @@ jobs:
               --target-culture "${{ inputs.source_culture }}" \
               --branch "${{ steps.branch.outputs.branch }}" \
               --base "${{ steps.branch.outputs.base }}" \
+              --chunk-size "${LOCALIZATION_TRANSLATION_CHUNK_SIZE}" \
+              --concurrency "${LOCALIZATION_TRANSLATION_CONCURRENCY}" \
               "${files[@]}"
           fi
 
@@ -225,6 +335,8 @@ jobs:
               --target-culture "${{ inputs.target_culture }}" \
               --branch "${{ steps.branch.outputs.branch }}" \
               --base "${{ steps.branch.outputs.base }}" \
+              --chunk-size "${LOCALIZATION_TRANSLATION_CHUNK_SIZE}" \
+              --concurrency "${LOCALIZATION_TRANSLATION_CONCURRENCY}" \
               "${files[@]}"
           fi
 
@@ -262,3 +374,52 @@ jobs:
           --label "final localization state"
           --branch "${{ steps.branch.outputs.branch }}"
           --base "${{ steps.branch.outputs.base }}"
+
+      - name: Continue localization workflow
+        if: ${{ always() && !cancelled() && inputs.translate && inputs.auto_continue }}
+        env:
+          INPUT_MAX_CONTINUATION_ATTEMPTS: ${{ inputs.max_continuation_attempts }}
+          VAR_MAX_CONTINUATION_ATTEMPTS: ${{ vars.LOCALIZATION_MAX_CONTINUATION_ATTEMPTS }}
+        shell: bash
+        run: |
+          continue_file="${LOCALIZATION_CONTINUE_FILE:-$RUNNER_TEMP/localization-continue-needed}"
+          if [ ! -f "$continue_file" ]; then
+            echo "No automatic continuation requested."
+            exit 0
+          fi
+
+          current="${{ inputs.continuation_attempt }}"
+          max_attempts="${INPUT_MAX_CONTINUATION_ATTEMPTS:-${VAR_MAX_CONTINUATION_ATTEMPTS:-5}}"
+          if ! [[ "$current" =~ ^[0-9]+$ ]] || [ "$current" -lt 1 ]; then
+            current=1
+          fi
+          if ! [[ "$max_attempts" =~ ^[0-9]+$ ]] || [ "$max_attempts" -lt 1 ]; then
+            max_attempts=5
+          fi
+
+          if [ "$current" -ge "$max_attempts" ]; then
+            echo "Continuation limit reached: $current/$max_attempts."
+            exit 0
+          fi
+
+          next=$((current + 1))
+          gh workflow run localization-automation.yml \
+            --ref "${{ github.ref_name }}" \
+            -f source_culture="${{ inputs.source_culture }}" \
+            -f target_culture="${{ inputs.target_culture }}" \
+            -f translate="${{ inputs.translate }}" \
+            -f translate_source_culture="${{ inputs.translate_source_culture }}" \
+            -f auto_continue="${{ inputs.auto_continue }}" \
+            -f ai_base_url="${{ inputs.ai_base_url }}" \
+            -f ai_model="${{ inputs.ai_model }}" \
+            -f continuation_attempt="$next" \
+            -f max_continuation_attempts="$max_attempts" \
+            -f ai_max_attempts="${{ inputs.ai_max_attempts }}" \
+            -f ai_response_max_attempts="${{ inputs.ai_response_max_attempts }}" \
+            -f ai_timeout_seconds="${{ inputs.ai_timeout_seconds }}" \
+            -f ai_max_output_tokens="${{ inputs.ai_max_output_tokens }}" \
+            -f ai_cooldown_seconds="${{ inputs.ai_cooldown_seconds }}" \
+            -f ai_response_cooldown_seconds="${{ inputs.ai_response_cooldown_seconds }}" \
+            -f checkpoint_file_batch_size="${{ inputs.checkpoint_file_batch_size }}" \
+            -f translation_chunk_size="${{ inputs.translation_chunk_size }}" \
+            -f translation_concurrency="${{ inputs.translation_concurrency }}"
