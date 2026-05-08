@@ -34,6 +34,8 @@ async def translate_files(
     source_texts: dict[Path, str] | None = None,
     target_culture: str | None = None,
     concurrency: int = 4,
+    *,
+    allow_partial: bool = False,
     dry_run: bool = False,
 ) -> TranslationRunResult:
     client = OpenAICompatibleClient(AiConfig.from_env())
@@ -49,6 +51,7 @@ async def translate_files(
                     chunk_size,
                     source_text=source_texts.get(path) if source_texts else None,
                     target_culture=target_culture,
+                    allow_partial=allow_partial,
                     dry_run=dry_run,
                 )
             except TranslationFileError as error:
@@ -82,6 +85,8 @@ async def translate_file(
     chunk_size: int,
     source_text: str | None = None,
     target_culture: str | None = None,
+    *,
+    allow_partial: bool = False,
     dry_run: bool = False,
 ) -> tuple[int, bool]:
     text = read_text(path)
@@ -95,11 +100,16 @@ async def translate_file(
         except Exception as error:
             raise TranslationFileError(path, len(translated_messages), changed, error) from error
 
-        new_text = _replace_messages(text, translated_messages)
-        changed = write_text_if_changed(path, normalize_fluent_text(new_text), dry_run=dry_run) or changed
+        if allow_partial:
+            new_text = _replace_messages(text, translated_messages)
+            changed = write_text_if_changed(path, normalize_fluent_text(new_text), dry_run=dry_run) or changed
 
     if not translated_messages:
         return 0, False
+
+    if not allow_partial:
+        new_text = _replace_messages(text, translated_messages)
+        changed = write_text_if_changed(path, normalize_fluent_text(new_text), dry_run=dry_run) or changed
 
     return len(translated_messages), changed
 
@@ -111,6 +121,8 @@ def run_translate_files(
     source_texts: dict[Path, str] | None = None,
     target_culture: str | None = None,
     concurrency: int = 4,
+    *,
+    allow_partial: bool = False,
     dry_run: bool = False,
 ) -> TranslationRunResult:
     return asyncio.run(translate_files(
@@ -120,6 +132,7 @@ def run_translate_files(
         source_texts=source_texts,
         target_culture=target_culture,
         concurrency=concurrency,
+        allow_partial=allow_partial,
         dry_run=dry_run,
     ))
 

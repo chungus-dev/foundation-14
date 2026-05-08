@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 import shutil
+import tempfile
 
 
 def read_text(path: Path) -> str:
@@ -17,7 +19,24 @@ def write_text_if_changed(path: Path, text: str, dry_run: bool = False) -> bool:
         return True
 
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(normalized, encoding="utf-8", newline="\n")
+    temporary_path: Path | None = None
+
+    try:
+        with tempfile.NamedTemporaryFile(
+            "w",
+            delete=False,
+            dir=path.parent,
+            encoding="utf-8",
+            newline="\n",
+        ) as temporary:
+            temporary.write(normalized)
+            temporary_path = Path(temporary.name)
+
+        os.replace(temporary_path, path)
+    finally:
+        if temporary_path is not None and temporary_path.exists():
+            temporary_path.unlink()
+
     return True
 
 

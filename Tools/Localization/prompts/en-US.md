@@ -8,7 +8,8 @@ Rules:
 - Every response item must contain `id` and `text`.
 - `id` must match the input item.
 - In `text`, return the full Fluent block for that `id`.
-- Do not translate technical identifiers, Fluent IDs, attributes `.desc`, `.suffix`, variables like `{ $user }`, functions, XML/rich-text tags, or keybind markup.
+- Do not rename technical identifiers, Fluent IDs, or attribute identifiers such as `.desc` and `.suffix`.
+- Translate attribute values normally while preserving variables like `{ $user }`, functions, XML/rich-text tags, and keybind markup.
 - Do not alter comments.
 - Do not rewrite already-correct English text unless needed.
 - Translate suffixes as short nominative/context-neutral labels.

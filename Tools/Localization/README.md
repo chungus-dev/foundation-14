@@ -26,8 +26,8 @@ target-only messages back into the source culture. This keeps fork-owned string 
 only one locale.
 
 Fork-owned localization files live under `Resources/Locale/<culture>/_Scp/`.
-Edits to upstream code use `Scp edit start` / `Scp edit end`; new Foundation 14 blocks added to upstream
-files use `Scp added start` / `Scp added end`.
+Single-line upstream edits may use `Scp edit`, and single-line additions may use `Scp added`.
+Use `Scp edit start` / `Scp edit end` and `Scp added start` / `Scp added end` for multi-line edits/additions.
 
 AI translation uses an OpenAI-compatible `/chat/completions` endpoint and reads secrets only from environment variables:
 

@@ -170,6 +170,7 @@ def _translate(args: argparse.Namespace) -> int:
         source_texts,
         target_culture=args.target_culture,
         concurrency=args.concurrency,
+        allow_partial=args.allow_partial,
         dry_run=args.dry_run,
     )
     print(
@@ -196,14 +197,16 @@ def _source_texts_for_translation(args: argparse.Namespace, files: list[Path]) -
         except ValueError:
             continue
 
-        source_path = source_root / relative
-        if source_path.exists():
-            result[file] = read_text(source_path)
-        elif relative == args.prototype_output:
+        if relative == args.prototype_output:
             if prototype_source_text is None:
                 entries = extract_entity_localizations(args.repo_root, args.prototypes_root)
                 prototype_source_text = build_entity_ftl(entries)
             result[file] = prototype_source_text
+            continue
+
+        source_path = source_root / relative
+        if source_path.exists():
+            result[file] = read_text(source_path)
 
     return result
 
