@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+from dataclasses import dataclass
 import json
 from pathlib import Path
 import re
@@ -8,6 +9,13 @@ import re
 from .ai import AiConfig, OpenAICompatibleClient
 from .filesystem import read_text, write_text_if_changed
 from .fluent import FluentMessage, attributes, functions, message_map, normalize_fluent_text, parse_messages, rich_tags, variables
+
+
+@dataclass(frozen=True)
+class TranslationRunResult:
+    translated_messages: int
+    changed_files: int
+    failed_files: tuple[Path, ...] = ()
 
 
 def build_translation_prompt(prompt_path: Path, glossary_path: Path | None) -> str:
@@ -26,26 +34,44 @@ async def translate_files(
     target_culture: str | None = None,
     concurrency: int = 4,
     dry_run: bool = False,
-) -> tuple[int, int]:
+) -> TranslationRunResult:
     client = OpenAICompatibleClient(AiConfig.from_env())
     semaphore = asyncio.Semaphore(max(1, concurrency))
 
-    async def translate_one(path: Path) -> tuple[int, bool]:
+    async def translate_one(path: Path) -> tuple[int, bool] | TranslationFileError:
         async with semaphore:
-            return await translate_file(
-                path,
-                client,
-                prompt,
-                chunk_size,
-                source_text=source_texts.get(path) if source_texts else None,
-                target_culture=target_culture,
-                dry_run=dry_run,
-            )
+            try:
+                return await translate_file(
+                    path,
+                    client,
+                    prompt,
+                    chunk_size,
+                    source_text=source_texts.get(path) if source_texts else None,
+                    target_culture=target_culture,
+                    dry_run=dry_run,
+                )
+            except TranslationFileError as error:
+                return error
+            except Exception as error:
+                return TranslationFileError(path, 0, False, error)
 
     results = await asyncio.gather(*(translate_one(path) for path in files))
-    translated = sum(count for count, _ in results)
-    changed = sum(1 for _, did_change in results if did_change)
-    return translated, changed
+    translated = 0
+    changed = 0
+    failed: list[Path] = []
+
+    for result in results:
+        if isinstance(result, TranslationFileError):
+            translated += result.translated_messages
+            changed += 1 if result.changed else 0
+            failed.append(result.path)
+            continue
+
+        count, did_change = result
+        translated += count
+        changed += 1 if did_change else 0
+
+    return TranslationRunResult(translated, changed, tuple(failed))
 
 
 async def translate_file(
@@ -60,15 +86,20 @@ async def translate_file(
     text = read_text(path)
     messages = _messages_to_translate(path, source_text, target_culture)
     translated_messages: dict[str, str] = {}
+    changed = False
 
     for chunk in _chunks(messages, chunk_size):
-        translated_messages.update(await _translate_chunk(client, prompt, chunk))
+        try:
+            translated_messages.update(await _translate_chunk(client, prompt, chunk))
+        except Exception as error:
+            raise TranslationFileError(path, len(translated_messages), changed, error) from error
+
+        new_text = _replace_messages(text, translated_messages)
+        changed = write_text_if_changed(path, normalize_fluent_text(new_text), dry_run=dry_run) or changed
 
     if not translated_messages:
         return 0, False
 
-    new_text = _replace_messages(text, translated_messages)
-    changed = write_text_if_changed(path, normalize_fluent_text(new_text), dry_run=dry_run)
     return len(translated_messages), changed
 
 
@@ -80,7 +111,7 @@ def run_translate_files(
     target_culture: str | None = None,
     concurrency: int = 4,
     dry_run: bool = False,
-) -> tuple[int, int]:
+) -> TranslationRunResult:
     return asyncio.run(translate_files(
         files,
         prompt,
@@ -246,3 +277,12 @@ def _replace_messages(text: str, replacements: dict[str, str]) -> str:
 
 class TranslationValidationError(ValueError):
     pass
+
+
+class TranslationFileError(RuntimeError):
+    def __init__(self, path: Path, translated_messages: int, changed: bool, error: Exception):
+        super().__init__(f"{path}: {error}")
+        self.path = path
+        self.translated_messages = translated_messages
+        self.changed = changed
+        self.error = error

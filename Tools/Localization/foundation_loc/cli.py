@@ -65,6 +65,7 @@ def main(argv: list[str] | None = None) -> int:
     translate.add_argument("--glossary", type=Path, default=Path("Tools") / "Localization" / "glossary.md")
     translate.add_argument("--chunk-size", type=int, default=7000)
     translate.add_argument("--concurrency", type=int, default=4)
+    translate.add_argument("--allow-partial", action="store_true")
     translate.add_argument("--dry-run", action="store_true")
     translate.set_defaults(func=_translate)
 
@@ -151,7 +152,7 @@ def _translate(args: argparse.Namespace) -> int:
     prompt = build_translation_prompt(args.repo_root / prompt_path, args.repo_root / args.glossary)
     files = [args.repo_root / file for file in args.files]
     source_texts = _source_texts_for_translation(args, files)
-    translated, changed = run_translate_files(
+    result = run_translate_files(
         files,
         prompt,
         args.chunk_size,
@@ -160,8 +161,15 @@ def _translate(args: argparse.Namespace) -> int:
         concurrency=args.concurrency,
         dry_run=args.dry_run,
     )
-    print(f"translated_messages={translated} changed_files={changed}")
-    return 0
+    print(
+        f"translated_messages={result.translated_messages} changed_files={result.changed_files} "
+        f"failed_files={len(result.failed_files)}"
+    )
+
+    for failed in result.failed_files:
+        print(f"failed: {failed}")
+
+    return 0 if args.allow_partial or not result.failed_files else 1
 
 
 def _source_texts_for_translation(args: argparse.Namespace, files: list[Path]) -> dict[Path, str]:

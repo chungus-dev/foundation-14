@@ -81,6 +81,7 @@ jobs:
             python Tools/Localization/run.py translate \
               --source-culture "${{ inputs.source_culture }}" \
               --target-culture "${{ inputs.target_culture }}" \
+              --allow-partial \
               "${files[@]}"
           fi
 
