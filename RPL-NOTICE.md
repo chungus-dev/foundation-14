@@ -1,4 +1,4 @@
-# Foundation 14 RPL License Notice
+# Foundation 14 RPL Notice
 
 Unless explicitly acquired and licensed from the Licensor under another license,
 original Foundation 14 contributions in this repository are subject to the
@@ -15,4 +15,4 @@ limitations under the RPL.
 
 This notice applies to Foundation 14 original work identified by `LICENSE.md`,
 including fork-owned `_Scp` directories and Foundation 14 changes marked in
-upstream files with the `scp edit` or `scp added` marker conventions.
+upstream files with the `Scp edit` or `Scp added` marker conventions.
