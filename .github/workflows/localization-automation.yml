@@ -57,13 +57,49 @@ jobs:
           echo "branch=$branch" >> "$GITHUB_OUTPUT"
           echo "base=$base" >> "$GITHUB_OUTPUT"
 
-      - name: Translate existing target locale
+      - name: Prepare AI translation environment
         if: ${{ inputs.translate }}
         env:
-          TRANSLATE_AI_BASE_URL: ${{ secrets.TRANSLATE_AI_BASE_URL || 'https://models.github.ai/inference' }}
-          TRANSLATE_AI_MODEL: ${{ secrets.TRANSLATE_AI_MODEL || 'openai/gpt-4o-mini' }}
-          TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS || secrets.GITHUB_TOKEN }}
-          TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
+          CONFIGURED_TRANSLATE_AI_BASE_URL: ${{ secrets.TRANSLATE_AI_BASE_URL }}
+          CONFIGURED_TRANSLATE_AI_MODEL: ${{ secrets.TRANSLATE_AI_MODEL }}
+          CONFIGURED_TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS }}
+          CONFIGURED_TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
+          GH_MODELS_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          base_url="${CONFIGURED_TRANSLATE_AI_BASE_URL:-https://models.github.ai/inference}"
+          model="${CONFIGURED_TRANSLATE_AI_MODEL:-openai/gpt-4o-mini}"
+          keys="$CONFIGURED_TRANSLATE_AI_KEYS"
+          normalized_base_url="$(printf '%s' "$base_url" | tr -d '\r' | sed 's#/*$##')"
+
+          if [ -z "$keys" ]; then
+            if [ "$normalized_base_url" = "https://models.github.ai/inference" ]; then
+              keys="$GH_MODELS_TOKEN"
+            else
+              echo "TRANSLATE_AI_KEYS must be set for non-GitHub AI providers." >&2
+              exit 1
+            fi
+          fi
+
+          {
+            echo "TRANSLATE_AI_BASE_URL<<TRANSLATE_ENV_EOF"
+            echo "$base_url"
+            echo "TRANSLATE_ENV_EOF"
+            echo "TRANSLATE_AI_MODEL<<TRANSLATE_ENV_EOF"
+            echo "$model"
+            echo "TRANSLATE_ENV_EOF"
+            echo "TRANSLATE_AI_KEYS<<TRANSLATE_ENV_EOF"
+            echo "$keys"
+            echo "TRANSLATE_ENV_EOF"
+            if [ -n "$CONFIGURED_TRANSLATE_AI_PROXIES" ]; then
+              echo "TRANSLATE_AI_PROXIES<<TRANSLATE_ENV_EOF"
+              echo "$CONFIGURED_TRANSLATE_AI_PROXIES"
+              echo "TRANSLATE_ENV_EOF"
+            fi
+          } >> "$GITHUB_ENV"
+
+      - name: Translate existing target locale
+        if: ${{ inputs.translate }}
         shell: bash
         run: |
           locale_dir="Resources/Locale/${{ inputs.target_culture }}"
@@ -82,11 +118,6 @@ jobs:
 
       - name: Translate existing source locale
         if: ${{ inputs.translate }}
-        env:
-          TRANSLATE_AI_BASE_URL: ${{ secrets.TRANSLATE_AI_BASE_URL || 'https://models.github.ai/inference' }}
-          TRANSLATE_AI_MODEL: ${{ secrets.TRANSLATE_AI_MODEL || 'openai/gpt-4o-mini' }}
-          TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS || secrets.GITHUB_TOKEN }}
-          TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
         shell: bash
         run: |
           locale_dir="Resources/Locale/${{ inputs.source_culture }}"
@@ -117,11 +148,6 @@ jobs:
 
       - name: Translate reverse-synced source files
         if: ${{ inputs.translate }}
-        env:
-          TRANSLATE_AI_BASE_URL: ${{ secrets.TRANSLATE_AI_BASE_URL || 'https://models.github.ai/inference' }}
-          TRANSLATE_AI_MODEL: ${{ secrets.TRANSLATE_AI_MODEL || 'openai/gpt-4o-mini' }}
-          TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS || secrets.GITHUB_TOKEN }}
-          TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
         shell: bash
         run: |
           mapfile -t files < <(git diff --name-only -- "Resources/Locale/${{ inputs.source_culture }}" | grep '\.ftl$' | sort || true)
@@ -135,11 +161,7 @@ jobs:
 
       - name: Translate synced files
         if: ${{ inputs.translate }}
-        env:
-          TRANSLATE_AI_BASE_URL: ${{ secrets.TRANSLATE_AI_BASE_URL || 'https://models.github.ai/inference' }}
-          TRANSLATE_AI_MODEL: ${{ secrets.TRANSLATE_AI_MODEL || 'openai/gpt-4o-mini' }}
-          TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS || secrets.GITHUB_TOKEN }}
-          TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
+        shell: bash
         run: |
           locale_dir="Resources/Locale/${{ inputs.target_culture }}"
           if [ -d "$locale_dir" ]; then

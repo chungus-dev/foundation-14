@@ -45,10 +45,12 @@ GitHub Actions defaults to the free, rate-limited GitHub Models endpoint:
 ```text
 TRANSLATE_AI_BASE_URL=https://models.github.ai/inference
 TRANSLATE_AI_MODEL=openai/gpt-4o-mini
-TRANSLATE_AI_KEYS=${{ secrets.GITHUB_TOKEN }}
+TRANSLATE_AI_KEYS=${{ github.token }}
 ```
 
-For local free testing, create a GitHub PAT with the `models` scope and use it as `TRANSLATE_AI_KEYS`.
+The workflow uses `github.token` only with the GitHub Models endpoint. External providers require an explicit
+`TRANSLATE_AI_KEYS` secret. For local free testing, create a GitHub PAT with the `models` scope and use it as
+`TRANSLATE_AI_KEYS`.
 OpenRouter free routing can also be used with `TRANSLATE_AI_BASE_URL=https://openrouter.ai/api/v1`,
 the chosen OpenRouter free model ID in `TRANSLATE_AI_MODEL`, and an OpenRouter API key in
 `TRANSLATE_AI_KEYS`.

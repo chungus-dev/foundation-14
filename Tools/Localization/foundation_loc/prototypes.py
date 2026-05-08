@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
 import hashlib
 import json
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any
 import re
 
 from .dependencies import import_or_install
@@ -312,6 +313,11 @@ def _strip_inline_comment(value: str) -> str:
 def _unquote(value: str) -> str:
     inner = value[1:-1]
     if value.startswith('"'):
-        return bytes(inner, "utf-8").decode("unicode_escape")
+        try:
+            decoded = bytes(inner, "utf-8").decode("unicode_escape")
+            decoded.encode("utf-8")
+            return decoded
+        except (UnicodeDecodeError, UnicodeEncodeError, ValueError):
+            return inner
 
     return inner.replace("''", "'")

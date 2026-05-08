@@ -13,7 +13,7 @@ class SyncResult:
     changed_files: int
     added_messages: int
 
-    def __add__(self, other: "SyncResult") -> "SyncResult":
+    def __add__(self, other: SyncResult) -> SyncResult:
         return SyncResult(
             self.scanned_files + other.scanned_files,
             self.changed_files + other.changed_files,

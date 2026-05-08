@@ -16,7 +16,6 @@ from .filesystem import iter_files, read_text, remove_empty_files_and_dirs, writ
 from .fluent import normalize_fluent_text
 from .prototypes import build_entity_ftl, extract_entity_localizations, write_entity_ftl
 from .strings import sync_locale_strings
-from .translate import build_translation_prompt, run_translate_files
 from .validation import validate_locale
 
 
@@ -155,6 +154,8 @@ def _validate(args: argparse.Namespace) -> int:
 
 
 def _translate(args: argparse.Namespace) -> int:
+    from .translate import build_translation_prompt, run_translate_files
+
     prompt_path = args.prompt
     if prompt_path is None:
         prompt_path = Path("Tools") / "Localization" / "prompts" / f"{args.target_culture}.md"

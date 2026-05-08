@@ -249,14 +249,11 @@ def _comments(text: str) -> list[str]:
 
 CYRILLIC_RE = re.compile(r"[\u0400-\u04ff]")
 LATIN_WORD_RE = re.compile(r"[A-Za-z][A-Za-z'-]*")
-COMMON_ENGLISH_WORD_RE = re.compile(
-    r"\b(?:the|and|with|from|your|you|this|that|into|have|not|can|will|are|is|to|of|in|on|for)\b",
-    re.IGNORECASE,
-)
 PROTECTED_LATIN_PHRASE_RE = re.compile(
     r"\b(?:Foundation\s*14|Space\s+Station\s*14|D-?Class|Class-D|SCP-\d+)\b",
     re.IGNORECASE,
 )
+ANGLE_TAG_RE = re.compile(r"</?[^>\s]+(?:\s+[^>]*)?>")
 PRESERVED_LATIN_TERMS = {
     "ai",
     "apc",
@@ -299,7 +296,7 @@ def _contains_untranslated_english(text: str) -> bool:
     if CYRILLIC_RE.search(text) is None:
         return True
 
-    return len(tokens) >= 2 or COMMON_ENGLISH_WORD_RE.search(text) is not None
+    return True
 
 
 def _english_residue_tokens(text: str) -> list[str]:
@@ -332,7 +329,7 @@ def _user_visible_text(text: str) -> str:
     visible = "\n".join(values)
     visible = re.sub(r"\{[^}]*\}", " ", visible)
     visible = re.sub(r"\[[^\]]+\]", " ", visible)
-    return visible
+    return ANGLE_TAG_RE.sub(" ", visible)
 
 
 def _strip_json_fence(response: str) -> str:
