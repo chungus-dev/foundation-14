@@ -68,3 +68,5 @@ The next run skips already translated messages and continues from messages that 
 The GitHub Actions workflow translates files in checkpointed batches and pushes each changed batch to the
 automation branch. If a batch fails without making progress, the workflow stops later AI translation steps for
 that run, keeps the pushed checkpoints, and the next run retries the remaining untranslated messages.
+Checkpoint commits are split by final locale directory. Their subject uses
+`Auto translate <directory> into <language>`, and the commit body lists the changed files under `Translated`.
