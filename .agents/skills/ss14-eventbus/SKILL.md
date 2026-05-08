@@ -1,6 +1,6 @@
 ---
 name: ss14-eventbus
-description: Architectural guide to EventBus in Space Station 14 - strict event taxonomy, subscription storage, dispatch logic and internal optimization mechanisms.
+description: "Architectural guide to EventBus in Space Station 14 - strict event taxonomy, subscription storage, dispatch logic and internal optimization mechanisms."
 ---
 
 # 🚌 EventBus architecture in SS14

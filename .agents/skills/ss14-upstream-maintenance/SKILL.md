@@ -1,6 +1,6 @@
 ---
 name: ss14-upstream-maintenance
-description: Guide to working with this Space Station 14 fork using the fixed `Scp` prefix and `_Scp` project folder to minimize merge conflicts with the upstream. Use when modifying vanilla code or prototypes.
+description: "Guide to working with this Space Station 14 fork using the fixed `Scp` prefix and `_Scp` project folder to minimize merge conflicts with the upstream. Use when modifying vanilla code or prototypes."
 ---
 
 # 🛡️ Working with Upstream code and minimizing conflicts
