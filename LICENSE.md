@@ -49,11 +49,19 @@ retain their original licenses.
 
 When Foundation 14 changes an upstream file, only the Foundation 14
 modifications are intended to be licensed under RPL-1.5 where permitted by the
-upstream license. Such changes should be marked near the changed block with a
-`foundation-14 edit` comment when the file format allows comments.
+upstream license. Such changes should be marked near the changed block when the
+file format allows comments.
 
-Removing a `foundation-14 edit` marker does not remove the RPL-1.5 license from
-the underlying Foundation 14 modification.
+Use lowercase marker text for upstream files:
+
+- `scp edit start` / `scp edit end` for modified upstream blocks.
+- `scp added start` / `scp added end` for new Foundation 14 blocks added to an
+  upstream file.
+- `scp edit:` for a small single-line change where a start/end block would add
+  noise.
+
+Removing an `scp edit` or `scp added` marker does not remove the RPL-1.5
+license from the underlying Foundation 14 modification.
 
 Do not remove or replace existing upstream copyright, attribution, or license
 notices.
