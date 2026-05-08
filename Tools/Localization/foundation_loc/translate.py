@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import re
+import sys
 
 from .ai import AiConfig, OpenAICompatibleClient
 from .filesystem import read_text, write_text_if_changed
@@ -13,10 +14,19 @@ from .fluent import FluentMessage, attributes, functions, message_map, normalize
 
 
 @dataclass(frozen=True)
+class TranslationFailure:
+    path: Path
+    translated_messages: int
+    changed: bool
+    error: str
+
+
+@dataclass(frozen=True)
 class TranslationRunResult:
     translated_messages: int
     changed_files: int
     failed_files: tuple[Path, ...] = ()
+    failed_details: tuple[TranslationFailure, ...] = ()
 
 
 def build_translation_prompt(prompt_path: Path, glossary_path: Path | None) -> str:
@@ -63,19 +73,26 @@ async def translate_files(
     translated = 0
     changed = 0
     failed: list[Path] = []
+    failed_details: list[TranslationFailure] = []
 
     for result in results:
         if isinstance(result, TranslationFileError):
             translated += result.translated_messages
             changed += 1 if result.changed else 0
             failed.append(result.path)
+            failed_details.append(TranslationFailure(
+                path=result.path,
+                translated_messages=result.translated_messages,
+                changed=result.changed,
+                error=str(result.error),
+            ))
             continue
 
         count, did_change = result
         translated += count
         changed += 1 if did_change else 0
 
-    return TranslationRunResult(translated, changed, tuple(failed))
+    return TranslationRunResult(translated, changed, tuple(failed), tuple(failed_details))
 
 
 async def translate_file(
@@ -207,6 +224,15 @@ async def _translate_chunk(
         except ValueError as error:
             last_error = error
             if max_attempts <= 0 or attempts < max_attempts:
+                max_attempts_text = "unlimited" if max_attempts <= 0 else str(max_attempts)
+                print(
+                    "AI translation response retry: "
+                    f"attempt={attempts}/{max_attempts_text} "
+                    f"cooldown_seconds={cooldown_seconds} "
+                    f"reason={error}",
+                    file=sys.stderr,
+                    flush=True,
+                )
                 await asyncio.sleep(cooldown_seconds)
 
     raise TranslationValidationError("AI returned invalid translation repeatedly.") from last_error

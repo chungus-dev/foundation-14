@@ -29,6 +29,9 @@ concurrency:
 jobs:
   localization:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
 
     steps:
       - uses: actions/checkout@v4
@@ -64,12 +67,22 @@ jobs:
           CONFIGURED_TRANSLATE_AI_MODEL: ${{ secrets.TRANSLATE_AI_MODEL }}
           CONFIGURED_TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS }}
           CONFIGURED_TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
+          CONFIGURED_TRANSLATE_AI_MAX_ATTEMPTS: ${{ vars.TRANSLATE_AI_MAX_ATTEMPTS }}
+          CONFIGURED_TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS: ${{ vars.TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS }}
+          CONFIGURED_TRANSLATE_AI_COOLDOWN_SECONDS: ${{ vars.TRANSLATE_AI_COOLDOWN_SECONDS }}
+          CONFIGURED_TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS: ${{ vars.TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS }}
+          CONFIGURED_LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE: ${{ vars.LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE }}
           GH_MODELS_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           base_url="${CONFIGURED_TRANSLATE_AI_BASE_URL:-https://models.github.ai/inference}"
           model="${CONFIGURED_TRANSLATE_AI_MODEL:-openai/gpt-4o-mini}"
           keys="$CONFIGURED_TRANSLATE_AI_KEYS"
+          max_attempts="${CONFIGURED_TRANSLATE_AI_MAX_ATTEMPTS:-5}"
+          response_max_attempts="${CONFIGURED_TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS:-2}"
+          cooldown_seconds="${CONFIGURED_TRANSLATE_AI_COOLDOWN_SECONDS:-60}"
+          response_cooldown_seconds="${CONFIGURED_TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS:-60}"
+          checkpoint_batch_size="${CONFIGURED_LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE:-10}"
           normalized_base_url="$(printf '%s' "$base_url" | tr -d '\r' | sed 's#/*$##')"
 
           if [ -z "$keys" ]; then
@@ -91,6 +104,12 @@ jobs:
             echo "TRANSLATE_AI_KEYS<<TRANSLATE_ENV_EOF"
             echo "$keys"
             echo "TRANSLATE_ENV_EOF"
+            echo "TRANSLATE_AI_MAX_ATTEMPTS=$max_attempts"
+            echo "TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS=$response_max_attempts"
+            echo "TRANSLATE_AI_COOLDOWN_SECONDS=$cooldown_seconds"
+            echo "TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS=$response_cooldown_seconds"
+            echo "LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE=$checkpoint_batch_size"
+            echo "LOCALIZATION_AI_STOP_FILE=$RUNNER_TEMP/localization-ai-stop"
             if [ -n "$CONFIGURED_TRANSLATE_AI_PROXIES" ]; then
               echo "TRANSLATE_AI_PROXIES<<TRANSLATE_ENV_EOF"
               echo "$CONFIGURED_TRANSLATE_AI_PROXIES"
@@ -109,10 +128,16 @@ jobs:
             files=()
           fi
           if [ "${#files[@]}" -gt 0 ]; then
-            python Tools/Localization/run.py translate \
+            if [ "${LOCALIZATION_AI_STOP:-}" = "1" ]; then
+              echo "AI translation was stopped earlier in this run; skipping target locale pass."
+              exit 0
+            fi
+            python Tools/Localization/ci.py translate-batches \
+              --stage "Translate existing target locale" \
               --source-culture "${{ inputs.source_culture }}" \
               --target-culture "${{ inputs.target_culture }}" \
-              --allow-partial \
+              --branch "${{ steps.branch.outputs.branch }}" \
+              --base "${{ steps.branch.outputs.base }}" \
               "${files[@]}"
           fi
 
@@ -127,10 +152,16 @@ jobs:
             files=()
           fi
           if [ "${#files[@]}" -gt 0 ]; then
-            python Tools/Localization/run.py translate \
+            if [ "${LOCALIZATION_AI_STOP:-}" = "1" ]; then
+              echo "AI translation was stopped earlier in this run; skipping source locale pass."
+              exit 0
+            fi
+            python Tools/Localization/ci.py translate-batches \
+              --stage "Translate existing source locale" \
               --source-culture "${{ inputs.target_culture }}" \
               --target-culture "${{ inputs.source_culture }}" \
-              --allow-partial \
+              --branch "${{ steps.branch.outputs.branch }}" \
+              --base "${{ steps.branch.outputs.base }}" \
               "${files[@]}"
           fi
 
@@ -152,12 +183,26 @@ jobs:
         run: |
           mapfile -t files < <(git diff --name-only -- "Resources/Locale/${{ inputs.source_culture }}" | grep '\.ftl$' | sort || true)
           if [ "${#files[@]}" -gt 0 ]; then
-            python Tools/Localization/run.py translate \
+            if [ "${LOCALIZATION_AI_STOP:-}" = "1" ]; then
+              echo "AI translation was stopped earlier in this run; skipping reverse-synced source files."
+              exit 0
+            fi
+            python Tools/Localization/ci.py translate-batches \
+              --stage "Translate reverse-synced source files" \
               --source-culture "${{ inputs.target_culture }}" \
               --target-culture "${{ inputs.source_culture }}" \
-              --allow-partial \
+              --branch "${{ steps.branch.outputs.branch }}" \
+              --base "${{ steps.branch.outputs.base }}" \
               "${files[@]}"
           fi
+
+      - name: Checkpoint synced localization
+        shell: bash
+        run: >
+          python Tools/Localization/ci.py checkpoint
+          --label "sync and prototype extraction"
+          --branch "${{ steps.branch.outputs.branch }}"
+          --base "${{ steps.branch.outputs.base }}"
 
       - name: Translate synced files
         if: ${{ inputs.translate }}
@@ -170,10 +215,16 @@ jobs:
             files=()
           fi
           if [ "${#files[@]}" -gt 0 ]; then
-            python Tools/Localization/run.py translate \
+            if [ "${LOCALIZATION_AI_STOP:-}" = "1" ]; then
+              echo "AI translation was stopped earlier in this run; skipping synced files."
+              exit 0
+            fi
+            python Tools/Localization/ci.py translate-batches \
+              --stage "Translate synced files" \
               --source-culture "${{ inputs.source_culture }}" \
               --target-culture "${{ inputs.target_culture }}" \
-              --allow-partial \
+              --branch "${{ steps.branch.outputs.branch }}" \
+              --base "${{ steps.branch.outputs.base }}" \
               "${files[@]}"
           fi
 
@@ -182,43 +233,32 @@ jobs:
           python Tools/Localization/run.py normalize
           --culture "${{ inputs.target_culture }}"
 
-      - name: Validate target locale
+      - name: Checkpoint normalized localization
+        shell: bash
         run: >
-          python Tools/Localization/run.py validate
-          --source-culture "${{ inputs.source_culture }}"
-          --target-culture "${{ inputs.target_culture }}"
-          --fail-on-errors
+          python Tools/Localization/ci.py checkpoint
+          --label "normalized target locale"
+          --branch "${{ steps.branch.outputs.branch }}"
+          --base "${{ steps.branch.outputs.base }}"
 
-      - name: Detect changes
-        id: changes
+      - name: Validate target locale
         shell: bash
         run: |
-          if [ -z "$(git status --porcelain -- Resources/Locale)" ]; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
+          if [ "${LOCALIZATION_AI_STOP:-}" = "1" ]; then
+            python Tools/Localization/run.py validate \
+              --source-culture "${{ inputs.source_culture }}" \
+              --target-culture "${{ inputs.target_culture }}"
           else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            python Tools/Localization/run.py validate \
+              --source-culture "${{ inputs.source_culture }}" \
+              --target-culture "${{ inputs.target_culture }}" \
+              --fail-on-errors
           fi
 
-      - name: Open localization PR
-        if: steps.changes.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Checkpoint final localization changes
         shell: bash
-        run: |
-          branch="${{ steps.branch.outputs.branch }}"
-          base="${{ steps.branch.outputs.base }}"
-          git add Resources/Locale
-          git commit -m "Automate localization update"
-          git push --set-upstream origin "$branch"
-
-          existing_pr="$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')"
-          body="Generated by Localization Automation workflow ${{ github.run_id }}."
-          if [ -n "$existing_pr" ]; then
-            gh pr edit "$existing_pr" --title "Automated localization update" --body "$body" --base "$base"
-          else
-            gh pr create \
-              --title "Automated localization update" \
-              --body "$body" \
-              --base "$base" \
-              --head "$branch"
-          fi
+        run: >
+          python Tools/Localization/ci.py checkpoint
+          --label "final localization state"
+          --branch "${{ steps.branch.outputs.branch }}"
+          --base "${{ steps.branch.outputs.base }}"

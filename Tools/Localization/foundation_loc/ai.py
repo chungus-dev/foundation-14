@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 from dataclasses import dataclass
 import os
+import sys
 import time
 from typing import Any
 
@@ -87,13 +88,34 @@ class OpenAICompatibleClient:
             try:
                 return await self._send(endpoint, messages, temperature)
             except RateLimitedError as error:
-                endpoint.cool_down(self._config.cooldown_seconds)
+                self._handle_retry(endpoint, attempts, error)
                 last_error = error
             except TransientAiError as error:
-                endpoint.cool_down(self._config.cooldown_seconds)
+                self._handle_retry(endpoint, attempts, error)
                 last_error = error
 
-        raise RuntimeError("AI translation failed after configured retry attempts.") from last_error
+        raise RuntimeError(
+            f"AI translation failed after {attempts} attempt(s). Last error: {last_error}"
+        ) from last_error
+
+    def _handle_retry(self, endpoint: AiEndpoint, attempts: int, error: Exception) -> None:
+        max_attempts = self._config.max_attempts
+        will_retry = max_attempts <= 0 or attempts < max_attempts
+        max_attempts_text = "unlimited" if max_attempts <= 0 else str(max_attempts)
+
+        print(
+            "AI provider retry: "
+            f"base_url={endpoint.base_url} model={endpoint.model} "
+            f"attempt={attempts}/{max_attempts_text} "
+            f"will_retry={str(will_retry).lower()} "
+            f"cooldown_seconds={self._config.cooldown_seconds if will_retry else 0} "
+            f"reason={error}",
+            file=sys.stderr,
+            flush=True,
+        )
+
+        if will_retry:
+            endpoint.cool_down(self._config.cooldown_seconds)
 
     async def _next_endpoint(self) -> AiEndpoint:
         while True:

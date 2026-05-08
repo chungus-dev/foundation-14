@@ -39,6 +39,7 @@ AI translation uses an OpenAI-compatible `/chat/completions` endpoint and reads 
 - `TRANSLATE_AI_MAX_OUTPUT_TOKENS` optional, defaults to `8192`
 - `TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS` optional, defaults to `0` for unlimited invalid-response retries
 - `TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS` optional, defaults to `60`
+- `LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE` optional in GitHub Actions, defaults to `10`
 
 GitHub Actions defaults to the free, rate-limited GitHub Models endpoint:
 
@@ -46,6 +47,8 @@ GitHub Actions defaults to the free, rate-limited GitHub Models endpoint:
 TRANSLATE_AI_BASE_URL=https://models.github.ai/inference
 TRANSLATE_AI_MODEL=openai/gpt-4o-mini
 TRANSLATE_AI_KEYS=${{ github.token }}
+TRANSLATE_AI_MAX_ATTEMPTS=5
+TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS=2
 ```
 
 The workflow uses `github.token` only with the GitHub Models endpoint. External providers require an explicit
@@ -62,3 +65,6 @@ Before new strings are synced and new prototype strings are extracted, the workf
 untranslated target/source locale messages so old untranslated content is handled first.
 When `--allow-partial` is used, successful chunks are written immediately and failed files are left partially translated.
 The next run skips already translated messages and continues from messages that still match the source.
+The GitHub Actions workflow translates files in checkpointed batches and pushes each changed batch to the
+automation branch. If a batch fails without making progress, the workflow stops later AI translation steps for
+that run, keeps the pushed checkpoints, and the next run retries the remaining untranslated messages.
