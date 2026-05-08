@@ -2,11 +2,10 @@
 
 This file is the short entrypoint for agents working in this repository. Keep detailed operating rules in `.agents/rules` and detailed skills in `.agents/skills`.
 
-Source-of-truth locations:
+Codex source-of-truth locations:
 
 - Rules: `.agents/rules`
 - Skills: `.agents/skills`
-- Compatibility bridges: `.claude`
 
 At the start of a new dialogue, and again after any context compaction, reload the always-on rules from `.agents/rules` and review the available skills in `.agents/skills`. Do not repeat that full reload for every later chat message unless the task changes enough to require new skills or rules.
 

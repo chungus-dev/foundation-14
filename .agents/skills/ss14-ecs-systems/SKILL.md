@@ -1,6 +1,6 @@
 ---
-name: SS14 ECS Systems
-description: Architecture guide for EntitySystem in Space Station 14 — lifecycle, events, queries, networking, prediction, and partial class decomposition patterns
+name: ss14-ecs-systems
+description: "Architecture guide for EntitySystem in Space Station 14 — lifecycle, events, queries, networking, prediction, and partial class decomposition patterns"
 ---
 
 # EntitySystem - systems in ECS

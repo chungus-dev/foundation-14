@@ -2,33 +2,18 @@
 
 ## Scope
 
-This repository uses two skill trees:
-
-- `.agents/skills` is the source of truth and stores full skill content and resources.
-- `.claude/skills` is the Claude Code compatibility layer.
+This repository uses `.agents/skills` as the only Codex-facing skill tree.
 
 ## Required Rule
 
-For every skill in `.agents/skills/<skill-name>`, keep matching bridge files:
+Create, update, rename, and delete skills directly under `.agents/skills/<skill-name>`.
+Do not add mirrored copies for other agent clients.
 
-- `.claude/skills/<skill-name>/SKILL.md`
+## Skill Contract
 
-When creating, updating, renaming, or deleting a skill in `.agents/skills`, apply the same bridge
-change in `.claude/skills` in the same pull request.
-
-## Bridge Contract
-
-Each Claude bridge SKILL file must contain:
+Each skill directory must contain a `SKILL.md` file with valid YAML frontmatter:
 
 - `name`: exact `<skill-name>` folder name in hyphen-case.
-- `description`: synchronized copy of canonical description from `.agents/skills/<skill-name>/SKILL.md`.
-- A reference in the markdown body to `../../../.agents/skills/<skill-name>/SKILL.md`.
+- `description`: concise trigger text that explains when Codex should load the skill.
 
-## PR Checklist Gate
-
-A PR is incomplete if any skill exists in `.agents/skills` without matching bridges in
-`.claude/skills`.
-
-Run this check before pushing:
-
-`pwsh ./.agents/skills/check-skill-bridges.ps1`
+Keep detailed guidance in the markdown body or referenced files under the skill directory.
