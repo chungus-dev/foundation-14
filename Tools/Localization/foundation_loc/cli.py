@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 import sys
 
@@ -66,6 +67,7 @@ def main(argv: list[str] | None = None) -> int:
     translate.add_argument("--chunk-size", type=int, default=7000)
     translate.add_argument("--concurrency", type=int, default=4)
     translate.add_argument("--allow-partial", action="store_true")
+    translate.add_argument("--report-json", type=Path)
     translate.add_argument("--dry-run", action="store_true")
     translate.set_defaults(func=_translate)
 
@@ -178,8 +180,25 @@ def _translate(args: argparse.Namespace) -> int:
         f"failed_files={len(result.failed_files)}"
     )
 
-    for failed in result.failed_files:
-        print(f"failed: {failed}")
+    for failed in result.failed_details:
+        print(f"failed: {failed.path}: {failed.error}")
+
+    if args.report_json is not None:
+        report = {
+            "translated_messages": result.translated_messages,
+            "changed_files": result.changed_files,
+            "failed_files": [
+                {
+                    "path": str(failed.path),
+                    "translated_messages": failed.translated_messages,
+                    "changed": failed.changed,
+                    "error": failed.error,
+                }
+                for failed in result.failed_details
+            ],
+        }
+        args.report_json.parent.mkdir(parents=True, exist_ok=True)
+        args.report_json.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
 
     return 0 if args.allow_partial or not result.failed_files else 1
 
