@@ -9,7 +9,7 @@ specific license controls that material.
 
 Foundation 14 original contributions are intended to be licensed under the
 Reciprocal Public License 1.5 (`RPL-1.5`) unless a file or asset metadata file
-states otherwise. See `LICENSE-NOTICE.md` and `LICENSES/RPL-1.5.txt`.
+states otherwise. See `RPL-NOTICE.md` and `LICENSES/RPL-1.5.txt`.
 
 The `_Scp` directory convention is used to identify Foundation 14 fork-owned
 code and data, but it is not the sole boundary of the license. Moving,
