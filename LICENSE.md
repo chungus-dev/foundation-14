@@ -5,7 +5,7 @@ Foundation 14 is distributed as a mixed-license project.
 Unless a file, directory notice, asset metadata file, or third-party notice
 states otherwise, original Foundation 14 contributions are licensed under the
 Reciprocal Public License 1.5 (`RPL-1.5`). See `LICENSES/RPL-1.5.txt`.
-The Foundation 14 RPL notice is provided in `LICENSE-NOTICE.md`.
+The Foundation 14 RPL notice is provided in `RPL-NOTICE.md`.
 
 This repository also contains upstream and third-party material that remains
 under its original license. See `THIRD-PARTY-NOTICES.md`.
@@ -46,7 +46,7 @@ game service triggers the RPL-1.5 source-availability obligations for the
 Foundation 14 Extensions that were Deployed.
 
 If Foundation 14 original source is copied or distributed outside this
-repository layout, preserve `LICENSE.md`, `LICENSE-NOTICE.md`,
+repository layout, preserve `LICENSE.md`, `RPL-NOTICE.md`,
 `LICENSES/RPL-1.5.txt`, and `THIRD-PARTY-NOTICES.md`, or provide equivalent
 notices where recipients are likely to find them.
 

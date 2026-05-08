@@ -1,4 +1,4 @@
-# Foundation 14 RPL License Notice
+# Foundation 14 RPL Notice
 
 Unless explicitly acquired and licensed from the Licensor under another license,
 original Foundation 14 contributions in this repository are subject to the
