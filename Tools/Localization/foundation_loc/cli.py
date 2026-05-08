@@ -44,6 +44,7 @@ def main(argv: list[str] | None = None) -> int:
     sync.add_argument("--source-culture", default=DEFAULT_SOURCE_CULTURE)
     sync.add_argument("--target-culture", default=DEFAULT_TARGET_CULTURE)
     sync.add_argument("--locale-root", type=Path, default=DEFAULT_LOCALE_ROOT)
+    sync.add_argument("--bidirectional", action="store_true")
     sync.add_argument("--dry-run", action="store_true")
     sync.set_defaults(func=_sync_strings)
 
@@ -112,6 +113,15 @@ def _sync_strings(args: argparse.Namespace) -> int:
         locale_root / args.target_culture,
         dry_run=args.dry_run,
     )
+
+    if args.bidirectional:
+        reverse = sync_locale_strings(
+            locale_root / args.target_culture,
+            locale_root / args.source_culture,
+            dry_run=args.dry_run,
+        )
+        result = result + reverse
+
     print(
         f"scanned_files={result.scanned_files} changed_files={result.changed_files} "
         f"added_messages={result.added_messages}"

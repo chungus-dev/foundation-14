@@ -9,7 +9,7 @@ import re
 
 from .dependencies import import_or_install
 from .filesystem import read_text, write_text_if_changed
-from .fluent import message_map, render_entity_message
+from .fluent import message_map, parse_messages, render_entity_message, same_message_payload
 
 
 @dataclass(frozen=True)
@@ -58,6 +58,10 @@ def build_entity_ftl(
         source_text = _render_source_entry(entry)
         source_hash = _source_hash(source_text)
         preserved = existing.get(entry.message_id)
+        source_message = parse_messages(source_text)[0]
+
+        if preserved is not None and same_message_payload(source_message, preserved):
+            preserved = None
 
         if preserved is not None and source_hashes.get(entry.message_id, source_hash) == source_hash:
             output.extend(preserved.lines)

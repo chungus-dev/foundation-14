@@ -11,6 +11,8 @@ from .dependencies import import_or_install
 
 @dataclass
 class AiEndpoint:
+    base_url: str
+    model: str
     api_key: str
     proxy: str | None = None
     cooldown_until: float = 0
@@ -25,39 +27,46 @@ class AiEndpoint:
 
 @dataclass(frozen=True)
 class AiConfig:
-    base_url: str
-    model: str
     endpoints: tuple[AiEndpoint, ...]
     timeout_seconds: int = 120
     cooldown_seconds: int = 60
     max_attempts: int = 0
+    max_output_tokens: int = 8192
 
     @classmethod
     def from_env(cls) -> "AiConfig":
-        base_url = os.environ.get("TRANSLATE_AI_BASE_URL", "").rstrip("/")
-        model = os.environ.get("TRANSLATE_AI_MODEL", "")
+        base_urls = [
+            base_url.rstrip("/")
+            for base_url in _split_secret_list(os.environ.get("TRANSLATE_AI_BASE_URL", ""))
+        ]
+        models = _split_secret_list(os.environ.get("TRANSLATE_AI_MODEL", ""))
         keys = _split_secret_list(os.environ.get("TRANSLATE_AI_KEYS", ""))
         proxies = _split_secret_list(os.environ.get("TRANSLATE_AI_PROXIES", ""))
 
-        if not base_url:
+        if not base_urls:
             raise ValueError("TRANSLATE_AI_BASE_URL is required for AI translation.")
-        if not model:
+        if not models:
             raise ValueError("TRANSLATE_AI_MODEL is required for AI translation.")
         if not keys:
             raise ValueError("TRANSLATE_AI_KEYS must contain at least one key.")
 
+        endpoint_count = max(len(base_urls), len(models), len(keys), len(proxies) if proxies else 0)
         endpoints = tuple(
-            AiEndpoint(api_key=key, proxy=proxies[index % len(proxies)] if proxies else None)
-            for index, key in enumerate(keys)
+            AiEndpoint(
+                base_url=base_urls[index % len(base_urls)],
+                model=models[index % len(models)],
+                api_key=keys[index % len(keys)],
+                proxy=proxies[index % len(proxies)] if proxies else None,
+            )
+            for index in range(endpoint_count)
         )
 
         return cls(
-            base_url=base_url,
-            model=model,
             endpoints=endpoints,
             timeout_seconds=int(os.environ.get("TRANSLATE_AI_TIMEOUT_SECONDS", "120")),
             cooldown_seconds=int(os.environ.get("TRANSLATE_AI_COOLDOWN_SECONDS", "60")),
             max_attempts=int(os.environ.get("TRANSLATE_AI_MAX_ATTEMPTS", "0")),
+            max_output_tokens=int(os.environ.get("TRANSLATE_AI_MAX_OUTPUT_TOKENS", "8192")),
         )
 
 
@@ -102,11 +111,14 @@ class OpenAICompatibleClient:
             "Content-Type": "application/json",
         }
         payload: dict[str, Any] = {
-            "model": self._config.model,
+            "model": endpoint.model,
             "messages": messages,
             "temperature": temperature,
         }
-        url = f"{self._config.base_url}/chat/completions"
+        if self._config.max_output_tokens > 0:
+            payload["max_tokens"] = self._config.max_output_tokens
+
+        url = f"{endpoint.base_url}/chat/completions"
 
         try:
             async with self._httpx.AsyncClient(
@@ -126,8 +138,16 @@ class OpenAICompatibleClient:
         if response.status_code >= 400:
             raise RuntimeError(f"AI provider returned {response.status_code}.")
 
-        data = response.json()
-        return data["choices"][0]["message"]["content"]
+        try:
+            data = response.json()
+            content = data["choices"][0]["message"]["content"]
+        except (ValueError, KeyError, IndexError, TypeError):
+            raise TransientAiError("AI provider returned an invalid chat completion response.") from None
+
+        if not isinstance(content, str):
+            raise TransientAiError("AI provider returned a non-text chat completion response.")
+
+        return content
 
 
 class RateLimitedError(RuntimeError):

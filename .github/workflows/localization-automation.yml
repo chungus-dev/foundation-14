@@ -57,16 +57,81 @@ jobs:
           echo "branch=$branch" >> "$GITHUB_OUTPUT"
           echo "base=$base" >> "$GITHUB_OUTPUT"
 
+      - name: Translate existing target locale
+        if: ${{ inputs.translate }}
+        env:
+          TRANSLATE_AI_BASE_URL: ${{ secrets.TRANSLATE_AI_BASE_URL || 'https://models.github.ai/inference' }}
+          TRANSLATE_AI_MODEL: ${{ secrets.TRANSLATE_AI_MODEL || 'openai/gpt-4o-mini' }}
+          TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS || secrets.GITHUB_TOKEN }}
+          TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
+        shell: bash
+        run: |
+          locale_dir="Resources/Locale/${{ inputs.target_culture }}"
+          if [ -d "$locale_dir" ]; then
+            mapfile -t files < <(find "$locale_dir" -name '*.ftl' -print | sort)
+          else
+            files=()
+          fi
+          if [ "${#files[@]}" -gt 0 ]; then
+            python Tools/Localization/run.py translate \
+              --source-culture "${{ inputs.source_culture }}" \
+              --target-culture "${{ inputs.target_culture }}" \
+              --allow-partial \
+              "${files[@]}"
+          fi
+
+      - name: Translate existing source locale
+        if: ${{ inputs.translate }}
+        env:
+          TRANSLATE_AI_BASE_URL: ${{ secrets.TRANSLATE_AI_BASE_URL || 'https://models.github.ai/inference' }}
+          TRANSLATE_AI_MODEL: ${{ secrets.TRANSLATE_AI_MODEL || 'openai/gpt-4o-mini' }}
+          TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS || secrets.GITHUB_TOKEN }}
+          TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
+        shell: bash
+        run: |
+          locale_dir="Resources/Locale/${{ inputs.source_culture }}"
+          if [ -d "$locale_dir" ]; then
+            mapfile -t files < <(find "$locale_dir" -name '*.ftl' -print | sort)
+          else
+            files=()
+          fi
+          if [ "${#files[@]}" -gt 0 ]; then
+            python Tools/Localization/run.py translate \
+              --source-culture "${{ inputs.target_culture }}" \
+              --target-culture "${{ inputs.source_culture }}" \
+              --allow-partial \
+              "${files[@]}"
+          fi
+
       - name: Sync missing Fluent strings
         run: >
           python Tools/Localization/run.py sync-strings
           --source-culture "${{ inputs.source_culture }}"
           --target-culture "${{ inputs.target_culture }}"
+          --bidirectional
 
       - name: Extract entity prototype localizations
         run: >
           python Tools/Localization/run.py extract-prototypes
           --culture "${{ inputs.target_culture }}"
+
+      - name: Translate reverse-synced source files
+        if: ${{ inputs.translate }}
+        env:
+          TRANSLATE_AI_BASE_URL: ${{ secrets.TRANSLATE_AI_BASE_URL || 'https://models.github.ai/inference' }}
+          TRANSLATE_AI_MODEL: ${{ secrets.TRANSLATE_AI_MODEL || 'openai/gpt-4o-mini' }}
+          TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS || secrets.GITHUB_TOKEN }}
+          TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
+        shell: bash
+        run: |
+          mapfile -t files < <(git diff --name-only -- "Resources/Locale/${{ inputs.source_culture }}" | grep '\.ftl$' | sort || true)
+          if [ "${#files[@]}" -gt 0 ]; then
+            python Tools/Localization/run.py translate \
+              --source-culture "${{ inputs.target_culture }}" \
+              --target-culture "${{ inputs.source_culture }}" \
+              --allow-partial \
+              "${files[@]}"
+          fi
 
       - name: Translate synced files
         if: ${{ inputs.translate }}
@@ -76,7 +141,12 @@ jobs:
           TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS || secrets.GITHUB_TOKEN }}
           TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
         run: |
-          mapfile -t files < <(find "Resources/Locale/${{ inputs.target_culture }}" -name '*.ftl' -print | sort)
+          locale_dir="Resources/Locale/${{ inputs.target_culture }}"
+          if [ -d "$locale_dir" ]; then
+            mapfile -t files < <(find "$locale_dir" -name '*.ftl' -print | sort)
+          else
+            files=()
+          fi
           if [ "${#files[@]}" -gt 0 ]; then
             python Tools/Localization/run.py translate \
               --source-culture "${{ inputs.source_culture }}" \

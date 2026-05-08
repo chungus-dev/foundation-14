@@ -61,7 +61,41 @@ def normalize_fluent_text(text: str) -> str:
     if not stripped.strip():
         return ""
 
-    return stripped + "\n"
+    return "\n".join(escape_leading_multiline_markup_lines(stripped.split("\n"))) + "\n"
+
+
+def escape_leading_multiline_markup_lines(lines: list[str]) -> list[str]:
+    output = list(lines)
+    waiting_for_pattern_start = False
+
+    for index, line in enumerate(output):
+        if _is_pattern_assignment(line):
+            waiting_for_pattern_start = not line.split("=", 1)[1].strip()
+            continue
+
+        if not waiting_for_pattern_start:
+            continue
+
+        if not line.strip():
+            continue
+
+        waiting_for_pattern_start = False
+        output[index] = escape_leading_markup_line(line)
+
+    return output
+
+
+def escape_leading_markup_line(line: str) -> str:
+    stripped = line.lstrip()
+    if not stripped.startswith("[") or stripped.startswith(ZERO_WIDTH_SPACE):
+        return line
+
+    leading_len = len(line) - len(stripped)
+    return line[:leading_len] + ZERO_WIDTH_SPACE + stripped
+
+
+def _is_pattern_assignment(line: str) -> bool:
+    return MESSAGE_START_RE.match(line) is not None or ATTRIBUTE_RE.match(line) is not None
 
 
 def variables(text: str) -> set[str]:

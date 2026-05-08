@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 from dataclasses import dataclass
 import json
+import os
 from pathlib import Path
 import re
 
@@ -129,15 +130,22 @@ def _messages_to_translate(path: Path, source_text: str | None, target_culture: 
         return [
             message
             for message in target_messages.values()
-            if _should_translate_without_source(message, target_culture)
+            if _should_translate_for_target_language(message, target_culture)
         ]
 
     source_messages = message_map(source_text)
-    return [
-        target
-        for message_id, target in target_messages.items()
-        if message_id in source_messages and target.text.strip() == source_messages[message_id].text.strip()
-    ]
+    messages: list[FluentMessage] = []
+
+    for message_id, target in target_messages.items():
+        source = source_messages.get(message_id)
+        if source is not None and target.text.strip() == source.text.strip():
+            messages.append(target)
+            continue
+
+        if _should_translate_for_target_language(target, target_culture):
+            messages.append(target)
+
+    return messages
 
 
 def _chunks(messages: list[FluentMessage], chunk_size: int) -> list[list[FluentMessage]]:
@@ -165,13 +173,16 @@ async def _translate_chunk(
     client: OpenAICompatibleClient,
     prompt: str,
     chunk: list[FluentMessage],
-    attempts: int = 3,
 ) -> dict[str, str]:
     payload = [{"id": message.id, "text": message.text} for message in chunk]
     expected = {message.id: message for message in chunk}
     last_error: Exception | None = None
+    attempts = 0
+    max_attempts = int(os.environ.get("TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS", "0"))
+    cooldown_seconds = int(os.environ.get("TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS", "60"))
 
-    for _ in range(attempts):
+    while max_attempts <= 0 or attempts < max_attempts:
+        attempts += 1
         response = await client.chat([
             {"role": "system", "content": prompt},
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
@@ -181,6 +192,7 @@ async def _translate_chunk(
             return _parse_translation_response(response, expected)
         except ValueError as error:
             last_error = error
+            await asyncio.sleep(cooldown_seconds)
 
     raise TranslationValidationError("AI returned invalid translation repeatedly.") from last_error
 
@@ -236,16 +248,91 @@ def _comments(text: str) -> list[str]:
 
 
 CYRILLIC_RE = re.compile(r"[\u0400-\u04ff]")
+LATIN_WORD_RE = re.compile(r"[A-Za-z][A-Za-z'-]*")
+COMMON_ENGLISH_WORD_RE = re.compile(
+    r"\b(?:the|and|with|from|your|you|this|that|into|have|not|can|will|are|is|to|of|in|on|for)\b",
+    re.IGNORECASE,
+)
+PROTECTED_LATIN_PHRASE_RE = re.compile(
+    r"\b(?:Foundation\s*14|Space\s+Station\s*14|D-?Class|Class-D|SCP-\d+)\b",
+    re.IGNORECASE,
+)
+PRESERVED_LATIN_TERMS = {
+    "ai",
+    "apc",
+    "dna",
+    "gps",
+    "hud",
+    "id",
+    "ids",
+    "nt",
+    "pda",
+    "scp",
+    "ui",
+}
 
 
 def _should_translate_without_source(message: FluentMessage, target_culture: str | None) -> bool:
+    return _should_translate_for_target_language(message, target_culture)
+
+
+def _should_translate_for_target_language(message: FluentMessage, target_culture: str | None) -> bool:
     if target_culture is None:
         return False
 
+    text = _user_visible_text(message.text)
+
     if target_culture.lower().startswith("ru"):
-        return CYRILLIC_RE.search(message.text) is None
+        return _contains_untranslated_english(text)
+
+    if target_culture.lower().startswith("en"):
+        return CYRILLIC_RE.search(text) is not None
 
     return False
+
+
+def _contains_untranslated_english(text: str) -> bool:
+    tokens = _english_residue_tokens(text)
+    if not tokens:
+        return False
+
+    if CYRILLIC_RE.search(text) is None:
+        return True
+
+    return len(tokens) >= 2 or COMMON_ENGLISH_WORD_RE.search(text) is not None
+
+
+def _english_residue_tokens(text: str) -> list[str]:
+    text = PROTECTED_LATIN_PHRASE_RE.sub(" ", text)
+    result: list[str] = []
+
+    for match in LATIN_WORD_RE.finditer(text):
+        token = match.group(0).strip("'-")
+        if not token:
+            continue
+
+        normalized = token.lower()
+        if len(normalized) < 3 or normalized in PRESERVED_LATIN_TERMS or token.isupper():
+            continue
+
+        result.append(normalized)
+
+    return result
+
+
+def _user_visible_text(text: str) -> str:
+    values: list[str] = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+
+        values.append(line.split("=", 1)[1] if "=" in line else line)
+
+    visible = "\n".join(values)
+    visible = re.sub(r"\{[^}]*\}", " ", visible)
+    visible = re.sub(r"\[[^\]]+\]", " ", visible)
+    return visible
 
 
 def _strip_json_fence(response: str) -> str:

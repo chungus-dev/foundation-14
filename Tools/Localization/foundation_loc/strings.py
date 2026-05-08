@@ -13,6 +13,13 @@ class SyncResult:
     changed_files: int
     added_messages: int
 
+    def __add__(self, other: "SyncResult") -> "SyncResult":
+        return SyncResult(
+            self.scanned_files + other.scanned_files,
+            self.changed_files + other.changed_files,
+            self.added_messages + other.added_messages,
+        )
+
 
 def sync_locale_strings(source_root: Path, target_root: Path, dry_run: bool = False) -> SyncResult:
     scanned = 0
