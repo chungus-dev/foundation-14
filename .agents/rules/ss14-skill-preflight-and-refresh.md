@@ -18,13 +18,10 @@ Do not perform a full rules-and-skills reload for every later chat message in th
 
 ## 2. Source-of-truth paths
 
-Use these paths directly instead of searching the repository:
+Use these Codex source-of-truth paths directly instead of searching the repository:
 
 1. Rules source of truth: `.agents/rules`.
 2. Skills source of truth: `.agents/skills`.
-3. Compatibility bridge tree: `.claude`.
-
-When a bridge file points to a source file under `.agents`, load the `.agents` source file and treat it as authoritative.
 
 ## 3. How to select skills
 
