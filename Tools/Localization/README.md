@@ -30,7 +30,7 @@ AI translation uses an OpenAI-compatible `/chat/completions` endpoint and reads 
 - `TRANSLATE_AI_MODEL`
 - `TRANSLATE_AI_KEYS`
 - `TRANSLATE_AI_PROXIES` optional, comma- or newline-separated
-- `TRANSLATE_AI_MAX_ATTEMPTS` optional; set `0` for unlimited provider/key retry attempts
+- `TRANSLATE_AI_MAX_ATTEMPTS` optional, defaults to `0` for unlimited provider/key retry attempts
 
 GitHub Actions defaults to the free, rate-limited GitHub Models endpoint:
 

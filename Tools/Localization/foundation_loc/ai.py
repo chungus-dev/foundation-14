@@ -30,7 +30,7 @@ class AiConfig:
     endpoints: tuple[AiEndpoint, ...]
     timeout_seconds: int = 120
     cooldown_seconds: int = 60
-    max_attempts: int = 20
+    max_attempts: int = 0
 
     @classmethod
     def from_env(cls) -> "AiConfig":
@@ -57,7 +57,7 @@ class AiConfig:
             endpoints=endpoints,
             timeout_seconds=int(os.environ.get("TRANSLATE_AI_TIMEOUT_SECONDS", "120")),
             cooldown_seconds=int(os.environ.get("TRANSLATE_AI_COOLDOWN_SECONDS", "60")),
-            max_attempts=int(os.environ.get("TRANSLATE_AI_MAX_ATTEMPTS", "20")),
+            max_attempts=int(os.environ.get("TRANSLATE_AI_MAX_ATTEMPTS", "0")),
         )
 
 
@@ -81,7 +81,7 @@ class OpenAICompatibleClient:
                 endpoint.cool_down(self._config.cooldown_seconds)
                 last_error = error
             except TransientAiError as error:
-                endpoint.cool_down(min(10, self._config.cooldown_seconds))
+                endpoint.cool_down(self._config.cooldown_seconds)
                 last_error = error
 
         raise RuntimeError("AI translation failed after configured retry attempts.") from last_error
