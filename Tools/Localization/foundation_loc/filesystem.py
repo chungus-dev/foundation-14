@@ -54,19 +54,17 @@ def remove_empty_files_and_dirs(root: Path, dry_run: bool = False) -> tuple[int,
     if not root.exists():
         return removed_files, removed_dirs
 
-    for path in sorted(root.rglob("*"), key=lambda item: len(item.parts), reverse=True):
+    paths = sorted(root.rglob("*"), key=lambda item: len(item.parts), reverse=True)
+
+    for path in paths:
         if path.is_file() and path.stat().st_size == 0:
             removed_files += 1
             if not dry_run:
                 path.unlink()
-
-    for path in sorted((p for p in root.rglob("*") if p.is_dir()), key=lambda item: len(item.parts), reverse=True):
-        if any(path.iterdir()):
-            continue
-
-        removed_dirs += 1
-        if not dry_run:
-            path.rmdir()
+        elif path.is_dir() and not any(path.iterdir()):
+            removed_dirs += 1
+            if not dry_run:
+                path.rmdir()
 
     return removed_files, removed_dirs
 
@@ -76,6 +74,6 @@ def remove_tree_if_empty(root: Path, dry_run: bool = False) -> bool:
         return False
 
     if not dry_run:
-        shutil.rmtree(root)
+        root.rmdir()
 
     return True

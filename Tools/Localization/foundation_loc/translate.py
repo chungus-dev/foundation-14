@@ -194,6 +194,7 @@ async def _translate_chunk(
     max_attempts = int(os.environ.get("TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS", "0"))
     cooldown_seconds = int(os.environ.get("TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS", "60"))
 
+    # max_attempts==0 (via TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS) means unlimited invalid-response retries
     while max_attempts <= 0 or attempts < max_attempts:
         attempts += 1
         response = await client.chat([
@@ -280,10 +281,6 @@ PRESERVED_LATIN_TERMS = {
     "scp",
     "ui",
 }
-
-
-def _should_translate_without_source(message: FluentMessage, target_culture: str | None) -> bool:
-    return _should_translate_for_target_language(message, target_culture)
 
 
 def _should_translate_for_target_language(message: FluentMessage, target_culture: str | None) -> bool:
