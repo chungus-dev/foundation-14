@@ -9,9 +9,10 @@ namespace Content.Shared.Localizations
     {
         [Dependency] private readonly ILocalizationManager _loc = default!;
 
-        // scp edit: run the fork in Russian while keeping upstream English as the fallback locale.
+        // Scp edit start: run the fork in Russian while keeping upstream English as the fallback locale.
         private const string Culture = "ru-RU";
         private const string FallbackCulture = "en-US";
+        // Scp edit end
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
@@ -26,6 +27,7 @@ namespace Content.Shared.Localizations
 
         public void Initialize()
         {
+            // Scp edit start: load the active fork culture and keep upstream English available for fallbacks.
             var culture = CultureInfo.GetCultureInfo(Culture);
             var fallbackCulture = CultureInfo.GetCultureInfo(FallbackCulture);
 
@@ -44,14 +46,18 @@ namespace Content.Shared.Localizations
              */
             _loc.AddFunction(fallbackCulture, "MAKEPLURAL", FormatMakePlural);
             _loc.AddFunction(fallbackCulture, "MANY", FormatMany);
+            // Scp edit end
         }
 
+        // Scp added start
         private void EnsureCultureLoaded(CultureInfo culture)
         {
             if (!_loc.HasCulture(culture))
                 _loc.LoadCulture(culture);
         }
+        // Scp added end
 
+        // Scp added start
         private void AddSharedFunctions(CultureInfo culture)
         {
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
@@ -66,6 +72,7 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "NATURALPERCENT", args => FormatNaturalPercent(culture, args));
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
         }
+        // Scp added end
 
         private ILocValue FormatMany(LocArgs args)
         {
@@ -81,6 +88,7 @@ namespace Content.Shared.Localizations
             }
         }
 
+        // Scp edit start: format localized numbers with the culture that owns the calling Fluent function.
         private ILocValue FormatNaturalPercent(CultureInfo culture, LocArgs args)
         {
             var number = ((LocValueNumber) args.Args[0]).Value * 100;
@@ -89,7 +97,9 @@ namespace Content.Shared.Localizations
             formatter.NumberDecimalDigits = maxDecimals;
             return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)) + "%");
         }
+        // Scp edit end
 
+        // Scp edit start: format localized numbers with the culture that owns the calling Fluent function.
         private ILocValue FormatNaturalFixed(CultureInfo culture, LocArgs args)
         {
             var number = ((LocValueNumber) args.Args[0]).Value;
@@ -98,6 +108,7 @@ namespace Content.Shared.Localizations
             formatter.NumberDecimalDigits = maxDecimals;
             return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)));
         }
+        // Scp edit end
 
         private static readonly Regex PluralEsRule = new("^.*(s|sh|ch|x|z)$");
 

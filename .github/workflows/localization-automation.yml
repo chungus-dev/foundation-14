@@ -71,10 +71,10 @@ jobs:
       - name: Translate synced files
         if: ${{ inputs.translate }}
         env:
-          F14_AI_BASE_URL: ${{ secrets.F14_AI_BASE_URL || 'https://models.github.ai/inference' }}
-          F14_AI_MODEL: ${{ secrets.F14_AI_MODEL || 'openai/gpt-4o-mini' }}
-          F14_AI_KEYS: ${{ secrets.F14_AI_KEYS || secrets.GITHUB_TOKEN }}
-          F14_AI_PROXIES: ${{ secrets.F14_AI_PROXIES }}
+          TRANSLATE_AI_BASE_URL: ${{ secrets.TRANSLATE_AI_BASE_URL || 'https://models.github.ai/inference' }}
+          TRANSLATE_AI_MODEL: ${{ secrets.TRANSLATE_AI_MODEL || 'openai/gpt-4o-mini' }}
+          TRANSLATE_AI_KEYS: ${{ secrets.TRANSLATE_AI_KEYS || secrets.GITHUB_TOKEN }}
+          TRANSLATE_AI_PROXIES: ${{ secrets.TRANSLATE_AI_PROXIES }}
         run: |
           mapfile -t files < <(find "Resources/Locale/${{ inputs.target_culture }}" -name '*.ftl' -print | sort)
           if [ "${#files[@]}" -gt 0 ]; then

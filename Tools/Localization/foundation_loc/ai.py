@@ -34,17 +34,17 @@ class AiConfig:
 
     @classmethod
     def from_env(cls) -> "AiConfig":
-        base_url = os.environ.get("F14_AI_BASE_URL", "").rstrip("/")
-        model = os.environ.get("F14_AI_MODEL", "")
-        keys = _split_secret_list(os.environ.get("F14_AI_KEYS", ""))
-        proxies = _split_secret_list(os.environ.get("F14_AI_PROXIES", ""))
+        base_url = os.environ.get("TRANSLATE_AI_BASE_URL", "").rstrip("/")
+        model = os.environ.get("TRANSLATE_AI_MODEL", "")
+        keys = _split_secret_list(os.environ.get("TRANSLATE_AI_KEYS", ""))
+        proxies = _split_secret_list(os.environ.get("TRANSLATE_AI_PROXIES", ""))
 
         if not base_url:
-            raise ValueError("F14_AI_BASE_URL is required for AI translation.")
+            raise ValueError("TRANSLATE_AI_BASE_URL is required for AI translation.")
         if not model:
-            raise ValueError("F14_AI_MODEL is required for AI translation.")
+            raise ValueError("TRANSLATE_AI_MODEL is required for AI translation.")
         if not keys:
-            raise ValueError("F14_AI_KEYS must contain at least one key.")
+            raise ValueError("TRANSLATE_AI_KEYS must contain at least one key.")
 
         endpoints = tuple(
             AiEndpoint(api_key=key, proxy=proxies[index % len(proxies)] if proxies else None)
@@ -55,9 +55,9 @@ class AiConfig:
             base_url=base_url,
             model=model,
             endpoints=endpoints,
-            timeout_seconds=int(os.environ.get("F14_AI_TIMEOUT_SECONDS", "120")),
-            cooldown_seconds=int(os.environ.get("F14_AI_COOLDOWN_SECONDS", "60")),
-            max_attempts=int(os.environ.get("F14_AI_MAX_ATTEMPTS", "20")),
+            timeout_seconds=int(os.environ.get("TRANSLATE_AI_TIMEOUT_SECONDS", "120")),
+            cooldown_seconds=int(os.environ.get("TRANSLATE_AI_COOLDOWN_SECONDS", "60")),
+            max_attempts=int(os.environ.get("TRANSLATE_AI_MAX_ATTEMPTS", "20")),
         )
 
 
