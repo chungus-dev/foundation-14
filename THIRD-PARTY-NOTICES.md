@@ -9,7 +9,7 @@ specific license controls that material.
 
 Foundation 14 original contributions are intended to be licensed under the
 Reciprocal Public License 1.5 (`RPL-1.5`) unless a file or asset metadata file
-states otherwise. See `LICENSES/RPL-1.5.txt`.
+states otherwise. See `LICENSE-NOTICE.md` and `LICENSES/RPL-1.5.txt`.
 
 The `_Scp` directory convention is used to identify Foundation 14 fork-owned
 code and data, but it is not the sole boundary of the license. Moving,
@@ -104,6 +104,18 @@ material.
 
 Any direct SCP Wiki text, imagery, or other material incorporated into this
 project must retain the applicable source license and attribution separately.
+SCP Wiki material is commonly licensed under Creative Commons
+Attribution-ShareAlike 3.0 (`CC-BY-SA-3.0`) and must be attributed to the wiki
+and applicable authors where used. See the SCP Foundation licensing guide:
+`https://scp-wiki.wikidot.com/licensing-guide`.
+
+Do not treat SCP-derived material as Foundation 14-owned RPL material unless the
+contributor separately owns the relevant rights and clearly licenses that
+original contribution under RPL-1.5.
+
+Keep SCP-derived material separately identifiable where practical. If a file or
+asset metadata entry contains SCP-derived material, that file or metadata entry
+must state the applicable source license and attribution.
 
 ---
 

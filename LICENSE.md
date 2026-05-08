@@ -5,6 +5,7 @@ Foundation 14 is distributed as a mixed-license project.
 Unless a file, directory notice, asset metadata file, or third-party notice
 states otherwise, original Foundation 14 contributions are licensed under the
 Reciprocal Public License 1.5 (`RPL-1.5`). See `LICENSES/RPL-1.5.txt`.
+The Foundation 14 RPL notice is provided in `LICENSE-NOTICE.md`.
 
 This repository also contains upstream and third-party material that remains
 under its original license. See `THIRD-PARTY-NOTICES.md`.
@@ -27,7 +28,9 @@ directories, for example:
 
 Files under these directories are treated as Foundation 14 original work and
 are licensed under RPL-1.5 unless the file or asset metadata states otherwise.
-Per-file SPDX headers are not required for these fork-owned directories.
+Per-file SPDX headers are not required by project convention for these
+fork-owned directories. This convention does not waive any RPL notice
+obligations for downstream distributors.
 
 The `_Scp` directory convention is an ownership convention, not a loophole.
 Moving, renaming, copying, vendoring, or embedding Foundation 14 original work
@@ -41,6 +44,25 @@ corresponding Foundation 14 Extension.
 Deploying a modified Foundation 14 build, server, packaged client, or hosted
 game service triggers the RPL-1.5 source-availability obligations for the
 Foundation 14 Extensions that were Deployed.
+
+If Foundation 14 original source is copied or distributed outside this
+repository layout, preserve `LICENSE.md`, `LICENSE-NOTICE.md`,
+`LICENSES/RPL-1.5.txt`, and `THIRD-PARTY-NOTICES.md`, or provide equivalent
+notices where recipients are likely to find them.
+
+Distributors of standalone Foundation 14 source files should include the RPL
+license notice in or with those files as required by RPL-1.5.
+
+## Contributions
+
+By submitting a contribution to Foundation 14, the contributor represents that
+they have the right to submit it and agrees that the contribution is licensed
+under the license that applies to the material they add or modify.
+
+Original Foundation 14 contributions are licensed under RPL-1.5 unless a file,
+asset metadata file, or notice states otherwise. Contributions to upstream or
+third-party material must preserve the applicable upstream license and
+attribution notices.
 
 ## Upstream and Modified Upstream Files
 
@@ -94,3 +116,11 @@ material.
 
 Any direct SCP Wiki text, imagery, or other material incorporated into this
 project must retain the applicable source license and attribution separately.
+SCP-derived material must not be treated as Foundation 14-owned RPL material
+unless the contributor separately owns the relevant rights and clearly licenses
+that original contribution under RPL-1.5.
+
+Keep SCP-derived material in separately identifiable files or metadata where
+practical. If a file contains SCP-derived material, that file must clearly state
+the applicable SCP source license and attribution instead of relying on the
+repository's RPL default.
