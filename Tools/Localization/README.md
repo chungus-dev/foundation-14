@@ -29,17 +29,25 @@ Fork-owned localization files live under `Resources/Locale/<culture>/_Scp/`.
 Single-line upstream edits may use `Scp edit`, and single-line additions may use `Scp added`.
 Use `Scp edit start` / `Scp edit end` and `Scp added start` / `Scp added end` for multi-line edits/additions.
 
-AI translation uses an OpenAI-compatible `/chat/completions` endpoint and reads secrets only from environment variables:
+AI translation uses an OpenAI-compatible `/chat/completions` endpoint and reads configuration from environment variables:
 
 - `TRANSLATE_AI_BASE_URL`, comma- or newline-separated for provider rotation
 - `TRANSLATE_AI_MODEL`, comma- or newline-separated for provider/model rotation
 - `TRANSLATE_AI_KEYS`
 - `TRANSLATE_AI_PROXIES` optional, comma- or newline-separated
 - `TRANSLATE_AI_MAX_ATTEMPTS` optional, defaults to `0` for unlimited provider/key retry attempts
+- `TRANSLATE_AI_COOLDOWN_SECONDS` optional, defaults to `60`
+- `TRANSLATE_AI_TIMEOUT_SECONDS` optional, defaults to `300`
 - `TRANSLATE_AI_MAX_OUTPUT_TOKENS` optional, defaults to `8192`
 - `TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS` optional, defaults to `0` for unlimited invalid-response retries
 - `TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS` optional, defaults to `60`
 - `LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE` optional in GitHub Actions, defaults to `10`
+- `LOCALIZATION_TRANSLATION_CHUNK_SIZE` optional in GitHub Actions, defaults to `4000`
+- `LOCALIZATION_TRANSLATION_CONCURRENCY` optional in GitHub Actions, defaults to `2`
+- `LOCALIZATION_MAX_CONTINUATION_ATTEMPTS` optional in GitHub Actions, defaults to `5`
+
+In GitHub Actions, non-sensitive provider settings should be repository variables or workflow inputs.
+Only API keys and optional proxies should be repository secrets.
 
 GitHub Actions defaults to the free, rate-limited GitHub Models endpoint:
 
@@ -49,6 +57,7 @@ TRANSLATE_AI_MODEL=openai/gpt-4o-mini
 TRANSLATE_AI_KEYS=${{ github.token }}
 TRANSLATE_AI_MAX_ATTEMPTS=5
 TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS=2
+TRANSLATE_AI_TIMEOUT_SECONDS=300
 ```
 
 The workflow uses `github.token` only with the GitHub Models endpoint. External providers require an explicit
@@ -62,11 +71,14 @@ For fully local inference, run Ollama or LM Studio and point `TRANSLATE_AI_BASE_
 The AI provider is allowed to translate values only. File structure, Fluent message IDs, attributes, comments, placeholders, and final formatting are owned by these tools.
 The translator rewrites messages that still match the source text and messages that are visibly in the wrong language for the target culture, including generated prototype messages.
 Before new strings are synced and new prototype strings are extracted, the workflow translates already-existing
-untranslated target/source locale messages so old untranslated content is handled first.
+untranslated target locale messages so old untranslated content is handled first. Source-culture AI translation is
+disabled by default and can be enabled manually with the `translate_source_culture` workflow input.
 When `--allow-partial` is used, successful chunks are written immediately and failed files are left partially translated.
 The next run skips already translated messages and continues from messages that still match the source.
 The GitHub Actions workflow translates files in checkpointed batches and pushes each changed batch to the
 automation branch. If a batch fails without making progress, the workflow stops later AI translation steps for
 that run, keeps the pushed checkpoints, and the next run retries the remaining untranslated messages.
+When `auto_continue` is enabled, the workflow dispatches a new run after a no-progress AI stop until the configured
+continuation attempt limit is reached.
 Checkpoint commits are split by final locale directory. Their subject uses
 `Auto translate <directory> into <language>`, and the commit body lists the changed files under `Translated`.

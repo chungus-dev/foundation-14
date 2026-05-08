@@ -29,7 +29,7 @@ class AiEndpoint:
 @dataclass(frozen=True)
 class AiConfig:
     endpoints: tuple[AiEndpoint, ...]
-    timeout_seconds: int = 120
+    timeout_seconds: int = 300
     cooldown_seconds: int = 60
     max_attempts: int = 0
     max_output_tokens: int = 8192
@@ -64,7 +64,7 @@ class AiConfig:
 
         return cls(
             endpoints=endpoints,
-            timeout_seconds=int(os.environ.get("TRANSLATE_AI_TIMEOUT_SECONDS", "120")),
+            timeout_seconds=int(os.environ.get("TRANSLATE_AI_TIMEOUT_SECONDS", "300")),
             cooldown_seconds=int(os.environ.get("TRANSLATE_AI_COOLDOWN_SECONDS", "60")),
             max_attempts=int(os.environ.get("TRANSLATE_AI_MAX_ATTEMPTS", "0")),
             max_output_tokens=int(os.environ.get("TRANSLATE_AI_MAX_OUTPUT_TOKENS", "8192")),

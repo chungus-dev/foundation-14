@@ -44,8 +44,8 @@ def main() -> int:
     translate.add_argument("--branch", required=True)
     translate.add_argument("--base", required=True)
     translate.add_argument("--batch-size", type=int, default=_env_int("LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE", 10))
-    translate.add_argument("--chunk-size", type=int, default=7000)
-    translate.add_argument("--concurrency", type=int, default=4)
+    translate.add_argument("--chunk-size", type=int, default=_env_int("LOCALIZATION_TRANSLATION_CHUNK_SIZE", 4000))
+    translate.add_argument("--concurrency", type=int, default=_env_int("LOCALIZATION_TRANSLATION_CONCURRENCY", 2))
     translate.set_defaults(func=_translate_batches)
 
     args = parser.parse_args()
@@ -270,6 +270,10 @@ def _request_ai_stop(reason: str) -> None:
     stop_file = os.environ.get("LOCALIZATION_AI_STOP_FILE")
     if stop_file:
         Path(stop_file).write_text(reason, encoding="utf-8")
+
+    continue_file = os.environ.get("LOCALIZATION_CONTINUE_FILE")
+    if continue_file:
+        Path(continue_file).write_text(reason, encoding="utf-8")
 
 
 def _changed_locale_files() -> list[Path]:
