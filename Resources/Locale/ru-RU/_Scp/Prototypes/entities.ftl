@@ -3,101 +3,133 @@
 ent-ClothingBackpack = рюкзак
   .desc = Надевается на спину, в него можно складывать вещи.
 
+
 ent-ClothingBackpackClown = гихиканье фон хонкертона
   .desc = Рюкзак производства Honk! Co.
+
 
 ent-ClothingBackpackIan = рюкзак Яна
   .desc = Иногда он его носит.
 
+
 ent-ClothingBackpackSecurity = рюкзак службы безопасности
   .desc = Очень прочный рюкзак.
+
 
 ent-ClothingBackpackBrigmedic = рюкзак бритмедика
   .desc = Очень стерильный рюкзак.
 
+
 ent-ClothingBackpackEngineering = рюкзак инженерного отдела
   .desc = Прочный рюкзак для повседневной работы на станции.
+
 
 ent-ClothingBackpackAtmospherics = рюкзак атмосферного отдела
   .desc = Рюкзак из огнестойких волокон. Пахнет плазмой.
 
+
 ent-ClothingBackpackMedical = медицинский рюкзак
   .desc = Рюкзак, специально разработанный для использования в стерильной среде.
+
 
 ent-ClothingBackpackCaptain = рюкзак капитана
   .desc = Специальный рюкзак, выпускаемый эксклюзивно для офицеров Nanotrasen.
 
+
 ent-ClothingBackpackMime = мимовский рюкзак
   .desc = Тихий рюкзак для тихих работников. Silence Co.
+
 
 ent-ClothingBackpackChemistry = химический рюкзак
   .desc = Рюкзак, специально разработанный для отталкивания пятен и опасных жидкостей.
 
+
 ent-ClothingBackpackHydroponics = рюкзак гидропоники
   .desc = Рюкзак из полностью натуральных волокон.
+
 
 ent-ClothingBackpackScience = научный рюкзак
   .desc = Рюкзак, специально разработанный для отталкивания пятен и опасных жидкостей.
 
+
 ent-ClothingBackpackVirology = рюкзак вирусологии
   .desc = Рюкзак из гипоаллергенных волокон. Разработан для предотвращения распространения болезней. Пахнет обезьяной.
+
 
 ent-ClothingBackpackGenetics = рюкзак генетики
   .desc = Рюкзак, разработанный быть сверхпрочным на случай, если кто-то разозлится и станет большим.
 
+
 ent-ClothingBackpackCargo = грузовой рюкзак
   .desc = Прочный рюкзак для кражи грузов.
+
 
 ent-ClothingBackpackSalvage = мешок для добычи
   .desc = Прочный рюкзак для хранения добычи.
 
+
 ent-ClothingBackpackMerc = рюкзак наёмника
   .desc = Рюкзак, побывавший во многих опасных местах, надёжный боевой рюкзак.
+
 
 ent-ClothingBackpackERTLeader = рюкзак командира ОГР
   .desc = Вместительный рюкзак с множеством карманов, носимый командиром Группы экстренного реагирования.
 
+
 ent-ClothingBackpackERTSecurity = рюкзак бойца ОГР
   .desc = Вместительный рюкзак с множеством карманов, носимый бойцами службы безопасности Группы экстренного реагирования.
+
 
 ent-ClothingBackpackERTMedical = рюкзак медика ОГР
   .desc = Вместительный рюкзак с множеством карманов, носимый медиками Группы экстренного реагирования.
 
+
 ent-ClothingBackpackERTEngineer = рюкзак инженера ОГР
   .desc = Вместительный рюкзак с множеством карманов, носимый инженерами Группы экстренного реагирования.
+
 
 ent-ClothingBackpackERTJanitor = рюкзак уборщика ОГР
   .desc = Вместительный рюкзак с множеством карманов, носимый уборщиками Группы экстренного реагирования.
 
+
 ent-ClothingBackpackERTClown = рюкзак клоуна ОГР
   .desc = Вместительный рюкзак с множеством карманов, носимый клоунами Группы экстренного реагирования.
+
 
 ent-ClothingBackpackERTChaplain = рюкзак капеллана ОГР
   .desc = Вместительный рюкзак с множеством карманов, носимый капелланами Группы экстренного реагирования.
 
+
 ent-ClothingBackpackDeathSquad = рюкзак эскадрона смерти
   .desc = Вмещает снаряжение самых грозных агентов ЦентКомма.
 
+
 ent-ClothingBackpackSyndicate = синдикатский рюкзак
+
 
 ent-ClothingBackpackHolding = сумка хранения
   .desc = Рюкзак, открывающийся в локализованный карман синего пространства.
+
 
 ent-ClothingBackpackCluwne = джиглз фон джонкертона
   .desc = Рюкзак производства Jonk! Co.
   .suffix = Не снимается
 
+
 ent-ClothingBackpackElectropack = электрорюкзак
   .desc = Бьёт током по сигналу. Используется для контроля особо опасных преступников.
   .suffix = Самоудаляемый
+
 
 ent-ClothingBackpackDebug = вакакрюкзак
   .desc = Что за хуйня?
   .suffix = ОТЛАДКА
 
+
 ent-ClothingBackpackDebug2 = большой вакакрюкзак
   .desc = Что за хуйня?
   .suffix = ОТЛАДКА
+
 
 ent-ClothingBackpackDebug3 = gay wackpack
   .desc = What the fuck is this?
@@ -108,6 +140,9 @@ ent-ClothingBackpackDebug4 = offset wackpack
   .suffix = DEBUG
 
 ### Resources/Prototypes/Entities/Clothing/Back/duffel.yml
+
+### Resources/Prototypes/Entities/Clothing/Back/duffel.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Back/duffel.yml
 
@@ -169,6 +204,9 @@ ent-ClothingBackpackDuffelCBURN = CBURN duffel bag
   .desc = A duffel bag containing a variety of biological containment equipment.
 
 ### Resources/Prototypes/Entities/Clothing/Back/satchel.yml
+
+### Resources/Prototypes/Entities/Clothing/Back/satchel.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Back/satchel.yml
 
@@ -237,6 +275,9 @@ ent-ClothingBackpackSatchelAdmin = satchel of administration
 
 ### Resources/Prototypes/Entities/Clothing/Back/smuggler.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Back/smuggler.yml
+
 ent-ClothingBackpackSatchelSmuggler = smuggler's satchel
   .desc = A handy, suspicious looking satchel. Just flat enough to fit underneath floor tiles.
   .suffix = Empty
@@ -261,6 +302,9 @@ ent-RandomSatchelSpawner = random smuggler's satchel spawner
 
 ### Resources/Prototypes/Entities/Clothing/Back/specific.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Back/specific.yml
+
 ent-ClothingBackpackChameleon = backpack
   .desc = You wear this on your back and put items into it.
   .suffix = Chameleon
@@ -278,6 +322,9 @@ ent-XenoborgMaterialBag = silicon storage square
   .desc = A knockoff version of a bluespace bag, can vacumn up select materials, unfit for use by humanoids due to harmful emissions.
 
 ### Resources/Prototypes/Entities/Clothing/Belt/belts.yml
+
+### Resources/Prototypes/Entities/Clothing/Belt/belts.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Belt/belts.yml
 
@@ -321,6 +368,9 @@ ent-ClothingBeltMilitaryWebbingERT = ERT chest rig
 
 ### Resources/Prototypes/Entities/Clothing/Belt/job.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Belt/job.yml
+
 ent-ClothingBeltUtility = utility belt
   .desc = Can hold various things.
 
@@ -349,6 +399,9 @@ ent-ClothingBeltSecurity = security belt
 
 ### Resources/Prototypes/Entities/Clothing/Belt/simple.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Belt/simple.yml
+
 ent-ClothingBeltChampion = championship belt
   .desc = Proves to the world that you are the strongest!
 
@@ -361,10 +414,16 @@ ent-ClothingBeltSuspendersBlack = black suspenders
 
 ### Resources/Prototypes/Entities/Clothing/Belt/waist_bags.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Belt/waist_bags.yml
+
 ent-ClothingBeltStorageWaistbag = leather waist bag
   .desc = A leather waist bag meant for carrying small items.
 
 ### Resources/Prototypes/Entities/Clothing/Ears/headsets.yml
+
+### Resources/Prototypes/Entities/Clothing/Ears/headsets.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Ears/headsets.yml
 
@@ -434,6 +493,9 @@ ent-ClothingHeadsetNinja = green headset
 
 ### Resources/Prototypes/Entities/Clothing/Ears/headsets_alt.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Ears/headsets_alt.yml
+
 ent-ClothingHeadsetAlt = headset
   .desc = An updated, modular intercom that fits over the head. Takes encryption keys.
 
@@ -462,6 +524,9 @@ ent-ClothingHeadsetAltWizard = wizard's over-ear headset
 
 ### Resources/Prototypes/Entities/Clothing/Ears/specific.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Ears/specific.yml
+
 ent-ClothingHeadsetChameleon = passenger headset
   .desc = An updated, modular intercom that fits over the head. Takes encryption keys.
   .suffix = Chameleon
@@ -470,10 +535,16 @@ ent-ClothingHeadsetChameleon = passenger headset
 
 ### Resources/Prototypes/Entities/Clothing/Eyes/base_clothingeyes.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Eyes/base_clothingeyes.yml
+
 ent-ClothingHeadEyeBaseFlipped =
   .suffix = flipped
 
 ### Resources/Prototypes/Entities/Clothing/Eyes/glasses.yml
+
+### Resources/Prototypes/Entities/Clothing/Eyes/glasses.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Eyes/glasses.yml
 
@@ -529,6 +600,9 @@ ent-ClothingEyesGlassesNoir = noir-tech glasses
   .desc = A pair of glasses that simulate what the world looked like before the invention of color.
 
 ### Resources/Prototypes/Entities/Clothing/Eyes/hud.yml
+
+### Resources/Prototypes/Entities/Clothing/Eyes/hud.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Eyes/hud.yml
 
@@ -601,6 +675,9 @@ ent-ClothingEyesEyepatchHudDiagFlipped = diagnostic hud eyepatch
 
 ### Resources/Prototypes/Entities/Clothing/Eyes/misc.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Eyes/misc.yml
+
 ent-ClothingEyesBlindfold = blindfold
   .desc = The bind leading the blind.
 
@@ -614,6 +691,9 @@ ent-ClothingEyesEyepatchFlipped =
 
 ### Resources/Prototypes/Entities/Clothing/Eyes/specific.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Eyes/specific.yml
+
 ent-ClothingEyesChameleon = sun glasses
   .desc = Useful both for security and cargonia.
   .suffix = Chameleon
@@ -622,10 +702,16 @@ ent-ClothingEyesChameleon = sun glasses
 
 ### Resources/Prototypes/Entities/Clothing/Hands/base_clothinghands.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Hands/base_clothinghands.yml
+
 ent-SilverRingBase = silver ring
   .desc = Looks slightly less valuable than a gold one.
 
 ### Resources/Prototypes/Entities/Clothing/Hands/colored.yml
+
+### Resources/Prototypes/Entities/Clothing/Hands/colored.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Hands/colored.yml
 
@@ -672,6 +758,9 @@ ent-ClothingHandsGlovesConducting =
   .suffix = Conducting
 
 ### Resources/Prototypes/Entities/Clothing/Hands/gloves.yml
+
+### Resources/Prototypes/Entities/Clothing/Hands/gloves.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Hands/gloves.yml
 
@@ -784,6 +873,9 @@ ent-ClothingHandsKnuckleBoneCrushers = bone crushers
 
 ### Resources/Prototypes/Entities/Clothing/Hands/rings.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Hands/rings.yml
+
 ent-GoldRing = gold ring
   .desc = A precious ring.
 
@@ -806,6 +898,9 @@ ent-SilverRingGem = silver gem ring
 
 ### Resources/Prototypes/Entities/Clothing/Hands/specific.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Hands/specific.yml
+
 ent-ClothingHandsChameleon = black gloves
   .desc = Regular black gloves that do not keep you from frying.
   .suffix = Chameleon
@@ -814,6 +909,9 @@ ent-ClothingHandsChameleonThief =
   .suffix = Chameleon, Thieving
 
 ### Resources/Prototypes/Entities/Clothing/Head/animals.yml
+
+### Resources/Prototypes/Entities/Clothing/Head/animals.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Head/animals.yml
 
@@ -833,6 +931,9 @@ ent-ClothingHeadHatAnimalMonkey = monkey hat
   .desc = That's a monkey head. It has a hole on a mouth to eat bananas.
 
 ### Resources/Prototypes/Entities/Clothing/Head/bandanas.yml
+
+### Resources/Prototypes/Entities/Clothing/Head/bandanas.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Head/bandanas.yml
 
@@ -860,6 +961,9 @@ ent-ClothingHeadBandBrown = brown bandana
 
 ### Resources/Prototypes/Entities/Clothing/Head/base_clothinghead.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Head/base_clothinghead.yml
+
 ent-ClothingHeadLightBase = base helmet with light
 
 ent-ClothingHeadEVAHelmetBase = base space helmet
@@ -872,6 +976,9 @@ ent-ClothingHeadHatHoodWinterBase = base winter coat hood
   .desc = A hood, made to keep your head warm.
 
 ### Resources/Prototypes/Entities/Clothing/Head/eva-helmets.yml
+
+### Resources/Prototypes/Entities/Clothing/Head/eva-helmets.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Head/eva-helmets.yml
 
@@ -897,6 +1004,9 @@ ent-ClothingHeadHelmetVoidParamed = paramedic void helmet
 
 ### Resources/Prototypes/Entities/Clothing/Head/hardhats.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Head/hardhats.yml
+
 ent-ClothingHeadHatHardhatBlue = blue hard hat
   .desc = A hard hat, painted in blue, used in dangerous working conditions to protect the head. Comes with a built-in flashlight.
 
@@ -919,6 +1029,9 @@ ent-ClothingHeadHatHardhatArmored = armored hard hat
   .desc = An armored hard hat. Provides the best of both worlds in both protection & utility - perfect for the engineer on the frontlines.
 
 ### Resources/Prototypes/Entities/Clothing/Head/hardsuit-helmets.yml
+
+### Resources/Prototypes/Entities/Clothing/Head/hardsuit-helmets.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Head/hardsuit-helmets.yml
 
@@ -1030,6 +1143,9 @@ ent-ClothingHeadHelmetHardsuitSanta = Santa's hardsuit helmet
   .desc = A festive-looking hardsuit helmet that provides the jolly gift-giver protection from low-pressure environments.
 
 ### Resources/Prototypes/Entities/Clothing/Head/hats.yml
+
+### Resources/Prototypes/Entities/Clothing/Head/hats.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Head/hats.yml
 
@@ -1293,6 +1409,9 @@ ent-ClothingHeadHatMitreClown = honkmother mitre
 
 ### Resources/Prototypes/Entities/Clothing/Head/helmets.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Head/helmets.yml
+
 ent-ClothingHeadHelmetBasic = helmet
   .desc = Standard security gear. Protects the head from impacts.
 
@@ -1376,6 +1495,9 @@ ent-CardHelmet = cardboard helmet
   .desc = A medieval helmet built from cardboard.
 
 ### Resources/Prototypes/Entities/Clothing/Head/hoods.yml
+
+### Resources/Prototypes/Entities/Clothing/Head/hoods.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Head/hoods.yml
 
@@ -1508,6 +1630,9 @@ ent-ClothingHeadHatHoodVoidCloak = void cloak hood
 
 ### Resources/Prototypes/Entities/Clothing/Head/misc.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Head/misc.yml
+
 ent-ClothingHeadHatBunny = bunny ears
   .desc = Cute bunny ears.
 
@@ -1575,6 +1700,9 @@ ent-ClothingHeadPerformerWig = performer's wig
 
 ### Resources/Prototypes/Entities/Clothing/Head/scraphelmet.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Head/scraphelmet.yml
+
 ent-WiredBucketBase = wired bucket
   .desc = A bucket with attached wiring to better serve as a chinstrap.
 
@@ -1588,6 +1716,9 @@ ent-ClothingHeadHelmetScrap = scrap helmet
   .desc = A cobbled-together helmet made from cabling, steel, and a bucket.
 
 ### Resources/Prototypes/Entities/Clothing/Head/soft.yml
+
+### Resources/Prototypes/Entities/Clothing/Head/soft.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Head/soft.yml
 
@@ -1678,6 +1809,9 @@ ent-ClothingHeadHatParamedicsoftFlipped = paramedic cap
 
 ### Resources/Prototypes/Entities/Clothing/Head/specific.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Head/specific.yml
+
 ent-ClothingHeadHatChameleon = beret
   .desc = A beret, an artists favorite headwear.
   .suffix = Chameleon
@@ -1686,6 +1820,9 @@ ent-ClothingHeadHatDetGadget = go go hat
   .desc = A novel hat with a built in toolkit. Automatically stores and retrieves items at the say of a phrase!
 
 ### Resources/Prototypes/Entities/Clothing/Head/welding.yml
+
+### Resources/Prototypes/Entities/Clothing/Head/welding.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Head/welding.yml
 
@@ -1704,6 +1841,9 @@ ent-ClothingHeadHatWeldingMaskPainted = painted welding mask
   .desc = A welding helmet, painted in crimson.
 
 ### Resources/Prototypes/Entities/Clothing/Masks/bandanas.yml
+
+### Resources/Prototypes/Entities/Clothing/Masks/bandanas.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Masks/bandanas.yml
 
@@ -1741,10 +1881,16 @@ ent-ClothingMaskBandBrown = brown bandana
 
 ### Resources/Prototypes/Entities/Clothing/Masks/base_clothingmask.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Masks/base_clothingmask.yml
+
 ent-ActionToggleMask = Toggle Mask
   .desc = Handy, but prevents insertion of pie into your pie hole.
 
 ### Resources/Prototypes/Entities/Clothing/Masks/masks.yml
+
+### Resources/Prototypes/Entities/Clothing/Masks/masks.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Masks/masks.yml
 
@@ -1874,6 +2020,9 @@ ent-ClothingMaskWeldingGas = welding gas mask
 
 ### Resources/Prototypes/Entities/Clothing/Masks/specific.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Masks/specific.yml
+
 ent-ClothingMaskGasChameleon = gas mask
   .desc = A face-covering mask that can be connected to an air supply.
   .suffix = Chameleon
@@ -1885,6 +2034,9 @@ ent-ClothingMaskGoldenCursed = golden mask
   .desc = Previously used in strange pantomimes, after one of the actors went mad on stage these masks have avoided use. You swear its face contorts when you're not looking.
 
 ### Resources/Prototypes/Entities/Clothing/Misc/changeling.yml
+
+### Resources/Prototypes/Entities/Clothing/Misc/changeling.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Misc/changeling.yml
 
@@ -1919,10 +2071,16 @@ ent-ChangelingFleshClothingSuitStorage = changeling flesh gas tank
 
 ### Resources/Prototypes/Entities/Clothing/Multiple/misc.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Multiple/misc.yml
+
 ent-ClothingMultipleHeadphones = headphones
   .desc = Quality headphones from Drunk Masters, with good sound insulation.
 
 ### Resources/Prototypes/Entities/Clothing/Multiple/towel.yml
+
+### Resources/Prototypes/Entities/Clothing/Multiple/towel.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Multiple/towel.yml
 
@@ -1938,6 +2096,9 @@ ent-TowelColorCentcom = centcom towel
 ent-TowelColorSyndicate = syndicate towel
 
 ### Resources/Prototypes/Entities/Clothing/Neck/cloaks.yml
+
+### Resources/Prototypes/Entities/Clothing/Neck/cloaks.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Neck/cloaks.yml
 
@@ -2026,6 +2187,9 @@ ent-ClothingNeckCloakPan = chef's cloak
 
 ### Resources/Prototypes/Entities/Clothing/Neck/mantles.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Neck/mantles.yml
+
 ent-ClothingNeckMantleCap = captain's mantle
   .desc = A comfortable and chique mantle befitting of only the most experienced captain.
 
@@ -2051,6 +2215,9 @@ ent-ClothingNeckMantle = mantle
   .desc = A soft mantle, made with the same 'synthetic' animal furs of the iconic winter coat.
 
 ### Resources/Prototypes/Entities/Clothing/Neck/medals.yml
+
+### Resources/Prototypes/Entities/Clothing/Neck/medals.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Neck/medals.yml
 
@@ -2082,6 +2249,9 @@ ent-ClothingNeckClownmedal = clown medal
 
 ### Resources/Prototypes/Entities/Clothing/Neck/misc.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Neck/misc.yml
+
 ent-ClothingNeckStethoscope = stethoscope
   .desc = An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing.
 
@@ -2097,6 +2267,9 @@ ent-Dinkystar = star sticker
   .desc = A dinky lil star for only the hardest working security officers! It's not even sticky anymore.
 
 ### Resources/Prototypes/Entities/Clothing/Neck/pins.yml
+
+### Resources/Prototypes/Entities/Clothing/Neck/pins.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Neck/pins.yml
 
@@ -2161,6 +2334,9 @@ ent-SprayFlowerPin = flower pin
   .desc = A cute flower pin. Something seems off with it...
 
 ### Resources/Prototypes/Entities/Clothing/Neck/scarfs.yml
+
+### Resources/Prototypes/Entities/Clothing/Neck/scarfs.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Neck/scarfs.yml
 
@@ -2240,6 +2416,9 @@ ent-ClothingNeckScarfStripedLesbianLong = long bacon
 
 ### Resources/Prototypes/Entities/Clothing/Neck/specific.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Neck/specific.yml
+
 ent-ClothingNeckChameleon = striped red scarf
   .desc = A stylish striped red scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
   .suffix = Chameleon
@@ -2248,10 +2427,16 @@ ent-ClothingNeckChameleon = striped red scarf
 
 ### Resources/Prototypes/Entities/Clothing/Neck/stoles.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Neck/stoles.yml
+
 ent-ClothingNeckStoleChaplain = chaplain stole
   .desc = An elegantly designed stole, with a vibrant gold plus on either end.
 
 ### Resources/Prototypes/Entities/Clothing/Neck/ties.yml
+
+### Resources/Prototypes/Entities/Clothing/Neck/ties.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Neck/ties.yml
 
@@ -2265,6 +2450,9 @@ ent-ClothingNeckTieSci = scientist's tie
   .desc = Why do we all have to wear these ridiculous ties?
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/armor.yml
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/armor.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/armor.yml
 
@@ -2339,6 +2527,9 @@ ent-CardArmour = cardboard armour
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/base_clothingouter.yml
 
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/base_clothingouter.yml
+
 ent-ClothingOuterStorageFoldableBaseOpened =
   .suffix = opened
 
@@ -2349,6 +2540,9 @@ ent-ClothingOuterEVASuitBase = base EVA Suit
 ent-ClothingOuterBaseToggleable = hoodie with hood
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/bio.yml
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/bio.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/bio.yml
 
@@ -2377,6 +2571,9 @@ ent-ClothingOuterBioVirology = bio suit
   .suffix = Virology
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/coats.yml
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/coats.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/coats.yml
 
@@ -2493,6 +2690,9 @@ ent-ClothingOuterCoatExpensiveOpened = expensive coat
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/hardsuits.yml
 
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/hardsuits.yml
+
 ent-ClothingOuterHardsuitAtmos = atmos hardsuit
   .desc = A special suit that protects against hazardous, low pressure environments. Has thermal shielding.
 
@@ -2603,6 +2803,9 @@ ent-ClothingOuterHardsuitSanta = Santa's hardsuit
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/misc.yml
 
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/misc.yml
+
 ent-ClothingOuterApron = apron
   .desc = A fancy apron for a stylish person.
 
@@ -2688,6 +2891,9 @@ ent-ClothingOuterRedRacoon = red racoon suit
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/scraparmor.yml
 
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/scraparmor.yml
+
 ent-WiredApronBase = wired apron
   .desc = An apron threaded with cabling. It looks incomplete.
 
@@ -2701,6 +2907,9 @@ ent-ClothingOuterArmorScrap = scrap armor
   .desc = A tider's gleaming plate mail. Bail up, or you're a dead man.
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/softsuits.yml
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/softsuits.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/softsuits.yml
 
@@ -2726,11 +2935,17 @@ ent-ClothingOuterHardsuitVoidParamed = paramedic void suit
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/specific.yml
 
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/specific.yml
+
 ent-ClothingOuterChameleon = vest
   .desc = A thick vest with a rubbery, water-resistant shell.
   .suffix = Chameleon
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/suits.yml
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/suits.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/suits.yml
 
@@ -2777,6 +2992,9 @@ ent-ClothingOuterHardsuitCarp =
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/vests.yml
 
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/vests.yml
+
 ent-ClothingOuterVestHazard = hi-viz vest
   .desc = A high-visibility vest used in work zones.
 
@@ -2790,6 +3008,9 @@ ent-ClothingOuterVestPress = press vest
   .desc = A cloth vest for the fearless reporter in the field. Go land an interview with that space dragon!
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/wintercoats.yml
+
+### Resources/Prototypes/Entities/Clothing/OuterClothing/wintercoats.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/OuterClothing/wintercoats.yml
 
@@ -2902,6 +3123,9 @@ ent-ClothingOuterWinterColorYellow = yellow winter coat
 
 ### Resources/Prototypes/Entities/Clothing/Shoes/base_clothingshoes.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Shoes/base_clothingshoes.yml
+
 ent-ClothingShoesBootsSecFilled =
   .suffix = Filled
 
@@ -2909,6 +3133,9 @@ ent-ClothingShoesBaseWinterBoots =
   .desc = Fluffy boots to help survive even the coldest of winters.
 
 ### Resources/Prototypes/Entities/Clothing/Shoes/boots.yml
+
+### Resources/Prototypes/Entities/Clothing/Shoes/boots.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Shoes/boots.yml
 
@@ -2967,6 +3194,9 @@ ent-ClothingShoesBootsCowboyFancy = fancy cowboy boots
 
 ### Resources/Prototypes/Entities/Clothing/Shoes/color.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Shoes/color.yml
+
 ent-ClothingShoesColorBlack = black shoes
   .desc = Stylish black shoes.
 
@@ -2998,6 +3228,9 @@ ent-ClothingShoesColorPurple = purple shoes
 
 ### Resources/Prototypes/Entities/Clothing/Shoes/magboots.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Shoes/magboots.yml
+
 ent-ClothingShoesBootsMagBase = magboots
   .desc = Magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.
 
@@ -3017,6 +3250,9 @@ ent-ActionToggleMagboots = Toggle Magboots
   .desc = Toggles the magboots on and off.
 
 ### Resources/Prototypes/Entities/Clothing/Shoes/misc.yml
+
+### Resources/Prototypes/Entities/Clothing/Shoes/misc.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Shoes/misc.yml
 
@@ -3057,6 +3293,9 @@ ent-ClothingShoesBootsJump = jump boots
   .desc = High-tech boots that give you the incredible ability to JUMP! With these boots you can jump over lava, chasms and weird chemicals on the floor!
 
 ### Resources/Prototypes/Entities/Clothing/Shoes/specific.yml
+
+### Resources/Prototypes/Entities/Clothing/Shoes/specific.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Shoes/specific.yml
 
@@ -3112,6 +3351,9 @@ ent-ClothingShoesSkates = roller skates
 
 ### Resources/Prototypes/Entities/Clothing/Under/under.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Under/under.yml
+
 ent-ClothingUnderSocksBee = bee socks
   .desc = Make them loins buzz!
 
@@ -3119,6 +3361,9 @@ ent-ClothingUnderSocksCoder = coder socks
   .desc = It's time to code sisters!!11!
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/color_dress.yml
+
+### Resources/Prototypes/Entities/Clothing/Uniforms/color_dress.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/color_dress.yml
 
@@ -3171,6 +3416,9 @@ ent-ClothingUniformJumpskirtYellowOldDress = yellow old dress
   .desc = Classic western dress.
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/color_jumpskirts.yml
+
+### Resources/Prototypes/Entities/Clothing/Uniforms/color_jumpskirts.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/color_jumpskirts.yml
 
@@ -3229,6 +3477,9 @@ ent-ClothingUniformJumpskirtColorRainbow = rainbow jumpskirt
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/color_jumpsuits.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Uniforms/color_jumpsuits.yml
+
 ent-ClothingUniformJumpsuitColorWhite = white jumpsuit
   .desc = A generic white jumpsuit with no rank markings.
 
@@ -3281,6 +3532,9 @@ ent-ClothingUniformColorRainbow = rainbow jumpsuit
   .desc = A multi-colored jumpsuit!
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/jumpskirts.yml
+
+### Resources/Prototypes/Entities/Clothing/Uniforms/jumpskirts.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/jumpskirts.yml
 
@@ -3486,6 +3740,9 @@ ent-ClothingUniformJumpskirtClown = clown skirt
   .desc = HONK!
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/jumpsuits.yml
+
+### Resources/Prototypes/Entities/Clothing/Uniforms/jumpsuits.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/jumpsuits.yml
 
@@ -3823,6 +4080,9 @@ ent-ClothingUniformJumpsuitFamilyGuy = familiar garbs
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/misc_roles.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Uniforms/misc_roles.yml
+
 ent-UniformShortsRed = boxing shorts
   .desc = These are shorts, not boxers.
 
@@ -3830,6 +4090,9 @@ ent-UniformShortsRedWithTop = boxing shorts with top
   .desc = These are shorts, not boxers.
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/random_suit.yml
+
+### Resources/Prototypes/Entities/Clothing/Uniforms/random_suit.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/random_suit.yml
 
@@ -3853,6 +4116,9 @@ ent-ClothingUniformRandomShirt = colorful costume
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/scrubs.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Uniforms/scrubs.yml
+
 ent-UniformScrubsColorPurple = purple scrubs
   .desc = A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
 
@@ -3863,6 +4129,9 @@ ent-UniformScrubsColorBlue = blue scrubs
   .desc = A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/ship_vs_ship.yml
+
+### Resources/Prototypes/Entities/Clothing/Uniforms/ship_vs_ship.yml
+
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/ship_vs_ship.yml
 
@@ -3888,11 +4157,17 @@ ent-ClothingUniformJumpsuitChiefEngineerSyndie = syndicate chief engineer jumpsu
 
 ### Resources/Prototypes/Entities/Clothing/Uniforms/specific.yml
 
+
+### Resources/Prototypes/Entities/Clothing/Uniforms/specific.yml
+
 ent-ClothingUniformJumpsuitChameleon = black jumpsuit
   .desc = A generic black jumpsuit with no rank markings.
   .suffix = Chameleon
 
 ### Resources/Prototypes/Entities/Debugging/clicktest.yml
+
+### Resources/Prototypes/Entities/Debugging/clicktest.yml
+
 
 ### Resources/Prototypes/Entities/Debugging/clicktest.yml
 
@@ -3912,6 +4187,9 @@ ent-ClickTestFixedCornerVisible = ClickTestFixedCornerVisible
 ent-ClickTestFixedCornerInvisible = ClickTestFixedCornerInvisible
 
 ### Resources/Prototypes/Entities/Debugging/debug_sweps.yml
+
+### Resources/Prototypes/Entities/Debugging/debug_sweps.yml
+
 
 ### Resources/Prototypes/Entities/Debugging/debug_sweps.yml
 
@@ -3946,11 +4224,17 @@ ent-MeleeDebug200 = bang stick 200dmg
 
 ### Resources/Prototypes/Entities/Debugging/drugs.yml
 
+
+### Resources/Prototypes/Entities/Debugging/drugs.yml
+
 ent-DrinkMeth = meth
   .desc = Just a whole glass of meth.
   .suffix = DEBUG
 
 ### Resources/Prototypes/Entities/Debugging/item.yml
+
+### Resources/Prototypes/Entities/Debugging/item.yml
+
 
 ### Resources/Prototypes/Entities/Debugging/item.yml
 
@@ -3962,10 +4246,16 @@ ent-DebugItemShapeWeird = weirdly shaped item
 
 ### Resources/Prototypes/Entities/Debugging/options_visualizer.yml
 
+
+### Resources/Prototypes/Entities/Debugging/options_visualizer.yml
+
 ent-OptionsVisualizerTest =
   .suffix = DEBUG
 
 ### Resources/Prototypes/Entities/Debugging/spanisharmyknife.yml
+
+### Resources/Prototypes/Entities/Debugging/spanisharmyknife.yml
+
 
 ### Resources/Prototypes/Entities/Debugging/spanisharmyknife.yml
 
@@ -3977,10 +4267,16 @@ ent-ToolDebug = spanish army knife
 
 ### Resources/Prototypes/Entities/Effects/acidifier.yml
 
+
+### Resources/Prototypes/Entities/Effects/acidifier.yml
+
 ent-Acidifier = acid
   .desc = Melts you into a puddle of yuck!
 
 ### Resources/Prototypes/Entities/Effects/admin_triggers.yml
+
+### Resources/Prototypes/Entities/Effects/admin_triggers.yml
+
 
 ### Resources/Prototypes/Entities/Effects/admin_triggers.yml
 
@@ -4014,6 +4310,9 @@ ent-AdminInstantEffectGravityWell =
 
 ### Resources/Prototypes/Entities/Effects/chemistry_effects.yml
 
+
+### Resources/Prototypes/Entities/Effects/chemistry_effects.yml
+
 ent-Smoke = smoke
 
 ent-TearGasSmoke = tear gas
@@ -4040,9 +4339,15 @@ ent-FoamedAluminiumMetal = foamed aluminium metal
 
 ### Resources/Prototypes/Entities/Effects/eldritch.yml
 
+
+### Resources/Prototypes/Entities/Effects/eldritch.yml
+
 ent-EffectVoidBlink = void blink
 
 ### Resources/Prototypes/Entities/Effects/exclamation.yml
+
+### Resources/Prototypes/Entities/Effects/exclamation.yml
+
 
 ### Resources/Prototypes/Entities/Effects/exclamation.yml
 
@@ -4054,9 +4359,15 @@ ent-WhistleExclamation = exclamation
 
 ### Resources/Prototypes/Entities/Effects/explosion_light.yml
 
+
+### Resources/Prototypes/Entities/Effects/explosion_light.yml
+
 ent-ExplosionLight = explosion light
 
 ### Resources/Prototypes/Entities/Effects/lightning.yml
+
+### Resources/Prototypes/Entities/Effects/lightning.yml
+
 
 ### Resources/Prototypes/Entities/Effects/lightning.yml
 
@@ -4078,6 +4389,9 @@ ent-HyperchargedLightning = hypercharged lightning
 
 ### Resources/Prototypes/Entities/Effects/mobspawn.yml
 
+
+### Resources/Prototypes/Entities/Effects/mobspawn.yml
+
 ent-MobSpawnCrabQuartz = mobspawner quartzcrab
 
 ent-MobSpawnCrabIron = mobspawner ironcrab
@@ -4096,6 +4410,9 @@ ent-MobSpawnCrabBananium = mobspawner bananiumcrab
 
 ### Resources/Prototypes/Entities/Effects/portal.yml
 
+
+### Resources/Prototypes/Entities/Effects/portal.yml
+
 ent-BasePortal = bluespace portal
   .desc = Transports you to a linked destination!
 
@@ -4106,6 +4423,9 @@ ent-ShadowPortal = shadow rift
   .desc = Looks unstable.
 
 ### Resources/Prototypes/Entities/Effects/puddle.yml
+
+### Resources/Prototypes/Entities/Effects/puddle.yml
+
 
 ### Resources/Prototypes/Entities/Effects/puddle.yml
 
@@ -4148,10 +4468,16 @@ ent-Puddle = puddle
 
 ### Resources/Prototypes/Entities/Effects/radiation.yml
 
+
+### Resources/Prototypes/Entities/Effects/radiation.yml
+
 ent-RadiationPulse = shimmering anomaly
   .desc = Looking at this anomaly makes you feel strange, like something is pushing at your eyes.
 
 ### Resources/Prototypes/Entities/Effects/shuttle.yml
+
+### Resources/Prototypes/Entities/Effects/shuttle.yml
+
 
 ### Resources/Prototypes/Entities/Effects/shuttle.yml
 
@@ -4162,10 +4488,16 @@ ent-FtlVisualizerEntity =
 
 ### Resources/Prototypes/Entities/Interface/admin_tools.yml
 
+
+### Resources/Prototypes/Entities/Interface/admin_tools.yml
+
 ent-AdminCamera = admin camera
   .desc = We are watching you.
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Conditional/nukies.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Conditional/nukies.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Conditional/nukies.yml
 
@@ -4175,9 +4507,15 @@ ent-SpawnPointNukies = nukies
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Conditional/pirates.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Conditional/pirates.yml
+
 ent-SpawnPointPirates = Pirate spawn point
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Conditional/timed.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Conditional/timed.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Conditional/timed.yml
 
@@ -4193,9 +4531,15 @@ ent-CockroachTimedSpawner = Cockroach Timed Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Conditional/wizard.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Conditional/wizard.yml
+
 ent-SpawnPointWizard = wizard
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Conditional/xenoborgs.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Conditional/xenoborgs.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Conditional/xenoborgs.yml
 
@@ -4204,6 +4548,9 @@ ent-SpawnPointXenoborg = xenoborgs
 ent-SpawnPointMothershipCore = mothership core
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Mobs/animals.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Mobs/animals.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Mobs/animals.yml
 
@@ -4251,6 +4598,9 @@ ent-SpawnMobSlug = Slug Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Mobs/carp.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Mobs/carp.yml
+
 ent-SpawnMobCarp = Space Carp Spawner
 
 ent-SpawnMobCarpHolo = Holocarp Spawner
@@ -4260,6 +4610,9 @@ ent-SpawnMobCarpMagic = Magicarp Spawner
 ent-SpawnMobShark = Space Sharkminnow Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Mobs/hostile.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Mobs/hostile.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Mobs/hostile.yml
 
@@ -4304,10 +4657,16 @@ ent-SpawnMobWatcherPride = Watcher Pride Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Mobs/misc.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Mobs/misc.yml
+
 ent-SpawnMobGingerbreadAI = gingerbread man Spawner
   .suffix = Ghostrole
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Mobs/pets.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Mobs/pets.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Mobs/pets.yml
 
@@ -4381,6 +4740,9 @@ ent-SpawnMobWalter = Walter Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Mobs/slimes.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Mobs/slimes.yml
+
 ent-SpawnMobAdultSlimesBlue = Slimes Spawner Blue
 
 ent-SpawnMobAdultSlimesBlueAngry = Slimes Spawner Blue Angry
@@ -4394,6 +4756,9 @@ ent-SpawnMobAdultSlimesYellow = Slimes Spawner Yellow
 ent-SpawnMobAdultSlimesYellowAngry = Slimes Spawner Yellow Angry
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Mobs/xenos.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Mobs/xenos.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Mobs/xenos.yml
 
@@ -4425,9 +4790,15 @@ ent-SpawnMobXenoLonePraetorian = Xeno Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Decals/base.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Decals/base.yml
+
 ent-DecalSpawnerBase = Decal Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Decals/dirt.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Decals/dirt.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Decals/dirt.yml
 
@@ -4447,6 +4818,9 @@ ent-DecalSpawnerBurns =
   .suffix = Burns, 1 Radius
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Decals/flora.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Decals/flora.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Decals/flora.yml
 
@@ -4475,6 +4849,9 @@ ent-DecalSpawnerGrassDE =
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Decals/splatters.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Decals/splatters.yml
+
 ent-DecalSpawnerBloodSplatters =
   .suffix = Blood Splatters, Footprints
 
@@ -4485,11 +4862,17 @@ ent-DecalSpawnerGraffiti =
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Department/medical.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Department/medical.yml
+
 ent-LootSpawnerMedicalMinor = healing supplies spawner
 
 ent-LootSpawnerMedicalClassy = medical loot spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Department/science.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Department/science.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Department/science.yml
 
@@ -4502,6 +4885,9 @@ ent-LootSpawnerScienceMajor = science supplies spawner
 ent-LootSpawnerRoboticsBorgModule = robotics board spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Department/security.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Department/security.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Department/security.yml
 
@@ -4524,9 +4910,15 @@ ent-LootSpawnerArmoryArmorOnly = armory loot spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/donkpocketbox.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/donkpocketbox.yml
+
 ent-DonkpocketBoxSpawner = Donkpocket Box Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/drinks_bottles.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/drinks_bottles.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/drinks_bottles.yml
 
@@ -4537,6 +4929,9 @@ ent-RandomDrinkBottle = random drink spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/drinks_glass.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/drinks_glass.yml
+
 ent-RandomDrinkGlass = random drink spawner
   .suffix = Glass
 
@@ -4544,9 +4939,15 @@ ent-RandomDrinkGlass = random drink spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/drinks_soda.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/drinks_soda.yml
+
 ent-RandomDrinkSoda = random soda spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_baked_single.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_baked_single.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_baked_single.yml
 
@@ -4557,10 +4958,16 @@ ent-RandomFoodBakedSingle = random baked food spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_baked_whole.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_baked_whole.yml
+
 ent-RandomFoodBakedWhole = random baked food spawner
   .suffix = Whole
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_breakfast.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_breakfast.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_breakfast.yml
 
@@ -4571,10 +4978,16 @@ ent-RandomFoodBreakfast = random food spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_ingredients.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_ingredients.yml
+
 ent-RandomIngredient = random ingredient spawner
   .suffix = Non-Plant
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_meal.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_meal.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_meal.yml
 
@@ -4585,15 +4998,24 @@ ent-RandomFoodMeal = random food spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_meat.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_meat.yml
+
 ent-RandomMeat = random meat spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_produce.yml
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_produce.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_produce.yml
+
 ent-RandomProduce = random produce spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_single.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_single.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_single.yml
 
@@ -4604,9 +5026,15 @@ ent-RandomFoodSingle = random food spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_snacks.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Food_Drinks/food_snacks.yml
+
 ent-RandomSnacks = random snack spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Mobs/xenos.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Mobs/xenos.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Mobs/xenos.yml
 
@@ -4617,6 +5045,9 @@ ent-SpawnMobXenoHard = Xeno Spawner
   .suffix = Hard, Random
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Salvage/spawners.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/Salvage/spawners.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/Salvage/spawners.yml
 
@@ -4665,6 +5096,9 @@ ent-SalvageSpawnerMobMiningAsteroid = Mining Asteroid Mob Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/altars.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/altars.yml
+
 ent-AltarSpawner = random altar spawner
 
 ent-ConvertAltarSpawner = random convert-altar spawner
@@ -4672,6 +5106,9 @@ ent-ConvertAltarSpawner = random convert-altar spawner
 ent-CultAltarSpawner = random cult-altar spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/anomaly.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/anomaly.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/anomaly.yml
 
@@ -4685,9 +5122,15 @@ ent-RandomAnomalyInjectorSpawner = random anomaly injector spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/arcade.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/arcade.yml
+
 ent-RandomArcade = random arcade spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/artifacts.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/artifacts.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/artifacts.yml
 
@@ -4699,9 +5142,15 @@ ent-RandomArtifactSpawner20 = random artifact spawner [20]
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/bedsheet.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/bedsheet.yml
+
 ent-BedsheetSpawner = Random Sheet Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/cables.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/cables.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/cables.yml
 
@@ -4715,6 +5164,9 @@ ent-RandomCableApcExtensionSpawner = LV power cable spawner
   .suffix = 50%
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/crates.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/crates.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/crates.yml
 
@@ -4734,10 +5186,16 @@ ent-LootSpawnerRandomLockbox = random lockbox spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/crystal.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/crystal.yml
+
 ent-CrystalSpawner = Crystal Spawner
   .suffix = 70%
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/curtains.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/curtains.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/curtains.yml
 
@@ -4747,9 +5205,15 @@ ent-CurtainSpawner = random curtain spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/encryption_key.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/encryption_key.yml
+
 ent-LootSpawnerEncryptionKey = random encryption key spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/fancytables.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/fancytables.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/fancytables.yml
 
@@ -4759,9 +5223,15 @@ ent-FancyTableSpawner = random fancy table spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/flora.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/flora.yml
+
 ent-RandomFloraTree = random tree spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/folders.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/folders.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/folders.yml
 
@@ -4771,9 +5241,15 @@ ent-FolderSpawner = Random Folder Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/grille.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/grille.yml
+
 ent-GrilleSpawner = Random Grille Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/industrial.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/industrial.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/industrial.yml
 
@@ -4786,9 +5262,15 @@ ent-LootSpawnerIndustrial = industrial loot spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/instruments.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/instruments.yml
+
 ent-RandomInstruments = random instruments spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/maintenance.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/maintenance.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/maintenance.yml
 
@@ -4811,6 +5293,9 @@ ent-MaintenanceInsulsSpawner = Maint Loot Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/materials.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/materials.yml
+
 ent-LootSpawnerMaterials = materials spawner
   .suffix = Construction Materials
 
@@ -4830,6 +5315,9 @@ ent-LootSpawnerCableCoil = cable coil spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/mineshaft.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/mineshaft.yml
+
 ent-RandomWoodenSupport = wooden support spawner
 
 ent-RandomWoodenWall = wooden wall spawner
@@ -4844,9 +5332,15 @@ ent-RandomGreyStalagmite = grey stalagmite spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/paintings.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/paintings.yml
+
 ent-RandomPainting = random painting spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/posters.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/posters.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/posters.yml
 
@@ -4860,11 +5354,17 @@ ent-RandomPosterLegit = random legit poster spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/pottedplants.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/pottedplants.yml
+
 ent-PottedPlantRandom = random potted plant spawner
 
 ent-PottedPlantRandomPlastic = random plastic potted plant spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/salvage.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/salvage.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/salvage.yml
 
@@ -4892,9 +5392,15 @@ ent-SalvageLivingLightSpawner = Salvage Living Light Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/shadowkudzu.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/shadowkudzu.yml
+
 ent-ShadowKudzuLootSpawner = shadow kudzu loot spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/smokables.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/smokables.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/smokables.yml
 
@@ -4906,6 +5412,9 @@ ent-RandomSoakedCigarette = random soaked cigarette spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/soap.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/soap.yml
+
 ent-RandomSlip100 = random slip spawner
 
 ent-RandomSoap = random soap spawner
@@ -4914,9 +5423,15 @@ ent-RandomSoap = random soap spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/techboard.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/techboard.yml
+
 ent-RandomBoard = random board spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/toy.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/toy.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/toy.yml
 
@@ -4942,6 +5457,9 @@ ent-CrayonSpawner90 = Crayon Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/toy_tabletop.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/toy_tabletop.yml
+
 ent-BoardGameSpawner100 = Board Game Spawner
 
 ent-BattleMapSpawner100 = Battle Map Spawner
@@ -4950,11 +5468,17 @@ ent-BattleMapSpawner100 = Battle Map Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/trash.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/trash.yml
+
 ent-RandomSpawner = Trash Spawner
 
 ent-RandomBananaPeel90 = random banana peel spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/vending.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/vending.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/vending.yml
 
@@ -4968,6 +5492,9 @@ ent-RandomVendingClothing = random vending machine spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/vendingdrinks.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/vendingdrinks.yml
+
 ent-RandomVendingDrinks = random vending machine spawner
   .suffix = Drinks
 
@@ -4975,10 +5502,16 @@ ent-RandomVendingDrinks = random vending machine spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/Random/vendingsnacks.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/Random/vendingsnacks.yml
+
 ent-RandomVendingSnacks = random vending machine spawner
   .suffix = Snacks
 
 ### Resources/Prototypes/Entities/Markers/Spawners/bots.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/bots.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/bots.yml
 
@@ -4993,6 +5526,9 @@ ent-SpawnMobSupplyBot = supplybot spawner
 ent-SpawnMobHonkBot = honkbot spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/corpses.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/corpses.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/corpses.yml
 
@@ -5016,10 +5552,16 @@ ent-RandomCommandCorpseSpawner = Random Command Corpse Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/debug.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/debug.yml
+
 ent-SpawnMobHuman = Urist Spawner
   .suffix = DEBUG
 
 ### Resources/Prototypes/Entities/Markers/Spawners/ghost_roles.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/ghost_roles.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/ghost_roles.yml
 
@@ -5044,11 +5586,17 @@ ent-SpawnPointGhostWizard = ghost role spawn point
 
 ### Resources/Prototypes/Entities/Markers/Spawners/human.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/human.yml
+
 ent-SpawnMobSyndicateFootSoldier = syndicate footsoldier spawner
 
 ent-SpawnMobSyndicateFootsoldierPilot = syndicate shuttle pilot spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/jobs.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/jobs.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/jobs.yml
 
@@ -5153,11 +5701,17 @@ ent-SpawnPointPsychologist = psychologist
 
 ### Resources/Prototypes/Entities/Markers/Spawners/mechs.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/mechs.yml
+
 ent-SpawnMechRipley = Ripley APLU Spawner
 
 ent-SpawnMechHonker = H.O.N.K. Spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/nuke_ops_spawners.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/nuke_ops_spawners.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/nuke_ops_spawners.yml
 
@@ -5177,11 +5731,17 @@ ent-NukeOpsAmmoSpawner = nuke ops ammo spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/rooms.yml
 
+
+### Resources/Prototypes/Entities/Markers/Spawners/rooms.yml
+
 ent-SpawnPointHeadOfSecurityWeapon = head of security weapon spawner
 
 ent-SpawnPointWardenWeapon = warden weapon spawner
 
 ### Resources/Prototypes/Entities/Markers/Spawners/vending_machine_restock.yml
+
+### Resources/Prototypes/Entities/Markers/Spawners/vending_machine_restock.yml
+
 
 ### Resources/Prototypes/Entities/Markers/Spawners/vending_machine_restock.yml
 
@@ -5195,6 +5755,9 @@ ent-SpawnVendingMachineRestockDrink = Vending Machine Restock
   .suffix = drink
 
 ### Resources/Prototypes/Entities/Markers/atmos_blocker.yml
+
+### Resources/Prototypes/Entities/Markers/atmos_blocker.yml
+
 
 ### Resources/Prototypes/Entities/Markers/atmos_blocker.yml
 
@@ -5227,9 +5790,15 @@ ent-AtmosFixAirMarker = Atmos Fix Air Marker
 
 ### Resources/Prototypes/Entities/Markers/clientsideclone.yml
 
+
+### Resources/Prototypes/Entities/Markers/clientsideclone.yml
+
 ent-clientsideclone = clientsideclone
 
 ### Resources/Prototypes/Entities/Markers/construction_ghost.yml
+
+### Resources/Prototypes/Entities/Markers/construction_ghost.yml
+
 
 ### Resources/Prototypes/Entities/Markers/construction_ghost.yml
 
@@ -5239,9 +5808,15 @@ ent-constructionghost = construction ghost
 
 ### Resources/Prototypes/Entities/Markers/drag_shadow.yml
 
+
+### Resources/Prototypes/Entities/Markers/drag_shadow.yml
+
 ent-dragshadow = drag shadow
 
 ### Resources/Prototypes/Entities/Markers/hover_entity.yml
+
+### Resources/Prototypes/Entities/Markers/hover_entity.yml
+
 
 ### Resources/Prototypes/Entities/Markers/hover_entity.yml
 
@@ -5251,9 +5826,15 @@ ent-hoverentity = hover entity
 
 ### Resources/Prototypes/Entities/Markers/integration_test.yml
 
+
+### Resources/Prototypes/Entities/Markers/integration_test.yml
+
 ent-IntegrationTestMarker = Integration Test Marker
 
 ### Resources/Prototypes/Entities/Markers/map_text.yml
+
+### Resources/Prototypes/Entities/Markers/map_text.yml
+
 
 ### Resources/Prototypes/Entities/Markers/map_text.yml
 
@@ -5263,9 +5844,15 @@ ent-MapText = map text
 
 ### Resources/Prototypes/Entities/Markers/npc.yml
 
+
+### Resources/Prototypes/Entities/Markers/npc.yml
+
 ent-PathfindPoint = pathfind point
 
 ### Resources/Prototypes/Entities/Markers/pointing.yml
+
+### Resources/Prototypes/Entities/Markers/pointing.yml
+
 
 ### Resources/Prototypes/Entities/Markers/pointing.yml
 
@@ -5275,9 +5862,15 @@ ent-PointingArrow = pointing arrow
 
 ### Resources/Prototypes/Entities/Markers/rooms.yml
 
+
+### Resources/Prototypes/Entities/Markers/rooms.yml
+
 ent-BaseRoomMarker = room spawner
 
 ### Resources/Prototypes/Entities/Markers/shuttle.yml
+
+### Resources/Prototypes/Entities/Markers/shuttle.yml
+
 
 ### Resources/Prototypes/Entities/Markers/shuttle.yml
 
@@ -5286,6 +5879,9 @@ ent-FTLPoint = FTL point
 ent-FTLExclusion = FTL exclusion point
 
 ### Resources/Prototypes/Entities/Markers/tile.yml
+
+### Resources/Prototypes/Entities/Markers/tile.yml
+
 
 ### Resources/Prototypes/Entities/Markers/tile.yml
 
@@ -5299,6 +5895,9 @@ ent-NoRoofMarker = Roof
 
 ### Resources/Prototypes/Entities/Markers/warp_point.yml
 
+
+### Resources/Prototypes/Entities/Markers/warp_point.yml
+
 ent-WarpPoint = warp point
 
 ent-WarpPointBeacon = warp point (beacon)
@@ -5306,6 +5905,9 @@ ent-WarpPointBeacon = warp point (beacon)
 ent-GhostWarpPoint = ghost only warp point
 
 ### Resources/Prototypes/Entities/Mobs/Corpses/corpses.yml
+
+### Resources/Prototypes/Entities/Mobs/Corpses/corpses.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Corpses/corpses.yml
 
@@ -5334,6 +5936,9 @@ ent-MobRandomCommandCorpse =
 
 ### Resources/Prototypes/Entities/Mobs/Cyborgs/base_borg_chassis.yml
 
+
+### Resources/Prototypes/Entities/Mobs/Cyborgs/base_borg_chassis.yml
+
 ent-BaseBorgChassisNotIonStormable = cyborg
   .desc = A man-machine hybrid that assists in station activity. They love being asked to state their laws over and over.
 
@@ -5341,6 +5946,9 @@ ent-BaseXenoborgChassis = xenoborg
   .desc = A man-machine hybrid that aims to replicate itself. They love extracting brains to insert into fresh Xenoborg chassis to grow their army.
 
 ### Resources/Prototypes/Entities/Mobs/Cyborgs/borg_chassis.yml
+
+### Resources/Prototypes/Entities/Mobs/Cyborgs/borg_chassis.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Cyborgs/borg_chassis.yml
 
@@ -5388,6 +5996,9 @@ ent-SyndicateAssaultBorgChassisDerelict = derelict syndicate assault cyborg
 
 ### Resources/Prototypes/Entities/Mobs/Cyborgs/xenoborgs.yml
 
+
+### Resources/Prototypes/Entities/Mobs/Cyborgs/xenoborgs.yml
+
 ent-XenoborgEngi = engi xenoborg
   .desc = A man-machine hybrid that aims to replicate itself. They love extracting brains to insert into fresh Xenoborg chassis to grow their army. This one seems to be an engineering type, as it has more tools for supporting the other Xenoborgs.
   .suffix = with brain
@@ -5420,6 +6031,9 @@ ent-XenoborgStealthPrinted =
 
 ### Resources/Prototypes/Entities/Mobs/Debugging/debug_counter.yml
 
+
+### Resources/Prototypes/Entities/Mobs/Debugging/debug_counter.yml
+
 ent-MobDebugCounter = debug counter
   .desc = He can count
   .suffix = AI, DEBUG
@@ -5433,6 +6047,9 @@ ent-MobDebugRandomLess = debug random less
   .suffix = AI, DEBUG
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/animals.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/animals.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/animals.yml
 
@@ -5644,6 +6261,9 @@ ent-MobCorgiSmart = smart corgi
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/argocyte.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/argocyte.yml
+
 ent-BaseMobArgocyte =
   .desc = A dangerous alien found on the wrong side of planets, known for their propensity for munching on ruins.
   .suffix = AI
@@ -5680,6 +6300,9 @@ ent-MobArgocyteLeviathing = leviathing
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/asteroid.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/asteroid.yml
+
 ent-MobGoliath = goliath
   .desc = A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions.
 
@@ -5711,6 +6334,9 @@ ent-MobBasilisk = basilisk
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/behonker.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/behonker.yml
+
 ent-BaseMobBehonker = behonker
   .desc = A floating demon aspect of the honkmother.
 
@@ -5727,6 +6353,9 @@ ent-MobBehonkerIce = behonker
   .suffix = Ice
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/carp.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/carp.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/carp.yml
 
@@ -5758,6 +6387,9 @@ ent-MobSharkSalvage =
   .suffix = Salvage Ruleset
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/elemental.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/elemental.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/elemental.yml
 
@@ -5837,6 +6469,9 @@ ent-ReagentSlimeRobustHarvest =
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/flesh.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/flesh.yml
+
 ent-BaseMobFlesh = aberrant flesh
   .desc = A shambling mass of flesh, animated through anomalous energy.
 
@@ -5851,10 +6486,16 @@ ent-BaseMobFleshSalvage = aberrant flesh
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/hellspawn.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/hellspawn.yml
+
 ent-MobHellspawn = hellspawn
   .desc = An unstoppable force of carnage.
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/hivebot.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/hivebot.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/hivebot.yml
 
@@ -5869,6 +6510,9 @@ ent-MobHivebotStrong = strong hivebot
   .desc = Agitating, mechanized pests. This one looks much stronger then normal.
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/human.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/human.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/human.yml
 
@@ -5895,6 +6539,9 @@ ent-MobCluwne = person
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/lavaland.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/lavaland.yml
+
 ent-MobWatcherBase = watcher
   .desc = It's like it's staring right through you.
 
@@ -5907,6 +6554,9 @@ ent-MobWatcherPride = pride watcher
   .suffix = Admeme
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/living_light.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/living_light.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/living_light.yml
 
@@ -5932,10 +6582,16 @@ ent-MobLuminousEntitySalvage =
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/mimic.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/mimic.yml
+
 ent-MobMimic = mimic
   .desc = Surprise.
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/miscellaneous.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/miscellaneous.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/miscellaneous.yml
 
@@ -5949,10 +6605,16 @@ ent-MobTomatoKiller = tomato killer
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/moproach.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/moproach.yml
+
 ent-MobMoproach = moproach
   .desc = This little mothroach has mopshoes on its feet! How adorable!
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/pets.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/pets.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/pets.yml
 
@@ -6041,6 +6703,9 @@ ent-MobPollyParrot = Polly the parrot
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/regalrat.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/regalrat.yml
+
 ent-MobRatKing = rat king
   .desc = He's da rat. He make da roolz.
 
@@ -6072,10 +6737,16 @@ ent-ActionRatKingOrderLoose = Loose
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/revenant.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/revenant.yml
+
 ent-MobRevenant = revenant
   .desc = A spooky ghostie.
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/scurret.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/scurret.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/scurret.yml
 
@@ -6093,10 +6764,16 @@ ent-MobEmotionalSupportScurret = Emotional Support Scurret
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/shadows.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/shadows.yml
+
 ent-MobCatShadow = shadow cat
   .desc = A lovely piece of darkness. Hope he doesn't bring you a curse.
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/silicon.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/silicon.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/silicon.yml
 
@@ -6128,6 +6805,9 @@ ent-MobHugBot = hugbot
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/simplemob.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/simplemob.yml
+
 ent-BaseSimpleMob =
   .suffix = AI
 
@@ -6138,6 +6818,9 @@ ent-SimpleMobBase =
   .suffix = AI
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/slimes.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/slimes.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/slimes.yml
 
@@ -6163,6 +6846,9 @@ ent-MobAdultSlimesYellowAngry = yellow slime
   .suffix = Angry
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/space.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/space.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/space.yml
 
@@ -6208,6 +6894,9 @@ ent-MobSnailMoth = Snoth
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/spacetick.yml
 
+
+### Resources/Prototypes/Entities/Mobs/NPCs/spacetick.yml
+
 ent-MobTick = space tick
   .desc = It's a space tick, watch out for its nasty bite. CentComm reports that 90 percent of cargo leg amputations are due to space tick bites.
 
@@ -6215,6 +6904,9 @@ ent-MobTickSalvage =
   .suffix = Salvage Ruleset
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/xeno.yml
+
+### Resources/Prototypes/Entities/Mobs/NPCs/xeno.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/NPCs/xeno.yml
 
@@ -6246,6 +6938,9 @@ ent-MobXenoLonePraetorianNoGhost = "Dale"
   .desc = A praetorian left over from the station's initial security sweep. Has a pair of bloodied dog tags engraved with the name "Pvt. Dale" stuck in its maw.
 
 ### Resources/Prototypes/Entities/Mobs/Player/ShuttleRoles/roles.yml
+
+### Resources/Prototypes/Entities/Mobs/Player/ShuttleRoles/roles.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Player/ShuttleRoles/roles.yml
 
@@ -6378,6 +7073,9 @@ ent-RandomHumanoidVisitorBlackmarketeer = visiting blackmarketeer ghost role
 ent-RandomHumanoidCossack = cossack ghost role
 
 ### Resources/Prototypes/Entities/Mobs/Player/ShuttleRoles/spawners.yml
+
+### Resources/Prototypes/Entities/Mobs/Player/ShuttleRoles/spawners.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Player/ShuttleRoles/spawners.yml
 
@@ -6519,6 +7217,9 @@ ent-CossackSpawner = cossack spawner
 
 ### Resources/Prototypes/Entities/Mobs/Player/admin_ghost.yml
 
+
+### Resources/Prototypes/Entities/Mobs/Player/admin_ghost.yml
+
 ent-AdminObserver = admin observer
 
 ent-ActionAGhostShowSolar = Solar Control Interface
@@ -6543,6 +7244,9 @@ ent-ActionAGhostShowStationRecords = Station Records Interface
 
 ### Resources/Prototypes/Entities/Mobs/Player/changeling.yml
 
+
+### Resources/Prototypes/Entities/Mobs/Player/changeling.yml
+
 ent-MobLing = Urist McLing
   .suffix = Non-Antag
 
@@ -6550,10 +7254,16 @@ ent-MobLing = Urist McLing
 
 ### Resources/Prototypes/Entities/Mobs/Player/clone.yml
 
+
+### Resources/Prototypes/Entities/Mobs/Player/clone.yml
+
 ent-RandomCloneSpawner = Random Clone
   .suffix = Non-Antag
 
 ### Resources/Prototypes/Entities/Mobs/Player/dragon.yml
+
+### Resources/Prototypes/Entities/Mobs/Player/dragon.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Player/dragon.yml
 
@@ -6581,6 +7291,9 @@ ent-BloodSmoke = smoke
 
 ### Resources/Prototypes/Entities/Mobs/Player/familiars.yml
 
+
+### Resources/Prototypes/Entities/Mobs/Player/familiars.yml
+
 ent-MobBatRemilia = Remilia
   .desc = The chaplain's familiar. Likes fruit.
 
@@ -6588,6 +7301,9 @@ ent-MobCorgiCerberus = Cerberus
   .desc = This pupper is not wholesome.
 
 ### Resources/Prototypes/Entities/Mobs/Player/guardian.yml
+
+### Resources/Prototypes/Entities/Mobs/Player/guardian.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Player/guardian.yml
 
@@ -6607,6 +7323,9 @@ ent-ActionToggleGuardian = Toggle Guardian
   .desc = Either manifests the guardian or recalls it back into your body
 
 ### Resources/Prototypes/Entities/Mobs/Player/human.yml
+
+### Resources/Prototypes/Entities/Mobs/Player/human.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Player/human.yml
 
@@ -6632,6 +7351,9 @@ ent-MobHumanLoneNuclearOperative = Lone Operative
 ent-MobHumanWizard = Wizard
 
 ### Resources/Prototypes/Entities/Mobs/Player/humanoid.yml
+
+### Resources/Prototypes/Entities/Mobs/Player/humanoid.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Player/humanoid.yml
 
@@ -6711,6 +7433,9 @@ ent-RandomHumanoidSpawnerCluwne = Cluwne
 
 ### Resources/Prototypes/Entities/Mobs/Player/jaunt_mobs.yml
 
+
+### Resources/Prototypes/Entities/Mobs/Player/jaunt_mobs.yml
+
 ent-BaseMobJaunt = jaunt
   .desc = Faint traces of a humanoid figure linger here
   .suffix = Ethereal
@@ -6722,6 +7447,9 @@ ent-DesynchronizedPocket = desynchronized pocket
   .desc = A pocket in spacetime, keeping the user a fraction of a second in the future.
 
 ### Resources/Prototypes/Entities/Mobs/Player/mothershipcore.yml
+
+### Resources/Prototypes/Entities/Mobs/Player/mothershipcore.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Player/mothershipcore.yml
 
@@ -6738,6 +7466,9 @@ ent-ActionXenoborgCameraMonitor = Xenoborgs Camera Monitor
 
 ### Resources/Prototypes/Entities/Mobs/Player/narsie.yml
 
+
+### Resources/Prototypes/Entities/Mobs/Player/narsie.yml
+
 ent-MobNarsieBase = Nar'Sie
   .desc = Your mind begins to bubble and ooze as it tries to comprehend what it sees.
 
@@ -6745,6 +7476,9 @@ ent-MobNarsieSpawn =
   .suffix = Spawn
 
 ### Resources/Prototypes/Entities/Mobs/Player/observer.yml
+
+### Resources/Prototypes/Entities/Mobs/Player/observer.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Player/observer.yml
 
@@ -6773,12 +7507,18 @@ ent-ActionToggleGhostHearing = Toggle Ghost Hearing
 
 ### Resources/Prototypes/Entities/Mobs/Player/paradox_clone.yml
 
+
+### Resources/Prototypes/Entities/Mobs/Player/paradox_clone.yml
+
 ent-MobParadox = space-time paradox
   .desc = A big ball of wibbly wobbly, timey wimey stuff.
 
 ent-ParadoxCloneDummy = Paradox Clone
 
 ### Resources/Prototypes/Entities/Mobs/Player/ratvar.yml
+
+### Resources/Prototypes/Entities/Mobs/Player/ratvar.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Player/ratvar.yml
 
@@ -6789,6 +7529,9 @@ ent-MobRatvarSpawn =
   .suffix = Spawn
 
 ### Resources/Prototypes/Entities/Mobs/Player/silicon.yml
+
+### Resources/Prototypes/Entities/Mobs/Player/silicon.yml
+
 
 ### Resources/Prototypes/Entities/Mobs/Player/silicon.yml
 
@@ -6878,6 +7621,9 @@ ent-PlayerBorgSyndicateDerelictGhostRole =
 
 ### Resources/Prototypes/Entities/Mobs/Player/skeleton.yml
 
+
+### Resources/Prototypes/Entities/Mobs/Player/skeleton.yml
+
 ent-MobSkeletonPirate = skeleton pirate
 
 ent-MobSkeletonBiker = skeleton biker
@@ -6885,6 +7631,9 @@ ent-MobSkeletonBiker = skeleton biker
 ent-MobSkeletonCloset = closet skeleton
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks-cartons.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks-cartons.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks-cartons.yml
 
@@ -6934,10 +7683,16 @@ ent-DrinkCreamCartonXL = milk cream XL
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_base.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_base.yml
+
 ent-DrinkBaseEmptyTrash =
   .suffix = Empty
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_bottles_glass.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_bottles_glass.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_bottles_glass.yml
 
@@ -7017,6 +7772,9 @@ ent-DrinkSakeBottleFull = small sake bottle
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_bottles_plastic.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_bottles_plastic.yml
+
 ent-DrinkBottlePlasticBaseFull =
   .suffix = Full
 
@@ -7082,6 +7840,9 @@ ent-DrinkWaterMelonJuiceJug = watermelon juice jug
   .desc = May include leftover seeds.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_cans.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_cans.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_cans.yml
 
@@ -7158,6 +7919,9 @@ ent-DrinkWineCan = wine can
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_cups.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_cups.yml
+
 ent-DrinkBaseMug = mug
   .desc = A mug.
 
@@ -7229,6 +7993,9 @@ ent-DrinkLean = grape juice
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_flasks.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_flasks.yml
+
 ent-DrinkFlaskOld = old flask
   .desc = A decrepit old flask, its lid seems to be missing.
 
@@ -7261,6 +8028,9 @@ ent-DrinkVacuumFlask = vacuum flask
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_fun.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_fun.yml
+
 ent-DrinkSpaceGlue = space glue tube
   .desc = High performance glue intended for maintenance of extremely complex mechanical equipment. DON'T DRINK!
 
@@ -7278,6 +8048,9 @@ ent-DrinkMopwataBottleRandom = delicious mopwata
   .desc = A foggy brown bottle with a faded label depicting a mop. It comes full of murky... vintage.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_metamorphic.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_metamorphic.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_metamorphic.yml
 
@@ -7773,6 +8546,9 @@ ent-DrinkBacchusBlessing =
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_solutioncontainerexample.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_solutioncontainerexample.yml
+
 ent-DrinkVisualizerTestCut = solution container vis cut-out
   .desc = A stainless steel insulated pitcher. Everyone's best friend in the morning.
 
@@ -7780,6 +8556,9 @@ ent-DrinkVisualizerTestNot = solution container vis cut-not
   .desc = A stainless steel insulated pitcher. Everyone's best friend in the morning.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_special.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_special.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/drinks_special.yml
 
@@ -7820,11 +8599,17 @@ ent-DrinkShakeWhite = white shake
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Drinks/trash_drinks.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Drinks/trash_drinks.yml
+
 ent-DrinkBottleCoffeeLiqueur = coffee liqueur bottle
 
 ent-DrinkBottleNTCahors = nt cahors bottle
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/bagel.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/bagel.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/bagel.yml
 
@@ -7840,6 +8625,9 @@ ent-FoodBagelCotton = cotton bagel
   .desc = A delicious bagel made with cotton dough.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/bread.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/bread.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/bread.yml
 
@@ -7955,6 +8743,9 @@ ent-FoodBreadCottonNutriBatard = cotton nutri-bâtard
   .desc = bon 'pétite!
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/cake.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/cake.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/cake.yml
 
@@ -8088,6 +8879,9 @@ ent-FoodCakeBerryDelightSlice = berry delight slice
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/donkpocket.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/donkpocket.yml
+
 ent-FoodDonkpocket = donk-pocket
   .desc = The food of choice for the seasoned traitor.
 
@@ -8149,6 +8943,9 @@ ent-FoodDonkpocketMoth = moth-pocket
 ent-FoodDonkpocketMothWarm = warm moth-pocket
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/donut.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/donut.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/donut.yml
 
@@ -8231,6 +9028,9 @@ ent-FoodDonutPoison =
   .suffix = Poison
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/misc.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/misc.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/misc.yml
 
@@ -8344,6 +9144,9 @@ ent-FoodBakedGrilledCheeseSandwichCotton = cotton grilled cheese sandwich
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/pie.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/pie.yml
+
 ent-FoodPieSliceBase =
   .desc = A slice of pie. Tasty!
 
@@ -8414,6 +9217,9 @@ ent-FoodTartCoco = chocolate lava tart
   .desc = A tasty dessert made of chocolate, with a liquid core.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/pizza.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/pizza.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Baked/pizza.yml
 
@@ -8496,6 +9302,9 @@ ent-FoodPizzaWorldpeasSlice = slice of world peazza
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/bowl.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/bowl.yml
+
 ent-FoodBowlBig = bowl
   .desc = A simple bowl, used for soups and salads.
 
@@ -8506,6 +9315,9 @@ ent-FoodBowlFancy = bowl
   .desc = A fancy bowl, used for SPECIAL soups and salads.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/box.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/box.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/box.yml
 
@@ -8583,6 +9395,9 @@ ent-FoodBoxCloth = box of FlutterSoft-brand cloth
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/condiments.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/condiments.yml
+
 ent-BaseFoodCondimentPacket = condiment packet
   .desc = A small plastic pack with condiments to put on your food.
 
@@ -8656,6 +9471,9 @@ ent-FoodShakerPepper = pepper shaker
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/plate.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/plate.yml
+
 ent-FoodPlate = large plate
   .desc = A large plate, excellent for bread.
 
@@ -8678,6 +9496,9 @@ ent-FoodPlateMuffinTin = muffin tin
   .desc = A cheap foil tin for muffins.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/tin.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/tin.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/Containers/tin.yml
 
@@ -8713,6 +9534,9 @@ ent-FoodTinMRETrash = tinned meat
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/breakfast.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/breakfast.yml
+
 ent-FoodBreakfastBase =
   .desc = A full breakfast, rise and shine!
 
@@ -8723,6 +9547,9 @@ ent-FoodBreakfastEnglish = full english breakfast
   .desc = A huge plate of protein and carbs, more likely to put you back in bed than get you out of it. Don't mention the war!
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/burger.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/burger.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/burger.yml
 
@@ -8835,6 +9662,9 @@ ent-FoodBurgerMothRoach = mothroachburger
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/cottonburger.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/cottonburger.yml
+
 ent-FoodCottonBun = cotton bun
   .desc = A cotton hamburger bun. Soft, round and convenient to hold.
 
@@ -8845,6 +9675,9 @@ ent-FoodCottonBunTop = cotton top bun
   .desc = The perfect finish for your fibrous burger tower.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/egg.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/egg.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/egg.yml
 
@@ -8860,6 +9693,9 @@ ent-FoodEggBoiled = boiled egg
   .desc = A delicious hardboiled egg.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/frozen.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/frozen.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/frozen.yml
 
@@ -8915,6 +9751,9 @@ ent-FoodFrozenPopsicleTrash = popsicle stick
   .desc = Once held a delicious treat. Now, 'tis barren.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/ingredients.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/ingredients.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/ingredients.yml
 
@@ -9048,6 +9887,9 @@ ent-FoodCroissantRawCotton = raw cotton croissant
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/meals.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/meals.yml
+
 ent-FoodMealBase =
   .desc = A delicious meal, cooked with love.
 
@@ -9130,6 +9972,9 @@ ent-FoodMealCornInButter = corn in butter
   .desc = Buttery.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/meat.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/meat.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/meat.yml
 
@@ -9344,6 +10189,9 @@ ent-FoodMeatDragonCutletCooked = dragon cutlet
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/noodles.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/noodles.yml
+
 ent-FoodNoodlesBase =
   .desc = Now that's a nice pasta!
 
@@ -9369,6 +10217,9 @@ ent-FoodNoodlesButter = butter noodles
   .desc = Noodles covered in savory butter. Simple and slippery, but delicious.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/produce.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/produce.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/produce.yml
 
@@ -9601,10 +10452,16 @@ ent-FoodBloonion = bloonion bulb
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/skewer.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/skewer.yml
+
 ent-FoodKebabSkewer = skewer
   .desc = A thin rod of metal used to skewer just about anything and cook it.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/snacks.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/snacks.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/snacks.yml
 
@@ -9721,6 +10578,9 @@ ent-FoodPacketMRETrash = MRE wrapper
   .desc = A general purpose wrapper for a variety of military food goods.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/soup.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/soup.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/soup.yml
 
@@ -9860,6 +10720,9 @@ ent-FoodSoupEscargot = escargot
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Food/taco.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Food/taco.yml
+
 ent-FoodTacoShell = taco shell
   .desc = A taco shell, easy to hold, but falls on its side when put down.
 
@@ -9891,6 +10754,9 @@ ent-FoodMealSoftTaco = soft taco
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/cartons.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/cartons.yml
+
 ent-CigCartonGreen = Spessman's Smokes carton
   .desc = A carton containing 6 packets of Spessman's Smokes.
 
@@ -9907,6 +10773,9 @@ ent-CigCartonMixed = Dan's soaked smokes
   .desc = A carton containg 3 packets of Dan's soaked smokes.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/cigarette.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/cigarette.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/cigarette.yml
 
@@ -9977,6 +10846,9 @@ ent-CigaretteBlackPepper = English Spice
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/joints.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/joints.yml
+
 ent-Joint = joint
   .desc = A roll of dried plant matter wrapped in thin paper.
 
@@ -9992,6 +10864,9 @@ ent-BluntRainbow = blunt
   .suffix = Rainbow
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/packs.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/packs.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/packs.yml
 
@@ -10022,6 +10897,9 @@ ent-CigPackMixed = Dan's soaked smokes
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/rolling_paper.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigarettes/rolling_paper.yml
+
 ent-PackPaperRolling = pack of rolling paper
   .desc = A pack of thin pieces of paper used to make fine smokeables.
 
@@ -10046,6 +10924,9 @@ ent-CigaretteFilter1 =
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigars/case.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigars/case.yml
+
 ent-CigarCase = cigar case
   .desc = A case for holding your cigars when you are not smoking them.
 
@@ -10053,6 +10934,9 @@ ent-CigarGoldCase = premium cigar case
   .desc = A case of premium Havanian cigars. You'll only see heads with these.
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigars/cigar.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigars/cigar.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Cigars/cigar.yml
 
@@ -10069,6 +10953,9 @@ ent-CigarGoldSpent =
   .suffix = spent
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Pipes/pipe.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Pipes/pipe.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Pipes/pipe.yml
 
@@ -10091,10 +10978,16 @@ ent-SmokingPipeFilledCannabisRainbow = pipe
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Vapes/vape.yml
 
+
+### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/Vapes/vape.yml
+
 ent-Vape = vape
   .desc = Like a cigar, but for tough teens. (WARNING:Pour only water into the vape)
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/base_smokeables.yml
+
+### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/base_smokeables.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Consumable/Smokeables/base_smokeables.yml
 
@@ -10105,10 +10998,16 @@ ent-BaseSmokable =
 
 ### Resources/Prototypes/Entities/Objects/Decoration/ashtray.yml
 
+
+### Resources/Prototypes/Entities/Objects/Decoration/ashtray.yml
+
 ent-Ashtray = ashtray
   .desc = Proven by scientists to improve the smoking experience by 37%!
 
 ### Resources/Prototypes/Entities/Objects/Decoration/flora.yml
+
+### Resources/Prototypes/Entities/Objects/Decoration/flora.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Decoration/flora.yml
 
@@ -10151,6 +11050,9 @@ ent-LightTree = glowing tree
 
 ### Resources/Prototypes/Entities/Objects/Decoration/jackolantern.yml
 
+
+### Resources/Prototypes/Entities/Objects/Decoration/jackolantern.yml
+
 ent-CarvedPumpkin = carved pumpkin
   .desc = A traditional spooky decoration.
 
@@ -10173,10 +11075,16 @@ ent-PumpkinLanternLarge =
 
 ### Resources/Prototypes/Entities/Objects/Decoration/lidsalami.yml
 
+
+### Resources/Prototypes/Entities/Objects/Decoration/lidsalami.yml
+
 ent-LidSalami = salami lid
   .desc = Ain't gon' fit, won't fit.
 
 ### Resources/Prototypes/Entities/Objects/Decoration/mining.yml
+
+### Resources/Prototypes/Entities/Objects/Decoration/mining.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Decoration/mining.yml
 
@@ -10192,6 +11100,9 @@ ent-WoodenSupportWall = wooden support wall
   .desc = An old, rotten wall.
 
 ### Resources/Prototypes/Entities/Objects/Decoration/present.yml
+
+### Resources/Prototypes/Entities/Objects/Decoration/present.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Decoration/present.yml
 
@@ -10223,6 +11134,9 @@ ent-PresentTrash = wrapping paper
 
 ### Resources/Prototypes/Entities/Objects/Deliveries/deliveries.yml
 
+
+### Resources/Prototypes/Entities/Objects/Deliveries/deliveries.yml
+
 ent-PackageDelivery = package
 
 ent-LetterDelivery = letter
@@ -10240,6 +11154,9 @@ ent-DeliveryModifierBomb =
 
 ### Resources/Prototypes/Entities/Objects/Deliveries/deliveries_items.yml
 
+
+### Resources/Prototypes/Entities/Objects/Deliveries/deliveries_items.yml
+
 ent-MailSpamLetter = spam letter
   .desc = Even space isn't safe from junk mail.
 
@@ -10247,10 +11164,16 @@ ent-MailSpamLetter = spam letter
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/base_machineboard.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/base_machineboard.yml
+
 ent-BaseMachineCircuitboard = machine board
   .suffix = Machine Board
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/cannons.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/cannons.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/cannons.yml
 
@@ -10278,10 +11201,16 @@ ent-ShuttleGunKineticCircuitboard = PTK-800 "Matter Dematerializer" machine boar
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/holopad.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/holopad.yml
+
 ent-HolopadMachineCircuitboard = holopad machine board
   .desc = A machine printed circuit board for a holopad.
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/particle_accelerator.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/particle_accelerator.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/particle_accelerator.yml
 
@@ -10304,6 +11233,9 @@ ent-MachineParticleAcceleratorEmitterPortCircuitboard = PA port emitter board
   .desc = A machine board for a particle accelerator right emitter.
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/production.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/production.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/production.yml
 
@@ -10543,6 +11475,9 @@ ent-SmartFridgeCircuitboard = SmartFridge machine board
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/turrets.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/Machine/turrets.yml
+
 ent-WeaponEnergyTurretStationMachineCircuitboardBase = sentry turret machine board
   .desc = A machine printed circuit board for a sentry turret.
 
@@ -10556,6 +11491,9 @@ ent-WeaponEnergyTurretCommandMachineCircuitboard =
   .suffix = Command
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/computer.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/computer.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/computer.yml
 
@@ -10708,6 +11646,9 @@ ent-StationAiFixerCircuitboard = AI restoration console board
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/law_boards.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/law_boards.yml
+
 ent-BaseSiliconLawboard =
   .desc = An electronics board containing a silicon lawset.
 
@@ -10765,10 +11706,16 @@ ent-MothershipCircuitBoard = law board (Mothership Core)
 
 ### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/misc.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Circuitboards/misc.yml
+
 ent-StationMapCircuitboard = station map electronics
   .desc = An electronics board used in station maps.
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/atmos_alarms.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/atmos_alarms.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/atmos_alarms.yml
 
@@ -10782,10 +11729,16 @@ ent-FireAlarmElectronics = fire alarm electronics
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/base_electronics.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/base_electronics.yml
+
 ent-BaseElectronics = base electronics
   .suffix = Electronics
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/disposal.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/disposal.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/disposal.yml
 
@@ -10796,10 +11749,16 @@ ent-MailingUnitElectronics = mailing unit electronics
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/door.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/door.yml
+
 ent-DoorElectronics = door electronics
   .desc = An electronics board used in doors and airlocks.
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/door_access.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/door_access.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/door_access.yml
 
@@ -10927,10 +11886,16 @@ ent-DoorElectronicsXenoborg =
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/firelock.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/firelock.yml
+
 ent-FirelockElectronics = firelock electronics
   .desc = An electronics board used to detect differences in pressure, temperature and gas concentrations between the two sides of the door.
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/igniter.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/igniter.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/igniter.yml
 
@@ -10941,10 +11906,16 @@ ent-Igniter = igniter
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/intercom.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/intercom.yml
+
 ent-IntercomElectronics = intercom electronics
   .desc = An electronics board used in intercoms.
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/mech.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/mech.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/mech.yml
 
@@ -10973,6 +11944,9 @@ ent-HamtrPeripheralsElectronics = HAMTR peripherals control module
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/misc.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/misc.yml
+
 ent-FreezerElectronics = freezer electronics
   .desc = An electronics board used in kitchen freezers.
 
@@ -10980,10 +11954,16 @@ ent-FreezerElectronics = freezer electronics
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/misc_linking_utilities.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/misc_linking_utilities.yml
+
 ent-voicesensor = voice sensor
   .desc = This microphone, invented by Micheal Phone during his time working at Michealsoft, sends signals when a prerecorded code phrase is uttered!
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/power_electronics.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/power_electronics.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/power_electronics.yml
 
@@ -11006,6 +11986,9 @@ ent-SolarTrackerElectronics = solar tracker electronics
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/signaller.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/signaller.yml
+
 ent-RemoteSignaller = remote signaller
   .desc = A handheld device used for remotely sending signals to objects within a small radius of about 15 meters.
 
@@ -11016,10 +11999,16 @@ ent-RemoteSignallerAdvanced = advanced remote signaller
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/station_ai_core.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/station_ai_core.yml
+
 ent-StationAiCoreElectronics = station AI core electronics
   .desc = An electronics board used in station AI cores.
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/timer.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/timer.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/timer.yml
 
@@ -11034,6 +12023,9 @@ ent-BrigTimerElectronics = brig timer electronics
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/triggers.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/triggers.yml
+
 ent-TimerTrigger = timer trigger
   .desc = A configurable timer.
 
@@ -11044,6 +12036,9 @@ ent-VoiceTrigger = voice trigger
   .desc = Adds a machine link that is triggered by vocal keywords.
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/turret_controls.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Electronics/turret_controls.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Electronics/turret_controls.yml
 
@@ -11063,6 +12058,9 @@ ent-WeaponEnergyTurretCommandControlPanelElectronics =
 
 ### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/camera_bug.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/camera_bug.yml
+
 ent-CameraBug = camera bug
   .desc = An illegal syndicate device that allows you to hack into the station's camera network.
 
@@ -11070,10 +12068,16 @@ ent-CameraBug = camera bug
 
 ### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/chimp_upgrade_kit.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/chimp_upgrade_kit.yml
+
 ent-WeaponPistolCHIMPUpgradeKit = C.H.I.M.P. handcannon upgrade chip
   .desc = An experimental upgrade kit for the C.H.I.M.P.
 
 ### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/dna_injector.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/dna_injector.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/dna_injector.yml
 
@@ -11085,6 +12089,9 @@ ent-DnaInjector =
   .suffix = Admeme, single use
 
 ### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/guardian_activators.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/guardian_activators.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/guardian_activators.yml
 
@@ -11104,6 +12111,9 @@ ent-BoxHoloclown = holoclown box
   .desc = A box containing a holoclown injector.
 
 ### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/reinforcement_teleporter.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/reinforcement_teleporter.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/reinforcement_teleporter.yml
 
@@ -11134,6 +12144,9 @@ ent-ReinforcementRadioSyndicateCyborgAssault = syndicate assault cyborg reinforc
 
 ### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/singularity_beacon.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/singularity_beacon.yml
+
 ent-SingularityBeacon = singularity beacon
   .desc = A syndicate device that attracts the singularity. If it's loose and you're seeing this, run.
 
@@ -11141,10 +12154,16 @@ ent-SingularityBeacon = singularity beacon
 
 ### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/war_declarator.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/Syndicate_Gadgets/war_declarator.yml
+
 ent-NukeOpsDeclarationOfWar = war declarator
   .desc = Use to send a declaration of hostilities to the target, delaying your shuttle departure while they prepare for your assault. Such a brazen move will attract the attention of powerful benefactors within the Syndicate, who will supply your team with a massive amount of bonus telecrystals. Must be used at start of mission, or your benefactors will lose interest.
 
 ### Resources/Prototypes/Entities/Objects/Devices/cartridges.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/cartridges.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/cartridges.yml
 
@@ -11179,6 +12198,9 @@ ent-AstroNavCartridge = AstroNav cartridge
 
 ### Resources/Prototypes/Entities/Objects/Devices/chameleon_projector.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/chameleon_projector.yml
+
 ent-ChameleonProjectorNoBattery = chameleon projector
   .desc = Holoparasite technology used to create a hard-light replica of any object around you. Disguise is destroyed when picked up or deactivated.
 
@@ -11198,10 +12220,16 @@ ent-ActionDisguiseAnchor = Toggle Anchored
 
 ### Resources/Prototypes/Entities/Objects/Devices/desynchronizer.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/desynchronizer.yml
+
 ent-DeviceDesynchronizer = desynchronizer
   .desc = An experimental device that can temporarily desynchronize the user from spacetime, effectively making them disappear while it's active.
 
 ### Resources/Prototypes/Entities/Objects/Devices/door_remote.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/door_remote.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/door_remote.yml
 
@@ -11234,6 +12262,9 @@ ent-DoorRemoteAll = super door remote
 ent-DoorRemoteXenoborg = xenoborg door remote
 
 ### Resources/Prototypes/Entities/Objects/Devices/encryption_keys.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/encryption_keys.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/encryption_keys.yml
 
@@ -11289,6 +12320,9 @@ ent-EncryptionKeyFreelance = freelancer encryption key
   .desc = An encryption key used by freelancers, who may or may not have an affiliation. It looks like it's worn out.
 
 ### Resources/Prototypes/Entities/Objects/Devices/flatpack.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/flatpack.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/flatpack.yml
 
@@ -11350,6 +12384,9 @@ ent-SyndicateMicrowaveFlatpack = donk co. microwave flatpack
 
 ### Resources/Prototypes/Entities/Objects/Devices/forensic_scanner.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/forensic_scanner.yml
+
 ent-ForensicScanner = forensic scanner
   .desc = A handheld device that can scan objects for fingerprints and fibers.
 
@@ -11363,10 +12400,16 @@ ent-PaperAccessLogs = access logs
 
 ### Resources/Prototypes/Entities/Objects/Devices/geiger.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/geiger.yml
+
 ent-GeigerCounter = Geiger counter
   .desc = A handheld device used for detecting and measuring radiation pulses.
 
 ### Resources/Prototypes/Entities/Objects/Devices/hand_teleporter.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/hand_teleporter.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/hand_teleporter.yml
 
@@ -11378,6 +12421,9 @@ ent-HandTeleporterAdmeme = interdimensional teleporter
   .suffix = Admeme
 
 ### Resources/Prototypes/Entities/Objects/Devices/holoprojectors.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/holoprojectors.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/holoprojectors.yml
 
@@ -11420,6 +12466,9 @@ ent-HoloprojectorSecurityEmpty =
 
 ### Resources/Prototypes/Entities/Objects/Devices/mousetrap.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/mousetrap.yml
+
 ent-Mousetrap = mousetrap
   .desc = Useful for catching rodents sneaking into your kitchen.
 
@@ -11428,6 +12477,9 @@ ent-MousetrapArmed = mousetrap
   .suffix = Armed
 
 ### Resources/Prototypes/Entities/Objects/Devices/payload.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/payload.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/payload.yml
 
@@ -11440,6 +12492,9 @@ ent-FlashPayload = flash payload
   .desc = A single-use flash payload.
 
 ### Resources/Prototypes/Entities/Objects/Devices/pda.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/pda.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/pda.yml
 
@@ -11675,6 +12730,9 @@ ent-ScurretPDA =
 
 ### Resources/Prototypes/Entities/Objects/Devices/pinpointer.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/pinpointer.yml
+
 ent-PinpointerBase = pinpointer
   .desc = A handheld tracking device. While typically far more capable, this one has been configured to lock onto certain signals. Keep upright to retain accuracy.
 
@@ -11703,6 +12761,9 @@ ent-PinpointerMothershipRepaired = repaired core pinpointer
 
 ### Resources/Prototypes/Entities/Objects/Devices/radio.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/radio.yml
+
 ent-RadioHandheld = handheld radio
   .desc = A handy handheld radio.
 
@@ -11710,6 +12771,9 @@ ent-RadioHandheldSecurity = security radio
   .desc = A handy security radio.
 
 ### Resources/Prototypes/Entities/Objects/Devices/station_beacon.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/station_beacon.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/station_beacon.yml
 
@@ -12012,6 +13076,9 @@ ent-DefaultStationBeaconCentCommERT =
 
 ### Resources/Prototypes/Entities/Objects/Devices/station_map.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/station_map.yml
+
 ent-BaseHandheldStationMap = station map
   .desc = Displays a readout of the current station.
 
@@ -12035,10 +13102,16 @@ ent-HandheldStationMapNukeops = target station map
 
 ### Resources/Prototypes/Entities/Objects/Devices/swapper.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/swapper.yml
+
 ent-DeviceQuantumSpinInverter = quantum spin inverter
   .desc = An experimental device that is able to swap the locations of two entities by switching their particles' spin values. Must be linked to another device to function.
 
 ### Resources/Prototypes/Entities/Objects/Devices/travel_camera.yml
+
+### Resources/Prototypes/Entities/Objects/Devices/travel_camera.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Devices/travel_camera.yml
 
@@ -12051,6 +13124,9 @@ ent-BasePhotograph = photograph
 
 ### Resources/Prototypes/Entities/Objects/Devices/wristwatch.yml
 
+
+### Resources/Prototypes/Entities/Objects/Devices/wristwatch.yml
+
 ent-Wristwatch = wristwatch
   .desc = A cheap watch for telling time. How much did you waste playing Space Station 14?
 
@@ -12058,6 +13134,9 @@ ent-WristwatchGold = gold watch
   .desc = A fancy watch worth more than your kidney. It was owned by the notorious Syndicate mobster Vunibaldo "200 Pound Horse Meat Grinder" Frediani.
 
 ### Resources/Prototypes/Entities/Objects/Fun/Figurines/figurine_boxes.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/Figurines/figurine_boxes.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/Figurines/figurine_boxes.yml
 
@@ -12075,6 +13154,9 @@ ent-UplinkLighterBox =
   .suffix = Uplink
 
 ### Resources/Prototypes/Entities/Objects/Fun/Figurines/figurines.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/Figurines/figurines.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/Figurines/figurines.yml
 
@@ -12238,6 +13320,9 @@ ent-ToyAi = AI toy
 
 ### Resources/Prototypes/Entities/Objects/Fun/Figurines/mech_figurines.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/Figurines/mech_figurines.yml
+
 ent-ToyRipley = ripley toy
   .desc = Mini-Mecha action figure! 'Mecha No. 1/12' is written on the back.
 
@@ -12278,6 +13363,9 @@ ent-ToyReticence = reticence toy
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/base_instruments.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/Instruments/base_instruments.yml
+
 ent-BaseHandheldInstrument =
   .desc = That's an instrument.
 
@@ -12286,6 +13374,9 @@ ent-BasePlaceableInstrument = baseinstrument
 ent-BasePlaceableInstrumentRotatable = baseinstrumentrotatable
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/instrument_keyed.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/Instruments/instrument_keyed.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/instrument_keyed.yml
 
@@ -12307,6 +13398,9 @@ ent-KalimbaInstrument = kalimba
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_brass.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_brass.yml
+
 ent-TrumpetInstrument = trumpet
   .desc = The favorite instrument of jazz musicians and egotistical middle schoolers.
 
@@ -12320,6 +13414,9 @@ ent-EuphoniumInstrument = euphonium
   .desc = A baby tuba? A Baritone? Whatever it is, it's a pretty cool mess of pipes.
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_misc.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_misc.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_misc.yml
 
@@ -12357,6 +13454,9 @@ ent-BananaPhoneInstrument = banana phone
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_percussion.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_percussion.yml
+
 ent-GlockenspielInstrument = glockenspiel
 
 ent-MusicBoxInstrument = music box
@@ -12375,6 +13475,9 @@ ent-ReverseCymbalsInstrument = reverse cymbals
   .desc = I think you have it the wrong way around?
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_string.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_string.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_string.yml
 
@@ -12406,6 +13509,9 @@ ent-CelloInstrument = cello
   .desc = The nerds call these violoncellos.
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_structures.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_structures.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_structures.yml
 
@@ -12451,6 +13557,9 @@ ent-DawInstrument = digital audio workstation
 
 ### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_wind.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_wind.yml
+
 ent-SaxophoneInstrument = saxophone
   .desc = An instrument. You could probably grind this into raw jazz.
 
@@ -12475,6 +13584,9 @@ ent-BagpipeInstrument = bagpipe
   .desc = Pairs nicely with a kilt.
 
 ### Resources/Prototypes/Entities/Objects/Fun/Plushies/plushielizard_jobs.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/Plushies/plushielizard_jobs.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/Plushies/plushielizard_jobs.yml
 
@@ -12599,6 +13711,9 @@ ent-PlushieLizardJobMultiweh = multiweh lizard plushie
 
 ### Resources/Prototypes/Entities/Objects/Fun/Plushies/plushies.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/Plushies/plushies.yml
+
 ent-PlushieThrongler = throngler plushie
   .desc = A stuffed toy to remind cargo techs of what they can no longer have.
 
@@ -12717,6 +13832,9 @@ ent-ToyAmongPequeno = among pequeño
 
 ### Resources/Prototypes/Entities/Objects/Fun/Tabletop/backgammon.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/Tabletop/backgammon.yml
+
 ent-BackgammonBoard = backgammon board
   .desc = Old fashioned game of dice and pieces.
 
@@ -12726,12 +13844,18 @@ ent-BackgammonBoardTabletop = backgammon
 
 ### Resources/Prototypes/Entities/Objects/Fun/Tabletop/base.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/Tabletop/base.yml
+
 ent-BaseBoardEntity = board
   .desc = A blank board.
 
 ent-BaseBoardTabletop = baseboard
 
 ### Resources/Prototypes/Entities/Objects/Fun/Tabletop/checkers.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/Tabletop/checkers.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/Tabletop/checkers.yml
 
@@ -12749,6 +13873,9 @@ ent-CheckerPieceBlack = black checker piece
 ent-CheckerCrownBlack = black checker crown
 
 ### Resources/Prototypes/Entities/Objects/Fun/Tabletop/chess.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/Tabletop/chess.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/Tabletop/chess.yml
 
@@ -12785,6 +13912,9 @@ ent-BlackPawn = black pawn
 
 ### Resources/Prototypes/Entities/Objects/Fun/Tabletop/dnd.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/Tabletop/dnd.yml
+
 ent-BaseBattlemap = battlemap
   .desc = A battlemap for your epic dungeon exploring to begin, pieces not included!
 
@@ -12817,12 +13947,18 @@ ent-ShipBoardTabletop = ship battlemap
 
 ### Resources/Prototypes/Entities/Objects/Fun/Tabletop/parchis.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/Tabletop/parchis.yml
+
 ent-ParchisBoard = parchís board
   .desc = Cross and circle board game famous for destroying countless friendships.
 
 ent-ParchisBoardTabletop = parchís
 
 ### Resources/Prototypes/Entities/Objects/Fun/Tabletop/tabletopGeneric.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/Tabletop/tabletopGeneric.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/Tabletop/tabletopGeneric.yml
 
@@ -12842,6 +13978,9 @@ ent-BlackTabletopPiece = black piece
 
 ### Resources/Prototypes/Entities/Objects/Fun/balloons.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/balloons.yml
+
 ent-BalloonSyn = syndie balloon
   .desc = Handed out to the bravest souls who survived the "atomic twister" ride at Syndieland.
 
@@ -12852,6 +13991,9 @@ ent-BalloonCorgi = corgi balloon
   .desc = Just like owning a real dog - but a lot floatier.
 
 ### Resources/Prototypes/Entities/Objects/Fun/crayons.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/crayons.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/crayons.yml
 
@@ -12896,6 +14038,9 @@ ent-CrayonBox =
 
 ### Resources/Prototypes/Entities/Objects/Fun/darts.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/darts.yml
+
 ent-Dart = dart
   .desc = Light throwing dart for playing darts. Don't get in the eye!
 
@@ -12910,6 +14055,9 @@ ent-HypoDartBox = hypodart box
   .suffix = HypoDart
 
 ### Resources/Prototypes/Entities/Objects/Fun/dice.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/dice.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/dice.yml
 
@@ -12943,6 +14091,9 @@ ent-MagicDiceBag = bag of dice
 
 ### Resources/Prototypes/Entities/Objects/Fun/orbs.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/orbs.yml
+
 ent-SingularityToy = singuloth-brand toy
   .desc = Mass-produced by a sadistic corporate conglomerate!
 
@@ -12960,6 +14111,9 @@ ent-Magic9Ball = magic 9 ball
   .desc = An endless source of wisdom... Now with a speaker included!
 
 ### Resources/Prototypes/Entities/Objects/Fun/pai.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/pai.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/pai.yml
 
@@ -12988,6 +14142,9 @@ ent-ActionPAIOpenMap = Open Map
   .desc = Open your map interface and guide your owner.
 
 ### Resources/Prototypes/Entities/Objects/Fun/sound_maker.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/sound_maker.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/sound_maker.yml
 
@@ -13037,6 +14194,9 @@ ent-Skub = skub
 
 ### Resources/Prototypes/Entities/Objects/Fun/sports.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/sports.yml
+
 ent-Basketball = basketball
   .desc = Where dah courts at?
 
@@ -13054,6 +14214,9 @@ ent-EvilBeachBall =
   .suffix = EVIL/ADMEME
 
 ### Resources/Prototypes/Entities/Objects/Fun/toys.yml
+
+### Resources/Prototypes/Entities/Objects/Fun/toys.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Fun/toys.yml
 
@@ -13093,6 +14256,9 @@ ent-SpectralLocatorEmpty =
 
 ### Resources/Prototypes/Entities/Objects/Fun/weapons.yml
 
+
+### Resources/Prototypes/Entities/Objects/Fun/weapons.yml
+
 ent-FoamCrossbow = foam crossbow
   .desc = Aiming this at Security may get you filled with lead.
 
@@ -13127,6 +14293,9 @@ ent-ToyHammer = rubber hammer
 
 ### Resources/Prototypes/Entities/Objects/Magic/books.yml
 
+
+### Resources/Prototypes/Entities/Objects/Magic/books.yml
+
 ent-BaseSpellbook = spellbook
 
 ent-WizardsGrimoire = wizard's grimoire
@@ -13155,6 +14324,9 @@ ent-FireballSpellbook = fireball spellbook
 ent-ScrollRunes = scroll of runes
 
 ### Resources/Prototypes/Entities/Objects/Magic/immovable_rod.yml
+
+### Resources/Prototypes/Entities/Objects/Magic/immovable_rod.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Magic/immovable_rod.yml
 
@@ -13201,6 +14373,9 @@ ent-ImmovableRodWeh = immovable weh
   .desc = WEH!
 
 ### Resources/Prototypes/Entities/Objects/Materials/Sheets/glass.yml
+
+### Resources/Prototypes/Entities/Objects/Materials/Sheets/glass.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Materials/Sheets/glass.yml
 
@@ -13258,6 +14433,9 @@ ent-SheetClockworkGlass1 = clockwork glass
 
 ### Resources/Prototypes/Entities/Objects/Materials/Sheets/metal.yml
 
+
+### Resources/Prototypes/Entities/Objects/Materials/Sheets/metal.yml
+
 ent-SheetMetalBase =
   .desc = A sheet of metal, used often on the station in various applications.
 
@@ -13287,6 +14465,9 @@ ent-SheetPlasteel1 = plasteel
   .suffix = Single
 
 ### Resources/Prototypes/Entities/Objects/Materials/Sheets/other.yml
+
+### Resources/Prototypes/Entities/Objects/Materials/Sheets/other.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Materials/Sheets/other.yml
 
@@ -13329,6 +14510,9 @@ ent-MaterialSheetMeat1 =
 
 ### Resources/Prototypes/Entities/Objects/Materials/crystal_shard.yml
 
+
+### Resources/Prototypes/Entities/Objects/Materials/crystal_shard.yml
+
 ent-ShardCrystalBase = crystal shard
   .desc = A small piece of crystal.
 
@@ -13355,6 +14539,9 @@ ent-ShardCrystalRandom = random crystal shard
 
 ### Resources/Prototypes/Entities/Objects/Materials/ingots.yml
 
+
+### Resources/Prototypes/Entities/Objects/Materials/ingots.yml
+
 ent-IngotBase =
   .desc = A heavy metal ingot stamped with the Nanotrasen logo.
 
@@ -13371,6 +14558,9 @@ ent-IngotSilver1 = silver bar
   .suffix = Single
 
 ### Resources/Prototypes/Entities/Objects/Materials/materials.yml
+
+### Resources/Prototypes/Entities/Objects/Materials/materials.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Materials/materials.yml
 
@@ -13462,6 +14652,9 @@ ent-MaterialGoliathHide = goliath hide plates
 
 ### Resources/Prototypes/Entities/Objects/Materials/ore.yml
 
+
+### Resources/Prototypes/Entities/Objects/Materials/ore.yml
+
 ent-OreBase =
   .desc = A piece of unrefined ore.
 
@@ -13538,6 +14731,9 @@ ent-Salt1 =
 
 ### Resources/Prototypes/Entities/Objects/Materials/parts.yml
 
+
+### Resources/Prototypes/Entities/Objects/Materials/parts.yml
+
 ent-PartRodMetal = metal rod
   .suffix = Full
 
@@ -13547,6 +14743,9 @@ ent-PartRodMetal1 = metal rod
   .suffix = Single
 
 ### Resources/Prototypes/Entities/Objects/Materials/scrap.yml
+
+### Resources/Prototypes/Entities/Objects/Materials/scrap.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Materials/scrap.yml
 
@@ -13642,6 +14841,9 @@ ent-ScrapGeneratorFuelTank = fuel tank
 
 ### Resources/Prototypes/Entities/Objects/Materials/shards.yml
 
+
+### Resources/Prototypes/Entities/Objects/Materials/shards.yml
+
 ent-ShardBase =
   .desc = It's a shard of some unknown material.
 
@@ -13661,6 +14863,9 @@ ent-ShardGlassClockwork = clockwork glass shard
   .desc = A small piece of brass-infused glass.
 
 ### Resources/Prototypes/Entities/Objects/Misc/acquisition_slips.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/acquisition_slips.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/acquisition_slips.yml
 
@@ -13689,10 +14894,16 @@ ent-PaperAcquisitionSlipEngineering =
 
 ### Resources/Prototypes/Entities/Objects/Misc/arabianlamp.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/arabianlamp.yml
+
 ent-ArabianLamp = lamp
   .desc = Why the heck won't this piece of junk open!?
 
 ### Resources/Prototypes/Entities/Objects/Misc/bedsheets.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/bedsheets.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/bedsheets.yml
 
@@ -13779,6 +14990,9 @@ ent-BedsheetYellow = yellow bedsheet
 
 ### Resources/Prototypes/Entities/Objects/Misc/books.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/books.yml
+
 ent-BookBase = book
   .desc = A hardcover book.
 
@@ -13850,6 +15064,9 @@ ent-BookAtmosVentsMore = Newton's Guide to Atmos: Vents and More
   .desc = There are endless illegible notes scribbled in the margins. Most of the text is covered in handwritten question marks.
 
 ### Resources/Prototypes/Entities/Objects/Misc/books_author.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/books_author.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/books_author.yml
 
@@ -13952,6 +15169,9 @@ ent-BookJanitorTale = the tales of a tired janitor
 
 ### Resources/Prototypes/Entities/Objects/Misc/botparts.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/botparts.yml
+
 ent-ProximitySensor = proximity sensor
   .desc = Senses things in close proximity.
 
@@ -13971,6 +15191,9 @@ ent-TorsoBorg = cyborg torso
 
 ### Resources/Prototypes/Entities/Objects/Misc/box.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/box.yml
+
 ent-ToteBase = circuit tote
   .desc = A large tote for carrying circuit boards.
 
@@ -13978,10 +15201,16 @@ ent-ToteBase = circuit tote
 
 ### Resources/Prototypes/Entities/Objects/Misc/brb_sign.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/brb_sign.yml
+
 ent-BrbSign = brb sign
   .desc = Lets others know you are away.
 
 ### Resources/Prototypes/Entities/Objects/Misc/briefcases.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/briefcases.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/briefcases.yml
 
@@ -14004,6 +15233,9 @@ ent-BriefcaseWeaponSmall =
 
 ### Resources/Prototypes/Entities/Objects/Misc/broken_bottle.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/broken_bottle.yml
+
 ent-BrokenBottle = broken bottle
   .desc = In Space Glasgow this is called a conversation starter.
 
@@ -14011,10 +15243,16 @@ ent-BrokenBottle = broken bottle
 
 ### Resources/Prototypes/Entities/Objects/Misc/business_card.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/business_card.yml
+
 ent-SyndicateBusinessCard = syndicate business card
   .desc = A black card with the syndicate's logo. There's something written on the back.
 
 ### Resources/Prototypes/Entities/Objects/Misc/candles.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/candles.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/candles.yml
 
@@ -14071,6 +15309,9 @@ ent-CandlePurpleSmallInfinite = small magic purple candle
 
 ### Resources/Prototypes/Entities/Objects/Misc/candy_bowl.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/candy_bowl.yml
+
 ent-CandyBowl = candy bowl
   .desc = Grab as much as you can fit in your pockets!
 
@@ -14078,10 +15319,16 @@ ent-CandyBowl = candy bowl
 
 ### Resources/Prototypes/Entities/Objects/Misc/candy_bucket.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/candy_bucket.yml
+
 ent-CandyBucket = candy bucket
   .desc = A festive bucket for all your treats.
 
 ### Resources/Prototypes/Entities/Objects/Misc/carpets.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/carpets.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/carpets.yml
 
@@ -14119,10 +15366,16 @@ ent-FloorCarpetItemWhite =
 
 ### Resources/Prototypes/Entities/Objects/Misc/cds.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/cds.yml
+
 ent-CoordinatesDisk = coordinates disk
   .desc = A disk containing the coordinates to a location in space. Necessary for any FTL-traversing vessel to reach their destination. Fits inside shuttle consoles.
 
 ### Resources/Prototypes/Entities/Objects/Misc/chopsticks.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/chopsticks.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/chopsticks.yml
 
@@ -14133,6 +15386,9 @@ ent-PairedChopsticks = paired chopsticks
   .desc = You should probably separate them.
 
 ### Resources/Prototypes/Entities/Objects/Misc/dat_fukken_disk.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/dat_fukken_disk.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/dat_fukken_disk.yml
 
@@ -14147,10 +15403,16 @@ ent-NukeDiskFake = nuclear authentication disk
 
 ### Resources/Prototypes/Entities/Objects/Misc/desk_bell.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/desk_bell.yml
+
 ent-DeskBell = desk bell
   .desc = The cornerstone of any customer service job. You feel an unending urge to ring it.
 
 ### Resources/Prototypes/Entities/Objects/Misc/diskcases.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/diskcases.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/diskcases.yml
 
@@ -14161,10 +15423,16 @@ ent-DiskCase = diskcase
 
 ### Resources/Prototypes/Entities/Objects/Misc/eggspider.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/eggspider.yml
+
 ent-EggSpider = egg spider
   .desc = Is it a gemstone? Is it an egg? It looks expensive.
 
 ### Resources/Prototypes/Entities/Objects/Misc/fire_extinguisher.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/fire_extinguisher.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/fire_extinguisher.yml
 
@@ -14183,6 +15451,9 @@ ent-SelfRechargingFireExtinguisher = self-recharging fire extinguisher
   .desc = It extinguishes fires. it slowly refills with water.
 
 ### Resources/Prototypes/Entities/Objects/Misc/fluff_lights.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/fluff_lights.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/fluff_lights.yml
 
@@ -14207,6 +15478,9 @@ ent-FloodlightBroken = broken floodlight
   .desc = A pole with powerful mounted lights on it. It's broken.
 
 ### Resources/Prototypes/Entities/Objects/Misc/folders.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/folders.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/folders.yml
 
@@ -14309,6 +15583,9 @@ ent-BoxFolderQmClipboard = requisition digi-board
 
 ### Resources/Prototypes/Entities/Objects/Misc/handcuffs.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/handcuffs.yml
+
 ent-Handcuffs = handcuffs
   .desc = Used to detain criminals and other assholes.
 
@@ -14331,6 +15608,9 @@ ent-ClothingOuterStraightjacket = straitjacket
 
 ### Resources/Prototypes/Entities/Objects/Misc/handy_flags.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/handy_flags.yml
+
 ent-BlankHandyFlag = blank handheld flag
   .desc = Some piece of white cloth wound on a stick.
 
@@ -14350,10 +15630,16 @@ ent-PirateHandyFlag = pirate handheld flag
 
 ### Resources/Prototypes/Entities/Objects/Misc/ice_crust.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/ice_crust.yml
+
 ent-IceCrust = ice crust
   .desc = It's cold and slippery.
 
 ### Resources/Prototypes/Entities/Objects/Misc/identification_cards.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/identification_cards.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/identification_cards.yml
 
@@ -14506,6 +15792,9 @@ ent-UniversalIDCard = universal ID card
 
 ### Resources/Prototypes/Entities/Objects/Misc/implanters.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/implanters.yml
+
 ent-BaseImplanter = implanter
 
 ent-Implanter = implant extractor
@@ -14568,6 +15857,9 @@ ent-DeathRattleImplanterCentcomm = centcomm death rattle implanter
 
 ### Resources/Prototypes/Entities/Objects/Misc/improvised_gun_parts.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/improvised_gun_parts.yml
+
 ent-ModularReceiver = modular receiver
   .desc = A vital part used in the creation of firearms.
 
@@ -14578,10 +15870,16 @@ ent-RifleStock = rifle stock
 
 ### Resources/Prototypes/Entities/Objects/Misc/intermediate_parts.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/intermediate_parts.yml
+
 ent-MoproachShoes = moproach shoes
   .desc = Three pairs of tiny mopshoes, perfectly fit for a moproach.
 
 ### Resources/Prototypes/Entities/Objects/Misc/kudzu.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/kudzu.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/kudzu.yml
 
@@ -14609,6 +15907,9 @@ ent-ShadowKudzuWeak = haze
 
 ### Resources/Prototypes/Entities/Objects/Misc/land_mine.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/land_mine.yml
+
 ent-LandMineKickUnarmed = kick mine
 
 ent-LandMineKick =
@@ -14629,6 +15930,9 @@ ent-LandMineExplosive =
 
 ### Resources/Prototypes/Entities/Objects/Misc/machine_parts.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/machine_parts.yml
+
 ent-BaseStockPart = stock part
   .desc = What?
 
@@ -14640,10 +15944,16 @@ ent-MicroManipulatorStockPart = modular machine part
 
 ### Resources/Prototypes/Entities/Objects/Misc/medalcase.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/medalcase.yml
+
 ent-MedalCase = medal case
   .desc = Case with medals.
 
 ### Resources/Prototypes/Entities/Objects/Misc/monkeycube.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/monkeycube.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/monkeycube.yml
 
@@ -14673,6 +15983,9 @@ ent-SyndicateSpongeWrapped = monkey cube
   .suffix = Wrapped, Syndicate
 
 ### Resources/Prototypes/Entities/Objects/Misc/paper.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/paper.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/paper.yml
 
@@ -14725,6 +16038,9 @@ ent-Envelope = envelope
 
 ### Resources/Prototypes/Entities/Objects/Misc/parcel_wrap.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/parcel_wrap.yml
+
 ent-ParcelWrap = parcel wrap
   .desc = Paper used contain items for transport.
 
@@ -14742,6 +16058,9 @@ ent-ParcelWrapTrash = parcel wrap
   .desc = The disappointing remnants of an unwrapped parcel.
 
 ### Resources/Prototypes/Entities/Objects/Misc/pen.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/pen.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/pen.yml
 
@@ -14770,6 +16089,9 @@ ent-PenWiz = wizard's magical pen
 
 ### Resources/Prototypes/Entities/Objects/Misc/pet_carrier.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/pet_carrier.yml
+
 ent-PetCarrier = pet carrier
   .desc = Allows large animals to be carried comfortably. It smells vaguely of toilet water and explosives.
 
@@ -14777,10 +16099,16 @@ ent-PetCarrier = pet carrier
 
 ### Resources/Prototypes/Entities/Objects/Misc/potatoai_chip.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/potatoai_chip.yml
+
 ent-PotatoAIChip = supercompact AI chip
   .desc = This high-tech AI chip requires a voltage of exactly 1.1V to function correctly.
 
 ### Resources/Prototypes/Entities/Objects/Misc/rubber_stamp.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/rubber_stamp.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/rubber_stamp.yml
 
@@ -14838,10 +16166,16 @@ ent-RubberStampWizard = wizard's rubber stamp
 
 ### Resources/Prototypes/Entities/Objects/Misc/space_cash.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/space_cash.yml
+
 ent-SpaceCash = spesos
   .desc = You gotta have money.
 
 ### Resources/Prototypes/Entities/Objects/Misc/spaceshroom.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/spaceshroom.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/spaceshroom.yml
 
@@ -14856,6 +16190,9 @@ ent-FoodSpaceshroomCooked = cooked spaceshroom
   .desc = A wild mushroom that has been cooked through. It seems the heat has removed its chemical effects.
 
 ### Resources/Prototypes/Entities/Objects/Misc/subdermal_implants.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/subdermal_implants.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/subdermal_implants.yml
 
@@ -14926,6 +16263,9 @@ ent-DeathRattleImplantCentcomm = centcomm death rattle implant
   .desc = This implant will inform the Centcomm radio channel should the user fall into critical condition or die.
 
 ### Resources/Prototypes/Entities/Objects/Misc/tiles.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/tiles.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/tiles.yml
 
@@ -15202,10 +16542,16 @@ ent-FloorTileItemDarkSquiggly = dark steel squiggly tile
 
 ### Resources/Prototypes/Entities/Objects/Misc/torch.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/torch.yml
+
 ent-Torch = torch
   .desc = A torch fashioned from some wood.
 
 ### Resources/Prototypes/Entities/Objects/Misc/treasure.yml
+
+### Resources/Prototypes/Entities/Objects/Misc/treasure.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Misc/treasure.yml
 
@@ -15234,6 +16580,9 @@ ent-TreasureCoinIron = coin
 
 ### Resources/Prototypes/Entities/Objects/Misc/utensils.yml
 
+
+### Resources/Prototypes/Entities/Objects/Misc/utensils.yml
+
 ent-Fork = fork
   .desc = An eating utensil, perfect for stabbing.
 
@@ -15256,10 +16605,16 @@ ent-BarSpoon = bar spoon
 
 ### Resources/Prototypes/Entities/Objects/Power/antimatter_jar.yml
 
+
+### Resources/Prototypes/Entities/Objects/Power/antimatter_jar.yml
+
 ent-AmeJar = AME fuel jar
   .desc = A hermetically sealed jar containing antimatter for use in an antimatter reactor.
 
 ### Resources/Prototypes/Entities/Objects/Power/lights.yml
+
+### Resources/Prototypes/Entities/Objects/Power/lights.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Power/lights.yml
 
@@ -15348,10 +16703,16 @@ ent-LightBulbCrystalGreen = green crystal light bulb
 
 ### Resources/Prototypes/Entities/Objects/Power/portable_recharger.yml
 
+
+### Resources/Prototypes/Entities/Objects/Power/portable_recharger.yml
+
 ent-PortableRecharger = portable recharger
   .desc = High-tech recharger adapted for portability.
 
 ### Resources/Prototypes/Entities/Objects/Power/powercells.yml
+
+### Resources/Prototypes/Entities/Objects/Power/powercells.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Power/powercells.yml
 
@@ -15421,10 +16782,16 @@ ent-PowerCageHighEmpty =
 
 ### Resources/Prototypes/Entities/Objects/Power/powersink.yml
 
+
+### Resources/Prototypes/Entities/Objects/Power/powersink.yml
+
 ent-PowerSink = power sink
   .desc = Drains immense amounts of electricity from the grid.
 
 ### Resources/Prototypes/Entities/Objects/Shields/shields.yml
+
+### Resources/Prototypes/Entities/Objects/Shields/shields.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Shields/shields.yml
 
@@ -15474,6 +16841,9 @@ ent-TelescopicShield = telescopic shield
 
 ### Resources/Prototypes/Entities/Objects/Specific/Cargo/cargo_pallet.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Cargo/cargo_pallet.yml
+
 ent-BaseCargoPallet = cargo pallet
   .desc = Common fixture of logistics and cargo. Subtle reminder where crates go during transport to avoid bruised shins.
 
@@ -15487,10 +16857,16 @@ ent-CargoPalletBuy = cargo buying pallet
 
 ### Resources/Prototypes/Entities/Objects/Specific/Cargo/mail_bag.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Cargo/mail_bag.yml
+
 ent-MailBag = mail bag
   .desc = A bag for carrying mail around the station. Made from tanned space bear hide.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chapel/bibles.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Chapel/bibles.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chapel/bibles.yml
 
@@ -15525,6 +16901,9 @@ ent-BibleRatvar = tablet of ratvar
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chapel/urn.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Chapel/urn.yml
+
 ent-Urn = urn
   .desc = Store the Dead smart and Compact since 2300.
 
@@ -15532,10 +16911,16 @@ ent-Urn = urn
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chem_bag.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chem_bag.yml
+
 ent-ChemBag = chemistry bag
   .desc = A bag for storing chemistry products, such as pills, pill canisters, bottles, and syringes.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemical-containers.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemical-containers.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemical-containers.yml
 
@@ -15657,6 +17042,9 @@ ent-JugDexalinPlus =
   .suffix = dexalin plus
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemistry-bottles.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemistry-bottles.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemistry-bottles.yml
 
@@ -15910,6 +17298,9 @@ ent-ChemistryBottleSulfur =
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemistry-vials.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemistry-vials.yml
+
 ent-ChemistryEmptyVial = vial
   .desc = A small vial.
 
@@ -15929,6 +17320,9 @@ ent-PlasmaChemistryVial =
   .suffix = plasma
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemistry.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemistry.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chemistry/chemistry.yml
 
@@ -15993,6 +17387,9 @@ ent-PillCanister = pill canister
 
 ### Resources/Prototypes/Entities/Objects/Specific/Chemistry/paper_centrifuge.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Chemistry/paper_centrifuge.yml
+
 ent-HandheldMixerPaperCentrifuge = paper centrifuge
   .desc = A small portable makeshift centrifuge. Works by rotating the paper sheets when its cords are pulled.
 
@@ -16000,10 +17397,16 @@ ent-HandheldMixerPaperCentrifuge = paper centrifuge
 
 ### Resources/Prototypes/Entities/Objects/Specific/Forensics/forensics.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Forensics/forensics.yml
+
 ent-ForensicPad = forensic pad
   .desc = A forensic pad for collecting fingerprints or fibers.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Hydroponics/leaves.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Hydroponics/leaves.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Hydroponics/leaves.yml
 
@@ -16041,6 +17444,9 @@ ent-GroundTobacco = ground tobacco
   .desc = Ground tobacco, perfect for hand-rolled cigarettes.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Hydroponics/seeds.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Hydroponics/seeds.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Hydroponics/seeds.yml
 
@@ -16217,6 +17623,9 @@ ent-BloonionSeeds = packet of bloonion seeds
 
 ### Resources/Prototypes/Entities/Objects/Specific/Hydroponics/sprays.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Hydroponics/sprays.yml
+
 ent-PlantBGoneSpray = Plant-B-Gone
   .desc = Kills those pesky weeds!
   .suffix = Filled
@@ -16230,6 +17639,9 @@ ent-PestSpray = pest spray
   .suffix = Filled
 
 ### Resources/Prototypes/Entities/Objects/Specific/Hydroponics/tools.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Hydroponics/tools.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Hydroponics/tools.yml
 
@@ -16252,6 +17664,9 @@ ent-PlantBag = plant bag
   .desc = A bag for botanists to easily move their huge harvests.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Janitorial/janitor.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Janitorial/janitor.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Janitorial/janitor.yml
 
@@ -16286,6 +17701,9 @@ ent-WireBrushElectrical = electrical wire brush
 
 ### Resources/Prototypes/Entities/Objects/Specific/Janitorial/soap.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Janitorial/soap.yml
+
 ent-BaseSoap = soap
 
 ent-Soap =
@@ -16310,6 +17728,9 @@ ent-SoapOmega = omega soap
   .desc = The most advanced soap known to mankind. Smells of bluespace.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Janitorial/spray.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Janitorial/spray.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Janitorial/spray.yml
 
@@ -16346,6 +17767,9 @@ ent-Vapor = vapor
 
 ### Resources/Prototypes/Entities/Objects/Specific/Janitorial/trashbag.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Janitorial/trashbag.yml
+
 ent-TrashBag = trash bag
 
 ent-TrashBagBlue = trash bag
@@ -16356,6 +17780,9 @@ ent-BorgTrashBag = internal trash bag
   .desc = An upgraded trash bag with a larger internal volume, installed directly into a custodial cyborg.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Kitchen/equipment.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Kitchen/equipment.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Kitchen/equipment.yml
 
@@ -16381,6 +17808,9 @@ ent-IncompleteHandheldJuicer = incomplete handheld juicer
 
 ### Resources/Prototypes/Entities/Objects/Specific/Kitchen/foodcarts.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Kitchen/foodcarts.yml
+
 ent-FoodCartBase = food cart
   .desc = A cart for food.
 
@@ -16394,10 +17824,16 @@ ent-FoodCartCold = cold food cart
 
 ### Resources/Prototypes/Entities/Objects/Specific/Librarian/books_bag.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Librarian/books_bag.yml
+
 ent-BooksBag = books bag
   .desc = A refined bag to carry your own library.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Mech/mech_construction.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Mech/mech_construction.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Mech/mech_construction.yml
 
@@ -16453,6 +17889,9 @@ ent-VimHarness = vim harness
 
 ### Resources/Prototypes/Entities/Objects/Specific/Mech/mecha_equipment.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Mech/mecha_equipment.yml
+
 ent-MechEquipmentGrabber = hydraulic clamp
   .desc = Gives the mech the ability to grab things and drag them around.
 
@@ -16463,6 +17902,9 @@ ent-MechEquipmentHorn = mech horn
   .desc = An enhanced bike horn that plays a hilarious array of sounds for the enjoyment of the crew. HONK!
 
 ### Resources/Prototypes/Entities/Objects/Specific/Mech/mechs.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Mech/mechs.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Mech/mechs.yml
 
@@ -16494,6 +17936,9 @@ ent-MechVimBattery =
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/defib.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Medical/defib.yml
+
 ent-BaseDefibrillator = defibrillator
   .desc = CLEAR! Zzzzat!
 
@@ -16513,6 +17958,9 @@ ent-DefibrillatorSyndicate = interdyne defibrillator
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/disease.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Medical/disease.yml
+
 ent-DiseaseSwab = sterile swab
   .desc = Used for taking and transferring samples. Sterile until open. Single use only.
 
@@ -16526,6 +17974,9 @@ ent-Vaccine = vaccine
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/handheld_crew_monitor.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Medical/handheld_crew_monitor.yml
+
 ent-HandheldCrewMonitor = handheld crew monitor
   .desc = A hand-held crew monitor displaying the status of suit sensors.
 
@@ -16533,6 +17984,9 @@ ent-HandheldCrewMonitorEmpty =
   .suffix = Empty
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/healing.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Medical/healing.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/healing.yml
 
@@ -16710,10 +18164,16 @@ ent-SyringeStimulants =
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/healthanalyzer.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Medical/healthanalyzer.yml
+
 ent-HandheldHealthAnalyzer = health analyzer
   .desc = A hand-held body scanner capable of distinguishing vital signs of the subject.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/hypospray.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Medical/hypospray.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/hypospray.yml
 
@@ -16788,6 +18248,9 @@ ent-WehMedipen = weh auto-injector
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/medkits.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Medical/medkits.yml
+
 ent-Medkit = first aid kit
   .desc = It's an emergency medical kit for those serious boo-boos.
 
@@ -16816,6 +18279,9 @@ ent-MedkitCombat = combat medical kit
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/morgue.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Medical/morgue.yml
+
 ent-BodyBag = body bag
   .desc = A plastic bag designed for the storage and transportation of cadavers to stop body decomposition.
 
@@ -16833,10 +18299,16 @@ ent-Ectoplasm = ectoplasm
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/randompill.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Medical/randompill.yml
+
 ent-StrangePill = strange pill
   .desc = This unusual pill bears no markings. There's no telling what it contains.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/surgery.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Medical/surgery.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Medical/surgery.yml
 
@@ -16880,6 +18352,9 @@ ent-SawAdvanced = advanced circular saw
 
 ### Resources/Prototypes/Entities/Objects/Specific/Research/anomaly.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Research/anomaly.yml
+
 ent-AnomalyScanner = anomaly scanner
   .desc = A hand-held scanner built to collect information on various anomalous objects.
 
@@ -16905,6 +18380,9 @@ ent-WeaponGauntletGorilla = G.O.R.I.L.L.A. gauntlet
   .desc = A robust piece of research equipment. When powered with an anomaly core, a single blow can launch anomalous objects through the air.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Research/disk.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Research/disk.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Research/disk.yml
 
@@ -16948,6 +18426,9 @@ ent-TechnologyDiskRare =
   .suffix = rare.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Robotics/borg_modules.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Robotics/borg_modules.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Robotics/borg_modules.yml
 
@@ -17102,10 +18583,16 @@ ent-XenoborgModuleSuperCloakDevice = invisibility device xenoborg module
 
 ### Resources/Prototypes/Entities/Objects/Specific/Robotics/endoskeleton.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Robotics/endoskeleton.yml
+
 ent-CyborgEndoskeleton = cyborg endoskeleton
   .desc = A frame that cyborgs are built on. Significantly less spooky than expected.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Robotics/mmi.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Robotics/mmi.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Robotics/mmi.yml
 
@@ -17122,6 +18609,9 @@ ent-PositronicBrain = positronic brain
 
 ### Resources/Prototypes/Entities/Objects/Specific/Salvage/ore_bag.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Salvage/ore_bag.yml
+
 ent-OreBag = ore bag
   .desc = A robust bag for salvage specialists and miners alike to carry large amounts of ore. Magnetises any nearby ores when attached to a belt.
 
@@ -17132,10 +18622,16 @@ ent-BorgOreBag = integrated ore bag
 
 ### Resources/Prototypes/Entities/Objects/Specific/Salvage/ore_bag_holding.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Salvage/ore_bag_holding.yml
+
 ent-OreBagOfHolding = ore bag of holding
   .desc = A robust bag of holding for salvage billionaires and rich miners alike to carry large amounts of ore. Magnetises any nearby ores when attached to a belt.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Salvage/scanner.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Salvage/scanner.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Salvage/scanner.yml
 
@@ -17157,10 +18653,16 @@ ent-AdvancedMineralScannerEmpty =
 
 ### Resources/Prototypes/Entities/Objects/Specific/Security/barrier.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Security/barrier.yml
+
 ent-DeployableBarrier = deployable barrier
   .desc = A deployable barrier. Swipe your ID card to lock/unlock it.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Security/evidence-marker.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Security/evidence-marker.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Security/evidence-marker.yml
 
@@ -17171,6 +18673,9 @@ ent-BoxEvidenceMarkers = evidence marker box
   .desc = A pack of numbered yellow markers, useful for labeling evidence on a crime scene.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Security/target.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Security/target.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Security/target.yml
 
@@ -17190,10 +18695,16 @@ ent-TargetStrange = strange target
 
 ### Resources/Prototypes/Entities/Objects/Specific/Service/barber.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Service/barber.yml
+
 ent-BarberScissors = barber scissors
   .desc = Is able to reshape the hairstyle of any crew cut to your liking.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Service/vending_machine_restock.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Service/vending_machine_restock.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Service/vending_machine_restock.yml
 
@@ -17282,6 +18793,9 @@ ent-VendingMachineRestockChemVend = ChemVend restock box
 
 ### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/artifact_equipment.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/artifact_equipment.yml
+
 ent-CrateArtifactContainer = artifact container
   .desc = Used to safely contain and move artifacts.
 
@@ -17289,6 +18803,9 @@ ent-HandheldArtifactContainer = handheld artifact container
   .desc = A handheld case used to safely contain and move small artifacts.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/item_xenoartifacts.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/item_xenoartifacts.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/item_xenoartifacts.yml
 
@@ -17308,6 +18825,9 @@ ent-ArtifactFragment1 =
 
 ### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/node_scanner.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/node_scanner.yml
+
 ent-NodeScanner = node scanner
   .desc = The archeologist's friend, able to identify the node of an artifact with only a single scan.
 
@@ -17315,9 +18835,15 @@ ent-NodeScanner = node scanner
 
 ### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/structure_xenoartifacts.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/structure_xenoartifacts.yml
+
 ent-BaseXenoArtifactStructure = artifact
 
 ### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/xenoartifacts.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/xenoartifacts.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Xenoarchaeology/xenoartifacts.yml
 
@@ -17331,6 +18857,9 @@ ent-ActionArtifactActivate = Activate Artifact
 
 ### Resources/Prototypes/Entities/Objects/Specific/Xenoborg/cloaking_device.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Xenoborg/cloaking_device.yml
+
 ent-CloakingDevice = cloaking device
   .desc = A device that allows Xenoborgs to go invisible.
 
@@ -17341,10 +18870,16 @@ ent-SuperCloakingDevice = super cloaking device
 
 ### Resources/Prototypes/Entities/Objects/Specific/Xenoborg/material_bag.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/Xenoborg/material_bag.yml
+
 ent-MaterialBag = material bag
   .desc = A robust bag for Xenoborgs to carry large amounts of materials.
 
 ### Resources/Prototypes/Entities/Objects/Specific/Xenoborg/nocturine_hypo.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/Xenoborg/nocturine_hypo.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/Xenoborg/nocturine_hypo.yml
 
@@ -17355,10 +18890,16 @@ ent-NocturineHypo = nocturine hypo
 
 ### Resources/Prototypes/Entities/Objects/Specific/atmos.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/atmos.yml
+
 ent-GasAnalyzer = gas analyzer
   .desc = A hand-held environmental scanner which reports current gas levels.
 
 ### Resources/Prototypes/Entities/Objects/Specific/rehydrateable.yml
+
+### Resources/Prototypes/Entities/Objects/Specific/rehydrateable.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Specific/rehydrateable.yml
 
@@ -17404,6 +18945,9 @@ ent-MopBucketCube = mop bucket cube
 
 ### Resources/Prototypes/Entities/Objects/Specific/syndicate.yml
 
+
+### Resources/Prototypes/Entities/Objects/Specific/syndicate.yml
+
 ent-Telecrystal = telecrystal
   .desc = It seems to be pulsing with suspiciously enticing energies.
   .suffix = 20 TC
@@ -17440,6 +18984,9 @@ ent-BaseUplinkRadioDebug =
 
 ### Resources/Prototypes/Entities/Objects/Tools/access_breaker.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/access_breaker.yml
+
 ent-AccessBreakerUnlimited = authentication disruptor
   .desc = A hacked access configurator, specialized to unlock and erase access from digital locks.
   .suffix = Unlimited
@@ -17448,6 +18995,9 @@ ent-AccessBreaker =
   .suffix = Limited
 
 ### Resources/Prototypes/Entities/Objects/Tools/access_configurator.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/access_configurator.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/access_configurator.yml
 
@@ -17465,6 +19015,9 @@ ent-AccessConfiguratorXenoborg = xenoborg access configurator
 
 ### Resources/Prototypes/Entities/Objects/Tools/appraisal.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/appraisal.yml
+
 ent-AppraisalTool = appraisal tool
   .desc = A beancounter's best friend, with a quantum connection to the galactic market and the ability to appraise even the toughest items. It will also tell you if a crate contains a completed bounty.
 
@@ -17472,10 +19025,16 @@ ent-AppraisalTool = appraisal tool
 
 ### Resources/Prototypes/Entities/Objects/Tools/binoculars.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/binoculars.yml
+
 ent-Binoculars = binoculars
   .desc = Used for long-distance surveillance.
 
 ### Resources/Prototypes/Entities/Objects/Tools/blueprint.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/blueprint.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/blueprint.yml
 
@@ -17495,6 +19054,9 @@ ent-BlueprintDoubleEmergencyTank = double emergency tank blueprint
 
 ### Resources/Prototypes/Entities/Objects/Tools/bucket.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/bucket.yml
+
 ent-Bucket = bucket
   .desc = It's a boring old bucket.
 
@@ -17502,6 +19064,9 @@ ent-BorgBucket = internal tank
   .desc = The internal reservoir of a custodial cyborg, capable of holding a entire mop bucket worth of water.
 
 ### Resources/Prototypes/Entities/Objects/Tools/cable_coils.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/cable_coils.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/cable_coils.yml
 
@@ -17521,6 +19086,9 @@ ent-CableApcStack = LV cable coil
   .suffix = Full
 
 ### Resources/Prototypes/Entities/Objects/Tools/cowtools.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/cowtools.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/cowtools.yml
 
@@ -17555,10 +19123,16 @@ ent-CowToolboxFilled = cow toolbox
 
 ### Resources/Prototypes/Entities/Objects/Tools/crowbars.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/crowbars.yml
+
 ent-BaseCrowbar = crowbar
   .desc = A multipurpose tool used for many tasks, such as prying doors or bludgeoning interdimensional invaders.
 
 ### Resources/Prototypes/Entities/Objects/Tools/decoys.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/decoys.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/decoys.yml
 
@@ -17581,6 +19155,9 @@ ent-BalloonCommander = commander balloon
 
 ### Resources/Prototypes/Entities/Objects/Tools/emag.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/emag.yml
+
 ent-EmagUnlimited = cryptographic sequencer
   .desc = The all-in-one hacking solution. Friend of any syndicate. The iconic EMAG.
   .suffix = Unlimited
@@ -17592,10 +19169,16 @@ ent-Emag =
 
 ### Resources/Prototypes/Entities/Objects/Tools/flare.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/flare.yml
+
 ent-Flare = emergency flare
   .desc = A flare that produces a very bright light for a short while. Point the flame away from yourself.
 
 ### Resources/Prototypes/Entities/Objects/Tools/flashlights.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/flashlights.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/flashlights.yml
 
@@ -17612,6 +19195,9 @@ ent-EmptyFlashlightLantern =
 
 ### Resources/Prototypes/Entities/Objects/Tools/fulton.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/fulton.yml
+
 ent-FultonBeacon = fulton beacon
   .desc = Beacon to receive fulton extractions.
 
@@ -17625,6 +19211,9 @@ ent-Fulton1 = fulton
 ent-FultonEffect = fulton effect
 
 ### Resources/Prototypes/Entities/Objects/Tools/gas_tanks.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/gas_tanks.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/gas_tanks.yml
 
@@ -17668,6 +19257,9 @@ ent-PlasmaTank = plasma tank
 
 ### Resources/Prototypes/Entities/Objects/Tools/glowstick.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/glowstick.yml
+
 ent-GlowstickBase = glowstick
   .desc = Useful for raves and emergencies.
 
@@ -17697,6 +19289,9 @@ ent-LightBehaviourTest6 = light randomize radius test
 
 ### Resources/Prototypes/Entities/Objects/Tools/gps.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/gps.yml
+
 ent-HandheldGPSBasic = global positioning system
   .desc = Helping lost spacemen find their way through the planets since 2016.
 
@@ -17707,10 +19302,16 @@ ent-BorgHandheldGPSBasic = integrated GPS
 
 ### Resources/Prototypes/Entities/Objects/Tools/hand_labeler.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/hand_labeler.yml
+
 ent-HandLabeler = hand labeler
   .desc = A hand labeler, used to label items and objects.
 
 ### Resources/Prototypes/Entities/Objects/Tools/handheld_mass_scanner.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/handheld_mass_scanner.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/handheld_mass_scanner.yml
 
@@ -17727,10 +19328,16 @@ ent-HandHeldMassScannerBorg =
 
 ### Resources/Prototypes/Entities/Objects/Tools/hijack_beacon.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/hijack_beacon.yml
+
 ent-HijackBeacon = hijack beacon
   .desc = A device that bypasses the firewall on Nanotrasen-brand Automated Trade Stations.
 
 ### Resources/Prototypes/Entities/Objects/Tools/inflatable_wall.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/inflatable_wall.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/inflatable_wall.yml
 
@@ -17746,6 +19353,9 @@ ent-InflatableDoorStack = inflatable door
 
 ### Resources/Prototypes/Entities/Objects/Tools/jammer.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/jammer.yml
+
 ent-BaseJammer = radio jammer
   .desc = This device will disrupt any nearby outgoing radio communication as well as suit sensors when activated.
 
@@ -17758,6 +19368,9 @@ ent-XenoborgRadioJammer = xenoborg radio jammer
 
 ### Resources/Prototypes/Entities/Objects/Tools/jaws_of_life.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/jaws_of_life.yml
+
 ent-JawsOfLife = jaws of life
   .desc = A set of jaws of life, compressed through the magic of science.
 
@@ -17765,6 +19378,9 @@ ent-SyndicateJawsOfLife = syndicate jaws of death
   .desc = Useful for breaking into secure areas and other nefarious activities.
 
 ### Resources/Prototypes/Entities/Objects/Tools/jetpacks.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/jetpacks.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/jetpacks.yml
 
@@ -17819,6 +19435,9 @@ ent-JetpackXenoborg = xenoborg jetpack
 
 ### Resources/Prototypes/Entities/Objects/Tools/lantern.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/lantern.yml
+
 ent-Lantern = lantern
   .desc = The holy light guides the way.
 
@@ -17829,6 +19448,9 @@ ent-LanternFlash =
 
 ### Resources/Prototypes/Entities/Objects/Tools/light_replacer.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/light_replacer.yml
+
 ent-LightReplacer = light replacer
   .desc = An item which uses magnets to easily replace broken lights. Refill by adding more lights into the replacer.
 
@@ -17836,6 +19458,9 @@ ent-LightReplacerEmpty =
   .suffix = Empty
 
 ### Resources/Prototypes/Entities/Objects/Tools/lighters.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/lighters.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/lighters.yml
 
@@ -17886,6 +19511,9 @@ ent-DonkcoLighter = Donk Co. flippo
 
 ### Resources/Prototypes/Entities/Objects/Tools/matches.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/matches.yml
+
 ent-Matchstick = match stick
   .desc = A simple match stick, used for lighting fine smokables.
 
@@ -17905,6 +19533,9 @@ ent-GorlexMatchstick = match stick
 
 ### Resources/Prototypes/Entities/Objects/Tools/pka_upgrade.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/pka_upgrade.yml
+
 ent-BasePKAUpgrade = PKA modkit
   .desc = A modkit for a proto-kinetic accelerator.
 
@@ -17915,6 +19546,9 @@ ent-PKAUpgradeRange = PKA modkit (range)
 ent-PKAUpgradeFireRate = PKA modkit (fire rate)
 
 ### Resources/Prototypes/Entities/Objects/Tools/spray_painter.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/spray_painter.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/spray_painter.yml
 
@@ -17938,10 +19572,16 @@ ent-SprayPainterAmmo = compressed paint
 
 ### Resources/Prototypes/Entities/Objects/Tools/t-ray.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/t-ray.yml
+
 ent-trayScanner = t-ray scanner
   .desc = A high-tech scanning device that uses Terahertz Radiation to detect subfloor infrastructure.
 
 ### Resources/Prototypes/Entities/Objects/Tools/thief.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/thief.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/thief.yml
 
@@ -17955,6 +19595,9 @@ ent-SatchelThief = undetermined thieving satchel
   .desc = This is where your favorite thief's supplies lie. Folded for your convenience.
 
 ### Resources/Prototypes/Entities/Objects/Tools/toolbox.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/toolbox.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/toolbox.yml
 
@@ -17984,6 +19627,9 @@ ent-Foolbox = foolbox
   .desc = A toolbox for fools, stocked with clowning equipment.
 
 ### Resources/Prototypes/Entities/Objects/Tools/tools.yml
+
+### Resources/Prototypes/Entities/Objects/Tools/tools.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Tools/tools.yml
 
@@ -18035,6 +19681,9 @@ ent-RollingPin = rolling pin
 
 ### Resources/Prototypes/Entities/Objects/Tools/welders.yml
 
+
+### Resources/Prototypes/Entities/Objects/Tools/welders.yml
+
 ent-Welder = welding tool
   .desc = Melts anything as long as it's fueled, don't forget your eye protection!
 
@@ -18057,11 +19706,17 @@ ent-RefuelingWelder = refueling welding tool
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/cord.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Bombs/cord.yml
+
 ent-CableDetStack = explosive cord
   .desc = Explosive cord for removing whatever is in your way.
   .suffix = Full
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/detonator.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Bombs/detonator.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/detonator.yml
 
@@ -18072,6 +19727,9 @@ ent-WiredDetonator = detonator cap
   .desc = A detonator cap.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/firebomb.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Bombs/firebomb.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/firebomb.yml
 
@@ -18087,6 +19745,9 @@ ent-FireBombFuel =
   .suffix = fuel
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/funny.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Bombs/funny.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/funny.yml
 
@@ -18107,6 +19768,9 @@ ent-SnapPopExplosive =
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/pen.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Bombs/pen.yml
+
 ent-PenExploding =
   .suffix = Exploding
 
@@ -18114,6 +19778,9 @@ ent-PenExplodingBox = exploding pen box
   .desc = A small box containing an exploding pen. Packaging disintegrates when opened, leaving no evidence behind.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/pipebomb.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Bombs/pipebomb.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/pipebomb.yml
 
@@ -18132,6 +19799,9 @@ ent-PipeBombCable = pipe bomb
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/plastic.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Bombs/plastic.yml
+
 ent-C4 = composition C-4
   .desc = Used to put holes in specific areas without too much extra hole. A saboteur's favorite.
 
@@ -18142,10 +19812,16 @@ ent-SeismicCharge = seismic charge
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Bombs/spider.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Bombs/spider.yml
+
 ent-SpiderCharge = spider clan charge
   .desc = A modified C-4 charge supplied to you by the Spider Clan. Its explosive power has been juiced up, but only works in one specific area.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/antimateriel.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/antimateriel.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/antimateriel.yml
 
@@ -18158,6 +19834,9 @@ ent-MagazineBoxAntiMateriel = ammunition box (.60 anti-materiel)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/caseless_rifle.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/caseless_rifle.yml
+
 ent-BaseMagazineBoxCaselessRifle = ammunition box (.25 caseless)
 
 ent-MagazineBoxCaselessRifle = ammunition box (.25 caseless)
@@ -18167,6 +19846,9 @@ ent-MagazineBoxCaselessRiflePractice = ammunition box (.25 caseless practice)
   .desc = A cardboard box of .25 caseless rounds. Intended to hold harmless practice ammunition.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/light_rifle.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/light_rifle.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/light_rifle.yml
 
@@ -18191,6 +19873,9 @@ ent-MagazineBoxLightRifleUranium = ammunition box (.30 rifle uranium)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/magnum.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/magnum.yml
+
 ent-MagazineBoxMagnum = ammunition box (.45 magnum)
   .desc = A cardboard box of .45 magnum rounds. Intended to hold general-purpose kinetic ammunition.
 
@@ -18207,6 +19892,9 @@ ent-MagazineBoxMagnumAP = ammunition box (.45 magnum armor-piercing)
   .desc = A cardboard box of .45 magnum rounds. Intended to hold specialized armor-piercing ammunition.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/pistol.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/pistol.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/pistol.yml
 
@@ -18228,6 +19916,9 @@ ent-MagazineBoxPistolUranium = ammunition box (.35 auto uranium)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/rifle.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/rifle.yml
+
 ent-MagazineBoxRifleBig = ammunition box (.20 rifle)
   .suffix = Big
 
@@ -18244,6 +19935,9 @@ ent-MagazineBoxRifleUranium = ammunition box (.20 rifle uranium)
   .desc = A cardboard box of .20 rifle rounds. Intended to hold exotic uranium-core ammunition.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/shotgun.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/shotgun.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/shotgun.yml
 
@@ -18275,6 +19969,9 @@ ent-BoxShellTranquilizer = ammunition box (.50 tranquilizer)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/toy.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Boxes/toy.yml
+
 ent-BoxDonkSoftBase = toy ammunition box
 
 ent-BoxDonkSoftBox = foam dart box
@@ -18287,10 +19984,16 @@ ent-BoxCartridgeCap = cap gun cartridge box
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/antimateriel.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/antimateriel.yml
+
 ent-CartridgeAntiMateriel = cartridge (.60 anti-materiel)
   .desc = A high-power cartridge used by high-precision rifles.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/caseless_rifle.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/caseless_rifle.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/caseless_rifle.yml
 
@@ -18306,11 +20009,17 @@ ent-CartridgeCaselessRiflePractice = cartridge (.25 caseless practice)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/heavy_rifle.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/heavy_rifle.yml
+
 ent-BaseCartridgeHeavyRifle = cartridge (.10 rifle)
 
 ent-CartridgeMinigun = cartridge (.10 rifle)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/light_rifle.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/light_rifle.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/light_rifle.yml
 
@@ -18329,6 +20038,9 @@ ent-CartridgeLightRifleUranium = cartridge (.30 rifle uranium)
   .desc = A classic intermediate cartridge used by many combat rifles and LMGs. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating targets from the inside.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/magnum.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/magnum.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/magnum.yml
 
@@ -18353,6 +20065,9 @@ ent-CartridgeMagnumUranium = cartridge (.45 magnum uranium)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/pistol.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/pistol.yml
+
 ent-BaseCartridgePistol = cartridge (.35 auto)
 
 ent-CartridgePistol = cartridge (.35 auto)
@@ -18374,6 +20089,9 @@ ent-CartridgePistolSpent = cartridge (.35 auto)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/rifle.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/rifle.yml
+
 ent-BaseCartridgeRifle = cartridge (.20 rifle)
 
 ent-CartridgeRifle = cartridge (.20 rifle)
@@ -18389,6 +20107,9 @@ ent-CartridgeRifleUranium = cartridge (.20 rifle uranium)
   .desc = A modern intermediate cartridge for combat rifles. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating targets from the inside.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/shotgun.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/shotgun.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/shotgun.yml
 
@@ -18425,12 +20146,18 @@ ent-ShellShotgunUranium = uranium shotgun shell
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/toy.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/toy.yml
+
 ent-BaseCartridgeCap = cartridge (cap)
 
 ent-CartridgeCap = cap gun cartridge
   .desc = A mock pistol cartridge that makes noise and smoke, but has no actual projectile.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/caseless_rifle.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/caseless_rifle.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/caseless_rifle.yml
 
@@ -18443,6 +20170,9 @@ ent-MagazinePistolCaselessRiflePractice = pistol magazine (.25 caseless practice
   .desc = 10-round magazine for the Cobra pistol. Intended to hold harmless practice ammunition.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/grenade.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/grenade.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/grenade.yml
 
@@ -18461,6 +20191,9 @@ ent-MagazineGrenadeBlast = blast grenade cartridge
 ent-MagazineGrenadeBaton = baton grenade cartridge
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/light_rifle.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/light_rifle.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/light_rifle.yml
 
@@ -18489,6 +20222,9 @@ ent-MagazineLightRifleIncendiary = magazine (.30 rifle incendiary)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/magnum.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/magnum.yml
+
 ent-BaseMagazineMagnum = pistol magazine (.45 magnum)
 
 ent-MagazineMagnumEmpty = pistol magazine (.45 magnum any)
@@ -18508,6 +20244,9 @@ ent-MagazineMagnumAP = pistol magazine (.45 magnum armor-piercing)
   .desc = 7-round single stack magazine for large-caliber pistols. Intended to hold specialized armor-piercing ammunition.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/pistol.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/pistol.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/pistol.yml
 
@@ -18570,6 +20309,9 @@ ent-MagazinePistolHighCapacityPractice = machine pistol magazine (.35 auto pract
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/rifle.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/rifle.yml
+
 ent-BaseMagazineRifle = magazine (.20 rifle)
 
 ent-MagazineRifle = magazine (.20 rifle)
@@ -18589,6 +20331,9 @@ ent-MagazineRifleUranium = magazine (.20 rifle uranium)
   .desc = 25-round double stack magazine for combat rifles. Intended to hold exotic uranium-core ammunition.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/shotgun.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/shotgun.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/shotgun.yml
 
@@ -18614,10 +20359,16 @@ ent-MagazineShotgunIncendiary = ammo drum (.50 incendiary)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/toy.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Magazines/toy.yml
+
 ent-MagazineFoamBox = L6 SAW magazine box (foam dart)
   .desc = Box containing a 100-round belt of linked... foam darts?
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/antimateriel.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/antimateriel.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/antimateriel.yml
 
@@ -18627,11 +20378,17 @@ ent-BulletAntiMateriel = bullet (.60 anti-materiel)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/caseless_rifle.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/caseless_rifle.yml
+
 ent-BulletCaselessRifle = bullet (.25 caseless)
 
 ent-BulletCaselessRiflePractice = bullet (.25 caseless practice)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/grenade.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/grenade.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/grenade.yml
 
@@ -18647,11 +20404,17 @@ ent-PelletClusterLessLethal = pellet (ball, less lethal)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/heavy_rifle.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/heavy_rifle.yml
+
 ent-BulletHeavyRifle = bullet (.10 rifle)
 
 ent-BulletMinigun = minigun bullet (.10 rifle)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/light_rifle.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/light_rifle.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/light_rifle.yml
 
@@ -18664,6 +20427,9 @@ ent-BulletLightRifleIncendiary = bullet (.30 rifle incendiary)
 ent-BulletLightRifleUranium = bullet (.30 rifle uranium)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/magnum.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/magnum.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/magnum.yml
 
@@ -18681,6 +20447,9 @@ ent-BulletMagnumUranium = bullet (.45 magnum uranium)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/pistol.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/pistol.yml
+
 ent-BulletPistol = bullet (.35 auto)
 
 ent-BulletPistolPractice = bullet (.35 auto practice)
@@ -18693,6 +20462,9 @@ ent-BulletPistolUranium = bullet (.35 auto uranium)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/rifle.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/rifle.yml
+
 ent-BulletRifle = bullet (.20 rifle)
 
 ent-BulletRiflePractice = bullet (.20 rifle practice)
@@ -18702,6 +20474,9 @@ ent-BulletRifleIncendiary = bullet (.20 rifle incendiary)
 ent-BulletRifleUranium = bullet (.20 rifle uranium)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/shotgun.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/shotgun.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/shotgun.yml
 
@@ -18731,10 +20506,16 @@ ent-PelletGlass = glass shard
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/toy.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/toy.yml
+
 ent-BulletFoam = foam dart
   .desc = I hope you're wearing eye protection.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/magnum.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/magnum.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/magnum.yml
 
@@ -18763,10 +20544,16 @@ ent-SpeedLoaderMagnumUranium = speed loader (.45 magnum uranium)
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/rifle_light.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/rifle_light.yml
+
 ent-SpeedLoaderLightRifle = speed loader (.30 rifle)
   .desc = 5-round 'stripper clip' for quickly reloading the Kardashev-Mosin. Intended to hold general-purpose kinetic ammunition.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/toy.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/toy.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/toy.yml
 
@@ -18776,6 +20563,9 @@ ent-SpeedLoaderCap = cap gun loader
   .desc = Designed to quickly load up to six cartridges into an empty cap gun.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/explosives.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/explosives.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Ammunition/explosives.yml
 
@@ -18814,10 +20604,16 @@ ent-CannonBallGlassshot = glassshot
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/energy_crossbow.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/energy_crossbow.yml
+
 ent-WeaponEnergyCrossbow = mini energy crossbow
   .desc = Launches renewable toxic arrows capable of flooring targets instantly.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/pka.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/pka.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/pka.yml
 
@@ -18828,10 +20624,16 @@ ent-WeaponProtoKineticAccelerator = proto-kinetic accelerator
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/spraynozzle.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/spraynozzle.yml
+
 ent-WeaponSprayNozzle = spray nozzle
   .desc = A high-powered spray nozzle used in conjunction with a backpack-mounted water tank.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/staves.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/staves.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/staves.yml
 
@@ -18842,6 +20644,9 @@ ent-WeaponStaffPolymorphDoor = staff of entrance
   .desc = For when you need a get-away route.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/wands.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/wands.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/wands.yml
 
@@ -18873,6 +20678,9 @@ ent-WeaponWandPolymorphBread = magic bread wand
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/watergun.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Basic/watergun.yml
+
 ent-WeaponWaterPistol = water pistol
   .desc = The dinkiest of water-based weaponry. You swear the trigger doesn't do anything.
 
@@ -18883,6 +20691,9 @@ ent-WeaponWaterBlasterSuper = super water blaster
   .desc = No! No! Not in the eyes!
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Battery/battery_guns.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Battery/battery_guns.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Battery/battery_guns.yml
 
@@ -18970,12 +20781,18 @@ ent-WeaponLaserCannonXenoborg = xenoborg laser cannon
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Bow/bow.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Bow/bow.yml
+
 ent-BaseBow = bow
   .desc = The original rooty tooty point and shooty.
 
 ent-BowImprovised = improvised shortbow
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/HMGs/hmgs.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/HMGs/hmgs.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/HMGs/hmgs.yml
 
@@ -18989,6 +20806,9 @@ ent-WeaponMinigun = minigun
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/LMGs/lmgs.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/LMGs/lmgs.yml
+
 ent-BaseWeaponLightMachineGun = BaseWeaponLightMachineGun
   .desc = A rooty tooty point and shooty.
 
@@ -18999,6 +20819,9 @@ ent-WeaponLightMachineGunL6C = L6C ROW
   .desc = A L6 SAW for use by cyborgs. Creates .30 rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Launchers/launchers.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Launchers/launchers.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Launchers/launchers.yml
 
@@ -19051,6 +20874,9 @@ ent-WeaponLauncherAdmemeImmovableRodSlow = immovable rod launcher
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Pistols/pistols.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Pistols/pistols.yml
+
 ent-BaseWeaponPistol = BasePistol
   .desc = A rooty tooty point and shooty.
 
@@ -19073,6 +20899,9 @@ ent-WeaponPistolN1984 = N1984
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/arrows.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/arrows.yml
+
 ent-ArrowRegular = arrow
   .desc = You can feel the power of the steppe within you.
 
@@ -19092,6 +20921,9 @@ ent-ArrowCard = cardboard arrow
   .desc = Careful, you'll poke an eye out!
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/hitscan.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/hitscan.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/hitscan.yml
 
@@ -19120,6 +20952,9 @@ ent-DebugLaserGib = debug gibbing ray
   .suffix = DEBUG
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/magic.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/magic.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/magic.yml
 
@@ -19163,6 +20998,9 @@ ent-ProjectilePolyboltBread = bread polybolt
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/meteors.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/meteors.yml
+
 ent-BaseMeteor = meteor
   .desc = You prefer them when they're burning up in the atmosphere.
 
@@ -19194,6 +21032,9 @@ ent-MeteorPotato = Space potato
   .desc = A starchy threat from the depths of the space. Contains 200% of your daily sodium intake!
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/projectiles.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/projectiles.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Projectiles/projectiles.yml
 
@@ -19308,6 +21149,9 @@ ent-EnergyCrossbowBolt = energy bolt
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Revolvers/revolvers.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Revolvers/revolvers.yml
+
 ent-BaseWeaponRevolver = BaseWeaponRevolver
   .desc = A rooty tooty point and shooty.
 
@@ -19336,6 +21180,9 @@ ent-WeaponRevolverPirateEmpty =
   .suffix = Empty
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Rifles/rifles.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Rifles/rifles.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Rifles/rifles.yml
 
@@ -19370,6 +21217,9 @@ ent-WeaponRifleEstoc = Estoc DMR
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/SMGs/smgs.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/SMGs/smgs.yml
+
 ent-BaseWeaponSubMachineGun = BaseSMG
   .desc = A rooty tooty point and shooty.
 
@@ -19393,6 +21243,9 @@ ent-WeaponSubMachineGunBriefcase = brown briefcase
   .suffix = Gun
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Shotguns/shotguns.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Shotguns/shotguns.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Shotguns/shotguns.yml
 
@@ -19445,6 +21298,9 @@ ent-WeaponShotgunHushpup = Hushpup
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Snipers/snipers.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Snipers/snipers.yml
+
 ent-BaseWeaponSniper = BaseWeaponSniper
   .desc = A rooty tooty point and shooty.
 
@@ -19464,6 +21320,9 @@ ent-WeaponPistolFlintlockEmpty =
   .suffix = Empty
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_ballistic.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_ballistic.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_ballistic.yml
 
@@ -19490,6 +21349,9 @@ ent-WeaponTurretXeno = xeno turret
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_base.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_base.yml
+
 ent-BaseWeaponTurret = turret
 
 ent-BaseWeaponBallisticTurret = ballistic turret
@@ -19502,10 +21364,16 @@ ent-BaseWeaponEnergyTurret = laser turret
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_broken.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_broken.yml
+
 ent-WeaponTurretSyndicateBroken = ballistic turret (broken)
   .desc = A ballistic machine gun auto-turret.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_energy.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_energy.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/Turrets/turrets_energy.yml
 
@@ -19525,6 +21393,9 @@ ent-WeaponEnergyTurretCommand =
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/flare_gun.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/flare_gun.yml
+
 ent-WeaponFlareGun = flare gun
   .desc = A compact, single-shot pistol that fires shotgun shells. Comes with a safety feature that prevents the user from fitting lethal shells inside.
 
@@ -19532,6 +21403,9 @@ ent-WeaponFlareGunSecurity = security shell gun
   .desc = A modified flare gun originally designed to be used by security to launch non-lethal shotgun shells, however it can also fire lethal shells without risk.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/pneumatic_cannon.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/pneumatic_cannon.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/pneumatic_cannon.yml
 
@@ -19558,6 +21432,9 @@ ent-WeaponImprovisedPneumaticCannonAdmeme =
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Guns/tile_gun.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Guns/tile_gun.yml
+
 ent-WeaponTileGun = tile gun
   .desc = A strange gun that shoots tiles. Shoot them with the floor!
 
@@ -19568,6 +21445,9 @@ ent-WeaponTileGunEmpty =
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/armblade.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/armblade.yml
+
 ent-ArmBlade = arm blade
   .desc = A grotesque blade made out of bone and flesh that can pry open doors and cleaves through people as a hot knife through butter.
 
@@ -19575,10 +21455,16 @@ ent-ArmBlade = arm blade
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/baguette.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/baguette.yml
+
 ent-WeaponBaguette =
   .suffix = Weapon
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/baseball_bat.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/baseball_bat.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/baseball_bat.yml
 
@@ -19592,6 +21478,9 @@ ent-WeaponMeleeKnockbackStick = knockback stick
   .desc = And then he spleefed all over.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/cane.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/cane.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/cane.yml
 
@@ -19611,10 +21500,16 @@ ent-CaneSheathFilled =
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/chainsaw.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/chainsaw.yml
+
 ent-Chainsaw = chainsaw
   .desc = A very large chainsaw. Usually you use this for cutting down trees... usually.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/cult.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/cult.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/cult.yml
 
@@ -19628,6 +21523,9 @@ ent-UnholyHalberd = unholy halberd
   .desc = A poleaxe that seems to be linked to its wielder.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/e_sword.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/e_sword.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/e_sword.yml
 
@@ -19669,6 +21567,9 @@ ent-EnergyDaggerLoudBlue =
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/fireaxe.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/fireaxe.yml
+
 ent-FireAxe = fireaxe
   .desc = Truly, the weapon of a madman. Who would think to fight fire with an axe?
 
@@ -19679,10 +21580,16 @@ ent-FireAxeFlaming = fire axe
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/gohei.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/gohei.yml
+
 ent-Gohei = gohei
   .desc = A wooden stick with white streamers at the end. Originally used by shrine maidens to purify things. Now used by the station's weeaboos.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/hammers.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/hammers.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/hammers.yml
 
@@ -19696,6 +21603,9 @@ ent-SingularityHammer = Singularity Hammer
   .desc = The pinnacle of close combat technology, the hammer harnesses the power of a miniaturized singularity to deal crushing blows.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/knife.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/knife.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/knife.yml
 
@@ -19743,6 +21653,9 @@ ent-UtilityKnife = utility knife
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/mining.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/mining.yml
+
 ent-Pickaxe = pickaxe
   .desc = Notched to perfection, for jamming it into rocks.
 
@@ -19765,10 +21678,16 @@ ent-WeaponCrusherGlaive = crusher glaive
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/needle.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/needle.yml
+
 ent-WeaponMeleeNeedle = official security anti-inflatable armament
   .desc = A specialty weapon used in the destruction of unique syndicate morale-boosting equipment.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/offset_cane.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/offset_cane.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/offset_cane.yml
 
@@ -19788,6 +21707,9 @@ ent-OffsetCaneWood = wooden offset cane
   .desc = A wooden offset cane, a classic choice for those who appreciate natural materials and a sturdy grip.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/spear.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/spear.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/spear.yml
 
@@ -19813,10 +21735,16 @@ ent-SpearSharkMinnow = sharkminnow tooth spear
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/stunprod.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/stunprod.yml
+
 ent-Stunprod = stun prod
   .desc = A stun prod for illegal incapacitation.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/sword.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/sword.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/sword.yml
 
@@ -19845,10 +21773,16 @@ ent-Throngler = throngler
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/weapon_toolbox.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/weapon_toolbox.yml
+
 ent-WeaponMeleeToolboxRobust = robust toolbox
   .desc = A tider's weapon.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/white_cane.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Melee/white_cane.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Melee/white_cane.yml
 
@@ -19859,10 +21793,16 @@ ent-WhiteCane = white cane
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Throwable/bola.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Throwable/bola.yml
+
 ent-Bola = bola
   .desc = Linked together with some spare cuffs and metal.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Throwable/canister_grenades.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Throwable/canister_grenades.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Throwable/canister_grenades.yml
 
@@ -19885,10 +21825,16 @@ ent-AirGrenade = air grenade
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Throwable/croissant.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Throwable/croissant.yml
+
 ent-WeaponCroissant =
   .suffix = Weapon
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Throwable/grenades.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Throwable/grenades.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Throwable/grenades.yml
 
@@ -19932,6 +21878,9 @@ ent-SyndieTrickyBomb = syndicate trickybomb
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Throwable/projectile_grenades.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Throwable/projectile_grenades.yml
+
 ent-GrenadeStinger = stinger grenade
   .desc = Nothing to see here, please disperse.
 
@@ -19942,6 +21891,9 @@ ent-GrenadeShrapnel = shrapnel grenade
   .desc = Releases a deadly spray of shrapnel that causes severe bleeding.
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Throwable/scattering_grenades.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/Throwable/scattering_grenades.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Throwable/scattering_grenades.yml
 
@@ -19968,12 +21920,18 @@ ent-GrenadeFoamDart = foam dart grenade
 
 ### Resources/Prototypes/Entities/Objects/Weapons/Throwable/throwing_stars.yml
 
+
+### Resources/Prototypes/Entities/Objects/Weapons/Throwable/throwing_stars.yml
+
 ent-ThrowingStar = throwing star
   .desc = An ancient weapon still used to this day, due to its ease of lodging itself into its victim's body parts.
 
 ent-ThrowingStarNinja = ninja throwing star
 
 ### Resources/Prototypes/Entities/Objects/Weapons/security.yml
+
+### Resources/Prototypes/Entities/Objects/Weapons/security.yml
+
 
 ### Resources/Prototypes/Entities/Objects/Weapons/security.yml
 
@@ -19996,11 +21954,17 @@ ent-PortableFlasher = portable flasher
 
 ### Resources/Prototypes/Entities/Objects/base_item.yml
 
+
+### Resources/Prototypes/Entities/Objects/base_item.yml
+
 ent-BaseItem = item
 
 ent-BaseStorageItem = storage item
 
 ### Resources/Prototypes/Entities/StatusEffects/body.yml
+
+### Resources/Prototypes/Entities/StatusEffects/body.yml
+
 
 ### Resources/Prototypes/Entities/StatusEffects/body.yml
 
@@ -20020,12 +21984,18 @@ ent-StatusEffectStimulantsStamina = 1.5x max stamina
 
 ### Resources/Prototypes/Entities/StatusEffects/damage.yml
 
+
+### Resources/Prototypes/Entities/StatusEffects/damage.yml
+
 ent-StatusEffectDamageModifierBase =
   .desc = Status effect for modifying incoming sources of damage. You shouldn't be seeing this.
 
 ent-StatusEffectRadiationProtection = radiation protection
 
 ### Resources/Prototypes/Entities/StatusEffects/misc.yml
+
+### Resources/Prototypes/Entities/StatusEffects/misc.yml
+
 
 ### Resources/Prototypes/Entities/StatusEffects/misc.yml
 
@@ -20042,6 +22012,9 @@ ent-StatusEffectWoozy = woozy
 ent-StatusEffectDrunk = drunk
 
 ### Resources/Prototypes/Entities/StatusEffects/movement.yml
+
+### Resources/Prototypes/Entities/StatusEffects/movement.yml
+
 
 ### Resources/Prototypes/Entities/StatusEffects/movement.yml
 
@@ -20067,6 +22040,9 @@ ent-StatusEffectStunned = stunned
 
 ### Resources/Prototypes/Entities/StatusEffects/speech.yml
 
+
+### Resources/Prototypes/Entities/StatusEffects/speech.yml
+
 ent-StatusEffectStutter = stutter
 
 ent-StatusEffectSlurred = slurred
@@ -20081,9 +22057,15 @@ ent-StatusEffectBark = barkaccent
 
 ### Resources/Prototypes/Entities/StatusEffects/traits.yml
 
+
+### Resources/Prototypes/Entities/StatusEffects/traits.yml
+
 ent-TraitStatusEffectPainNumbness = pain numbness
 
 ### Resources/Prototypes/Entities/Structures/Decoration/banners.yml
+
+### Resources/Prototypes/Entities/Structures/Decoration/banners.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Decoration/banners.yml
 
@@ -20130,6 +22112,9 @@ ent-BannerGreen = green banner
 
 ### Resources/Prototypes/Entities/Structures/Decoration/bonfire.yml
 
+
+### Resources/Prototypes/Entities/Structures/Decoration/bonfire.yml
+
 ent-Bonfire = bonfire
   .desc = What can be better than a late evening under the sky with guitar and friends?
 
@@ -20143,10 +22128,16 @@ ent-LegionnaireBonfire = legionnaire bonfire
 
 ### Resources/Prototypes/Entities/Structures/Decoration/cobwebs.yml
 
+
+### Resources/Prototypes/Entities/Structures/Decoration/cobwebs.yml
+
 ent-Cobweb1 = cobweb
   .desc = Somebody should remove that.
 
 ### Resources/Prototypes/Entities/Structures/Decoration/crystals.yml
+
+### Resources/Prototypes/Entities/Structures/Decoration/crystals.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Decoration/crystals.yml
 
@@ -20176,6 +22167,9 @@ ent-CrystalCyan =
   .suffix = cyan
 
 ### Resources/Prototypes/Entities/Structures/Decoration/curtains.yml
+
+### Resources/Prototypes/Entities/Structures/Decoration/curtains.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Decoration/curtains.yml
 
@@ -20253,10 +22247,16 @@ ent-CurtainsWhiteOpen =
 
 ### Resources/Prototypes/Entities/Structures/Decoration/decorated_fir_tree.yml
 
+
+### Resources/Prototypes/Entities/Structures/Decoration/decorated_fir_tree.yml
+
 ent-DecoratedFirTree = decorated fir tree
   .desc = A very festive tree for a very festive holiday.
 
 ### Resources/Prototypes/Entities/Structures/Decoration/fireplace.yml
+
+### Resources/Prototypes/Entities/Structures/Decoration/fireplace.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Decoration/fireplace.yml
 
@@ -20267,6 +22267,9 @@ ent-Fireplace = fireplace
 
 ### Resources/Prototypes/Entities/Structures/Decoration/flesh_blockers.yml
 
+
+### Resources/Prototypes/Entities/Structures/Decoration/flesh_blockers.yml
+
 ent-FleshBlocker = flesh clump
   .desc = An annoying clump of flesh.
 
@@ -20274,10 +22277,16 @@ ent-FleshBlocker = flesh clump
 
 ### Resources/Prototypes/Entities/Structures/Decoration/mannequin.yml
 
+
+### Resources/Prototypes/Entities/Structures/Decoration/mannequin.yml
+
 ent-Mannequin = mannequin
   .desc = It can wear any clothing with style.
 
 ### Resources/Prototypes/Entities/Structures/Decoration/showcase.yml
+
+### Resources/Prototypes/Entities/Structures/Decoration/showcase.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Decoration/showcase.yml
 
@@ -20297,6 +22306,9 @@ ent-ShowcaseRobotMarauder = marauder showcase
   .desc = A non-functional replica of a marauder, painted green.
 
 ### Resources/Prototypes/Entities/Structures/Decoration/statues.yml
+
+### Resources/Prototypes/Entities/Structures/Decoration/statues.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Decoration/statues.yml
 
@@ -20326,6 +22338,9 @@ ent-StatueIronsandTall2 = ironsand tall statue
 
 ### Resources/Prototypes/Entities/Structures/Dispensers/booze.yml
 
+
+### Resources/Prototypes/Entities/Structures/Dispensers/booze.yml
+
 ent-BoozeDispenserEmpty = booze dispenser
   .desc = A booze dispenser with a single slot for a container to be filled.
   .suffix = Empty
@@ -20334,6 +22349,9 @@ ent-BoozeDispenser =
   .suffix = Filled
 
 ### Resources/Prototypes/Entities/Structures/Dispensers/chem.yml
+
+### Resources/Prototypes/Entities/Structures/Dispensers/chem.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Dispensers/chem.yml
 
@@ -20348,6 +22366,9 @@ ent-ChemDispenser =
 
 ### Resources/Prototypes/Entities/Structures/Dispensers/soda.yml
 
+
+### Resources/Prototypes/Entities/Structures/Dispensers/soda.yml
+
 ent-SodaDispenserEmpty = soda dispenser
   .desc = A beverage dispenser with a selection of soda and several other common beverages. Has a single fill slot for containers.
   .suffix = Empty
@@ -20356,6 +22377,9 @@ ent-SodaDispenser =
   .suffix = Filled
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml
+
+### Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/access.yml
 
@@ -20708,6 +22732,9 @@ ent-AirlockHatchMaintenanceLocked =
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/airlocks.yml
 
+
+### Resources/Prototypes/Entities/Structures/Doors/Airlocks/airlocks.yml
+
 ent-AirlockFreezer =
   .suffix = Freezer
 
@@ -20819,6 +22846,9 @@ ent-AirlockGlassXeno =
   .suffix = Xeno
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/assembly.yml
+
+### Resources/Prototypes/Entities/Structures/Doors/Airlocks/assembly.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/assembly.yml
 
@@ -20943,10 +22973,16 @@ ent-AirlockAssemblyHighSec =
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/base_assembly.yml
 
+
+### Resources/Prototypes/Entities/Structures/Doors/Airlocks/base_assembly.yml
+
 ent-AirlockAssembly = airlock assembly
   .desc = It opens, it closes, and maybe crushes you.
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/base_structureairlocks.yml
+
+### Resources/Prototypes/Entities/Structures/Doors/Airlocks/base_structureairlocks.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/base_structureairlocks.yml
 
@@ -20959,6 +22995,9 @@ ent-AirlockGlass = glass airlock
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/clockwork.yml
 
+
+### Resources/Prototypes/Entities/Structures/Doors/Airlocks/clockwork.yml
+
 ent-PinionAirlock =
   .suffix = Pinion, Clockwork
 
@@ -20966,6 +23005,9 @@ ent-PinionAirlockGlass =
   .suffix = Pinion, Clockwork
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/external.yml
+
+### Resources/Prototypes/Entities/Structures/Doors/Airlocks/external.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/external.yml
 
@@ -20980,10 +23022,16 @@ ent-AirlockExternalGlass =
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/highsec.yml
 
+
+### Resources/Prototypes/Entities/Structures/Doors/Airlocks/highsec.yml
+
 ent-HighSecDoor = high security door
   .desc = Keeps the bad out and keeps the good in.
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/shuttle.yml
+
+### Resources/Prototypes/Entities/Structures/Doors/Airlocks/shuttle.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Doors/Airlocks/shuttle.yml
 
@@ -21002,6 +23050,9 @@ ent-AirlockShuttleAssembly = external airlock assembly
 
 ### Resources/Prototypes/Entities/Structures/Doors/Firelocks/firelock.yml
 
+
+### Resources/Prototypes/Entities/Structures/Doors/Firelocks/firelock.yml
+
 ent-BaseFirelock = firelock
   .desc = Apply crowbar.
 
@@ -21013,10 +23064,16 @@ ent-FirelockEdge = firelock
 
 ### Resources/Prototypes/Entities/Structures/Doors/Firelocks/frame.yml
 
+
+### Resources/Prototypes/Entities/Structures/Doors/Firelocks/frame.yml
+
 ent-FirelockFrame = firelock frame
   .desc = That is a firelock frame.
 
 ### Resources/Prototypes/Entities/Structures/Doors/MaterialDoors/material_doors.yml
+
+### Resources/Prototypes/Entities/Structures/Doors/MaterialDoors/material_doors.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Doors/MaterialDoors/material_doors.yml
 
@@ -21052,6 +23109,9 @@ ent-EncrustedIronstoneDoor = encrusted ironstone door
 
 ### Resources/Prototypes/Entities/Structures/Doors/SecretDoor/secret_door.yml
 
+
+### Resources/Prototypes/Entities/Structures/Doors/SecretDoor/secret_door.yml
+
 ent-BaseSecretDoor = solid wall
   .desc = Keeps the air in and the greytide out.
   .suffix = secret door
@@ -21065,6 +23125,9 @@ ent-SolidSecretDoor = solid wall
 
 ### Resources/Prototypes/Entities/Structures/Doors/Shutter/access.yml
 
+
+### Resources/Prototypes/Entities/Structures/Doors/Shutter/access.yml
+
 ent-BlastDoorCentralCommand =
   .suffix = Central Command, Locked
 
@@ -21072,6 +23135,9 @@ ent-ShuttersWindowCentralCommand =
   .suffix = Central Command, Locked
 
 ### Resources/Prototypes/Entities/Structures/Doors/Shutter/blast_door.yml
+
+### Resources/Prototypes/Entities/Structures/Doors/Shutter/blast_door.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Doors/Shutter/blast_door.yml
 
@@ -21100,6 +23166,9 @@ ent-BlastDoorXenoborgOpen =
   .suffix = Open
 
 ### Resources/Prototypes/Entities/Structures/Doors/Shutter/blast_door_autolink.yml
+
+### Resources/Prototypes/Entities/Structures/Doors/Shutter/blast_door_autolink.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Doors/Shutter/blast_door_autolink.yml
 
@@ -21149,6 +23218,9 @@ ent-BlastDoorWindowsOpen =
 
 ### Resources/Prototypes/Entities/Structures/Doors/Shutter/shutters.yml
 
+
+### Resources/Prototypes/Entities/Structures/Doors/Shutter/shutters.yml
+
 ent-BaseShutter = shutter
   .desc = One shudders to think about what might be behind this shutter.
 
@@ -21171,6 +23243,9 @@ ent-ShuttersFrame = shutter frame
   .desc = A frame for constructing a shutter.
 
 ### Resources/Prototypes/Entities/Structures/Doors/Windoors/assembly.yml
+
+### Resources/Prototypes/Entities/Structures/Doors/Windoors/assembly.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Doors/Windoors/assembly.yml
 
@@ -21199,9 +23274,15 @@ ent-WindoorAssemblySecureUranium = secure uranium windoor assembly
 
 ### Resources/Prototypes/Entities/Structures/Doors/Windoors/clockwork.yml
 
+
+### Resources/Prototypes/Entities/Structures/Doors/Windoors/clockwork.yml
+
 ent-BaseClockworkWindoor = clockwork windoor
 
 ### Resources/Prototypes/Entities/Structures/Doors/Windoors/windoor.yml
+
+### Resources/Prototypes/Entities/Structures/Doors/Windoors/windoor.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Doors/Windoors/windoor.yml
 
@@ -21398,6 +23479,9 @@ ent-UraniumWindoorSecureNukeopLocked =
 
 ### Resources/Prototypes/Entities/Structures/Doors/turnstile.yml
 
+
+### Resources/Prototypes/Entities/Structures/Doors/turnstile.yml
+
 ent-Turnstile = turnstile
   .desc = A mechanical door that permits one-way access and prevents tailgating.
 
@@ -21411,6 +23495,9 @@ ent-TurnstileGenpopLeave =
 
 ### Resources/Prototypes/Entities/Structures/Furniture/Tables/base_structuretables.yml
 
+
+### Resources/Prototypes/Entities/Structures/Furniture/Tables/base_structuretables.yml
+
 ent-TableBase = table
   .desc = A square piece of metal standing on four metal legs.
 
@@ -21420,10 +23507,16 @@ ent-CounterBase = counter
 
 ### Resources/Prototypes/Entities/Structures/Furniture/Tables/operating_table.yml
 
+
+### Resources/Prototypes/Entities/Structures/Furniture/Tables/operating_table.yml
+
 ent-OperatingTable = operating table
   .desc = Special medical table for surgery. This one just seems to be a useless prop, though.
 
 ### Resources/Prototypes/Entities/Structures/Furniture/Tables/tables.yml
+
+### Resources/Prototypes/Entities/Structures/Furniture/Tables/tables.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Furniture/Tables/tables.yml
 
@@ -21519,6 +23612,9 @@ ent-TableCounterMetal = metal counter
 
 ### Resources/Prototypes/Entities/Structures/Furniture/altar.yml
 
+
+### Resources/Prototypes/Entities/Structures/Furniture/altar.yml
+
 ent-AltarBase = altar
   .desc = Altar of the Gods.
 
@@ -21565,6 +23661,9 @@ ent-AltarBananium = honkmother altar
 
 ### Resources/Prototypes/Entities/Structures/Furniture/beds.yml
 
+
+### Resources/Prototypes/Entities/Structures/Furniture/beds.yml
+
 ent-Bed = bed
   .desc = This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
 
@@ -21587,6 +23686,9 @@ ent-PsychBed = psychologist bed
 
 ### Resources/Prototypes/Entities/Structures/Furniture/bench.yml
 
+
+### Resources/Prototypes/Entities/Structures/Furniture/bench.yml
+
 ent-BenchComfy = comfortable bench
   .desc = A bench with an extremely comfortable backrest.
 
@@ -21604,10 +23706,16 @@ ent-BenchBlueComfy =
 
 ### Resources/Prototypes/Entities/Structures/Furniture/bookshelf.yml
 
+
+### Resources/Prototypes/Entities/Structures/Furniture/bookshelf.yml
+
 ent-Bookshelf = bookshelf
   .desc = Mostly filled with books.
 
 ### Resources/Prototypes/Entities/Structures/Furniture/carpets.yml
+
+### Resources/Prototypes/Entities/Structures/Furniture/carpets.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Furniture/carpets.yml
 
@@ -21650,6 +23758,9 @@ ent-CarpetCard = cardboard "carpet"
   .desc = Even lino is better.
 
 ### Resources/Prototypes/Entities/Structures/Furniture/chairs.yml
+
+### Resources/Prototypes/Entities/Structures/Furniture/chairs.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Furniture/chairs.yml
 
@@ -21721,6 +23832,9 @@ ent-ChairXeno = xeno chair
 
 ### Resources/Prototypes/Entities/Structures/Furniture/dresser.yml
 
+
+### Resources/Prototypes/Entities/Structures/Furniture/dresser.yml
+
 ent-Dresser = dresser
   .desc = Wooden dresser, can store things inside itself, ideal for underwear, and someone's kidneys?...
 
@@ -21728,6 +23842,9 @@ ent-DresserFilled =
   .suffix = Filled
 
 ### Resources/Prototypes/Entities/Structures/Furniture/memorial.yml
+
+### Resources/Prototypes/Entities/Structures/Furniture/memorial.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Furniture/memorial.yml
 
@@ -21746,6 +23863,9 @@ ent-Monolith = monolith
     I bet it's worth a fortune.
 
 ### Resources/Prototypes/Entities/Structures/Furniture/potted_plants.yml
+
+### Resources/Prototypes/Entities/Structures/Furniture/potted_plants.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Furniture/potted_plants.yml
 
@@ -21773,6 +23893,9 @@ ent-PottedPlant27 = plastic potted plant
 
 ### Resources/Prototypes/Entities/Structures/Furniture/rollerbeds.yml
 
+
+### Resources/Prototypes/Entities/Structures/Furniture/rollerbeds.yml
+
 ent-RollerBed = rollerbed
   .desc = Used to carry patients around without damaging them.
 
@@ -21795,6 +23918,9 @@ ent-EmergencyRollerBedSpawnFolded =
 
 ### Resources/Prototypes/Entities/Structures/Furniture/sink.yml
 
+
+### Resources/Prototypes/Entities/Structures/Furniture/sink.yml
+
 ent-SinkEmpty = sink
   .desc = The faucets have been tightened to the maximum possible torque but are still known to drip.
   .suffix = Empty
@@ -21810,6 +23936,9 @@ ent-SinkStemlessWater = sink
   .suffix = Water
 
 ### Resources/Prototypes/Entities/Structures/Furniture/toilet.yml
+
+### Resources/Prototypes/Entities/Structures/Furniture/toilet.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Furniture/toilet.yml
 
@@ -21840,6 +23969,9 @@ ent-ToiletGoldenDirtyWater =
 
 ### Resources/Prototypes/Entities/Structures/Holographic/projections.yml
 
+
+### Resources/Prototypes/Entities/Structures/Holographic/projections.yml
+
 ent-HolosignWetFloor = wet floor sign
   .desc = The words flicker as if they mean nothing.
 
@@ -21856,6 +23988,9 @@ ent-HolosignForcefield = holographic force field
   .desc = A powerful temporal containment field that doesn't let anything through, not even a tesla or singularity.
 
 ### Resources/Prototypes/Entities/Structures/Lighting/base_lighting.yml
+
+### Resources/Prototypes/Entities/Structures/Lighting/base_lighting.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Lighting/base_lighting.yml
 
@@ -21963,6 +24098,9 @@ ent-AlwaysPoweredlightGreen =
 
 ### Resources/Prototypes/Entities/Structures/Lighting/ground_lighting.yml
 
+
+### Resources/Prototypes/Entities/Structures/Lighting/ground_lighting.yml
+
 ent-LightPostSmall = post light
   .desc = An always powered light.
   .suffix = Always Powered
@@ -21982,10 +24120,16 @@ ent-PoweredLEDLightPostSmall = post light
 
 ### Resources/Prototypes/Entities/Structures/Lighting/service_light.yml
 
+
+### Resources/Prototypes/Entities/Structures/Lighting/service_light.yml
+
 ent-JanitorServiceLight = janitorial service light
   .desc = A wall-mounted janitorial sign. If the light is blinking, a janitor's service is required.
 
 ### Resources/Prototypes/Entities/Structures/Lighting/strobe_lighting.yml
+
+### Resources/Prototypes/Entities/Structures/Lighting/strobe_lighting.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Lighting/strobe_lighting.yml
 
@@ -22010,6 +24154,9 @@ ent-PoweredStrobeLightEpsilon =
 
 ### Resources/Prototypes/Entities/Structures/Machines/Computers/arcades.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/Computers/arcades.yml
+
 ent-ArcadeBase = arcade
   .desc = An arcade cabinet.
 
@@ -22025,9 +24172,15 @@ ent-BlockGameArcade = NT block game
 
 ### Resources/Prototypes/Entities/Structures/Machines/Computers/base_structurecomputers.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/Computers/base_structurecomputers.yml
+
 ent-BaseComputer = computer
 
 ### Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/Computers/computers.yml
 
@@ -22177,6 +24330,9 @@ ent-ComputerNukieDelivery = syndicate delivery computer
 
 ### Resources/Prototypes/Entities/Structures/Machines/Computers/frame.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/Computers/frame.yml
+
 ent-ComputerFrame = computer frame
   .desc = A computer under construction.
 
@@ -22187,10 +24343,16 @@ ent-ComputerBroken = broken computer
 
 ### Resources/Prototypes/Entities/Structures/Machines/Computers/techdiskterminal.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/Computers/techdiskterminal.yml
+
 ent-ComputerTechnologyDiskTerminal = tech disk terminal
   .desc = A terminal used to print out technology disks.
 
 ### Resources/Prototypes/Entities/Structures/Machines/Computers/wooden_television.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/Computers/wooden_television.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/Computers/wooden_television.yml
 
@@ -22201,10 +24363,16 @@ ent-ComputerTelevision = wooden television
 
 ### Resources/Prototypes/Entities/Structures/Machines/Medical/biomass_reclaimer.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/Medical/biomass_reclaimer.yml
+
 ent-BiomassReclaimer = biomass reclaimer
   .desc = Reclaims biomass from corpses. Gruesome.
 
 ### Resources/Prototypes/Entities/Structures/Machines/Medical/chemistry_machines.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/Medical/chemistry_machines.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/Medical/chemistry_machines.yml
 
@@ -22218,6 +24386,9 @@ ent-MachineCentrifuge = tabletop centrifuge
 
 ### Resources/Prototypes/Entities/Structures/Machines/Medical/cryo_pod.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/Medical/cryo_pod.yml
+
 ent-CryoPod = cryo pod
   .desc = A special machine intended to create a safe environment for the use of chemicals that react in cold environments.
 
@@ -22225,6 +24396,9 @@ ent-CryoPodDestroyed = destroyed cryo pod
   .desc = A cryo pod that has seen better days. It's entirely inoperable; not good for anything but scrap.
 
 ### Resources/Prototypes/Entities/Structures/Machines/Medical/disease_diagnoser.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/Medical/disease_diagnoser.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/Medical/disease_diagnoser.yml
 
@@ -22238,10 +24412,16 @@ ent-DiagnosisReportPaper = disease diagnoser report
 
 ### Resources/Prototypes/Entities/Structures/Machines/Medical/vaccinator.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/Medical/vaccinator.yml
+
 ent-Vaccinator = vaccinator
   .desc = A machine that creates vaccines.
 
 ### Resources/Prototypes/Entities/Structures/Machines/anomaly_equipment.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/anomaly_equipment.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/anomaly_equipment.yml
 
@@ -22261,10 +24441,16 @@ ent-MachineAnomalyGenerator = anomaly generator
 
 ### Resources/Prototypes/Entities/Structures/Machines/anomaly_sync.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/anomaly_sync.yml
+
 ent-MachineAnomalySynchronizer = anomaly synchronizer
   .desc = A sophisticated device that reads changes in anomalous waves, and converts them into energy signals.
 
 ### Resources/Prototypes/Entities/Structures/Machines/artifact_analyzer.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/artifact_analyzer.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/artifact_analyzer.yml
 
@@ -22278,6 +24464,9 @@ ent-MachineArtifactCrusherXenoborg = body crusher
   .desc = Best not to let your head get stuck...
 
 ### Resources/Prototypes/Entities/Structures/Machines/bombs.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/bombs.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/bombs.yml
 
@@ -22301,10 +24490,16 @@ ent-DebugHardBomb = debug bomb
 
 ### Resources/Prototypes/Entities/Structures/Machines/chem_master.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/chem_master.yml
+
 ent-ChemMaster = ChemMaster 4000
   .desc = An industrial grade chemical manipulator with pill and bottle production included.
 
 ### Resources/Prototypes/Entities/Structures/Machines/cloning_machine.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/cloning_machine.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/cloning_machine.yml
 
@@ -22315,6 +24510,9 @@ ent-CloningPod = cloning pod
 
 ### Resources/Prototypes/Entities/Structures/Machines/crew_monitor_server.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/crew_monitor_server.yml
+
 ent-CrewMonitoringServer = crew monitoring server
   .desc = Receives and relays the status of all active suit sensors on the station.
 
@@ -22322,10 +24520,16 @@ ent-CrewMonitoringServer = crew monitoring server
 
 ### Resources/Prototypes/Entities/Structures/Machines/fatextractor.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/fatextractor.yml
+
 ent-FatExtractor = lipid extractor
   .desc = Safely and efficiently extracts excess fat from a subject.
 
 ### Resources/Prototypes/Entities/Structures/Machines/fax_machine.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/fax_machine.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/fax_machine.yml
 
@@ -22345,10 +24549,16 @@ ent-FaxMachineCaptain = captain long range fax machine
 
 ### Resources/Prototypes/Entities/Structures/Machines/flatpacker.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/flatpacker.yml
+
 ent-MachineFlatpacker = Flatpacker 1001
   .desc = An industrial machine used for expediting machine construction across the station.
 
 ### Resources/Prototypes/Entities/Structures/Machines/frame.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/frame.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/frame.yml
 
@@ -22365,10 +24575,16 @@ ent-MachineFrameDestroyed = destroyed machine frame
 
 ### Resources/Prototypes/Entities/Structures/Machines/gateway.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/gateway.yml
+
 ent-BaseGateway = gateway
   .desc = A mysterious gateway built by unknown hands, it allows for faster than light travel to far-flung locations.
 
 ### Resources/Prototypes/Entities/Structures/Machines/gravity_generator.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/gravity_generator.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/gravity_generator.yml
 
@@ -22382,10 +24598,16 @@ ent-GravityGeneratorMini = mini gravity generator
 
 ### Resources/Prototypes/Entities/Structures/Machines/grill.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/grill.yml
+
 ent-KitchenElectricGrill = electric grill
   .desc = A microwave? No, a real man cooks steaks on a grill!
 
 ### Resources/Prototypes/Entities/Structures/Machines/holopad.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/holopad.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/holopad.yml
 
@@ -22690,6 +24912,9 @@ ent-HolopadServiceClownMime =
 
 ### Resources/Prototypes/Entities/Structures/Machines/hotplate.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/hotplate.yml
+
 ent-ChemistryHotplate = hotplate
   .desc = The descendent of the microwaves, our newest invention in beaker heating technology: the hotplate!
 
@@ -22697,10 +24922,16 @@ ent-ChemistryHotplate = hotplate
 
 ### Resources/Prototypes/Entities/Structures/Machines/jukebox.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/jukebox.yml
+
 ent-Jukebox = jukebox
   .desc = A machine capable of playing a wide variety of tunes. Enjoyment not guaranteed.
 
 ### Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/lathe.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/lathe.yml
 
@@ -22761,10 +24992,16 @@ ent-CutterMachine = cutter machine
 
 ### Resources/Prototypes/Entities/Structures/Machines/mail_teleporter.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/mail_teleporter.yml
+
 ent-CargoMailTeleporter = mail teleporter
   .desc = Periodically teleports in mail to deliver across the station.
 
 ### Resources/Prototypes/Entities/Structures/Machines/medical_scanner.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/medical_scanner.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/medical_scanner.yml
 
@@ -22775,6 +25012,9 @@ ent-MedicalScanner = medical scanner
 
 ### Resources/Prototypes/Entities/Structures/Machines/microwave.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/microwave.yml
+
 ent-KitchenMicrowave = microwave
   .desc = It's magic.
 
@@ -22782,6 +25022,9 @@ ent-SyndicateMicrowave = donk co. microwave
   .desc = So advanced, it can cook donk-pockets in a mere 2.5 seconds!
 
 ### Resources/Prototypes/Entities/Structures/Machines/nuke.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/nuke.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/nuke.yml
 
@@ -22796,6 +25039,9 @@ ent-NuclearBombKeg = nuclear fission explosive
   .suffix = keg
 
 ### Resources/Prototypes/Entities/Structures/Machines/reagent_grinder.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/reagent_grinder.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/reagent_grinder.yml
 
@@ -22815,10 +25061,16 @@ ent-ReagentGrinderIndustrial = industrial reagent grinder
 
 ### Resources/Prototypes/Entities/Structures/Machines/recycler.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/recycler.yml
+
 ent-Recycler = recycler
   .desc = A large crushing machine used to recycle small items inefficiently. There are lights on the side.
 
 ### Resources/Prototypes/Entities/Structures/Machines/research.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/research.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/research.yml
 
@@ -22828,6 +25080,9 @@ ent-ResearchAndDevelopmentServer = R&D server
 ent-BaseResearchAndDevelopmentPointSource = base R&D point source
 
 ### Resources/Prototypes/Entities/Structures/Machines/salvage.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/salvage.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/salvage.yml
 
@@ -22841,6 +25096,9 @@ ent-SalvageLocator = salvage locator
 
 ### Resources/Prototypes/Entities/Structures/Machines/seed_extractor.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/seed_extractor.yml
+
 ent-SeedExtractor = seed extractor
   .desc = Extracts seeds from produce.
 
@@ -22848,10 +25106,16 @@ ent-SeedExtractor = seed extractor
 
 ### Resources/Prototypes/Entities/Structures/Machines/silo.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/silo.yml
+
 ent-MachineMaterialSilo = material silo
   .desc = An advanced machine, capable of using bluespace technology to transmit materials to nearby machines.
 
 ### Resources/Prototypes/Entities/Structures/Machines/smartfridge.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/smartfridge.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/smartfridge.yml
 
@@ -22865,10 +25129,16 @@ ent-SmartFridgeMedical =
 
 ### Resources/Prototypes/Entities/Structures/Machines/stasisbed.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/stasisbed.yml
+
 ent-StasisBed = stasis bed
   .desc = A bed that massively slows down the patient's metabolism and prevents bodily decay, allowing more time to administer a proper treatment for stabilization.
 
 ### Resources/Prototypes/Entities/Structures/Machines/surveillance_camera_routers.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/surveillance_camera_routers.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/surveillance_camera_routers.yml
 
@@ -22917,6 +25187,9 @@ ent-SurveillanceCameraWirelessRouterXenoborg = xenoborg camera wireless router
 
 ### Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/telecomms.yml
+
 ent-TelecomServer = telecommunication server
   .desc = When powered and filled with encryption keys it allows radio headset communication.
 
@@ -22948,6 +25221,9 @@ ent-TelecomServerFilledCommand =
   .suffix = Command
 
 ### Resources/Prototypes/Entities/Structures/Machines/vending_machines.yml
+
+### Resources/Prototypes/Entities/Structures/Machines/vending_machines.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Machines/vending_machines.yml
 
@@ -23180,6 +25456,9 @@ ent-VendingMachineWallMedical = NanoMed
 
 ### Resources/Prototypes/Entities/Structures/Machines/wireless_surveillance_camera.yml
 
+
+### Resources/Prototypes/Entities/Structures/Machines/wireless_surveillance_camera.yml
+
 ent-SurveillanceWirelessCameraBase = wireless camera
   .desc = A camera. It's watching you. Kinda.
 
@@ -23202,6 +25481,9 @@ ent-SurveillanceWirelessCameraMovableEntertainment =
   .suffix = Entertainment, Movable
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/binary.yml
+
+### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/binary.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/binary.yml
 
@@ -23242,6 +25524,9 @@ ent-HeatExchangerBend =
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/gas_pipe_sensor.yml
 
+
+### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/gas_pipe_sensor.yml
+
 ent-GasPipeSensor = gas pipe sensor
   .desc = Reports on the status of the gas in the attached pipe network.
 
@@ -23261,6 +25546,9 @@ ent-GasPipeSensorTEGCold =
   .suffix = TEG cold
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/miners.yml
+
+### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/miners.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/miners.yml
 
@@ -23303,6 +25591,9 @@ ent-GasMinerNitrousOxide = nitrous oxide gas miner
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
 
+
+### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/pipes.yml
+
 ent-GasPipeSansLayers = gas pipe
   .desc = Holds gas.
 
@@ -23331,6 +25622,9 @@ ent-GasPipeManifold = gas pipe manifold
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/portable.yml
 
+
+### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/portable.yml
+
 ent-PortableScrubber = portable scrubber
   .desc = It scrubs, portably!
 
@@ -23348,6 +25642,9 @@ ent-SpaceHeaterEnabled =
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/special.yml
 
+
+### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/special.yml
+
 ent-AtmosDeviceFanTiny = tiny fan
   .desc = A tiny fan, releasing a thin gust of air.
 
@@ -23355,6 +25652,9 @@ ent-AtmosDeviceFanDirectional = directional fan
   .desc = A thin fan, stopping the movement of gases across it.
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/trinary.yml
+
+### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/trinary.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/trinary.yml
 
@@ -23374,6 +25674,9 @@ ent-PressureControlledValve = pneumatic valve
   .desc = A bidirectional valve controlled by pressure. Opens if the output pipe is lower than the pressure of the control pipe by 101.325 kPa.
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml
+
+### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Piping/Atmospherics/unary.yml
 
@@ -23416,10 +25719,16 @@ ent-BaseGasCondenser = condenser
 
 ### Resources/Prototypes/Entities/Structures/Piping/Disposal/high_pressure_machine_frame.yml
 
+
+### Resources/Prototypes/Entities/Structures/Piping/Disposal/high_pressure_machine_frame.yml
+
 ent-DisposalMachineFrame = high pressure machine frame
   .desc = A machine frame made to withstand the amount of pressure used in the station's disposal system.
 
 ### Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml
+
+### Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Piping/Disposal/pipes.yml
 
@@ -23473,6 +25782,9 @@ ent-DisposalSignalRouterFlipped =
 
 ### Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml
 
+
+### Resources/Prototypes/Entities/Structures/Piping/Disposal/units.yml
+
 ent-DisposalUnitBase =
   .desc = A pneumatic waste disposal unit.
 
@@ -23485,6 +25797,9 @@ ent-MailingUnit = mailing unit
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/PA/control_box.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/PA/control_box.yml
+
 ent-ParticleAcceleratorControlBox = PA control computer
   .desc = This controls the density of the particles.
 
@@ -23493,6 +25808,9 @@ ent-ParticleAcceleratorControlBoxUnfinished = PA control computer
   .suffix = Unfinished
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/PA/emitter.yml
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/PA/emitter.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/PA/emitter.yml
 
@@ -23521,6 +25839,9 @@ ent-ParticleAcceleratorEmitterStarboardUnfinished = PA starboard containment emi
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/PA/end_cap.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/PA/end_cap.yml
+
 ent-ParticleAcceleratorEndCap = PA end-cap
   .desc = Formally known as the Alpha Particle Generation Array. This is where Alpha particles are generated from [REDACTED].
 
@@ -23529,6 +25850,9 @@ ent-ParticleAcceleratorEndCapUnfinished = PA end-cap
   .suffix = Unfinished
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/PA/fuel_chamber.yml
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/PA/fuel_chamber.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/PA/fuel_chamber.yml
 
@@ -23543,6 +25867,9 @@ ent-ParticleAcceleratorFuelChamberUnfinished = PA fuel chamber
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/PA/particles.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/PA/particles.yml
+
 ent-ParticlesProjectile = particles
   .desc = Accelerated particles.
 
@@ -23550,6 +25877,9 @@ ent-AntiParticlesProjectile = anti particles
   .desc = Accelerated negative particles.
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/PA/power_box.yml
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/PA/power_box.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/PA/power_box.yml
 
@@ -23561,6 +25891,9 @@ ent-ParticleAcceleratorPowerBoxUnfinished = PA power box
   .suffix = Unfinished
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/collector.yml
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/collector.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/collector.yml
 
@@ -23578,6 +25911,9 @@ ent-RadiationCollectorFullTank =
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/containment.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/containment.yml
+
 ent-ContainmentFieldGenerator = containment field generator
   .desc = A machine that generates a containment field when powered by an emitter. Keeps the Singularity docile.
 
@@ -23588,10 +25924,16 @@ ent-ContainmentField = containment field
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/emitter.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/emitter.yml
+
 ent-Emitter = emitter
   .desc = A heavy duty industrial laser. Shoots non-stop when turned on.
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/generator.yml
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/generator.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/generator.yml
 
@@ -23602,10 +25944,16 @@ ent-SingularityGenerator = gravitational singularity generator
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/singularity.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/Singularity/singularity.yml
+
 ent-Singularity = gravitational singularity
   .desc = A mesmerizing swirl of darkness that sucks in everything. If it's moving towards you, run.
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/Tesla/coil.yml
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/Tesla/coil.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/Tesla/coil.yml
 
@@ -23619,6 +25967,9 @@ ent-TeslaGroundingRod = grounding rod
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/Tesla/energyball.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/Tesla/energyball.yml
+
 ent-TeslaEnergyBall = ball lightning
   .desc = A giant ball of pure energy. The space around it is humming and melting.
 
@@ -23629,10 +25980,16 @@ ent-TeslaMiniEnergyBall = mini ball lightning
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/Tesla/generator.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/Tesla/generator.yml
+
 ent-TeslaGenerator = tesla generator
   .desc = An Odd Device which produces a powerful Tesla ball when set up. Comes with a temporary shutdown containment failsafe.
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/ame.yml
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/ame.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/ame.yml
 
@@ -23646,6 +26003,9 @@ ent-AmeShielding = AME shielding
   .desc = Keeps the antimatter in and the matter out.
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/generators.yml
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/generators.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/generators.yml
 
@@ -23686,6 +26046,9 @@ ent-GeneratorRTGDamaged = damaged RTG
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/portable_generator.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/portable_generator.yml
+
 ent-PortableGeneratorPacman = P.A.C.M.A.N.-type portable generator
   .desc =
     A flexible backup generator for powering a variety of equipment.
@@ -23706,6 +26069,9 @@ ent-PortableGeneratorJrPacman = J.R.P.A.C.M.A.N.-type portable generator
   .suffix = Welding Fuel, 8 kW
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/solar.yml
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/solar.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/solar.yml
 
@@ -23742,6 +26108,9 @@ ent-SolarTracker = solar tracker
 
 ### Resources/Prototypes/Entities/Structures/Power/Generation/teg.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/Generation/teg.yml
+
 ent-TegCenter = thermo-electric generator
   .desc = A high efficiency generator that uses energy transfer between hot and cold gases to produce electricity.
 
@@ -23749,6 +26118,9 @@ ent-TegCirculator = circulator
   .desc = Passes gas through the thermo-electric generator to exchange heat. Has an inlet and outlet port.
 
 ### Resources/Prototypes/Entities/Structures/Power/apc.yml
+
+### Resources/Prototypes/Entities/Structures/Power/apc.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/apc.yml
 
@@ -23780,6 +26152,9 @@ ent-APCXenoborg =
 
 ### Resources/Prototypes/Entities/Structures/Power/cable_terminal.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/cable_terminal.yml
+
 ent-CableTerminal = cable terminal
   .desc = You see a small warning on the red cables in grungy black ink. "CONNECT RED TO BATTERY FOR CHARGE."
 
@@ -23787,6 +26162,9 @@ ent-CableTerminalUncuttable =
   .suffix = uncuttable
 
 ### Resources/Prototypes/Entities/Structures/Power/cables.yml
+
+### Resources/Prototypes/Entities/Structures/Power/cables.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/cables.yml
 
@@ -23815,6 +26193,9 @@ ent-CableDet = explosive cord
 
 ### Resources/Prototypes/Entities/Structures/Power/chargers.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/chargers.yml
+
 ent-PowerCellRecharger = cell recharger
   .desc = An older model recharger that can recharge power cells.
 
@@ -23837,6 +26218,9 @@ ent-BorgChargerXenoborg = xenoborg recharging station
   .desc = A stationary charger for xenoborgs. Feels claustrophobic.
 
 ### Resources/Prototypes/Entities/Structures/Power/debug_power.yml
+
+### Resources/Prototypes/Entities/Structures/Power/debug_power.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/debug_power.yml
 
@@ -23871,6 +26255,9 @@ ent-DebugPowerReceiver = power receiver
 
 ### Resources/Prototypes/Entities/Structures/Power/smes.yml
 
+
+### Resources/Prototypes/Entities/Structures/Power/smes.yml
+
 ent-BaseSMES = SMES
   .desc = A high-capacity superconducting magnetic energy storage (SMES) unit.
 
@@ -23888,6 +26275,9 @@ ent-SMESAdvancedEmpty =
   .suffix = Empty
 
 ### Resources/Prototypes/Entities/Structures/Power/substation.yml
+
+### Resources/Prototypes/Entities/Structures/Power/substation.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Power/substation.yml
 
@@ -23910,6 +26300,9 @@ ent-BaseSubstationWallFrame = wallmount substation frame
   .desc = A substation frame for construction.
 
 ### Resources/Prototypes/Entities/Structures/Shuttles/cannons.yml
+
+### Resources/Prototypes/Entities/Structures/Shuttles/cannons.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Shuttles/cannons.yml
 
@@ -23940,6 +26333,9 @@ ent-ShuttleGunKineticOld = exomorphic dematerializer
 
 ### Resources/Prototypes/Entities/Structures/Shuttles/station_anchor.yml
 
+
+### Resources/Prototypes/Entities/Structures/Shuttles/station_anchor.yml
+
 ent-StationAnchorBase = station anchor
   .desc = Prevents stations from moving.
   .suffix = On
@@ -23951,6 +26347,9 @@ ent-StationAnchorOff =
   .suffix = Off
 
 ### Resources/Prototypes/Entities/Structures/Shuttles/thrusters.yml
+
+### Resources/Prototypes/Entities/Structures/Shuttles/thrusters.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Shuttles/thrusters.yml
 
@@ -23980,6 +26379,9 @@ ent-RustedThruster = rusted thruster
   .desc = An unrepairable thruster, broken down from wear and tear. Only useful for scrapping.
 
 ### Resources/Prototypes/Entities/Structures/Specific/Anomaly/anomalies.yml
+
+### Resources/Prototypes/Entities/Structures/Specific/Anomaly/anomalies.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Specific/Anomaly/anomalies.yml
 
@@ -24051,6 +26453,9 @@ ent-AnomalySanta =
 
 ### Resources/Prototypes/Entities/Structures/Specific/Anomaly/anomaly_injectors.yml
 
+
+### Resources/Prototypes/Entities/Structures/Specific/Anomaly/anomaly_injectors.yml
+
 ent-BaseAnomalyInjector = anomaly injector
 
 ent-AnomalyTrapPyroclastic =
@@ -24087,6 +26492,9 @@ ent-AnomalyTrapSanta =
   .suffix = Santa
 
 ### Resources/Prototypes/Entities/Structures/Specific/Anomaly/cores.yml
+
+### Resources/Prototypes/Entities/Structures/Specific/Anomaly/cores.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Specific/Anomaly/cores.yml
 
@@ -24171,6 +26579,9 @@ ent-AnomalyCoreSantaInert =
 
 ### Resources/Prototypes/Entities/Structures/Specific/Atmospherics/freezer.yml
 
+
+### Resources/Prototypes/Entities/Structures/Specific/Atmospherics/freezer.yml
+
 ent-AirSensorFreezerBase =
   .suffix = Freezer Atmosphere
 
@@ -24178,6 +26589,9 @@ ent-AirAlarmFreezer =
   .suffix = Freezer Atmosphere, auto mode disabled
 
 ### Resources/Prototypes/Entities/Structures/Specific/Atmospherics/sensor.yml
+
+### Resources/Prototypes/Entities/Structures/Specific/Atmospherics/sensor.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Specific/Atmospherics/sensor.yml
 
@@ -24191,6 +26605,9 @@ ent-AirSensorAssembly = air sensor assembly
 
 ### Resources/Prototypes/Entities/Structures/Specific/Atmospherics/vox.yml
 
+
+### Resources/Prototypes/Entities/Structures/Specific/Atmospherics/vox.yml
+
 ent-AirSensorVoxBase =
   .suffix = Vox Atmosphere
 
@@ -24201,6 +26618,9 @@ ent-AirAlarmVox =
 
 ### Resources/Prototypes/Entities/Structures/Specific/Cargo/mailcart.yml
 
+
+### Resources/Prototypes/Entities/Structures/Specific/Cargo/mailcart.yml
+
 ent-MailCart = mail cart
   .desc = Deliver packages with style and efficiency.
 
@@ -24208,10 +26628,16 @@ ent-MailCart = mail cart
 
 ### Resources/Prototypes/Entities/Structures/Specific/Janitor/drain.yml
 
+
+### Resources/Prototypes/Entities/Structures/Specific/Janitor/drain.yml
+
 ent-FloorDrain = drain
   .desc = Drains puddles around it. Useful for dumping mop buckets or keeping certain rooms clean.
 
 ### Resources/Prototypes/Entities/Structures/Specific/Janitor/janicart.yml
+
+### Resources/Prototypes/Entities/Structures/Specific/Janitor/janicart.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Specific/Janitor/janicart.yml
 
@@ -24231,6 +26657,9 @@ ent-JanitorialTrolley = janitorial trolley
 
 ### Resources/Prototypes/Entities/Structures/Specific/church-bell.yml
 
+
+### Resources/Prototypes/Entities/Structures/Specific/church-bell.yml
+
 ent-ChurchBell = church bell
   .desc = You feel your soul grow ever closer to the realms beyond for every chime this bell tolls...
 
@@ -24238,10 +26667,16 @@ ent-ChurchBell = church bell
 
 ### Resources/Prototypes/Entities/Structures/Specific/dragon.yml
 
+
+### Resources/Prototypes/Entities/Structures/Specific/dragon.yml
+
 ent-CarpRift = carp rift
   .desc = A rift akin to the ones space carp use to travel long distances.
 
 ### Resources/Prototypes/Entities/Structures/Specific/xeno.yml
+
+### Resources/Prototypes/Entities/Structures/Specific/xeno.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Specific/xeno.yml
 
@@ -24259,6 +26694,9 @@ ent-CarpStatueEyes =
   .suffix = Eyes
 
 ### Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml
+
+### Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Storage/Canisters/gas_canisters.yml
 
@@ -24315,6 +26753,9 @@ ent-GasCanisterBrokenBase = broken gas canister
 ent-WaterVaporCanisterBroken = broken water vapor canister
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/Lockers/lockers.yml
+
+### Resources/Prototypes/Entities/Structures/Storage/Closets/Lockers/lockers.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/Lockers/lockers.yml
 
@@ -24408,6 +26849,9 @@ ent-LockerRepresentative = representative locker
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/base_structureclosets.yml
 
+
+### Resources/Prototypes/Entities/Structures/Storage/Closets/base_structureclosets.yml
+
 ent-ClosetBase = closet
   .desc = A standard-issue Nanotrasen storage unit.
 
@@ -24418,6 +26862,9 @@ ent-SuitStorageBase = suit storage unit
   .desc = A fancy hi-tech storage unit made for storing space suits.
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/big_boxes.yml
+
+### Resources/Prototypes/Entities/Structures/Storage/Closets/big_boxes.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/big_boxes.yml
 
@@ -24432,6 +26879,9 @@ ent-GhostBox = ghost box
   .desc = Beware!
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/closets.yml
+
+### Resources/Prototypes/Entities/Structures/Storage/Closets/closets.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/closets.yml
 
@@ -24477,11 +26927,17 @@ ent-ClosetBluespaceUnstable = suspicious closet
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/cursed.yml
 
+
+### Resources/Prototypes/Entities/Structures/Storage/Closets/cursed.yml
+
 ent-ClosetCursed = closet
   .desc = A standard-issue Nanotrasen storage unit.
   .suffix = cursed
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/wall_lockers.yml
+
+### Resources/Prototypes/Entities/Structures/Storage/Closets/wall_lockers.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/wall_lockers.yml
 
@@ -24538,6 +26994,9 @@ ent-LockerWallSyndicate = blood-red wall locker
   .suffix = Locked
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/wardrobe.yml
+
+### Resources/Prototypes/Entities/Structures/Storage/Closets/wardrobe.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Storage/Closets/wardrobe.yml
 
@@ -24614,6 +27073,9 @@ ent-WardrobeBotanist = botanist wardrobe
 
 ### Resources/Prototypes/Entities/Structures/Storage/Crates/base_structurecrates.yml
 
+
+### Resources/Prototypes/Entities/Structures/Storage/Crates/base_structurecrates.yml
+
 ent-CrateGeneric = crate
   .desc = A large container for items.
 
@@ -24621,6 +27083,9 @@ ent-CrateBaseSecure =
   .suffix = Secure
 
 ### Resources/Prototypes/Entities/Structures/Storage/Crates/crates.yml
+
+### Resources/Prototypes/Entities/Structures/Storage/Crates/crates.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Storage/Crates/crates.yml
 
@@ -24727,10 +27192,16 @@ ent-InvisibleCrate =
 
 ### Resources/Prototypes/Entities/Structures/Storage/Tanks/base_structuretanks.yml
 
+
+### Resources/Prototypes/Entities/Structures/Storage/Tanks/base_structuretanks.yml
+
 ent-StorageTank = storage tank
   .desc = A liquids storage tank.
 
 ### Resources/Prototypes/Entities/Structures/Storage/Tanks/tanks.yml
+
+### Resources/Prototypes/Entities/Structures/Storage/Tanks/tanks.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Storage/Tanks/tanks.yml
 
@@ -24763,6 +27234,9 @@ ent-GenericTank =
   .suffix = Empty
 
 ### Resources/Prototypes/Entities/Structures/Storage/barrels.yml
+
+### Resources/Prototypes/Entities/Structures/Storage/barrels.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Storage/barrels.yml
 
@@ -24813,6 +27287,9 @@ ent-BaseBarrelChemRadioactiveFilledUranium =
 
 ### Resources/Prototypes/Entities/Structures/Storage/filing_cabinets.yml
 
+
+### Resources/Prototypes/Entities/Structures/Storage/filing_cabinets.yml
+
 ent-BaseFilingCabinet =
   .desc = A cabinet for all your filing needs.
   .suffix = Empty
@@ -24828,6 +27305,9 @@ ent-BaseBureaucraticStorageFill =
   .suffix = Filled
 
 ### Resources/Prototypes/Entities/Structures/Storage/glass_box.yml
+
+### Resources/Prototypes/Entities/Structures/Storage/glass_box.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Storage/glass_box.yml
 
@@ -24858,6 +27338,9 @@ ent-GlassBoxBroken = broken glass box
 
 ### Resources/Prototypes/Entities/Structures/Storage/morgue.yml
 
+
+### Resources/Prototypes/Entities/Structures/Storage/morgue.yml
+
 ent-Morgue = morgue
   .desc = Used to store bodies until someone fetches them. Includes a high-tech alert system for false-positives!
 
@@ -24868,10 +27351,16 @@ ent-Crematorium = crematorium
 
 ### Resources/Prototypes/Entities/Structures/Storage/ore_box.yml
 
+
+### Resources/Prototypes/Entities/Structures/Storage/ore_box.yml
+
 ent-OreBox = ore box
   .desc = A large storage container for holding unprocessed ores.
 
 ### Resources/Prototypes/Entities/Structures/Storage/paper_bin.yml
+
+### Resources/Prototypes/Entities/Structures/Storage/paper_bin.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Storage/paper_bin.yml
 
@@ -24883,6 +27372,9 @@ ent-PaperBin = paper bin
 
 ### Resources/Prototypes/Entities/Structures/Storage/storage.yml
 
+
+### Resources/Prototypes/Entities/Structures/Storage/storage.yml
+
 ent-Rack = rack
   .desc = A rack for storing things on.
 
@@ -24890,10 +27382,16 @@ ent-Rack = rack
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Misc/bell.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Misc/bell.yml
+
 ent-BoxingBell = boxing bell
   .desc = Ding ding!
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Misc/mirror.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Misc/mirror.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Misc/mirror.yml
 
@@ -24907,10 +27405,16 @@ ent-MirrorModern =
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Misc/noticeboard.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Misc/noticeboard.yml
+
 ent-NoticeBoard = notice board
   .desc = Is there a job for a witcher?
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/atmos_plaque.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/atmos_plaque.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/atmos_plaque.yml
 
@@ -24930,6 +27434,9 @@ ent-PlaqueAtmosZUM = ZUM Atmospherics Division plaque
   .desc = This plaque commemorates the rise of the Atmos ZUM division. May they carry the torch that the Atmos ZAS, LINDA and FEA divisions left behind.
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/bar_sign.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/bar_sign.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/bar_sign.yml
 
@@ -25020,9 +27527,15 @@ ent-BarSignEmped = glitchy bar sign
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/base_structuresigns.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/base_structuresigns.yml
+
 ent-BaseSign = base sign
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/flags.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/flags.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/flags.yml
 
@@ -25045,10 +27558,16 @@ ent-PirateFlag = pirate flag
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/metamap.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/metamap.yml
+
 ent-PosterMapMetaRight = Meta Station map
   .desc = A map of Meta Station. This looks really old.
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/paintings.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/paintings.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/paintings.yml
 
@@ -25113,6 +27632,9 @@ ent-PaintingSadClown = Sad Clown
   .desc = This painting is a sad clown! It sparks joy.
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/posters.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/posters.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/posters.yml
 
@@ -25513,6 +28035,9 @@ ent-PosterMapOrigin = origin map
   .desc = A map of Origin Station.
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/signs.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/signs.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Signs/signs.yml
 
@@ -25991,6 +28516,9 @@ ent-SignNTMine = mine sign
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/Cabinets/defib_cabinet.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/Cabinets/defib_cabinet.yml
+
 ent-DefibrillatorCabinet = defibrillator cabinet
   .desc = A small wall mounted cabinet designed to hold a defibrillator.
 
@@ -26004,6 +28532,9 @@ ent-DefibrillatorCabinetFilledOpen =
   .suffix = Filled, Open
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/Cabinets/extinguisher_cabinet.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/Cabinets/extinguisher_cabinet.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/Cabinets/extinguisher_cabinet.yml
 
@@ -26023,6 +28554,9 @@ ent-ExtinguisherCabinetFilledOpen =
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/Cabinets/fireaxe_cabinet.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/Cabinets/fireaxe_cabinet.yml
+
 ent-FireAxeCabinet = fire axe cabinet
   .desc = There is a small label that reads "For Emergency use only" along with details for safe use of the axe. As if.
 
@@ -26039,6 +28573,9 @@ ent-FireAxeCabinetFilledOpen =
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/Cabinets/shotgun_cabinet.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/Cabinets/shotgun_cabinet.yml
+
 ent-ShotGunCabinet = shotgun cabinet
   .desc = There is a small label that reads "For Emergency use only" along with details for safe use of the shotgun. As if.
 
@@ -26052,6 +28589,9 @@ ent-ShotGunCabinetFilledOpen =
   .suffix = Filled, Open
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/shelfs.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/shelfs.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/shelfs.yml
 
@@ -26095,6 +28635,9 @@ ent-ShelfChemistryChemistrySecure =
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/wall_dispensers.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Storage/wall_dispensers.yml
+
 ent-CleanerDispenser = space cleaner dispenser
   .desc = Wallmount Space Cleaner dispenser.
 
@@ -26102,6 +28645,9 @@ ent-FuelDispenser = fuel dispenser
   .desc = Wallmount Fuel dispenser.
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Switches/switch.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Switches/switch.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Switches/switch.yml
 
@@ -26240,6 +28786,9 @@ ent-ButtonFrameJanitor =
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/Switches/switch_autolink.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/Switches/switch_autolink.yml
+
 ent-SignalButtonExt1 = exterior button 1
   .suffix = Autolink, Ext1
 
@@ -26259,6 +28808,9 @@ ent-SignalButtonWindows = exterior windows button
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/Monitors/telescreens.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/Monitors/telescreens.yml
+
 ent-WallmountTelescreen = telescreen
   .desc = Finally, some decent reception around here...
   .suffix = camera monitor
@@ -26270,6 +28822,9 @@ ent-WallmountTelescreenFrame = telescreen frame
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/Monitors/televisions.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/Monitors/televisions.yml
+
 ent-WallmountTelevision = television
   .desc = Finally, some decent reception around here...
   .suffix = entertainment
@@ -26278,6 +28833,9 @@ ent-WallmountTelevisionFrame = television frame
   .desc = Finally, some decent reception around here...
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/air_alarm.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/air_alarm.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/air_alarm.yml
 
@@ -26297,6 +28855,9 @@ ent-AirAlarmAssemblyXeno =
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/fire_alarm.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/fire_alarm.yml
+
 ent-FireAlarm = fire alarm
   .desc = A fire alarm. Spicy!
 
@@ -26310,6 +28871,9 @@ ent-FireAlarmAssemblyXeno =
   .desc = An alien fire alarm assembly. Good luck with the wires.
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/intercom.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/intercom.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/intercom.yml
 
@@ -26358,6 +28922,9 @@ ent-IntercomFreelance =
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/screen.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/screen.yml
+
 ent-Screen = screen
   .desc = Displays text or time.
 
@@ -26365,6 +28932,9 @@ ent-ArrivalsShuttleTimer = arrivals screen
   .desc = Displays time of arrivals shuttle ETA.
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/station_map.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/station_map.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/station_map.yml
 
@@ -26380,6 +28950,9 @@ ent-StationMapAssembly = station map assembly
   .desc = A station map assembly.
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/surveillance_camera.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/surveillance_camera.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/surveillance_camera.yml
 
@@ -26420,6 +28993,9 @@ ent-SurveillanceCameraAssembly = camera
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/timer.yml
 
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/WallmountMachines/timer.yml
+
 ent-SignalTimer = signal timer
   .desc = It's a timer for sending timed signals to things.
 
@@ -26433,6 +29009,9 @@ ent-TimerFrame = timer frame
   .desc = A construction frame for a timer.
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/turret_controls.yml
+
+### Resources/Prototypes/Entities/Structures/Wallmounts/turret_controls.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Wallmounts/turret_controls.yml
 
@@ -26452,6 +29031,9 @@ ent-WeaponEnergyTurretCommandControlPanel =
   .suffix = Command
 
 ### Resources/Prototypes/Entities/Structures/Walls/asteroid.yml
+
+### Resources/Prototypes/Entities/Structures/Walls/asteroid.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Walls/asteroid.yml
 
@@ -26869,6 +29451,9 @@ ent-WallRockAndesiteSalt =
 
 ### Resources/Prototypes/Entities/Structures/Walls/fence_metal.yml
 
+
+### Resources/Prototypes/Entities/Structures/Walls/fence_metal.yml
+
 ent-BaseFenceMetal = chain link fence
   .desc = A metal piece of fencing cordoning off something likely very important.
 
@@ -26888,6 +29473,9 @@ ent-FenceMetalGate = chain link fence gate
   .desc = You could use the door instead of vaulting over--if you're a COWARD, that is.
 
 ### Resources/Prototypes/Entities/Structures/Walls/fence_wood.yml
+
+### Resources/Prototypes/Entities/Structures/Walls/fence_wood.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Walls/fence_wood.yml
 
@@ -26931,6 +29519,9 @@ ent-FenceWoodSmallGate = wooden fence gate
 
 ### Resources/Prototypes/Entities/Structures/Walls/girders.yml
 
+
+### Resources/Prototypes/Entities/Structures/Walls/girders.yml
+
 ent-Girder = girder
   .desc = A large structural assembly made out of metal; It requires a layer of metal before it can be considered a wall.
 
@@ -26941,6 +29532,9 @@ ent-ClockworkGirder = wall gear
   .desc = A large gear with mounting brackets for additional plating; This could be made into a wall with more brass plating.
 
 ### Resources/Prototypes/Entities/Structures/Walls/grille.yml
+
+### Resources/Prototypes/Entities/Structures/Walls/grille.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Walls/grille.yml
 
@@ -26964,6 +29558,9 @@ ent-ClockworkGrilleDiagonal = diagonal clockwork grille
 
 ### Resources/Prototypes/Entities/Structures/Walls/inflatable_wall.yml
 
+
+### Resources/Prototypes/Entities/Structures/Walls/inflatable_wall.yml
+
 ent-InflatableWall = inflatable barricade
   .desc = An inflated membrane. Activate to deflate. Do not puncture.
 
@@ -26971,6 +29568,9 @@ ent-InflatableDoor = inflatable door
   .desc = An inflated membrane. Activate to deflate. Now with a door. Do not puncture.
 
 ### Resources/Prototypes/Entities/Structures/Walls/meteor.yml
+
+### Resources/Prototypes/Entities/Structures/Walls/meteor.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Walls/meteor.yml
 
@@ -27017,10 +29617,16 @@ ent-MeteorRockBananium =
 
 ### Resources/Prototypes/Entities/Structures/Walls/railing.yml
 
+
+### Resources/Prototypes/Entities/Structures/Walls/railing.yml
+
 ent-BaseRailing = railing
   .desc = Basic railing meant to protect idiots like you from falling.
 
 ### Resources/Prototypes/Entities/Structures/Walls/walls.yml
+
+### Resources/Prototypes/Entities/Structures/Walls/walls.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Walls/walls.yml
 
@@ -27149,6 +29755,9 @@ ent-Cardwall = cardboard wall
 
 ### Resources/Prototypes/Entities/Structures/Windows/clockwork.yml
 
+
+### Resources/Prototypes/Entities/Structures/Windows/clockwork.yml
+
 ent-ClockworkWindow = clockwork window
   .desc = Don't smudge up the brass down there.
 
@@ -27162,12 +29771,18 @@ ent-ClockworkWindowDiagonal =
 
 ### Resources/Prototypes/Entities/Structures/Windows/mining.yml
 
+
+### Resources/Prototypes/Entities/Structures/Windows/mining.yml
+
 ent-MiningWindow = mining window
 
 ent-MiningWindowDiagonal =
   .suffix = diagonal
 
 ### Resources/Prototypes/Entities/Structures/Windows/plasma.yml
+
+### Resources/Prototypes/Entities/Structures/Windows/plasma.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Windows/plasma.yml
 
@@ -27180,6 +29795,9 @@ ent-PlasmaWindowDiagonal =
   .suffix = diagonal
 
 ### Resources/Prototypes/Entities/Structures/Windows/plastitanium.yml
+
+### Resources/Prototypes/Entities/Structures/Windows/plastitanium.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Windows/plastitanium.yml
 
@@ -27206,6 +29824,9 @@ ent-PlastitaniumWindowDiagonal = plastitanium window
 
 ### Resources/Prototypes/Entities/Structures/Windows/reinforced.yml
 
+
+### Resources/Prototypes/Entities/Structures/Windows/reinforced.yml
+
 ent-ReinforcedWindow = reinforced window
 
 ent-WindowReinforcedDirectional = directional reinforced window
@@ -27215,6 +29836,9 @@ ent-ReinforcedWindowDiagonal =
   .suffix = diagonal
 
 ### Resources/Prototypes/Entities/Structures/Windows/rplasma.yml
+
+### Resources/Prototypes/Entities/Structures/Windows/rplasma.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Windows/rplasma.yml
 
@@ -27230,6 +29854,9 @@ ent-ReinforcedPlasmaWindowDiagonal =
 
 ### Resources/Prototypes/Entities/Structures/Windows/ruranium.yml
 
+
+### Resources/Prototypes/Entities/Structures/Windows/ruranium.yml
+
 ent-ReinforcedUraniumWindow = reinforced uranium window
 
 ent-UraniumReinforcedWindowDirectional = directional reinforced uranium window
@@ -27242,12 +29869,18 @@ ent-ReinforcedUraniumWindowDiagonal =
 
 ### Resources/Prototypes/Entities/Structures/Windows/shuttle.yml
 
+
+### Resources/Prototypes/Entities/Structures/Windows/shuttle.yml
+
 ent-ShuttleWindow = shuttle window
 
 ent-ShuttleWindowDiagonal =
   .suffix = diagonal
 
 ### Resources/Prototypes/Entities/Structures/Windows/uranium.yml
+
+### Resources/Prototypes/Entities/Structures/Windows/uranium.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Windows/uranium.yml
 
@@ -27260,6 +29893,9 @@ ent-UraniumWindowDiagonal =
   .suffix = diagonal
 
 ### Resources/Prototypes/Entities/Structures/Windows/window.yml
+
+### Resources/Prototypes/Entities/Structures/Windows/window.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Windows/window.yml
 
@@ -27281,9 +29917,15 @@ ent-WindowDiagonal =
 
 ### Resources/Prototypes/Entities/Structures/Windows/xenoborg.yml
 
+
+### Resources/Prototypes/Entities/Structures/Windows/xenoborg.yml
+
 ent-XenoborgWindow = xenoborg window
 
 ### Resources/Prototypes/Entities/Structures/Windows/xenoresin.yml
+
+### Resources/Prototypes/Entities/Structures/Windows/xenoresin.yml
+
 
 ### Resources/Prototypes/Entities/Structures/Windows/xenoresin.yml
 
@@ -27294,10 +29936,16 @@ ent-XenoResinWindow = resin window
 
 ### Resources/Prototypes/Entities/Structures/barricades.yml
 
+
+### Resources/Prototypes/Entities/Structures/barricades.yml
+
 ent-BaseBarricade = wooden barricade
   .desc = A barricade made out of wood planks. It looks like it can take a few solid hits.
 
 ### Resources/Prototypes/Entities/Structures/cargo_telepad.yml
+
+### Resources/Prototypes/Entities/Structures/cargo_telepad.yml
+
 
 ### Resources/Prototypes/Entities/Structures/cargo_telepad.yml
 
@@ -27308,10 +29956,16 @@ ent-CargoTelepad = cargo telepad
 
 ### Resources/Prototypes/Entities/Structures/catwalk.yml
 
+
+### Resources/Prototypes/Entities/Structures/catwalk.yml
+
 ent-Catwalk = catwalk
   .desc = A catwalk for easier EVA maneuvering and cable placement.
 
 ### Resources/Prototypes/Entities/Structures/conveyor.yml
+
+### Resources/Prototypes/Entities/Structures/conveyor.yml
+
 
 ### Resources/Prototypes/Entities/Structures/conveyor.yml
 
@@ -27326,6 +29980,9 @@ ent-ConveyorBeltAssembly = conveyor belt
 
 ### Resources/Prototypes/Entities/Structures/cryogenic_sleep_unit.yml
 
+
+### Resources/Prototypes/Entities/Structures/cryogenic_sleep_unit.yml
+
 ent-CryogenicSleepUnit = cryogenic sleep unit
   .desc = A super-cooled container that keeps crewmates safe during space travel.
 
@@ -27336,6 +29993,9 @@ ent-CryogenicSleepUnitSpawnerLateJoin =
   .suffix = Spawner, LateJoin
 
 ### Resources/Prototypes/Entities/Structures/gates.yml
+
+### Resources/Prototypes/Entities/Structures/gates.yml
+
 
 ### Resources/Prototypes/Entities/Structures/gates.yml
 
@@ -27377,6 +30037,9 @@ ent-RandomGate = random gate
 
 ### Resources/Prototypes/Entities/Structures/hydro_tray.yml
 
+
+### Resources/Prototypes/Entities/Structures/hydro_tray.yml
+
 ent-hydroponicsTray = hydroponics tray
   .desc = An interstellar-grade space farmplot allowing for rapid growth and selective breeding of crops. Just... keep in mind the space weeds.
 
@@ -27384,6 +30047,9 @@ ent-HydroponicsTrayEmpty =
   .suffix = Empty
 
 ### Resources/Prototypes/Entities/Structures/ironsand_steps.yml
+
+### Resources/Prototypes/Entities/Structures/ironsand_steps.yml
+
 
 ### Resources/Prototypes/Entities/Structures/ironsand_steps.yml
 
@@ -27398,6 +30064,9 @@ ent-IronsandStepConcaveCorner = ironsand step concave corner
 
 ### Resources/Prototypes/Entities/Structures/lever.yml
 
+
+### Resources/Prototypes/Entities/Structures/lever.yml
+
 ent-TwoWayLever = two way lever
   .desc = A two way lever.
 
@@ -27405,10 +30074,16 @@ ent-TwoWayLever = two way lever
 
 ### Resources/Prototypes/Entities/Structures/meat_spike.yml
 
+
+### Resources/Prototypes/Entities/Structures/meat_spike.yml
+
 ent-KitchenSpike = meat spike
   .desc = A spike for collecting meat from animals.
 
 ### Resources/Prototypes/Entities/Structures/plastic_flaps.yml
+
+### Resources/Prototypes/Entities/Structures/plastic_flaps.yml
+
 
 ### Resources/Prototypes/Entities/Structures/plastic_flaps.yml
 
@@ -27432,6 +30107,9 @@ ent-PlasticFlapsAirtightOpaque = airtight plastic flaps
 
 ### Resources/Prototypes/Entities/Structures/soil.yml
 
+
+### Resources/Prototypes/Entities/Structures/soil.yml
+
 ent-hydroponicsSoil = soil
   .desc = A mix of organic matter and minerals creating a soil to grow your plant in space. Seems to be dry.
 
@@ -27442,6 +30120,9 @@ ent-FungalSoil = fungal soil
 
 ### Resources/Prototypes/Entities/Structures/spider_web.yml
 
+
+### Resources/Prototypes/Entities/Structures/spider_web.yml
+
 ent-SpiderWeb = spider web
   .desc = It's stringy and sticky.
 
@@ -27449,6 +30130,9 @@ ent-SpiderWebClown = clown spider web
   .desc = It's stringy and slippy.
 
 ### Resources/Prototypes/Entities/Structures/stairs.yml
+
+### Resources/Prototypes/Entities/Structures/stairs.yml
+
 
 ### Resources/Prototypes/Entities/Structures/stairs.yml
 
@@ -27481,9 +30165,15 @@ ent-StairStageWood =
 
 ### Resources/Prototypes/Entities/Tiles/bananium.yml
 
+
+### Resources/Prototypes/Entities/Tiles/bananium.yml
+
 ent-FloorBananiumEntity = bananium floor
 
 ### Resources/Prototypes/Entities/Tiles/basalt.yml
+
+### Resources/Prototypes/Entities/Tiles/basalt.yml
+
 
 ### Resources/Prototypes/Entities/Tiles/basalt.yml
 
@@ -27494,6 +30184,9 @@ ent-BasaltRandom =
   .suffix = Random
 
 ### Resources/Prototypes/Entities/Tiles/chasm.yml
+
+### Resources/Prototypes/Entities/Tiles/chasm.yml
+
 
 ### Resources/Prototypes/Entities/Tiles/chasm.yml
 
@@ -27513,6 +30206,9 @@ ent-FloorSnowChasm =
 
 ### Resources/Prototypes/Entities/Tiles/lava.yml
 
+
+### Resources/Prototypes/Entities/Tiles/lava.yml
+
 ent-FloorLavaEntity = lava
   .desc = Don't jump in. It's not worth it, no matter how funny it is.
 
@@ -27520,10 +30216,16 @@ ent-FloorLavaEntity = lava
 
 ### Resources/Prototypes/Entities/Tiles/liquid_plasma.yml
 
+
+### Resources/Prototypes/Entities/Tiles/liquid_plasma.yml
+
 ent-FloorLiquidPlasmaEntity = liquid plasma
   .desc = Sweet, expensive nectar. Don't consume.
 
 ### Resources/Prototypes/Entities/Tiles/shadow_basalt.yml
+
+### Resources/Prototypes/Entities/Tiles/shadow_basalt.yml
+
 
 ### Resources/Prototypes/Entities/Tiles/shadow_basalt.yml
 
@@ -27537,10 +30239,16 @@ ent-ShadowBasaltRandom =
 
 ### Resources/Prototypes/Entities/Tiles/water.yml
 
+
+### Resources/Prototypes/Entities/Tiles/water.yml
+
 ent-FloorWaterEntity = water
   .desc = A real thirst quencher.
 
 ### Resources/Prototypes/Entities/Virtual/beam.yml
+
+### Resources/Prototypes/Entities/Virtual/beam.yml
+
 
 ### Resources/Prototypes/Entities/Virtual/beam.yml
 
@@ -27550,9 +30258,15 @@ ent-VirtualBeamEntityController = BEAM ENTITY YOU SHOULD NOT SEE THIS
 
 ### Resources/Prototypes/Entities/Virtual/mind.yml
 
+
+### Resources/Prototypes/Entities/Virtual/mind.yml
+
 ent-MindBase = mind
 
 ### Resources/Prototypes/Entities/Virtual/stripping_hidden.yml
+
+### Resources/Prototypes/Entities/Virtual/stripping_hidden.yml
+
 
 ### Resources/Prototypes/Entities/Virtual/stripping_hidden.yml
 
@@ -27563,9 +30277,15 @@ ent-StrippingHiddenEntity = hidden entity
 
 ### Resources/Prototypes/Entities/Virtual/virtual_item.yml
 
+
+### Resources/Prototypes/Entities/Virtual/virtual_item.yml
+
 ent-VirtualItem = VIRTUAL ITEM YOU SHOULD NOT SEE THIS
 
 ### Resources/Prototypes/Entities/foldable.yml
+
+### Resources/Prototypes/Entities/foldable.yml
+
 
 ### Resources/Prototypes/Entities/foldable.yml
 
