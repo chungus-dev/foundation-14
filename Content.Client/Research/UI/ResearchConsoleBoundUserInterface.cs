@@ -34,6 +34,11 @@ public sealed class ResearchConsoleBoundUserInterface : BoundUserInterface
         {
             SendMessage(new ConsoleServerSelectionMessage());
         };
+
+        _consoleMenu.OnRediscoverPressed += () =>
+        {
+            SendMessage(new ConsoleRediscoverTechnologyMessage());
+        };
     }
 
     public override void OnProtoReload(PrototypesReloadedEventArgs args)
