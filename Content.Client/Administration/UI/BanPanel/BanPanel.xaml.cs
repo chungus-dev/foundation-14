@@ -49,6 +49,9 @@ public sealed partial class BanPanel : DefaultWindow
     private const string ExpandedArrow = "▼";
     private const string ContractedArrow = "▶";
 
+    private readonly string _antagCategory = Loc.GetString("ban-panel-role-selection-antag");
+    private readonly string _antagAllSelection = Loc.GetString("ban-panel-role-selection-antag-all-option");
+
     private enum TabNumbers
     {
         BasicInfo,
@@ -151,16 +154,25 @@ public sealed partial class BanPanel : DefaultWindow
         TypeOption.AddItem(Loc.GetString("ban-panel-server"), (int) Types.Server);
         TypeOption.AddItem(Loc.GetString("ban-panel-role"), (int) Types.Role);
 
+
+
         ReasonTextEdit.Placeholder = new Rope.Leaf(Loc.GetString("ban-panel-reason"));
 
+        // Fire edit start - скрываем ненужные работы и департаменты, отображаем элементы в правильном порядке
         var departmentJobs = _protoMan.EnumeratePrototypes<DepartmentPrototype>()
-                                      .OrderBy(x => x.Weight);
+            .Where(x => !x.EditorHidden || x.AlwaysShowInBanPanel)
+            .OrderByDescending(x => x.Weight);
+
         foreach (var proto in departmentJobs)
         {
-            var roles = proto.Roles.Select(x => _protoMan.Index(x))
-                             .OrderBy(x => x.ID);
+            var roles = proto.Roles
+                .Select(x => _protoMan.Index(x))
+                .Where(x => x.SetPreference || x.AlwaysShowInBanPanel)
+                .OrderByDescending(x => x.DisplayWeight);
+
             CreateRoleGroup(proto.ID, proto.Color, roles);
         }
+        // Fire edit end
 
         var antagRoles = _protoMan.EnumeratePrototypes<AntagPrototype>()
                                   .OrderBy(x => x.ID);
@@ -247,7 +259,7 @@ public sealed partial class BanPanel : DefaultWindow
                         .Warning("Departmental role ban severity could not be parsed from config!");
                     return;
                 }
-                SeverityOption.SelectId((int) newSeverity);
+                SeverityOption.SelectId((int)newSeverity);
             }
             else
             {
@@ -266,7 +278,7 @@ public sealed partial class BanPanel : DefaultWindow
                         .Warning("Role ban severity could not be parsed from config!");
                     return;
                 }
-                SeverityOption.SelectId((int) newSeverity);
+                SeverityOption.SelectId((int)newSeverity);
             }
         };
 

@@ -40,9 +40,11 @@ public sealed partial class LawDisplay : Control
         LawNumberLabel.SetMessage(FormattedMessage.FromMarkupPermissive(lawIdentifier), UserFormattableTags.SiliconAllowedTags);
         LawLabel.SetMessage(FormattedMessage.FromMarkupPermissive(lawDescription), UserFormattableTags.SiliconAllowedTags);
 
+        /* Fire edit - по какой-то причине speech.SpeechSounds отсутствует в игре, но есть в прототипе. Поэтому это идет нахуй. Фикс законов ИИ
         // If you can't talk, you can't state your laws...
         if (!_entityManager.TryGetComponent<SpeechComponent>(uid, out var speech) || speech.SpeechSounds is null)
             return;
+        */
 
         var localButton = new Button
         {

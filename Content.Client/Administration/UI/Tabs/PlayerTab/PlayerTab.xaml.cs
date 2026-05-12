@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client._Scp.Stylesheets.Palette;
 using Content.Client.Administration.Systems;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Administration;
@@ -23,8 +24,8 @@ public sealed partial class PlayerTab : Control
 
     private const string ArrowUp = "↑";
     private const string ArrowDown = "↓";
-    private readonly Color _altColor = Color.FromHex("#292B38");
-    private readonly Color _defaultColor = Color.FromHex("#2F2F3B");
+    private readonly Color _altColor = ScpPalettes.PanelDarker;
+    private readonly Color _defaultColor = ScpPalettes.PanelDark;
     private readonly AdminSystem _adminSystem;
     private IReadOnlyList<PlayerInfo> _players = new List<PlayerInfo>();
 

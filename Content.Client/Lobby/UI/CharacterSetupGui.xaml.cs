@@ -1,3 +1,4 @@
+using Content.Client._Scp.Stylesheets.Palette;
 using Content.Client.Info;
 using Content.Client.Info.PlaytimeStats;
 using Content.Client.Resources;
@@ -41,7 +42,7 @@ namespace Content.Client.Lobby.UI
             var back = new StyleBoxTexture
             {
                 Texture = panelTex,
-                Modulate = new Color(37, 37, 42)
+                Modulate = ScpPalettes.Primary.Background
             };
             back.SetPatchMargin(StyleBox.Margin.All, 10);
 

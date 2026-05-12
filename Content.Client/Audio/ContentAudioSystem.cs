@@ -29,7 +29,6 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
     public const float AmbientMusicMultiplier = 3f;
     public const float LobbyMultiplier = 3f;
     public const float InterfaceMultiplier = 2f;
-    
     public override void Initialize()
     {
         base.Initialize();
@@ -128,11 +127,13 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
             volume = MathF.Max(MinVolume, volume);
             _audio.SetVolume(stream, volume, component);
 
+            // Fire edit start - раньше тут использовались методы, которые НЕ работают на клиенте. Я поменял
             if (component.Volume.Equals(MinVolume))
             {
-                _audio.Stop(stream);
+                PredictedDel(stream);
                 _fadeToRemove.Add(stream);
             }
+            // Fire edit end
         }
 
         foreach (var stream in _fadeToRemove)

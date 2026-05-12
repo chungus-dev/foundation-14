@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Scp.Helpers;
 using Content.Shared.Light.Components;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.Weather;
@@ -24,6 +25,8 @@ public sealed class WeatherSystem : SharedWeatherSystem
     [Dependency] private readonly EntityQuery<MapGridComponent> _gridQuery = default!;
     [Dependency] private readonly EntityQuery<RoofComponent> _roofQuery = default!;
 
+    private float _currentWeatherDb = 10f;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -46,7 +49,15 @@ public sealed class WeatherSystem : SharedWeatherSystem
         var player = _playerManager.LocalEntity;
 
         if (player == null)
+        {
+            var lobbyWeatherQuery = EntityQueryEnumerator<WeatherStatusEffectComponent, StatusEffectComponent>();
+            while (lobbyWeatherQuery.MoveNext(out _, out var weather, out _))
+            {
+                weather.Stream = _audio.Stop(weather.Stream);
+            }
+
             return;
+        }
 
         var playerXform = Transform(player.Value);
 
@@ -65,6 +76,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
                 return;
 
             var occlusion = 0f;
+            var additionalVolume = 0f;
 
             // Work out tiles nearby to determine volume.
             if (_gridQuery.TryComp(playerXform.GridUid, out var grid))
@@ -120,15 +132,17 @@ public sealed class WeatherSystem : SharedWeatherSystem
                     var delta = nodePosition - entPos.Position;
                     var distance = delta.Length();
                     occlusion = _audio.GetOcclusion(entPos, delta, distance);
+                    additionalVolume = ScpHelpers.SmoothVolumeDb(distance, 0f, 10f, 10f, -30f, ref _currentWeatherDb, frameTime, 30f);
                 }
                 else
                 {
                     occlusion = 3f;
+                    additionalVolume = -30f;
                 }
             }
 
             var alpha = GetWeatherPercent((uid, status));
-            alpha *= SharedAudioSystem.VolumeToGain(weather.Sound.Params.Volume);
+            alpha *= SharedAudioSystem.VolumeToGain(weather.Sound.Params.Volume + additionalVolume);
             _audio.SetGain(weather.Stream, alpha, audio);
             audio.Occlusion = occlusion;
         }

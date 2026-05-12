@@ -12,6 +12,11 @@ namespace Content.Client.Input
         public static void SetupContexts(IInputContextContainer contexts)
         {
             var common = contexts.GetContext("common");
+
+            // Fire added start
+            common.AddFunction(ContentKeyFunctions.HoldToFace);
+            // Fire added end
+
             common.AddFunction(ContentKeyFunctions.FocusChat);
             common.AddFunction(ContentKeyFunctions.FocusLocalChat);
             common.AddFunction(ContentKeyFunctions.FocusEmote);
@@ -117,6 +122,11 @@ namespace Content.Client.Input
             aghost.AddFunction(ContentKeyFunctions.TryPullObject);
             aghost.AddFunction(ContentKeyFunctions.MovePulledObject);
             aghost.AddFunction(ContentKeyFunctions.ReleasePulledObject);
+            // Fire added start
+            aghost.AddFunction(ContentKeyFunctions.RotateObjectClockwise);
+            aghost.AddFunction(ContentKeyFunctions.RotateObjectCounterclockwise);
+            aghost.AddFunction(ContentKeyFunctions.FlipObject);
+            // Fire added end
 
             var ghost = contexts.New("ghost", "human");
             ghost.AddFunction(EngineKeyFunctions.MoveUp);

@@ -1,3 +1,4 @@
+using Content.Shared._Scp.Other.Events;
 using Content.Shared.Research.Components;
 using Content.Shared.Xenoarchaeology.Equipment.Components;
 using Robust.Client.UserInterface;
@@ -19,6 +20,12 @@ public sealed class AnalysisConsoleBoundUserInterface(EntityUid owner, Enum uiKe
     protected override void Open()
     {
         base.Open();
+
+        // Fire edit start - анализ артефакта на расстоянии
+        // При открытии окна сообщает, что нужно поискать артефакт рядом
+        // Специально стоит выше создания окна, чтобы успел отобразиться спрайт выбранной штуки
+        SendPredictedMessage(new ConsoleServerSearchForArtifactInRadius());
+        // Fire edit end
 
         _consoleMenu = this.CreateWindow<AnalysisConsoleMenu>();
         _consoleMenu.SetOwner(Owner);

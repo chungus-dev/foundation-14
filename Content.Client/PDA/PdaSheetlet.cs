@@ -1,3 +1,4 @@
+using Content.Client._Scp.Stylesheets.Palette;
 using Content.Client.PDA;
 using Content.Client.Stylesheets;
 using Content.Client.Stylesheets.Sheetlets;
@@ -28,7 +29,7 @@ public sealed class PdaSheetlet : Sheetlet<NanotrasenStylesheet>
             E<PanelContainer>()
                 .Class("PdaContentBackground")
                 .Prop(PanelContainer.StylePropertyPanel, StyleBoxHelpers.SquareStyleBox(sheet))
-                .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#25252a")),
+                .Prop(Control.StylePropertyModulateSelf, ScpPalettes.Primary.Background),
 
             E<PanelContainer>()
                 .Class("PdaBackground")
@@ -45,37 +46,40 @@ public sealed class PdaSheetlet : Sheetlet<NanotrasenStylesheet>
                 .Prop(PanelContainer.StylePropertyPanel, angleBorderRect),
 
             //PDA - Buttons
+
+            // Fire edit start - пришлось убрать Color.FromHex()
             E<PdaSettingsButton>()
                 .Pseudo(ContainerButton.StylePseudoClassNormal)
-                .Prop(PdaSettingsButton.StylePropertyBgColor, Color.FromHex(PdaSettingsButton.NormalBgColor))
-                .Prop(PdaSettingsButton.StylePropertyFgColor, Color.FromHex(PdaSettingsButton.EnabledFgColor)),
+                .Prop(PdaSettingsButton.StylePropertyBgColor, PdaSettingsButton.NormalBgColor)
+                .Prop(PdaSettingsButton.StylePropertyFgColor, PdaSettingsButton.EnabledFgColor),
 
             E<PdaSettingsButton>()
                 .Pseudo(ContainerButton.StylePseudoClassHover)
-                .Prop(PdaSettingsButton.StylePropertyBgColor, Color.FromHex(PdaSettingsButton.HoverColor))
-                .Prop(PdaSettingsButton.StylePropertyFgColor, Color.FromHex(PdaSettingsButton.EnabledFgColor)),
+                .Prop(PdaSettingsButton.StylePropertyBgColor, PdaSettingsButton.HoverColor)
+                .Prop(PdaSettingsButton.StylePropertyFgColor, PdaSettingsButton.EnabledFgColor),
 
             E<PdaSettingsButton>()
                 .Pseudo(ContainerButton.StylePseudoClassPressed)
-                .Prop(PdaSettingsButton.StylePropertyBgColor, Color.FromHex(PdaSettingsButton.PressedColor))
-                .Prop(PdaSettingsButton.StylePropertyFgColor, Color.FromHex(PdaSettingsButton.EnabledFgColor)),
+                .Prop(PdaSettingsButton.StylePropertyBgColor, PdaSettingsButton.PressedColor)
+                .Prop(PdaSettingsButton.StylePropertyFgColor, PdaSettingsButton.EnabledFgColor),
 
             E<PdaSettingsButton>()
                 .Pseudo(ContainerButton.StylePseudoClassDisabled)
-                .Prop(PdaSettingsButton.StylePropertyBgColor, Color.FromHex(PdaSettingsButton.NormalBgColor))
-                .Prop(PdaSettingsButton.StylePropertyFgColor, Color.FromHex(PdaSettingsButton.DisabledFgColor)),
+                .Prop(PdaSettingsButton.StylePropertyBgColor, PdaSettingsButton.NormalBgColor)
+                .Prop(PdaSettingsButton.StylePropertyFgColor, PdaSettingsButton.DisabledFgColor),
 
             E<PdaProgramItem>()
                 .Pseudo(ContainerButton.StylePseudoClassNormal)
-                .Prop(PdaProgramItem.StylePropertyBgColor, Color.FromHex(PdaProgramItem.NormalBgColor)),
+                .Prop(PdaProgramItem.StylePropertyBgColor, PdaProgramItem.NormalBgColor),
 
             E<PdaProgramItem>()
                 .Pseudo(ContainerButton.StylePseudoClassHover)
-                .Prop(PdaProgramItem.StylePropertyBgColor, Color.FromHex(PdaProgramItem.HoverColor)),
+                .Prop(PdaProgramItem.StylePropertyBgColor, PdaProgramItem.HoverColor),
 
             E<PdaProgramItem>()
                 .Pseudo(ContainerButton.StylePseudoClassPressed)
-                .Prop(PdaProgramItem.StylePropertyBgColor, Color.FromHex(PdaProgramItem.HoverColor)),
+                .Prop(PdaProgramItem.StylePropertyBgColor, PdaProgramItem.HoverColor),
+            // Fire edit end
 
             //PDA - Text
             E<Label>()

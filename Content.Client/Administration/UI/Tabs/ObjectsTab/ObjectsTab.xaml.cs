@@ -1,3 +1,4 @@
+using Content.Client._Scp.Stylesheets.Palette;
 using Content.Client.Administration.Managers;
 using Content.Client.Station;
 using Content.Client.UserInterface.Controls;
@@ -17,8 +18,8 @@ public sealed partial class ObjectsTab : Control
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IClientConsoleHost _console = default!;
 
-    private readonly Color _altColor = Color.FromHex("#292B38");
-    private readonly Color _defaultColor = Color.FromHex("#2F2F3B");
+    private readonly Color _altColor = ScpPalettes.PanelDarker;
+    private readonly Color _defaultColor = ScpPalettes.PanelDark;
 
     private bool _ascending;
     private ObjectsTabHeader.Header _headerClicked = ObjectsTabHeader.Header.ObjectName;
@@ -161,6 +162,8 @@ public sealed partial class ObjectsTab : Control
         button.ToolTip = $"{info.Name}, {info.Entity}";
         button.AddChild(entry);
         button.StyleClasses.Clear();
+
+        button.HoverExtenstionEnabled = false; // Fire added
     }
 
     private bool DataFilterCondition(string filter, ListData listData)
