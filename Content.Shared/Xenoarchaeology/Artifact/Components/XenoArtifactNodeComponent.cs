@@ -85,5 +85,11 @@ public sealed partial class XenoArtifactNodeComponent : Component
     [DataField, AutoNetworkedField]
     public int ConsumedResearchValue;
 
+    /// <summary>
+    /// Type of research points extracted from this node.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public ProtoId<ResearchPointPrototype> ResearchPointType = "Default";
+
     #endregion
 }

@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Scp.Helpers;
 using Content.Shared.Lathe;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -164,7 +165,8 @@ public abstract class SharedResearchSystem : EntitySystem
 
         if (includeCost)
         {
-            description.AddMarkupOrThrow(Loc.GetString("research-console-cost", ("amount", technology.Cost)));
+            description.AddMarkupOrThrow(Loc.GetString("research-console-cost",
+                ("amount", ResearchPointsHelper.PointsToString(ResearchPointsHelper.GetPoints(technology), " ", PrototypeManager))));
             description.PushNewline();
         }
 

@@ -1,10 +1,12 @@
+using Content.Shared.Research;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Research.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class ResearchServerComponent : Component
 {
     /// <summary>
@@ -19,7 +21,17 @@ public sealed partial class ResearchServerComponent : Component
     /// </summary>
     [AutoNetworkedField]
     [DataField("points"), ViewVariables(VVAccess.ReadWrite)]
-    public int Points;
+    public Dictionary<ProtoId<ResearchPointPrototype>, int> Points = new();
+
+    /// <summary>
+    /// Cost of technology research options reroll.
+    /// </summary>
+    [AutoNetworkedField]
+    [DataField]
+    public Dictionary<ProtoId<ResearchPointPrototype>, int> RediscoverCost = new()
+    {
+        { "Default", 2000 },
+    };
 
     /// <summary>
     /// A unique numeric id representing the server
@@ -42,6 +54,18 @@ public sealed partial class ResearchServerComponent : Component
 
     [DataField("researchConsoleUpdateTime"), ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan ResearchConsoleUpdateTime = TimeSpan.FromSeconds(1);
+
+    /// <summary>
+    /// Time when next reroll for tech to research will be available.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
+    public TimeSpan NextRediscover;
+
+    /// <summary>
+    /// Minimal interval between rediscover actions.
+    /// </summary>
+    [DataField]
+    public TimeSpan RediscoverInterval = TimeSpan.FromSeconds(1);
 }
 
 /// <summary>
@@ -51,7 +75,7 @@ public sealed partial class ResearchServerComponent : Component
 /// <param name="Total"></param>
 /// <param name="Delta"></param>
 [ByRefEvent]
-public readonly record struct ResearchServerPointsChangedEvent(EntityUid Server, int Total, int Delta);
+public readonly record struct ResearchServerPointsChangedEvent(EntityUid Server, Dictionary<ProtoId<ResearchPointPrototype>, int> Total, int Delta);
 
 /// <summary>
 /// Event raised every second to calculate the amount of points added to the server.
@@ -59,5 +83,5 @@ public readonly record struct ResearchServerPointsChangedEvent(EntityUid Server,
 /// <param name="Server"></param>
 /// <param name="Points"></param>
 [ByRefEvent]
-public record struct ResearchServerGetPointsPerSecondEvent(EntityUid Server, int Points);
+public record struct ResearchServerGetPointsPerSecondEvent(EntityUid Server, Dictionary<ProtoId<ResearchPointPrototype>, int> Points);
 

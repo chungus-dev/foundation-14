@@ -1,5 +1,7 @@
 ﻿using Robust.Shared.Serialization;
 
+using Robust.Shared.Prototypes;
+
 namespace Content.Shared.Research;
 
 [Serializable, NetSerializable]
@@ -12,10 +14,13 @@ public enum DiskConsoleUiKey : byte
 public sealed class DiskConsoleBoundUserInterfaceState : BoundUserInterfaceState
 {
     public bool CanPrint;
-    public int PointCost;
-    public int ServerPoints;
+    public Dictionary<ProtoId<ResearchPointPrototype>, int> PointCost;
+    public Dictionary<ProtoId<ResearchPointPrototype>, int> ServerPoints;
 
-    public DiskConsoleBoundUserInterfaceState(int serverPoints, int pointCost, bool canPrint)
+    public DiskConsoleBoundUserInterfaceState(
+        Dictionary<ProtoId<ResearchPointPrototype>, int> serverPoints,
+        Dictionary<ProtoId<ResearchPointPrototype>, int> pointCost,
+        bool canPrint)
     {
         CanPrint = canPrint;
         PointCost = pointCost;

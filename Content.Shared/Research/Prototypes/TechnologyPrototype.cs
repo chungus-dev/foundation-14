@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Radio;
+using Content.Shared.Research;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -52,6 +53,18 @@ public sealed partial class TechnologyPrototype : IPrototype
     /// </summary>
     [DataField]
     public int Cost;
+
+    /// <summary>
+    /// Relative SCP point cost based on <see cref="Cost"/>. Zero disables auto-calculation.
+    /// </summary>
+    [DataField]
+    public float DefaultToScpScale = 1f;
+
+    /// <summary>
+    /// Explicit research point costs by point type.
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<ResearchPointPrototype>, int> CostList = new();
 
     /// <summary>
     /// A list of <see cref="TechnologyPrototype"/>s that need to be unlocked in order to unlock this technology.
