@@ -5,12 +5,12 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.VoiceMask;
 
-public sealed class VoiceMaskBoundUserInterface : BoundUserInterface
+public class VoiceMaskBoundUserInterface : BoundUserInterface
 {
     [Dependency] private readonly IPrototypeManager _protomanager = default!;
 
     [ViewVariables]
-    private VoiceMaskNameChangeWindow? _window;
+    protected VoiceMaskNameChangeWindow? _window;
 
     public VoiceMaskBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
