@@ -364,6 +364,16 @@ public sealed class RespiratorSystem : EntitySystem
             Math.Clamp(respirator.Saturation, respirator.MinSaturation, respirator.MaxSaturation);
     }
 
+    public void SetMaxSaturation(EntityUid uid, float maxSaturation, RespiratorComponent? respirator = null)
+    {
+        if (!Resolve(uid, ref respirator, false))
+            return;
+
+        respirator.MaxSaturation = maxSaturation;
+        respirator.Saturation =
+            Math.Clamp(respirator.Saturation, respirator.MinSaturation, respirator.MaxSaturation);
+    }
+
     private void OnApplyMetabolicMultiplier(Entity<RespiratorComponent> ent, ref ApplyMetabolicMultiplierEvent args)
     {
         ent.Comp.UpdateIntervalMultiplier = args.Multiplier;
