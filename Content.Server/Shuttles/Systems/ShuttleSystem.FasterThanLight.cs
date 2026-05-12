@@ -4,6 +4,8 @@ using System.Numerics;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Station.Events;
+using Content.Server.Atmos.EntitySystems;
+using Content.Shared.Atmos;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -74,6 +76,7 @@ public sealed partial class ShuttleSystem
     private EntityQuery<BodyComponent> _bodyQuery;
     private EntityQuery<FTLSmashImmuneComponent> _immuneQuery;
     private EntityQuery<StatusEffectsComponent> _statusQuery;
+    [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
 
     private void InitializeFTL()
     {
@@ -129,6 +132,17 @@ public sealed partial class ShuttleSystem
 
         var mapUid = _mapSystem.CreateMap(out var mapId);
         var ftlMap = AddComp<FTLMapComponent>(mapUid);
+
+        var lightMap = AddComp<MapLightComponent>(mapUid);
+        lightMap.AmbientLightColor = Color.FromHex("#a5a5a5ff");
+
+        var moles = new float[Atmospherics.TotalNumberOfGases];
+        moles[(int) Gas.Oxygen] = Atmospherics.OxygenMolesStandard;
+        moles[(int) Gas.Nitrogen] = Atmospherics.NitrogenMolesStandard;
+
+        var mixture = new GasMixture(moles, Atmospherics.T0C - 50);
+
+        _atmosphere.SetMapAtmosphere(mapUid, false, mixture);
 
         _metadata.SetEntityName(mapUid, "FTL");
         Log.Debug($"Setup hyperspace map at {mapUid}");

@@ -335,10 +335,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             _chatSystem.DispatchStationAnnouncement(
                 result.Station,
                 Loc.GetString(stationShuttleComp.FailureAnnouncement),
-                playDefaultSound: false);
-
-            // TODO: Need filter extensions or something don't blame me.
-            _audio.PlayGlobal(stationShuttleComp.FailureAudio, Filter.Broadcast(), true);
+                announcementSound: stationShuttleComp.FailureAudio);
             return;
         }
 
@@ -369,8 +366,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
                 ("time", $"{_consoleAccumulator:0}"),
                 ("direction", direction),
                 ("location", location),
-                ("extended", extendedText)),
-            playDefaultSound: false);
+                ("extended", extendedText)));
 
         // Trigger shuttle timers on the shuttle.
 
@@ -396,8 +392,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             ? stationShuttleComp.NearbyAudio
             : stationShuttleComp.DockedAudio;
 
-        // TODO: Need filter extensions or something don't blame me.
-        _audio.PlayGlobal(audioFile, Filter.Broadcast(), true);
+        // Default announcement playback is handled by DispatchStationAnnouncement.
     }
 
     private void OnStationInit(EntityUid uid, StationCentcommComponent component, MapInitEvent args)

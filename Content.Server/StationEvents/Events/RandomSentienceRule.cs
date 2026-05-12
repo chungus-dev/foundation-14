@@ -79,8 +79,8 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
                 ("data", _random.Pick(_prototype.Index(DataSourceNames))),
                 ("strength", _random.Pick(_prototype.Index(IntelligenceLevelNames)))
             ),
-            playDefaultSound: false,
             colorOverride: Color.Gold
         );
+        // Fire edit - убрал отмену проигрывания дефолтного звука
     }
 }

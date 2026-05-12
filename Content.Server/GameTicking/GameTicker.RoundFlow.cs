@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Server._Scp.Misc;
 using Content.Server.Announcements;
 using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
@@ -425,6 +426,8 @@ namespace Content.Server.GameTicking
                 return;
             }
 
+            RoundStartTimeSpan = _gameTiming.CurTime;
+
             // MapInitialize *before* spawning players, our codebase is too shit to do it afterwards...
             _map.InitializeMap(DefaultMap);
 
@@ -509,6 +512,8 @@ namespace Content.Server.GameTicking
         {
             // Log end of round
             _adminLogger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Round ended, showing summary");
+
+            RaiseLocalEvent(new RealRoundEndedMessage());
 
             //Tell every client the round has ended.
             var gamemodeTitle = CurrentPreset != null ? Loc.GetString(CurrentPreset.ModeTitle) : string.Empty;

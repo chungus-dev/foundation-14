@@ -105,7 +105,7 @@ public sealed partial class ZombieSystem
     ///     rewrite this, but this is how it shall lie eternal. Turn back now.
     ///     -emo
     /// </remarks>
-    public void ZombifyEntity(EntityUid target, MobStateComponent? mobState = null)
+    public void ZombifyEntity(EntityUid target, MobStateComponent? mobState = null, ZombieComponent? zombieComponentOverride = null)
     {
         //Don't zombfiy zombies
         if (HasComp<ZombieComponent>(target) || HasComp<ZombieImmuneComponent>(target))
@@ -133,7 +133,16 @@ public sealed partial class ZombieSystem
         }
 
         //you're a real zombie now, son.
-        var zombiecomp = AddComp<ZombieComponent>(target);
+        ZombieComponent zombiecomp;
+        if (zombieComponentOverride != null)
+        {
+            AddComp(target, zombieComponentOverride);
+            zombiecomp = zombieComponentOverride;
+        }
+        else
+        {
+            zombiecomp = AddComp<ZombieComponent>(target);
+        }
 
         //we need to basically remove all of these because zombies shouldn't
         //get diseases, breath, be thirst, be hungry, die in space, get double sentience, have offspring or be paraplegic.

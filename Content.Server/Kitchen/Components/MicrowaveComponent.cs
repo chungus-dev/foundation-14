@@ -109,6 +109,6 @@ namespace Content.Server.Kitchen.Components
         /// If this microwave can give ids accesses without exploding
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite)]
-        public bool CanMicrowaveIdsSafely = true;
+        public bool CanMicrowaveIdsSafely = false;
     }
 }

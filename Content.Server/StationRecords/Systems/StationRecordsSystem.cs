@@ -11,6 +11,9 @@ using Content.Shared.StationRecords;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared._Scp.CharacterInfo.AccessLevel;
+using Content.Shared._Scp.CharacterInfo.EmployeeClass;
+
 
 namespace Content.Server.StationRecords.Systems;
 
@@ -90,13 +93,19 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             || !_prototypeManager.HasIndex<JobPrototype>(jobId))
             return;
 
-        if (!_inventory.TryGetSlotEntity(player, "id", out var idUid))
+        // Fire edit - чтобы дешники отображались с именем дешников
+        var name = MetaData(player).EntityName;
+
+        if (_idCard.TryGetIdCard(player, out var idUid))
+            name = idUid.Comp.FullName ?? name;
+        else
             return;
+        // Fire edit end
 
         TryComp<FingerprintComponent>(player, out var fingerprintComponent);
         TryComp<DnaComponent>(player, out var dnaComponent);
 
-        CreateGeneralRecord(station, idUid.Value, profile.Name, profile.Age, profile.Species, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records);
+        CreateGeneralRecord(station, player, idUid, name, profile.Age, profile.Species, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records);
     }
 
 
@@ -129,6 +138,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     /// <param name="records">Station records component.</param>
     public void CreateGeneralRecord(
         EntityUid station,
+        EntityUid player,
         EntityUid? idUid,
         string name,
         int age,
@@ -145,11 +155,17 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
 
         // when adding a record that already exists use the old one
         // this happens when respawning as the same character
+
+        /* Fire edit - чтобы сцп(которых всех зовут ???) отображались в манифесте
         if (GetRecordByName(station, name, records) is {} id)
         {
             SetIdKey(idUid, new StationRecordKey(id, station));
             return;
         }
+        */
+
+        TryComp<AccessLevelComponent>(player, out var accessLevel);
+        TryComp<EmployeeClassComponent>(player, out var employeeClass);
 
         var record = new GeneralStationRecord()
         {
@@ -162,7 +178,9 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             Gender = gender,
             DisplayPriority = jobPrototype.RealDisplayWeight,
             Fingerprint = mobFingerprint,
-            DNA = dna
+            DNA = dna,
+            EmployeeClass = employeeClass?.Class, // Fire added
+            AccessLevel = accessLevel?.Level, // Fire added
         };
 
         var key = AddRecordEntry(station, record);
@@ -182,14 +200,16 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     /// </summary>
     public void SetIdKey(EntityUid? uid, StationRecordKey key)
     {
-        if (uid is not {} idUid)
+        // Fire edit start - фикс странной ошибки???
+        if (!Exists(uid))
             return;
 
-        var keyStorageEntity = idUid;
-        if (TryComp<PdaComponent>(idUid, out var pda) && pda.ContainedId is {} id)
+        var keyStorageEntity = uid.Value;
+        if (TryComp<PdaComponent>(uid, out var pda) && pda.ContainedId is {} id)
         {
             keyStorageEntity = id;
         }
+        // Fire edit end
 
         _keyStorage.AssignKey(keyStorageEntity, key);
     }
@@ -232,7 +252,6 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             return false;
 
         var key = _random.Pick(ent.Comp.Records.Keys);
-
         return ent.Comp.Records.TryGetRecordEntry(key, out entry);
     }
 

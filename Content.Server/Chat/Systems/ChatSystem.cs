@@ -779,7 +779,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var msg = message;
 
-        msg = _wordreplacement.ApplyReplacements(msg, ChatSanitize_Accent);
+        // Fire edit: leave message text unchanged.
 
         return msg;
     }

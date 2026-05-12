@@ -1,6 +1,7 @@
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.Pow3r;
+using Content.Shared._Scp.Other.Blackout;
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.APC;
@@ -134,6 +135,11 @@ public sealed class ApcSystem : EntitySystem
     {
         if (!Resolve(uid, ref apc, ref battery))
             return;
+
+        // Fire edit start
+        if (HasComp<MalfunctionApcComponent>(uid))
+            return;
+        // Fire edit end
 
         apc.MainBreakerEnabled = !apc.MainBreakerEnabled;
         battery.CanDischarge = apc.MainBreakerEnabled;

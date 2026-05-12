@@ -5,6 +5,7 @@ using Content.Server.Construction.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 
@@ -16,16 +17,32 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
     [Dependency] private readonly IMapManager _map = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
+        SubscribeLocalEvent<EntityStorageComponent, OpenStorageDoAfterEvent>(OnDoAfterSuccess);
         SubscribeLocalEvent<EntityStorageComponent, MapInitEvent>(OnMapInit);
 
         SubscribeLocalEvent<InsideEntityStorageComponent, InhaleLocationEvent>(OnInsideInhale);
         SubscribeLocalEvent<InsideEntityStorageComponent, ExhaleLocationEvent>(OnInsideExhale);
         SubscribeLocalEvent<InsideEntityStorageComponent, AtmosExposedGetAirEvent>(OnInsideExposed);
+    }
+
+    private void OnDoAfterSuccess(Entity<EntityStorageComponent> ent, ref OpenStorageDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        if (!CanOpen(args.User, ent, requireHands: false))
+            return;
+
+        DoOpenStorage(ent.Owner, ent.Comp, args.User);
+        _audio.PlayPvs(ent.Comp.OpenSound, ent);
+
+        args.Handled = true;
     }
 
     private void OnMapInit(EntityUid uid, EntityStorageComponent component, MapInitEvent args)

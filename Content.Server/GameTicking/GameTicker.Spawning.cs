@@ -234,11 +234,18 @@ namespace Content.Server.GameTicking
             if (jobBans != null)
                 restrictedRoles.UnionWith(jobBans);
 
-            // Pick best job best on prefs.
-            jobId ??= _stationJobs.PickBestAvailableJobWithPriority(station,
-                character.JobPriorities,
-                true,
-                restrictedRoles);
+            var shouldPickJob = jobId is null;
+
+            if (!lateJoin && jobId is not null && !IsAssignedRoundStartJobAvailable(station, jobId, restrictedRoles))
+                shouldPickJob = true;
+
+            if (shouldPickJob)
+            {
+                jobId = _stationJobs.PickBestAvailableJobWithPriority(station,
+                    character.JobPriorities,
+                    true,
+                    restrictedRoles);
+            }
             // If no job available, stay in lobby, or if no lobby spawn as observer
             if (jobId is null)
             {
