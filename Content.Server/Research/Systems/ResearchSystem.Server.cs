@@ -1,6 +1,8 @@
 using System.Linq;
 using Content.Server.Power.EntitySystems;
+using Content.Shared.Research;
 using Content.Shared.Research.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Research.Systems;
 
@@ -9,8 +11,19 @@ public sealed partial class ResearchSystem
     private void InitializeServer()
     {
         SubscribeLocalEvent<ResearchServerComponent, ComponentStartup>(OnServerStartup);
+        SubscribeLocalEvent<ResearchServerComponent, MapInitEvent>(OnServerMapInit);
         SubscribeLocalEvent<ResearchServerComponent, ComponentShutdown>(OnServerShutdown);
         SubscribeLocalEvent<ResearchServerComponent, TechnologyDatabaseModifiedEvent>(OnServerDatabaseModified);
+    }
+
+    private void OnServerMapInit(EntityUid uid, ResearchServerComponent component, MapInitEvent args)
+    {
+        foreach (var points in PrototypeManager.EnumeratePrototypes<ResearchPointPrototype>())
+        {
+            component.Points.TryAdd(points.ID, 0);
+        }
+
+        Dirty(uid, component);
     }
 
     private void OnServerStartup(EntityUid uid, ResearchServerComponent component, ComponentStartup args)
@@ -49,7 +62,15 @@ public sealed partial class ResearchSystem
 
         if (!CanRun(uid))
             return;
-        ModifyServerPoints(uid, GetPointsPerSecond(uid, component) * time, component);
+        var pointsPerSecond = GetPointsPerSecond(uid, component);
+        var pointsToAdd = new Dictionary<ProtoId<ResearchPointPrototype>, int>();
+
+        foreach (var (pointType, value) in pointsPerSecond)
+        {
+            pointsToAdd[pointType] = value * time;
+        }
+
+        ModifyServerPoints(uid, pointsToAdd, component: component);
     }
 
     /// <summary>
@@ -130,9 +151,9 @@ public sealed partial class ResearchSystem
     /// <param name="uid"></param>
     /// <param name="component"></param>
     /// <returns></returns>
-    public int GetPointsPerSecond(EntityUid uid, ResearchServerComponent? component = null)
+    public Dictionary<ProtoId<ResearchPointPrototype>, int> GetPointsPerSecond(EntityUid uid, ResearchServerComponent? component = null)
     {
-        var points = 0;
+        var points = new Dictionary<ProtoId<ResearchPointPrototype>, int>();
 
         if (!Resolve(uid, ref component))
             return points;
@@ -154,19 +175,39 @@ public sealed partial class ResearchSystem
     /// <param name="uid">The server</param>
     /// <param name="points">The amount of points being added</param>
     /// <param name="component"></param>
-    public void ModifyServerPoints(EntityUid uid, int points, ResearchServerComponent? component = null)
+    public void ModifyServerPoints(EntityUid uid, ProtoId<ResearchPointPrototype> pointType, int points, ResearchServerComponent? component = null)
     {
         if (points == 0)
             return;
 
         if (!Resolve(uid, ref component))
             return;
-        component.Points += points;
+
+        component.Points.TryGetValue(pointType, out var totalPoints);
+        component.Points[pointType] = totalPoints + points;
+
         var ev = new ResearchServerPointsChangedEvent(uid, component.Points, points);
         foreach (var client in component.Clients)
         {
             RaiseLocalEvent(client, ref ev);
         }
         Dirty(uid, component);
+    }
+
+    public void ModifyServerPoints(
+        EntityUid uid,
+        Dictionary<ProtoId<ResearchPointPrototype>, int> points,
+        bool reverse = false,
+        ResearchServerComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        var multiplier = reverse ? -1 : 1;
+
+        foreach (var (pointType, value) in points)
+        {
+            ModifyServerPoints(uid, pointType, value * multiplier, component);
+        }
     }
 }

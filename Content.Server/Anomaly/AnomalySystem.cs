@@ -6,11 +6,13 @@ using Content.Server.Materials;
 using Content.Server.Radiation.Systems;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Station.Systems;
+using Content.Shared._Scp.Helpers;
 using Content.Shared.Anomaly;
 using Content.Shared.Anomaly.Components;
 using Content.Shared.Anomaly.Prototypes;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
+using Content.Shared.Research;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
@@ -137,10 +139,10 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
     /// <param name="anomaly"></param>
     /// <param name="component"></param>
     /// <returns>The amount of points</returns>
-    public int GetAnomalyPointValue(EntityUid anomaly, AnomalyComponent? component = null)
+    public Dictionary<ProtoId<ResearchPointPrototype>, int> GetAnomalyPointValue(EntityUid anomaly, AnomalyComponent? component = null)
     {
         if (!Resolve(anomaly, ref component, false))
-            return 0;
+            return [];
 
         var multiplier = 1f;
         if (component.Stability > component.GrowthThreshold)
@@ -158,7 +160,14 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
 
         var severityValue = 1 / (1 + MathF.Pow(MathF.E, -7 * (component.Severity - 0.5f)));
 
-        return (int) ((component.MaxPointsPerSecond - component.MinPointsPerSecond) * severityValue * multiplier) + component.MinPointsPerSecond;
+        var pointsPerSecond = new Dictionary<ProtoId<ResearchPointPrototype>, int>();
+        foreach (var (pointType, maxPoints) in component.MaxPointsPerSecond)
+        {
+            var minPoints = component.MinPointsPerSecond.GetValueOrDefault(pointType);
+            pointsPerSecond[pointType] = (int) ((maxPoints - minPoints) * severityValue * multiplier) + minPoints;
+        }
+
+        return pointsPerSecond;
     }
 
     /// <summary>
@@ -272,7 +281,8 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
             msg.AddMarkupOrThrow(Loc.GetString("anomaly-scanner-point-output-unknown"));
         else
         {
-            var text = Loc.GetString("anomaly-scanner-point-output", ("point", GetAnomalyPointValue(anomaly, anomalyComp)));
+            var points = ResearchPointsHelper.PointsToString(GetAnomalyPointValue(anomaly, anomalyComp), " ", _prototype);
+            var text = Loc.GetString("anomaly-scanner-point-output", ("point", points));
             if (secret != null && secret.Secret.Contains(AnomalySecretData.OutputPoint))
                 text += " " + Loc.GetString("anomaly-secret-admin");
             msg.AddMarkupOrThrow(text);
