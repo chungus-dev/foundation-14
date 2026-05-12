@@ -348,7 +348,7 @@ public abstract class SharedAbsorbentSystem : EntitySystem
         _audio.PlayPredicted(absorber.PickupSound, isRemoved ? absorbEnt : target, user);
 
         if (useDelay != null)
-            _useDelay.TryResetDelay((absorbEnt, useDelay));
+            CalculateAndSetCooldown((absorbEnt.Owner, useDelay), puddleSplit);
 
         var userXform = Transform(user);
         var targetPos = _transform.GetWorldPosition(target);
@@ -358,5 +358,18 @@ public abstract class SharedAbsorbentSystem : EntitySystem
         _melee.DoLunge(user, absorbEnt, Angle.Zero, localPos, null);
 
         return true;
+    }
+
+    private void CalculateAndSetCooldown(Entity<UseDelayComponent?> ent, Solution solution)
+    {
+        if (!Resolve(ent, ref ent.Comp, false))
+            return;
+
+        var prev = ent.Comp.Delay;
+        var newDelay = Math.Max(prev.TotalSeconds, solution.GetAbsorbCooldown(_proto));
+
+        _useDelay.SetLength(ent, TimeSpan.FromSeconds(newDelay));
+        _useDelay.TryResetDelay(ent.AsType());
+        _useDelay.SetLength(ent, prev);
     }
 }

@@ -35,7 +35,7 @@ public sealed partial class SuitSensorComponent : Component
     ///     Current sensor mode. Can be switched by user verbs.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public SuitSensorMode Mode = SuitSensorMode.SensorOff;
+    public SuitSensorMode Mode = SuitSensorMode.SensorCords;  // Fire edit
 
     /// <summary>
     ///     Activate sensor if user wear it in this slot.

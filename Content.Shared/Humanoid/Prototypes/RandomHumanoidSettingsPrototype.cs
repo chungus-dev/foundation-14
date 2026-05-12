@@ -1,3 +1,4 @@
+using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
@@ -29,6 +30,9 @@ public sealed partial class RandomHumanoidSettingsPrototype : IPrototype, IInher
     /// </summary>
     [DataField("speciesBlacklist")]
     public HashSet<string> SpeciesBlacklist { get; private set; } = new();
+
+    [DataField]
+    public List<Gender>? GenderWhitelist = [];
 
     /// <summary>
     ///     Extra components to add to this entity.

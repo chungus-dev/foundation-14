@@ -114,6 +114,11 @@ public sealed partial class DoorComponent : Component
     [DataField]
     public DamageSpecifier? CrushDamage;
 
+    // Fire edit start
+    [DataField]
+    public bool UnsafeClosing;
+    // Fire edit end
+
     /// <summary>
     /// If false, this door is incapable of crushing entities. This just determines whether it will apply damage and
     /// stun, not whether it can close despite entities being in the way.
@@ -306,6 +311,7 @@ public sealed partial class DoorComponent : Component
 
     [DataField(customTypeSerializer: typeof(ConstantSerializer<DrawDepthTag>))]
     public int ClosedDrawDepth = (int) DrawDepth.DrawDepth.Doors;
+
 }
 
 [Serializable, NetSerializable]

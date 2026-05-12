@@ -21,6 +21,15 @@ public abstract class SharedDrunkSystem : EntitySystem
         RaiseLocalEvent(uid, ref ev);
 
         Status.TryAddStatusEffectDuration(uid, Drunk, ev.Duration);
+        // Fire edit start
+        if (!Status.TryGetStatusEffect(uid, Drunk, out var effect))
+            return;
+
+        if (!TryComp<DrunkStatusEffectComponent>(effect, out var drunkComponent))
+            return;
+
+        drunkComponent.CurrentBoozePower += (float) ev.Duration.TotalSeconds;
+        // Fire edit end
     }
 
     public void TryRemoveDrunkenness(EntityUid uid)

@@ -664,6 +664,9 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                 !_damageQuery.HasComponent(entity))
                 continue;
 
+            if (!Blocker.CanAttack(user, entity, (meleeUid, component)))
+                continue;
+
             targets.Add(entity);
         }
 
@@ -695,6 +698,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         for (var i = targets.Count - 1; i >= 0; i--)
         {
             var entity = targets[i];
+            /*
             // We raise an attack attempt here as well,
             // primarily because this was an untargeted wideswing: if a subscriber to that event cared about
             // the potential target (such as for pacifism), they need to be made aware of the target here.
@@ -704,6 +708,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                 targets.RemoveAt(i);
                 continue;
             }
+            */
 
             var attackedEvent = new AttackedEvent(meleeUid, user, GetCoordinates(ev.Coordinates));
             RaiseLocalEvent(entity, attackedEvent);
@@ -739,9 +744,9 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                 targets.RemoveAt(i);
         }
 
-        if (entities.Count != 0)
+        if (targets.Count != 0)
         {
-            var target = entities.First();
+            var target = targets.First();
             _meleeSound.PlayHitSound(target, user, GetHighestDamageSound(appliedDamage, _protoManager), hitEvent.HitSoundOverride, component);
         }
 

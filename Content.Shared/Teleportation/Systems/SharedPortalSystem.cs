@@ -4,6 +4,7 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
+using Content.Shared.Tag;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Weapons.Misc;
 using Content.Shared.Verbs;
@@ -34,6 +35,7 @@ public abstract class SharedPortalSystem : EntitySystem
     [Dependency] private readonly PullingSystem _pulling = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedJointSystem _joints = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
 
     private const string PortalFixture = "portalFixture";
     private const string ProjectileFixture = "projectile";
@@ -87,6 +89,9 @@ public abstract class SharedPortalSystem : EntitySystem
 
     private void OnCollide(Entity<PortalComponent> ent, ref StartCollideEvent args)
     {
+        if (_tag.HasTag(args.OtherEntity, ent.Comp.IgnorePortalTag))
+            return;
+
         if (!ShouldCollide(args.OurFixtureId, args.OtherFixtureId, args.OurFixture, args.OtherFixture))
             return;
 

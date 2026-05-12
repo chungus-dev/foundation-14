@@ -5,6 +5,11 @@ namespace Content.Shared.Roles;
 [Prototype]
 public sealed partial class DepartmentPrototype : IPrototype
 {
+    // Fire added start
+    [DataField]
+    public bool AlwaysShowInBanPanel;
+    // Fire added end
+
     [IdDataField]
     public string ID { get; private set; } = string.Empty;
 

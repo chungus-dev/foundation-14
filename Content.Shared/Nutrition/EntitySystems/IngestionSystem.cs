@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Administration.Logs;
+using Content.Shared._Scp.Scp999;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
@@ -474,6 +475,7 @@ public sealed partial class IngestionSystem : EntitySystem
             // log successful forced feeding
             // TODO: Use correct verb
             _adminLogger.Add(LogType.ForceFeed, LogImpact.Medium, $"{ToPrettyString(entity):user} forced {ToPrettyString(args.User):target} to eat {ToPrettyString(entity):food}");
+            RaiseLocalEvent(args.Target, new EntityFedEvent(entity));
         }
         else
         {

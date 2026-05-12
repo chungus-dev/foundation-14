@@ -1,5 +1,7 @@
 using Content.Shared.Destructible.Thresholds;
+using Content.Shared.Research;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Xenoarchaeology.Artifact.Components;
 
@@ -52,6 +54,11 @@ public sealed partial class XenoArtifactNodeComponent : Component
     [DataField, AutoNetworkedField]
     public int MaxDurability = 5;
 
+    // sunrise start
+    [DataField, AutoNetworkedField]
+    public bool TriggerDecreasesDurability;
+    // sunrise end
+
     /// <summary>
     /// The variance from MaxDurability present when a node is created.
     /// </summary>
@@ -64,7 +71,7 @@ public sealed partial class XenoArtifactNodeComponent : Component
     /// The amount of points a node is worth with no scaling
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float BasePointValue = 4000;
+    public float BasePointValue = 1000; // Fire edit - а че так дохуя было
 
     /// <summary>
     /// Amount of points available currently for extracting.
@@ -77,5 +84,6 @@ public sealed partial class XenoArtifactNodeComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public int ConsumedResearchValue;
+
     #endregion
 }

@@ -56,4 +56,7 @@ public sealed partial class AbsorbentComponent : Component
     /// </summary>
     [DataField]
     public bool UseAbsorberSolution = true;
+
+    [DataField]
+    public float FootprintEnlargement = 0.2f; // Fire edit
 }

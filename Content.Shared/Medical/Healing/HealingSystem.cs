@@ -1,8 +1,11 @@
+using Content.Shared._Scp.Other.Events;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
@@ -16,6 +19,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Stacks;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Medical.Healing;
 
@@ -77,10 +81,12 @@ public sealed class HealingSystem : EntitySystem
         if (healing.ModifyBloodLevel != 0 && bloodstream != null)
             _bloodstreamSystem.TryModifyBloodLevel((target.Owner, bloodstream), healing.ModifyBloodLevel);
 
-        if (!_damageable.TryChangeDamage(target.Owner, healing.Damage * _damageable.UniversalTopicalsHealModifier, out var healed, true, origin: args.Args.User) && healing.BloodlossModifier != 0)
+        var healed = SmartHealing(target, healing.Damage, args.Args.User);
+
+        if (healed == null && healing.BloodlossModifier != 0)
             return;
 
-        var total = healed.GetTotal();
+        var total = healed?.GetTotal() ?? FixedPoint2.Zero;
 
         // Re-verify that we can heal the damage.
         var dontRepeat = false;
@@ -189,6 +195,12 @@ public sealed class HealingSystem : EntitySystem
         if (user != target.Owner && !_interactionSystem.InRangeUnobstructed(user, target.Owner, popup: true))
             return false;
 
+        var relayTargetEvent = new HealingRelayEvent();
+        RaiseLocalEvent(target, ref relayTargetEvent);
+
+        if (relayTargetEvent.Entity.HasValue && TryComp<DamageableComponent>(relayTargetEvent.Entity, out var relayDamageable))
+            target = (relayTargetEvent.Entity.Value, relayDamageable);
+
         if (TryComp<StackComponent>(healing, out var stack) && stack.Count < 1)
             return false;
 
@@ -245,5 +257,54 @@ public sealed class HealingSystem : EntitySystem
 
         var output = percentDamage * (mod - 1) + 1;
         return Math.Max(output, 1);
+    }
+
+    public DamageSpecifier? SmartHealing(EntityUid target, DamageSpecifier damage, EntityUid? origin = null, float scale = 1f)
+    {
+        var onlyHealingDamage = new DamageSpecifier();
+        var onlyDamage = new DamageSpecifier();
+
+        foreach (var (type, value) in damage.DamageDict)
+        {
+            if (value > 0)
+                onlyDamage.DamageDict[type] = value;
+            else
+                onlyHealingDamage.DamageDict[type] = value;
+        }
+
+        var canHeal = _damageable.TryChangeDamage(
+            target,
+            onlyHealingDamage * _damageable.UniversalAllHealModifier * scale,
+            out var healed,
+            true,
+            false,
+            origin: origin);
+
+        var canDamage = _damageable.TryChangeDamage(
+            target,
+            onlyDamage * _damageable.UniversalAllDamageModifier * scale,
+            out var damaged,
+            interruptsDoAfters: false,
+            origin: origin);
+
+        if (!canHeal)
+            return canDamage ? damaged : null;
+
+        if (!canDamage)
+            return healed;
+
+        var merged = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>(healed.DamageDict);
+        foreach (var (key, value) in damaged.DamageDict)
+        {
+            if (merged.TryGetValue(key, out var existing))
+                merged[key] = existing + value;
+            else
+                merged[key] = value;
+        }
+
+        return new DamageSpecifier
+        {
+            DamageDict = merged,
+        };
     }
 }

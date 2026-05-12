@@ -1,5 +1,7 @@
 using Content.Shared.Actions;
+using Content.Shared.Buckle.Components;
 using Content.Shared.Mind;
+using Content.Shared.Mech.Components;
 using Content.Shared.MouseRotator;
 using Content.Shared.Movement.Components;
 using Content.Shared.NPC.Systems;
@@ -84,16 +86,24 @@ public abstract class SharedCombatModeSystem : EntitySystem
         SetMouseRotatorComponents(entity, value);
     }
 
-    private void SetMouseRotatorComponents(EntityUid uid, bool value)
+    public void SetMouseRotatorComponents(EntityUid uid, bool value)
     {
         if (value)
         {
+            if (TryComp<MechPilotComponent>(uid, out var mechPilot) && !HasComp<NoRotateOnMoveComponent>(mechPilot.Mech))
+                EnsureComp<NoRotateOnMoveComponent>(mechPilot.Mech);
+
             EnsureComp<MouseRotatorComponent>(uid);
             EnsureComp<NoRotateOnMoveComponent>(uid);
         }
         else
         {
-            RemComp<MouseRotatorComponent>(uid);
+            if (TryComp<MechPilotComponent>(uid, out var mechPilot) && HasComp<NoRotateOnMoveComponent>(mechPilot.Mech))
+                RemComp<NoRotateOnMoveComponent>(mechPilot.Mech);
+
+            if (!TryComp<BuckleComponent>(uid, out var buckle) || !buckle.Buckled)
+                RemComp<MouseRotatorComponent>(uid);
+
             RemComp<NoRotateOnMoveComponent>(uid);
         }
     }

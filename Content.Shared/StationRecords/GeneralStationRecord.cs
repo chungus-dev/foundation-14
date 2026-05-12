@@ -1,3 +1,5 @@
+using Content.Shared._Scp.CharacterInfo.AccessLevel;
+using Content.Shared._Scp.CharacterInfo.EmployeeClass;
 using Robust.Shared.Enums;
 using Robust.Shared.Serialization;
 
@@ -68,4 +70,13 @@ public sealed record GeneralStationRecord
     /// </summary>
     [DataField]
     public string? DNA;
+
+    // Fire added start
+    [DataField]
+    public AccessLevel? AccessLevel;
+
+    [DataField]
+    public EmployeeClass? EmployeeClass;
+    // Fire added end
+
 }

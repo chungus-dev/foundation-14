@@ -39,6 +39,9 @@ public abstract class SharedWeatherSystem : EntitySystem
         if (Resolve(ent, ref ent.Comp2, false) && _roof.IsRooved((ent, ent.Comp1, ent.Comp2), tileRef.GridIndices))
             return false;
 
+        if (HasComp<ImplicitRoofComponent>(ent))
+            return false;
+
         var tileDef = (ContentTileDefinition)_tileDefManager[tileRef.Tile.TypeId];
 
         if (!tileDef.Weather)

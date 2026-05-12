@@ -4,6 +4,7 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Localizations;
+using Content.Shared.Medical.Healing;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.EntityEffects.Effects.Damage;
@@ -16,18 +17,13 @@ namespace Content.Shared.EntityEffects.Effects.Damage;
 public sealed partial class HealthChangeEntityEffectSystem : EntityEffectSystem<DamageableComponent, HealthChange>
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly HealingSystem _healing = default!;
 
     protected override void Effect(Entity<DamageableComponent> entity, ref EntityEffectEvent<HealthChange> args)
     {
         var damageSpec = new DamageSpecifier(args.Effect.Damage);
 
-        damageSpec *= args.Scale;
-
-        _damageable.TryChangeDamage(
-                entity.AsNullable(),
-                damageSpec,
-                args.Effect.IgnoreResistances,
-                interruptsDoAfters: false);
+        _healing.SmartHealing(entity, damageSpec, scale: args.Scale);
     }
 }
 
