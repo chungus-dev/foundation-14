@@ -1,0 +1,12 @@
+ent-ClothingShoesBootsMtfMilitary = military boots
+    .desc = Heavy military boots with urban camouflage made of thick leather with reinforced metal soles.
+    .suffix = MTF
+ent-ClothingShoesBootsMtfMilitaryFilled = { ent-ClothingShoesBootsMtfMilitary }
+    .desc = { ent-ClothingShoesBootsMtfMilitary.desc }
+    .suffix = MTF | Filled
+ent-ClothingShoesBootsNTFFilled = reinforced boots
+    .desc = Reinforced dark-colored tactical boots, designed for prolonged use in field conditions.
+    .suffix = MTF
+ent-ClothingShoesRRHFilled = special forces boots
+    .desc = Heavily modified special unit boots. Silent step, non-slip sole, scabbard and convenience.
+    .suffix = MTF | DO NOT MAP

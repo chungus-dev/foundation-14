@@ -1,0 +1,10 @@
+ent-ClothingHeadHatDirector = { ent-ClothingHeadHatIAA }
+    .desc = { ent-ClothingHeadHatIAA.desc }
+ent-ClothingUniformJumpsuitDirector = { ent-ClothingUniformJumpsuitNtrep }
+    .desc = { ent-ClothingUniformJumpsuitNtrep.desc }
+ent-ClothingOuterCoatDirectorTrench = { ent-ClothingOuterCoatHoSTrench }
+    .desc = { ent-ClothingOuterCoatHoSTrench.desc }
+ent-ClothingHandsGlovesDirectorSpecial = { ent-ClothingHandsGlovesHop }
+    .desc = { ent-ClothingHandsGlovesHop.desc }
+ent-ClothingBackpackSatchelLeatherDirectorFilled = { ent-ClothingBackpackSatchelLeather }
+    .desc = { ent-ClothingBackpackSatchelLeather.desc }

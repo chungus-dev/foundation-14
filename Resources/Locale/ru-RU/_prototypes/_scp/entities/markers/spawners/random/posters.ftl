@@ -1,0 +1,15 @@
+ent-ScpRandomPosterAny = { ent-RandomPosterAny }
+    .desc = { ent-RandomPosterAny.desc }
+    .suffix = SCP
+ent-ScpRandomPosterContraband = { ent-RandomPosterContraband }
+    .desc = { ent-RandomPosterContraband.desc }
+    .suffix = SCP
+ent-ScpRandomPosterLegit = { ent-RandomPosterLegit }
+    .desc = { ent-RandomPosterLegit.desc }
+    .suffix = SCP
+ent-ScpRandomPosterDClass = спавнер случайный плакат д класса
+    .desc = { ent-MarkerBase.desc }
+    .suffix = SCP
+ent-ScpRandomPosterScp049 = спавнер случайный плакат 049
+    .desc = { ent-MarkerBase.desc }
+    .suffix = SCP | КС-049

@@ -1,0 +1,16 @@
+ent-BoxVialScpBase = { ent-BoxCardboard }
+    .desc = { ent-BoxCardboard.desc }
+ent-BoxVialScpBaseSecure = { ent-BoxVialScpBase }
+    .desc = { ent-BoxVialScpBase.desc }
+ent-BoxVialAmnesiacA = box with class A amnesiac vials
+    .desc = Contains 3 vials. { reagent-amnesiac-a-desc }
+    .suffix = Amnesiac A
+ent-BoxVialAmnesiacB = box with class B amnesiac vials
+    .desc = Contains 3 vials. { reagent-amnesiac-b-desc }
+    .suffix = Amnesiac B
+ent-BoxVialAmnesiacC = box with class C amnesiac vials
+    .desc = Contains 3 vials. { reagent-amnesiac-c-desc }
+    .suffix = Amnesiac C
+ent-BoxVialAmnesiacD = box with class D amnesiac vials
+    .desc = Contains 3 vials. { reagent-amnesiac-d-desc }
+    .suffix = Amnesiac D
