@@ -1,32 +1,44 @@
-﻿# Be careful with these as they get removed on shutdown too!
+# Be careful with these as they get removed on shutdown too!
 - type: entity
   id: AiHeld
   description: Components added / removed from an entity that gets inserted into an AI core.
   categories: [ HideSpawnMenu ]
   components:
+  # Fire added start
+  - type: ShowScp096FaceDamageHud
+  # Fire added end
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
     - Common
-    - Command
-    - Engineering
-    - Medical
-    - Science
-    - Security
-    - Service
-    - Supply
+    # Fire edit start
+    - Administration
+    - EthicsCommittee
+    - HeavyContainmentSecurityService
+    - ExternalAdministrativeZoneSecurityService
+    - ScientificService
+    - MedicalService
+    - EngineeringTechnicalService
+    - LogisticsService
+    - FoodAndSanitationService
+    # Fire edit end
   - type: ActiveRadio
     channels:
     - Binary
     - Common
-    - Command
-    - Engineering
-    - Medical
-    - Science
+    # Fire edit start
+    - Administration
+    - EthicsCommittee
+    - HeavyContainmentSecurityService
+    - ExternalAdministrativeZoneSecurityService
     - Security
-    - Service
-    - Supply
+    - ScientificService
+    - MedicalService
+    - EngineeringTechnicalService
+    - LogisticsService
+    - FoodAndSanitationService
+    # Fire edit end
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
@@ -34,6 +46,7 @@
   - type: ActionGrant
     actions:
     - ActionJumpToCore
+    - ActionSurvCameraLights
     - ActionAIViewLaws
   - type: UserInterface
     interfaces:
@@ -67,13 +80,27 @@
     followEntity: false
   - type: CommunicationsConsole
     canShuttle: false
-    title: comms-console-announcement-title-station-ai
+    title: comms-console-announcement-title-complex-ai # Fire edit
     color: "#5ed7aa"
+    announceVoice: SCP079 # Fire-Edit
+    sound: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-Edit
   - type: ShowJobIcons
-  - type: ShowCrewIcons
   - type: DamagedSiliconAccent
     startPowerCorruptionAtCharIdx: 4
     maxPowerCorruptionAtCharIdx: 20
+  # Sunrise-Start
+  - type: ShowThirstIcons
+  - type: ShowHungerIcons
+  - type: ShowHealthIcons
+  - type: ShowHealthBars
+    damageContainers:
+      - Biological
+      - Inorganic
+      - Silicon
+      - Mech
+  # Sunrise-End
+  - type: Speech # Sunrise-Edit
+    speechVerb: Robotic # Sunrise-Edit
 
 - type: entity
   id: AiHeldIntellicard
@@ -104,6 +131,10 @@
   abstract: true
   description: Handles AI interactions across holocards + AI cores
   components:
+  # Fire added start
+  - type: TTS
+    voice: SCP079
+  # Fire added end
   - type: ItemSlots
   - type: Tag
     tags:
@@ -423,7 +454,12 @@
     # Once it's in a core it's pretty much an abstract entity at that point.
     visible: false
   - type: SiliconLawProvider
-    laws: Crewsimov
+    laws: ScpDefault # Fire edit
+  # Fire added start
+  - type: RetroMonitorView
+  - type: TTS
+    voice: SCP079
+  # Fire added end
   - type: SiliconLawBound
   - type: ActionGrant
     actions:
@@ -436,9 +472,12 @@
   - type: ComplexInteraction
   - type: Actions
   - type: Access
+    # Fire edit start
     groups:
-    - AllAccess
-    - Silicon
+    - AllComplex
+    tags:
+    - AI
+    # Fire edit end
   - type: Eye
     drawFov: false
   - type: Examiner

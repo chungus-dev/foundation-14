@@ -5,6 +5,9 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  # Fire added start
+  - type: BloodSplatterer
+  # Fire added end
   - type: Sprite
     layers:
       - state: base
@@ -20,6 +23,7 @@
   - type: Tag
     tags:
     - Sidearm
+    - LockerPistol # Fire Edit
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
     quickEquip: false
@@ -48,10 +52,10 @@
         whitelist:
           tags:
             - MagazinePistol
-            - MagazinePistolHighCapacity
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
+        startingItem: CartridgePistolSP
         priority: 1
         whitelist:
           tags:
@@ -68,6 +72,17 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  # Sunrise start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: PistolsPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: PistolsDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: PistolsDrop
+  # Sunrise end
 
 - type: entity
   name: viper

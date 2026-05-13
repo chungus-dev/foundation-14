@@ -37,25 +37,32 @@
       - state: inhand-right-mag
 
 - type: entity
-  parent: BaseMagazineMagnum
   id: MagazineMagnum
+  categories: [ HideSpawnMenu ] # Fire edit
   name: pistol magazine (.45 magnum)
-  description: 7-round single stack magazine for large-caliber pistols. Intended to hold general-purpose kinetic ammunition.
+  parent: BaseMagazineMagnum
+  description: 7-round single stack pistol magazine. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeMagnum
+    proto: CartridgeMagnumSP
   - type: Sprite
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+    - state: stripe
+      color: "#575EF5"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#575EF5"
       right:
       - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#575EF5"
 
 - type: entity
   parent: BaseMagazineMagnum

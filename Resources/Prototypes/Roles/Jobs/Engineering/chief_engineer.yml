@@ -17,7 +17,15 @@
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
   supervisors: job-supervisors-captain
-  canBeAntag: false
+  radioBold: true # Sunrise-Edit
+  displayWeight: 70 # Sunrise-Edit
+  canBeAntag: true # RaMbUt878-edit
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-chief-mechanic
+  # Sunrise-End
   access:
   - Maintenance
   - Engineering
@@ -29,10 +37,12 @@
   - Cryogenics
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ DeathRattleImplantBlueShield ] # Sunrise-Edit
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  speciesBlacklist:
+  - Vox # Sunrise-Edit
 
 - type: startingGear
   id: ChiefEngineerGear

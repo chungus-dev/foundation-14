@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseStructureComputer
   id: BaseComputer
+  categories: [ HideSpawnMenu ] # Fire edit
   name: computer
   placement:
     mode: SnapgridCenter
@@ -17,11 +18,7 @@
       - board
   - type: Computer
   - type: ApcPowerReceiver
-    powerLoad: 50
-  - type: PowerState
-    idlePowerDraw: 50
-    workingPowerDraw: 500
-  - type: UIPowerState
+    powerLoad: 200
   - type: ExtensionCableReceiver
   - type: ActivatableUIRequiresPower
   - type: Sprite
@@ -37,6 +34,11 @@
       state: generic_keys
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+  # Sunrise-Start
+  - type: EdgeConnection
+    connectionKey: computers
+    allowedDirections: East, West
+  # Sunrise-End
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -51,6 +53,14 @@
         enum.WiresVisualLayers.MaintenancePanel:
           True: { visible: false }
           False: { visible: true }
+      # Sunrise-Start
+      enum.EdgeConnectionVisuals.ConnectionMask:
+        computerLayerBody:
+          None: { state: computer, sprite: Structures/Machines/computers.rsi }
+          West: { state: computer_r, sprite: _Starlight/Structures/Machines/computers.rsi }
+          East: { state: computer_l, sprite: _Starlight/Structures/Machines/computers.rsi }
+          East, West: { state: computer_l_r, sprite: _Starlight/Structures/Machines/computers.rsi }
+      # Sunrise-End
   - type: LitOnPowered
   - type: PointLight
     radius: 1.5
@@ -62,11 +72,14 @@
     castShadows: false
   - type: EmitSoundOnUIOpen
     sound:
-      collection: Keyboard
+      # Fire edit start
+      collection: ScpKeyboard
       params:
-        volume: -1
-        variation: 0.10
-        pitch: 1.10  # low pitch keyboard sounds feel kinda weird
+        maxDistance: 3
+        volume: -5
+        variation: 0.1
+        pitch: 0.9  # low pitch keyboard sounds feel kinda weird
+      # Fire edit end
     blacklist:
       tags:
       - NoConsoleSound
@@ -95,6 +108,7 @@
 - type: entity
   parent: BaseComputer
   id: BaseComputerAiAccess
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: StationAiWhitelist
   - type: Wires

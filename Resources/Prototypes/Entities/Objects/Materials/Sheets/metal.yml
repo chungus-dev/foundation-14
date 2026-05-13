@@ -1,13 +1,13 @@
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: [MetalSounds, BaseItem] # Sunrise edit
   id: SheetMetalBase
   description: A sheet of metal, used often on the station in various applications.
   components:
   - type: Sprite
-    sprite: Objects/Materials/Sheets/metal.rsi
+    sprite: _Scp/Objects/Materials/Sheets/metal.rsi # Fire Edit
   - type: Item
-    sprite: Objects/Materials/Sheets/metal.rsi
+    sprite: _Scp/Objects/Materials/Sheets/metal.rsi # Fire Edit
     size: Normal
   - type: StaticPrice
     price: 0
@@ -16,6 +16,7 @@
     - Sheet
     - Metal
     - ConstructionMaterial
+    - NoPaint  # Sunrise-edit
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -114,11 +115,13 @@
     - brass_2
     - brass_3
   - type: Sprite
+    sprite: Objects/Materials/Sheets/metal.rsi # Fire Edit
     state: brass_3
     layers:
     - state: brass_3
       map: ["base"]
   - type: Item
+    sprite: Objects/Materials/Sheets/metal.rsi # Fire Edit
     heldPrefix: brass
   - type: Appearance
   - type: FloorTile

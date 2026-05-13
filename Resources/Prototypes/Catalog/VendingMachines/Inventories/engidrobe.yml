@@ -4,6 +4,9 @@
     ClothingBackpackDuffelEngineering: 3
     ClothingBackpackSatchelEngineering: 3
     ClothingBackpackEngineering: 3
+    #Sunrise-start
+    MaterialBagSunrise: 5
+    #Sunrise-end
     ClothingUniformJumpsuitEngineering: 3
     ClothingUniformJumpskirtEngineering: 3
     ClothingUniformJumpsuitEngineeringHazard: 3
@@ -12,7 +15,9 @@
     ClothingShoesBootsWork: 3
     ClothingHeadHatHardhatYellow: 3
     ClothingHeadHatHardhatOrange: 3
-    ClothingHeadsetEngineering: 3
+    # Fire edit start
+    ClothingHeadsetEngineeringTechnicalService: 3
+    # Fire edit end
     ClothingOuterWinterEngi: 2
     ClothingNeckScarfStripedOrange: 3
     ClothingShoesBootsWinterEngi: 2

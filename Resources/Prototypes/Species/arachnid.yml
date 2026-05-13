@@ -1,13 +1,22 @@
 - type: species
   id: Arachnid
   name: species-name-arachnid
-  roundStart: true
+  roundStart: false # Fire edit
+  stationRecordsHidden: true # Fire added
   prototype: MobArachnid
+  bodyTypes:
+  - ArachnidNormal
+#  - ArachnidSlim
   defaultSkinTone: "#385878"
-  dollPrototype: AppearanceArachnid
+  markingLimits: MobArachnidMarkingLimits
+  dollPrototype: MobArachnidDummy
   skinColoration: Hues
   maleFirstNames: NamesArachnidFirst
   femaleFirstNames: NamesArachnidFirst
-  lastNames: NamesArachnidLast
-  sexes:
-  - Unsexed
+  maleLastNames: NamesArachnidLast
+  femaleLastNames: NamesArachnidLast
+  # Sunrise-Edit
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: human # Sunrise-Edit SUNRISE-TODO: Спрайт жопы для арахнидов
+

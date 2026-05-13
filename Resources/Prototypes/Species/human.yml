@@ -3,5 +3,28 @@
   name: species-name-human
   roundStart: true
   prototype: MobHuman
-  dollPrototype: AppearanceHuman
+  bodyTypes:
+  - HumanNormal
+  - HumanSlimFemale
+  - HumanSlimMale
+  - HumanGigaFemale
+  - HumanGigaMale
+  - HumanFatFemale
+  - HumanFatMale
+  - HumanDistrofikFemale
+  - HumanDistrofikMale
+  markingLimits: MobHumanMarkingLimits
+  dollPrototype: MobHumanDummy
   skinColoration: HumanToned
+  # Sunrise-Edit
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: human
+  maxAge: 85 # Fire-Edit
+
+# The lack of a layer means that
+# this person cannot have round-start anything
+# applied to that layer. It has to instead
+# be defined as a 'custom base layer'
+# in either the mob's starting marking prototype,
+# or it has to be added in C#.

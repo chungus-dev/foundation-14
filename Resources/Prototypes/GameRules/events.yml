@@ -118,8 +118,8 @@
       max:  30
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio:
-      path: /Audio/Announcements/announce.ogg
+#    startAudio: Fire edit
+#      path: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-edit
     weight: 8
     duration: 35
   - type: BluespaceArtifactRule
@@ -151,11 +151,21 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-bureaucratic-error-announcement
+#    startAudio: Fire edit
+#      path: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-edit
     minimumPlayers: 25
     weight: 3
     duration: 1
   - type: BureaucraticErrorRule
     ignoredJobs:
+    # Fire edit start
+    - Scp173
+    - Scp939
+    - Scp106
+    - Scp049
+    - Scp999
+    - Scp096
+    # Fire edit end
     - StationAi
     - ResearchAssistant
     - MedicalIntern
@@ -168,6 +178,8 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-clerical-error-announcement
+#    startAudio: Fire edit
+#      path: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-edit
     minimumPlayers: 15
     weight: 5
     duration: 1
@@ -188,11 +200,17 @@
   parent: BaseGameRule
   id: DragonSpawn
   components:
+  # Sunrise-start
+  - type: GameRule
+    delay:
+      min: 900
+      max: 900
+  # Sunrise-end
   - type: StationEvent
     weight: 6.5
     earliestStart: 40
     reoccurrenceDelay: 20
-    minimumPlayers: 20
+    minimumPlayers: 60 #Sunrise-edit
     duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0
@@ -219,6 +237,12 @@
   parent: BaseGameRule
   id: NinjaSpawn
   components:
+  # Sunrise-start
+  - type: GameRule
+    delay:
+      min: 60
+      max: 600
+  # Sunrise-end
   - type: StationEvent
     weight: 6
     duration: null
@@ -244,19 +268,32 @@
       pickPlayer: false
       startingGear: SpaceNinjaGear
       roleLoadout:
-      - RoleSurvivalSpaceNinja
+      - RoleSurvivalEVA
       briefing:
         text: ninja-role-greeting
         color: Green
         sound: /Audio/Misc/ninja_greeting.ogg
       components:
+      # Sunrise edit start
+      - type: GhostPanelAntagonistMarker
+        name: ghost-panel-antagonist-ninja-name
+        description: ghost-panel-antagonist-ninja-description
+        priority: 40
+      # Sunrise edit end
       - type: SpaceNinja
       - type: NpcFactionMember
         factions:
-        - Syndicate
+        - SpiderClan
       - type: AutoImplant
         implants:
-        - DeathAcidifierImplant
+        # Sunrise-Start
+        #- DeathAcidifierImplant
+        - RedspaceImplant
+        - MicroBombImplant
+        - StimpackImplant
+        - ReviverImplant
+        - NutrimentImplant
+        # Sunrise-End
       - type: RandomMetadata
         nameSegments:
         - NamesNinjaTitle
@@ -323,7 +360,7 @@
   components:
   - type: StationEvent
     weight: 1 # rare
-    duration: null
+    duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
     minimumPlayers: 30
@@ -370,10 +407,9 @@
   id: GasLeak
   parent: BaseStationEventShortDelay
   components:
+  # Fire edit - убрал звуки аннонсментов
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
     weight: 8
   - type: GasLeakRule
@@ -398,9 +434,7 @@
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
     startAudio:
-      path: /Audio/Announcements/power_off.ogg
-      params:
-        volume: -4
+      path: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-edit
     duration: 60
     maxDuration: 120
   - type: PowerGridCheckRule
@@ -411,10 +445,12 @@
   components:
   - type: StationEvent
     weight: 8
-    startAnnouncement: station-event-solar-flare-start-announcement
-    endAnnouncement: station-event-solar-flare-end-announcement
+    # Fire edit start - оповещение нахуй, звук поменял
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Sunrise/Announcements/ionstorm.ogg
+      params:
+        volume: -10
+    # Fire edit end
     duration: 120
     maxDuration: 240
   - type: SolarFlareRule
@@ -438,16 +474,14 @@
   parent: BaseStationEventLongDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-clog-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    #startAnnouncement: station-event-vent-clog-start-announcement Fire edit
+#    startAudio: Fire edit
+#      path: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-edit
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
     duration: 60
   - type: VentClogRule
-
-# Critters
 
 - type: entity
   id: SlimesSpawnHorde
@@ -536,7 +570,7 @@
   - type: StationEvent
     earliestStart: 90
     minimumPlayers: 40
-    weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
+    weight: 0 # Sunrise-edit: Нахуя оно блядь вообще надо
     duration: 1
     occursDuringRoundEnd: false
   - type: ZombieRule
@@ -544,6 +578,7 @@
     definitions:
     - prefRoles: [ InitialInfected ]
       max: 3
+      ignoreCanBeAntag: true # Sunrise-Edit
       playerRatio: 10
       blacklist:
         components:
@@ -589,6 +624,12 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
+      # Sunrise edit start
+      - type: GhostPanelAntagonistMarker
+        name: ghost-panel-antagonist-loneops-name
+        description: ghost-panel-antagonist-loneops-description
+        priority: 20
+      # Sunrise edit end
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -614,7 +655,7 @@
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-edit
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
   - type: AlertLevelInterceptionRule
@@ -622,8 +663,8 @@
     definitions:
     - prefRoles: [ TraitorSleeper ]
       fallbackRoles: [ Traitor ]
-      min: 1
-      max: 2
+      min: 5 # Sunrise-Edit
+      max: 10 # Sunrise-Edit
       playerRatio: 10
       blacklist:
         components:
@@ -652,6 +693,10 @@
   id: IonStorm
   components:
   - type: StationEvent
+    startAudio:
+      path: /Audio/_Sunrise/Announcements/ionstorm.ogg
+      params:
+        volume: -10
     weight: 8
     reoccurrenceDelay: 20
     duration: 1
@@ -673,8 +718,8 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+#    startAudio: Fire edit
+#      path: /Audio/Announcements/attention.ogg
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20
@@ -827,3 +872,80 @@
       min: 1
       max: 1
       pickPlayer: false
+
+- type: entity
+  id: SlimesSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-edit
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobAdultSlimesBlueAngry
+      prob: 0.02
+    - id: MobAdultSlimesGreenAngry
+      prob: 0.02
+    - id: MobAdultSlimesYellowAngry
+      prob: 0.02
+
+- type: entity
+  id: SnakeSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobPurpleSnake
+      prob: 0.02
+    - id: MobSmallPurpleSnake
+      prob: 0.02
+    - id: MobCobraSpace
+      prob: 0.02
+
+- type: entity
+  id: SpiderSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-edit
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobGiantSpiderAngry
+      prob: 0.05
+
+- type: entity
+  id: SpiderClownSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-edit
+    earliestStart: 20
+    minimumPlayers: 20
+    weight: 1.5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: MobClownSpider
+      prob: 0.05
+

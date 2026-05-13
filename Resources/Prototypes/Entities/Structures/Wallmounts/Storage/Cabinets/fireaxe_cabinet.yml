@@ -42,7 +42,13 @@
           - FireAxe
   - type: Lock
   - type: AccessReader
-    access: [["Atmospherics"], ["Command"]]
+    access: [["LifeSupport"], ["Administration"]] # Fire edit
+    # Sunrise-start
+    alertAccesses:
+      red: RedAlertAccesses
+      blue: BlueAlertAccessesHOS
+      gamma: GammaAlertAccesses
+    # Sunrise-end
 
 - type: entity
   parent: FireAxeCabinet

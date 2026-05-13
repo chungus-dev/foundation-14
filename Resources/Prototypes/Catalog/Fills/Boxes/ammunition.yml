@@ -201,6 +201,7 @@
   name: box of .20 rifle magazines
   parent: BoxMagazine
   id: BoxMagazineRifle
+  categories: [ HideSpawnMenu ] # Fire edit
   description: A box full of .20 rifle magazines.
   components:
   - type: EntityTableContainerFill

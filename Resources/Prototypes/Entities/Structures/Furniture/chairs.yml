@@ -101,6 +101,7 @@
 - type: entity
   name: chair
   id: Chair
+  categories: [ HideSpawnMenu ] # Fire edit
   parent: ChairBase
   components:
   - type: Sprite
@@ -112,6 +113,7 @@
 - type: entity
   name: chair
   id: ChairGreyscale
+  categories: [ HideSpawnMenu ] # Fire edit
   parent: Chair
   suffix: White
   components:
@@ -155,6 +157,7 @@
 - type: entity
   name: white office chair
   id: ChairOfficeLight
+  categories: [ HideSpawnMenu ] # Fire edit
   parent: OfficeChairBase
   components:
   - type: Sprite
@@ -166,6 +169,7 @@
 - type: entity
   name: dark office chair
   id: ChairOfficeDark
+  categories: [ HideSpawnMenu ] # Fire edit
   parent: ChairOfficeLight
   components:
   - type: Sprite
@@ -197,13 +201,18 @@
   - type: Construction
     graph: Seat
     node: chairPilotSeat
+  - type: Tag # Fire
+    tags:
+    - ShuttleChair
 
 - type: entity
   name: wooden chair
   id: ChairWood
+  categories: [ HideSpawnMenu ] # Fire edit
   parent: UnanchoredChairBase
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi
     state: wooden
   - type: Construction
     graph: Seat
@@ -244,10 +253,12 @@
 - type: entity
   name: ritual chair
   id: ChairRitual
+  categories: [ HideSpawnMenu ] # Fire edit
   parent: ChairWood
   description: Looks uncomfortable.
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi
     state: ritual
   - type: Construction
     graph: RitualSeat
@@ -268,14 +279,16 @@
 - type: entity
   name: cursed chair
   id: ChairCursed
+  categories: [ HideSpawnMenu ] # Fire edit
   parent: ChairWood
   description: It's staring back.
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi
     state: cursed
   - type: Strap
     buckleSound:
-      collection: MaleScreams
+      collection: MaleScreamsNew # Fire edit
   - type: Destructible
     thresholds:
     - trigger: # Excess damage, don't spawn entities
@@ -438,10 +451,12 @@
 - type: entity
   name: wooden bench
   id: WoodenBench
+  categories: [ HideSpawnMenu ] # Fire edit
   parent: ChairBase
   description: Did you get a splinter? Well, at least it’s eco friendly.
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi
     state: wooden-bench
   - type: Construction
     graph: Seat
@@ -473,6 +488,14 @@
             max: 4
   - type: StaticPrice
     price: 50
+  # Sunrise-Start
+  - type: Strap
+    position: Stand
+    buckleOffsets:
+    - "-0.2,0"
+    - "0.2,0"
+    size: 200
+  # Sunrise-End
 
 - type: entity
   parent: StoolBase

@@ -14,7 +14,15 @@
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain
-  canBeAntag: false
+  canBeAntag: true # Sunrise-Edit
+  radioBold: true # Sunrise-Edit
+  displayWeight: 50 # Sunrise-Edit
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-science-lead
+  # Sunrise-End
   access:
   - Research
   - Command
@@ -22,12 +30,15 @@
   - ResearchDirector
   - Brig
   - Cryogenics
+  - ResearchConsoleAccess # Sunrise-Edit
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ DeathRattleImplantBlueShield ] # Sunrise-Edit
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  speciesBlacklist:
+  - Vox # Sunrise-Edit
 
 - type: startingGear
   id: ResearchDirectorGear

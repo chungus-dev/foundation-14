@@ -386,14 +386,14 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    unlitIdleState: unlit
-    unlitRunningState: unlit-building
     staticPacks:
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
-    - SecurityAmmoStatic
+    #- SecurityAmmoStatic
     - SecurityWeaponsStatic
+    - SecurityStaticSunrise # Sunrise-Add
     dynamicPacks:
+    - SecurityDynamicWeaponsScp # Fire added
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
     - SecurityEquipment
@@ -402,6 +402,9 @@
     - SecurityAmmo
     - SecurityWeapons
     - SecurityDisablers
+    - SecurityDynamicSunrise # Sunrise-Add
+    - SecurityDynamicSunriseClothing # Sunrise-Add
+    - SecurityDynamicSunriseMech # Sunrise-Add
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SyndicateAmmoStatic
@@ -410,6 +413,20 @@
   - type: OreSiloClient
   - type: LatheAnnouncing
     channels: [Security]
+  # sunrise-start
+  - type: BlueprintReceiver
+    whitelist:
+      tags:
+      - BlueprintAutolathe
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      blueprint: !type:Container
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - blueprint
+  # sunrise-end
 
 - type: entity
   id: AmmoTechFab
@@ -523,6 +540,8 @@
     - Scarves
     - Carpets
     - Bedsheets
+    - UniformStaticSunrise # Sunrise-Add
+    - ShoulderPatch # Fire Edit
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm
@@ -666,6 +685,8 @@
   name: cutter machine
   description: This is a cutter. It cuts. Add variety to your station floor with eye-pleasing patterns! Don't stick your fingers in.
   components:
+  - type: Transform
+    noRot: false
   - type: Sprite
     sprite: Structures/Machines/cuttermachine.rsi
     snapCardinals: true
@@ -684,21 +705,7 @@
     idleState: icon
     runningState: building
     staticPacks:
-    - FloorDarkTilesStatic
-    - FloorSteelTilesStatic
-    - FloorWhiteTilesStatic
-    - FloorMaintsTilesStatic
-    - FloorIndustrialTilesStatic
-    - FloorWoodTilesStatic
-    - FloorConcreteTilesStatic
-    - CircuitFloorsStatic
-    - FloorMarbleTilesStatic
-    - FloorShuttleTilesStatic
-    - PlasticTilesStatic
-    - CarpetTilesStatic
-    - PreciousTilesStatic
-    dynamicPacks:
-    - FauxTiles
+    - ScpFloorTilesStatic # Fire Edit
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient

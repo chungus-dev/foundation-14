@@ -22,7 +22,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,-0.36"
+          bounds: "-0.46,-0.46,0.46,-0.36" # Sunrise edit - фикс двойных шлюзов
         density: 1500
         mask:
         - TabletopMachineMask
@@ -175,10 +175,11 @@
   - type: StaticPrice
     price: 150
   - type: PryUnpowered
+  # Fire edit start
   - type: Tag
     tags:
-      - DoorRemoteWhitelist
-      # This tag is used by door remotes to allow or not a door remote to normally be able to interact with a door
+    - Windoor
+  # Fire edit end
 
 - type: entity
   id: BaseSecureWindoor

@@ -1,6 +1,35 @@
 - type: accessGroup
   id: AllAccess
   tags:
+  # Fire added start - новые доступы
+  - Administration
+  - ComplexDirector
+  - ScientificServiceDirector
+  - SecurityCommander
+  - ChiefTechnicalSpecialist
+  - PersonnelOfficer
+  - HeadOfMedicalSector
+  - SeniorLogisticsOfficer
+  - EthicsCommittee
+  - InternalTribunalService
+  - LifeSupport
+  - Laboratory
+  - Checkpoint
+  - Exit
+  - NuclearWarhead
+  - Logistics
+  - AI
+  - Safe
+  - Euclid
+  - Keter
+  - ClassDCanteen
+  - ClassDJanitor
+  - MTF
+  - ChaosInsurgency
+  - ThirdParty
+  - O5
+  - Bunker
+  # Fire added end
   - EmergencyShuttleRepealAll
   - Captain
   - HeadOfPersonnel
@@ -28,12 +57,22 @@
   - Theatre
   - Bar
   - Chemistry
+  - Paramedic # Sunrise-edit
   - Kitchen
   - Chapel
   - Hydroponics
   - Atmospherics
   - GenpopEnter
   - GenpopLeave
+  - Magistrat  # Sunrise-edit
+  - BlueShield  # Sunrise-edit
+  - BlueShieldEnsign  # Sunrise-edit
+  - Ntrep  # Sunrise-edit
+  - Barber  # Sunrise-edit
+  - Mail  # Sunrise-edit
+  - Mining  # Sunrise-edit
+  - CargoPurchaseAccess  # Sunrise-edit
+  - ResearchConsoleAccess  # Sunrise-edit
 
 - type: accessGroup
   id: General

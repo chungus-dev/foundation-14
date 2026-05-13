@@ -460,7 +460,7 @@
           tags:
           - Write
   - type: CargoOrderConsole
-    removeLimitAccess: [ "Quartermaster" ]
+    removeLimitAccess: [ "SeniorLogisticsOfficer" ] # Fire edit
   - type: ActivatableUI
     verbText: qm-clipboard-computer-verb-text
     key: enum.CargoConsoleUiKey.Orders
@@ -480,3 +480,5 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: BoxFolderQmClipboard
+  - type: AccessReader #Sunrise-edit
+    access: [["Logistics"]] # Fire edit

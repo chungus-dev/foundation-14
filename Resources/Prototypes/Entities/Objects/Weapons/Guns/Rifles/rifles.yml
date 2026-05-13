@@ -1,10 +1,15 @@
 - type: entity
   name: BaseWeaponRifle
-  parent: [BaseItem, BaseGunWieldable]
+  parent: [BaseItem, BaseGunWieldable, GunMedium]
   id: BaseWeaponRifle
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  # Fire added start
+  - type: BloodSplatterer
+    amount: 1, 3
+    probability: 0.5
+  # Fire added end
   - type: Sprite
   - type: Item
     size: Huge
@@ -17,7 +22,14 @@
     - Back
     - suitStorage
   - type: AmmoCounter
+  - type: GunWieldBonus # Sunrise-start
+    minAngle: -20
+    maxAngle: -45
   - type: Gun
+    minAngle: 23
+    maxAngle: 90
+    angleIncrease: 1.25
+    angleDecay: 20  # Sunrise-end
     fireRate: 5
     selectedMode: FullAuto
     availableModes:
@@ -32,7 +44,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineLightRifle
+        startingItem: MagazineLightRifleSP
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
@@ -42,6 +54,7 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
+        startingItem: CartridgeLightRifleSP
         priority: 1
         whitelist:
           tags:
@@ -52,6 +65,27 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+  # Sunrise start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: RiflesPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: RiflesDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: RiflesDrop
+  - type: KnockbackByUserTag
+    doestContain:
+      Resomi:
+        knockback: 0.1
+      Felinid:
+        knockback: 0.1
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 1
+    pvsIncrease: 0.1
+  # Sunrise end
 
 - type: entity
   name: AKMS

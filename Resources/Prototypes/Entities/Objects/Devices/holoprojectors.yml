@@ -151,21 +151,23 @@
 - type: entity
   parent: Holoprojector
   id: HoloprojectorSecurity
+  categories: [ HideSpawnMenu ] # Fire edit
   name: holobarrier projector
   description: Creates a solid but fragile holographic barrier.
   components:
-  - type: HolosignProjector
-    signProto: HolosignSecurity
-    chargeUse: 90
-  - type: Sprite
-    sprite: Objects/Devices/Holoprojectors/security.rsi
-    state: icon
-  - type: Tag
-    tags:
-    - HolofanProjector
-    - SecBeltEquip
-  - type: StaticPrice
-    price: 50
+    - type: HolosignProjector
+      signProto: HolosignSecurity
+      chargeUse: 90
+      countPerTileLimit: 2   # Sunrise - Added
+    - type: Sprite
+      sprite: Objects/Devices/Holoprojectors/security.rsi
+      state: icon
+    - type: Tag
+      tags:
+        - HolofanProjector
+        - SecBeltEquip
+    - type: StaticPrice
+      price: 50
 
 - type: entity
   parent: HoloprojectorSecurity

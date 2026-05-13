@@ -1,14 +1,22 @@
 - type: species
   id: Diona
   name: species-name-diona
-  roundStart: true
+  roundStart: false # Fire edit
+  stationRecordsHidden: true # Fire added
   prototype: MobDiona
+  bodyTypes:
+  - DionaNormal
   defaultSkinTone: "#cdb369"
-  dollPrototype: AppearanceDiona
+  markingLimits: MobDionaMarkingLimits
+  dollPrototype: MobDionaDummy
   skinColoration: Hues
   maleFirstNames: NamesDionaFirst
   femaleFirstNames: NamesDionaFirst
-  lastNames: NamesDionaLast
+  maleLastNames: NamesDionaLast # Russian-LastnameGender
+  femaleLastNames: NamesDionaLast # Russian-LastnameGender
   naming: TheFirstofLast
-  sexes:
-  - Unsexed
+  # Sunrise-Edit
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: diona
+

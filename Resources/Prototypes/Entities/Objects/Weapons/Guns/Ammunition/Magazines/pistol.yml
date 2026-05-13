@@ -265,14 +265,18 @@
       - state: inhand-right-stripe
         color: "#00cd42"
 
-- type: entity
-  parent: BaseMagazinePistolSubMachineGun
+- type: entity #  Sunrise-Edit
   id: MagazinePistolSubMachineGun
-  name: SMG magazine (.35 auto)
+  categories: [ HideSpawnMenu ] # Fire edit
+  name: SMG magazine (.35 auto SP)
+  parent: BaseMagazinePistolSubMachineGun
   description: 30-round double-stack magazine for submachine guns. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistol
+    proto: CartridgePistolSP # Sunrise-Edit
+    whitelist:
+      tags:
+        - CartridgePistol
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
   - type: Sprite
@@ -281,12 +285,18 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+    - state: stripe
+      color: "#575EF5"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#575EF5"
       right:
       - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#575EF5"
 
 - type: entity
   parent: BaseMagazinePistolSubMachineGun
@@ -460,3 +470,64 @@
       - state: inhand-right-mag
       - state: inhand-right-stripe
         color: "#dbdbdb"
+
+- type: entity
+  id: MagazinePistolHighCapacityRubber
+  categories: [ HideSpawnMenu ] # Fire edit
+  name: machine pistol magazine (.35 auto rubber)
+  parent: BaseMagazinePistolHighCapacity
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolRubber
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: stripe
+      color: "#00c1b8"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#00c1b8"
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#00c1b8"
+
+- type: entity
+  id: MagazinePistolSubMachineGunRubber
+  categories: [ HideSpawnMenu ] # Fire edit
+  name: SMG magazine (.35 auto rubber)
+  parent: BaseMagazinePistolSubMachineGun
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 30
+    proto: CartridgePistolRubber
+    whitelist:
+      tags:
+      - CartridgePistol
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: stripe
+      color: "#00c1b8"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#00c1b8"
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#00c1b8"
+

@@ -1,7 +1,9 @@
 - type: marking
   id: CatEars
   bodyPart: Special
-  groupWhitelist: [Human]
+  markingCategory: Special
+  speciesRestriction: [Felinid] # Fire edit
+  sponsorOnly: false
   coloring:
     default:
       type:
@@ -23,7 +25,9 @@
 - type: marking
   id: CatTail
   bodyPart: Tail
-  groupWhitelist: [Human]
+  markingCategory: Tail
+  sponsorOnly: false
+  speciesRestriction: [Felinid] # Fire edit
   coloring:
     default:
       type:
@@ -35,4 +39,4 @@
         - !type:SkinColoring
   sprites:
   - sprite: Mobs/Customization/cat_parts.rsi
-    state: tail_cat
+    state: tail_cat_wag # Sunrise-Sponsors

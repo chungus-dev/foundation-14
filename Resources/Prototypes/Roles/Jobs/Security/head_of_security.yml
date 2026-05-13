@@ -6,7 +6,7 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 3h
+      time: 1h
     - !type:RoleTimeRequirement
       role: JobDetective
       time: 1h # knowing how to use the tools is important
@@ -21,13 +21,23 @@
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain
   canBeAntag: false
+  radioBold: true # Sunrise-Edit
+  displayWeight: 80 # Sunrise-Edit
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-security-chief
+  - job-alt-title-law-enforcement-chief
+  - job-alt-title-station-sheriff
+  # Sunrise-End
   access:
   - HeadOfSecurity
   - Command
   - Brig
   - Security
   - Armory
-  - Maintenance
+  # - Maintenance # Sunrise-Edit
   - External
   - Detective
   - Cryogenics
@@ -35,10 +45,12 @@
   - GenpopLeave
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, DeathRattleImplantBlueShield ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  speciesBlacklist:
+  - Vox # Sunrise-Edit
 
 - type: startingGear
   id: HoSGear

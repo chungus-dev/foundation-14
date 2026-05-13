@@ -135,6 +135,7 @@
     - ViroDrobeInventory
     - WinterDrobeInventory
     - CuraDrobeInventory
+    - ChefDrobeInventoryDClass # Fire Edit
   - type: Sprite
     layers:
     - state: base
@@ -314,7 +315,7 @@
   components:
   - type: VendingMachineRestock
     canRestock:
-    - PTechInventory
+    - ScpPTechInventory # Fire edit
   - type: Sprite
     layers:
     - state: base

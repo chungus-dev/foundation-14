@@ -1,22 +1,27 @@
 - type: entity
-  parent: MarkerBase
   id: RandomVendingSnacks
   name: random vending machine spawner
   suffix: Snacks
+  parent: MarkerBase
   components:
   - type: Sprite
     layers:
-    - state: red
-    - sprite: Structures/Machines/VendingMachines/random.rsi
-      state: snack
-  - type: EntityTableSpawner
-    table: !type:GroupSelector
-      children:
-      - id: VendingMachineDiscount
-      - id: VendingMachineSnack
-      - id: VendingMachineSnackBlue
-      - id: VendingMachineSnackGreen
-      - id: VendingMachineSnackOrange
-      - id: VendingMachineSnackTeal
-      - id: VendingMachineChang
-      - id: VendingMachineDonut
+      - state: red
+      - sprite: Structures/Machines/VendingMachines/random.rsi
+        state: snack
+  - type: RandomSpawner
+  # Fire edit start
+    rarePrototypes:
+    - Scp261
+    rareChance: 0.03
+  # Fire edit end
+    prototypes:
+      - VendingMachineDiscount
+      - VendingMachineSnack
+      - VendingMachineSnackBlue
+      - VendingMachineSnackGreen
+      - VendingMachineSnackOrange
+      - VendingMachineSnackTeal
+      - VendingMachineChang
+      - VendingMachineDonut
+    chance: 1

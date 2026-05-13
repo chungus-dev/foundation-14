@@ -39,11 +39,21 @@
         layer:
         - MachineLayer
   - type: EntityStorage
+    maxSize: 1.05 # Sunrise edit - неправильные спрайты в ящиках (#3611)
+    # Fire edit start
+    whitelist:
+      components:
+      - MobState
+      - Item
+    blacklist:
+      components:
+      - Scp
+    # Fire edit end
   - type: PlaceableSurface
     isPlaceable: false # defaults to closed.
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Metallic
+    damageModifierSet: StructuralMetallic
   - type: Destructible
     thresholds:
     - trigger:

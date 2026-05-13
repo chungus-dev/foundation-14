@@ -2,6 +2,7 @@
   id: ImmovableRod
   name: immovable rod
   description: You can sense that it's hungry. That's usually a bad sign.
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: Clickable
   - type: InteractionOutline
@@ -15,6 +16,7 @@
   - type: GravityAffected
   - type: Physics
     bodyType: Dynamic
+    linearDamping: 0
   - type: TileFrictionModifier
     modifier: 0
   - type: PointLight
@@ -40,17 +42,19 @@
       - GhostOnlyWarp
 
 - type: entity
-  parent: ImmovableRod
   id: ImmovableRodDespawn
   suffix: Despawn
+  parent: ImmovableRod
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: TimedDespawn
     lifetime: 30.0
 
 - type: entity
-  parent: ImmovableRodDespawn
   id: ImmovableRodSlow
+  parent: ImmovableRodDespawn
   suffix: Slow
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: ImmovableRod
     minSpeed: 1
@@ -70,6 +74,7 @@
   parent: ImmovableRod
   id: ImmovableRodWizard
   suffix: Wizard
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: ImmovableRod
     maxSpeed: 25
@@ -106,6 +111,7 @@
   id: ImmovableRodMop
   name: immovable mop
   description: Hurled like a javelin, with the power of a thousand furious janitors.
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: Sprite
     sprite: Objects/Specific/Janitorial/mop.rsi
@@ -118,6 +124,7 @@
   id: ImmovableRodShark
   name: immovable shark
   description: SHARK TORNADO!
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: Sprite
     sprite: Objects/Fun/Plushies/shark.rsi
@@ -130,6 +137,7 @@
   id: ImmovableRodClown
   name: immovable clown
   description: Ejected from the neighbouring station one solar system over. HONK!
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: Sprite
     sprite: Markers/jobs.rsi
@@ -142,6 +150,7 @@
   id: ImmovableRodBanana
   name: immovable banana
   description: At least you won't slip on it.
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/banana.rsi
@@ -153,6 +162,7 @@
   id: ImmovableRodHammer
   name: immovable hammer
   description: Bwoink.
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: Sprite
     sprite: Objects/Weapons/Melee/sledgehammer.rsi
@@ -165,6 +175,7 @@
   id: ImmovableRodThrongler
   name: immovable throngler
   description: If you catch it, you can keep it.
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: Sprite
     sprite: Objects/Weapons/Melee/Throngler2.rsi
@@ -177,6 +188,7 @@
   id: ImmovableRodGibstick
   name: immovable gibstick
   description: What did you expect?
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: Sprite
     sprite: Objects/Weapons/Melee/debug.rsi
@@ -189,6 +201,7 @@
   id: ImmovableRodWeh
   name: immovable weh
   description: WEH!
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: Sprite
     sprite: Objects/Fun/Plushies/lizard.rsi

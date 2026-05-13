@@ -1,0 +1,22 @@
+- type: weather
+  id: SnowfallLight
+  sprite:
+    sprite: /Textures/Effects/weather.rsi
+    state: snowfall_light
+  # sound: # Fire Edit
+  #   path: /Audio/Effects/Weather/snowstorm_weak.ogg
+  #   params:
+  #     loop: true
+  #     volume: -6
+
+- type: weather
+  id: SnowfallMedium
+  sprite:
+    sprite: /Textures/Effects/weather.rsi
+    state: snowfall_med
+  sound:
+    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    params:
+      loop: true
+      volume: -12 # Fire Edit
+

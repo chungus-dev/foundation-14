@@ -497,7 +497,8 @@
 - type: marking
   id: MothRArmFan
   bodyPart: RArm
-  groupWhitelist: [Moth]
+  markingCategory: Arms
+  speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: fan_r_arm

@@ -73,13 +73,15 @@
     suffix: false
 
 - type: entity
-  parent: BaseGrenade
   id: GrenadeBlast
-  name: blast grenade
+  categories: [ HideSpawnMenu ] # Fire edit
+  name: contact blast grenade
+  parent: BaseGrenade
   components:
   - type: CartridgeAmmo
     proto: BulletGrenadeBlast
   - type: Sprite
+    scale: 0.9,0.85 # Sunrise-Edit
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     layers:
     - state: blast
@@ -141,13 +143,15 @@
     suffix: false
 
 - type: entity
-  parent: BaseGrenade
   id: GrenadeEMP
-  name: EMP grenade
+  categories: [ HideSpawnMenu ] # Fire edit
+  name: contact EMP grenade
+  parent: BaseGrenade
   components:
   - type: CartridgeAmmo
-    proto: BulletGrenadeEMP
+    proto: BulletGrenadeEMP # Sunrise-edit
   - type: Sprite
+    scale: 1.35,1.1 # Sunrise-Edit
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     layers:
     - state: emp

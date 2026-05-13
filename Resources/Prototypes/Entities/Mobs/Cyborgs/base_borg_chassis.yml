@@ -36,6 +36,7 @@
   - type: Sprite
     sprite: Mobs/Silicon/chassis.rsi
   - type: RotationVisuals
+    defaultRotation: 90 # Sunrise-Edit
     horizontalRotation: 90
   - type: MobState
     allowedStates:
@@ -60,6 +61,7 @@
       - Piercing
       - Heat
       - Shock
+      - Mangleness #Sunrise-Edit
     locPrefix: silicon
   - type: UserInterface
     interfaces:
@@ -73,16 +75,19 @@
       # Only used for NT borgs that can switch type, defined here to avoid copy-pasting the rest of this component.
       enum.BorgSwitchableTypeUiKey.SelectBorgType:
         type: BorgSelectTypeUserInterface
+      enum.BorgVoiceUiKey.Key:
+        type: BorgVoiceBoundUserInterface
   - type: ActivatableUI
     key: enum.BorgUiKey.Key
   - type: SiliconLawBound
   - type: ActionGrant
     actions:
     - ActionViewLaws
+    - ActionChangeBorgVoice
   - type: EmagSiliconLaw
     stunTime: 5
   - type: SiliconLawProvider
-    laws: Crewsimov
+    laws: ScpDefault # Fire edit
   - type: Inventory
     templateId: borg
   - type: Hands
@@ -95,25 +100,42 @@
     channels:
     - Binary
     - Common
-    - Science
+    - ScientificService # Fire edit
   - type: ActiveRadio
     channels:
     - Binary
     - Common
-    - Science
+    - ScientificService # Fire edit
   - type: ZombieImmune
+
   - type: Repairable
-    damageValue: -10 # 10 seconds to repair from crit
+    #damageValue: -10 # 10 seconds to repair from crit # Sunrise-Edit
     doAfterDelay: 1
     fuelCost: 0.5
     allowSelfRepair: false
+  # Sunrise-Start
+    damage:
+      groups:
+        Brute: -10
+      types:
+        Heat: -5
+        Shock: -5
+        Caustic: -5
+        Structural: -10
+        Mangleness: 1
+  - type: Loadout
+    prototypes: [ BorgArmorSiliconLoadout ]
+  # Sunrise-End
   - type: BorgChassis
+  - type: BorgVoice # Sunrise-TTS: Allow cyborgs to change their voice
   - type: LockingWhitelist
     blacklist:
       components:
       - BorgChassis
       - RoboticsConsole
   - type: WiresPanel
+    openingTool: Prying
+    openDelay: 3
   - type: ActivatableUIRequiresPanel
   - type: NameIdentifier
     group: Silicon
@@ -139,6 +161,7 @@
   - type: StatusEffects
     allowed:
     - Flashed
+    - Flip # Sunrise-Edit
   - type: TypingIndicator
     proto: robot
   - type: Speech
@@ -168,6 +191,7 @@
   - type: LockedWiresPanel
   - type: Damageable
     damageContainer: Silicon
+    damageModifierSet: Silicon # Sunrise-Edit
   - type: Destructible
     thresholds:
     - trigger:
@@ -223,7 +247,8 @@
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-    radius: 4
+    energy: 2 # Sunrise-edit
+    radius: 12 # Sunrise-edit
     netsync: false
   - type: Pullable
   - type: Puller
@@ -236,6 +261,7 @@
     - CanPilot
     - SiliconEmotes
     - Unimplantable
+    - NoPaint # Sunrise-Add
   - type: Emoting
   - type: GuideHelp
     guides:
@@ -246,12 +272,22 @@
     damageProtection:
       flatReductions:
         Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
-  - type: BypassLock
-    openWiresPanel: true
-  - type: BypassLockRequiresMobState
-    requiredMobState:
-    - Critical
-    - Dead
+  # Sunrise-start
+  - type: TTS
+    voice: Portal2FactCore
+  - type: Climbing
+  - type: BorgMagboots
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: Strap
+    position: Stand
+    buckleOffsets: # Sunrise-Edit
+    - "0,0.15"
+  - type: Stripping
+    useDragDrop: false
+  - type: CyborgSparkEffect
+  - type: MechVulnerableToEMP
+  # Sunrise-end
 
 - type: entity
   abstract: true
@@ -323,17 +359,34 @@
     factions:
     - NanoTrasen
   - type: Access
+    enabled: false
+  # Fire edit start - новые доступы
     groups:
-    - AllAccess
+    - MedicalHeadless
+    - EngineeringHeadless
+    - LogisticsHeadless
+    - ServiceHeadless
     tags:
-    - Borg
+    - Research
+    - Checkpoint
+    - AI
+
   - type: AccessReader
-    access: [["Command"], ["Research"]]
+    access: [["Administration"], ["Research"]]
+  # Fire edit end
   - type: ShowJobIcons
-  - type: ShowCrewIcons
   - type: InteractionPopup
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  # Sunrise-Start
+  - type: StationAiVision
+    range: 3
+  - type: InnateItem
+    instantActions:
+    - HandheldStationMapUnpowered
+  - type: BorgCrewManifestViewer
+  - type: StationRecordKeyStorage
+  # Sunrise-End
 
 - type: entity
   id: BaseBorgChassisSyndicate

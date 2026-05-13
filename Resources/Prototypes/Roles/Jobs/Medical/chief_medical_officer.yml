@@ -19,7 +19,15 @@
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain
-  canBeAntag: false
+  canBeAntag: true # Sunrise-Edit
+  radioBold: true # Sunrise-Edit
+  displayWeight: 60 # Sunrise-Edit
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-head-physician
+  # Sunrise-End
   access:
   - Medical
   - Command
@@ -30,10 +38,12 @@
   - Cryogenics
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ DeathRattleImplantBlueShield ] # Sunrise-Edit
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  speciesBlacklist:
+  - Vox # Sunrise-Edit
 
 - type: startingGear
   id: CMOGear

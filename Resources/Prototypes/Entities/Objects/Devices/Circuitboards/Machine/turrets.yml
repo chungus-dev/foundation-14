@@ -9,7 +9,7 @@
     sprite: Objects/Misc/module.rsi
     state: security
   - type: MachineBoard
-    prototype: WeaponEnergyTurretStation
+    prototype: WeaponEnergyTurretStationBase # Fire edit
     tagRequirements:
       TurretCompatibleWeapon:
         amount: 1

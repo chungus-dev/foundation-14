@@ -6,15 +6,23 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 4h
+      time: 2.5h
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
   canBeAntag: false
+  displayWeight: 10
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-law-enforcer
+  - job-alt-title-security-specialist
+  # Sunrise-End
   access:
   - Security
   - Brig
-  - Maintenance
+  # - Maintenance # Sunrise-Edit
   - External
   - Cryogenics
   special:

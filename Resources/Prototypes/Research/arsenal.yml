@@ -9,9 +9,12 @@
   discipline: Arsenal
   tier: 1
   cost: 5000
+  defaultToScpScale: 0.0 # Fire Edit
   recipeUnlocks:
   - WeaponProtoKineticAccelerator
   - ShuttleGunKineticCircuitboard
+  - MechEquipmentKineticAccelerator # Sunrise-Add
+  - BorgModuleMiningCombat # Sunrise-Add
   # These are roundstart but not replenishable for salvage
 
 - type: technology
@@ -23,6 +26,7 @@
   discipline: Arsenal
   tier: 1
   cost: 10000
+  defaultToScpScale: 0.1 # Fire Edit
   recipeUnlocks:
   - BoxShotgunIncendiary
   - MagazineRifleIncendiary
@@ -35,6 +39,15 @@
   - MagazineBoxMagnumIncendiary
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxRifleIncendiary
+  - MagazinePistolSubMachineGunTopMountedIncendiary #Sunrise-Add
+  - MagazinePistolHighCapacityIncendiary # Sunrise-Add
+  - MagazineRifleHeavyIncendiary # Sunrise-Add
+  - MagazineBoxHeavyRifleIncendiary # Sunrise-Add
+  - MagazineRifleBoxIncendiary # Sunrise-Add
+  - MagazineLightRifleBeltBoxIncendiary # Sunrise-Add
+  - SpeedLoaderShotgunIncendiary # Sunrise-Add
+  radioChannels: # Sunrise-Add
+  - Security
 
 - type: technology
   id: WeaponizedLaserManipulation
@@ -45,44 +58,69 @@
   discipline: Arsenal
   tier: 1
   cost: 7500
+  defaultToScpScale: 0.5 # Fire Edit
   recipeUnlocks:
   - WeaponLaserCarbine
+  # Sunrise-Start
+  - WeaponMechCombatFiredartLaser
+  - WeaponEnergyGun
+  - WeaponMiniEnergyGun
+  # Sunrise-End
 
 - type: technology
   id: NonlethalAmmunition
   name: research-technology-nonlethal-ammunition
   icon:
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi
     state: beanbag
   discipline: Arsenal
   tier: 1
   cost: 5000
+  defaultToScpScale: 0.0 # Fire Edit
   recipeUnlocks:
   - MagazineShotgunBeanbag
   - BoxShellTranquilizer
   - BoxBeanbag
   - WeaponDisabler
+  # Sunrise-Start
+  - WeaponMechCombatDisabler
+  - MagazinePistolSubMachineGunTopMountedRubber
+  - MagazinePistolSubMachineGunRubber
+  # Sunrise-End
+  radioChannels: # Sunrise-Add
+  - Security
 
 - type: technology
   id: UraniumMunitions
   name: research-technology-uranium-munitions
   icon:
-    sprite: Objects/Materials/Sheets/other.rsi
+    sprite: _Scp/Objects/Materials/Sheets/other.rsi # Fire Edit
     state: uranium
   discipline: Arsenal
   tier: 1
   cost: 7500
+  defaultToScpScale: 0.3 # Fire Edit
   recipeUnlocks:
   - MagazineRifleUranium
   - MagazinePistolUranium
   - MagazinePistolSubMachineGunUranium
   - MagazineLightRifleUranium
   - SpeedLoaderMagnumUranium
+  - MagazineMagnumUranium
   - MagazineBoxPistolUranium
   - MagazineBoxMagnumUranium
   - MagazineBoxLightRifleUranium
   - MagazineBoxRifleUranium
   - BoxShotgunUranium
+  - MagazinePistolSubMachineGunTopMountedUranium #Sunrise-Add
+  - MagazinePistolHighCapacityUranium # Sunrise-Add
+  - MagazineRifleHeavyUranium # Sunrise-Add
+  - MagazineBoxHeavyRifleUranium # Sunrise-Add
+  - MagazineRifleBoxUranium # Sunrise-Add
+  - MagazineLightRifleBeltBoxUranium # Sunrise-Add
+  - SpeedLoaderShotgunUranium # Sunrise-Add
+  radioChannels: # Sunrise-Add
+  - Security
 
 - type: technology
   id: AdvancedRiotControl
@@ -93,11 +131,18 @@
   discipline: Arsenal
   tier: 1
   cost: 8000
+  defaultToScpScale: 0.0 # Fire Edit
   recipeUnlocks:
   - Truncheon
   - TelescopicShield
-  - HoloprojectorSecurity
+  # - HoloprojectorSecurity #Fire-Station
   - WeaponDisablerSMG
+  - FlareGunSecurityUpgrade # Sunrise-Add
+  - VestSecUpgradePlate # Sunrise-Add
+  - VestSecUpgradeStab # Sunrise-Add
+  - VestSecUpgradeHeat # Sunrise-Add
+  radioChannels: # Sunrise-Add
+  - Security
 
 - type: technology
   id: ExplosiveTechnology
@@ -108,6 +153,7 @@
   discipline: Arsenal
   tier: 1
   cost: 10000
+  defaultToScpScale: 0.1 # Fire Edit
   recipeUnlocks:
   - SignallerAdvanced
   - SignalTrigger
@@ -128,6 +174,7 @@
   discipline: Arsenal
   tier: 1
   cost: 5000
+  defaultToScpScale: 0.1 # Fire Edit
   recipeUnlocks:
   - ClothingBackpackElectropack
 
@@ -142,8 +189,10 @@
   discipline: Arsenal
   tier: 2
   cost: 10000
+  defaultToScpScale: 0.5 # Fire Edit
   recipeUnlocks:
   - WeaponLaserCannon
+  - WeaponMechCombatSolarisLaser #Sunrise-Add
 
 - type: technology
   id: WaveParticleHarnessing
@@ -154,8 +203,10 @@
   discipline: Arsenal
   tier: 2
   cost: 10000
+  defaultToScpScale: 0.5 # Fire Edit
   recipeUnlocks:
   - WeaponXrayCannon
+  - WeaponMechCombatXray  #Sunrise-Add
 
 - type: technology
   id: KineticModifications
@@ -216,9 +267,14 @@
   discipline: Arsenal
   tier: 3
   cost: 15000
+  defaultToScpScale: 0.5 # Fire Edit
   recipeUnlocks:
   - WeaponAdvancedLaser
   - PortableRecharger
+  - WeaponMechCombatImmolationGun # Sunrise-Add
+  - WeaponMechCombatIon # Sunrise-Add
+  radioChannels: # Sunrise-Add
+  - Security
 
 - type: technology
   id: ThermalWeaponry
@@ -227,8 +283,9 @@
     sprite: Objects/Weapons/Guns/Battery/temp_gun.rsi
     state: icon
   discipline: Arsenal
-  tier: 3
-  cost: 15000
+  tier: 2
+  cost: 8000
+  defaultToScpScale: 0.5 # Fire Edit
   recipeUnlocks:
   - WeaponTemperatureGun
 
@@ -241,9 +298,30 @@
   discipline: Arsenal
   tier: 3
   cost: 15000
+  defaultToScpScale: 0.3 # Fire Edit
   recipeUnlocks:
-  - GrenadeEMP
+  - ShellEMPArtillery # Sunrise-Edit
   - PowerCageHigh
   - ShuttleGunDusterCircuitboard
+  # Sunrise-start
+  - ComputerGunneryCircuitboard
+  - ShuttleGunLongbowCircuitboard
+  - ShuttleGunVympelCircuitboard
+  - ShuttleGunTeslaOrionCircuitboard
+  - ShuttleGunBeamstormMachineGunCircuitboard
+  - MagazineBauer127
+  #- MagazineBauer127Penetrator # To much
+  #- MagazineBauer127Blast # To much
+  - MagazineBauer127Frag
+  - MagazineBauer127Emp
+  - MagazineBoxBelt127Empty
+  #- MagazineBoxBelt127 # To much
+  - MagazineBoxBelt127Artillery
+  #- MagazineBoxBelt127Blast # To much
+  - MagazineBoxBelt127Frag
+  - MagazineBoxBelt127Emp
+  # Sunrise-end
   technologyPrerequisites:
   - BasicShuttleArmament
+  radioChannels: # Sunrise-Add
+  - Security

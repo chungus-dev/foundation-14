@@ -189,6 +189,7 @@
   parent: TelecomServer
   id: TelecomServerFilled
   suffix: Filled All
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: ContainerFill
     containers:
@@ -201,12 +202,17 @@
       - EncryptionKeySecurity
       - EncryptionKeyService
       - EncryptionKeyCommand
+      - EncryptionKeyLaw # Sunrise-Edit
+      - EncryptionKeyBlueShield # Sunrise-Edit
 
 - type: entity
   parent: TelecomServer
   id: TelecomServerFilledCommon
   suffix: Common
   components:
+  # Fire added start
+  - type: ScpAnnounceOnSpawnSource
+  # Fire added end
   - type: ContainerFill
     containers:
       key_slots:
@@ -216,6 +222,7 @@
   parent: TelecomServer
   id: TelecomServerFilledCargo
   suffix: Cargo
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: ContainerFill
     containers:
@@ -226,6 +233,7 @@
   parent: TelecomServer
   id: TelecomServerFilledEngineering
   suffix: Engineering
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: ContainerFill
     containers:
@@ -236,6 +244,7 @@
   parent: TelecomServer
   id: TelecomServerFilledMedical
   suffix: Medical
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: ContainerFill
     containers:
@@ -246,6 +255,7 @@
   parent: TelecomServer
   id: TelecomServerFilledScience
   suffix: Science
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: ContainerFill
     containers:
@@ -256,6 +266,7 @@
   parent: TelecomServer
   id: TelecomServerFilledSecurity
   suffix: Security
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: ContainerFill
     containers:
@@ -266,6 +277,7 @@
   parent: TelecomServer
   id: TelecomServerFilledService
   suffix: Service
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: ContainerFill
     containers:
@@ -276,6 +288,7 @@
   parent: TelecomServer
   id: TelecomServerFilledCommand
   suffix: Command
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: ContainerFill
     containers:

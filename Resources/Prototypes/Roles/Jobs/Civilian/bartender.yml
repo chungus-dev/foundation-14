@@ -10,6 +10,13 @@
   startingGear: BartenderGear
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-mixologist
+  - job-alt-title-barista
+  # Sunrise-End
   access:
   - Service
   - Maintenance

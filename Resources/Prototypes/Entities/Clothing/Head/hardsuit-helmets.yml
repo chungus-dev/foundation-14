@@ -293,6 +293,7 @@
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSecurity
+  categories: [ HideSpawnMenu ] # Fire edit
   name: security hardsuit helmet
   description: Armored hardsuit helmet for security needs.
   components:
@@ -314,7 +315,9 @@
         Heat: 0.9
   - type: Tag
     tags:
+    - CorgiWearable
     - WhitelistChameleon
+  - type: FlashImmunity # Sunrise-Edit
 
 #Brigmedic Hardsuit
 - type: entity

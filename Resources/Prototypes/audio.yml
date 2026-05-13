@@ -21,10 +21,12 @@
   sound:
     params:
       volume: -12
-    collection: AmbienceHoly
+    collection: FireAmbienceMedical # Fire
+  interruptable: true
   rules: NearPrayable
   priority: 4
 
+# Departments
 - type: ambientMusic
   id: Train
   sound:
@@ -40,9 +42,13 @@
   sound:
     params:
       volume: -12
-    collection: AmbienceMedical
+    collection: FireAmbienceMedical # Fire
+  fadeIn: true
+  interruptable: true
   rules: NearMedical
   priority: 3
+
+# General areas
 
 - type: ambientMusic
   id: Engineering
@@ -91,7 +97,9 @@
   sound:
     params:
       volume: -12
-    collection: AmbienceGeneral
+    collection: FireAmbienceGeneral # Fire
+  fadeIn: true
+  interruptable: true
   rules: AlwaysTrue
 
 # Sound collections
@@ -279,7 +287,7 @@
       ignoreAnchored: true
       percent: 0.25
       tiles:
-        - Plating
+        - ScpPlating # Fire Edit
       range: 2
 
 - type: rules
@@ -299,7 +307,9 @@
       ignoreAnchored: true
       percent: 0.5
       tiles:
-      - FloorWhite
+      - ScpFloorWhite # Fire
+      - ScpFloorWhiteMini # Fire
+      - ScpFloorWhiteMini # Fire
       range: 3
 
 - type: rules

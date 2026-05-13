@@ -3,6 +3,7 @@
   parent: BaseStructure
   name: high security door
   description: Keeps the bad out and keeps the good in.
+  categories: [ HideSpawnMenu ] # Fire added
   placement:
     mode: SnapgridCenter
   components:
@@ -13,9 +14,9 @@
   - type: StationAiWhitelist
   - type: InteractionOutline
   - type: Sprite
-    snapCardinals: true
     sprite: Structures/Doors/Airlocks/highsec/highsec.rsi
     layers:
+    #- snapCardinals: true # Sunrise-edit
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: closed_unlit
@@ -53,7 +54,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,0.49" # don't want this colliding with walls or they won't close
+          bounds: "-0.46,-0.46,0.46,0.46" # Sunrise - edit: don't want this colliding with walls or they won't close
         density: 100
         mask:
         - FullTileMask
@@ -70,15 +71,16 @@
       types:
         Blunt: 50
     openSound:
-      path: /Audio/Machines/airlock_open.ogg
+      collection: AirlockDefaultOpen # Fire
     closeSound:
-      path: /Audio/Machines/airlock_close.ogg
+      collection: AirlockDefaultClose # Fire
     denySound:
-      path: /Audio/Machines/airlock_deny.ogg
+      path: /Audio/_Scp/Objects/Machines/Airlocks/deny.ogg # Fire
   - type: Weldable
     fuel: 10
     time: 10
   - type: Airlock
+    openUnlitVisible: true
   - type: NavMapDoor
   - type: DoorBolt
   - type: AccessReader
@@ -131,5 +133,10 @@
     tags:
       - HighSecDoor
       # This tag is used to nagivate the Airlock construction graph. It's needed because this construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
-      - DoorRemoteWhitelist
-      # This tag is used by door remotes to allow or not a door remote to normally be able to interact with a door
+  # Sunrise-start
+  - type: PlacementReplacement
+    key: walls
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+  # Sunrise-end

@@ -139,6 +139,7 @@
     tags:
       - FoodSnack
       - ReptilianFood
+      - Sweetness # Fire
   - type: SolutionContainerManager
     solutions:
       food:

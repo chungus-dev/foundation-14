@@ -90,6 +90,27 @@
         Slash: 8
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: Scalpel
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_Sunrise/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/_Sunrise/Medical/Surgery/scalpel2.ogg
+  # Fire edit start - исследования сцп
+  - type: ScpInteractTool
+    delay: 30
+    cooldown: 600 # 5 минут
+    cooldownMessage: scp-interact-time-left
+    event: !type:ScpSpawnInteractDoAfterEvent
+      toSpawn: Scp999Jelly
+    sound: /Audio/Effects/break_stone.ogg # TODO: Звук
+    whitelist:
+      components:
+      - Scp999
+  - type: GuideHelp
+    guides:
+    - ScpResearchAdvanced
+  # Fire edit end
 
 - type: entity
   name: shiv

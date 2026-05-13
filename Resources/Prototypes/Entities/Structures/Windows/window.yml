@@ -3,6 +3,7 @@
   parent: [BaseDeltaPressureGlass, BaseStructure]
   name: window
   description: Don't smudge up the glass down there.
+  categories: [ HideSpawnMenu ] # Fire added
   placement:
     mode: SnapgridCenter
     snap:
@@ -12,6 +13,8 @@
     flags:
     - Anchorable
   - type: Rotatable
+  - type: Ricochetable
+    chance: 0.7
   - type: MeleeSound
     soundGroups:
       Brute:
@@ -76,7 +79,7 @@
         acts: [ "Destruction" ]
   - type: Airtight
   - type: IconSmooth
-    key: windows
+    key: walls
     base: window
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
@@ -101,6 +104,7 @@
   parent: Window
   id: TintedWindow
   name: tinted window
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -129,6 +133,7 @@
   parent: [BaseDeltaPressureGlassQuarter, BaseStructure]
   name: directional window
   description: Don't smudge up the glass down there.
+  categories: [ HideSpawnMenu ] # Fire added
   placement:
     mode: SnapgridCenter
     snap:
@@ -139,6 +144,7 @@
   - type: Tag
     tags:
       - Window
+      - Directional # Sunrise-Edit
   - type: MeleeSound
     soundGroups:
       Brute:
@@ -231,6 +237,7 @@
   parent: WindowDirectional
   name: directional frosted window
   description: Don't smudge up the glass down there.
+  categories: [ HideSpawnMenu ] # Fire added
   placement:
     mode: SnapgridCenter
     snap:
@@ -249,6 +256,7 @@
   parent: Window
   id: WindowDiagonal
   suffix: diagonal
+  categories: [ HideSpawnMenu ] # Fire added
   placement:
     mode: SnapgridCenter
     snap:
@@ -264,7 +272,7 @@
     - Window
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls
     base: state
   - type: Icon
     sprite: Structures/Windows/window_diagonal.rsi
@@ -275,9 +283,12 @@
         shape:
           !type:PolygonShape
             vertices:
-            - "-0.5,-0.5"
-            - "0.5,0.5"
+            # Sunrise-Start
             - "0.5,-0.5"
+            - "-0.4,-0.5"
+            - "-0.4,0.1"
+            - "0.5,0.5"
+            # Sunrise-End
         mask:
         - FullTileMask
         layer:

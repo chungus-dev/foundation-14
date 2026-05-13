@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseStructureDynamic
   id: BaseGlassBox
   abstract: true
@@ -196,7 +196,7 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank1:
+          ScpMaterialWoodPlank1: # Fire edit
             min: 2
             max: 5
       - !type:DoActsBehavior

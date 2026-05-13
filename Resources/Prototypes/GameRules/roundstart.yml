@@ -475,7 +475,7 @@
 
 # event schedulers
 
-- type: entityTable
+- type: entityTable # Fire edit - закомментировал лишние ивенты
   id: BasicGameRulesTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
@@ -496,16 +496,20 @@
   id: DynamicGameRulesTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    - !type:NestedSelector
-      tableId: BasicCalmEventsTable
-    - !type:NestedSelector
-      tableId: BasicAntagEventsTable
-    - !type:NestedSelector
-      tableId: CargoGiftsTable
-    - !type:NestedSelector
-      tableId: CalmPestEventsTable
-    - !type:NestedSelector
-      tableId: SpicyPestEventsTable
+      # Fire edit start
+      - !type:NestedSelector
+        tableId: ScpVanillaEventsTable
+      - !type:NestedSelector
+        tableId: ScpEventsTable
+      # Fire edit end
+      - !type:NestedSelector
+        tableId: BasicAntagEventsTable
+      - !type:NestedSelector
+        tableId: CargoGiftsTable
+      - !type:NestedSelector
+        tableId: CalmPestEventsTable
+#      - !type:NestedSelector
+#        tableId: SpicyPestEventsTable
 
 - type: entityTable
   id: SpaceTrafficControlTable
@@ -554,13 +558,13 @@
 - type: entity
   id: BasicRoundstartVariation
   parent: BaseGameRule
-  components:
+  components: # Fire edit - мы вернули назад мусор
   - type: RoundstartStationVariationRule
     rules:
     - id: BasicPoweredLightVariationPass
     - id: BasicTrashVariationPass
-    - id: SolidWallRustingVariationPass
-    - id: ReinforcedWallRustingVariationPass
+    - id: ScpSolidWallRustingVariationPass # Fire edit
+    - id: ScpReinforcedWallRustingVariationPass # Fire edit
     - id: CutWireVariationPass
     - id: BasicPuddleMessVariationPass
       prob: 0.99

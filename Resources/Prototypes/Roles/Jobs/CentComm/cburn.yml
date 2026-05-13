@@ -5,16 +5,21 @@
   playTimeTracker: JobCBURN
   setPreference: false
   startingGear: CBURNGear
-  icon: "JobIconCBURN"
+  icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
+  overrideConsoleVisibility: false # Fire added
   canBeAntag: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 18000 # 5 hours
   accessGroups:
   - AllAccess
   access:
   - CentralCommand
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+    implants: [ MindShieldImplant, DeathRattleImplantERT ] #Sunrise-Edit
 
 - type: startingGear
   id: CBURNGear

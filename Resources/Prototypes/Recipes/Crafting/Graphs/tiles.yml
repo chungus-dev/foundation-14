@@ -58,6 +58,38 @@
     - node: reebe
       entity: FloorTileItemBrassReebe
 
+# - type: constructionGraph # Fire Edit
+#   id: TileWhite
+#   start: start
+#   graph:
+#     - node: start
+#       edges:
+#         - to: whitetile
+#           completed:
+#             - !type:SetStackCount
+#               amount: 4
+#           steps:
+#             - material: Steel
+#               amount: 1
+#     - node: whitetile
+#       entity: FloorTileItemWhite
+
+# - type: constructionGraph # Fire Edit
+#   id: TileDark
+#   start: start
+#   graph:
+#     - node: start
+#       edges:
+#         - to: darktile
+#           completed:
+#             - !type:SetStackCount
+#               amount: 4
+#           steps:
+#             - material: Steel
+#               amount: 1
+#     - node: darktile
+#       entity: FloorTileItemDark
+
 - type: constructionGraph
   id: TileWhite
   start: start

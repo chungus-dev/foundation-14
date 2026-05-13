@@ -3,6 +3,11 @@
   id: BaseKnife
   abstract: true
   components:
+  # Fire added start
+  - type: BloodSplatterer
+    probability: 0.4
+    bloodLineProbability: 0.1
+  # Fire added end
   - type: Tag
     tags:
     - Knife
@@ -27,6 +32,15 @@
       - Slicing
     useSound:
       path: /Audio/Items/Culinary/chop.ogg
+  # Sunrise-start
+  - type: Scalpel
+  - type: SurgeryTool
+    successRate: 0.9
+    startSound:
+      path: /Audio/_Sunrise/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/_Sunrise/Medical/Surgery/scalpel2.ogg
+  # Sunrise-end
 
 - type: entity
   parent: BaseKnife

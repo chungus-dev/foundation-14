@@ -42,7 +42,7 @@
           acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          Log:
+          ScpLog: # Fire edit
             min: 1
             max: 1
 

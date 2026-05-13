@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: MedicalIntern
   name: job-name-intern
   description: job-description-intern
@@ -6,12 +6,19 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 10h
+      time: 15h # Sunrise-edit
       inverted: true # stop playing intern if you're good at med!
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
   canBeAntag: false
+  displayWeight: 0  # Sunrise-Edit
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-medical-trainee
+  # Sunrise-End
   access:
   - Medical
   - Maintenance

@@ -3,6 +3,7 @@
   name: clockwork window
   description: Don't smudge up the brass down there.
   parent: Window
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -10,8 +11,7 @@
   - type: Icon
     sprite: Structures/Windows/clockwork_window.rsi
   - type: Repairable
-    fuelCost: 10
-    doAfterDelay: 2
+    doAfterDelay: 5 # Sunrise-Edit
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass
@@ -58,6 +58,7 @@
   parent: WindowDirectional
   name: directional clockwork window
   description: Don't smudge up the brass down there.
+  categories: [ HideSpawnMenu ] # Fire added
   placement:
     mode: SnapgridCenter
     snap:
@@ -113,6 +114,7 @@
   parent: ClockworkWindow
   id: ClockworkWindowDiagonal
   suffix: diagonal
+  categories: [ HideSpawnMenu ] # Fire added
   placement:
     mode: SnapgridCenter
     snap:

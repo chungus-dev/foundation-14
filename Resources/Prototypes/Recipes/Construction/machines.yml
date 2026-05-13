@@ -1,4 +1,4 @@
-﻿- type: construction
+- type: construction
   id: Computer
   graph: Computer
   startNode: start
@@ -6,6 +6,7 @@
   category: construction-category-machines
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  hide: true # Fire added
 
 - type: construction
   id: MachineFrame

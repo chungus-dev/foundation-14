@@ -3662,10 +3662,15 @@
 
 - type: entity
   name: diona nymph
-  parent: [BaseMobAnimal, SimpleMobBase, StripableInventoryBase]
+  parent: [SimpleMobBase, StripableInventoryBase]
   id: MobDionaNymph
   description: It's like a cat, only.... branch-ier.
   components:
+  # Sunrise-Start
+  - type: VentCrawler # Sunrise-edit
+  - type: Item
+    size: Large
+  # Sunrise-End
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -3702,7 +3707,7 @@
         Base: nymph_dead
   - type: Butcherable
     spawned:
-    - id: MaterialWoodPlank1
+    - id: ScpMaterialWoodPlank1 # Fire edit
       amount: 2
   - type: InteractionPopup
     successChance: 0.7
@@ -3742,6 +3747,11 @@
     reformTime: 10
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
+  - type: CollectiveMind
+    minds:
+    - Dioneas
+  - type: Carriable
+  - type: CanEscapeInventory
 
 - type: entity
   parent: MobDionaNymph

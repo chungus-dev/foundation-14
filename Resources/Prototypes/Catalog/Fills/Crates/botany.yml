@@ -10,7 +10,7 @@
         children:
         - id: EggySeeds
           amount: 2
-        - id: TowercapSeeds
+        - id: ScpTowercapSeeds # Fire edit
           amount: 2
         - id: TobaccoSeeds
           amount: 2
@@ -21,6 +21,8 @@
         - id: FlyAmanitaSeeds
           amount: 2
         - id: BungoSeeds
+          amount: 2
+        - id: LanternfruitSeeds #Sunrise-add
           amount: 2
 
 - type: entity

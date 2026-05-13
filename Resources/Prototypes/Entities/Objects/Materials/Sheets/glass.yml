@@ -1,14 +1,14 @@
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: [GlassSounds, BaseItem] # Sunrise edit
   id: SheetGlassBase
   name: glass
   description: A sheet of glass, used often on the station in various applications.
   components:
   - type: Sprite
-    sprite: Objects/Materials/Sheets/glass.rsi
+    sprite: _Scp/Objects/Materials/Sheets/glass.rsi # Fire Edit
   - type: Item
-    sprite: Objects/Materials/Sheets/glass.rsi
+    sprite: _Scp/Objects/Materials/Sheets/glass.rsi # Fire Edit
     size: Normal
   - type: StaticPrice
     price: 0
@@ -16,6 +16,7 @@
     tags:
     - Sheet
     - ConstructionMaterial
+    - NoPaint  # Sunrise-edit
   - type: Material
   - type: Damageable
     damageContainer: Inorganic
@@ -466,11 +467,13 @@
     - cglass_2
     - cglass_3
   - type: Sprite
+    sprite: Objects/Materials/Sheets/glass.rsi # Fire Edit
     state: cglass_3
     layers:
     - state: cglass_3
       map: ["base"]
   - type: Item
+    sprite: Objects/Materials/Sheets/glass.rsi # Fire Edit
     heldPrefix: cglass
   - type: Construction
     graph: Glass
@@ -500,7 +503,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Extractable
-    grindableSolutionName: cglass
+    grindableSolutionName: brassglass
   - type: SolutionContainerManager
     solutions:
       cglass:

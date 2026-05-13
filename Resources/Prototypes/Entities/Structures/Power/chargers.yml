@@ -77,7 +77,7 @@
   description: An older model recharger that can recharge power cells.
   components:
   - type: Sprite
-    sprite: Structures/Power/cell_recharger.rsi
+    sprite: _Scp/Structures/Power/cell_recharger.rsi # Fire edit
     layers:
     - map: ["enum.PowerChargerVisualLayers.Base"]
       state: "empty"
@@ -111,9 +111,6 @@
         blacklist:
           tags:
           - PotatoBattery
-  - type: Item
-    size: Ginormous
-  - type: MultiHandedItem
 
 - type: entity
   parent: [ BaseItemRecharger, ConstructibleMachine ]

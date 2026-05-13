@@ -216,7 +216,7 @@
           weight: 0.25
         - id: MaterialCloth10
           weight: 0.25
-        - id: MaterialWoodPlank10
+        - id: ScpMaterialWoodPlank10 # Fire edit
           weight: 0.25
       - id: Plunger
       - id: PowerCellMedium
@@ -259,7 +259,7 @@
       - id: ClothingHeadHatCone
         weight: 2
       - id: BookRandomStory
-        weight: 0.25
+        weight: 0.20
       - id: ToolboxElectricalFilled
       - id: ToolboxMechanicalFilled
       - id: ClothingBeltUtility
@@ -270,7 +270,7 @@
       - id: HandLabeler
       - id: GlowstickGreen
       - id: Bucket
-      - id: RadioHandheld
+      - id: ScpRadioHandheldCommon # Fire edit
       - id: AppraisalTool
       - id: ModularReceiver
       - id: WeaponFlareGun
@@ -296,7 +296,18 @@
       - id: DrinkMopwataBottleRandom
       - id: SpectralLocator
       - id: LidSalami
-        weight: 0.05
+        weight: 0.10
+      # Sunrise-start
+      - id: SprayPaintBlue
+      - id: SprayPaintRed
+      - id: SprayPaintGreen
+      - id: SprayPaintOrange
+      - id: DeathPaint
+      - id: MechPaintRipleyZairjah
+      - id: MechPaintRipleyHauler
+      - id: MechPaintRipleyFirestarter
+      - id: MechPaintRipleyAluminizer
+      # Sunrise-end
 
 - type: entity
   name: Maint Loot Spawner
@@ -320,19 +331,26 @@
     children:
     # Common Group
     - !type:GroupSelector
-      weight: 95
+      weight: 85  # Sunrise-edit
       children:
       - id: Machete
       - id: Claymore
-      - id: BaseBallBat
+      - id: ScpBaseBallBat # Fire edit
       - id: CombatKnife
       - id: Spear
       - id: RifleStock
       - id: ModularReceiver
       - id: HydroponicsToolScythe
+      # Sunrise-start
+      - id: WeaponSubMachineGunMakeshift
+      - id: WeaponPistolMakeshiftCrafted
+      - id: WeaponRevolverMakeshift
+      - id: WeaponSniperMakeshift
+      - id: WeaponMeleeSwitchblade
+      # Sunrise-end
     # Rare Group
     - !type:GroupSelector
-      weight: 5
+      weight: 15 # Sunrise-edit
       children:
       - id: Lighter
       - id: Matchbox
@@ -343,6 +361,12 @@
         weight: 2
       - id: Syringe
       - id: Mousetrap
+      # Sunrise-start
+      - id: WeaponSubMachineGunImprovised
+      - id: WeaponPistolImprovised
+      - id: WeaponRevolverImprovised
+      - id: WeaponSniperImprovised
+      # Sunrise-end
       - !type:GroupSelector
         weight: 2
         children:

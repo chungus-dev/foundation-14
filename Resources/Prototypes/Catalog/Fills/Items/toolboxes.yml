@@ -9,7 +9,7 @@
       storagebase: !type:AllSelector
         children:
         - id: CrowbarRed
-        - id: RadioHandheld
+        - id: ScpRadioHandheldCommon # Fire edit
         - id: WelderMini
         - id: FireExtinguisherMini
         # Random lighting item GroupSelector

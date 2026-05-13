@@ -10,6 +10,13 @@
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo
+  displayWeight: 30  # Sunrise
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-pharmacist
+  # Sunrise-End
   access:
   - Medical
   - Chemistry

@@ -19,6 +19,7 @@
   id: LockerQuarterMasterFilled
   suffix: Filled
   parent: LockerQuarterMaster
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -33,9 +34,9 @@
     - id: CaptainIDCard
     - id: CigarGoldCase
       prob: 0.25
-    - id: ClothingBeltSheathFilled
+    #- id: ClothingBeltSheathFilled Не ну а че как клоун?
     - id: ClothingHeadsetAltCommand
-    - id: ClothingOuterArmorCaptainCarapace
+    #- id: ClothingOuterArmorCaptainCarapace # Sunrise-Edit
     - id: BoxCaptainCircuitboards
     - id: DoorRemoteCustom
     - id: MedalCase
@@ -43,16 +44,16 @@
     - id: PinpointerNuclear
     - id: PlushieNuke
       prob: 0.1
-    - id: RubberStampCaptain
+    - id: RubberStampDirector # Fire edit
     - id: SpaceCash1000
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
-    - id: OrganSkeletonPersonHead # A skull to accompany your skeleton crew
+    - id: FlippoLighterSunriseCap  # Sunrise-Flippo
+    - id: HeadSkeleton # A skull to accompany your skeleton crew
       conditions:
       - !type:PlayerCountCondition
         max: 15
-    - id: PlushieLizardJobCaptain
-      prob: 0.02
+    - id: WeaponMiniEnergyGun #  Sunrise-edit
 
 # No laser table + Laser table
 - type: entityTable
@@ -78,6 +79,7 @@
   id: LockerCaptainFilledNoLaser
   suffix: Filled
   parent: LockerCaptain
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -89,6 +91,7 @@
   id: LockerCaptainFilled
   suffix: Filled, AntiqueLaser
   parent: LockerCaptain
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -100,6 +103,7 @@
   id: LockerCaptainFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerCaptain
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -141,6 +145,7 @@
   id: LockerHeadOfPersonnelFilled
   suffix: Filled
   parent: LockerHeadOfPersonnel
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -185,6 +190,7 @@
   id: LockerChiefEngineerFilled
   suffix: Filled
   parent: LockerChiefEngineer
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -196,6 +202,7 @@
   id: LockerChiefEngineerFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerChiefEngineer
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -239,6 +246,7 @@
   id: LockerChiefMedicalOfficerFilled
   suffix: Filled
   parent: LockerChiefMedicalOfficer
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -250,6 +258,7 @@
   id: LockerChiefMedicalOfficerFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerChiefMedicalOfficer
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -290,6 +299,7 @@
   id: LockerResearchDirectorFilled
   suffix: Filled
   parent: LockerResearchDirector
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -301,6 +311,7 @@
   id: LockerResearchDirectorFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerResearchDirector
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -353,6 +364,7 @@
   id: LockerHeadOfSecurityFilled
   suffix: Filled
   parent: LockerHeadOfSecurity
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -364,6 +376,7 @@
   id: LockerHeadOfSecurityFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerHeadOfSecurity
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:

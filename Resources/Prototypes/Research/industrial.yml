@@ -9,12 +9,16 @@
   discipline: Industrial
   tier: 1
   cost: 7500
+  defaultToScpScale: 0.1 # Fire Edit
   recipeUnlocks:
   - MiningDrill
+  - MechEquipmentDrill
   - MineralScannerEmpty
   - OreProcessorIndustrialMachineCircuitboard
+  - SheetPlasteel1Lathe
   - ClothingMaskWeldingGas
   - ClothingShoesBootsJump
+  - BorgModuleJetpack # Sunrise-add
 
 - type: technology
   id: SpaceScanning
@@ -25,6 +29,7 @@
   discipline: Industrial
   tier: 1
   cost: 5000
+  defaultToScpScale: 0.1 # Fire Edit
   recipeUnlocks:
   - RadarConsoleCircuitboard
   - HandHeldMassScanner
@@ -52,6 +57,7 @@
   discipline: Industrial
   tier: 1
   cost: 10000
+  defaultToScpScale: 0.1 # Fire Edit
   recipeUnlocks:
   - FlatpackerMachineCircuitboard
 
@@ -96,6 +102,7 @@
   discipline: Industrial
   tier: 1
   cost: 7500
+  defaultToScpScale: 0.0 # Fire Edit
   recipeUnlocks:
   - ThermomachineFreezerMachineCircuitBoard
   - GasRecyclerMachineCircuitboard
@@ -104,11 +111,12 @@
   id: RipleyAPLU
   name: research-technology-ripley-aplu
   icon:
-    sprite: Objects/Specific/Mech/mecha.rsi
+    sprite: Objects/Specific/Mech/ripley.rsi
     state: ripley
   discipline: Industrial
   tier: 1
   cost: 7500
+  defaultToScpScale: 0.1 # Fire Edit
   recipeUnlocks:
   - RipleyHarness
   - RipleyLArm
@@ -118,6 +126,8 @@
   - RipleyCentralElectronics
   - RipleyPeripheralsElectronics
   - MechEquipmentGrabber
+  - PowerCageSmall  # Sunrise-Add
+  - PowerCageRechargerCircuitboard  # Sunrise-Add
 
 # Tier 2
 

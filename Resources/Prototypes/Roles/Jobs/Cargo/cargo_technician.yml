@@ -6,11 +6,19 @@
   startingGear: CargoTechGear
   icon: "JobIconCargoTechnician"
   supervisors: job-supervisors-qm
+  displayWeight: 0  # Sunrise
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-handyman
+  # Sunrise-End
   access:
   - Cargo
   - Maintenance
   extendedAccess:
   - Salvage
+  - CargoPurchaseAccess # Sunrise-add
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: BoxingDay

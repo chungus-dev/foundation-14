@@ -79,6 +79,7 @@
   parent: PosterBase
   id: PosterContrabandAtmosiaDeclarationIndependence
   name: "Atmosia Declaration of Independence"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A relic of a failed rebellion."
   components:
   - type: Sprite
@@ -88,6 +89,7 @@
   parent: PosterBase
   id: PosterContrabandFunPolice
   name: "Fun Police"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster condemning the station's security forces."
   components:
   - type: Sprite
@@ -97,6 +99,7 @@
   parent: PosterBase
   id: PosterContrabandRealExomorph
   name: "Real! Exomorph"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A conspiratorial poster about dangerous alien lifeforms."
   components:
   - type: Sprite
@@ -106,6 +109,7 @@
   parent: PosterBase
   id: PosterContrabandSyndicateRecruitment
   name: "Syndicate Recruitment"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "See the galaxy! Shatter corrupt megacorporations! Join today!"
   components:
   - type: Sprite
@@ -115,6 +119,7 @@
   parent: PosterBase
   id: PosterContrabandClown
   name: "Clown"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Honk."
   components:
   - type: Sprite
@@ -133,6 +138,7 @@
   parent: PosterBase
   id: PosterContrabandGreyTide
   name: "Grey Tide"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A rebellious poster symbolizing passenger solidarity."
   components:
   - type: Sprite
@@ -142,6 +148,7 @@
   parent: PosterBase
   id: PosterContrabandMissingGloves
   name: "Missing Gloves"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This poster references the uproar that followed Nanotrasen's financial cuts toward insulated-glove purchases."
   components:
   - type: Sprite
@@ -160,6 +167,7 @@
   parent: PosterBase
   id: PosterContrabandRIPBadger
   name: "RIP Badger"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This seditious poster references Nanotrasen's genocide of a space station full of badgers."
   components:
   - type: Sprite
@@ -169,6 +177,7 @@
   parent: PosterBase
   id: PosterContrabandAmbrosiaVulgaris
   name: "Ambrosia Vulgaris"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This poster is lookin' pretty trippy man."
   components:
   - type: Sprite
@@ -178,6 +187,7 @@
   parent: PosterBase
   id: PosterContrabandDonutCorp
   name: "Donut Corp."
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This poster is an unauthorized advertisement for Donut Corp."
   components:
   - type: Sprite
@@ -205,6 +215,7 @@
   parent: PosterBase
   id: PosterContrabandPower
   name: "Power"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster that positions the seat of power outside Nanotrasen."
   components:
   - type: Sprite
@@ -232,6 +243,7 @@
   parent: PosterBase
   id: PosterContrabandLamarr
   name: "Lamarr"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This poster depicts Lamarr. Probably made by a traitorous Research Director."
   components:
   - type: Sprite
@@ -241,6 +253,7 @@
   parent: PosterBase
   id: PosterContrabandBorgFancy
   name: "Borg Fancy"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Being fancy can be for any borg, just need a suit."
   components:
   - type: Sprite
@@ -250,6 +263,7 @@
   parent: PosterBase
   id: PosterContrabandBorgFancyv2
   name: "Borg Fancy v2"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Borg Fancy, Now only taking the most fancy."
   components:
   - type: Sprite
@@ -259,6 +273,7 @@
   parent: PosterBase
   id: PosterContrabandKosmicheskayaStantsiya
   name: "Kosmicheskaya Stantsiya 13 Does Not Exist"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster mocking CentComm's denial of the existence of the derelict station near Space Station 13."
   components:
   - type: Sprite
@@ -304,6 +319,7 @@
   parent: PosterBase
   id: PosterContrabandDDayPromo
   name: "D-Day Promo"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A promotional poster for some rapper."
   components:
   - type: Sprite
@@ -313,6 +329,7 @@
   parent: PosterBase
   id: PosterContrabandSyndicatePistol
   name: "Syndicate Pistol"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster advertising syndicate pistols as being 'classy as fuck'. It's covered in faded gang tags."
   components:
   - type: Sprite
@@ -322,6 +339,7 @@
   parent: PosterBase
   id: PosterContrabandEnergySwords
   name: "Energy Swords"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "All the colors of the bloody murder rainbow."
   components:
   - type: Sprite
@@ -331,6 +349,7 @@
   parent: PosterBase
   id: PosterContrabandRedRum
   name: "Red Rum"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Looking at this poster makes you want to kill."
   components:
   - type: Sprite
@@ -340,6 +359,7 @@
   parent: PosterBase
   id: PosterContrabandCC64KAd
   name: "CC 64K Ad"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "The latest portable computer from Comrade Computing, with a whole 64kB of ram!"
   components:
   - type: Sprite
@@ -349,6 +369,7 @@
   parent: PosterBase
   id: PosterContrabandPunchShit
   name: "Punch Shit"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Fight things for no reason, like a man!"
   components:
   - type: Sprite
@@ -358,6 +379,7 @@
   parent: PosterBase
   id: PosterContrabandTheGriffin
   name: "The Griffin"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "The Griffin commands you to be the worst you can be. Will you?"
   components:
   - type: Sprite
@@ -367,6 +389,7 @@
   parent: PosterBase
   id: PosterContrabandFreeDrone
   name: "Free Drone"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentComm."
   components:
   - type: Sprite
@@ -385,6 +408,7 @@
   parent: PosterBase
   id: PosterContrabandRobustSoftdrinks
   name: "Robust Softdrinks"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Robust Softdrinks: More robust than a toolbox to the head!"
   components:
   - type: Sprite
@@ -394,6 +418,7 @@
   parent: PosterBase
   id: PosterContrabandShamblersJuice
   name: "Shambler's Juice"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "~Shake me up some of that Shambler's Juice!~"
   components:
   - type: Sprite
@@ -403,6 +428,7 @@
   parent: PosterBase
   id: PosterContrabandPwrGame
   name: "Pwr Game"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "The POWER that gamers CRAVE! In partnership with Vlad's Salad."
   components:
   - type: Sprite
@@ -412,6 +438,7 @@
   parent: PosterBase
   id: PosterContrabandSunkist
   name: "Sun-kist"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Drink the stars!"
   components:
   - type: Sprite
@@ -421,6 +448,7 @@
   parent: PosterBase
   id: PosterContrabandSpaceCola
   name: "Space Cola"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Your favorite cola, in space."
   components:
   - type: Sprite
@@ -430,6 +458,7 @@
   parent: PosterBase
   id: PosterContrabandSpaceUp
   name: "Space-Up!"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Sucked out into space by the FLAVOR!"
   components:
   - type: Sprite
@@ -439,6 +468,7 @@
   parent: PosterBase
   id: PosterContrabandKudzu
   name: "Kudzu"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster advertising a movie about plants. How dangerous could they possibly be?"
   components:
   - type: Sprite
@@ -448,6 +478,7 @@
   parent: PosterBase
   id: PosterContrabandMaskedMen
   name: "Masked Men"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster advertising a movie about some masked men."
   components:
   - type: Sprite
@@ -466,6 +497,7 @@
   parent: PosterBase
   id: PosterContrabandFreeSyndicateEncryptionKey
   name: "Free Syndicate Encryption Key"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster about traitors begging for more."
   components:
   - type: Sprite
@@ -475,6 +507,7 @@
   parent: PosterBase
   id: PosterContrabandBountyHunters
   name: "Bounty Hunters"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster advertising bounty hunting services. \"I hear you got a problem.\""
   components:
   - type: Sprite
@@ -484,6 +517,7 @@
   parent: PosterBase
   id: PosterContrabandTheBigGasTruth
   name: "The Big Gas Giant Truth"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Don't believe everything you see on a poster, patriots. All the lizards at central command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?"
   components:
   - type: Sprite
@@ -493,6 +527,7 @@
   parent: PosterBase
   id: PosterContrabandWehWatches
   name: "Weh Watches"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster depicting a loveable green lizard."
   components:
   - type: Sprite
@@ -502,6 +537,7 @@
   parent: PosterBase
   id: PosterContrabandVoteWeh
   name: "Vote Weh"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A stylish, sleek, and well illustrated poster for a \"Weh\"nderful new progressive candidate coming this election season."
   components:
   - type: Sprite
@@ -512,6 +548,7 @@
   parent: PosterBase
   id: PosterContrabandBeachStarYamamoto
   name: "Beach Star Yamamoto!"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A wall scroll depicting an old swimming anime with girls in small swim suits. You feel more weebish the longer you look at it."
   components:
   - type: Sprite
@@ -521,6 +558,7 @@
   parent: PosterBase
   id: PosterContrabandHighEffectEngineering
   name: "High Effect Engineering"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "There are 3 shards and a singularity.  The shards are singing.  The engineers are crying."
   components:
   - type: Sprite
@@ -557,6 +595,7 @@
   parent: PosterBase
   id: PosterContrabandMoth
   name: "Syndie Moth - Nuclear Operation"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A Syndicate-commissioned poster that uses Syndie Moth™ to tell the viewer to keep the nuclear authentication disk unsecured. \"Peace was never an option!\" No good employee would listen to this nonsense."
   components:
     - type: Sprite
@@ -566,6 +605,7 @@
   parent: PosterBase
   id: PosterContrabandCybersun600
   name: "Cybersun: 600 Years Commemorative Poster"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "An artistic poster commemorating 600 years of continual business for Cybersun Industries."
   components:
     - type: Sprite
@@ -575,6 +615,7 @@
   parent: PosterBase
   id: PosterContrabandDonk
   name: "DONK CO. BRAND MICROWAVEABLE FOOD"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "DONK CO. BRAND MICROWAVABLE FOOD: MADE BY STARVING COLLEGE STUDENTS, FOR STARVING COLLEGE STUDENTS."
   components:
     - type: Sprite
@@ -584,6 +625,7 @@
   parent: PosterBase
   id: PosterContrabandEnlistGorlex
   name: "Enlist"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
   components:
     - type: Sprite
@@ -602,6 +644,7 @@
   parent: PosterBase
   id: PosterContrabandWaffleCorp
   name: "Make Mine a Waffle Corp: Fine Rifles, Economic Prices"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "An old advertisement for Waffle Corp rifles. 'Better weapons, lower prices!'"
   components:
     - type: Sprite
@@ -611,6 +654,7 @@
   parent: PosterBase
   id: PosterContrabandMissingSpacepen
   name: "Missing Spacepen"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This poster depicts something you will never find."
   components:
     - type: Sprite
@@ -620,6 +664,7 @@
   parent: PosterBase
   id: PosterContrabandExoAcid
   name: "Exomorph Warning: Acid Spit!"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This poster warns you about an exomorph's acidic spit. Not that such exomorphs are real... Right?"
   components:
   - type: Sprite
@@ -629,6 +674,7 @@
   parent: PosterBase
   id: PosterContrabandExoRun
   name: "Exomorph Warning: Run Away!"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This poster warns you about an athletic exomorph capable of dragging away anyone who gets caught; so don't get caught!"
   components:
   - type: Sprite
@@ -638,6 +684,7 @@
   parent: PosterBase
   id: PosterContrabandExoChomp
   name: "Exomorph Warning: Dangerous Bites!"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This poster warns you about the lethal bites exomorphs can have. Don't become an alien snack!"
   components:
   - type: Sprite
@@ -657,6 +704,7 @@
   parent: PosterBase
   id: PosterLegitNanotrasenLogo
   name: "Nanotrasen Logo"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster depicting the Nanotrasen logo."
   components:
   - type: Sprite
@@ -693,6 +741,7 @@
   parent: PosterBase
   id: PosterLegitBlessThisSpess
   name: "Bless This Spess"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster blessing this area."
   components:
   - type: Sprite
@@ -711,6 +760,7 @@
   parent: PosterBase
   id: PosterLegitIan
   name: "Ian"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Arf arf. Yap."
   components:
   - type: Sprite
@@ -747,6 +797,7 @@
   parent: PosterBase
   id: PosterLegitLoveIan
   name: "Love Ian"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Ian is love, Ian is life."
   components:
   - type: Sprite
@@ -756,6 +807,7 @@
   parent: PosterBase
   id: PosterLegitSpaceCops
   name: "Space Cops."
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster advertising the television show Space Cops."
   components:
   - type: Sprite
@@ -765,6 +817,7 @@
   parent: PosterBase
   id: PosterLegitUeNo
   name: "Ue No."
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This thing is all in Japanese."
   components:
   - type: Sprite
@@ -855,6 +908,7 @@
   parent: PosterBase
   id: PosterLegitFoamForceAd
   name: "Foam Force Ad"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Foam Force, it's Foam or be Foamed!"
   components:
   - type: Sprite
@@ -864,6 +918,7 @@
   parent: PosterBase
   id: PosterLegitCohibaRobustoAd
   name: "Cohiba Robusto Ad"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Cohiba Robusto, the classy cigar."
   components:
   - type: Sprite
@@ -891,6 +946,7 @@
   parent: PosterBase
   id: PosterLegitPDAAd
   name: "PDA Ad"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster advertising the latest PDA from Nanotrasen suppliers."
   components:
   - type: Sprite
@@ -900,6 +956,7 @@
   parent: PosterBase
   id: PosterLegitEnlist
   name: "Enlist"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Enlist in the Nanotrasen Deathsquadron reserves today!"
   components:
   - type: Sprite
@@ -909,6 +966,7 @@
   parent: PosterBase
   id: PosterLegitNanomichiAd
   name: "Nanomichi Ad"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: " A poster advertising Nanomichi brand audio cassettes."
   components:
   - type: Sprite
@@ -945,6 +1003,7 @@
   parent: PosterBase
   id: PosterLegitNoERP
   name: "No ERP"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
   components:
   - type: Sprite
@@ -981,6 +1040,7 @@
   parent: PosterBase
   id: PosterLegitJustAWeekAway
   name: "Just a Week Away..."
+  categories: [ HideSpawnMenu ] # Fire edit
   description: A poster advertising a long delayed project, it still claims it to be 'just a week away...'
   components:
   - type: Sprite
@@ -1026,6 +1086,7 @@
   parent: PosterBase
   id: PosterLegitSafetyMothDelam
   name: "Safety Moth - Delamination Safety Precautions"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This informational poster uses Safety Moth™ to tell the viewer to hide in lockers when the Supermatter Crystal has delaminated, to prevent hallucinations. Evacuating might be a better strategy."
   components:
     - type: Sprite
@@ -1035,6 +1096,7 @@
   parent: PosterBase
   id: PosterLegitSafetyMothEpi
   name: "Safety Moth - Epinephrine"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This informational poster uses Safety Moth™ to inform the viewer to help injured/deceased crewmen with their epinephrine injectors. \"Prevent organ rot with this one simple trick!\""
   components:
     - type: Sprite
@@ -1044,6 +1106,7 @@
   parent: PosterBase
   id: PosterLegitSafetyMothPiping
   name: "Safety Moth - Piping"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This informational poster uses Safety Moth™ to tell atmospheric technicians correct types of piping to be used. \"Pipes, not Pumps! Proper pipe placement prevents poor performance!\""
   components:
     - type: Sprite
@@ -1053,6 +1116,7 @@
   parent: PosterBase
   id: PosterLegitSafetyMothMeth
   name: "Safety Moth - Methamphetamine"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This informational poster uses Safety Moth™ to tell the viewer to seek CMO approval before cooking methamphetamine. \"Stay close to the target temperature, and never go over!\" ...You shouldn't ever be making this."
   components:
     - type: Sprite
@@ -1071,6 +1135,7 @@
   parent: PosterBase
   id: PosterLegitVacation
   name: "Nanotrasen Corporate Perks: Vacation"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This informational poster provides information on some of the prizes available via the NT Corporate Perks program, including a two-week vacation for two on the resort world Idyllus."
   components:
     - type: Sprite
@@ -1089,6 +1154,7 @@
   parent: PosterBase
   id: PosterLegitRenault
   name: "Renault Poster"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "Yap."
   components:
     - type: Sprite
@@ -1098,6 +1164,7 @@
   parent: PosterBase
   id: PosterLegitNTTGC
   name: "Nanotrasen Tactical Game Cards"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "An advertisement for Nanotrasen's TCG cards: BUY MORE CARDS."
   components:
     - type: Sprite
@@ -1107,6 +1174,7 @@
   parent: PosterBase
   id: PosterLegitSafetyMothSSD
   name: "Safety Moth - Space Sleep Disorder"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "This informational poster uses Safety Moth™ to tell the viewer about Space Sleep Disorder (SSD), a condition where the person stops reacting to things. \"Treat SSD crew with care! They might wake up at any time!\""
   components:
   - type: Sprite
@@ -1116,6 +1184,7 @@
   parent: PosterBase
   id: PosterLegitOppenhopper
   name: "Oppenhopper"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster for a long-forgotten movie. It follows a group of tenacious greenhorns from the Grasshopper Sector as they defend against onslaughts of the infamous Nuclear Operatives. The tagline reads: \"Nuke Ops will continue until robustness improves.\""
   components:
   - type: Sprite
@@ -1125,6 +1194,7 @@
   parent: PosterBase
   id: PosterLegitTyrone
   name: "Tyrone's Guide to Space"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A poster advertising online schooling about space. The classes listed seem to cover things from the basic usage of station equipment to complicated subjects like creating pipebombs or covering entire hallways in spacelube. A disclaimer reads \"It's never THAT bad, and at the end you might even get a tortilla.\""
   components:
   - type: Sprite
@@ -1154,6 +1224,7 @@
   parent: PosterBase
   id: PosterMapBagel
   name: "Bagel Map"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A map of Bagel Station."
   components:
   - type: Sprite
@@ -1163,6 +1234,7 @@
   parent: PosterBase
   id: PosterMapDelta
   name: "Delta Map"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A map of Delta Station."
   components:
   - type: Sprite
@@ -1172,6 +1244,7 @@
   parent: PosterBase
   id: PosterMapMarathon
   name: "Marathon Map"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A map of Marathon Station."
   components:
   - type: Sprite
@@ -1181,6 +1254,7 @@
   parent: PosterBase
   id: PosterMapMoose
   name: "Moose Map"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A map of Moose Station."
   components:
   - type: Sprite
@@ -1190,6 +1264,7 @@
   parent: PosterBase
   id: PosterMapPacked
   name: "Packed Map"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A map of Packed Station."
   components:
   - type: Sprite
@@ -1208,6 +1283,7 @@
   parent: PosterBase
   id: PosterMapSaltern
   name: "Saltern Map"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A map of Saltern Station."
   components:
   - type: Sprite
@@ -1217,6 +1293,7 @@
   parent: PosterBase
   id: PosterMapSplit
   name: "Split Station Map"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A map of Split Station."
   components:
   - type: Sprite
@@ -1226,6 +1303,7 @@
   parent: PosterBase
   id: PosterMapLighthouse
   name: "Lighthouse Map"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A map of Lighthouse."
   components:
   - type: Sprite
@@ -1235,6 +1313,7 @@
   parent: PosterBase
   id: PosterMapWaystation
   name: "Waystation Map"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A map of Waystation... wait isn't this packed upside down?"
   components:
   - type: Sprite
@@ -1244,6 +1323,7 @@
   parent: PosterBase
   id: PosterMapOrigin
   name: "origin map"
+  categories: [ HideSpawnMenu ] # Fire edit
   description: "A map of Origin Station."
   components:
   - type: Sprite

@@ -81,6 +81,7 @@
   graph: Barricade
   startNode: start
   targetNode: woodWall
+  hide: true # Fire edit
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter
@@ -678,7 +679,7 @@
       failIfSpace: false
     - !type:TileType
       targets:
-        - Plating
+        - ScpPlating # Fire Edit
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -688,6 +689,7 @@
   graph: Barricade
   startNode: start
   targetNode: barricadefull
+  hide: true # Fire edit
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter

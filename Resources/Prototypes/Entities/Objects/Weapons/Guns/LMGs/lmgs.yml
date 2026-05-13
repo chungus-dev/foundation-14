@@ -5,6 +5,12 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  # Fire added start
+  - type: BloodSplatterer
+    amount: 1, 3
+    probability: 0.65
+    bloodLineProbability: 0.2
+  # Fire added end
   - type: Sprite
   - type: Item
     size: Huge
@@ -31,7 +37,7 @@
     availableModes:
       - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
+      collection: m249 # Sunrise-Edit
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
   - type: ChamberMagazineAmmoProvider
@@ -42,7 +48,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineLightRifleBox
+        startingItem: MagazineRifleBoxSP #Sunrise-Edit
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
@@ -51,10 +57,11 @@
             - MagazineLightRifleBox
       gun_chamber:
         name: Chamber
+        startingItem: CartridgeRifleSP #Sunrise-Edit
         priority: 1
         whitelist:
           tags:
-            - CartridgeLightRifle
+            - CartridgeRifle  #Sunrise-Edit
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -63,6 +70,30 @@
     price: 500
   - type: UseDelay
     delay: 1
+  # Sunrise start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: RiflesPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: RiflesDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: RiflesDrop
+  - type: KnockbackByUserTag
+    doestContain:
+      Resomi:
+        knockback: 0.02
+        staminaMultiplier: 100
+      Felinid:
+        knockback: 0.01
+        staminaMultiplier: 100
+  - type: RestrictByUserTag
+    doestContain:
+    - Abductor
+    messages:
+    - abductor-gun-restricted-1
+  # Sunrise end
 
 - type: entity
   name: L6 SAW
@@ -91,6 +122,9 @@
   parent: BaseItem
   description: A L6 SAW for use by cyborgs. Creates .30 rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges.
   components:
+    # Fire added start
+    - type: BloodSplatterer
+    # Fire added end
     - type: Gun
       minAngle: 4
       maxAngle: 25
@@ -101,7 +135,7 @@
       availableModes:
         - FullAuto
       soundGunshot:
-        path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
+        collection: m249 # Sunrise-Edit
       soundEmpty:
         path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
     - type: Sprite
@@ -119,9 +153,9 @@
     - type: BallisticAmmoProvider
       whitelist:
         tags:
-        - CartridgeLightRifle
-      capacity: 100
-      proto: CartridgeLightRifle
+        - CartridgeRifle # Sunrise-Edit
+      capacity: 200 # Sunrise-Edit
+      proto: CartridgeRifleFMJ # Sunrise-Edit
       cycleable: false # No synthesizing ammo for your syndicate masters.
     - type: BallisticAmmoSelfRefiller
       autoRefillRate: 4s

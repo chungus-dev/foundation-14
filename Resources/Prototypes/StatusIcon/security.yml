@@ -62,9 +62,8 @@
   layer: Mod
   isShaded: true
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi # Fire Edit
     state: MindShield
-
 - type: securityIcon
   id: CrewBorderIcon
   priority: 2

@@ -4,80 +4,107 @@
   id: BlastDoorExterior1
   parent: BlastDoor
   suffix: Autolink, Ext1
+  categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: AutoLinkReceiver
-    channel: Ext1
+    - type: AutoLinkReceiver
+      channel: Ext1
 
 
 - type: entity
   id: BlastDoorExterior1Open
   parent: BlastDoorOpen
   suffix: Open, Autolink, Ext1
+  categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: AutoLinkReceiver
-    channel: Ext1
+    - type: AutoLinkReceiver
+      channel: Ext1
 
 - type: entity
   id: BlastDoorExterior2
   parent: BlastDoor
   suffix: Autolink, Ext2
+  categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: AutoLinkReceiver
-    channel: Ext2
+    - type: AutoLinkReceiver
+      channel: Ext2
 
 
 - type: entity
   id: BlastDoorExterior2Open
   parent: BlastDoorOpen
   suffix: Open, Autolink, Ext2
+  categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: AutoLinkReceiver
-    channel: Ext2
+    - type: AutoLinkReceiver
+      channel: Ext2
 
 - type: entity
   id: BlastDoorExterior3
   parent: BlastDoor
   suffix: Autolink, Ext3
+  categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: AutoLinkReceiver
-    channel: Ext3
+    - type: AutoLinkReceiver
+      channel: Ext3
 
 
 - type: entity
   id: BlastDoorExterior3Open
   parent: BlastDoorOpen
   suffix: Open, Autolink, Ext3
+  categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: AutoLinkReceiver
-    channel: Ext3
+    - type: AutoLinkReceiver
+      channel: Ext3
 
 - type: entity
   id: BlastDoorBridge
   parent: BlastDoor
   suffix: Autolink, Bridge
+  categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: AccessReader
-    access: [["Command"]]
-  - type: AutoLinkReceiver
-    channel: Bridge
+    - type: AccessReader
+      access: [["Command"]]
+      # Sunrise-start
+      alertAccesses:
+        red: RedAlertAccesses
+        blue: BlueAlertAccessesHOS
+        gamma: GammaAlertAccesses
+      # Sunrise-end
+    - type: AutoLinkReceiver
+      channel: Bridge
 
 - type: entity
   id: BlastDoorBridgeOpen
   parent: BlastDoorOpen
   suffix: Open, Autolink, Bridge
+  categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: AccessReader
-    access: [["Command"]]
-  - type: AutoLinkReceiver
-    channel: Bridge
+    - type: AccessReader
+      access: [["Command"]]
+      # Sunrise-start
+      alertAccesses:
+        red: RedAlertAccesses
+        blue: BlueAlertAccessesHOS
+        gamma: GammaAlertAccesses
+      # Sunrise-end
+    - type: AutoLinkReceiver
+      channel: Bridge
 
 - type: entity
   id: BlastDoorEngineering
   parent: BlastDoor
   suffix: Autolink, Engineering
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Command"], ["Engineering"]]
+    # Sunrise-start
+    alertAccesses:
+      red: RedAlertAccesses
+      blue: BlueAlertAccessesHOS
+      gamma: GammaAlertAccesses
+    # Sunrise-end
   - type: AutoLinkReceiver
     channel: Engineering
 
@@ -85,9 +112,16 @@
   id: BlastDoorEngineeringOpen
   parent: BlastDoorOpen
   suffix: Open, Autolink, Engineering
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Command"], ["Engineering"]]
+    # Sunrise-start
+    alertAccesses:
+      red: RedAlertAccesses
+      blue: BlueAlertAccessesHOS
+      gamma: GammaAlertAccesses
+    # Sunrise-end
   - type: AutoLinkReceiver
     channel: Engineering
 
@@ -95,9 +129,16 @@
   id: BlastDoorScience
   parent: BlastDoor
   suffix: Autolink, Science
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Command"], ["Research"]]
+    # Sunrise-start
+    alertAccesses:
+      red: RedAlertAccesses
+      blue: BlueAlertAccessesHOS
+      gamma: GammaAlertAccesses
+    # Sunrise-end
   - type: AutoLinkReceiver
     channel: Research
 
@@ -105,9 +146,16 @@
   id: BlastDoorScienceOpen
   parent: BlastDoorOpen
   suffix: Open, Autolink, Science
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Command"], ["Research"]]
+    # Sunrise-start
+    alertAccesses:
+      red: RedAlertAccesses
+      blue: BlueAlertAccessesHOS
+      gamma: GammaAlertAccesses
+    # Sunrise-end
   - type: AutoLinkReceiver
     channel: Research
 
@@ -115,15 +163,16 @@
   id: BlastDoorWindows
   parent: BlastDoor
   suffix: Autolink, Windows
+  categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: AutoLinkReceiver
-    channel: Windows
+    - type: AutoLinkReceiver
+      channel: Windows
 
 - type: entity
   id: BlastDoorWindowsOpen
   parent: BlastDoorOpen
   suffix: Open, Autolink, Windows
+  categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: AutoLinkReceiver
-    channel: Windows
-
+    - type: AutoLinkReceiver
+      channel: Windows

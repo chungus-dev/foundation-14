@@ -5,6 +5,13 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  # Fire added start
+  - type: BloodSplatterer
+    amount: 3, 7
+    probability: 1
+    bloodLineProbability: 0.7
+    pierceLevel: Metal
+  # Fire added end
   - type: Sprite
     layers:
     - state: base
@@ -19,6 +26,7 @@
     - suitStorage
   - type: AmmoCounter
   - type: Gun
+    pump: true  # Sunrise-Edit
     fireRate: 0.75
     selectedMode: SemiAuto
     availableModes:
@@ -26,17 +34,40 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: BallisticAmmoProvider
-    capacity: 10
-    proto: CartridgeLightRifle
+    capacity: 5 # Sunrise-Edit
+    proto: CartridgeHeavyRifleRFMJ
     whitelist:
       tags:
-      - CartridgeLightRifle
+      - CartridgeHeavyRifleR # Sunrise-Edit
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
         ents: []
   - type: StaticPrice
     price: 500
+  # Sunrise start
+  - type: EmitSoundOnPickup
+    sound:
+      collection: SnipersPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: SnipersDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: SnipersDrop
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 2
+    pvsIncrease: 0.2
+  - type: KnockbackByUserTag
+    doestContain:
+      Resomi:
+        knockback: 4
+        staminaMultiplier: 15
+      Felinid:
+        knockback: 2
+        staminaMultiplier: 15
+  # Sunrise end
 
 - type: entity
   name: Kardashev-Mosin

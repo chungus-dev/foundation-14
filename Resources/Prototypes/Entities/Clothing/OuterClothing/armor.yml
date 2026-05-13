@@ -295,15 +295,17 @@
     size: Normal
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSecurityContraband]
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSecurityContraband, ClothingOuterArmorStab]
   id: ClothingOuterArmorRiot
   name: riot suit
   description: A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Perfect for fighting delinquents around the station.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Armor/riot.rsi
+    sprite: _Scp/Clothing/OuterClothing/Armor/scp_riot.rsi # Fire Edit
   - type: Clothing
-    sprite: Clothing/OuterClothing/Armor/riot.rsi
+    sprite: _Scp/Clothing/OuterClothing/Armor/scp_riot.rsi # Fire Edit
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -315,6 +317,16 @@
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: GroupExamine
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+    - Vest
+    - FullBodyOuter
+    - WhitelistChameleon
+  - type: Construction
+    graph: UpgradeArmorVest
+    node: riot
+  # SUNRISE EDIT
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]

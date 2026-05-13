@@ -43,6 +43,7 @@
 
 - type: entity
   id: ComputerFrame
+  categories: [ HideSpawnMenu ] # Fire edit
   parent: BaseStructureComputer
   name: computer frame
   description: A computer under construction.
@@ -66,6 +67,7 @@
 - type: entity
   parent: BaseStructureComputer
   id: ComputerBroken
+  categories: [ HideSpawnMenu ] # Fire edit
   name: broken computer
   description: This computer has seen better days.
   components:
@@ -76,6 +78,20 @@
     sprite: Structures/Machines/computers.rsi
     drawdepth: Objects
     state: broken
+  # Sunrise-Start
+  - type: EdgeConnection
+    connectionKey: computers
+    allowedDirections: East, West
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.EdgeConnectionVisuals.ConnectionMask:
+        computerLayerBody:
+          None: { state: broken, sprite: Structures/Machines/computers.rsi }
+          West: { state: computer_r-broken, sprite: _Starlight/Structures/Machines/computers.rsi }
+          East: { state: computer_l-broken, sprite: _Starlight/Structures/Machines/computers.rsi }
+          East, West: { state: computer_l_r-broken, sprite: _Starlight/Structures/Machines/computers.rsi }
+  # Sunrise-End
   - type: Destructible
     thresholds:
     - trigger:

@@ -1,9 +1,13 @@
 - type: species
   id: Vox
   name: species-name-vox
-  roundStart: true
+  roundStart: false # Fire edit
+  stationRecordsHidden: true # Fire added
   prototype: MobVox
-  dollPrototype: AppearanceVox
+  bodyTypes:
+  - VoxNormal
+  markingLimits: MobVoxMarkingLimits
+  dollPrototype: MobVoxDummy
   skinColoration: VoxFeathers
   defaultSkinTone: "#6c741d"
   maleFirstNames: NamesVox
@@ -11,3 +15,8 @@
   naming: First
   sexes:
   - Unsexed
+  # Sunrise-Edit
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: human # Sunrise-Edit
+

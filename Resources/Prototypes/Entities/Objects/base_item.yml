@@ -3,6 +3,9 @@
   id: BaseItem
   abstract: true
   components:
+  # Fire added start
+  - type: FieldOfViewOccludable
+  # Fire added end
   - type: Item
     size: Small
   - type: Animateable
@@ -44,6 +47,17 @@
     noRot: false
   - type: Pullable
   - type: DamageExaminable
+  # Sunrise start
+  - type: TTS
+    voice: Portal2FactCore
+  - type: StaticPrice
+    price: 0
+  - type: SurgeryTarget
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 2
+  # Sunrise end
 
 - type: entity
   name: "storage item"

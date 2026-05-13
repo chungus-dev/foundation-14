@@ -50,9 +50,26 @@
   id: Screwdriver
   description: Industrial grade torque in a small screwdriving package.
   components:
+  # Fire added start
+  - type: BloodSplatterer
+    probability: 0.2
+    bloodLineProbability: 0.05
+  # Fire added end
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/screwdriver_drop.ogg
+  # Sunrise start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Sunrise/Items/Handling/screwdriver_pickup.ogg
+      params:
+        volume: -2
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/Items/screwdriver_drop.ogg
+      params:
+        volume: -2
+  # Sunrise end
   - type: Tag
     tags:
     - Screwdriver
@@ -299,17 +316,17 @@
   components:
   - type: RCD
     availablePrototypes:
-    - WallSolid
-    - FloorSteel
-    - Plating
+    - ScpWallSolid #Scp edit
+    - ScpFloorSteel #Scp edit
+    - ScpPlating #Scp edit
     - Catwalk
     - Grille
-    - Window
-    - WindowDirectional
-    - WindowReinforcedDirectional
-    - ReinforcedWindow
-    - Airlock
-    - AirlockGlass
+    - ScpWindow #Scp edit
+    - ScpWindowDirectional #Scp edit
+    - ScpWindowReinforcedDirectional #Scp edit
+    - ScpReinforcedWindow #Scp edit
+    - ScpAirlock #Scp edit
+    - ScpAirlockGlass #Scp edit
     - Firelock
     - TubeLight
     - BulbLight
@@ -318,6 +335,12 @@
     - HVCable
     - CableTerminal
     - Deconstruct
+    # Fire edit start
+    #- TripleGlassAirlockBasic
+    #- TripleGlassAirlock
+    - ScpDoubleGlassAirlock
+    - ScpDoubleGlassAirlockBasic
+    # Fire edit end
   - type: LimitedCharges
     maxCharges: 30
   - type: Sprite

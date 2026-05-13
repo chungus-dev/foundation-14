@@ -3,6 +3,7 @@
   id: AirlockExternal
   suffix: External
   description: It opens, it closes, it might crush you, and there might be only space behind it.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Door
     crushDamage:
@@ -25,6 +26,7 @@
   parent: AirlockExternal
   id: AirlockExternalGlass
   suffix: Glass, External
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Door
     occludes: false
@@ -37,7 +39,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,0.49" # don't want this colliding with walls or they won't close
+          bounds: "-0.46,-0.46,0.46,0.46" # Sunrise edit - фикс двойных шлюзов
         density: 100
         mask:
         - FullTileMask

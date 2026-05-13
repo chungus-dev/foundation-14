@@ -8,7 +8,14 @@
       time: 2.5h
   startingGear: LawyerGear
   icon: "JobIconLawyer"
-  supervisors: job-supervisors-hop
+  canBeAntag: false
+  supervisors: job-supervisors-magistrate
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-lawyer
+  # Sunrise-End
+  setPreference: false # Fire added
+  overrideConsoleVisibility: false # Fire added
   access:
   - Service
   - Lawyer

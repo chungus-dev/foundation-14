@@ -156,6 +156,7 @@
   id: SuitStorageAtmos
   parent: SuitStorageBase
   suffix: Atmospheric Technician
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -163,6 +164,12 @@
         tableId: FillAtmosphericsHardsuit
   - type: AccessReader
     access: [["Atmospherics"]]
+    # Sunrise-start
+    alertAccesses:
+      red: RedAlertAccesses
+      blue: BlueAlertAccessesHOS
+      gamma: GammaAlertAccesses
+    # Sunrise-end
 
 #Security hardsuit
 - type: entity
@@ -190,6 +197,7 @@
   id: SuitStorageCE
   parent: SuitStorageBase
   suffix: Chief Engineer
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -203,6 +211,7 @@
   id: SuitStorageCMO
   parent: SuitStorageBase
   suffix: Chief Medical Officer
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -216,6 +225,7 @@
   id: SuitStorageRD
   parent: SuitStorageBase
   suffix: Research Director
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -229,6 +239,7 @@
   id: SuitStorageHOS
   parent: SuitStorageBase
   suffix: Head of Security
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -255,6 +266,7 @@
   id: SuitStorageCaptain
   parent: SuitStorageBase
   suffix: Captain
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -268,6 +280,7 @@
   id: SuitStorageSalv
   parent: SuitStorageBase
   suffix: Salvage
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -275,12 +288,19 @@
         tableId: FillSalvageSpecialistHardsuitSpatio
   - type: AccessReader
     access: [["Salvage"]]
+    # Sunrise-start
+    alertAccesses:
+      red: RedAlertAccesses
+      blue: BlueAlertAccessesHOS
+      gamma: GammaAlertAccesses
+    # Sunrise-end
 
 #Blood-red hardsuit
 - type: entity
   id: SuitStorageSyndie
   parent: SuitStorageBase
   suffix: Syndicate Hardsuit
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -301,6 +321,7 @@
   id: SuitStoragePirateCap
   parent: SuitStorageBase
   suffix: Pirate Captain
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -320,6 +341,7 @@
   id: SuitStorageWizard
   parent: SuitStorageBase
   suffix: Wizard
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:
