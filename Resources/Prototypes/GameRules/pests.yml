@@ -7,7 +7,6 @@
     - id: SnailMigrationLowPop
     - id: CockroachMigration
     - id: MouseMigration
-    - id: RandomCritterHorde
 
 - type: entityTable
   id: SpicyPestEventsTable

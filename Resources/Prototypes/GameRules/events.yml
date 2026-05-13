@@ -18,11 +18,11 @@
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
-    - id: SlimesSpawnHorde
+    - id: SlimesSpawn
     - id: SolarFlare
-    - id: SnakeSpawnHorde
-    - id: SpiderClownSpawnHorde
-    - id: SpiderSpawnHorde
+    - id: SnakeSpawn
+    - id: SpiderClownSpawn
+    - id: SpiderSpawn
     - id: VentClog
 
 - type: entityTable
