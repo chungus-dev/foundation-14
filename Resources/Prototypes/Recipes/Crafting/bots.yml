@@ -1,10 +1,11 @@
-- type: construction
-  id: cleanbot
-  graph: CleanBot
-  startNode: start
-  targetNode: bot
-  category: construction-category-utilities
-  objectType: Item
+# Fire edit
+# - type: construction
+#   id: cleanbot
+#   graph: CleanBot
+#   startNode: start
+#   targetNode: bot
+#   category: construction-category-utilities
+#   objectType: Item
 
 - type: construction
   id: firebot
