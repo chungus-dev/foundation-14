@@ -7,6 +7,7 @@
     - id: SnailMigrationLowPop
     - id: CockroachMigration
     - id: MouseMigration
+    - id: RandomCritterHorde
 
 - type: entityTable
   id: SpicyPestEventsTable
@@ -126,14 +127,12 @@
       prob: 0.002
     - id: MobSnailInstantDeath
       prob: 0.00001 #  ~ 1:2000 snails
+
 - type: entity
   parent: BaseStationEventShortDelay
   id: RandomCritterHorde # My deepest apologies, Mr. Secoff. You just wasted your time :)
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-horde-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6 # Slightly more common than other hordes
     duration: 5
@@ -143,11 +142,6 @@
     table: !type:GroupSelector
       rolls: 3,5
       children:
-      - !type:GroupSelector
-        children: # Increased chances for special snails on purpose. Makes it a bit more interesting.
-        - id: MobSnail
-        - id: MobSnailSpeed
-        - id: MobSnailMoth
       - !type:GroupSelector
         children: # Increased chances for special roaches on purpose. Makes it a bit more interesting.
         - id: MobCockroach
