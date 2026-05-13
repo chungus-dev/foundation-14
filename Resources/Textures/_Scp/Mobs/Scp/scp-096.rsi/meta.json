@@ -1,0 +1,120 @@
+﻿{
+    "version": 1,
+    "license" : "CLA",
+    "copyright": "Original sprite: https://github.com/Foundation-19/Foundation-19/blob/dev/icons/SCP/scp-096.dmi, edited sprite: odlieerr(Discord)",
+    "size": {
+        "x": 48,
+        "y": 64
+    },
+    "states": [
+        {
+            "name": "heating",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "dead"
+        },
+        {
+            "name": "agro_to_dead",
+            "delays": [
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ]
+            ]
+        },
+        {
+            "name": "idle",
+            "directions": 4
+        },
+        {
+            "name": "dead_to_idle",
+            "delays": [
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ]
+            ]
+        },
+        {
+            "name": "idle_agro",
+            "directions": 4
+        },
+        {
+            "name": "running",
+            "directions": 4,
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ],
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ],
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ],
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "walking",
+            "directions": 4,
+            "delays": [
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "version": 1,
+    "license": "CLA",
+    "copyright": "Sprited by discord: odlieerr",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+  "states": [
+    {
+      "name": "side_in",
+      "directions": 4
+    },
+    {
+      "name": "side_out",
+      "directions": 4
+    },
+    {
+      "name": "corner_in",
+      "directions": 4
+    },
+    {
+      "name": "corner_out",
+      "directions": 4
+    },
+    {
+      "name": "corner_small_in",
+      "directions": 4
+    },
+    {
+      "name": "corner_small_out",
+      "directions": 4
+    },
+    {
+      "name": "round_in",
+      "directions": 4
+    },
+    {
+      "name": "round_out",
+      "directions": 4
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+﻿{
+    "version": 1,
+    "license": "CLA",
+    "copyright": "SUNRISE",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "scp"
+        },
+        {
+            "name": "chaos"
+        },
+        {
+            "name": "goc"
+        },
+        {
+            "name": "changes"
+        },
+        {
+            "name": "breath"
+        },
+        {
+            "name": "nt"
+        },
+        {
+            "name": "scp173"
+        },
+        {
+            "name": "scp217"
+        },
+        {
+            "name": "tattered"
+        },
+        {
+            "name": "saul"
+        },
+        {
+            "name": "sus"
+        },
+        {
+            "name": "poster_being_set",
+            "delays": [
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            ]
+        },
+		{
+		    "name": "poster1_chaos_contraband"
+		},
+		{
+	        "name": "poster2_chaos_contraband"
+		},
+		{
+		    "name": "poster3_chaos_contraband"
+		},
+		{
+		    "name": "poster4_chaos_contraband"
+		},
+		{
+            "name": "loose_lips_lose_scips"
+        },  
+        {
+            "name": "rick_roll",
+            "delays": [
+                [
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1
+                ]
+            ]
+        }
+        
+    ]
+}

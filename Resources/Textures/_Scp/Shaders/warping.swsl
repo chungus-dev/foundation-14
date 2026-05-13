@@ -1,0 +1,92 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float warp_intensity;
+uniform highp float time_scale;
+
+highp float hash(highp float a, highp float b) {
+    return fract(sin(a * 127.1 + b * 311.7) * 43758.5453);
+}
+
+void fragment() {
+    highp float ux = FRAGCOORD.x * SCREEN_PIXEL_SIZE.x;
+    highp float uy = FRAGCOORD.y * SCREEN_PIXEL_SIZE.y;
+    highp float t = TIME * time_scale;
+
+    // --- Горизонтальный сдвиг полос ---
+    highp float band = floor(uy * 40.0);
+    highp float band_time = floor(t * 3.0);
+    highp float band_noise = hash(band, band_time);
+    highp float band_shift = step(0.92, band_noise) * (band_noise - 0.92) * 0.3 * warp_intensity;
+    ux += band_shift;
+
+    // --- Рябь из случайных точек ---
+    highp float ripple_period = 4.0;
+    highp float ripple_phase = floor(t / ripple_period);
+    highp float ripple_age = fract(t / ripple_period);
+
+    highp float ox = hash(ripple_phase, 0.0);
+    highp float oy = hash(ripple_phase, 1.0);
+
+    highp float rdx = ux - ox;
+    highp float rdy = uy - oy;
+    highp float rdist = sqrt(rdx * rdx + rdy * rdy);
+
+    // --- Притяжение к воронке ---
+    // Каждые ~7 секунд появляется новая точка притяжения, UV утекают к ней
+    highp float vortex_period = 7.0;
+    highp float vortex_phase = floor(t / vortex_period);
+    highp float vortex_age = fract(t / vortex_period); // 0..1
+
+    highp float vx = hash(vortex_phase, 5.0);
+    highp float vy = hash(vortex_phase, 6.0);
+
+    highp float vdx = ux - vx;
+    highp float vdy = uy - vy;
+    highp float vdist = max(sqrt(vdx * vdx + vdy * vdy), 0.001);
+
+    // Нарастает до середины периода, потом резко отпускает
+    highp float vortex_pull = smoothstep(0.0, 0.6, vortex_age) * smoothstep(1.0, 0.65, vortex_age);
+    highp float pull_strength = (1.0 / (vdist * 6.0 + 1.0)) * 0.025 * warp_intensity * vortex_pull;
+    ux -= vdx * pull_strength;
+    uy -= vdy * pull_strength;
+
+    // --- Вертикальные разрывы (трещины) ---
+    // Редкие тонкие щели где экран смещён по-разному по разные стороны
+    highp float crack_time = floor(t * 1.5);
+    highp float crack_x = hash(crack_time, 9.0); // позиция щели по X
+    highp float crack_noise = hash(crack_time, 10.0);
+    highp float crack_width = 0.004;
+    highp float dist_to_crack = abs(ux - crack_x);
+    highp float on_crack = step(crack_noise, 0.3) * smoothstep(crack_width, 0.0, dist_to_crack);
+    highp float crack_side = sign(ux - crack_x);
+    ux += crack_side * on_crack * 0.012 * warp_intensity;
+    uy += on_crack * hash(crack_time, 11.0) * 0.008 * warp_intensity;
+
+    // --- Хроматическая аберрация ---
+    highp float aberr = (0.002 + rdist * 0.004) * warp_intensity / 10.0;
+    highp float col_r = texture(SCREEN_TEXTURE, vec2(ux + aberr, uy)).r;
+    highp float col_g = texture(SCREEN_TEXTURE, vec2(ux, uy)).g;
+    highp float col_b = texture(SCREEN_TEXTURE, vec2(ux - aberr, uy)).b;
+
+    // --- Drain цвета (выцветание до монохрома) ---
+    highp float drain_cycle = sin(t * 0.25 + 1.5);
+    highp float drain = smoothstep(0.85, 1.0, drain_cycle);
+    drain = clamp(drain * warp_intensity, 0.0, 1.0); // не даём выйти за 0..1
+    highp float luma = col_r * 0.299 + col_g * 0.587 + col_b * 0.114;
+    col_r = mix(col_r, luma, drain);
+    col_g = mix(col_g, luma, drain);
+    col_b = mix(col_b, luma, drain);
+
+    // --- Моргание (тёмные вспышки) ---
+    // Редкое резкое затемнение всего экрана
+    highp float blink_noise = hash(floor(t * 8.0), 77.0);
+    highp float blink = step(0.97, blink_noise) * 0.7 * warp_intensity;
+    col_r *= 1.0 - blink;
+    col_g *= 1.0 - blink;
+    col_b *= 1.0 - blink;
+
+    col_r = clamp(col_r, 0.0, 1.0);
+    col_g = clamp(col_g, 0.0, 1.0);
+    col_b = clamp(col_b, 0.0, 1.0);
+
+    COLOR = vec4(col_r, col_g, col_b, 1.0);
+}
