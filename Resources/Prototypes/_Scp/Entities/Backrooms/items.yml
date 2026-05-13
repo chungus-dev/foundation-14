@@ -15,9 +15,10 @@
     prototype: ScpAnomalyPainting
   - type: Wieldable
   - type: MultiHandedItem
-  - type: AddComponentsPickup
-    components:
-    - type: AnomalyAccent
+  # SCP port: disabled; depends on the _Sunrise AnomalyAccent component.
+  # - type: AddComponentsPickup
+  #   components:
+  #   - type: AnomalyAccent
 
 - type: entity
   parent: BaseItem

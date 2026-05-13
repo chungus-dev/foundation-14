@@ -19,7 +19,6 @@
           types:
             Blunt: -2
             Slash: -2
-            # Mangleness: -2 # SCP port: SUNRISE damage type unavailable
             Radiation: -2
             Cellular: -2
             Poison: -2

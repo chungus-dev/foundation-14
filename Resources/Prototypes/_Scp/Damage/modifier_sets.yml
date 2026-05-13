@@ -35,7 +35,6 @@
     Poison: 0.0
     Cellular: 0.0
     Radiation: 0.0
-    # Mangleness: 0.0 # SCP port: SUNRISE damage type unavailable
 
 - type: damageModifierSet
   id: StructuralMetallicHardCellsScp

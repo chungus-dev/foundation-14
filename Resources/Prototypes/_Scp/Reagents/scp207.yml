@@ -14,10 +14,6 @@
         walkSpeedModifier: 1.75
         sprintSpeedModifier: 1.75
       - !type:HealthChange
-        damage:
-          types:
-            Blunt: 2 # SCP port: Mangleness SUNRISE damage type unavailable
-      - !type:HealthChange
         conditions:
         - !type:ReagentCondition
           reagent: Scp207Reagent

@@ -189,7 +189,6 @@
     - Caustic
     - Asphyxiation
     - Radiation
-    # - Mangleness # Sunrise-Edit; SCP port: SUNRISE damage type unavailable
   - type: DamageOnHighSpeedImpact
     damage:
       types:
