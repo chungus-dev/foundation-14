@@ -1,7 +1,7 @@
 - type: entity
   id: LocusKitUpgrade
   name: upgrade kit (locus)
-  parent: BaseSecurityUpgrade
+  parent: BaseItem
   components:
   - type: Sprite
     sprite: _Scp/Objects/Specific/Modifications/locus_upgrade.rsi

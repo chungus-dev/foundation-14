@@ -30,11 +30,14 @@ public sealed class KillGlobalSoundSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<HumanoidProfileComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
     }
 
-    private void OnMobStateChanged(Entity<HumanoidProfileComponent> ent, ref MobStateChangedEvent args)
+    private void OnMobStateChanged(MobStateChangedEvent args)
     {
+        if (!HasComp<HumanoidProfileComponent>(args.Target))
+            return;
+
         if (args.NewMobState != MobState.Dead)
             return;
 
@@ -47,7 +50,7 @@ public sealed class KillGlobalSoundSystem : EntitySystem
         if (!_random.Prob(killSoundComponent.Chance))
             return;
 
-        var xform = Transform(ent);
+        var xform = Transform(args.Target);
 
         if (!xform.GridUid.HasValue)
             return;
@@ -56,7 +59,7 @@ public sealed class KillGlobalSoundSystem : EntitySystem
         // Поэтому мы берем сначала большой кружок максимального радиуса
         // А потом убираем из него маленький кружок ближайших сущностей
         // В итоге получается как раз те сущности, что находятся в отдалении, но не далеко
-        var coords = _transform.GetMapCoordinates(ent);
+        var coords = _transform.GetMapCoordinates(args.Target);
         var filter = Filter.BroadcastGrid(xform.GridUid.Value)
             .AddInRange(coords, killSoundComponent.MaxRadius)
             .RemoveInRange(coords, ExceptRange);

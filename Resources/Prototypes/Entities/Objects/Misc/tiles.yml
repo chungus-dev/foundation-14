@@ -247,7 +247,7 @@
 
 - type: entity
   name: steel tile
-  parent: [MetalSounds, FloorTileItemBase]
+  parent: FloorTileItemBase
   id: FloorTileItemSteel
   components:
   - type: Sprite

@@ -862,8 +862,6 @@ ClothingShoesBootsBlueShield: null
 ClothingUniformJumpskirtBlueShield: null
 ClothingUniformJumpsuitBlueShield: null
 
-NuclearBomb: NuclearBombScp
-
 SignDirectionalBridge: SignDirectionalScpAdministration
 SignDirectionalSupply: SignDirectionalScpLogisticsService
 SignDirectionalHop: SignDirectionalScpPersonnelOfficer

@@ -87,10 +87,10 @@
     - Inorganic
     - Silicon
     - Mech
-  - type: InnateItem
-    instantActions:
-    - HandheldStationMapUnpowered
-    - EngiAlertsMonitor
+#  - type: InnateItem # SCP port: component unavailable in Foundation14
+#    instantActions:
+#    - HandheldStationMapUnpowered
+#    - EngiAlertsMonitor
   # Sunrise-End
 
   # Visual
@@ -254,7 +254,7 @@
   petSuccessString: petting-success-janitor-cyborg
   petFailureString: petting-failure-janitor-cyborg
   addComponents:
-  - type: FootprintAreaCleaner
+#  - type: FootprintAreaCleaner # SCP port: component unavailable in Foundation14
   - type: Absorbent
     pickupAmount: 500
   - type: SolutionContainerManager
@@ -306,18 +306,18 @@
     damageContainers:
     - Biological
   # Sunrise-Start
-  - type: TTS
-    voice: TurretFloor
+  # - type: TTS # SCP port: SUNRISE TTS component unavailable
+    # voice: TurretFloor
   - type: MovementSpeedModifier
     baseWalkSpeed : 3
     baseSprintSpeed : 5
   - type: FabricateCandy
-  - type: InnateItem
-    instantActions:
-    - HandheldStationMapUnpowered
-    - HandheldEmergencyCrewMonitorBorg
-    entityTargetActions:
-    - HandheldHealthAnalyzerUnpowered
+#  - type: InnateItem # SCP port: component unavailable in Foundation14
+#    instantActions:
+#    - HandheldStationMapUnpowered
+#    - HandheldEmergencyCrewMonitorBorg
+#    entityTargetActions:
+#    - HandheldHealthAnalyzerUnpowered
   # Sunrise-End
 
   # Visual

@@ -1,5 +1,5 @@
 - type: entity
-  parent: BasePepperSpray
+  parent: SprayBottle
   id: AmnesiacSpray
   name: amnesiac spray
   description: It's a canister with liquid inside.

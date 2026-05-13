@@ -1,24 +1,11 @@
 - type: species
   id: Vulpkanin
   name: species-name-vulpkanin
-  roundStart: false # Fire edit
-  stationRecordsHidden: true # Fire added
+  roundStart: true
   prototype: MobVulpkanin
-  bodyTypes:
-  # оставил VulpkaninNormal чтобы у людей не сбрасывались их настройки
-  - VulpkaninNormal # VulpkaninCurvedSmallMuzzle
-  - VulpkaninStraightSmallMuzzle
-  - VulpkaninCurvedBigMuzzle
-  - VulpkaninStraightBigMuzzle
-  defaultSkinTone: "#FFBBC3"
-  skinColoration: Hues # SUNRISE EDIT было VulpkaninColors хз зачем
-  markingLimits: MobVulpkaninMarkingLimits
-  dollPrototype: MobVulpkaninDummy
+  defaultSkinTone: "#5a3f2d"
+  dollPrototype: AppearanceVulpkanin
+  skinColoration: VulpkaninColors
   maleFirstNames: names_vulpkanin_male
   femaleFirstNames: names_vulpkanin_female
-  maleLastNames: names_vulpkanin_last
-  femaleLastNames: names_vulpkanin_last
-  buttScan:
-    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
-    state: human # SUNRISE-TODO: Спрайт жопы вульп
-
+  lastNames: names_vulpkanin_last

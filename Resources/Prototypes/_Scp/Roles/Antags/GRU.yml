@@ -11,10 +11,10 @@
       settings: short
   - type: Loadout
     prototypes: [ GRULeaderGear ]
-  - type: TimedRemoveComponents
-    removeAfter: 2
-    components:
-    - type: Implanted
+  # - type: TimedRemoveComponents # SCP port: component unavailable in Foundation14
+    # removeAfter: 2
+    # components:
+    # - type: Implanted
 
 - type: startingGear
   id: GRULeaderGear
@@ -47,10 +47,10 @@
       settings: short
   - type: Loadout
     prototypes: [ GRUSpecialistGear ]
-  - type: TimedRemoveComponents
-    removeAfter: 2
-    components:
-    - type: Implanted
+  # - type: TimedRemoveComponents # SCP port: component unavailable in Foundation14
+    # removeAfter: 2
+    # components:
+    # - type: Implanted
 
 - type: randomHumanoidSettings
   id: GRUCadet
@@ -65,10 +65,10 @@
       settings: short
   - type: Loadout
     prototypes: [ GRUSpecialistGear ]
-  - type: TimedRemoveComponents
-    removeAfter: 2
-    components:
-    - type: Implanted
+  # - type: TimedRemoveComponents # SCP port: component unavailable in Foundation14
+    # removeAfter: 2
+    # components:
+    # - type: Implanted
 
 - type: startingGear
   id: GRUSpecialistGear

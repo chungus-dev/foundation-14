@@ -4,7 +4,7 @@
   description: A compact submachine gun. A faint pulsing can be felt beneath its frame.
   parent:
   - BaseItemScp
-  - GunLight
+  - BaseItem
   suffix: SCP-127
   components:
   - type: Sprite

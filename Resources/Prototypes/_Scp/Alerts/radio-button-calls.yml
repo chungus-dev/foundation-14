@@ -58,8 +58,8 @@
     exemptPaths:
     - /Audio/_Scp/Effects/Button/click.ogg
     - /Audio/_Scp/Effects/Button/emergency_alarm.ogg
-  - type: TTS
-    voice: Brendan
+  # - type: TTS # SCP port: SUNRISE TTS component unavailable
+    # voice: Brendan
 
 - type: entity
   parent: BaseRadioButtonCall

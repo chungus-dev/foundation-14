@@ -1,11 +1,11 @@
 ﻿# Голова
 - type: entity
-  parent: ClothingHeadHatIAA
+  parent: ClothingHeadHatCentcom
   id: ClothingHeadHatDirector
 
 # Униформа
 - type: entity
-  parent: ClothingUniformJumpsuitNtrep
+  parent: ClothingUniformJumpsuitNanotrasen
   id: ClothingUniformJumpsuitDirector
 
 # Верхняя одежда

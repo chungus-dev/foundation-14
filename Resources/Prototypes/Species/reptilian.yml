@@ -1,21 +1,11 @@
 - type: species
   id: Reptilian
   name: species-name-reptilian
-  roundStart: false # Fire edit
-  stationRecordsHidden: true # Fire added
+  roundStart: true
   prototype: MobReptilian
-  bodyTypes:
-  - ReptilianNormal
-#  - ReptilianSlim
   defaultSkinTone: "#34a223"
-  markingLimits: MobReptilianMarkingLimits
-  dollPrototype: MobReptilianDummy
+  dollPrototype: AppearanceReptilian
   skinColoration: Hues
   maleFirstNames: NamesReptilianMale
   femaleFirstNames: NamesReptilianFemale
   naming: FirstDashFirst
-  # Sunrise-Edit
-  buttScan:
-    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
-    state: human
-

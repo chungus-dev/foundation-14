@@ -1,7 +1,7 @@
 - type: entity
   id: BulletAmnesiacAGasGrenade
   name: amnesiac gase grenade
-  parent: BulletSmokeGrenade
+  parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite

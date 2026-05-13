@@ -61,7 +61,7 @@
 
 #очки медика ПХ
 - type: entity
-  parent: [ClothingEyesHudSyndicateMedic, BaseChaosContraband]
+  parent: [ClothingEyesHudMedical, BaseChaosContraband]
   id: EyesHudChaosMedic
   components:
   - type: Contraband
@@ -69,12 +69,12 @@
 
 #берет медика ПХ
 - type: entity
-  parent: [ClothingHeadHatCapCMO, BaseChaosContraband]
+  parent: [ClothingHeadHatBeretCmo, BaseChaosContraband]
   id: HeadHatCapChaosMedic
 
 #оптический термальный сканер ПХ
 - type: entity
-  parent: [ClothingEyesGlassesThermalSyndie, BaseChaosContraband]
+  parent: [ClothingEyesGlassesThermal, BaseChaosContraband]
   id: ClothingEyesGlassesThermalChaos
   components:
   - type: Contraband

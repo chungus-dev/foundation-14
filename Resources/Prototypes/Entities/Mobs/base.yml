@@ -46,51 +46,51 @@
     active: False
   - type: StunVisuals
   # Sunrise-Start
-  - type: TTS
-  - type: DamageOverlay
-  - type: EmoteAnimation
-  - type: CustomLimbVisualizer
-    displacements:
-      LHand:
-        sizeMaps:
-          32:
-            sprite: _Sunrise/CustomLimb/displacement.rsi
-            state: l_hand
-      RHand:
-        sizeMaps:
-          32:
-            sprite: _Sunrise/CustomLimb/displacement.rsi
-            state: r_hand
-      LLeg:
-        sizeMaps:
-          32:
-            sprite: _Sunrise/CustomLimb/displacement.rsi
-            state: l_leg
-      RLeg:
-        sizeMaps:
-          32:
-            sprite: _Sunrise/CustomLimb/displacement.rsi
-            state: r_leg
-      LFoot:
-        sizeMaps:
-          32:
-            sprite: _Sunrise/CustomLimb/displacement.rsi
-            state: l_foot
-      RFoot:
-        sizeMaps:
-          32:
-            sprite: _Sunrise/CustomLimb/displacement.rsi
-            state: r_foot
-      LArm:
-        sizeMaps:
-          32:
-            sprite: _Sunrise/CustomLimb/displacement.rsi
-            state: l_arm
-      RArm:
-        sizeMaps:
-          32:
-            sprite: _Sunrise/CustomLimb/displacement.rsi
-            state: r_arm
+  # - type: TTS # SCP port: SUNRISE TTS component unavailable
+  # - type: DamageOverlay # SCP port: component unavailable in Foundation14
+  # - type: EmoteAnimation # SCP port: component unavailable in Foundation14
+  # - type: CustomLimbVisualizer # SCP port: SUNRISE custom limb visualizer unavailable
+  #   displacements:
+  #     LHand:
+  #       sizeMaps:
+  #         32:
+  #           sprite: _Sunrise/CustomLimb/displacement.rsi
+  #           state: l_hand
+  #     RHand:
+  #       sizeMaps:
+  #         32:
+  #           sprite: _Sunrise/CustomLimb/displacement.rsi
+  #           state: r_hand
+  #     LLeg:
+  #       sizeMaps:
+  #         32:
+  #           sprite: _Sunrise/CustomLimb/displacement.rsi
+  #           state: l_leg
+  #     RLeg:
+  #       sizeMaps:
+  #         32:
+  #           sprite: _Sunrise/CustomLimb/displacement.rsi
+  #           state: r_leg
+  #     LFoot:
+  #       sizeMaps:
+  #         32:
+  #           sprite: _Sunrise/CustomLimb/displacement.rsi
+  #           state: l_foot
+  #     RFoot:
+  #       sizeMaps:
+  #         32:
+  #           sprite: _Sunrise/CustomLimb/displacement.rsi
+  #           state: r_foot
+  #     LArm:
+  #       sizeMaps:
+  #         32:
+  #           sprite: _Sunrise/CustomLimb/displacement.rsi
+  #           state: l_arm
+  #     RArm:
+  #       sizeMaps:
+  #         32:
+  #           sprite: _Sunrise/CustomLimb/displacement.rsi
+  #           state: r_arm
   # Sunrise-end
 
 # The progenitor. This should only container the most basic components possible.
@@ -189,7 +189,7 @@
     - Caustic
     - Asphyxiation
     - Radiation
-    - Mangleness # Sunrise-Edit
+    # - Mangleness # Sunrise-Edit; SCP port: SUNRISE damage type unavailable
   - type: DamageOnHighSpeedImpact
     damage:
       types:

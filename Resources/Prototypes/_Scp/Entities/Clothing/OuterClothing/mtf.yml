@@ -200,7 +200,7 @@
     - type: Scp106Protection
 
 - type: entity
-  parent: ClothingOuterArmorSWAT
+  parent: ClothingOuterArmorBulletproof
   id: ClothingOuterArmorHD
   name: heavy armor
   description: A massive armor set with thickened plates and signs of regular combat use.
@@ -239,8 +239,8 @@
     sprite: _Scp/Clothing/OuterClothing/Armor/MTF/biohazard.rsi
   - type: Clothing
     sprite: _Scp/Clothing/OuterClothing/Armor/MTF/biohazard.rsi
-  - type: Pierceable
-    level: Metal
+  # - type: Pierceable # SCP port: component unavailable in Foundation14
+    # level: Metal
   - type: ClothingSpeedModifier
     walkModifier: 0.85
     sprintModifier: 0.85

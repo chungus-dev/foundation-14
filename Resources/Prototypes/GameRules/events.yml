@@ -275,10 +275,10 @@
         sound: /Audio/Misc/ninja_greeting.ogg
       components:
       # Sunrise edit start
-      - type: GhostPanelAntagonistMarker
-        name: ghost-panel-antagonist-ninja-name
-        description: ghost-panel-antagonist-ninja-description
-        priority: 40
+#      - type: GhostPanelAntagonistMarker # SCP port: component unavailable in Foundation14
+#        name: ghost-panel-antagonist-ninja-name
+#        description: ghost-panel-antagonist-ninja-description
+#        priority: 40
       # Sunrise edit end
       - type: SpaceNinja
       - type: NpcFactionMember
@@ -625,10 +625,10 @@
       - RoleSurvivalNukie
       components:
       # Sunrise edit start
-      - type: GhostPanelAntagonistMarker
-        name: ghost-panel-antagonist-loneops-name
-        description: ghost-panel-antagonist-loneops-description
-        priority: 20
+#      - type: GhostPanelAntagonistMarker # SCP port: component unavailable in Foundation14
+#        name: ghost-panel-antagonist-loneops-name
+#        description: ghost-panel-antagonist-loneops-description
+#        priority: 20
       # Sunrise edit end
       - type: NukeOperative
       - type: RandomMetadata

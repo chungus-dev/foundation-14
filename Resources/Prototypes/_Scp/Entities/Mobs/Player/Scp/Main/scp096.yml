@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Scp096
   suffix: SCP-096
   parent:
@@ -119,10 +119,10 @@
     holderHandsRequired: 2
     holderWalkModifier: 0.25
     holderSprintModifier: 0.25
-  - type: GhostPanelAntagonistMarker
-    name: ghost-panel-antagonist-scp-name
-    description: ghost-panel-antagonist-scp-description
-    priority: -10
+#  - type: GhostPanelAntagonistMarker # SCP port: component unavailable in Foundation14
+#    name: ghost-panel-antagonist-scp-name
+#    description: ghost-panel-antagonist-scp-description
+#    priority: -10
   - type: Pullable
   - type: StandingState
   - type: StatusIcon

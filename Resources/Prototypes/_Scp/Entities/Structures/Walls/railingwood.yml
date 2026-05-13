@@ -1,5 +1,5 @@
 - type: entity
-  parent: RailingWood
+  parent: Railing
   id: ScpRailingWood
   components:
   - type: Sprite
@@ -10,7 +10,7 @@
     graph: ScpRailingWood
 
 - type: entity
-  parent: RailingCornerWood
+  parent: RailingCorner
   id: ScpRailingCornerWood
   components:
   - type: Sprite
@@ -21,7 +21,7 @@
     graph: ScpRailingWood
 
 - type: entity
-  parent: RailingCornerWoodSmall
+  parent: RailingCornerSmall
   id: ScpRailingCornerWoodSmall
   components:
   - type: Sprite
@@ -32,7 +32,7 @@
     graph: ScpRailingWood
 
 - type: entity
-  parent: RailingRoundWood
+  parent: RailingRound
   id: ScpRailingRoundWood
   components:
   - type: Sprite

@@ -219,7 +219,7 @@
   - type: BadDrink
   - type: IgnoresFingerprints
   # Sunrise Edit.
-  - type: PuddleFootprint
+  # - type: PuddleFootprint # SCP port: component unavailable in Foundation14
   # Sunrise Edit End!
   - type: Tag
     tags:

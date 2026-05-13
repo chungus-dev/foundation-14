@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent:
   - BaseScp
   - MobCombat
@@ -115,14 +115,14 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepScp173Classic
-  - type: FootprintEmitter
-    walkStepInterval: 0.1
-    leftBareFootState:
-    - dragging-1
-    - dragging-2
-    rightBareFootState:
-    - dragging-1
-    - dragging-2
+#  - type: FootprintEmitter # SCP port: component unavailable in Foundation14
+#    walkStepInterval: 0.1
+#    leftBareFootState:
+#    - dragging-1
+#    - dragging-2
+#    rightBareFootState:
+#    - dragging-1
+#    - dragging-2
   - type: GuideHelp
     guides:
     - ScpResearch

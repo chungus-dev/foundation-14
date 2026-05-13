@@ -3667,7 +3667,7 @@
   description: It's like a cat, only.... branch-ier.
   components:
   # Sunrise-Start
-  - type: VentCrawler # Sunrise-edit
+#  - type: VentCrawler # Sunrise-edit # SCP port: component unavailable in Foundation14
   - type: Item
     size: Large
   # Sunrise-End
@@ -3747,10 +3747,10 @@
     reformTime: 10
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
-  - type: CollectiveMind
-    minds:
-    - Dioneas
-  - type: Carriable
+#  - type: CollectiveMind # SCP port: component unavailable in Foundation14
+#    minds:
+#    - Dioneas
+#  - type: Carriable # SCP port: component unavailable in Foundation14
   - type: CanEscapeInventory
 
 - type: entity

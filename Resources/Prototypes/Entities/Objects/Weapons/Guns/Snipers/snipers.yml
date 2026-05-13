@@ -59,14 +59,14 @@
   - type: EyeCursorOffset
     maxOffset: 2
     pvsIncrease: 0.2
-  - type: KnockbackByUserTag
-    doestContain:
-      Resomi:
-        knockback: 4
-        staminaMultiplier: 15
-      Felinid:
-        knockback: 2
-        staminaMultiplier: 15
+  # - type: KnockbackByUserTag # SCP port: component unavailable in Foundation14
+    # doestContain:
+      # Resomi:
+        # knockback: 4
+        # staminaMultiplier: 15
+      # Felinid:
+        # knockback: 2
+        # staminaMultiplier: 15
   # Sunrise end
 
 - type: entity

@@ -35,9 +35,9 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   # Sunrise-Start
-  - type: EdgeConnection
-    connectionKey: computers
-    allowedDirections: East, West
+  # - type: EdgeConnection # SCP port: component unavailable in Foundation14
+    # connectionKey: computers
+    # allowedDirections: East, West
   # Sunrise-End
   - type: Appearance
   - type: GenericVisualizer

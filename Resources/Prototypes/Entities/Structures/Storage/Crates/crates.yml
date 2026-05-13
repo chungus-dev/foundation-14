@@ -343,8 +343,8 @@
     sprite: _Scp/Structures/Storage/Crates/weapon.rsi # Fire edit
   - type: AccessReader
     access: [["Armory"]]
-  - type: Pierceable # Sunrise-edit - прострел ящиков
-    level: Metal
+  # - type: Pierceable # SCP port: component unavailable in Foundation14
+    # level: Metal
 
 
 - type: entity

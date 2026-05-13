@@ -95,8 +95,8 @@
   - type: CargoOrderConsole
   - type: CrewMonitoringConsole
     # Sunrise - Start отключаем verb
-  - type: CrewMonitoringCorpseAlert
-    showToggleVerb: false
+#  - type: CrewMonitoringCorpseAlert # SCP port: component unavailable in Foundation14
+#    showToggleVerb: false
     # Sunrise - End
   - type: GeneralStationRecordConsole
     canDeleteEntries: true

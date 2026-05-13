@@ -344,8 +344,8 @@
   - type: SpawnPoint
     spawn_type: Job
     job_id: ClassD
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
   - type: Tag
     tags:
     - ClassDSpawner
@@ -357,8 +357,8 @@
   - type: SpawnPoint
     spawn_type: Job
     job_id: ClassDCook
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
   - type: Tag
     tags:
     - ClassDSpawner
@@ -370,8 +370,8 @@
   - type: SpawnPoint
     spawn_type: Job
     job_id: ClassDBotanist
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
   - type: Tag
     tags:
     - ClassDSpawner
@@ -383,8 +383,8 @@
   - type: SpawnPoint
     spawn_type: Job
     job_id: ClassDJanitor
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
   - type: Tag
     tags:
     - ClassDSpawner

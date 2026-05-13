@@ -48,11 +48,11 @@
   - type: Pullable
   - type: DamageExaminable
   # Sunrise start
-  - type: TTS
-    voice: Portal2FactCore
+  # - type: TTS # SCP port: SUNRISE TTS component unavailable
+    # voice: Portal2FactCore
   - type: StaticPrice
     price: 0
-  - type: SurgeryTarget
+  # - type: SurgeryTarget # SCP port: SUNRISE component unavailable
   - type: DamageOtherOnHit
     damage:
       types:

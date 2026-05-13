@@ -18,18 +18,18 @@
     thresholds:
       0: Alive
       50: Dead
-  - type: GhostPanelAntagonistMarker
-    name: ghost-panel-antagonist-scp106-phantom-name
-    description: ghost-panel-antagonist-scp106-phantom-description
-    priority: -5
+#  - type: GhostPanelAntagonistMarker # SCP port: component unavailable in Foundation14
+#    name: ghost-panel-antagonist-scp106-phantom-name
+#    description: ghost-panel-antagonist-scp106-phantom-description
+#    priority: -5
   - type: Eye
     drawFov: false
   - type: FlashImmunity
     showInExamine: false
   - type: Scp106Phantom
   - type: ScpRestriction
-  - type: ToggleableNightVision
-    effect: ScpEffectNightVision
+#  - type: ToggleableNightVision # SCP port: component unavailable in Foundation14
+#    effect: ScpEffectNightVision
 
 - type: entity
   id: Scp106Phantom

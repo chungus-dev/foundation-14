@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseNuclearBomb
+  parent: [BaseStructure, StructureWheeled, BaseMajorContraband]
   id: NuclearBomb
   categories: [ HideSpawnMenu ] # Fire edit
   description: You probably shouldn't stick around to see if this is armed.

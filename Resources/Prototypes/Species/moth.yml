@@ -1,22 +1,11 @@
 - type: species
   id: Moth
   name: species-name-moth
-  roundStart: false # Fire edit
-  stationRecordsHidden: true # Fire added
+  roundStart: true
   prototype: MobMoth
-  bodyTypes:
-  - MothNormal
-#  - MothSlim
   defaultSkinTone: "#ffda93"
-  markingLimits: MobMothMarkingLimits
-  dollPrototype: MobMothDummy
+  dollPrototype: AppearanceMoth
   skinColoration: Hues
   maleFirstNames: NamesMothFirstMale
   femaleFirstNames: NamesMothFirstFemale
-  maleLastNames: NamesMothLast
-  femaleLastNames: NamesMothLast
-  # Sunrise-Edit
-  buttScan:
-    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
-    state: human
-
+  lastNames: NamesMothLast

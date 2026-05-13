@@ -72,8 +72,8 @@
   parent: BaseScpArtifactEffect
   description: artifact-effect-hint-data-deleted
   categories: [ HideSpawnMenu ]
-  components:
-  - type: ArtifactBoltAirlocks
+  # components:
+  # - type: ArtifactBoltAirlocks # SCP port: component unavailable in Foundation14
 
 - type: entity
   id: ScpEffectTeslaDischarge
@@ -87,10 +87,10 @@
       maxLightningArc: 4
       shootMaxInterval: 4
       shootRange: 6
-    - type: TimedRemoveComponents
-      removeAfter: 10
-      components:
-      - type: LightningArcShooter
+    # - type: TimedRemoveComponents # SCP port: component unavailable in Foundation14
+      # removeAfter: 10
+      # components:
+      # - type: LightningArcShooter
 
 - type: entity
   id: ScpEffectSpawn2054X
@@ -104,9 +104,9 @@
       min: 0
       max: 0
     triggerDecreasesDurability: true
-  - type: ArtifactStartGameRule
-    rules:
-      Scp2054X: 1
+  # - type: ArtifactStartGameRule # SCP port: component unavailable in Foundation14
+    # rules:
+      # Scp2054X: 1
 
 
 #  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣤⣤⣤⣴⡶⠶⠶⠶⠶⠶⠶⠶⠶⠤⠤⢤⣤⣤⣤⣤⣤⣄⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -218,19 +218,19 @@
   parent: BaseScpArtifactEffect
   description: artifact-effect-hint-data-deleted
   categories: [ HideSpawnMenu ]
-  components:
-  - type: ArtifactWhitelistSwap
-    targetWhitelist:
-      components:
-      - Scp
-      - MobState
-      requireAll: true
-    targetBlacklist:
-      components:
-      - Scp096Face
-    otherMapWhitelist:
-      components:
-      - Scp106BackRoomMap
+  # components:
+  # - type: ArtifactWhitelistSwap # SCP port: component unavailable in Foundation14
+    # targetWhitelist:
+      # components:
+      # - Scp
+      # - MobState
+      # requireAll: true
+    # targetBlacklist:
+      # components:
+      # - Scp096Face
+    # otherMapWhitelist:
+      # components:
+      # - Scp106BackRoomMap
 
 - type: entity
   id: EffectMagnetUltra
@@ -243,26 +243,26 @@
     - type: GravityWell
       maxRange: 10
       baseRadialAcceleration: 90
-    - type: TimedRemoveComponents
-      components:
-      - type: GravityWell
+    # - type: TimedRemoveComponents # SCP port: component unavailable in Foundation14
+      # components:
+      # - type: GravityWell
 
 - type: entity
   id: ScpEffectShiftedAsciiTableAccent
   parent: BaseScpArtifactEffect
   description: artifact-effect-hint-data-deleted
   categories: [ HideSpawnMenu ]
-  components:
-  - type: AddComponentsInRadius
-    whitelist:
-      components:
-      - HumanoidAppearance
-    components:
-    - type: AnomalyAccent
-    - type: TimedRemoveComponents
-      removeAfter: 300
-      components:
-      - type: AnomalyAccent
+  # components:
+  # - type: AddComponentsInRadius # SCP port: component unavailable in Foundation14
+    # whitelist:
+      # components:
+      # - HumanoidAppearance
+    # components:
+    # - type: AnomalyAccent
+    # - type: TimedRemoveComponents
+      # removeAfter: 300
+      # components:
+      # - type: AnomalyAccent
 
 # Scp 939
 
@@ -290,16 +290,16 @@
   parent: BaseScpArtifactEffect
   description: artifact-effect-hint-data-deleted
   categories: [ HideSpawnMenu ]
-  components:
-  - type: ArtifactModifyHunger
+  # components:
+  # - type: ArtifactModifyHunger # SCP port: component unavailable in Foundation14
 
 - type: entity
   id: ScpEffectThirst
   parent: BaseScpArtifactEffect
   description: artifact-effect-hint-data-deleted
   categories: [ HideSpawnMenu ]
-  components:
-  - type: ArtifactModifyThirst
+  # components:
+  # - type: ArtifactModifyThirst # SCP port: component unavailable in Foundation14
 
 # Scp 106
 

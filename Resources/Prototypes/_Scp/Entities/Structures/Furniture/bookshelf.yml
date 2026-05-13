@@ -10,17 +10,17 @@
       state: wide
     - state: book-0
     - map: ["enum.StorageFillLayers.Fill"]
-  - type: EdgeConnection
-    connectionKey: computers
-    allowedDirections: East, West
-  - type: GenericVisualizer
-    visuals:
-      enum.EdgeConnectionVisuals.ConnectionMask:
-        base:
-          None: { state: wide }
-          West: { state: wide_right }
-          East: { state: wide_left }
-          East, West: { state: wide }
+  # - type: EdgeConnection # SCP port: component unavailable in Foundation14
+    # connectionKey: computers
+    # allowedDirections: East, West
+  # - type: GenericVisualizer # SCP port: EdgeConnection visuals unavailable in Foundation14
+  #   visuals:
+  #     enum.EdgeConnectionVisuals.ConnectionMask:
+  #       base:
+  #         None: { state: wide }
+  #         West: { state: wide_right }
+  #         East: { state: wide_left }
+  #         East, West: { state: wide }
   - type: Storage
     grid:
     - 0,0,9,1

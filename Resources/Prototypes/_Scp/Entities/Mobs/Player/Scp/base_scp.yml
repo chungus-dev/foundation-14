@@ -1,4 +1,4 @@
-﻿# Пресеты для артефактов-сцп.
+# Пресеты для артефактов-сцп.
 # Для разных сцп нужны разные пресеты
 
 - type: entity
@@ -96,9 +96,9 @@
   - type: Scp
     class: Neutralized
   - type: Damageable
-  - type: DamageOverlay
-    damagePopupType: SmallFloating
-    isStructure: true
+  # - type: DamageOverlay # SCP port: component unavailable in Foundation14
+    # damagePopupType: SmallFloating
+    # isStructure: true
 
 - type: entity # Базовый Entity для BaseScp и BaseScpFriendly
   abstract: true
@@ -110,15 +110,15 @@
   - type: Scp
     class: Neutralized
   - type: ScpRestriction
-  - type: FootprintEmitter
+#  - type: FootprintEmitter # SCP port: component unavailable in Foundation14
   - type: ZombieImmune # ебало игроков представили?
   - type: FlashImmunity
     showInExamine: false
   - type: StationRecordKeyStorage
-  - type: GhostPanelAntagonistMarker
-    name: ghost-panel-antagonist-scp-name
-    description: ghost-panel-antagonist-scp-description
-    priority: -10
+#  - type: GhostPanelAntagonistMarker # SCP port: component unavailable in Foundation14
+#    name: ghost-panel-antagonist-scp-name
+#    description: ghost-panel-antagonist-scp-description
+#    priority: -10
   - type: NpcFactionMember
     factions:
     - SCPs
@@ -148,8 +148,8 @@
       - !type:PlaySoundBehavior
         sound: !type:SoundPathSpecifier
           path: /Audio/_Scp/demon-dying.ogg
-  - type: ToggleableNightVision
-    effect: ScpEffectNightVision
+#  - type: ToggleableNightVision # SCP port: component unavailable in Foundation14
+#    effect: ScpEffectNightVision
   - type: Tag
     tags:
     - FootstepSound

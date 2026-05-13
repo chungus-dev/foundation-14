@@ -71,8 +71,8 @@
   - type: Puller
     needsHands: true
   - type: Speech
-  - type: TTS
-    voice: SCP049
+  # - type: TTS # SCP port: SUNRISE TTS component unavailable
+    # voice: SCP049
   - type: AmbientSound
     enabled: true
     volume: -2

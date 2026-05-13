@@ -1,6 +1,6 @@
 - type: entity
   name: AR-18
-  parent: BaseWeaponRifleSunrise
+  parent: BaseWeaponRifle
   id: WeaponRifleAR18
   categories: [ HideSpawnMenu ] # Fire edit
   components:

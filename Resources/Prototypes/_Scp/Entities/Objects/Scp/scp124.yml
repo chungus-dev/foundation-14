@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: Scp124
-  parent: HandheldSoil
+  parent: BaseItemScp
   name: soil bag
   description: A heavy bag of soil marked with an "SCP-124" stamp.
   suffix: SCP-124
@@ -12,8 +12,8 @@
     class: Safe
   - type: Item
     size: Normal
-  - type: Soil
-    spawnPrototype: Scp124Soil
+  # - type: Soil # SCP port: component unavailable in Foundation14
+  #   spawnPrototype: Scp124Soil
 
 - type: entity
   id: Scp124Soil

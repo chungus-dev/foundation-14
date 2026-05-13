@@ -217,8 +217,8 @@
       - Syndicate
   - type: RadarConsole
     maxRange: 384
-  - type: WorldLoader
-    radius: 1536
+  # - type: WorldLoader # SCP port: SUNRISE world loader unavailable
+  #   radius: 1536
   - type: PointLight
     radius: 1.5
     energy: 4.0

@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Scp939
   suffix: SCP-939
   parent:
@@ -49,8 +49,8 @@
       1000: Critical
   - type: Inventory
     templateId: scp939
-  - type: ToggleableNightVision
-    effect: ScpEffectNightVisionScp939
+#  - type: ToggleableNightVision # SCP port: component unavailable in Foundation14
+#    effect: ScpEffectNightVisionScp939
   - type: ScpAnnounceOnSpawn
     text: scp939-announce-on-spawn
     channels:
@@ -69,12 +69,12 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-  - type: FootprintEmitter
-    leftBareFootState:
-    - footprint-left-bare-lizard
-    rightBareFootState:
-    - footprint-right-bare-lizard
-  - type: TTS
+#  - type: FootprintEmitter # SCP port: component unavailable in Foundation14
+#    leftBareFootState:
+#    - footprint-left-bare-lizard
+#    rightBareFootState:
+#    - footprint-right-bare-lizard
+  # - type: TTS # SCP port: SUNRISE TTS component unavailable
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepScp939

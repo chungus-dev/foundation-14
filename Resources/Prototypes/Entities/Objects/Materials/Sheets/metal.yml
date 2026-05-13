@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [MetalSounds, BaseItem] # Sunrise edit
+  parent: BaseItem
   id: SheetMetalBase
   description: A sheet of metal, used often on the station in various applications.
   components:

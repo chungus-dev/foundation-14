@@ -80,19 +80,19 @@
   - type: EmitSoundOnLand
     sound:
       collection: RiflesDrop
-  - type: KnockbackByUserTag
-    doestContain:
-      Resomi:
-        knockback: 0.02
-        staminaMultiplier: 100
-      Felinid:
-        knockback: 0.01
-        staminaMultiplier: 100
-  - type: RestrictByUserTag
-    doestContain:
-    - Abductor
-    messages:
-    - abductor-gun-restricted-1
+  # - type: KnockbackByUserTag # SCP port: component unavailable in Foundation14
+    # doestContain:
+      # Resomi:
+        # knockback: 0.02
+        # staminaMultiplier: 100
+      # Felinid:
+        # knockback: 0.01
+        # staminaMultiplier: 100
+  # - type: RestrictByUserTag # SCP port: SUNRISE component unavailable
+    # doestContain:
+    # - Abductor
+    # messages:
+    # - abductor-gun-restricted-1
   # Sunrise end
 
 - type: entity

@@ -79,9 +79,9 @@
     drawdepth: Objects
     state: broken
   # Sunrise-Start
-  - type: EdgeConnection
-    connectionKey: computers
-    allowedDirections: East, West
+  # - type: EdgeConnection # SCP port: component unavailable in Foundation14
+    # connectionKey: computers
+    # allowedDirections: East, West
   - type: Appearance
   - type: GenericVisualizer
     visuals:

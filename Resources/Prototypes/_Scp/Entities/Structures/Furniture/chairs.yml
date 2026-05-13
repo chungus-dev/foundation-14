@@ -48,7 +48,7 @@
 
 - type: entity
   id: ScpChairOfficeGrey
-  parent: ChairOfficeGrey
+  parent: ChairOfficeLight
   components:
   - type: Sprite
     sprite: _Scp/Structures/Furniture/chairs.rsi

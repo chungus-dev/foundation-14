@@ -16,37 +16,37 @@
   description: Power of the bureaucracy in one pen.
 
 - type: entity
-  parent: ClothingHeadHatCapNtrep
+  parent: ClothingHeadHatCentcomcap
   id: ClothingHeadHatCapEthicsCommittee
   name: ethics committee representative cap
   description: Cap of justice over administration!
 
 - type: entity
-  parent: ClothingUniformJumpsuitNtrep
+  parent: ClothingUniformJumpsuitNanotrasen
   id: ClothingUniformJumpsuitWithWhiteShirt
   name: suit with white shirt
   description: It looks strict and formal.
 
 - type: entity
-  parent: ClothingUniformJumpsuitNtrepFormal
+  parent: ClothingUniformJumpsuitNanotrasen
   id: ClothingUniformJumpsuitBlackFormal
   name: black formal suit
   description: It looks solemn, strict and official.
 
 - type: entity
-  parent: ClothingUniformJumpskirtNtrep
+  parent: ClothingUniformJumpskirtCentcomFormalDress
   id: ClothingUniformJumpskirtWithWhiteShirt
   name: skirt with white shirt
   description: It looks strict and formal.
 
 - type: entity
-  parent: ClothingOuterCoatNtrep
+  parent: ClothingOuterCoatHoSTrench
   id: ClothingOuterCoatBlackFancy
   name: black jacket
   description: A fancy black jacket.
 
 - type: entity
-  parent: ClothingOuterCoatNtrepOpen
+  parent: ClothingOuterCoatHoSTrench
   id: ClothingOuterCoatBlackFancyOpen
   name: open black jacket
   description: A fancy open black jacket.

@@ -224,8 +224,8 @@
   categories: [ HideSpawnMenu ] # Fire edit
   name: wooden door
   components:
-  - type: Pierceable
-    level: Wood
+  # - type: Pierceable # SCP port: component unavailable in Foundation14
+    # level: Wood
   - type: Sprite
     sprite: Structures/Doors/MineralDoors/wood_door.rsi
   - type: Door

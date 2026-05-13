@@ -97,7 +97,7 @@
         maxDistance: 15
         rolloffFactor: 4
   - type: Scp106PortalSpawner
-  - type: XenoScreech
+  # - type: XenoScreech # SCP port: component unavailable in Foundation14
 
 - type: entity
   parent: MobScp106Monster

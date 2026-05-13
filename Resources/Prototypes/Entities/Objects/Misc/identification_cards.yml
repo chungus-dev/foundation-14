@@ -34,14 +34,11 @@
   name: passenger ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/id_cards.rsi
     layers:
     - state: default
     - sprite: &icon-rsi Interface/Misc/job_icons.rsi
-      offset: &icon-offset -0.19, 0
-  # Sunrise-End
+      offset: &icon-offset -0.09375, 0.0625 #3 pixels left, 2 pixels up
       state: Passenger
   - type: PresetIdCard
     job: Passenger
@@ -54,14 +51,13 @@
   name: captain ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: gold
-    - state: department-side
+    - state: stripe_top
       color: "#1b67a5"
-  # Sunrise-End
+    - state: stripe_bottom
+      color: "#0e4069"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Captain
@@ -84,15 +80,13 @@
   name: head of personnel ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: silver
-    - state: department-side
+    - state: stripe_top
       color: &color-service-top "#639137"
-    - state: department-side-extra-gold
-  # Sunrise-End
+    - state: stripe_bottom
+      color: &color-service-bottom "#446326"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: HeadOfPersonnel
@@ -107,15 +101,13 @@
   name: chief engineer ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: silver
-    - state: department-side
+    - state: stripe_top
       color: &color-engineering-top "#ffa62b"
-    - state: department-side-extra-gold
-  # Sunrise-End
+    - state: stripe_bottom
+      color: &color-engineering-bottom "#bc5b00"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ChiefEngineer
@@ -130,15 +122,13 @@
   name: chief medical officer ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: silver
-    - state: department-side
+    - state: stripe_top
       color: &color-medical-top "#68aed6"
-    - state: department-side-extra-gold
-  # Sunrise-End
+    - state: stripe_bottom
+      color: &color-medical-bottom "#325f7a"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ChiefMedicalOfficer
@@ -153,15 +143,13 @@
   name: research director ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: silver
-    - state: department-side
+    - state: stripe_top
       color: &color-science-top "#a53aaa"
-    - state: department-side-extra-gold
-  # Sunrise-End
+    - state: stripe_bottom
+      color: &color-science-bottom "#652368"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ResearchDirector
@@ -176,15 +164,13 @@
   name: head of security ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: silver
-    - state: department-side
+    - state: stripe_top
       color: &color-security-top "#cb0000"
-    - state: department-side-extra-gold
-  # Sunrise-End
+    - state: stripe_bottom
+      color: &color-security-bottom "#830000"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: HeadOfSecurity
@@ -199,15 +185,13 @@
   name: quartermaster ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: silver
-    - state: department-side
+    - state: stripe_top
       color: &color-supply-top "#b18644"
-    - state: department-side-extra-gold
-  # Sunrise-End
+    - state: stripe_bottom
+      color: &color-supply-bottom "#5b4523"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: QuarterMaster
@@ -224,14 +208,13 @@
   name: technical assistant ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-engineering-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-engineering-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: TechnicalAssistant
@@ -244,14 +227,13 @@
   name: engineer ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-engineering-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-engineering-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: StationEngineer
@@ -264,14 +246,13 @@
   name: atmospheric technician ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-engineering-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-engineering-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: AtmosphericTechnician
@@ -284,16 +265,13 @@
   name: senior engineer ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
-  - type: PresetIdCard
-    job: SeniorEngineer
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-engineering-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-engineering-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SeniorEngineer
@@ -306,14 +284,13 @@
   name: medical intern ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-medical-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-medical-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: MedicalIntern
@@ -326,14 +303,13 @@
   name: medical ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-medical-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-medical-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: MedicalDoctor
@@ -346,14 +322,13 @@
   name: paramedic ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-medical-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-medical-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Paramedic
@@ -366,14 +341,13 @@
   name: chemist ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-medical-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-medical-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Chemist
@@ -386,14 +360,13 @@
   name: psychologist ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-medical-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-medical-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Psychologist
@@ -406,16 +379,13 @@
   name: senior physician ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
-  - type: PresetIdCard
-    job: SeniorPhysician
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-medical-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-medical-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SeniorPhysician
@@ -428,14 +398,13 @@
   name: research assistant ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-science-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-science-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ResearchAssistant
@@ -448,14 +417,13 @@
   name: research ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-science-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-science-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Scientist
@@ -468,16 +436,13 @@
   name: senior researcher ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
-  - type: PresetIdCard
-    job: SeniorResearcher
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-science-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-science-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SeniorResearcher
@@ -490,14 +455,13 @@
   name: security cadet ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-security-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-security-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SecurityCadet
@@ -510,14 +474,13 @@
   name: security ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-security-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-security-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SecurityOfficer
@@ -530,14 +493,13 @@
   name: warden ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-security-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-security-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Warden
@@ -550,14 +512,13 @@
   name: detective ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-security-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-security-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Detective
@@ -570,21 +531,16 @@
   name: brigmedic ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-security-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-security-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Brigmedic
-  # Sunrise-Start
-  - type: PresetIdCard
-    job: Brigmedic
-  # Sunrise-End
 
 - type: entity
   parent: SecurityIDCard
@@ -592,14 +548,13 @@
   name: senior officer ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-security-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-security-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SeniorOfficer
@@ -612,14 +567,13 @@
   name: service worker ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ServiceWorker
@@ -632,13 +586,10 @@
   name: clown ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: clown-side
-  # Sunrise-End
+    - state: stripe_clown
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Clown
@@ -651,14 +602,13 @@
   name: mime ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: "#2d2d2d"
-  # Sunrise-End
+    - state: stripe_bottom
+      color: "#1d1d1d"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Mime
@@ -671,14 +621,13 @@
   name: musician ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: "#6f56b8"
-  # Sunrise-End
+    - state: stripe_bottom
+      color: "#524089"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Musician
@@ -691,14 +640,13 @@
   name: chaplain ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Chaplain
@@ -711,14 +659,13 @@
   name: janitor ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Janitor
@@ -731,14 +678,13 @@
   name: bartender ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Bartender
@@ -751,14 +697,13 @@
   name: pun pun ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Bartender
@@ -775,14 +720,13 @@
   name: chef ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Chef
@@ -795,14 +739,13 @@
   name: botanist ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Botanist
@@ -815,34 +758,32 @@
   name: librarian ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Librarian
   - type: PresetIdCard
     job: Librarian
 
-- type: entity  # Sunrise-Start
+- type: entity
   parent: IDCardStandard
   id: LawyerIDCard
   name: lawyer ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Lawyer
@@ -855,14 +796,13 @@
   name: reporter ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Reporter
@@ -875,14 +815,13 @@
   name: boxer ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Boxer
@@ -893,14 +832,13 @@
   name: zookeeper ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Zookeeper
@@ -913,14 +851,13 @@
   name: cargo ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-supply-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-supply-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: CargoTechnician
@@ -933,14 +870,13 @@
   name: salvage ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: *color-supply-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-supply-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ShaftMiner
@@ -953,11 +889,10 @@
   parent: IDCardStandard
   id: PrisonerIDCard
   name: prisoner ID card
-  description: A generically printed ID card for scummy prisoners.
   categories: [ HideSpawnMenu ] # Fire added
+  description: A generically printed ID card for scummy prisoners.
   components:
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/id_cards.rsi # Sunrise-Edit
     layers:
     - state: orange
     - sprite: *icon-rsi
@@ -992,17 +927,16 @@
   parent: IDCardStandard
   id: CluwneIDCard
   name: cluwne ID card
-  suffix: Unremoveable
   categories: [ HideSpawnMenu ] # Fire added
+  suffix: Unremoveable
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - state: department-side
+    - state: stripe_top
       color: "#5dc574"
-  # Sunrise-End
+    - state: stripe_bottom
+      color: "#3f9b53"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Cluwne
@@ -1018,7 +952,6 @@
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
     - sprite: *icon-rsi
@@ -1036,7 +969,6 @@
   parent: [PassengerIDCard, BaseChameleon]
   id: AgentIDCard
   suffix: Agent
-  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Access
     tags:
@@ -1060,16 +992,11 @@
         type: AgentIDCardBoundUserInterface
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
-  # Sunrise-Start
-  - type: PresetIdCard
-    setAccess: false
-  # Sunrise-End
 
 - type: entity
   parent: AgentIDCard
   id: NukieAgentIDCard
   suffix: Nukie
-  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Access
     tags:
@@ -1083,17 +1010,18 @@
   name: syndicate ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: black
-    - state: department-side
+    - state: stripe_top
       color: &color-syndicate-top "#e80c0c"
-  # Sunrise-End
+    - state: stripe_bottom
+      color: &color-syndicate-bottom "#960606"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Syndicate
+  - type: IdCard
+    jobIcon: JobIconSyndicate
   - type: Item
     heldPrefix: black
   - type: Access
@@ -1107,18 +1035,19 @@
   name: syndicate operative ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: black
-    - state: department-side
+    - state: stripe_top
       color: *color-syndicate-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-syndicate-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SyndicateOperative
   - type: AgentIDCard
+  - type: IdCard
+    jobIcon: JobIconSyndicateOperative
 
 - type: entity
   parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
@@ -1126,17 +1055,18 @@
   name: syndicate corpsman ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: black
-    - state: department-side
+    - state: stripe_top
       color: *color-syndicate-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-syndicate-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SyndicateCorpsman
+  - type: IdCard
+    jobIcon: JobIconSyndicateCorpsman
 
 - type: entity
   parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
@@ -1144,17 +1074,18 @@
   name: syndicate commander ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: black
-    - state: department-side
+    - state: stripe_top
       color: *color-syndicate-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-syndicate-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SyndicateCommander
+  - type: IdCard
+    jobIcon: JobIconSyndicateCommander
 
 - type: entity
   parent: [ IDCardStandard, BaseHighlyIllegalContraband ]
@@ -1188,15 +1119,15 @@
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: pirate
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Pirate
   - type: Item
     heldPrefix: orange #this is close enough to the weird puce color pirate IDs have going on
-  - type: Access
-    tags:
-    - NuclearOperative
-    - SyndicateAgent
+  - type: IdCard
+    jobIcon: JobIconPirate
 
 - type: entity
   parent: IDCardStandard
@@ -1205,7 +1136,6 @@
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: default
   - type: Access
@@ -1213,13 +1143,12 @@
     - Xenoborg
 
 - type: entity
-  parent: IDCardStandard
+  parent: [ IDCardStandard, BaseMagicalContraband ]
   id: WizardIDCard
   name: wizard ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: wizard
     - sprite: *icon-rsi
@@ -1232,6 +1161,8 @@
     - Wizard
     - External
     - Maintenance
+  - type: IdCard
+    jobIcon: JobIconWizard
 
 #ERT/Centcomm
 
@@ -1241,15 +1172,13 @@
   name: command officer ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
-    - state: blue
-    - state: department-side
+    - state: centcom
+    - state: stripe_top
       color: &color-centcomm-top "#134975"
-    - state: department-side-extra-gold
-  # Sunrise-End
+    - state: stripe_bottom
+      color: &color-centcomm-bottom "#0d304d"
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Nanotrasen
@@ -1264,14 +1193,13 @@
   name: ERT leader ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
     - state: gold
-    - state: department-side
+    - state: stripe_top
       color: *color-centcomm-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-centcomm-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ERTLeader
@@ -1286,14 +1214,13 @@
   name: ERT chaplain ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
-    - state: blue
-    - state: department-side
+    - state: centcom
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ERTChaplain
@@ -1308,14 +1235,13 @@
   name: ERT engineer ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
-    - state: blue
-    - state: department-side
+    - state: centcom
+    - state: stripe_top
       color: *color-engineering-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-engineering-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ERTEngineer
@@ -1330,14 +1256,13 @@
   name: ERT janitor ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
-    - state: blue
-    - state: department-side
+    - state: centcom
+    - state: stripe_top
       color: *color-service-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-service-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ERTJanitor
@@ -1352,14 +1277,13 @@
   name: ERT medic ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
-    - state: blue
-    - state: department-side
+    - state: centcom
+    - state: stripe_top
       color: *color-medical-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-medical-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ERTMedical
@@ -1374,14 +1298,13 @@
   name: ERT security ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
-    - state: blue
-    - state: department-side
+    - state: centcom
+    - state: stripe_top
       color: *color-security-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-security-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: ERTSecurity
@@ -1396,14 +1319,13 @@
   name: death squad ID card
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
-    - state: blue
-    - state: department-side
+    - state: centcom
+    - state: stripe_top
       color: *color-centcomm-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-centcomm-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: DeathSquad
@@ -1414,17 +1336,16 @@
   parent: IDCardStandard
   id: CBURNIDcard
   name: CBURN ID card
-  suffix: CBURN
   categories: [ HideSpawnMenu ] # Fire added
+  suffix: CBURN
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: *id-rsi
     layers:
-    - state: blue
-    - state: department-side
+    - state: centcom
+    - state: stripe_top
       color: *color-centcomm-top
-  # Sunrise-End
+    - state: stripe_bottom
+      color: *color-centcomm-bottom
     - sprite: *icon-rsi
       offset: *icon-offset
       state: CBURN
@@ -1437,21 +1358,19 @@
   parent: IDCardStandard
   id: UniversalIDCard
   name: universal ID card
+  categories: [ HideSpawnMenu ] # Fire added
   suffix: Admin
   description: An ID card that gives you access beyond your wildest dreams.
-  categories: [ HideSpawnMenu ] # Fire added
   components:
-  # Sunrise-Start
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/id_cards.rsi
+    sprite: Objects/Misc/id_cards.rsi
     layers:
-    - state: green
+    - state: admin
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Admin
   - type: Clothing
-    sprite: _Sunrise/Objects/Misc/id_cards.rsi
-  # Sunrise-Start
+    sprite: Objects/Misc/id_cards.rsi
   - type: Item
     heldPrefix: green
   - type: IdCard

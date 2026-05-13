@@ -11,7 +11,7 @@
   - BaseFacilitySiliconLawScpDefault
   - BaseStationNanotrasen # Дает фракцию
   - ScpComplexGoal # Цели комплекса по изучению SCP
-  - BaseStationAntagsTargets # Для предателей
+  # - BaseStationAntagsTargets # SCP port: SUNRISE station target parent unavailable
   # - BaseStationCryoTeleport # Телепорт в крио. Я в нем уверен на 99%. А я не уверен
   - BaseStationRegionalAdministration # Добавляет неиспользуемое(игровое) ЦК. Настоящее ЦК через BaseComplexTransitHub
   - BaseComplexTransitHub

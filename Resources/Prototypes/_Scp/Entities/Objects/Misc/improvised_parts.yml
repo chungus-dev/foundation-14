@@ -1,5 +1,5 @@
 - type: entity
-  parent: HiltWood
+  parent: BaseItem
   id: ScpHiltWood
   components:
   - type: Sprite

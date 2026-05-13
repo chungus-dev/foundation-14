@@ -86,7 +86,7 @@
   description: A distinctive uniform tailored for security squad leaders. Reinforced fabric and command markings set it apart from standard issue.
 
 - type: entity
-  parent: ClothingUniformJumpsuitPrisonerGrey
+  parent: ClothingUniformJumpsuitPrisoner
   id: ClothingUniformJumpsuitSquadLeaderAlt
   name: squad leader jumpsuit
   description: A distinctive uniform tailored for security squad leaders. Reinforced fabric and command markings set it apart from standard issue.

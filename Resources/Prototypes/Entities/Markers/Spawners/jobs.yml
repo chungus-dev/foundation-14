@@ -308,8 +308,8 @@
   - type: SpawnPoint
     job_id: Borg
   # Sunrise-start
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
   # Sunrise-end
   - type: Sprite
     layers:

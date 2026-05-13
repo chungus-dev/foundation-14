@@ -15,9 +15,9 @@
       params:
         maxDistance: 2
         variation: 0.25
-  - type: EdgeConnection
-    connectionKey: computers
-    allowedDirections: East, West
+  # - type: EdgeConnection # SCP port: component unavailable in Foundation14
+    # connectionKey: computers
+    # allowedDirections: East, West
   - type: GenericVisualizer
     visuals:
       enum.ComputerVisuals.Powered:
@@ -28,7 +28,7 @@
         enum.WiresVisualLayers.MaintenancePanel:
           True: { visible: false }
           False: { visible: true }
-      enum.EdgeConnectionVisuals.ConnectionMask: &ComputerEdgeVisuals
+      enum.EdgeConnectionVisuals.ConnectionMask:
         computerLayerBody:
           None: { state: computer, sprite: _Scp/Structures/Machines/computers.rsi }
           West: { state: computer_right, sprite: _Scp/Structures/Machines/computers_big.rsi }
@@ -47,7 +47,7 @@
   - BaseComputer
   components:
   - type: Sprite
-    layers: &ComputerGenericSpriteLayers
+    layers:
     - map: [ "computerLayerBody" ]
       state: computer
     - map: [ "computerLayerKeyboard" ]
@@ -80,7 +80,17 @@
         enum.WiresVisualLayers.MaintenancePanel:
           True: { visible: false }
           False: { visible: true }
-      enum.EdgeConnectionVisuals.ConnectionMask: *ComputerEdgeVisuals
+      enum.EdgeConnectionVisuals.ConnectionMask:
+        computerLayerBody:
+          None: { state: computer, sprite: _Scp/Structures/Machines/computers.rsi }
+          West: { state: computer_right, sprite: _Scp/Structures/Machines/computers_big.rsi }
+          East: { state: computer_left, sprite: _Scp/Structures/Machines/computers_big.rsi }
+          East, West: { state: computer_middle, sprite: _Scp/Structures/Machines/computers_big.rsi }
+        computerLayerKeyboard:
+          None: { state: generic_keyboard, sprite: _Scp/Structures/Machines/computers.rsi }
+          West: { state: generic_keyboard_right, sprite: _Scp/Structures/Machines/computers_big.rsi }
+          East: { state: generic_keyboard_left, sprite: _Scp/Structures/Machines/computers_big.rsi }
+          East, West: { state: generic_keyboard_middle, sprite: _Scp/Structures/Machines/computers_big.rsi }
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
@@ -116,7 +126,15 @@
   - ComputerEmergencyShuttle
   components:
   - type: Sprite
-    layers: *ComputerGenericSpriteLayers
+    layers:
+    - map: [ "computerLayerBody" ]
+      state: computer
+    - map: [ "computerLayerKeyboard" ]
+      state: generic_keyboard
+    - map: [ "computerLayerScreen" ]
+      state: generic
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
 
 - type: entity
   id: ScpComputerShuttle
@@ -336,7 +354,15 @@
   - computerBodyScanner
   components:
   - type: Sprite
-    layers: *ComputerGenericSpriteLayers
+    layers:
+    - map: [ "computerLayerBody" ]
+      state: computer
+    - map: [ "computerLayerKeyboard" ]
+      state: generic_keyboard
+    - map: [ "computerLayerScreen" ]
+      state: generic
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
 
 - type: entity
   id: ScpComputerCommunication
@@ -766,7 +792,17 @@
         enum.WiresVisualLayers.MaintenancePanel:
           True: { visible: false }
           False: { visible: true }
-      enum.EdgeConnectionVisuals.ConnectionMask: *ComputerEdgeVisuals
+      enum.EdgeConnectionVisuals.ConnectionMask:
+        computerLayerBody:
+          None: { state: computer, sprite: _Scp/Structures/Machines/computers.rsi }
+          West: { state: computer_right, sprite: _Scp/Structures/Machines/computers_big.rsi }
+          East: { state: computer_left, sprite: _Scp/Structures/Machines/computers_big.rsi }
+          East, West: { state: computer_middle, sprite: _Scp/Structures/Machines/computers_big.rsi }
+        computerLayerKeyboard:
+          None: { state: generic_keyboard, sprite: _Scp/Structures/Machines/computers.rsi }
+          West: { state: generic_keyboard_right, sprite: _Scp/Structures/Machines/computers_big.rsi }
+          East: { state: generic_keyboard_left, sprite: _Scp/Structures/Machines/computers_big.rsi }
+          East, West: { state: generic_keyboard_middle, sprite: _Scp/Structures/Machines/computers_big.rsi }
 
 - type: entity
   id: ScpComputerTelevision
@@ -800,9 +836,9 @@
     graph: ScpComputer
   - type: Sprite
     sprite: _Scp/Structures/Machines/computers.rsi
-  - type: EdgeConnection
-    connectionKey: computers
-    allowedDirections: East, West
+  # - type: EdgeConnection # SCP port: component unavailable in Foundation14
+    # connectionKey: computers
+    # allowedDirections: East, West
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -817,7 +853,7 @@
   id: ScpComputerShipyard
   parent:
   - ScpBaseComputer
-  - ComputerShipyard
+  - ComputerShuttleCargo
   components:
   - type: Sprite
     sprite: _Scp/Structures/Machines/computers.rsi
@@ -833,13 +869,13 @@
   id: ScpComputerSaleConsole
   parent:
   - ScpComputerPalletConsole
-  - ComputerSaleConsole
+  # - ComputerSaleConsole # SCP port: SUNRISE parent unavailable
 
 - type: entity
   id: ScpComputerFacilityBankConsole
   parent:
   - ScpBaseComputer
-  - ComputeStationBankConsole
+  - ComputerFundingAllocation
   components:
   - type: Sprite
     layers:
@@ -854,7 +890,7 @@
   id: ScpComputerLogisticsSalaryConsole
   parent:
   - ScpBaseComputer
-  - ComputeCargoSalaryConsole
+  - ComputerFundingAllocation
   components:
   - type: Sprite
     layers:
@@ -869,7 +905,7 @@
   id: ScpComputerLogisticsFinanceConsole
   parent:
   - ScpBaseComputer
-  - ComputerCargoFinanceConsole
+  - ComputerFundingAllocation
   components:
   - type: Sprite
     layers:
@@ -884,13 +920,13 @@
   id: ScpComputerBountySaleConsole
   parent:
   - ScpComputerPalletConsole
-  - ComputerBountySaleConsole
+  - ComputerCargoBounty
 
 - type: entity
   id: ScpComputerCallMtfConsole
   parent:
   - ScpBaseComputer
-  - ComputerCallErtConsole
+  - ComputerComms
   components:
   - type: Sprite
     sprite: _Scp/Structures/Machines/computers.rsi
@@ -906,7 +942,7 @@
   id: ScpComputerApproveMtfConsole
   parent:
   - ScpBaseComputer
-  - ComputerApproveErtConsole
+  - ComputerComms
   components:
   - type: Sprite
     sprite: _Scp/Structures/Machines/computers.rsi
@@ -922,7 +958,7 @@
   id: ScpComputerFineRecords
   parent:
   - ScpBaseComputer
-  - ComputerFineRecords
+  - ComputerStationRecords
   components:
   - type: Sprite
     layers:
@@ -939,7 +975,7 @@
   id: ScpComputerContrabandSale
   parent:
   - ScpBaseComputer
-  - ComputerContrabandSale
+  - ComputerPalletConsole
   components:
   - type: Sprite
     layers:
@@ -956,31 +992,31 @@
   id: ScpComputerFoodAndSanitationServiceSaleConsole
   parent:
   - ScpComputerSaleConsole
-  - ComputerServiceSaleConsole
+  # - ComputerServiceSaleConsole # SCP port: SUNRISE parent unavailable
 
 - type: entity
   id: ScpComputerSecuritySaleConsole
   parent:
   - ScpComputerSaleConsole
-  - ComputerSecuritySaleConsole
+  # - ComputerSecuritySaleConsole # SCP port: SUNRISE parent unavailable
 
 - type: entity
   id: ScpComputerMedicalServiceSaleConsole
   parent:
   - ScpComputerSaleConsole
-  - ComputerMedicalSaleConsole
+  # - ComputerMedicalSaleConsole # SCP port: SUNRISE parent unavailable
 
 - type: entity
   id: ScpComputerScientificServiceSaleConsole
   parent:
   - ScpComputerSaleConsole
-  - ComputerScienceSaleConsole
+  # - ComputerScienceSaleConsole # SCP port: SUNRISE parent unavailable
 
 - type: entity
   id: ScpComputerShuttleRegionalAdministration
   parent:
   - ScpBaseComputer
-  - ComputerShuttleCentComm
+  - ComputerShuttle
   components:
   - type: Sprite
     layers:
@@ -995,7 +1031,7 @@
   id: ScpComputerShuttleSecurity
   parent:
   - ScpBaseComputer
-  - ComputerShuttleSecurity
+  - ComputerShuttle
   components:
   - type: Sprite
     layers:
@@ -1010,7 +1046,7 @@
   id: ScpComputerPlayerConsole
   parent:
   - ScpBaseComputer
-  - CommandConsoleComputer
+  - ComputerComms
   components:
   - type: Sprite
     layers:
@@ -1027,7 +1063,7 @@
   id: ScpComputerCodes
   parent:
   - ScpBaseComputer
-  - CodeConsole
+  - BaseComputer
   components:
   - type: Sprite
     layers:
@@ -1044,7 +1080,7 @@
   id: ScpComputerIcarus
   parent:
   - ScpBaseComputer
-  - ComputerIcarus
+  - BaseComputer
   components:
   - type: Sprite
     layers:

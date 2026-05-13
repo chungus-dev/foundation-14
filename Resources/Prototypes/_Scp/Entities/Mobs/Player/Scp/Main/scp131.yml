@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Scp131A
   suffix: SCP-131A
   parent: BaseScpFriendly
@@ -27,12 +27,12 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
-  - type: GhostPanelAntagonistMarker
-    name: ghost-panel-antagonist-scp-minor-name
-    description: ghost-panel-antagonist-scp-minor-description
-    priority: 0
-  - type: ItemRepickupCooldown
-    cooldown: 5
+#  - type: GhostPanelAntagonistMarker # SCP port: component unavailable in Foundation14
+#    name: ghost-panel-antagonist-scp-minor-name
+#    description: ghost-panel-antagonist-scp-minor-description
+#    priority: 0
+#  - type: ItemRepickupCooldown # SCP port: component unavailable in Foundation14
+#    cooldown: 5
   - type: CanEscapeInventory
   - type: Fixtures
     fixtures:
@@ -72,7 +72,7 @@
     - CannotSuicide
 #  - type: Blinkable мейби в другой жизни, когда будет не криво работать и балансно
 #  - type: EyeClosing
-  - type: VentCrawler
+#  - type: VentCrawler # SCP port: component unavailable in Foundation14
   - type: GuideHelp
     guides:
     - ScpResearch

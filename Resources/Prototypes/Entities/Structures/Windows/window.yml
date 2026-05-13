@@ -13,8 +13,8 @@
     flags:
     - Anchorable
   - type: Rotatable
-  - type: Ricochetable
-    chance: 0.7
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 0.7
   - type: MeleeSound
     soundGroups:
       Brute:

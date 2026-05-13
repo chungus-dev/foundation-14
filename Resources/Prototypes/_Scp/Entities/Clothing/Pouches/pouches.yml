@@ -1,6 +1,6 @@
 #Med
 - type: entity
-  parent: [Pouch, ContentsExplosionResistanceBase]
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
   id: PouchMedical
   name: medical pouch
   description: It can carry small medical supplies.
@@ -35,7 +35,7 @@
 
 #Drop
 - type: entity
-  parent: [Pouch]
+  parent: ClothingBeltStorageBase
   id: PouchDrop
   name: pouch
   description: A general-purpose pouch used to carry a variety of differently sized items.
@@ -46,3 +46,44 @@
     maxItemSize: Small
     grid:
     - 0,0,2,2
+
+- type: entity
+  parent: PouchDrop
+  id: PouchAmmo
+  name: ammo pouch
+  description: It can carry ammo boxes and magazines.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Pouches/large_ammo_mag.rsi
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,4,1
+    whitelist:
+      components:
+      - BallisticAmmoProvider
+
+- type: entity
+  parent: [PouchDrop, ContentsExplosionResistanceBase]
+  id: PouchExplosive
+  name: explosive pouch
+  description: It can carry grenades and other explosives.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Pouches/large_explosive.rsi
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,5,1
+    whitelist:
+      tags:
+      - HandGrenade
+      - Grenade
+      - HandGrenadeAmmo
+      components:
+      - ProjectileGrenade
+      - FlashOnTrigger
+      - ExplodeOnTrigger
+  - type: ExplosionResistance
+    damageCoefficient: 0.01
+    worn: false

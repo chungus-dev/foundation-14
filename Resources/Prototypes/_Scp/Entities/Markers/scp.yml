@@ -13,8 +13,8 @@
   - type: SpawnPoint
     spawn_type: Job
     job_id: Scp173
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
   - type: Scp173BlockStructureDamage
 
 - type: entity # Для особых случаев
@@ -42,8 +42,8 @@
   - type: SpawnPoint
     spawn_type: Job
     job_id: Scp096
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
   - type: Scp096ContainmentChamberMarker
 
 - type: entity
@@ -59,8 +59,8 @@
   - type: SpawnPoint
     spawn_type: Job
     job_id: Scp939
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
 
 - type: entity
   name: SCP-049 spawner
@@ -75,8 +75,8 @@
   - type: SpawnPoint
     spawn_type: Job
     job_id: Scp049
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
 
 - type: entity
   name: SCP-106 spawner
@@ -91,8 +91,8 @@
   - type: SpawnPoint
     spawn_type: Job
     job_id: Scp106
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
 
 - type: entity
   name: SCP-999 spawner
@@ -107,8 +107,8 @@
   - type: SpawnPoint
     spawn_type: Job
     job_id: Scp999
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
 
 - type: entity
   name: SCP-082 spawner
@@ -121,8 +121,8 @@
   - type: SpawnPoint
     spawn_type: Job
     job_id: Scp082
-  - type: PreferredSpawn
-    preferredSpawnTypes: [ Job ]
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
 
 # Второстепенные сцп
 

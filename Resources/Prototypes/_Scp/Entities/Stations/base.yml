@@ -1,4 +1,4 @@
-﻿#- type: entity
+#- type: entity
 #  id: BaseStationMogGroups
 #  abstract: true
 #  components:
@@ -9,34 +9,34 @@
 - type: entity
   id: ScpComplexGoal
   abstract: true
-  components:
-  - type: StationGoal
-    goals:
-    - Scp1
-    - Scp2
-    - Scp3
-    - Scp4
-    - Scp5
-    - Scp6
-    - Scp7
-    - Scp8
+  # components:
+  # - type: StationGoal # SCP port: component unavailable in Foundation14
+    # goals:
+    # - Scp1
+    # - Scp2
+    # - Scp3
+    # - Scp4
+    # - Scp5
+    # - Scp6
+    # - Scp7
+    # - Scp8
 
 - type: entity
   id: BaseStationRegionalAdministration
   abstract: true
-  components:
-  - type: StationCentComm
-    station: AdminFaxBase
-    shuttleWhitelist:
-      components:
-      - CentCommShuttle
-      - ErtShuttle
+  # components:
+  # - type: StationCentComm # SCP port: component unavailable in Foundation14
+  #   station: AdminFaxBase
+  #   shuttleWhitelist:
+  #     components:
+  #     - CentCommShuttle
+  #     - ErtShuttle
 
 - type: entity
   id: BaseComplexTransitHub
   abstract: true
-  components:
-  - type: StationTransitHub
-    map: /Maps/_Scp/transithub.yml
-    biomes:
-    - Snow
+  # components:
+  # - type: StationTransitHub # SCP port: component unavailable in Foundation14
+  #   map: /Maps/_Scp/transithub.yml
+  #   biomes:
+  #   - Snow

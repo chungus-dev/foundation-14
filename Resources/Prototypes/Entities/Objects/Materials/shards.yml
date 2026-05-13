@@ -86,13 +86,13 @@
   - type: StaticPrice
     price: 0
   # Sunrise-start
-  - type: Scalpel
-  - type: SurgeryTool
-    successRate: 0.6
-    startSound:
-      path: /Audio/_Sunrise/Medical/Surgery/scalpel1.ogg
-    endSound:
-      path: /Audio/_Sunrise/Medical/Surgery/scalpel2.ogg
+  # - type: Scalpel # SCP port: component unavailable in Foundation14
+  # - type: SurgeryTool # SCP port: component unavailable in Foundation14
+    # successRate: 0.6
+    # startSound:
+      # path: /Audio/_Sunrise/Medical/Surgery/scalpel1.ogg
+    # endSound:
+      # path: /Audio/_Sunrise/Medical/Surgery/scalpel2.ogg
   # Sunrise-end
 
 - type: entity

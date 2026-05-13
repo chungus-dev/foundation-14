@@ -1,18 +1,8 @@
 - type: species
   id: SlimePerson
   name: species-name-slime
-  roundStart: false # Fire edit
-  stationRecordsHidden: true # Fire added
+  roundStart: true
   prototype: MobSlimePerson
-  bodyTypes:
-  - SlimeNormal
-#  - SlimeSlim
   defaultSkinTone: "#b8b8b8"
-  markingLimits: MobSlimeMarkingLimits
-  dollPrototype: MobSlimePersonDummy
+  dollPrototype: AppearanceSlimePerson
   skinColoration: Hues
-  # Sunrise-Edit
-  buttScan:
-    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
-    state: human # Sunrise-Edit
-

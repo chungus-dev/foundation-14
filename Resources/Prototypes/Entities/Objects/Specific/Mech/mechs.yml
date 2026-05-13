@@ -41,7 +41,7 @@
     requireAnchored: false
     joinSystem: true
   - type: DoAfter
-  - type: MechVulnerableToEMP # Sunrise-edit
+  # - type: MechVulnerableToEMP # SCP port: component unavailable in Foundation14
   - type: Repairable
     doAfterDelay: 1
     damage:
@@ -51,7 +51,7 @@
         Piercing: -15
         Caustic: -15
         Structural: -15
-        Mangleness: 5 # Sunrise-Edit
+        # Mangleness: 5 # Sunrise-Edit; SCP port: SUNRISE damage type unavailable
   - type: UserInterface
     interfaces:
       enum.MechUiKey.Key:
@@ -114,7 +114,7 @@
       - Piercing
       - Heat
       - Shock
-      - Mangleness # Sunrise-Edit
+      # - Mangleness # Sunrise-Edit; SCP port: SUNRISE damage type unavailable
     locPrefix: mech
   - type: Appearance
   - type: ContainerContainer
@@ -128,11 +128,11 @@
   - type: InventorySlots
   - type: Loadout
     prototypes: [ MechArmorLightLoadout ]
-  - type: RadarBlip
-    color: "#FFD700FF"
-    scale: 1.1
-    shape: Triangle
-    requireInSpace: true
+  # - type: RadarBlip # SCP port: component unavailable in Foundation14
+    # color: "#FFD700FF"
+    # scale: 1.1
+    # shape: Triangle
+    # requireInSpace: true
   # Sunrise-End
   - type: Damageable
     damageContainer: Mech
@@ -174,7 +174,7 @@
     radius: 18 # Sunrise-edit
     netsync: false
   - type: AccessReader
-  - type: DamageOverlay # Sunrise-Edit
+  # - type: DamageOverlay # SCP port: component unavailable in Foundation14
   - type: ExplosionResistance # Sunrise-Edit
     damageCoefficient: 0.8 # Sunrise-Edit
   - type: ProtectedFromStepTriggers # Sunrise-added

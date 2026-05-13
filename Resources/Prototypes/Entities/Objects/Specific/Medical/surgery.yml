@@ -90,12 +90,12 @@
         Slash: 8
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: Scalpel
-  - type: SurgeryTool
-    startSound:
-      path: /Audio/_Sunrise/Medical/Surgery/scalpel1.ogg
-    endSound:
-      path: /Audio/_Sunrise/Medical/Surgery/scalpel2.ogg
+  # - type: Scalpel # SCP port: component unavailable in Foundation14
+  # - type: SurgeryTool # SCP port: component unavailable in Foundation14
+    # startSound:
+      # path: /Audio/_Sunrise/Medical/Surgery/scalpel1.ogg
+    # endSound:
+      # path: /Audio/_Sunrise/Medical/Surgery/scalpel2.ogg
   # Fire edit start - исследования сцп
   - type: ScpInteractTool
     delay: 30

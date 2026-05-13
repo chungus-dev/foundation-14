@@ -16,7 +16,7 @@
       - !type:HealthChange
         damage:
           types:
-            Mangleness: 2
+            Blunt: 2 # SCP port: Mangleness SUNRISE damage type unavailable
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition

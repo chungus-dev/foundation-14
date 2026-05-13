@@ -103,10 +103,10 @@
   name: brick wall
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: Pierceable
-    level: Metal
-  - type: Ricochetable
-    chance: 0.2
+  # - type: Pierceable # SCP port: component unavailable in Foundation14
+    # level: Metal
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 0.2
   - type: Tag
     tags:
     - Wall
@@ -509,8 +509,8 @@
   suffix: indestructible
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: Ricochetable
-    chance: 1
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 1
   - type: Sprite
     sprite: _Sunrise/Structures/Walls/plastitanium.rsi # Sunrise-edit
   - type: Icon
@@ -557,7 +557,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: WallDiagonalBaseSunrise # Sunrise-Edit
+  parent: WallDiagonalBase
   id: WallPlastitaniumDiagonalIndestructible
   name: plastitanium wall
   suffix: diagonal, indestructible
@@ -613,10 +613,10 @@
   name: reinforced wall
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  - type: Pierceable
-    level: HardenedMetal
-  - type: Ricochetable
-    chance: 0.75
+  # - type: Pierceable # SCP port: component unavailable in Foundation14
+    # level: HardenedMetal
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 0.75
   - type: Sprite
     sprite: Structures/Walls/solid.rsi
   - type: Icon
@@ -723,7 +723,7 @@
         acts: ["Destruction"]
 
 - type: entity
-  parent: WallDiagonalBaseSunrise # Sunrise-Edit
+  parent: WallDiagonalBase
   id: WallReinforcedDiagonal
   name: reinforced wall
   categories: [ HideSpawnMenu ] # Fire added
@@ -884,8 +884,8 @@
     state: state0
   - type: Physics
     bodyType: Static
-  - type: Ricochetable
-    chance: 1
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 1
   - type: Pullable
   - type: Airtight
     noAirWhenFullyAirBlocked: false
@@ -1003,8 +1003,8 @@
   - type: Reflect
     reflects: Energy
     reflectProb: 1
-  - type: Ricochetable
-    chance: 1
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -1062,7 +1062,7 @@
     base: solid
 
 - type: entity
-  parent: WallDiagonalBaseSunrise # Sunrise-Edit
+  parent: WallDiagonalBase
   id: WallSolidDiagonal
   name: solid wall
   categories: [ HideSpawnMenu ] # Fire added
@@ -1074,8 +1074,8 @@
   - type: Icon
     sprite: Structures/Walls/solid_diagonal.rsi
     state: state0
-  - type: Ricochetable
-    chance: 0.4
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 0.4
   - type: Destructible
     thresholds:
     - trigger:
@@ -1327,8 +1327,8 @@
   name: wood wall
   description: The traditional assistant defense.
   components:
-  - type: Ricochetable
-    chance: 0
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 0
   - type: Sprite
     sprite: Structures/Walls/wood.rsi
   - type: Icon
@@ -1462,7 +1462,7 @@
   - type: Appearance
 
 - type: entity
-  parent: WallDiagonalBaseSunrise # Sunrise-Edit
+  parent: WallDiagonalBase
   id: WallMiningDiagonal
   categories: [ HideSpawnMenu ] # Fire edit
   name: mining wall

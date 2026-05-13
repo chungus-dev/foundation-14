@@ -4,7 +4,7 @@
   id: WeaponPulseCarbineScp
 
 - type: entity
-  parent: WeaponSniperPulseCarbine
+  parent: WeaponPulseCarbine
   id: WeaponSniperPulseCarbineScp
 
 - type: entity
@@ -12,11 +12,11 @@
   id: WeaponPulsePistolScp
 
 - type: entity
-  parent: HyposprayERT
+  parent: Hypospray
   id: HyposprayMTF
 
 - type: entity
-  parent: ClothingBackpackDuffelNanotrasenMedicalBundleFilled
+  parent: ClothingBackpackDuffelMedical
   id: ClothingBackpackDuffelScpMedicalBundleFilled
   components:
     - type: StorageFill
@@ -53,7 +53,7 @@
       radioChannel: RegionalAdministration
 
 - type: entity
-  parent: BoxErtImplants
+  parent: BoxDeathRattleImplants
   id: BoxMTFImplants
   components:
     - type: StorageFill
@@ -62,11 +62,11 @@
           amount: 6
 
 - type: entity
-  parent: PowerCellNanoTrasen
+  parent: PowerCellHigh
   id: PowerCellScp
 
 - type: entity
-  parent: ClothingBackpackDuffelMilitary
+  parent: ClothingBackpackDuffelSecurity
   id: ClothingBackpackDuffelMilitaryFilledLMG
   components:
   - type: StorageFill
@@ -86,7 +86,7 @@
     access: [ [ "Administration" ] ]
 
 - type: entity
-  parent: PowerCageERT
+  parent: PowerCageHigh
   id: PowerCageMTF
 
 #для ВУСа
@@ -145,15 +145,15 @@
     nameFormat: name-format-ert
   - type: ZombieImmune
   - type: Scp049Protection
-  - type: Mood
-    minimumSpeedModifier: 0.9
+  # - type: Mood # SCP port: SUNRISE component unavailable
+    # minimumSpeedModifier: 0.9
   - type: AutoImplant
     implants:
     - Scp049ProtectionImplant
     - DeathRattleImplantMTF
     - MindShieldImplant
-  - type: TTS
-  - type: NoEmotions
+  # - type: TTS # SCP port: SUNRISE TTS component unavailable
+  # - type: NoEmotions # SCP port: component unavailable in Foundation14
   - type: SpeakOnEyeStateChange # переопределение моргания с другими параметрами для охраны и МОГа
     # Часть фраз уходит, так как более разговорная. А эти парни натренированы.
     phraseOnClose:

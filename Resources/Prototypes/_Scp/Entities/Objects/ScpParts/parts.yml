@@ -19,9 +19,9 @@
     guides:
     - ScpResearchAdvanced
   - type: Damageable
-  - type: DamageOverlay
-    damagePopupType: SmallFloating
-    isStructure: true
+  # - type: DamageOverlay # SCP port: component unavailable in Foundation14
+    # damagePopupType: SmallFloating
+    # isStructure: true
 
 # SCP-999
 

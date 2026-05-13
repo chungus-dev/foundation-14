@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Scp457
   suffix: SCP-457
   parent:
@@ -48,10 +48,10 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 3
-  - type: GhostPanelAntagonistMarker
-    name: ghost-panel-antagonist-scp-minor-name
-    description: ghost-panel-antagonist-scp-minor-description
-    priority: 0
+#  - type: GhostPanelAntagonistMarker # SCP port: component unavailable in Foundation14
+#    name: ghost-panel-antagonist-scp-minor-name
+#    description: ghost-panel-antagonist-scp-minor-description
+#    priority: 0
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepBlood
@@ -98,8 +98,8 @@
     needsHands: false
   - type: Speech
     speechSounds: Lizard
-  - type: TTS
-    voice: Neco
+  # - type: TTS # SCP port: SUNRISE TTS component unavailable
+    # voice: Neco
   - type: PassiveDamage
     allowedStates:
     - Alive

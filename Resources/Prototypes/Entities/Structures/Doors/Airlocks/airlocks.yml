@@ -221,7 +221,7 @@
     group: null
 
 - type: entity
-  parent: AirlockUnlitVisibleFalse # Sunrise-edit
+  parent: Airlock
   id: AirlockHatchSyndicate
   categories: [ HideSpawnMenu ] # Fire edit
   name: airtight hatch
@@ -396,7 +396,7 @@
     sprite: Structures/Doors/Airlocks/Glass/basic.rsi
 
 - type: entity
-  parent: AirlockUnlitVisibleFalse # Sunrise-edit
+  parent: Airlock
   id: AirlockXeno
   suffix: Xeno
   categories: [ HideSpawnMenu ] # Fire added
@@ -407,7 +407,7 @@
     group: null
 
 - type: entity
-  parent: AirlockUnlitVisibleFalse # Sunrise-edit
+  parent: AirlockGlass
   id: AirlockGlassXeno
   suffix: Xeno
   categories: [ HideSpawnMenu ] # Fire added

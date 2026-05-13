@@ -1,6 +1,6 @@
 - type: entity
   name: BaseSMG
-  parent: [BaseItem, GunLight]
+  parent: BaseItem
   id: BaseWeaponSubMachineGun
   description: A rooty tooty point and shooty.
   abstract: true
@@ -9,11 +9,11 @@
   - type: BloodSplatterer
     probability: 0.5
   # Fire added end
-  - type: RestrictByUserTag
-    doestContain:
-    - Abductor
-    messages:
-    - abductor-gun-restricted-1
+  # - type: RestrictByUserTag # SCP port: SUNRISE component unavailable
+    # doestContain:
+    # - Abductor
+    # messages:
+    # - abductor-gun-restricted-1
   - type: Sprite
   - type: Item
     size: Large

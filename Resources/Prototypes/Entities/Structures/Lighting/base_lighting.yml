@@ -11,9 +11,9 @@
   suffix: Always powered
   components:
   # Sunrise start
-  - type: DamageOverlay
-    damagePopupType: SmallFloating
-    isStructure: true
+  # - type: DamageOverlay # SCP port: component unavailable in Foundation14
+    # damagePopupType: SmallFloating
+    # isStructure: true
   # Sunrise end
   # Fire added start
   - type: LightFlicking

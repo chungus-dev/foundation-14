@@ -71,9 +71,9 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Damageable
-  - type: DamageOverlay
-    damagePopupType: SmallFloating
-    isStructure: true
+  # - type: DamageOverlay # SCP port: component unavailable in Foundation14
+    # damagePopupType: SmallFloating
+    # isStructure: true
   - type: PointLight
     radius: 1.5
   - type: Scp

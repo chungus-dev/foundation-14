@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseDonationPlink
+  parent: BaseItem
   id: FireStationUplink20
   name: suitcase with personal belongings  #/"FireStation/" portable Shop
   description: A briefcase with the employee's personal belongings. Password protected. I wonder what this suitcase holds?
@@ -11,6 +11,15 @@
     sprite: _Scp/Objects/Devices/fire_uplink.rsi
     layers:
     - state: icon
+  - type: Appearance
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: StaticPrice
+    price: 100
   - type: MeleeWeapon
     damage:
       types:

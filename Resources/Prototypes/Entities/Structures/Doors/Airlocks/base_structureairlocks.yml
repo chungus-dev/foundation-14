@@ -9,10 +9,10 @@
     flags:
     - Anchorable
   - type: Rotatable
-  - type: Ricochetable
-    chance: 1
-  - type: Pierceable
-    level: HardenedMetal
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 1
+  # - type: Pierceable # SCP port: component unavailable in Foundation14
+    # level: HardenedMetal
   - type: StationAiWhitelist
   - type: MeleeSound
     soundGroups:

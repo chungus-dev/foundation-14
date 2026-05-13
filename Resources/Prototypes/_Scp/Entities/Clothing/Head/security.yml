@@ -57,21 +57,21 @@
     sprite: _Scp/Clothing/Head/security_beret.rsi
 
 - type: entity
-  parent: ClothingHeadHatCapLeatherHoS
+  parent: ClothingHeadHatBeretHoS
   id: ClothingHeadHatCapLeatherSquadLeader
   name: squad leader cap
   description: A regulation cap issued to squad leaders. Durable, practical, and a clear mark of authority.
   suffix: SCP Guard
 
 - type: entity
-  parent: ClothingHeadCapCentcomBlack
+  parent: ClothingHeadHatCentcomcap
   id: ClothingHeadCapBlackSquadLeader
   name: squad leader cap
   description: A regulation cap issued to squad leaders. Durable, practical, and a clear mark of authority.
   suffix: SCP Guard
 
 - type: entity
-  parent: ClothingHeadHatCapUSSPBlack
+  parent: ClothingHeadHatCentcomcap
   id: ClothingHeadHatCapBlackSquadLeader
   name: squad leader cap
   description: A regulation cap issued to squad leaders. Durable, practical, and a clear mark of authority.

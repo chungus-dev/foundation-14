@@ -14,8 +14,8 @@
     drawdepth: SmallMobs
     sprite: _Scp/Mobs/Silicon/Bots/roomba.rsi
     state: roomba
-  - type: FootprintAreaCleaner
-    interval: 0.1
+#  - type: FootprintAreaCleaner # SCP port: component unavailable in Foundation14
+#    interval: 0.1
   - type: UseDelay
     delay: 0.1
   - type: HTN
