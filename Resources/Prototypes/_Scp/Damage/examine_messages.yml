@@ -1,0 +1,101 @@
+﻿# Стены, обычные люди
+
+- type: localizedDataset
+  id: ScpWallMetalMessages
+  values:
+    prefix: scp-wall-metal-damaged-
+    count: 6
+
+- type: localizedDataset
+  id: ScpWallConcreteMessages
+  values:
+    prefix: scp-wall-concrete-damaged-
+    count: 6
+
+- type: localizedDataset
+  id: ScpWallHardContainmentMessages
+  values:
+    prefix: scp-wall-reinforced-hard-containment-damaged-
+    count: 6
+
+- type: localizedDataset
+  id: ScpWallBrickMessages
+  values:
+    prefix: scp-wall-brick-damaged-
+    count: 6
+
+- type: localizedDataset
+  id: ScpWallWoodMessages
+  values:
+    prefix: scp-wall-wood-damaged-
+    count: 6
+
+- type: localizedDataset
+  id: ScpWallScp096ContainmentMessages
+  values:
+    prefix: scp-wall-scp096-containment-damaged-
+    count: 6
+
+# Стены, инженеры
+
+- type: localizedDataset
+  id: ScpWallMetalEngineeringMessages
+  values:
+    prefix: scp-wall-metal-damaged-engineering-
+    count: 6
+
+- type: localizedDataset
+  id: ScpWallConcreteEngineeringMessages
+  values:
+    prefix: scp-wall-concrete-damaged-engineering-
+    count: 6
+
+- type: localizedDataset
+  id: ScpWallHardContainmentEngineeringMessages
+  values:
+    prefix: scp-wall-reinforced-hard-containment-damaged-engineering-
+    count: 6
+
+- type: localizedDataset
+  id: ScpWallBrickEngineeringMessages
+  values:
+    prefix: scp-wall-brick-damaged-engineering-
+    count: 6
+
+- type: localizedDataset
+  id: ScpWallWoodEngineeringMessages
+  values:
+    prefix: scp-wall-wood-damaged-engineering-
+    count: 6
+
+- type: localizedDataset
+  id: ScpWallScp096ContainmentEngineeringMessages
+  values:
+    prefix: scp-wall-scp096-containment-damaged-engineering-
+    count: 6
+
+# SCP
+
+- type: localizedDataset
+  id: ScpScp096FaceMessages
+  values:
+    prefix: scp096-face-damaged-
+    count: 6
+
+- type: localizedDataset
+  id: ScpScp096FaceScienceMessages
+  values:
+    prefix: scp096-face-damaged-science-
+    count: 6
+
+- type: localizedDataset
+  id: ScpScp939Messages
+  values:
+    prefix: scp939-damaged-
+    count: 4
+
+- type: localizedDataset
+  id: ScpScp939SecurityMessages
+  values:
+    prefix: scp939-damaged-security-
+    count: 4

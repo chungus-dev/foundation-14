@@ -1,0 +1,9 @@
+﻿# This is clear chaos contraband and is illegal to own IC.
+- type: contrabandSeverity
+  id: Chaos
+  examineText: contraband-examine-text-Chaos
+
+# This is clear Foundation enemy contraband and is illegal to own IC.
+- type: contrabandSeverity
+  id: FoundationEnemy
+  examineText: contraband-examine-text-FoundationEnemy

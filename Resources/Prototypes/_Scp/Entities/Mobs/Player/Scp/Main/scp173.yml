@@ -1,0 +1,130 @@
+﻿- type: entity
+  parent:
+  - BaseScp
+  - MobCombat
+  id: Scp173
+  name: SCP-173
+  suffix: SCP-173
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Scp/Mobs/Scp/scp-173.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: scp-173
+  - type: Scp
+    class: Euclid
+  - type: Scp173
+  - type: ShowBlinkable
+  - type: XenoArtifact
+    effectsTable: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: ScpArtifactEffectsDefaultTable
+        weight: 3
+      - !type:NestedSelector
+        tableId: ScpArtifactEffectsScp173Table
+        weight: 3
+      - !type:NestedSelector
+        tableId: ScpArtifactEffectsUltraFunnyTable
+        weight: 1
+  - type: ScpAnnounceOnSpawn
+    text: scp173-announce-on-spawn
+    channels:
+    - ScientificService
+    - HeavyContainmentSecurityService
+  - type: ScpDamageOnCollide
+    params:
+    - whitelist:
+        components:
+        - MobState
+        - HumanoidAppearance
+        requireAll: true
+      damage:
+        types:
+          Blunt: 200
+      targetSound:
+        collection: Scp173NeckSnap
+      useVariance: false
+      requiredMobStates:
+      - Alive
+      - Critical
+    - whitelist:
+        tags:
+        - Scp173DestroyOnCollide
+      damage:
+        types:
+          Blunt: 100
+      targetSound:
+        path: /Audio/_Scp/Scp173/smash.ogg
+        params:
+          volume: -5
+          maxDistance: 5
+      useVariance: false
+    - whitelist:
+        tags:
+        - Window
+        - Windoor
+        - Directional
+        - SecureWindoor
+        - SecurePlasmaWindoor
+        - SecureUraniumWindoor
+        - Scp173DamageOnCollide
+        components:
+        - EntityStorage
+        - VendingMachine
+      damage:
+        types:
+          Blunt: 14
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5
+    baseSprintSpeed: 12
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      collection: MetalThud
+    damage:
+      groups:
+        Brute: 10
+  - type: Muted
+  - type: SafeTime
+    addWidget: false
+  - type: DamageOnHighSpeedImpact
+    stunChance: 0
+    speedDamageFactor: 0
+    useColor: false
+    damageCooldown: 0.5
+    soundHit:
+      path: /Audio/_Scp/Scp173/smash.ogg
+      params:
+        volume: -5
+        maxDistance: 5
+  - type: SpeedModifierContactCapClothing
+    maxContactSprintSlowdown: 1
+    maxContactWalkSlowdown: 1
+  - type: ActionGrant
+    actions:
+    - Scp173Blind
+    - Scp173Clog
+    - Scp173DamageStructure
+    - Scp173FastMovement
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepScp173Classic
+  - type: FootprintEmitter
+    walkStepInterval: 0.1
+    leftBareFootState:
+    - dragging-1
+    - dragging-2
+    rightBareFootState:
+    - dragging-1
+    - dragging-2
+  - type: GuideHelp
+    guides:
+    - ScpResearch
+    - ScpResearchAdvanced
+    - ScpFear

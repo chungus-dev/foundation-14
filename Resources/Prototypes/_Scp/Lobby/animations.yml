@@ -1,0 +1,59 @@
+﻿- type: lobbyAnimation
+  id: Scp049
+  animation: NetTextures/_Scp/Lobby/Animations/049.rsi
+  scale: 13, 13
+
+- type: lobbyAnimation
+  id: Scp096
+  animation: NetTextures/_Scp/Lobby/Animations/096.rsi
+  scale: 13, 13
+
+- type: lobbyAnimation
+  id: Scp173
+  animation: NetTextures/_Scp/Lobby/Animations/173.rsi
+  scale: 13, 13
+
+- type: lobbyAnimation
+  id: Camera
+  animation: NetTextures/_Scp/Lobby/Animations/camera.rsi
+  scale: 13, 13
+
+- type: lobbyAnimation
+  id: Foundation
+  animation: NetTextures/_Scp/Lobby/Animations/foundation.rsi
+  scale: 13, 13
+
+- type: lobbyAnimation
+  id: Mtf
+  animation: NetTextures/_Scp/Lobby/Animations/mtf.rsi
+  scale: 13, 13
+
+- type: lobbyAnimation
+  id: DeepFacility
+  animation: Textures/_Scp/Lobby/Animations/deep_facility.rsi
+  scale: 13, 13
+
+- type: lobbyAnimation
+  id: Logo
+  animation: NetTextures/_Scp/Lobby/Animations/logo.rsi
+  scale: 13, 13
+
+- type: lobbyAnimation
+  id: PC
+  animation: NetTextures/_Scp/Lobby/Animations/pc.rsi
+  scale: 13, 13
+
+- type: lobbyAnimation
+  id: RedGuy
+  animation: NetTextures/_Scp/Lobby/Animations/red_guy.rsi
+  scale: 13, 13
+
+- type: lobbyAnimation
+  id: Screen
+  animation: NetTextures/_Scp/Lobby/Animations/screen.rsi
+  scale: 13, 13
+
+- type: lobbyAnimation
+  id: WorldMap
+  animation: NetTextures/_Scp/Lobby/Animations/world_map.rsi
+  scale: 8, 8

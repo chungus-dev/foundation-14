@@ -1,0 +1,11 @@
+﻿- type: factionIcon
+  id: Scp049StatusIcon
+  icon:
+    sprite: /Textures/_Scp/Interface/Misc/scp049_icons.rsi
+    state: 096_icon
+
+- type: factionIcon
+  id: Scp049MinionStatusIcon
+  icon:
+    sprite: /Textures/_Scp/Interface/Misc/scp049_icons.rsi
+    state: 096_minion_icon

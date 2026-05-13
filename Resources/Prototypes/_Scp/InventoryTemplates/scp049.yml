@@ -1,0 +1,12 @@
+﻿- type: inventoryTemplate
+  id: scp049
+  slots:
+  - name: back
+    slotTexture: back
+    fullTextureName: template_small
+    slotFlags: BACK
+    stripTime: 15
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,2
+    displayName: Back
+    stripHidden: true

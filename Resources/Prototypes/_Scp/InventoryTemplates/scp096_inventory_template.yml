@@ -1,0 +1,17 @@
+﻿- type: inventoryTemplate
+  id: scp096
+  slots:
+  - name: head
+    slotTexture: head
+    slotFlags: HEAD
+    uiWindowPos: 0,2
+    strippingWindowPos: 0,0
+    displayName: Head
+    offset: 0.015625, -0.09375
+  - name: mask
+    slotTexture: mask
+    slotFlags: MASK
+    uiWindowPos: 0,1
+    strippingWindowPos: 0,1
+    displayName: Mask
+

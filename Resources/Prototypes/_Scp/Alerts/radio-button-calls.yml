@@ -1,0 +1,193 @@
+﻿- type: entity
+  parent: SignalButton
+  id: BaseRadioButtonCall
+  abstract: true
+  name: radio call button
+  description: A button for calling assistance.
+  components:
+  - type: WallMount
+    arc: 175
+  - type: Construction
+    graph: SignalButtonDirectionalGraph
+    node: SignalButtonDirectionalNode
+  - type: UseDelay
+    delay: 1
+    delays:
+      RadioCall: !type:UseDelayInfo
+        length: 5
+  - type: ScpEchoExemptSounds
+    exemptPaths:
+    - /Audio/_Scp/Effects/Button/click.ogg
+
+- type: entity
+  parent: BaseRadioButtonCall
+  id: BaseEmergencyRadioButtonCall
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: _Scp/Structures/Wallmounts/Buttons/emergency_button.rsi
+    layers:
+    - map: [ "enum.EmergencyRadioButtonVisualLayers.Base" ]
+    - map: [ "enum.LockVisualLayers.Lock" ]
+      state: locked
+  - type: Lock
+  - type: LockVisuals
+  - type: AccessReader
+    access: [ [ "Research" ], [ "Security" ] ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.EmergencyRadioButtonVisuals.Pressed:
+        enum.EmergencyRadioButtonVisualLayers.Base:
+          True: { state: on }
+          False: { state: off }
+  - type: TriggerOnSignalSwitch
+    keyOut: click
+  - type: UpdateAppearanceOnTrigger
+    keysIn: [ click ]
+    key: enum.EmergencyRadioButtonVisuals.Pressed
+    duration: 3
+  - type: EmitSoundOnTrigger
+    keysIn: [ click ]
+    sound:
+      path: /Audio/_Scp/Effects/Button/emergency_alarm.ogg
+      params:
+        maxDistance: 6
+  - type: ScpEchoExemptSounds
+    exemptPaths:
+    - /Audio/_Scp/Effects/Button/click.ogg
+    - /Audio/_Scp/Effects/Button/emergency_alarm.ogg
+  - type: TTS
+    voice: Brendan
+
+- type: entity
+  parent: BaseRadioButtonCall
+  id: ButtonCallMedicalService
+  name: medical service call button
+  description: A button for calling medical service assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ MedicalService ]
+    messageKey: scp-medical-service-call
+
+- type: entity
+  parent: BaseRadioButtonCall
+  id: ButtonCallScientificService
+  name: scientific service call button
+  description: A button for calling scientific service assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ ScientificService ]
+    messageKey: scp-scientific-service-call
+
+- type: entity
+  parent: BaseRadioButtonCall
+  id: ButtonCallEngineeringTechnicalService
+  name: engineering technical service call button
+  description: A button for calling engineering technical service assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ EngineeringTechnicalService ]
+    messageKey: scp-engineering-technical-service-call
+
+- type: entity
+  parent: BaseRadioButtonCall
+  id: ButtonCallSpecialPurposeSquad
+  name: special purpose squad call button
+  description: A button for calling special purpose squad assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ HeavyContainmentSecurityService ]
+    messageKey: scp-special-purpose-squad-call
+
+- type: entity
+  parent: BaseRadioButtonCall
+  id: ButtonCallFoodAndSanitationService
+  name: food and sanitation service call button
+  description: A button for calling food and sanitation service assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ FoodAndSanitationService ]
+    messageKey: scp-food-and-sanitation-service-call
+
+- type: entity
+  parent: BaseRadioButtonCall
+  id: ButtonCallLogisticsService
+  name: logistics service call button
+  description: A button for calling logistics service assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ LogisticsService ]
+    messageKey: scp-logistics-service-call
+
+- type: entity
+  parent: BaseRadioButtonCall
+  id: ButtonCallCommandantSquad
+  name: commandant squad call button
+  description: A button for calling commandant squad assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ ExternalAdministrativeZoneSecurityService ]
+    messageKey: scp-commandant-squad-call
+
+- type: entity
+  parent: BaseRadioButtonCall
+  id: ButtonCallEthicsCommittee
+  name: ethics committee call button
+  description: A button for calling ethics committee assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ EthicsCommittee ]
+    messageKey: scp-ethics-committee-call
+
+- type: entity
+  parent: BaseRadioButtonCall
+  id: ButtonCallDClassRequest
+  name: d-class request button
+  description: A button for requesting d-class personnel.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ ExternalAdministrativeZoneSecurityService ]
+    messageKey: scp-d-class-request
+
+## EMERGENCY BUTTONS
+- type: entity
+  parent: BaseEmergencyRadioButtonCall
+  id: ButtonCallEmergencyMedicalService
+  name: emergency medical service call button
+  description: A button for calling emergency medical service assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ MedicalService ]
+    messageKey: scp-emergency-medical-service-call
+
+- type: entity
+  parent: BaseEmergencyRadioButtonCall
+  id: ButtonCallEmergencySpecialPurposeSquad
+  name: emergency special purpose squad call button
+  description: A button for calling emergency special purpose squad assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ HeavyContainmentSecurityService ]
+    messageKey: scp-emergency-special-purpose-squad-call
+
+- type: entity
+  parent: BaseEmergencyRadioButtonCall
+  id: ButtonCallEmergencyEngineeringTechnicalService
+  name: emergency engineering technical service call button
+  description: A button for calling emergency engineering technical service assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ EngineeringTechnicalService ]
+    messageKey: scp-emergency-engineering-technical-service-call
+
+- type: entity
+  parent: BaseEmergencyRadioButtonCall
+  id: ButtonCallEmergencyCommandantSquad
+  name: emergency commandant squad call button
+  description: A button for calling emergency commandant squad assistance.
+  components:
+  - type: RadioCallButton
+    radioChannel: [ ExternalAdministrativeZoneSecurityService ]
+    messageKey: scp-emergency-commandant-squad-call

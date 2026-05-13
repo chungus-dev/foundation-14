@@ -1,0 +1,98 @@
+﻿- type: job
+  id: SecurityCommander
+  name: job-name-security-commander
+  description: job-description-security-commander
+  playTimeTracker: JobSecurityCommander
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: HeavyContainmentSecurityService
+    time: 46800
+  - !type:DepartmentTimeRequirement
+    department: ExternalAdministrativeZoneSecurityService
+    time: 46800
+  - !type:AgeRequirement
+    requiredAge: 31
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  weight: 955
+  icon: JobSecurityCommander
+  supervisors: job-supervisors-director
+  canBeAntag: false
+  radioBold: true # Sunrise-Edit
+  displayWeight: 80 # Sunrise-Edit
+  accessGroups:
+  - SecurityCommander
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+    - type: EmployeeClass
+      class: B
+    - type: AccessLevel
+      level: Four
+    - type: ScpHolder
+      holdableWhitelist:
+        components:
+        - ClassDAppearance
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - ExternalAdministrativeZoneSecurityService
+      - HeavyContainmentSecurityService
+      includeJobName: true
+    - type: SpeakOnEyeStateChange # переопределение моргания с другими параметрами для охраны и МОГа
+      # Часть фраз уходит, так как более разговорная. А эти парни натренированы.
+      phraseOnClose:
+      - close-eye-phrase-1
+      - close-eye-phrase-3
+      - close-eye-phrase-4
+      phraseOnOpen:
+      - open-eye-phrase-1
+      - open-eye-phrase-3
+      speakOnAutomaticBlinking: true
+      speakOnlyInScp173Chamber: false
+    - type: Fear # переопределение компонента страха для СБ
+      phobias:
+      - Exoremophobia
+      - Necrophobia
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+      fearBasedSpreadAngleModifier:
+        Anxiety: 1.2
+        Fear: 2
+        Terror: 5
+      fearBasedGrainStrength:
+        None: 0
+        Anxiety: 70
+        Fear: 230
+        Terror: 550
+      fearBasedVignetteStrength:
+        None: 0
+        Anxiety: 30
+        Fear: 60
+        Terror: 350
+      baseJitterTime: 2
+      fallOffChance: 0.01
+
+- type: startingGear
+  id: SecurityCommanderGear
+  equipment:
+    head: ClothingHeadHatHoshat
+    eyes: ClothingEyesGlassesSecurity
+    neck: ClothingNeckScarfHos
+    outerClothing: ClothingOuterCoatHoSTrench
+    jumpsuit: ClothingUniformJumpsuitHoS
+    gloves: ClothingHandsGlovesCombat
+    shoes: ClothingShoesBootsSecurityGuard
+    back: ClothingBackpackSecurity
+    id: KeyCardSecurityCommander
+    ears: ClothingHeadsetAltSecurityAdministration
+    belt: ScpClothingBeltSecurityWebbingFilled
+    pocket2: SecurityCommanderPDA
+  storage:
+    back:
+    - Flash
+    - ScpRadioHandheldSecurityEnabled

@@ -1,0 +1,8 @@
+﻿- type: entity
+  parent: [ ClothingShoesBase, ClothingShoesBaseButcherable ]
+  id: ClothingShoesClassD
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Shoes/shoesClassD.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Shoes/shoesClassD.rsi

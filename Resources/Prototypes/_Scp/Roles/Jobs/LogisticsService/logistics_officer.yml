@@ -1,0 +1,46 @@
+﻿- type: job
+  id: LogisticsOfficer
+  name: job-name-logistics-officer
+  description: job-description-logistics-officer
+  playTimeTracker: JobLogisticsOfficer
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 3600
+  - !type:AgeRequirement
+    requiredAge: 24
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  icon: JobLogisticsOfficer
+  supervisors: job-supervisors-senior-logistics-officer
+  displayWeight: 0
+  weight: 740
+  accessGroups:
+  - LogisticsOfficer
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: BoxingDay
+    prototype: BoxCardboard
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: One
+
+- type: startingGear
+  id: LogisticsOfficerGear
+  equipment:
+    head: ClothingHeadBandOrange
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskBandOrange
+    neck: ClothingNeckScarfStripedOrange
+    outerClothing: ClothingOuterWinterColorOrange
+    jumpsuit: ClothingUniformJumpsuitCargo
+    gloves: ClothingHandsGlovesColorLightBrown
+    shoes: ClothingShoesColorBlack
+    back: ClothingBackpackCargo
+    id: KeyCardLogisticsOfficer
+    ears: ClothingHeadsetLogistics
+    pocket1: AppraisalTool
+    pocket2: ScpLogisticsPDA

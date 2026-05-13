@@ -1,0 +1,34 @@
+﻿- type: entity
+  id: Scp106CatwalkBase
+  parent: Catwalk
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Sprite
+    sprite: _Scp/Structures/accelerating_catwalk.rsi
+    drawdepth: FloorTiles
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        density: 7
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+        - LowImpassable
+
+- type: entity
+  parent: Scp106CatwalkBase
+  id: Scp106CatwalkTarget
+  components:
+  - type: Scp106BoneBreakerCell
+
+- type: entity
+  parent: Scp106CatwalkBase
+  id: Scp106CatwalkContainer
+  components:
+  - type: Scp106ContainmentCatwalk

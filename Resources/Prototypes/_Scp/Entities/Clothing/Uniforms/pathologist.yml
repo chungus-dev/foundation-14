@@ -1,0 +1,8 @@
+﻿- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformPathologist
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Uniforms/uniformPathologist.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Uniforms/uniformPathologist.rsi

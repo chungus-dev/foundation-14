@@ -1,0 +1,51 @@
+# ГЕРМОЗАТВОРЫ
+
+# Региональная администрация
+
+- type: entity
+  parent: ScpBlastDoor
+  id: ScpBlastDoorRegionalAdministration
+  suffix: Regional administration, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMTF ]
+
+# Общие доступы
+
+- type: entity
+  parent: ScpBlastDoor
+  id: ScpBlastDoorExit
+  suffix: Exit, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExit ]
+
+# СТВОРКИ
+
+# Региональная администрация
+
+- type: entity
+  parent: ScpShuttersWindow
+  id: ScpShuttersWindowRegionalAdministration
+  suffix: Regional administration, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMTF ]
+  - type: AccessReader
+    containerAccessProvider: board
+
+# Общие доступы
+
+- type: entity
+  parent: ScpShuttersWindow
+  id: ScpShuttersWindowExit
+  suffix: Exit, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsExit ]
+  - type: AccessReader
+    containerAccessProvider: board

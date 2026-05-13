@@ -1,0 +1,62 @@
+﻿- type: entity
+  id: ScpAirlock
+  parent: Airlock
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard/basic.rsi
+  - type: Door
+    crushDamage:
+      types:
+        Blunt: 15
+    openSound:
+      collection: AirlockDefaultOpen
+    closeSound:
+      collection: AirlockDefaultClose
+    denySound:
+      path: /Audio/_Scp/Objects/Machines/Airlocks/deny.ogg
+  - type: Paintable
+    group: ScpAirlockStandard
+  placement:
+    mode: SnapgridCenter
+
+- type: entity
+  id: ScpAirlockGlass
+  parent: ScpAirlock
+  name: glass airlock
+  components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmack
+  - type: Door
+    occludes: false
+  - type: Occluder
+    enabled: false
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass/glass.rsi
+  - type: AnimationPlayer
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.46,-0.46,0.46,0.46" # don't want this colliding with walls or they won't close
+        density: 100
+        mask:
+        - FullTileMask
+        layer:     #removed opaque from the layer, allowing lasers to pass through glass airlocks
+        - GlassAirlockLayer
+  - type: LayerChangeOnWeld
+    unWeldedLayer: GlassAirlockLayer
+    weldedLayer: GlassLayer
+  - type: Construction
+    graph: Airlock
+    node: glassAirlock
+  - type: RadiationBlocker
+    resistance: 2
+  - type: Tag
+    tags:
+      - GlassAirlock
+      # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
+  - type: Paintable
+    group: ScpAirlockGlass

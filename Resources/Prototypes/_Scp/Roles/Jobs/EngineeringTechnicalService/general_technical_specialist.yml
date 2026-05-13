@@ -1,0 +1,45 @@
+﻿- type: job
+  id: GeneralTechnicalSpecialist
+  name: job-name-general-technical-specialist
+  description: job-description-general-technical-specialist
+  playTimeTracker: JobGeneralTechnicalSpecialist
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: EngineeringTechnicalService
+    time: 7200
+  - !type:AgeRequirement
+    requiredAge: 27
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  icon: JobGeneralTechnicalSpecialist
+  supervisors: job-supervisors-chief-technical-specialist
+  displayWeight: 10
+  weight: 750
+  accessGroups:
+  - CommonEngineeringJob
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Two
+    - type: ScpRepairableCanSeeExamineHints
+
+- type: startingGear
+  id: GeneralTechnicalSpecialistGear
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+    eyes: ClothingEyesGlassesMeson
+    mask: ClothingMaskBandRed
+    neck: ClothingNeckScarfStripedRed
+    outerClothing: ClothingOuterWinterColorRed
+    jumpsuit: ClothingUniformJumpsuitEngineering
+    gloves: ClothingHandsGlovesFingerlessInsulated
+    shoes: ClothingShoesColorRed
+    back: ClothingBackpackEngineering
+    id: KeyCardGeneralTechnicalSpecialist
+    ears: ClothingHeadsetEngineeringTechnicalService
+    belt: ClothingBeltUtilityEngineering
+    pocket2: ScpEngineeringPDA

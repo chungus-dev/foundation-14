@@ -1,0 +1,107 @@
+﻿- type: entity
+  id: RandomHumanoidSpawnerNTFLeader
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertleader
+  - type: RandomHumanoidSpawner
+    settings: NTFLeader
+
+- type: randomHumanoidSettings
+  id: NTFLeader
+  parent: CommonMTFLeader
+  randomizeName: false
+  components:
+  - type: GhostRole
+    name: ghost-role-information-mtf-leader-NTF-name
+    description: ghost-role-information-mtf-leader-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: NTFLeader
+  - type: Loadout
+    prototypes: [ NTFLeaderGear ]
+
+- type: entity
+  id: RandomHumanoidSpawnerNTFSpecialist
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertsecurityeva
+  - type: RandomHumanoidSpawner
+    settings: NTFSpecialist
+
+- type: randomHumanoidSettings
+  id: NTFSpecialist
+  parent: CommonMTFSpecialist
+  randomizeName: false
+  components:
+  - type: GhostRole
+    name: ghost-role-information-mtf-specialist-NTF-name
+    description: ghost-role-information-mtf-specialist-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: NTFSpecialist
+  - type: Loadout
+    prototypes: [ NTFSpecialistGear ]
+
+- type: entity
+  id: RandomHumanoidSpawnerNTFCadet
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertsecurityeva
+  - type: RandomHumanoidSpawner
+    settings: NTFCadet
+
+- type: randomHumanoidSettings
+  id: NTFCadet
+  parent: CommonMTFCadet
+  randomizeName: false
+  components:
+  - type: GhostRole
+    name: ghost-role-information-mtf-cadet-NTF-name
+    description: ghost-role-information-mtf-cadet-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: NTFCadet
+  - type: Loadout
+    prototypes: [ NTFCadetGear ]
+
+# Спавнер отряда
+- type: entity
+  id: SpawnerMTFSquadNTF
+  parent: SpawnPointScpBase
+  suffix: NTF
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: NTF
+      sprite: /Textures/_Scp/Interface/Misc/mtf_icons.rsi
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: true
+    table: !type:AllSelector
+      children:
+      - id: RandomHumanoidSpawnerNTFLeader
+      - id: RandomHumanoidSpawnerNTFSpecialist
+        amount: 2
+      - id: RandomHumanoidSpawnerNTFCadet
+        amount: 2
+    offset: 1
+
+# Спавнер, но юзается по кнопке
+- type: entity
+  id: SpawnerMTFSquadNTFSpawnOnTrigger
+  parent: SpawnerOnTriggerMTFBase
+  suffix: NTF | SpawnOnTrigger
+  components:
+  - type: SpawnOnTrigger
+    proto: SpawnerMTFSquadNTF
+  - type: Sprite
+    layers:
+    - state: green
+    - state: NTF
+      sprite: /Textures/_Scp/Interface/Misc/mtf_icons.rsi

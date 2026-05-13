@@ -1,0 +1,46 @@
+﻿- type: entity
+  id: StandardScpStation
+  abstract: true
+  parent:
+  - BaseStation
+  - BaseStationNews # Новости
+  - BaseStationJobsSpawning
+  - BaseStationRecords
+  - BaseStationEvacuation # базовый эвак.. а нужен ли он?
+  - BaseFacilityAlertLevels
+  - BaseFacilitySiliconLawScpDefault
+  - BaseStationNanotrasen # Дает фракцию
+  - ScpComplexGoal # Цели комплекса по изучению SCP
+  - BaseStationAntagsTargets # Для предателей
+  # - BaseStationCryoTeleport # Телепорт в крио. Я в нем уверен на 99%. А я не уверен
+  - BaseStationRegionalAdministration # Добавляет неиспользуемое(игровое) ЦК. Настоящее ЦК через BaseComplexTransitHub
+  - BaseComplexTransitHub
+  - BaseStationCargo
+  - BaseStationAllEventsEligible
+  components:
+  - type: Transform
+  - type: MetaGarbageTarget
+    reagentSaveModifiers:
+      Scp173Reagent: 0.1
+      Blood: 0.1
+  - type: RandomPlanet
+    data:
+    - biome: ScpComplexSnow
+      weather:
+      - SnowfallMedium
+      - SnowfallLight
+
+- type: entity
+  id: ScpComplexCompact
+  parent: StandardScpStation
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: ScpComplexStandard
+  parent: StandardScpStation
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: ScpComplexModular
+  parent: StandardScpStation
+  categories: [ HideSpawnMenu ]

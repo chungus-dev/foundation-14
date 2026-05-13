@@ -1,0 +1,465 @@
+﻿- type: entity
+  id: BaseScpArtifactEffect
+  parent: BaseXenoArtifactEffect
+  abstract: true
+  components:
+  - type: XenoArtifactNode
+    researchPointType: Scp
+
+- type: entity
+  id: BaseOneTimeScpArtifactEffect
+  parent: BaseOneTimeXenoArtifactEffect
+  abstract: true
+  components:
+  - type: XenoArtifactNode
+    researchPointType: Scp
+
+# Базовые для всех СЦП эффекты
+
+- type: entity
+  id: ScpArtifactWandering
+  parent: BaseOneTimeScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEApplyComponents
+    components:
+    - type: RandomWalk
+      minSpeed: 5
+      maxSpeed: 12
+      minStepCooldown: 1
+      maxStepCooldown: 3
+
+- type: entity
+  id: ScpArtifactThrowThingsAround
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEThrowThingsAround
+
+- type: entity
+  id: ScpArtifactKnock
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEKnock
+  - type: XAELightFlicker
+
+- type: entity
+  id: ScpArtifactShatterWindows
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XenoArtifactNode
+    maxDurability: 3
+    maxDurabilityCanDecreaseBy:
+      min: 0
+      max: 2
+  - type: XAEDamageInArea
+    damageChance: 0.75
+    whitelist:
+      tags:
+      - Window
+    damage:
+      types:
+        Structural: 200
+
+- type: entity
+  id: ScpEffectBoltAirlocks
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ArtifactBoltAirlocks
+
+- type: entity
+  id: ScpEffectTeslaDischarge
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEApplyComponents
+    components:
+    - type: LightningArcShooter
+      maxLightningArc: 4
+      shootMaxInterval: 4
+      shootRange: 6
+    - type: TimedRemoveComponents
+      removeAfter: 10
+      components:
+      - type: LightningArcShooter
+
+- type: entity
+  id: ScpEffectSpawn2054X
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XenoArtifactNode
+    maxDurability: 1
+    maxDurabilityCanDecreaseBy:
+      min: 0
+      max: 0
+    triggerDecreasesDurability: true
+  - type: ArtifactStartGameRule
+    rules:
+      Scp2054X: 1
+
+
+#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣤⣤⣤⣴⡶⠶⠶⠶⠶⠶⠶⠶⠶⠤⠤⢤⣤⣤⣤⣤⣤⣄⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#  ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠟⠋⠀⠀⠀⠀⢀⣀⠤⠖⠚⢉⣉⣉⣉⣉⣀⠀⠀⠀⠀⠀⠀⠈⠉⠩⠛⠛⠛⠻⠷⣦⣄⡀⠀⠀⠀⠀⠀⠀
+#  ⠀⠀⠀⠀⠀⠀⠀⣠⡿⠋⠀⠀⠀⣀⠤⠒⣉⠤⢒⣊⡉⠠⠤⠤⢤⡄⠈⠉⠉⠀⠂⠀⠀⠐⠂⠀⠉⠉⠉⠉⠂⠀⠙⠻⣶⣄⠀⠀⠀⠀
+#  ⠀⠀⠀⠀⠀⠀⣰⡿⠁⠀⠀⡠⠊⢀⠔⣫⠔⠊⠁⠀⠀⠀⠀⠀⠀⠙⡄⠀⠀⠀⠀⠀⠘⣩⠋⠀⠀⠀⠉⠳⣄⠀⠀⠀⠈⢻⡇⠀⠀⠀
+#  ⠀⠀⠀⠀⠀⣰⡿⠁⠀⠀⠀⠀⠀⠁⠜⠁⣀⣤⣴⣶⣶⣶⣤⣤⣀⠀⠃⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠈⠆⠀⠀⠀⠸⣧⡀⠀⠀
+#  ⠀⠀⠀⣠⣾⣿⣥⠤⢄⡀⠀⢠⣤⠔⢠⣾⣿⣿⣿⣿⣿⣯⣄⡈⠙⢿⣦⠀⠀⠀⠀⡀⢀⣤⣶⣿⣿⣿⣿⣿⣦⠀⣀⣀⣀⣀⡙⢿⣦⡀
+#  ⠀⣠⡾⣻⠋⢀⣠⣴⠶⠾⢶⣤⣄⡚⠉⠉⠉⠁⣠⣼⠏⠉⠙⠛⠷⡾⠛⠀⠀⠀⠘⠛⢿⡟⠛⠋⠉⠉⠉⠁⠀⠀⠀⠀⠀⠦⣝⠦⡙⣿
+#  ⢰⡟⠁⡇⢠⣾⠋⠀⠀⣼⣄⠉⠙⠛⠷⠶⠶⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣇⠀⠀⠀⠠⣦⣄⣴⡾⢛⡛⠻⠷⠘⡄⢸⣿
+#  ⢸⡇⠀⡇⢸⣇⢀⣤⣴⣿⠻⠷⣦⣄⣀⠀⠀⠀⢀⡀⠀⣀⠰⣤⡶⠶⠆⠀⠀⠀⠀⠀⠈⠛⢿⣦⣄⠀⠈⠉⠉⠁⢸⣇⠀⠀⣠⠃⢸⣿
+#  ⠸⣿⡀⢇⠘⣿⡌⠁⠈⣿⣆⠀⠀⠉⢻⣿⣶⣦⣤⣀⡀⠀⠀⢻⣦⠰⡶⠿⠶⠄⠀⠀⠀⣠⣾⠿⠟⠓⠦⡄⠀⢀⣾⣿⡇⢈⠡⠔⣿⡟
+#  ⠀⠙⢿⣌⡑⠲⠄⠀⠀⠙⢿⣿⣶⣦⣼⣿⣄⠀⠈⠉⠛⠻⣿⣶⣯⣤⣀⣀⡀⠀⠘⠿⠾⠟⠁⠀⠀⢀⣀⣤⣾⣿⢿⣿⣇⠀⠀⣼⡟⠀
+#  ⠀⠀⠀⠹⣿⣇⠀⠀⠀⠀⠈⢻⣦⠈⠙⣿⣿⣷⣶⣤⣄⣠⣿⠁⠀⠈⠉⠙⢻⡟⠛⠻⠿⣿⠿⠛⠛⢻⣿⠁⢈⣿⣨⣿⣿⠀⢰⡿⠀⠀
+#  ⠀⠀⠀⠀⠈⢻⣇⠀⠀⠀⠀⠀⠙⢷⣶⡿⠀⠈⠙⠛⠿⣿⣿⣶⣶⣦⣤⣤⣼⣧⣤⣤⣤⣿⣦⣤⣤⣶⣿⣷⣾⣿⣿⣿⡟⠀⢸⡇⠀⠀
+#  ⠀⠀⠀⠀⠀⠈⢿⣦⠀⠀⠀⠀⠀⠀⠙⢷⣦⡀⠀⠀⢀⣿⠁⠉⠙⠛⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⢸⣷⠀⠀
+#  ⠀⠀⠀⠀⠀⠀⠀⠙⢷⣄⠀⢀⡀⠀⣀⡀⠈⠻⢷⣦⣾⡃⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⢹⡟⠉⠉⣿⠏⢡⣿⠃⣾⣷⡿⠁⠀⠘⣿⠀⠀
+#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⣤⣉⠒⠤⣉⠓⠦⣀⡈⠉⠛⠿⠶⢶⣤⣤⣾⣧⣀⣀⣀⣿⣄⣠⣼⣿⣤⣿⠷⠾⠟⠋⠀⠀⠀⠀⣿⠀⠀
+#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⣶⣄⡉⠒⠤⢌⣑⠲⠤⣀⡀⠀⠀⠀⠈⠍⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⣠⠏⠀⢰⠀⠀⣿⡄⠀
+#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠿⢷⣦⣄⡉⠑⠒⠪⠭⢄⣀⣀⠀⠐⠒⠒⠒⠒⠀⠀⠐⠒⠊⠉⠀⢀⡠⠚⠀⠀⢸⡇⠀
+#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⢷⣦⣀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠓⠒⠒⠒⠊⠁⠀⠀⠀⢠⣿⠃⠀
+#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠷⠶⣶⣦⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⠟⠁⠀⠀
+#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠛⠷⠶⠶⠶⠶⠶⠾⠛⠛⠉⠀⠀⠀⠀⠀
+
+
+- type: entity
+  id: ScpEffectShuffleUltra
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEShuffle
+    radius: 70
+
+- type: entity
+  id: ScpEffectPolyChair
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEPolymorph
+    polymorphPrototypeName: SunriseEffectChair
+
+- type: entity
+  id: ScpEffectPolyWatermelon
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEPolymorph
+    polymorphPrototypeName: SunriseEffectWatermelon
+
+- type: entity
+  id: ScpEffectPolyAppendix
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEPolymorph
+    polymorphPrototypeName: SunriseEffectAppendix
+
+- type: entity
+  id: ScpEffectPolyScrewdriver
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEPolymorph
+    polymorphPrototypeName: ScpEffectScrewdriver
+
+- type: entity
+  id: ScpEffectPolyCigarSpent
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEPolymorph
+    polymorphPrototypeName: ScpEffectCigarSpent
+
+- type: entity
+  id: ScpEffectPolyToyRubberDuck
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEPolymorph
+    polymorphPrototypeName: ScpEffectToyRubberDuck
+
+- type: entity
+  id: ScpEffectPolyDisposal
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEPolymorph
+    polymorphPrototypeName: SunriseEffectDisposal
+
+- type: entity
+  id: ScpEffectPolyTable
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEPolymorph
+    polymorphPrototypeName: SunriseEffectTable
+
+- type: entity
+  id: ScpEffectSwap
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ArtifactWhitelistSwap
+    targetWhitelist:
+      components:
+      - Scp
+      - MobState
+      requireAll: true
+    targetBlacklist:
+      components:
+      - Scp096Face
+    otherMapWhitelist:
+      components:
+      - Scp106BackRoomMap
+
+- type: entity
+  id: EffectMagnetUltra
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEApplyComponents
+    components:
+    - type: GravityWell
+      maxRange: 10
+      baseRadialAcceleration: 90
+    - type: TimedRemoveComponents
+      components:
+      - type: GravityWell
+
+- type: entity
+  id: ScpEffectShiftedAsciiTableAccent
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AddComponentsInRadius
+    whitelist:
+      components:
+      - HumanoidAppearance
+    components:
+    - type: AnomalyAccent
+    - type: TimedRemoveComponents
+      removeAfter: 300
+      components:
+      - type: AnomalyAccent
+
+# Scp 939
+
+- type: entity
+  id: ScpEffectSmoke939
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ArtifactCreateSmoke
+    reagent: АМН-С227
+    quantity: 200
+    prototype: АМН-С227Smoke
+
+- type: entity
+  id: ScpEffectSleep939
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ArtifactScp939Sleep
+
+- type: entity
+  id: ScpArtifactHunger
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ArtifactModifyHunger
+
+- type: entity
+  id: ScpEffectThirst
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ArtifactModifyThirst
+
+# Scp 106
+
+- type: entity
+  id: ScpArtifactTeleport
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEApplyComponents
+    components:
+    - type: XAERandomTeleportInvoker
+
+- type: entity
+  id: ScpArtifactEmp
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XenoArtifactNode
+    maxDurability: 5
+    maxDurabilityCanDecreaseBy:
+      min: 0
+      max: 3
+  - type: XAEEmpInArea
+
+- type: entity
+  id: ScpArtifactShuffle
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEShuffle
+  - type: XAETelepathic
+    range: 7.5
+    messages:
+    - shuffle-artifact-popup
+
+- type: entity
+  id: ScpArtifactScp106Teleport
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ArtifactScp106Teleport
+
+- type: entity
+  id: ScpArtifactGenerateEnergy
+  parent: BaseOneTimeScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEApplyComponents
+    components:
+    - type: PowerSupplier
+      supplyRate: 20000
+    - type: NodeContainer
+      examinable: true
+      nodes:
+        output_hv:
+          !type:CableDeviceNode
+          nodeGroupID: HVPower
+
+# Scp 999
+
+- type: entity
+  id: ScpEffectHeal999
+  parent: BaseScpArtifactEffect
+  description: Miraculously heals all nearby creatures.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEDamageInArea
+    damageChance: 1
+    radius: 8
+    whitelist:
+      components:
+      - MobState
+    damage:
+      groups:
+        Brute: -300
+        Burn: -300
+
+# Scp 173
+
+- type: entity
+  id: ScpEffectBlind
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ArtifactScp173BlindEveryoneInRange
+
+- type: entity
+  id: ScpArtifactEffectJunkSpawn
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEApplyComponents
+    applyIfAlreadyHave: true
+    refreshOnReactivate: true
+    components:
+    - type: EntityTableSpawner
+      deleteSpawnerAfterSpawn: false
+      table: !type:GroupSelector
+        rolls: !type:RangeNumberSelector
+          range: 10, 40
+        children:
+        - !type:NestedSelector
+          tableId: GenericTrashItems
+          weight: 35
+
+- type: entity
+  id: ScpArtifactEffectLightFlicker
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAELightFlicker
+
+# Scp 096
+
+- type: entity
+  id: ScpEffectMadness096
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ArtifactScp096Madness
+
+# Scp 457
+
+- type: entity
+  id: ScpEffectIgnite
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEIgnite
+    range: 7
+    fireStack:
+      min: 3
+      max: 6
+
+# Scp 035
+
+- type: entity
+  id: ScpEffectServantSpawn035
+  parent: BaseScpArtifactEffect
+  description: artifact-effect-hint-data-deleted
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAEApplyComponents
+    applyIfAlreadyHave: true
+    refreshOnReactivate: true
+    components:
+    - type: EntityTableSpawner
+      deleteSpawnerAfterSpawn: false
+      table: !type:GroupSelector
+        rolls: !type:RangeNumberSelector
+          range: 4, 7
+        children:
+        - id: MobServant035

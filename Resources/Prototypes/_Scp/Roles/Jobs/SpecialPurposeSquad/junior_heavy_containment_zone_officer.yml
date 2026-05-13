@@ -1,0 +1,82 @@
+﻿- type: job
+  id: JuniorHeavyContainmentZoneOfficer
+  name: job-name-junior-heavy-containment-zone-officer
+  description: job-description-junior-heavy-containment-zone-officer
+  playTimeTracker: JobJuniorHeavyContainmentZoneOfficer
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 10800
+  - !type:AgeRequirement
+    requiredAge: 23
+  - !type:AgeRequirement
+    requiredAge: 45
+    inverted: true
+  icon: JobJuniorHeavyContainmentZoneOfficer
+  supervisors: job-supervisors-heavy-containment-zone-commandant
+  canBeAntag: false
+  displayWeight: 0
+  weight: 830
+  accessGroups:
+  - SecurityJobCommon
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: ScpHolder
+      holdableWhitelist:
+        components:
+        - Scp096
+        - ClassDAppearance
+      holdableBlacklist:
+        components:
+        - ActiveScp096Rage
+        - ActiveScp096HeatingUp
+        - ActiveScp096WithoutFace
+    - type: SpeakOnEyeStateChange # переопределение моргания с другими параметрами для охраны и МОГа
+      # Часть фраз уходит, так как более разговорная. А эти парни натренированы.
+      phraseOnClose:
+      - close-eye-phrase-1
+      - close-eye-phrase-3
+      - close-eye-phrase-4
+      phraseOnOpen:
+      - open-eye-phrase-1
+      - open-eye-phrase-3
+      speakOnAutomaticBlinking: true
+      speakOnlyInScp173Chamber: false
+    - type: Fear  # переопределение компонента страха для СБ
+      phobias:
+      - Exoremophobia
+      - Necrophobia
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+      fearBasedSpreadAngleModifier:
+        Anxiety: 1.5
+        Fear: 2.2
+        Terror: 5
+      baseJitterTime: 3
+      fallOffChance: 0.02
+
+- type: startingGear
+  id: JuniorHeavyContainmentZoneOfficerGear
+  equipment:
+    head: ClothingHeadHelmetBasic
+    eyes: ClothingEyesGlassesSecurity
+    mask: ClothingMaskSecurityBandBlack
+    jumpsuit: ClothingUniformSecurityBlack
+    outerClothing: ClothingOuterArmorSecurity
+    gloves: ClothingHandsGlovesSecurity
+    shoes: ClothingShoesBootsSecurityGuard
+    back: ClothingBackpackSecurity
+    id: KeyCardJuniorHeavyContainmentZoneOfficer
+    ears: ClothingHeadsetHeavyContainmentSecurityService
+    belt: ScpClothingBeltSecurityWebbingFilled
+    pocket1: HyperLinkBookCorporateLaw
+    pocket2: ScpSecurityPDA
+  storage:
+    back:
+    - ScpRadioHandheldSecurityEnabled

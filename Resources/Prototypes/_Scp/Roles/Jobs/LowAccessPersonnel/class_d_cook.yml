@@ -1,0 +1,45 @@
+- type: job
+  id: ClassDCook
+  name: job-name-class-d-cook
+  description: job-description-class-d-cook
+  playTimeTracker: JobClassDCook
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 3600 # 1 час
+  icon: JobClassDCook
+  supervisors: job-supervisors-security-and-research
+  access:
+  - ClassDCanteen
+  weight: 720
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: ClassDAppearance
+    - type: EmployeeClass
+      class: D
+    - type: ScpAnnounceOnSpawn
+      text: class-d-announce-on-spawn
+      channels:
+      - ExternalAdministrativeZoneSecurityService
+      includeJobName: true
+      requiredGameRunLevel: InRound
+    - type: ScpHolder
+      holdableWhitelist:
+        components:
+        - Scp096
+      holdableBlacklist:
+        components:
+        - ActiveScp096Rage
+        - ActiveScp096HeatingUp
+        - ActiveScp096WithoutFace
+
+- type: startingGear
+  id: ClassDCookGear
+  equipment:
+    head: ClothingHeadHatChef
+    jumpsuit: ClothingUniformClassD
+    outerClothing: ClothingOuterApronChef
+    belt: ClothingBeltChefFilled
+    gloves: ClothingHandsGlovesColorWhite
+    shoes: ClothingShoesClassD
+    id: KeyCardClassDCook

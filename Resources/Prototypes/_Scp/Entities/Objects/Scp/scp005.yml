@@ -1,0 +1,23 @@
+﻿- type: entity
+  id: Scp005
+  parent: BaseItemScp
+  suffix: SCP-005
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Scp/scp-005.rsi
+    state: icon
+  - type: Scp
+    class: Safe
+  - type: Item
+    size: Normal
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  - type: GuideHelp
+    guides:
+    - ScpResearch

@@ -1,0 +1,56 @@
+﻿- type: entity
+  id: Scp999Wallify
+  name: Become a wall
+  description: You change your shape, turning into something resembling a wall.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 3
+    icon:
+      sprite: _Scp/Actions/scp-999.rsi
+      state: wall
+    itemIconStyle: BigAction
+    raiseOnUser: true
+  - type: InstantAction
+    event: !type:Scp999WallifyActionEvent
+
+- type: entity
+  id: Scp999Rest
+  name: Rest
+  description: You fall asleep.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 3
+    icon:
+      sprite: _Scp/Actions/scp-999.rsi
+      state: sleep
+    itemIconStyle: BigAction
+    raiseOnUser: true
+    checkCanInteract: false
+    checkConsciousness: false
+  - type: InstantAction
+    event: !type:Scp999RestActionEvent
+
+- type: entity
+  id: Scp999Affection
+  name: Hugs
+  description: Embrace the target, restoring a small amount of their health.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 30
+    icon:
+      sprite: _Scp/Actions/scp-999.rsi
+      state: love
+  - type: TargetAction
+    range: 3
+    targetingIndicator: true
+    interactOnMiss: false
+    ignoreContainer: true
+  - type: EntityTargetAction
+    event: !type:SmileLoveActionEvent
+    canTargetSelf: false
+    whitelist:
+      components:
+      - Body

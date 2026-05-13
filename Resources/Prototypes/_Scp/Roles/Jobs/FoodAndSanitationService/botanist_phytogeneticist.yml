@@ -1,0 +1,38 @@
+﻿- type: job
+  id: BotanistPhytogeneticist
+  name: job-name-botanist-phytogeneticist
+  description: job-description-botanist-phytogeneticist
+  playTimeTracker: JobBotanistPhytogeneticist
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 22
+  icon: JobBotanistPhytogeneticist
+  supervisors: job-supervisors-personnel-officer
+  weight: 730
+  access:
+  - Service
+  - Bunker
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: FourTwenty
+    prototype: CannabisSeeds
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: One
+
+- type: startingGear
+  id: BotanistPhytogeneticistGear
+  equipment:
+    head: ClothingHeadBandBotany
+    eyes: ClothingEyesGlasses
+    outerClothing: ClothingOuterApronBotanist
+    jumpsuit: ClothingUniformJumpsuitHydroponics
+    shoes: ClothingShoesColorBrown
+    back: ClothingBackpackHydroponics
+    id: KeyCardBotanistPhytogeneticist
+    ears: ClothingHeadsetFoodAndSanitation
+    belt: ClothingBeltPlantFilled
+    pocket2: ScpServicePDA

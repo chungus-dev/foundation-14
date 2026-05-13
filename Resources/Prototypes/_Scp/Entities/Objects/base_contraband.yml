@@ -1,0 +1,15 @@
+﻿# non-stealth Chaos stuff
+- type: entity
+  id: BaseChaosContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Chaos
+
+# non-stealth Foundation enemy stuff
+- type: entity
+  id: BaseFoundationEnemyContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: FoundationEnemy

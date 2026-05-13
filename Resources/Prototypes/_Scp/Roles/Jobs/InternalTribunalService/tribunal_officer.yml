@@ -1,0 +1,23 @@
+﻿- type: job
+  id: TribunalOfficer
+  name: job-name-tribunal-officer
+  description: job-description-tribunal-officer
+  playTimeTracker: JobTribunalOfficer
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 90000 # 25 часов
+  icon: JobTribunalOfficer
+  canBeAntag: false
+  supervisors: job-supervisors-judicial-inspector
+  weight: 850
+  accessGroups:
+  - InternalTribunalService
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: B
+    - type: AccessLevel
+      level: Three

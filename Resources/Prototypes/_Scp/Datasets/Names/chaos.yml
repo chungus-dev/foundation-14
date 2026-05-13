@@ -1,0 +1,23 @@
+﻿- type: localizedDataset
+  id: LastNamesChaos
+  values:
+    prefix: names-chaos-last-dataset-
+    count: 30
+
+- type: localizedDataset
+  id: NamesChaosLeader
+  values:
+    prefix: names-chaos-leader-first-dataset-
+    count: 1
+
+- type: localizedDataset
+  id: NamesChaosMedic
+  values:
+    prefix: names-chaos-medic-first-dataset-
+    count: 1
+
+- type: localizedDataset
+  id: NamesChaos
+  values:
+    prefix: names-chaos-first-dataset-
+    count: 1

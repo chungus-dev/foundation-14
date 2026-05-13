@@ -1,0 +1,120 @@
+﻿# Командир
+- type: job
+  id: NTFLeader
+  name: ghost-role-information-mtf-leader-NTF-name
+  description: ghost-role-information-mtf-leader-description
+  playTimeTracker: JobNTFLeader
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 #5 hrs
+  setPreference: false
+  startingGear: NTFLeaderGear
+  icon: JobIconNTFleader
+  supervisors: ghost-role-information-mtf-leader-supervisors
+  canBeAntag: false
+  radioBold: true
+  weight: 880
+  overrideConsoleVisibility: false
+  alwaysShowInBanPanel: true
+  accessGroups:
+  - AllComplex
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: NTFLeaderGear
+  equipment:
+    jumpsuit: ClothingUniformNTF
+    back: MtfTacticalBackpack
+    shoes: ClothingShoesBootsJackFilled
+    head: ClothingHelmetMtfTactical
+    mask: ClothingMaskMtf
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorTactical
+    belt: ClothingBeltMtfSparePouch
+    id: KeyCardMtfNTFLeader
+    ears: ClothingHeadsetAltMTF
+    pocket1: BaseUplinkMTFLeaderNtf
+    pocket2: MobileTaskForcePDA
+  storage:
+    back:
+    - BoxMtfLeaderKit
+    - Crowbar
+    - HandheldCrewMonitor
+    - DoorRemoteCustom
+
+# Специалист
+- type: job
+  id: NTFSpecialist
+  name: ghost-role-information-mtf-specialist-NTF-name
+  description: ghost-role-information-mtf-specialist-description
+  playTimeTracker: JobNTFSpecialist
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 #5 hrs
+  setPreference: false
+  startingGear: NTFSpecialistGear
+  icon: JobIconNTF
+  supervisors: ghost-role-information-mtf-specialist-supervisors
+  canBeAntag: false
+  weight: 875
+  overrideConsoleVisibility: false
+  alwaysShowInBanPanel: true
+  accessGroups:
+  - AllComplex
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: NTFSpecialistGear
+  equipment:
+    jumpsuit: ClothingUniformNTF
+    shoes: ClothingShoesBootsJackFilled
+    head: ClothingHelmetMtfTactical
+    mask: ClothingMaskMtf
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    id: KeyCardMtfNTFSpecialist
+    ears: ClothingHeadsetAltMTF
+    pocket1: BaseUplinkMTFSpecialistNtf
+    pocket2: MobileTaskForcePDA
+
+# Кадет
+- type: job
+  id: NTFCadet
+  name: ghost-role-information-mtf-cadet-NTF-name
+  description: ghost-role-information-mtf-cadet-description
+  playTimeTracker: JobNTFCadet
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 3600 #1 hrs
+  setPreference: false
+  startingGear: NTFCadetGear
+  icon: JobIconNTF
+  supervisors: ghost-role-information-mtf-cadet-supervisors
+  canBeAntag: false
+  overrideConsoleVisibility: false
+  alwaysShowInBanPanel: true
+  weight: 870
+  accessGroups:
+  - AllComplex
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: NTFCadetGear
+  equipment:
+    jumpsuit: ClothingUniformNTF
+    shoes: ClothingShoesBootsJackFilled
+    head: ClothingHelmetMtfTactical
+    mask: ClothingMaskMtf
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    id: KeyCardMtfNTFCadet
+    ears: ClothingHeadsetAltMTF
+    pocket1: BaseUplinkMTFCadetNtf
+    pocket2: MobileTaskForcePDA

@@ -1,0 +1,13 @@
+﻿- type: entity
+  id: BaseFacilitySiliconLawScpDefault
+  abstract: true
+  components:
+  - type: SiliconLawProvider
+    laws: ScpDefault
+
+- type: entity
+  id: BaseFacilityAlertLevels
+  abstract: true
+  components:
+  - type: AlertLevel
+    alertLevelPrototype: FacilityAlerts

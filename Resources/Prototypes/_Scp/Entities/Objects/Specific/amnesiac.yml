@@ -1,0 +1,103 @@
+- type: entity
+  parent: Jug
+  id: JugRawAmnesiac
+  suffix: Raw Amnesiac
+  components:
+  - type: Label
+    currentLabel: reagent-amnesiac-raw-name
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: RawAmnesiac
+          Quantity: 50
+
+- type: entity
+  id: ChemistryVialAmnesiacA
+  parent: BaseChemistryEmptyVial
+  suffix: Amnesiac A
+  components:
+  - type: Label
+    currentLabel: reagent-amnesiac-a-name
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 10
+        reagents:
+          - ReagentId: AmnesiacA
+            Quantity: 10
+
+- type: entity
+  id: ChemistryVialAmnesiacB
+  parent: BaseChemistryEmptyVial
+  suffix: Amnesiac B
+  components:
+  - type: Label
+    currentLabel: reagent-amnesiac-b-name
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 10
+        reagents:
+          - ReagentId: AmnesiacB
+            Quantity: 10
+
+- type: entity
+  id: ChemistryVialAmnesiacC
+  parent: BaseChemistryEmptyVial
+  suffix: Amnesiac C
+  components:
+  - type: Label
+    currentLabel: reagent-amnesiac-c-name
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 10
+        reagents:
+          - ReagentId: AmnesiacC
+            Quantity: 10
+
+- type: entity
+  id: ChemistryVialAmnesiacD
+  parent: BaseChemistryEmptyVial
+  suffix: Amnesiac D
+  components:
+  - type: Label
+    currentLabel: reagent-amnesiac-d-name
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 10
+        reagents:
+          - ReagentId: AmnesiacD
+            Quantity: 10
+
+- type: entity
+  id: ChemistryVialMnesticW
+  parent: BaseChemistryEmptyVial
+  suffix: Mnestic W
+  components:
+  - type: Label
+    currentLabel: reagent-mnestic-w-name
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 10
+        reagents:
+          - ReagentId: MnesticW
+            Quantity: 10
+
+- type: entity
+  id: ChemistryVialMnesticX
+  parent: BaseChemistryEmptyVial
+  suffix: Mnestic X
+  components:
+  - type: Label
+    currentLabel: reagent-mnestic-x-name
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 10
+        reagents:
+          - ReagentId: MnesticX
+            Quantity: 10

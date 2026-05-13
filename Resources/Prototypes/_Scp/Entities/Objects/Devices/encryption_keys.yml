@@ -1,0 +1,307 @@
+﻿# TODO: Свои спрайты для id: TelecomServer и свои теги ключей соответственно
+
+# Региональная администрация
+
+- type: entity
+  parent: [ EncryptionKey, BaseCentcommContraband ]
+  id: EncryptionKeyRegionalAdministration
+  components:
+  - type: EncryptionKey
+    channels:
+    - RegionalAdministration
+    defaultChannel: RegionalAdministration
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_blue
+    - state: raf_label
+
+# Администрация
+
+- type: entity
+  parent: [ EncryptionKey, BaseCentcommCommandContraband ]
+  id: EncryptionKeyFacilityMaster
+  components:
+  - type: EncryptionKey
+    channels:
+    - Administration
+    - EthicsCommittee
+    - HeavyContainmentSecurityService
+    - ExternalAdministrativeZoneSecurityService
+    - ScientificService
+    - MedicalService
+    - EngineeringTechnicalService
+    - LogisticsService
+    - FoodAndSanitationService
+    defaultChannel: Administration
+  - type: Sprite
+    layers:
+    - state: crypt_gold
+    - state: cap_label
+  - type: Tag
+    tags:
+    - EncryptionCommand
+
+- type: entity
+  parent: [ EncryptionKey, BaseCommandContraband ]
+  id: EncryptionKeyAdministration
+  components:
+  - type: EncryptionKey
+    channels:
+    - Administration
+    defaultChannel: Administration
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_silver
+    - state: com_label
+  - type: Tag
+    tags:
+    - EncryptionCommand
+
+# Мобильная Оперативная Группа
+
+- type: entity
+  parent: [ EncryptionKey, BaseCentcommContraband ]
+  id: EncryptionKeyMTFMaster
+  components:
+  - type: EncryptionKey
+    channels:
+    - RegionalAdministration
+    - Administration
+    - HeavyContainmentSecurityService
+    - ExternalAdministrativeZoneSecurityService
+    - ScientificService
+    - MedicalService
+    - EngineeringTechnicalService
+    - LogisticsService
+    - FoodAndSanitationService
+    defaultChannel: RegionalAdministration
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_blue
+    - state: hq_label
+
+# Служба внутренней безопасности
+
+- type: entity
+  parent: [ EncryptionKey, BaseCommandContraband ]
+  id: EncryptionKeyInternalSecurity
+  components:
+  - type: EncryptionKey
+    channels:
+    - InternalSecurity
+    defaultChannel: InternalSecurity
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_silver
+    - state: is_label
+  - type: Tag
+    tags:
+    - EncryptionCommand
+
+# Комитет по этике
+
+- type: entity
+  parent: [ EncryptionKey, BaseCommandContraband ]
+  id: EncryptionKeyEthicsCommittee
+  components:
+  - type: EncryptionKey
+    channels:
+    - EthicsCommittee
+    defaultChannel: EthicsCommittee
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_silver
+    - state: ec_label
+  - type: Tag
+    tags:
+    - EncryptionCommand
+
+# Служба внутреннего трибунала
+
+- type: entity
+  parent: [ EncryptionKey, BaseCommandContraband ]
+  id: EncryptionKeyInternalTribunalService
+  components:
+  - type: EncryptionKey
+    channels:
+    - InternalTribunalService
+    defaultChannel: InternalTribunalService
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_silver
+    - state: tribunal_label
+  - type: Tag
+    tags:
+    - EncryptionCommand
+
+# Служба безопасности тяжелой зоны
+
+- type: entity
+  parent: [ EncryptionKeySecurity, BaseSecurityContraband ]
+  id: ScpEncryptionKeySecurity
+  components:
+  - type: Tag
+    tags:
+    - EncryptionSecurity
+    - EncryptionScpSecurityCommon
+    - PreventInsertingIntoHeadset
+
+- type: entity
+  parent: [ EncryptionKey, BaseSecurityContraband ]
+  id: EncryptionKeyHeavyContainmentSecurityService
+  components:
+  - type: EncryptionKey
+    channels:
+    - HeavyContainmentSecurityService
+    defaultChannel: HeavyContainmentSecurityService
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gray
+    - state: hcss_label
+  - type: Tag
+    tags:
+    - EncryptionSecurity
+
+# Служба безопасности внешней административной зоны
+
+- type: entity
+  parent: [ EncryptionKey, BaseSecurityContraband ]
+  id: EncryptionKeyExternalAdministrativeZoneSecurityService
+  components:
+  - type: EncryptionKey
+    channels:
+    - ExternalAdministrativeZoneSecurityService
+    defaultChannel: ExternalAdministrativeZoneSecurityService
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gray
+    - state: eazss_label
+  - type: Tag
+    tags:
+    - EncryptionSecurity
+
+# Научный отдел
+
+- type: entity
+  parent: [ EncryptionKey, BaseScienceContraband ]
+  id: EncryptionKeyScientificService
+  components:
+  - type: EncryptionKey
+    channels:
+    - ScientificService
+    defaultChannel: ScientificService
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: sci_label
+  - type: Tag
+    tags:
+    - EncryptionScience
+
+# Медицинский отдел
+
+- type: entity
+  parent: [ EncryptionKey, BaseMedicalContraband ]
+  id: EncryptionKeyMedicalService
+  components:
+  - type: EncryptionKey
+    channels:
+    - MedicalService
+    defaultChannel: MedicalService
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: med_label
+  - type: Tag
+    tags:
+    - EncryptionMedical
+
+# Инженерно-технический отдел
+
+- type: entity
+  parent: [ EncryptionKey, BaseEngineeringContraband ]
+  id: EncryptionKeyEngineeringTechnicalService
+  components:
+  - type: EncryptionKey
+    channels:
+    - EngineeringTechnicalService
+    defaultChannel: EngineeringTechnicalService
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: eng_label
+  - type: Tag
+    tags:
+    - EncryptionEngineering
+
+# Отдел логистики
+
+- type: entity
+  parent: [ EncryptionKey, BaseCargoContraband ]
+  id: EncryptionKeyLogisticsService
+  components:
+  - type: EncryptionKey
+    channels:
+    - LogisticsService
+    defaultChannel: LogisticsService
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: cargo_label
+  - type: Tag
+    tags:
+    - EncryptionCargo
+
+# Департамент продовольствия и санитарной службы
+
+- type: entity
+  parent: [ EncryptionKey, BaseCivilianContraband ]
+  id: EncryptionKeyFoodAndSanitationService
+  components:
+  - type: EncryptionKey
+    channels:
+    - FoodAndSanitationService
+    defaultChannel: FoodAndSanitationService
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: service_label
+  - type: Tag
+    tags:
+    - EncryptionService
+
+- type: entity
+  parent: [ EncryptionKey, BaseChaosContraband ]
+  id: EncryptionKeyChaos
+  components:
+  - type: EncryptionKey
+    channels:
+    - Chaos
+    defaultChannel: Chaos
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_chaos
+    - state: chaos_label
+
+- type: entity
+  parent: [ EncryptionKey, BaseFoundationEnemyContraband ]
+  id: EncryptionKeyGRU
+  components:
+  - type: EncryptionKey
+    channels:
+    - GRU
+    defaultChannel: GRU
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_gru
+    - state: gru_label

@@ -1,0 +1,101 @@
+﻿- type: radioChannel
+  id: RegionalAdministration
+  name: chat-radio-regional-administration
+  keycode: 'р'
+  frequency: 2337
+  color: "#2aa526"
+  longRange: true
+
+- type: radioChannel
+  id: Administration
+  name: chat-radio-administration
+  keycode: 'а'
+  frequency: 2353
+  color: "#2a9bbc"
+
+- type: radioChannel
+  id: EthicsCommittee
+  name: chat-radio-ethics-committee
+  keycode: 'э'
+  frequency: 2359
+  color: "#8c4669"
+
+- type: radioChannel
+  id: HeavyContainmentSecurityService
+  name: chat-radio-heavy-containment-security-service
+  keycode: 'о'
+  frequency: 2360
+  color: "#B54E4E"
+
+- type: radioChannel
+  id: ExternalAdministrativeZoneSecurityService
+  name: chat-radio-external-administrative-zone-security-service
+  keycode: 'к'
+  frequency: 2361
+  color: "#acb5b8"
+
+- type: radioChannel
+  id: ScientificService
+  name: chat-radio-scientific-service
+  keycode: 'н'
+  frequency: 2351
+  color: "#c49dc4"
+
+- type: radioChannel
+  id: MedicalService
+  name: chat-radio-medical-service
+  keycode: 'м'
+  frequency: 2355
+  color: "#5b94aa"
+
+- type: radioChannel
+  id: EngineeringTechnicalService
+  name: chat-radio-engineering-technical-service
+  keycode: 'и'
+  frequency: 2357
+  color: "#cf8f76"
+
+- type: radioChannel
+  id: LogisticsService
+  name: chat-radio-logistics-service
+  keycode: 'л'
+  frequency: 2347
+  color: "#b99f7d"
+
+- type: radioChannel
+  id: FoodAndSanitationService
+  name: chat-radio-food-and-sanitation-service
+  keycode: 'с'
+  frequency: 2349
+  color: "#849b6a"
+
+- type: radioChannel
+  id: Chaos
+  name: chat-radio-chaos
+  keycode: 'х'
+  frequency: 0251
+  color: "#40826d"
+  longRange: true
+
+- type: radioChannel
+  id: GRU
+  name: chat-radio-gru
+  keycode: 'г'
+  frequency: 0418
+  color: "#2e4b5c"
+  longRange: true
+
+# Ниже под удаление на будущее.
+- type: radioChannel
+  id: InternalTribunalService
+  name: chat-radio-internal-tribunal-service
+  keycode: 'б'
+  frequency: 2333
+  color: "#c27ba0"
+
+- type: radioChannel
+  id: InternalSecurity
+  name: chat-radio-internal-security
+  keycode: 'ю'
+  frequency: 2334
+  color: "#8e4747"

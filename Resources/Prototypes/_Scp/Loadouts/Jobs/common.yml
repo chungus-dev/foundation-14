@@ -1,0 +1,34 @@
+# Глаза
+- type: loadout
+  id: ScpLoadoutClothingEyesGlassesSunglasses
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+
+- type: loadout
+  id: ScpLoadoutClothingEyesGlassesMercenary
+  equipment:
+    eyes: ClothingEyesGlassesMercenary
+
+- type: loadout
+  id: ScpLoadoutClothingNeckTieDet
+  equipment:
+    neck: ClothingNeckTieDet
+
+# Ботинки
+
+- type: loadout
+  id: ScpLoadoutClothingShoesBootsLaceup
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+
+- type: loadout
+  id: ScpLoadoutClothingShoesUSSPBlack
+  equipment:
+    shoes: ClothingShoesUSSPBlack
+
+# Вещи
+- type: loadout
+  id: ScpLoadoutHandheldStationMap
+  storage:
+    back:
+    - HandheldStationMap

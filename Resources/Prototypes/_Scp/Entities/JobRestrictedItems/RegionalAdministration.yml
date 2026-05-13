@@ -1,0 +1,119 @@
+﻿- type: entity
+  parent: RubberStampBase
+  id: RubberStampAdministrator
+  name: stamp of the Administrator's Office
+  description: "High-quality rubber stamp, for affixing beautiful stamps on very important documents."
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-administrator
+    stampedColor: "#101426"
+    stampState: "paper_stamp-greytide"
+  - type: Sprite
+    sprite: _Sunrise/Objects/Misc/stamps.rsi
+    state: stamp-ntrep
+
+- type: entity
+  parent: RubberStampBase
+  id: RubberStampOverseerCouncil
+  name: stamp of Council of Supervisors
+  description: "A rubber stamp for stamping important documents."
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-overseer-council
+    stampedColor: "#464646"
+    stampState: "paper_stamp-cap"
+  - type: Sprite
+    sprite: _Sunrise/Objects/Misc/stamps.rsi
+    state: stamp-redo
+
+- type: entity
+  parent: RubberStampBase
+  id: RubberStampEthicsCommittee
+  name: stamp of the Ethics Committee
+  description: "A rubber stamp for stamping important documents."
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-ethics-committee
+    stampedColor: "#8c4669"
+    stampState: "paper_stamp-magistrat"
+  - type: Sprite
+    sprite: _Sunrise/Objects/Misc/stamps.rsi
+    state: stamp-magistrat
+
+- type: entity
+  parent: RubberStampBase
+  id: RubberStampLesserCouncil
+  name: stamp of Council O4
+  description: "A rubber stamp for stamping important documents."
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-lesser-council
+    stampedColor: "#5b62a1"
+    stampState: "paper_stamp-cap"
+  - type: Sprite
+    sprite: _Sunrise/Objects/Misc/stamps.rsi
+    state: stamp-specops
+
+- type: entity
+  parent: RubberStampBase
+  id: RubberStampRegionalCommand
+  name: stamp of Regional Command
+  description: "A rubber stamp for stamping important documents."
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-regional-command
+    stampedColor: "#cc0000"
+    stampState: "paper_stamp-hos"
+  - type: Sprite
+    state: stamp-hos
+
+- type: entity
+  parent: RubberStampBase
+  id: RubberStampO4Command
+  name: stamp of O4 Headquarters
+  description: "A rubber stamp for stamping important documents."
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-o4-command
+    stampedColor: "#77cad7"
+    stampState: "paper_stamp-psychologist"
+  - type: Sprite
+    sprite: _Sunrise/Objects/Misc/stamps.rsi
+    state: stamp-psychologist
+
+#короче нейтральные вещи на всякий случай. Пускай будет.
+- type: startingGear
+  id: RegionalAdministrationGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRegionalAdministration
+    shoes: ClothingShoesLeather
+    eyes: ClothingEyesGlassesCommand
+    gloves: ClothingHandsGlovesHop
+    id: RegionalAdministrationIDCard
+    ears: ClothingHeadsetAltRegionalAdministration
+    pocket1: MindShieldImplanter
+    pocket2: RegionalAdministrationPDA
+  inhand:
+  - ClothingBackpackSatchelLeather
+
+- type: entity
+  parent: ClothingUniformJumpsuitCentcomAgent
+  id: ClothingUniformJumpsuitRegionalAdministration
+
+- type: entity
+  parent: KeyCardMtfBase
+  id: RegionalAdministrationIDCard
+  components:
+  - type: Sprite
+    state: mtf_operative
+  - type: Access
+    groups:
+    - AllComplex
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentCommOperator
+
+- type: entity
+  parent: PenCentcom
+  id: PenRegionalAdministration

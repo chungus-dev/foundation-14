@@ -1,0 +1,142 @@
+﻿# TODO: После добавления реконтейма сделать предметы для реконтейма исследуемыми
+
+# Tier 1
+
+- type: technology
+  id: AgentTypeSolution
+  name: research-technology-agent-type-solution
+  icon:
+    sprite: Objects/Consumable/Drinks/patronbottle.rsi # TODO: Нормальный спрайт, а не алкашка
+    state: icon_empty
+    scale: 0.4,0.6
+  discipline: SCP
+  tier: 1
+  costList:
+    Scp: 1250
+  recipeUnlocks:
+  - EyeDroplets
+
+- type: technology
+  id: ConsciousInversionFilter
+  name: research-technology-conscious-inversion-filter
+  icon:
+    sprite: _Scp/Clothing/Head/Helmets/techno.rsi
+    state: icon
+  discipline: SCP
+  tier: 1
+  costList:
+    Scp: 1250
+  recipeUnlocks:
+  - ClothingHeadAwareness
+
+- type: technology
+  id: CognitiveScreenProtocolArk11
+  name: research-technology-cognitive-screen-protocol
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  discipline: SCP
+  tier: 1
+  costList:
+    Scp: 1500
+  recipeUnlocks:
+  - Scp049ProtectionImplanter
+
+- type: technology
+  id: RapidDeploymentFiberSynthesis
+  name: research-technology-rapid-deployment-fiber-synthesis
+  icon:
+    sprite: _Scp/Clothing/Head/Scp096/scp096_bag-icons.rsi
+    state: icon
+  discipline: SCP
+  tier: 1
+  costList:
+    Scp: 1000
+  recipeUnlocks:
+  - ClothingHeadBagScp096
+
+# Tier 2
+
+- type: technology
+  id: ShieldingComposite
+  name: research-technology-shielding-composite
+  icon:
+    sprite: _Scp/Clothing/Mask/scp-096.rsi
+    state: icon
+  discipline: SCP
+  tier: 2
+  costList:
+    Scp: 1500
+  recipeUnlocks:
+  - ReinforcedMaskScp096
+
+- type: technology
+  id: SecondOrderNeurovisualFilter
+  name: research-technology-second-order-neurovisual-filter
+  icon:
+    sprite: _Scp/Clothing/Head/Helmets/aipowered.rsi
+    state: icon
+  discipline: SCP
+  tier: 2
+  costList:
+    Scp: 2500
+  recipeUnlocks:
+  - ClothingHeadHelmetAiPowered
+
+- type: technology
+  id: CounterSpaceBarrier
+  name: research-technology-counter-space-barrier
+  icon:
+    sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
+    state: icon
+  discipline: SCP
+  tier: 2
+  costList:
+    Scp: 3000
+  recipeUnlocks:
+  - ClothingOuterAntiTeleportation
+
+- type: technology
+  id: SilentStepModule
+  name: research-technology-silent-step-module
+  icon:
+    sprite: _Scp/Clothing/Shoes/Boots/silentboots.rsi
+    state: icon
+  discipline: SCP
+  tier: 2
+  costList:
+    Scp: 2500
+  recipeUnlocks:
+  - ClothingShoesSilent
+
+# Tier 3
+
+- type: technology
+  id: AnomalousResonanceLaser
+  name: research-technology-anomalous-resonance-laser
+  icon:
+    sprite: _Sunrise/Objects/Weapons/Guns/Battery/EG_MG/big.rsi
+    state: base
+  discipline: SCP
+  tier: 3
+  costList:
+    Scp: 20000
+  recipeUnlocks:
+  - WeaponEarthGovLaserPistol
+  - WeaponEarthGovLaserRifle
+  - WeaponEarthGovLaserCarbine
+  - WeaponEarthGovLaserMG
+  - WeaponARLSniper
+
+- type: technology
+  id: AnomalousOpticalDestructor
+  name: research-technology-anomalous-optical-destructor
+  icon:
+    sprite: _Sunrise/Objects/Weapons/Guns/Battery/EGE_XR/big.rsi
+    state: base
+  discipline: SCP
+  tier: 3
+  costList:
+    Scp: 35000
+  recipeUnlocks:
+  - WeaponGodlikeXRay

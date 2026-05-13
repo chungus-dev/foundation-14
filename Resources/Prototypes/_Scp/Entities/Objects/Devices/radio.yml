@@ -1,0 +1,119 @@
+﻿# TODO: Охранный спрайт, унификация спрайтов
+
+- type: entity
+  parent: BaseItem
+  id: ScpRadioHandheldCommon
+  name: handheld radio
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/radio.rsi
+    state: common
+  - type: Item
+    sprite: _Scp/Objects/Devices/radio.rsi
+    heldPrefix: walkietalkie
+  - type: ScpRadio
+    enabled: false
+  - type: EncryptionKeyHolder
+    keySlots: 3
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+  - type: Speech
+    speechVerb: Robotic
+  - type: AmbientSound
+    range: 1.5
+    volume: -10
+    sound:
+      path: /Audio/_Scp/Effects/Radio/static.ogg
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: TelecomExempt
+  - type: Appearance
+  - type: Tag
+    tags:
+    - Radio
+
+- type: entity
+  parent: ScpRadioHandheldCommon
+  id: ScpRadioHandheldEngineering
+  name: engineering handheld radio
+  components:
+  - type: Sprite
+    state: engineering
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyEngineeringTechnicalService
+
+- type: entity
+  parent: ScpRadioHandheldEngineering
+  id: ScpRadioHandheldEngineeringEnabled
+  suffix: Enabled
+  components:
+  - type: ScpRadio
+    enabled: true
+
+- type: entity
+  parent: ScpRadioHandheldCommon
+  id: ScpRadioHandheldSecurity
+  name: security handheld radio
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - ScpEncryptionKeySecurity
+
+- type: entity
+  parent: ScpRadioHandheldSecurity
+  id: ScpRadioHandheldSecurityEnabled
+  suffix: Enabled
+  components:
+  - type: ScpRadio
+    enabled: true
+
+- type: entity
+  parent: ScpRadioHandheldSecurity
+  id: RadioHandheldHeavyContainmentSecurityService
+  name: security handheld radio
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - ScpEncryptionKeySecurity
+      - EncryptionKeyHeavyContainmentSecurityService
+
+- type: entity
+  parent: RadioHandheldHeavyContainmentSecurityService
+  id: RadioHandheldHeavyContainmentSecurityServiceEnabled
+  suffix: Enabled
+  components:
+  - type: ScpRadio
+    enabled: true
+
+- type: entity
+  parent: ScpRadioHandheldSecurity
+  id: RadioHandheldExternalAdministrativeZoneSecurityService
+  name: security handheld radio
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - ScpEncryptionKeySecurity
+      - EncryptionKeyExternalAdministrativeZoneSecurityService
+
+- type: entity
+  parent: RadioHandheldExternalAdministrativeZoneSecurityService
+  id: RadioHandheldExternalAdministrativeZoneSecurityServiceEnabled
+  suffix: Enabled
+  components:
+  - type: ScpRadio
+    enabled: true

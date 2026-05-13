@@ -1,0 +1,190 @@
+﻿- type: reagent
+  id: Scp096Tears
+  name: reagent-name-scp096-tears
+  parent: BaseDrink
+  desc: reagent-desc-scp096-tears
+  evaporationSpeed: 0.05
+  absorbent: true
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: salty
+  color: "#B4D6FA66"
+  boilingPoint: 100.0
+  meltingPoint: 0.0
+  friction: 0.4
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:EyeDamage
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:Emote
+        emote: Crying
+        probability: 0.3
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:ModifyStatusEffect # TODO: Шанс срабатывания
+        effectProto: StatusEffectFearStupor
+        time: 1
+        type: Add
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:AdjustTemperature
+        amount: -3000
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.1
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:Jitter
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:Vomit
+        probability: 0.05
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 4
+  plantMetabolism:
+  - !type:PlantAdjustWater
+    amount: 2
+  - !type:PlantAdjustNutrition
+    amount: 1.5
+  - !type:PlantAdjustHealth
+    amount: 3
+  reactiveEffects:
+    Flammable:
+      methods: [ Touch ]
+      effects:
+      - !type:Flammable
+        multiplier: 0.5
+      - !type:AdjustTemperature
+        amount: -2000
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        ignoreResistances: false
+        damage:
+          types:
+            Caustic: 0.3
+      - !type:AdjustTemperature
+        amount: -1500
+      - !type:Jitter
+    Extinguish:
+      methods: [ Touch ]
+      effects:
+      - !type:Extinguish
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 0.8
+        sprintSpeedModifier: 0.8
+  tileReactions:
+  - !type:SpillTileReaction
+  - !type:ExtinguishTileReaction
+
+- type: reagent
+  parent: Blood
+  id: Scp096Blood
+  name: reagent-name-scp096-blood
+  group: Biological
+  desc: reagent-desc-scp096-blood
+  flavor: horrible
+  color: "#4F002B"
+  recognizable: false
+  physicalDesc: reagent-physical-desc-slimy
+  metabolisms:
+    Poison:
+      effects:
+      - !type:Vomit
+        probability: 0.15
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:Jitter
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:AdjustTemperature
+        amount: -5000
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+    Medicine:
+      effects:
+      - !type:Oxygenate
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:ReduceRotting
+        seconds: 5
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+  plantMetabolism:
+  - !type:PlantAdjustToxins
+    amount: 15
+  - !type:PlantAdjustWater
+    amount: 1
+  reactiveEffects:
+    Flammable:
+      methods: [ Touch ]
+      effects:
+      - !type:Flammable
+        multiplier: 1.5
+      - !type:Ignite
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        ignoreResistances: false
+        damage:
+          types:
+            Caustic: 0.8
+      - !type:ModifyStatusEffect # TODO: Шанс срабатывания
+        effectProto: StatusEffectFearStupor
+        time: 1
+        type: Add
+    Extinguish:
+      methods: [ Touch ]
+      effects:
+      - !type:Extinguish
+      - !type:AdjustTemperature
+        amount: -4000
+    Unholy:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 3
+      - !type:Emote
+        emote: Scream
+        probability: 0.5
+  tileReactions:
+  - !type:SpillTileReaction
+  - !type:ExtinguishTileReaction
+  - !type:FlammableTileReaction
+    temperatureMultiplier: 1.5
+

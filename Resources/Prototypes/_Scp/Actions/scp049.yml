@@ -1,0 +1,95 @@
+﻿- type: entity
+  id: ActionScp049Resurrect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 120
+    icon:
+      sprite: _Scp/Actions/scp-049.rsi
+      state: resurrect
+    itemIconStyle: NoItem
+    priority: 12
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    event: !type:Scp049ResurrectAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    blacklist:
+      components:
+      - Scp
+      - Scp049Protection
+
+- type: entity
+  id: ActionScp049KillResurrected
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 0
+    icon:
+      sprite: _Scp/Actions/scp-049.rsi
+      state: kill_minion
+    itemIconStyle: NoItem
+    priority: 12
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    event: !type:Scp049KillResurrectedAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - Scp049Minion
+
+- type: entity
+  id: ActionScp049KillLeavingBeing
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 180
+    icon:
+      sprite: _Scp/Actions/scp-049.rsi
+      state: kill
+    itemIconStyle: NoItem
+    priority: 12
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    event: !type:Scp049KillLivingBeingAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    blacklist:
+      components:
+      - Scp
+
+- type: entity
+  id: ActionScp049SelfHeal
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 300
+    icon:
+      sprite: _Scp/Actions/scp-049.rsi
+      state: heal
+    itemIconStyle: NoItem
+    priority: 12
+  - type: InstantAction
+    event: !type:Scp049SelfHealAction
+
+- type: entity
+  id: ActionScp049HealMinion
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 300
+    icon:
+      sprite: _Scp/Actions/scp-049.rsi
+      state: heal
+    itemIconStyle: NoItem
+    priority: 12
+  - type: TargetAction
+  - type: EntityTargetAction
+    event: !type:Scp049HealMinionAction

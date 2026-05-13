@@ -1,0 +1,9 @@
+- type: currency
+  id: LifeEssence
+  displayName: store-currency-display-life-essence
+  canWithdraw: false
+
+- type: currency
+  id: SupplyPoint
+  displayName: store-currency-display-supplypoint
+  canWithdraw: false

@@ -1,0 +1,87 @@
+﻿- type: entity
+  id: BoxFolderClipboardWhite
+  parent: BoxFolderClipboard
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Misc/clipboard_white.rsi
+    layers:
+    - state: clipboard
+    - state: clipboard_paper
+      map: ["clipboard_paper"]
+      visible: false
+    - state: clipboard_pen
+      map: ["clipboard_pen"]
+      visible: false
+    - state: clipboard_over
+
+- type: entity
+  id: BoxFolderScpBase
+  parent: BoxBase
+  abstract: true
+  suffix: SCP
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Misc/box_folder.rsi
+  - type: Item
+    sprite: _Scp/Objects/Misc/box_folder.rsi
+    size: Small
+    shape: null
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,4,3
+    whitelist:
+      tags:
+      - Document
+  - type: ItemMapper
+    mapLayers:
+      folder-overlay-paper:
+        whitelist:
+          tags:
+          - Document
+  - type: Appearance
+  - type: Tag
+    tags:
+    - Folder
+
+- type: entity
+  parent: BoxFolderScpBase
+  id: BoxFolderSafe
+  components:
+  - type: Sprite
+    state: folder-safe
+
+- type: entity
+  parent: BoxFolderScpBase
+  id: BoxFolderEuclid
+  components:
+  - type: Sprite
+    state: folder-euclid
+
+- type: entity
+  parent: BoxFolderScpBase
+  id: BoxFolderKeter
+  components:
+  - type: Sprite
+    state: folder-keter
+
+- type: entity
+  parent: BoxFolderScpBase
+  id: BoxFolderBlueScp
+  components:
+  - type: Sprite
+    state: folder-blue
+
+- type: entity
+  parent: BoxFolderScpBase
+  id: BoxFolderScp
+  components:
+  - type: Sprite
+    state: folder-scp
+
+- type: entity
+  parent: BoxFolderScpBase
+  id: BoxFolderWhiteBlack
+  components:
+  - type: Sprite
+    state: folder-black-white

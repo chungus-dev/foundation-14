@@ -1,0 +1,26 @@
+- type: entity
+  parent: [ClothingShoesBootsJack, BaseRestrictedContraband]
+  id: ClothingShoesBootsSecurityGuard
+  name: security shoes
+  description: Security combat boots for combat scenarios or combat situations. All combat, all the time.
+  suffix: SCP Guard
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Shoes/security_guard.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Shoes/security_guard.rsi
+
+- type: entity
+  parent: [ClothingShoesBootsJack, BaseRestrictedContraband]
+  id: ClothingShoesBootsWinterSecurityGuard
+  name: winter security shoes
+  description: Security combat boots for combat scenarios or combat situations. All combat, all the time.
+  suffix: SCP Guard
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Shoes/winter_security_guard.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Shoes/winter_security_guard.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.05
+    coolingCoefficient: 0.85

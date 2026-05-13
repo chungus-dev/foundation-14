@@ -1,0 +1,86 @@
+﻿- type: entity
+  id: RandomHumanoidSpawnerLLHLeader
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertleader
+  - type: RandomHumanoidSpawner
+    settings: LLHLeader
+
+- type: randomHumanoidSettings
+  id: LLHLeader
+  parent: CommonMTFLeader
+  randomizeName: false
+  components:
+  - type: GhostRole
+    name: ghost-role-information-mtf-leader-LLH-name
+    description: ghost-role-information-mtf-leader-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: LLHLeader
+  - type: Loadout
+    prototypes: [ LLHLeaderGear ]
+  - type: RandomMetadata
+    nameSegments:
+    - NamesLeader
+    - NamesOperativeLeaderLast
+    nameFormat: name-format-ert
+
+- type: entity
+  id: RandomHumanoidSpawnerLLHSpecialist
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertsecurityeva
+  - type: RandomHumanoidSpawner
+    settings: LLHSpecialist
+
+- type: randomHumanoidSettings
+  id: LLHSpecialist
+  parent: CommonMTFOperative
+  randomizeName: false
+  components:
+  - type: GhostRole
+    name: ghost-role-information-mtf-specialist-LLH-name
+    description: ghost-role-information-mtf-specialist-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: LLHSpecialist
+  - type: Loadout
+    prototypes: [ LLHSpecialistGear ]
+
+# Спавнер отряда
+- type: entity
+  id: SpawnerMTFSquadLLH
+  parent: SpawnPointScpBase
+  suffix: LLH
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: LLH
+      sprite: /Textures/_Scp/Interface/Misc/mtf_icons.rsi
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: true
+    table: !type:AllSelector
+      children:
+      - id: RandomHumanoidSpawnerLLHLeader
+      - id: RandomHumanoidSpawnerLLHSpecialist
+        amount: 4
+    offset: 1
+
+# Спавнер, но юзается по кнопке
+- type: entity
+  id: SpawnerMTFSquadLLHSpawnOnTrigger
+  parent: SpawnerOnTriggerMTFBase
+  suffix: LLH | SpawnOnTrigger
+  components:
+  - type: SpawnOnTrigger
+    proto: SpawnerMTFSquadLLH
+  - type: Sprite
+    layers:
+    - state: green
+    - state: LLH
+      sprite: /Textures/_Scp/Interface/Misc/mtf_icons.rsi

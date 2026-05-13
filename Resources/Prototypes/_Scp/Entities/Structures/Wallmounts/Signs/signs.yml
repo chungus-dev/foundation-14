@@ -1,0 +1,373 @@
+﻿# TODO: Стандартизация стейтов спрайтос с направленными указателями
+
+- type: entity
+  parent: BaseSign
+  id: BaseSignScp
+  name: sign
+  description: A sign.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Wallmounts/signs.rsi
+    snapCardinals: true
+
+- type: entity
+  parent: BaseSignDirectional
+  id: BaseSignDirectionalScp
+  name: directional sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Wallmounts/signs-directional.rsi
+    snapCardinals: false
+
+# Камеры содержания сцп
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp005
+  name: SCP-005 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 005
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp012
+  name: SCP-012 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 012
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp018
+  name: SCP-018 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 018
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp035
+  name: SCP-035 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 035
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp049
+  name: SCP-049 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 049
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp096
+  name: SCP-096 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 096
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp101
+  name: SCP-101 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 101
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp106
+  name: SCP-106 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 106
+    
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp109
+  name: SCP-109 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 109
+    
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp124
+  name: SCP-124 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 124
+    
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp127
+  name: SCP-127 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 127
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp173
+  name: SCP-173 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 173
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp207
+  name: SCP-207 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 207
+    
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp268
+  name: SCP-268 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 268
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp330
+  name: SCP-330 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 330
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp427
+  name: SCP-427 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 427
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp500
+  name: SCP-500 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 500
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp612
+  name: SCP-612 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 612
+    
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp714
+  name: SCP-714 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 714
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp939
+  name: SCP-939 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 939
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp969
+  name: SCP-969 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 969
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp999
+  name: SCP-999 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 999
+    
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScp2022
+  name: SCP-2022 sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: 2022
+
+# Места в зоне
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScpClassD
+  name: Class D Block sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: classd
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScpHeavyContainmentZone
+  name: Heavy Containment Zone sign
+  description: Points towards where it theoretically should be heavy, and in practice, it really is.
+  components:
+  - type: Sprite
+    state: hcz
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScpLightContainmentZone
+  name: Light Containment Zone sign
+  description: Points towards where it theoretically should be light, but in practice, it is heavy.
+  components:
+  - type: Sprite
+    state: lcz
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScpAdministration
+  name: Site Administration sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: direction_administration
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScpLogisticsService
+  name: Logistics Service sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: direction_logistics
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScpPersonnelOfficer
+  name: Personnel Officer sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: direction_po
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScpScientificService
+  name: Scientific Service sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: direction_ss
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScpShelter
+  name: Shelter sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: direction_shelter
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScpSafe
+  name: Safe Class sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: scp_safe
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScpEuclid
+  name: Euclid Class sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: scp_euclid
+
+- type: entity
+  parent: BaseSignDirectionalScp
+  id: SignDirectionalScpKeter
+  name: Keter Class sign
+  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
+  components:
+  - type: Sprite
+    state: scp_keter
+
+# Не направленные указатели
+
+- type: entity
+  parent: BaseSignScp
+  id: SignScpAdministration
+  name: Site Administration sign
+  description: It seems that the Site Administration zone is before you.
+  components:
+  - type: Sprite
+    state: administration
+
+- type: entity
+  parent: BaseSignScp
+  id: SignScpHead
+  name: Department Head sign
+  description: It seems that the room of a department head, a high-ranking SCP facility employee, is before you.
+  components:
+  - type: Sprite
+    state: head
+
+- type: entity
+  parent: BaseSignScp
+  id: SignScpCSS
+  name: Artificial Intelligence Recruit sign
+  description: It seems that before you is the center for the placement and control of artificial intelligence.
+  components:
+  - type: Sprite
+    state: CSS
+
+- type: entity
+  parent: BaseSignScp
+  id: SignScpDLawBoardHyperLink
+  name: Class D law board
+  description: A board with attached documentation regarding the Class D legal code. A book hangs on the side for full familiarization with the code. [Press E to open Wiki]
+  components:
+  - type: Sprite
+    state: dlaw
+  - type: HyperLink
+    url: https://fire.station.wiki.shizainc.com/w/%D0%9F%D1%80%D0%B0%D0%B2%D0%BE%D0%B2%D0%BE%D0%B9_%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81_%D0%94_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0

@@ -1,0 +1,1301 @@
+﻿- type: tile
+  id: ScpFloorBase
+  abstract: true
+  baseTurf: ScpPlating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  heatCapacity: 10000
+
+- type: tile
+  id: ScpFloorBlue
+  parent: ScpFloorBase
+  name: scp-tiles-blue-floor
+  sprite: /Textures/_Scp/Tiles/blue.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemBlue
+
+- type: tile
+  id: ScpFloorGreen
+  parent: ScpFloorBase
+  name: scp-tiles-green-floor
+  sprite: /Textures/_Scp/Tiles/green.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemGreen
+
+- type: tile
+  id: ScpFloorDepartmentCargo
+  parent: ScpFloorBase
+  name: scp-tiles-steel-floor
+  sprite: /Textures/_Scp/Tiles/department_cargo.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDepartmentCargo
+
+- type: tile
+  id: ScpFloorDepartmentCom
+  parent: ScpFloorBase
+  name: scp-tiles-steel-floor
+  sprite: /Textures/_Scp/Tiles/department_com.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDepartmentCom
+
+- type: tile
+  id: ScpFloorDepartmentEng
+  parent: ScpFloorBase
+  name: scp-tiles-steel-floor
+  sprite: /Textures/_Scp/Tiles/department_eng.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDepartmentEng
+
+- type: tile
+  id: ScpFloorDepartmentAtmos
+  parent: ScpFloorBase
+  name: scp-tiles-steel-floor
+  sprite: /Textures/_Scp/Tiles/department_atmos.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDepartmentAtmos
+
+- type: tile
+  id: ScpFloorDepartmentMed
+  parent: ScpFloorBase
+  name: scp-tiles-steel-floor
+  sprite: /Textures/_Scp/Tiles/department_med.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDepartmentMed
+
+- type: tile
+  id: ScpFloorDepartmentRnd
+  parent: ScpFloorBase
+  name: scp-tiles-steel-floor
+  sprite: /Textures/_Scp/Tiles/department_rnd.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDepartmentRnd
+
+- type: tile
+  id: ScpFloorDepartmentSec
+  parent: ScpFloorBase
+  name: scp-tiles-steel-floor
+  sprite: /Textures/_Scp/Tiles/department_sec.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDepartmentSec
+
+- type: tile
+  id: ScpFloorDepartmentSer
+  parent: ScpFloorBase
+  name: scp-tiles-steel-floor
+  sprite: /Textures/_Scp/Tiles/department_ser.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDepartmentSer
+
+- type: tile
+  id: ScpFloorCheckerDark
+  parent: ScpFloorBase
+  name: scp-tiles-dark-floor
+  sprite: /Textures/_Scp/Tiles/checker_dark.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemCheckerDark
+
+- type: tile
+  id: ScpFloorCheckerSteel
+  parent: ScpFloorBase
+  name: scp-tiles-steel-floor
+  sprite: /Textures/_Scp/Tiles/checker_steel.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemCheckerSteel
+
+- type: tile
+  id: ScpFloorCheckerWhite
+  parent: ScpFloorBase
+  name: scp-tiles-white-floor
+  sprite: /Textures/_Scp/Tiles/checker_white.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemCheckerWhite
+
+- type: tile
+  id: ScpFloorDark
+  parent: ScpFloorBase
+  name: scp-tiles-dark-floor
+  sprite: /Textures/_Scp/Tiles/dark.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDark
+
+- type: tile
+  id: ScpFloorDarkDiagonal
+  parent: ScpFloorBase
+  name: scp-tiles-dark-diagonal-floor
+  sprite: /Textures/_Scp/Tiles/dark_diagonal.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDarkDiagonal
+
+- type: tile
+  id: ScpFloorDarkHalfMono
+  parent: ScpFloorBase
+  name: scp-tiles-dark-half-mono-floor
+  sprite: /Textures/_Scp/Tiles/dark_half_mono.png
+  variants: 12
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDarkHalfMono
+
+- type: tile
+  id: ScpFloorDarkHalfMonoVertical
+  parent: ScpFloorBase
+  name: scp-tiles-dark-half-mono-vertical-floor
+  sprite: /Textures/_Scp/Tiles/dark_half_mono_vertical.png
+  variants: 12
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDarkHalfMonoVertical
+
+- type: tile
+  id: ScpFloorDarkHerringbone
+  parent: ScpFloorBase
+  name: scp-tiles-dark-herringbone-floor
+  sprite: /Textures/_Scp/Tiles/dark_herringbone.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDarkHerringbone
+
+- type: tile
+  id: ScpFloorDarkMini
+  parent: ScpFloorBase
+  name: scp-tiles-dark-mini-floor
+  sprite: /Textures/_Scp/Tiles/dark_mini.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDarkMini
+
+- type: tile
+  id: ScpFloorDarkMono
+  parent: ScpFloorBase
+  name: scp-tiles-dark-mono-floor
+  sprite: /Textures/_Scp/Tiles/dark_mono.png
+  variants: 10
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDarkMono
+
+- type: tile
+  id: ScpFloorDarkoffset
+  parent: ScpFloorBase
+  name: scp-tiles-dark-offset-floor
+  sprite: /Textures/_Scp/Tiles/dark_offset.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  footstepSounds:
+    collection: FootstepScpTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDarkoffset
+
+- type: tile
+  id: ScpFloorDarkPavement
+  parent: ScpFloorBase
+  name: scp-tiles-dark-pavement-floor
+  sprite: /Textures/_Scp/Tiles/dark_pavement.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDarkPavement
+
+- type: tile
+  id: ScpFloorDarkPavementVertical
+  parent: ScpFloorBase
+  name: scp-tiles-dark-pavement-vertical-floor
+  sprite: /Textures/_Scp/Tiles/dark_pavement_vertical.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemDarkPavementVertical
+
+- type: tile
+  id: ScpFloorSteel
+  parent: ScpFloorBase
+  name: scp-tiles-steel-floor
+  sprite: /Textures/_Scp/Tiles/steel.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemSteel
+
+- type: tile
+  id: ScpFloorSteelDiagonal
+  parent: ScpFloorBase
+  name: scp-tiles-steel-diagonal-floor
+  sprite: /Textures/_Scp/Tiles/steel_diagonal.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemSteelDiagonal
+
+- type: tile
+  id: ScpFloorSteelHalfMono
+  parent: ScpFloorBase
+  name: scp-tiles-steel-half-mono-floor
+  sprite: /Textures/_Scp/Tiles/steel_half_mono.png
+  variants: 12
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemSteelHalfMono
+
+- type: tile
+  id: ScpFloorSteelHalfMonoVertical
+  parent: ScpFloorBase
+  name: scp-tiles-steel-half-mono-vertical-floor
+  sprite: /Textures/_Scp/Tiles/steel_half_mono_vertical.png
+  variants: 12
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemSteelHalfMonoVertical
+
+- type: tile
+  id: ScpFloorSteelHerringbone
+  parent: ScpFloorBase
+  name: scp-tiles-steel-herringbone-floor
+  sprite: /Textures/_Scp/Tiles/steel_herringbone.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemSteelHerringbone
+
+- type: tile
+  id: ScpFloorSteelMini
+  parent: ScpFloorBase
+  name: scp-tiles-steel-mini-floor
+  sprite: /Textures/_Scp/Tiles/steel_mini.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemSteelMini
+
+- type: tile
+  id: ScpFloorSteelMono
+  parent: ScpFloorBase
+  name: scp-tiles-steel-mono-floor
+  sprite: /Textures/_Scp/Tiles/steel_mono.png
+  variants: 10
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemSteelMono
+
+- type: tile
+  id: ScpFloorSteeloffset
+  parent: ScpFloorBase
+  name: scp-tiles-steel-offset-floor
+  sprite: /Textures/_Scp/Tiles/steel_offset.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemSteeloffset
+
+- type: tile
+  id: ScpFloorSteelPavement
+  parent: ScpFloorBase
+  name: scp-tiles-steel-pavement-floor
+  sprite: /Textures/_Scp/Tiles/steel_pavement.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemSteelPavement
+
+- type: tile
+  id: ScpFloorSteelPavementVertical
+  parent: ScpFloorBase
+  name: scp-tiles-steel-pavement-vertical-floor
+  sprite: /Textures/_Scp/Tiles/steel_pavement_vertical.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepScpSteel
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemSteelPavementVertical
+
+- type: tile
+  id: ScpFloorWhite
+  parent: ScpFloorBase
+  name: scp-tiles-white-floor
+  sprite: /Textures/_Scp/Tiles/white.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemWhite
+
+- type: tile
+  id: ScpFloorWhiteDiagonal
+  parent: ScpFloorBase
+  name: scp-tiles-white-diagonal-floor
+  sprite: /Textures/_Scp/Tiles/white_diagonal.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemWhiteDiagonal
+
+- type: tile
+  id: ScpFloorWhiteHalfMono
+  parent: ScpFloorBase
+  name: scp-tiles-white-half-mono-floor
+  sprite: /Textures/_Scp/Tiles/white_half_mono.png
+  variants: 12
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemWhiteHalfMono
+
+- type: tile
+  id: ScpFloorWhiteHalfMonoVertical
+  parent: ScpFloorBase
+  name: scp-tiles-white-half-mono-vertical-floor
+  sprite: /Textures/_Scp/Tiles/white_half_mono_vertical.png
+  variants: 12
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemWhiteHalfMonoVertical
+
+- type: tile
+  id: ScpFloorWhiteHerringbone
+  parent: ScpFloorBase
+  name: scp-tiles-white-herringbone-floor
+  sprite: /Textures/_Scp/Tiles/white_herringbone.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemWhiteHerringbone
+
+- type: tile
+  id: ScpFloorWhiteMini
+  parent: ScpFloorBase
+  name: scp-tiles-white-mini-floor
+  sprite: /Textures/_Scp/Tiles/white_mini.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemWhiteMini
+
+- type: tile
+  id: ScpFloorWhiteMono
+  parent: ScpFloorBase
+  name: scp-tiles-white-mono-floor
+  sprite: /Textures/_Scp/Tiles/white_mono.png
+  variants: 10
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemWhiteMono
+
+- type: tile
+  id: ScpFloorWhiteoffset
+  parent: ScpFloorBase
+  name: scp-tiles-white-offset-floor
+  sprite: /Textures/_Scp/Tiles/white_offset.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  footstepSounds:
+    collection: FootstepTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemWhiteoffset
+
+- type: tile
+  id: ScpFloorWhitePavement
+  parent: ScpFloorBase
+  name: scp-tiles-white-pavement-floor
+  sprite: /Textures/_Scp/Tiles/white_pavement.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemWhitePavement
+
+- type: tile
+  id: ScpFloorWhitePavementVertical
+  parent: ScpFloorBase
+  name: scp-tiles-white-pavement-vertical-floor
+  sprite: /Textures/_Scp/Tiles/white_pavement_vertical.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  footstepSounds:
+    collection: FootstepTile
+    params:
+      volume: -7
+  itemDrop: ScpFloorTileItemWhitePavementVertical
+
+- type: tile
+  id: ScpFloorFlesh106
+  parent: ScpFloorBase
+  name: scp-tiles-flesh-106
+  sprite: /Textures/_Scp/Tiles/flesh106.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  footstepSounds:
+    collection: FootstepScpFlesh106
+    params:
+      volume: -7
+  indestructible: true
+
+- type: tile
+  id: ScpFloorSteelGrille1
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-1
+  sprite: /Textures/_Scp/Tiles/Steel/steel_1.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: &SteelGrilleFootStepSounds
+    collection: FootstepScpCatwalk
+    params:
+      volume: -6
+  itemDrop: ScpFloorTileItemSteelGrille1
+
+- type: tile
+  id: ScpFloorSteelGrille2
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-2
+  sprite: /Textures/_Scp/Tiles/Steel/steel_2.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: *SteelGrilleFootStepSounds
+  itemDrop: ScpFloorTileItemSteelGrille2
+
+- type: tile
+  id: ScpFloorSteelGrille3
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-3
+  sprite: /Textures/_Scp/Tiles/Steel/steel_3.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: *SteelGrilleFootStepSounds
+  itemDrop: ScpFloorTileItemSteelGrille3
+
+- type: tile
+  id: ScpFloorSteelGrille4
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-4
+  sprite: /Textures/_Scp/Tiles/Steel/steel_4.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: *SteelGrilleFootStepSounds
+  itemDrop: ScpFloorTileItemSteelGrille4
+
+- type: tile
+  id: ScpFloorSteelGrilleMono1
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-mono-1
+  sprite: /Textures/_Scp/Tiles/Steel/steel_mono_1.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: *SteelGrilleFootStepSounds
+  itemDrop: ScpFloorTileItemSteelGrilleMono1
+
+- type: tile
+  id: ScpFloorSteelGrilleMono2
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-mono-2
+  sprite: /Textures/_Scp/Tiles/Steel/steel_mono_2.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: *SteelGrilleFootStepSounds
+  itemDrop: ScpFloorTileItemSteelGrilleMono2
+
+- type: tile
+  id: ScpFloorSteelGrilleMono3
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-mono-3
+  sprite: /Textures/_Scp/Tiles/Steel/steel_mono_3.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: *SteelGrilleFootStepSounds
+  itemDrop: ScpFloorTileItemSteelGrilleMono3
+
+- type: tile
+  id: ScpFloorSteelGrilleMono4
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-mono-4
+  sprite: /Textures/_Scp/Tiles/Steel/steel_mono_4.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: *SteelGrilleFootStepSounds
+  itemDrop: ScpFloorTileItemSteelGrilleMono4
+
+- type: tile
+  id: ScpFloorSteelGrilleOffset1
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-offset-1
+  sprite: /Textures/_Scp/Tiles/Steel/steel_offset_1.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: *SteelGrilleFootStepSounds
+  itemDrop: ScpFloorTileItemSteelGrilleOffset1
+
+- type: tile
+  id: ScpFloorSteelGrilleOffset2
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-offset-2
+  sprite: /Textures/_Scp/Tiles/Steel/steel_offset_2.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: *SteelGrilleFootStepSounds
+  itemDrop: ScpFloorTileItemSteelGrilleOffset2
+
+- type: tile
+  id: ScpFloorSteelGrilleOffset3
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-offset-3
+  sprite: /Textures/_Scp/Tiles/Steel/steel_offset_3.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: *SteelGrilleFootStepSounds
+  itemDrop: ScpFloorTileItemSteelGrilleOffset3
+
+- type: tile
+  id: ScpFloorSteelGrilleOffset4
+  parent: ScpFloorBase
+  name: scp-tiles-steel-grille-offset-4
+  sprite: /Textures/_Scp/Tiles/Steel/steel_offset_4.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  footstepSounds: *SteelGrilleFootStepSounds
+  itemDrop: ScpFloorTileItemSteelGrilleOffset4
+
+# Concrete
+- type: tile
+  id: ScpFloorConcrete
+  parent: ScpFloorBase
+  name: scp-tiles-concrete-tile
+  sprite: /Textures/_Scp/Tiles/Concrete/concrete.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  footstepSounds:
+    collection: FootstepScpStone
+    params:
+      volume: -10
+  itemDrop: ScpFloorTileItemConcrete
+
+- type: tile
+  id: ScpFloorConcreteMono
+  parent: ScpFloorBase
+  name: scp-tiles-concrete-mono
+  sprite: /Textures/_Scp/Tiles/Concrete/concrete_mono.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  footstepSounds:
+    collection: FootstepScpStone
+    params:
+      volume: -10
+  itemDrop: ScpFloorTileItemConcreteMono
