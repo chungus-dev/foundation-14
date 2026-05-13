@@ -1,4 +1,4 @@
-﻿# Командир
+# Командир
 - type: job
   id: LLHLeader
   name: ghost-role-information-mtf-leader-LLH-name
@@ -12,7 +12,7 @@
   icon: JobIconLLHleader
   supervisors: ghost-role-information-mtf-LLH-leader-supervisors
   canBeAntag: false
-  radioBold: true
+# Scp edit - disabled broken ported content.   radioBold: true
   weight: 890
   overrideConsoleVisibility: false
   alwaysShowInBanPanel: true

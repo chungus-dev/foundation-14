@@ -5,10 +5,10 @@
   suffix: Filled, Glock-22 Auto
   components:
   - type: StorageFill
-    contents:
-      - id: WeaponPistolG22Auto
-        amount: 6
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponPistolG22Auto
+#         amount: 6
+#
 - type: entity
   parent: GunLockerSmall
   id: GunLockerSmallFilledM1984
@@ -16,10 +16,10 @@
   suffix: Filled, M1984
   components:
   - type: StorageFill
-    contents:
-      - id: WeaponPistolM1984
-        amount: 6
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponPistolM1984
+#         amount: 6
+#
 - type: entity
   parent: GunLockerSmall
   id: GunLockerSmallFilledACP14
@@ -27,6 +27,6 @@
   suffix: Filled, ACP14
   components:
   - type: StorageFill
-    contents:
-      - id: WeaponPistolACP14
-        amount: 6
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponPistolACP14
+#         amount: 6

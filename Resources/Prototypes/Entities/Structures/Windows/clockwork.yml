@@ -144,8 +144,8 @@
             - "-0.5,-0.5"
             - "0.5,0.5"
             - "0.5,-0.5"
-        mask:
-        - FullTileMask
+# Scp edit - disabled broken ported content.         mask:
+#         - FullTileMask
         layer:
         - GlassLayer
   - type: Airtight

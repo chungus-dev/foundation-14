@@ -273,7 +273,7 @@
   description: 30-round double-stack magazine for submachine guns. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistolSP # Sunrise-Edit
+# Scp edit - disabled broken ported content.     proto: CartridgePistolSP # Sunrise-Edit
     whitelist:
       tags:
         - CartridgePistol
@@ -530,4 +530,3 @@
       - state: inhand-right-mag
       - state: inhand-right-stripe
         color: "#00c1b8"
-

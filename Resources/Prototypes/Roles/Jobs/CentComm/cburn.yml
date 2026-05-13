@@ -19,8 +19,8 @@
   - CentralCommand
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, DeathRattleImplantERT ] #Sunrise-Edit
-
+# Scp edit - disabled broken ported content.     implants: [ MindShieldImplant, DeathRattleImplantERT ] #Sunrise-Edit
+#
 - type: startingGear
   id: CBURNGear
   equipment:

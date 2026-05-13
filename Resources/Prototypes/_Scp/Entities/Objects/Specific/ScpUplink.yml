@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: [BaseItem, BaseCentcommContraband]
   id: BaseUplinkMTF
   categories: [ HideSpawnMenu ]
@@ -21,8 +21,8 @@
     buySuccessSound:
       path: /Audio/Effects/Arcade/newgame.ogg
   - type: Tag
-    tags:
-    - NTUplink
+    tags: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     - NTUplink
   - type: Item
     shape:
     - 0,0,1,1
@@ -188,4 +188,3 @@
       SupplyPoint: 25
     buySuccessSound:
       path: /Audio/Effects/Arcade/newgame.ogg
-

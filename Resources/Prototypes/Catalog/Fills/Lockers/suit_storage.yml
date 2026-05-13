@@ -165,12 +165,12 @@
   - type: AccessReader
     access: [["Atmospherics"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+# Scp edit - disabled broken ported content.     alertAccesses:
+#       red: RedAlertAccesses
+#       blue: BlueAlertAccessesHOS
+#       gamma: GammaAlertAccesses
     # Sunrise-end
-
+#
 #Security hardsuit
 - type: entity
   id: SuitStorageSec
@@ -289,12 +289,12 @@
   - type: AccessReader
     access: [["Salvage"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 #Blood-red hardsuit
 - type: entity
   id: SuitStorageSyndie

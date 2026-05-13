@@ -497,8 +497,8 @@
 - type: marking
   id: MothRArmFan
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [Moth]
+# Scp edit - disabled broken ported content.   markingCategory: Arms
+# Scp edit - disabled broken ported content.   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: fan_r_arm

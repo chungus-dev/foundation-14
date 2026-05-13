@@ -68,10 +68,10 @@
   # Sunrise start
   - type: EmitSoundOnPickup
     sound:
-      collection: RiflesPickUp
+# Scp edit - disabled broken ported content.       collection: RiflesPickUp
   - type: EmitSoundOnDrop
     sound:
-      collection: RiflesDrop
+# Scp edit - disabled broken ported content.       collection: RiflesDrop
   - type: EmitSoundOnLand
     sound:
       collection: RiflesDrop

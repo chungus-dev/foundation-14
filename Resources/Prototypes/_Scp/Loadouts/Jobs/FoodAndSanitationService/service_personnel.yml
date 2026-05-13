@@ -35,9 +35,9 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ScpMaidServicePersonnel
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtElegantMaid
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     jumpsuit: ClothingUniformJumpskirtElegantMaid
+#
 - type: loadout
   id: ScpLoadoutServicePersonnelOrangeGloves
   equipment:

@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Scp106BackroomsAction
   components:
   - type: Action
@@ -69,9 +69,9 @@
       delay: 3
     canTargetSelf: false
     whitelist:
-      components:
-      - HumanoidAppearance
-
+      components: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - HumanoidAppearance
+#
 - type: entity
   id: Scp106LeavePhantom
   components:

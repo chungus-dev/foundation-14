@@ -1,4 +1,4 @@
-﻿# Эффекты
+# Эффекты
 
 - type: entityTable
   id: ScpArtifactEffectsDefaultTable
@@ -12,13 +12,13 @@
       weight: 2
     - id: ScpArtifactShatterWindows
       weight: 2
-    - id: ScpEffectBoltAirlocks
-      weight: 3
+# Scp edit - disabled broken ported content.     - id: ScpEffectBoltAirlocks
+#       weight: 3
     - id: ScpEffectTeslaDischarge
       weight: 1
-    - id: ScpEffectSpawn2054X
-      weight: 1
-
+# Scp edit - disabled broken ported content.     - id: ScpEffectSpawn2054X
+#       weight: 1
+#
 - type: entityTable
   id: ScpArtifactEffectsUltraFunnyTable
   table: !type:GroupSelector
@@ -42,16 +42,16 @@
       #    - id: ScpEffectPolyTable
       #      weight: 2
       # Сломано TODO: вернём после фикса
-    - id: ScpEffectSwap
-      weight: 2
+# Scp edit - disabled broken ported content.     - id: ScpEffectSwap
+#       weight: 2
 #    - id: ScpEffectCreateArtifacts
 #      weight: 1
 # Пока не работает
     - id: EffectMagnetUltra
       weight: 1
-    - id: ScpEffectShiftedAsciiTableAccent
-      weight: 2
-
+# Scp edit - disabled broken ported content.     - id: ScpEffectShiftedAsciiTableAccent
+#       weight: 2
+#
 - type: entityTable
   id: ScpArtifactEffectsScp939Table
   table: !type:GroupSelector
@@ -60,11 +60,11 @@
       weight: 1
     - id: ScpEffectSleep939
       weight: 1
-    - id: ScpArtifactHunger
-      weight: 1
-    - id: ScpEffectThirst
-      weight: 1
-
+# Scp edit - disabled broken ported content.     - id: ScpArtifactHunger
+#       weight: 1
+# Scp edit - disabled broken ported content.     - id: ScpEffectThirst
+#       weight: 1
+#
 - type: entityTable
   id: ScpArtifactEffectsScp106Table
   table: !type:GroupSelector
@@ -131,29 +131,29 @@
       weight: 2
     - id: ScpArtifactShatterWindows
       weight: 2
-    - id: ScpEffectBoltAirlocks
-      weight: 3
+    # Scp edit - disabled broken ported content. - id: ScpEffectBoltAirlocks
+    # Scp edit - disabled broken ported content.   weight: 3
     - id: ScpEffectTeslaDischarge
       weight: 0.02
-    - id: ScpEffectSpawn2054X
-      weight: 0.05
-
+    # Scp edit - disabled broken ported content. - id: ScpEffectSpawn2054X
+    # Scp edit - disabled broken ported content.   weight: 0.05
+    # Scp edit - disabled broken ported content.
 - type: entityTable
   id: ScpArtifactEffectsUltraFunnyFriendlyTable
   table: !type:GroupSelector
     children:
     - id: ScpEffectShuffleUltra
       weight: 0.01
-    - id: ScpEffectSwap
-      weight: 2
+    # Scp edit - disabled broken ported content. - id: ScpEffectSwap
+    # Scp edit - disabled broken ported content.   weight: 2
     - id: EffectMagnetUltra
       weight: 1
-    - id: ScpEffectShiftedAsciiTableAccent
-      weight: 2
-
-
+    # Scp edit - disabled broken ported content. - id: ScpEffectShiftedAsciiTableAccent
+    # Scp edit - disabled broken ported content.   weight: 2
+    # Scp edit - disabled broken ported content.
+    # Scp edit - disabled broken ported content.
 # Триггеры
-
+    # Scp edit - disabled broken ported content.
 - type: weightedRandomXenoArchTrigger
   id: ScpDefaultTriggers
   weights:
@@ -176,8 +176,8 @@
     TriggerDeath: 1
     TriggerMagnet: 1
     # Дальше наши самописные
-    TriggerHealthAnalyzer: 1
-
+    # Scp edit - disabled broken ported content. TriggerHealthAnalyzer: 1
+    # Scp edit - disabled broken ported content.
 - type: weightedRandomXenoArchTrigger
   id: Scp330Triggers
   weights:
@@ -201,7 +201,7 @@
     TriggerThrow: 1
     TriggerOnDrop: 1
     TriggerDeath: 0.5
-    
+
 - type: weightedRandomXenoArchTrigger
   id: Scp261Triggers
   weights:
@@ -211,4 +211,3 @@
     TriggerWrenching: 1
     TriggerPrying: 1
     TriggerScrewing: 1
-    

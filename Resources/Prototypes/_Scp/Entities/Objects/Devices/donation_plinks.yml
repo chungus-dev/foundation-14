@@ -27,21 +27,21 @@
   - type: Store
     refundAllowed: false
     ownerOnly: true
-    categories:
-      - General
-      - SecurityThings
-      - CargoThings
-      - EngineeringThings
-      - SpecialThings
-      - Friends
-      - Cloaks
-      - Music
-    currencyWhitelist:
-      - Suntick
+    categories: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - General
+# Scp edit - disabled broken ported content.       - SecurityThings
+# Scp edit - disabled broken ported content.       - CargoThings
+# Scp edit - disabled broken ported content.       - EngineeringThings
+# Scp edit - disabled broken ported content.       - SpecialThings
+# Scp edit - disabled broken ported content.       - Friends
+# Scp edit - disabled broken ported content.       - Cloaks
+# Scp edit - disabled broken ported content.       - Music
+    currencyWhitelist: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - Suntick
     balance:
       Suntick: 20
     buySuccessSound:
-      path: /Audio/_Sunrise/Items/Handling/Backpacks/pickup.ogg
+      path: /Audio/_Scp/Items/Handling/Backpacks/pickup.ogg
 
 - type: entity
   parent: FireStationUplink20

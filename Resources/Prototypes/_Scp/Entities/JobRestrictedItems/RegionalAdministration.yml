@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: RubberStampBase
   id: RubberStampAdministrator
   name: stamp of the Administrator's Office
@@ -9,7 +9,7 @@
     stampedColor: "#101426"
     stampState: "paper_stamp-greytide"
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/stamps.rsi
+    sprite: _Scp/Objects/Misc/stamps.rsi
     state: stamp-ntrep
 
 - type: entity
@@ -23,7 +23,7 @@
     stampedColor: "#464646"
     stampState: "paper_stamp-cap"
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/stamps.rsi
+    sprite: _Scp/Objects/Misc/stamps.rsi
     state: stamp-redo
 
 - type: entity
@@ -37,7 +37,7 @@
     stampedColor: "#8c4669"
     stampState: "paper_stamp-magistrat"
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/stamps.rsi
+    sprite: _Scp/Objects/Misc/stamps.rsi
     state: stamp-magistrat
 
 - type: entity
@@ -51,7 +51,7 @@
     stampedColor: "#5b62a1"
     stampState: "paper_stamp-cap"
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/stamps.rsi
+    sprite: _Scp/Objects/Misc/stamps.rsi
     state: stamp-specops
 
 - type: entity
@@ -78,7 +78,7 @@
     stampedColor: "#77cad7"
     stampState: "paper_stamp-psychologist"
   - type: Sprite
-    sprite: _Sunrise/Objects/Misc/stamps.rsi
+    sprite: _Scp/Objects/Misc/stamps.rsi
     state: stamp-psychologist
 
 #короче нейтральные вещи на всякий случай. Пускай будет.
@@ -112,8 +112,8 @@
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
-    job: CentCommOperator
-
+# Scp edit - disabled broken ported content.     job: CentCommOperator
+#
 - type: entity
   parent: PenCentcom
   id: PenRegionalAdministration

@@ -55,10 +55,10 @@
   components:
     - type: AccessReader
       access: [["Administration"]]
-      alertAccesses:
-        red: RedAlertAccesses
-        blue: BlueAlertAccessesHOS
-        gamma: GammaAlertAccesses
+# Scp edit - disabled broken ported content.       alertAccesses:
+#         red: RedAlertAccesses
+#         blue: BlueAlertAccessesHOS
+#         gamma: GammaAlertAccesses
     - type: AutoLinkReceiver
       channel: Bridge
 
@@ -69,10 +69,10 @@
   components:
     - type: AccessReader
       access: [["Administration"]]
-      alertAccesses:
-        red: RedAlertAccesses
-        blue: BlueAlertAccessesHOS
-        gamma: GammaAlertAccesses
+      # Scp edit - disabled broken ported content. alertAccesses:
+      # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+      # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+      # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     - type: AutoLinkReceiver
       channel: Bridge
 
@@ -83,10 +83,10 @@
   components:
   - type: AccessReader
     access: [["Administration"], ["Engineering"]]
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
   - type: AutoLinkReceiver
     channel: Engineering
 
@@ -97,10 +97,10 @@
   components:
   - type: AccessReader
     access: [["Administration"], ["Engineering"]]
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
   - type: AutoLinkReceiver
     channel: Engineering
 
@@ -111,10 +111,10 @@
   components:
   - type: AccessReader
     access: [["Administration"], ["Research"]]
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
   - type: AutoLinkReceiver
     channel: Research
 
@@ -125,10 +125,10 @@
   components:
   - type: AccessReader
     access: [["Administration"], ["Research"]]
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
   - type: AutoLinkReceiver
     channel: Research
 
@@ -147,4 +147,3 @@
   components:
     - type: AutoLinkReceiver
       channel: Windows
-

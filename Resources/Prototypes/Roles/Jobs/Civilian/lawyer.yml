@@ -11,8 +11,8 @@
   canBeAntag: false
   supervisors: job-supervisors-magistrate
   # Sunrise-Start
-  alternativeTitles:
-  - job-alt-title-lawyer
+# Scp edit - disabled broken ported content.   alternativeTitles:
+#   - job-alt-title-lawyer
   # Sunrise-End
   setPreference: false # Fire added
   overrideConsoleVisibility: false # Fire added

@@ -177,7 +177,7 @@
   - type: Tag
     tags:
     - HamsterWearable
-    - TopCovered
+# Scp edit - disabled broken ported content.     - TopCovered
     - WhitelistChameleon
   # Sunrise-End
 

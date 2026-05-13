@@ -1,106 +1,106 @@
 - type: loadout
   id: ScpLoadoutClothingBraStrapless
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraStrapless
-
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraStrapless
+#
 - type: loadout
   id: ScpLoadoutClothingBraNekoWhite
-  sponsorOnly: false
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraNekoWhite
-
+# Scp edit - disabled broken ported content.   sponsorOnly: false
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraNekoWhite
+#
 - type: loadout
   id: ScpLoadoutClothingBraNekoBlack
-  sponsorOnly: false
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraNekoBlack
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraNekoBlack
+#
 - type: loadout
   id: ScpLoadoutClothingBraAssblastusa
-  sponsorOnly: false
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraAssblastusa
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraAssblastusa
+#
 - type: loadout
   id: ScpLoadoutClothingBraBikini
-  sponsorOnly: false
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraBikini
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraBikini
+#
 - type: loadout
   id: ScpLoadoutClothingBraBralette
-  sponsorOnly: false
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraBralette
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraBralette
+#
 - type: loadout
   id: ScpLoadoutClothingBraCommie
-  sponsorOnly: false
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraCommie
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraCommie
+#
 - type: loadout
   id: ScpLoadoutClothingBraKinky
-  sponsorOnly: false
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraKinky
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraKinky
+#
 - type: loadout
   id: ScpLoadoutClothingBraLace
-  sponsorOnly: false
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraLace
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraLace
+#
 - type: loadout
   id: ScpLoadoutClothingBraSport
-  sponsorOnly: false
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraSport
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraSport
+#
 - type: loadout
   id: ScpLoadoutClothingBraThong
-  sponsorOnly: false
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraThong
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraThong
+#
 - type: loadout
   id: ScpLoadoutClothingBraUk
-  sponsorOnly: false
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: WomanMoment
-  equipment:
-    bra: ClothingBraUk
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+# Scp edit - disabled broken ported content.   effects:
+# Scp edit - disabled broken ported content.   - !type:GroupLoadoutEffect
+# Scp edit - disabled broken ported content.     proto: WomanMoment
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     bra: ClothingBraUk

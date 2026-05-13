@@ -13,12 +13,12 @@
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
   # Sunrise-Start
-  alternativeTitles:
-  - job-alt-title-cook
-  - job-alt-title-confectioner
-  - job-alt-title-baker
-  - job-alt-title-culinarian
-  - job-alt-title-cafeteria-worker
+# Scp edit - disabled broken ported content.   alternativeTitles:
+#   - job-alt-title-cook
+#   - job-alt-title-confectioner
+#   - job-alt-title-baker
+#   - job-alt-title-culinarian
+#   - job-alt-title-cafeteria-worker
   # Sunrise-End
   access:
   - Service

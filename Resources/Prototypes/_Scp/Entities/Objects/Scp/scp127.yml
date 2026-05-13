@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Scp127
   name: MP5K
   description: A compact submachine gun. A faint pulsing can be felt beneath its frame.
@@ -27,7 +27,7 @@
     capacity: 60
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 10
-    rechargeSound: /Audio/_Sunrise/FleshCult/flesh_cultist_mutation.ogg
+    rechargeSound: /Audio/_Scp/FleshCult/flesh_cultist_mutation.ogg
     showExamineText: false
   - type: Wieldable
   - type: GunWieldBonus
@@ -46,18 +46,18 @@
     - SemiAuto
     - FullAuto
     soundGunshot:
-      path: /Audio/_Sunrise/FleshCult/spike_gun_shot.ogg
+      path: /Audio/_Scp/FleshCult/spike_gun_shot.ogg
     soundEmpty:
-      path: /Audio/_Sunrise/FleshCult/spike_gun_reload.ogg
+      path: /Audio/_Scp/FleshCult/spike_gun_reload.ogg
     soundMode:
-      path: /Audio/_Sunrise/FleshCult/flesh_pudge_dead.ogg
+      path: /Audio/_Scp/FleshCult/flesh_pudge_dead.ogg
     defaultDirection: 1, 0
   - type: EmitSoundOnPickup
     sound:
-      collection: RiflesPickUp
+# Scp edit - disabled broken ported content.       collection: RiflesPickUp
   - type: EmitSoundOnDrop
     sound:
-      collection: RiflesDrop
+# Scp edit - disabled broken ported content.       collection: RiflesDrop
   - type: EmitSoundOnLand
     sound:
       collection: RiflesDrop

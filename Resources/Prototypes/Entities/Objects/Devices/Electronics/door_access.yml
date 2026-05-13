@@ -264,11 +264,11 @@
   - type: AccessReader
     access: [["Detective"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      gamma: GammaAlertAccesses
+# Scp edit - disabled broken ported content.     alertAccesses:
+#       red: RedAlertAccesses
+#       gamma: GammaAlertAccesses
     # Sunrise-end
-
+#
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsSecurity

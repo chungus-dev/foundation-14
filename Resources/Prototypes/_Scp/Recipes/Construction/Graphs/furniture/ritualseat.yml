@@ -40,10 +40,11 @@
     entity: ScpChairCursed
     edges:
     - to: chairRitual
-      completed:
-      - !type:SpawnPrototype
-        prototype: HeadSkeleton
-        amount: 1
+      # Scp edit - disabled broken ported HeadSkeleton return.
+      # completed:
+      # - !type:SpawnPrototype
+      #   prototype: HeadSkeleton
+      #   amount: 1
       steps:
       - tool: Prying
         doAfter: 1

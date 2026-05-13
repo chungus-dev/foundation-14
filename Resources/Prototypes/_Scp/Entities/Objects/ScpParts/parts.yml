@@ -1,4 +1,4 @@
-﻿# Прототипы разных исследоватьских материалов, получаемых с СЦП
+# Прототипы разных исследоватьских материалов, получаемых с СЦП
 
 - type: entity
   id: BaseScpMaterial
@@ -125,19 +125,19 @@
   - type: Appearance
   - type: EmitSoundOnPickup
     sound:
-      path: /Audio/_Sunrise/Items/Handling/paper_pickup.ogg
+      path: /Audio/_Scp/Items/Handling/paper_pickup.ogg
   - type: EmitSoundOnDrop
     sound:
-      path: /Audio/_Sunrise/Items/Handling/paper_drop.ogg
+      path: /Audio/_Scp/Items/Handling/paper_drop.ogg
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Sunrise/Items/Handling/paper_use.ogg
+      path: /Audio/_Scp/Items/Handling/paper_use.ogg
   - type: EmitSoundOnCollide
     sound:
-      path: /Audio/_Sunrise/Items/Handling/paper_drop.ogg
+      path: /Audio/_Scp/Items/Handling/paper_drop.ogg
   - type: EmitSoundOnThrow
     sound:
-      path: /Audio/_Sunrise/Items/Handling/paper_throw.ogg
+      path: /Audio/_Scp/Items/Handling/paper_throw.ogg
   - type: Tag
     tags:
       - Trash

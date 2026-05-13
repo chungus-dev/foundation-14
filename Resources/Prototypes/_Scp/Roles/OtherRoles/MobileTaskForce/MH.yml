@@ -1,4 +1,4 @@
-﻿# Командир
+# Командир
 - type: job
   id: MHLeader
   name: ghost-role-information-mtf-leader-MH-name
@@ -13,7 +13,7 @@
   supervisors: ghost-role-information-mtf-leader-supervisors
   canBeAntag: false
   weight: 905
-  radioBold: true
+# Scp edit - disabled broken ported content.   radioBold: true
   overrideConsoleVisibility: false
   alwaysShowInBanPanel: true
   accessGroups:

@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Scp012
   parent: BaseItemScp
   suffix: SCP-012
@@ -14,7 +14,7 @@
   - type: Scp012
     whitelist:
       components:
-      - HumanoidAppearance
+# Scp edit - disabled broken ported content.       - HumanoidAppearance
       - Bloodstream
       requireAll: true
     blacklist:

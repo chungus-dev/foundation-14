@@ -116,19 +116,19 @@
         !type:DamageTrigger
         damage: 750
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
+# Scp edit - disabled broken ported content.       - !type:PlaySoundBehavior
+#         sound:
+#           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           PinpointerMothershipPiece: # drop a piece of core pinpointer upon being destructed (4 pieces to make a core pinpointer)
             min: 1
             max: 1
-      - !type:EmptyContainersBehaviour
-        containers:
-        - borg_brain
-        - borg_module
-        - cell_slot
+# Scp edit - disabled broken ported content.       - !type:EmptyContainersBehaviour
+#         containers:
+#         - borg_brain
+#         - borg_module
+#         - cell_slot
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: ContainerFill
@@ -191,7 +191,7 @@
       - MMIFilled
       borg_module:
       - XenoborgModuleBasic
-      - XenoborgModuleTool
+# Scp edit - disabled broken ported content.       - XenoborgModuleTool
       - XenoborgModuleSword
       - XenoborgModuleSpaceMovement
   - type: ItemSlots
@@ -261,18 +261,18 @@
   id: XenoborgEngiPrinted
   suffix: no brain
   components:
-  - type: ContainerFill
-    containers:
-      borg_brain:
-      - MMI
-      borg_module:
-      - XenoborgModuleBasic
-      - BorgModuleAdvancedTool
-      - BorgModuleConstruction
-      - BorgModuleRCD
-      - BorgModuleCable
-      - XenoborgModuleAccessBreaker
-      - XenoborgModuleFireExtinguisher
+# Scp edit - disabled broken ported content.   - type: ContainerFill
+#     containers:
+#       borg_brain:
+#       - MMI
+#       borg_module:
+#       - XenoborgModuleBasic
+#       - BorgModuleAdvancedTool
+#       - BorgModuleConstruction
+#       - BorgModuleRCD
+#       - BorgModuleCable
+#       - XenoborgModuleAccessBreaker
+#       - XenoborgModuleFireExtinguisher
   - type: ItemSlots
     slots:
       cell_slot:
@@ -284,15 +284,15 @@
   id: XenoborgHeavyPrinted
   suffix: no brain
   components:
-  - type: ContainerFill
-    containers:
-      borg_brain:
-      - MMI
-      borg_module:
-      - XenoborgModuleBasic
-      - XenoborgModuleTool
-      - XenoborgModuleLaser
-      - XenoborgModuleJammer
+# Scp edit - disabled broken ported content.   - type: ContainerFill
+#     containers:
+#       borg_brain:
+#       - MMI
+#       borg_module:
+#       - XenoborgModuleBasic
+#       - XenoborgModuleTool
+#       - XenoborgModuleLaser
+#       - XenoborgModuleJammer
   - type: ItemSlots
     slots:
       cell_slot:

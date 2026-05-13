@@ -144,14 +144,14 @@
   - type: Fixtures
     fixtures:
       fix1:
-        shape:
-          !type:PolygonShape
-            vertices:
+# Scp edit - disabled broken ported content.         shape:
+#           !type:PolygonShape
+#             vertices:
             # Sunrise-Start
-            - "0.5,-0.5"
-            - "-0.4,-0.5"
-            - "-0.4,0.1"
-            - "0.5,0.5"
+#             - "0.5,-0.5"
+#             - "-0.4,-0.5"
+#             - "-0.4,0.1"
+#             - "0.5,0.5"
             # Sunrise-End
         mask:
         - FullTileMask

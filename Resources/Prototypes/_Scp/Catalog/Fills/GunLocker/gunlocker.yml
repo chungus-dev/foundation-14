@@ -19,10 +19,10 @@
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
   - type: StorageFill
-    contents:
-      - id: WeaponShotgunSPAS12
-        amount: 4
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponShotgunSPAS12
+#         amount: 4
+#
 - type: entity
   id: GunLockerFilledShotgunRiot
   parent: GunLocker5x1
@@ -44,10 +44,10 @@
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
   - type: StorageFill
-    contents:
-      - id: WeaponShotgunRiot
-        amount: 4
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponShotgunRiot
+#         amount: 4
+#
 - type: entity
   id: GunLockerFilledP90
   parent: GunLocker4x3
@@ -69,10 +69,10 @@
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
   - type: StorageFill
-    contents:
-      - id: WeaponSubMachineGunP90
-        amount: 4
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunP90
+#         amount: 4
+#
 - type: entity
   id: GunLockerFilledMP5
   parent: GunLocker4x3
@@ -94,10 +94,10 @@
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
   - type: StorageFill
-    contents:
-      - id: WeaponSubMachineGunMP5
-        amount: 4
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunMP5
+#         amount: 4
+#
 - type: entity
   id: GunLockerFilledMP7
   parent: GunLocker3x3
@@ -119,10 +119,10 @@
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
   - type: StorageFill
-    contents:
-      - id: WeaponSubMachineGunMP7
-        amount: 4
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunMP7
+#         amount: 4
+#
 - type: entity
   id: GunLockerFilledM16A4
   parent: GunLocker6x3
@@ -144,10 +144,10 @@
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
   - type: StorageFill
-    contents:
-      - id: WeaponRifleM16A4
-        amount: 4
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponRifleM16A4
+#         amount: 4
+#
 - type: entity
   id: GunLockerFilledG36
   parent: GunLocker6x3
@@ -169,10 +169,10 @@
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
   - type: StorageFill
-    contents:
-      - id: WeaponRifleG36
-        amount: 4
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponRifleG36
+#         amount: 4
+#
 - type: entity
   id: GunLockerFilledAR18
   parent: GunLocker5x3

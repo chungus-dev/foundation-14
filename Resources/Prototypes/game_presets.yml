@@ -91,7 +91,7 @@
   - shittersafarideluxeedition
   name: greenshift-title
   showInVote: false # Sunrise-Edit
-  hide: true # Fire edit
+# Scp edit - disabled broken ported content.   hide: true # Fire edit
   description: greenshift-description
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
@@ -121,7 +121,7 @@
     - sekrit
   name: secret-title
   showInVote: true
-  hide: false # Fire edit
+  # Scp edit - disabled broken ported content. hide: false # Fire edit
   description: secret-description
   rules:
     - Secret
@@ -162,7 +162,7 @@
   name: death-match-title
   description: death-match-description
   showInVote: false # Fire edit
-  hide: true # Sunrise-Edit
+  # Scp edit - disabled broken ported content. hide: true # Sunrise-Edit
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31
@@ -208,7 +208,7 @@
   name: wizard-title
   description: wizard-description
   showInVote: false
-  hide: true # Fire edit
+  # Scp edit - disabled broken ported content. hide: true # Fire edit
   rules:
   - Wizard
   - DummyNonAntagChance

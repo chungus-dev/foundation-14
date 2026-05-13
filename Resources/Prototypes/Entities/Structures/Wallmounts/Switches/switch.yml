@@ -254,11 +254,11 @@
   - type: AccessReader
     access: [["Command"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
-
+# Scp edit - disabled broken ported content.     alertAccesses:
+#       red: RedAlertAccesses
+#       blue: BlueAlertAccessesHOS
+#       gamma: GammaAlertAccesses
+#
 - type: entity
   parent: LockableButton
   id: LockableButtonCryogenics
@@ -268,12 +268,12 @@
   - type: AccessReader
     access: [["Cryogenics"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonSecurity
@@ -317,12 +317,12 @@
   - type: AccessReader
     access: [["Lawyer"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonEngineering
@@ -357,12 +357,12 @@
   - type: AccessReader
     access: [["Salvage"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonCargo
@@ -372,12 +372,12 @@
   - type: AccessReader
     access: [["Cargo"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonResearch
@@ -411,12 +411,12 @@
   - type: AccessReader
     access: [["External"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonJanitor
@@ -426,12 +426,12 @@
   - type: AccessReader
     access: [["Janitor"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonTheatre
@@ -441,12 +441,12 @@
   - type: AccessReader
     access: [["Theatre"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonBar
@@ -456,12 +456,12 @@
   - type: AccessReader
     access: [["Bar"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonChemistry
@@ -471,12 +471,12 @@
   - type: AccessReader
     access: [["Chemistry"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonKitchen
@@ -486,12 +486,12 @@
   - type: AccessReader
     access: [["Kitchen"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonChapel
@@ -501,12 +501,12 @@
   - type: AccessReader
     access: [["Chapel"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonHydroponics
@@ -516,12 +516,12 @@
   - type: AccessReader
     access: [["Hydroponics"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonAtmospherics
@@ -531,12 +531,12 @@
   - type: AccessReader
     access: [["Atmospherics"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: LockableButton
   id: LockableButtonCentcomm

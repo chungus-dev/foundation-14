@@ -83,7 +83,8 @@
   - type: Damageable
     damageModifierSet: SCP-999
   - type: Body
-    prototype: Human # TODO: Кастомное тело
+    # Scp edit - Body prototypes were removed; custom organs need a separate port.
+    # prototype: Human # TODO: Кастомное тело
   - type: InteractionPopup
     interactDelay: 0.5
     interactSuccessSpawn: EffectHearts

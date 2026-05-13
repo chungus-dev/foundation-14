@@ -47,7 +47,6 @@
       - id: ChemistryBottleOmnizine
       - id: SyringeEphedrine
       - id: DefibrillatorCompact
-
 - type: entity
   parent: ClothingBeltMtfMedical
   id: ClothingBeltMtfMedicalFilledOperative
@@ -106,22 +105,22 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
-    contents:
-      - id: MagazineLightMachineGunMG60
-        amount: 4
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: MagazineLightMachineGunMG60
+#         amount: 4
+#
 - type: entity
   parent: ClothingBeltMtfGrenade
   id: ClothingBeltMtfGrenadeGL70
   categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
-    contents:
-      - id: GrenadeFragTimer
-        amount: 5
-      - id: GrenadeBlastTimer
-        amount: 5
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: GrenadeFragTimer
+#         amount: 5
+# Scp edit - disabled broken ported content.       - id: GrenadeBlastTimer
+#         amount: 5
+#
 - type: entity
   parent: ClothingBeltMtfAmmo
   id: ClothingBeltMtfAmmoBauer127
@@ -129,8 +128,8 @@
   components:
   - type: StorageFill
     contents:
-      - id: MagazineBauer127
-        amount: 5
+# Scp edit - disabled broken ported content.       - id: MagazineBauer127
+#         amount: 5
       - id: MagazineBoxAntiMateriel
         amount: 5
 
@@ -140,48 +139,48 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
-    contents:
-      - id: MagazineMP5
-        amount: 5
-      - id: MagazineBoxPistolSP
-        amount: 2
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: MagazineMP5
+#         amount: 5
+# Scp edit - disabled broken ported content.       - id: MagazineBoxPistolSP
+#         amount: 2
+#
 - type: entity
   parent: ClothingBeltMtfAmmo
   id: ClothingBeltMtfAmmoP90
   categories: [ HideSpawnMenu ]
-  components:
-  - type: StorageFill
-    contents:
-      - id: MagazineP90
-        amount: 4
-      - id: MagazineBoxPistolSP
-        amount: 2
-
+  components: [] # Scp edit - storage fill used missing Sunrise magazines.
+# Scp edit - disabled broken ported content.   - type: StorageFill
+#     contents:
+#       - id: MagazineP90
+#         amount: 4
+#       - id: MagazineBoxPistolSP
+#         amount: 2
+#
 - type: entity
   parent: ClothingBeltMtfAmmo
   id: ClothingBeltMtfAmmoG36
   categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
-    contents:
-      - id: MagazineRifleSP
-        amount: 5
-      - id: MagazineBoxRifleSP
-        amount: 2
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: MagazineRifleSP
+#         amount: 5
+# Scp edit - disabled broken ported content.       - id: MagazineBoxRifleSP
+#         amount: 2
+#
 - type: entity
   parent: ClothingBeltMtfAmmo
   id: ClothingBeltMtfAmmoAR18
   categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
-    contents:
-      - id: MagazineRifleHeavySP
-        amount: 5
-      - id: MagazineBoxHeavyRifleSP
-        amount: 5
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: MagazineRifleHeavySP
+#         amount: 5
+# Scp edit - disabled broken ported content.       - id: MagazineBoxHeavyRifleSP
+#         amount: 5
+#
 - type: entity
   parent: ClothingBeltMtfAmmo
   id: ClothingBeltMtfAmmoShellShotgun
@@ -191,9 +190,9 @@
     contents:
       - id: BoxLethalshot
         amount: 3
-      - id: SpeedLoaderShellShotgun
-        amount: 2
-
+# Scp edit - disabled broken ported content.       - id: SpeedLoaderShellShotgun
+#         amount: 2
+#
 - type: entity
   parent: ClothingBeltMtfAmmo
   id: ClothingBeltMtfAmmoShellShotgunBulldog
@@ -212,8 +211,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
-    contents:
-      - id: MagazineRifleHeavyFMJ
-        amount: 5
-      - id: MagazineBoxHeavyRifleFMJ
-        amount: 5
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: MagazineRifleHeavyFMJ
+#         amount: 5
+# Scp edit - disabled broken ported content.       - id: MagazineBoxHeavyRifleFMJ
+#         amount: 5

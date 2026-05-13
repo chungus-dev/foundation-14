@@ -14,7 +14,7 @@ public sealed class FearSystem : SharedFearSystem
     [Dependency] private readonly IGameTiming _timing = default!;
 
     private static readonly SoundSpecifier HeartbeatSound =
-        new SoundPathSpecifier("/Audio/_Sunrise/Effects/heartbeat.ogg");
+        new SoundPathSpecifier("/Audio/_Scp/Effects/heartbeat.ogg"); // Scp edit - resource path migrated from Sunrise content.
 
     private EntityQuery<FearActiveSoundEffectsComponent> _activeEffects;
 

@@ -15,13 +15,13 @@
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain
   canBeAntag: true # Sunrise-Edit
-  radioBold: true # Sunrise-Edit
+# Scp edit - disabled broken ported content.   radioBold: true # Sunrise-Edit
   displayWeight: 50 # Sunrise-Edit
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
   # Sunrise-Start
-  alternativeTitles:
-  - job-alt-title-science-lead
+# Scp edit - disabled broken ported content.   alternativeTitles:
+#   - job-alt-title-science-lead
   # Sunrise-End
   access:
   - Research
@@ -30,16 +30,16 @@
   - ResearchDirector
   - Brig
   - Cryogenics
-  - ResearchConsoleAccess # Sunrise-Edit
+# Scp edit - disabled broken ported content.   - ResearchConsoleAccess # Sunrise-Edit
   special:
   - !type:AddImplantSpecial
-    implants: [ DeathRattleImplantBlueShield ] # Sunrise-Edit
+# Scp edit - disabled broken ported content.     implants: [ DeathRattleImplantBlueShield ] # Sunrise-Edit
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-  speciesBlacklist:
-  - Vox # Sunrise-Edit
-
+# Scp edit - disabled broken ported content.   speciesBlacklist:
+#   - Vox # Sunrise-Edit
+#
 - type: startingGear
   id: ResearchDirectorGear
   equipment:

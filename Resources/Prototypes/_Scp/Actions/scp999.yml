@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Scp999Wallify
   name: Become a wall
   description: You change your shape, turning into something resembling a wall.
@@ -47,9 +47,10 @@
     range: 3
     targetingIndicator: true
     interactOnMiss: false
-    ignoreContainer: true
+# Scp edit - disabled broken ported content.     ignoreContainer: true
   - type: EntityTargetAction
-    event: !type:SmileLoveActionEvent
+    # Scp edit - Sunrise SmileLoveActionEvent is unavailable in Foundation14
+    # event: !type:SmileLoveActionEvent
     canTargetSelf: false
     whitelist:
       components:

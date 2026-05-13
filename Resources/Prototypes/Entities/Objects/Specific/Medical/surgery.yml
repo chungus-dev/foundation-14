@@ -93,9 +93,9 @@
   # - type: Scalpel # SCP port: component unavailable in Foundation14
   # - type: SurgeryTool # SCP port: component unavailable in Foundation14
     # startSound:
-      # path: /Audio/_Sunrise/Medical/Surgery/scalpel1.ogg
+      # path: /Audio/_Scp/Medical/Surgery/scalpel1.ogg
     # endSound:
-      # path: /Audio/_Sunrise/Medical/Surgery/scalpel2.ogg
+      # path: /Audio/_Scp/Medical/Surgery/scalpel2.ogg
   # Fire edit start - исследования сцп
   - type: ScpInteractTool
     delay: 30

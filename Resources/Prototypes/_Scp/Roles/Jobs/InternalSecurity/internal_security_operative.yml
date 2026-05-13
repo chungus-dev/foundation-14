@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: InternalSecurityOperative
   name: job-name-internal-security-operative
   description: job-description-internal-security-operative
@@ -32,7 +32,7 @@
   - Atmospherics
   - Cargo
   - Medical
-  - BlueShield
+# Scp edit - disabled broken ported content.   - BlueShield
   - Lawyer
   - Bunker
   special:

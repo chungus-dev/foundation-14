@@ -1,15 +1,15 @@
-﻿- type: entity
+- type: entity
   id: ScpPottedPlantRandom
   parent: PottedPlantRandom
   components:
   - type: RandomSpawner
     offset: 0
     prototypes:
-    - PottedPlantAlt0
-    - PottedPlantAlt1
-    - PottedPlantAlt2
-    - PottedPlantAlt3
-    - PottedPlantAlt4
+# Scp edit - disabled broken ported content.     - PottedPlantAlt0
+# Scp edit - disabled broken ported content.     - PottedPlantAlt1
+# Scp edit - disabled broken ported content.     - PottedPlantAlt2
+# Scp edit - disabled broken ported content.     - PottedPlantAlt3
+# Scp edit - disabled broken ported content.     - PottedPlantAlt4
     - PottedPlant0
     - PottedPlant1
     - PottedPlant2

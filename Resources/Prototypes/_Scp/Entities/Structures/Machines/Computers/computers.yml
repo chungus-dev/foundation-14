@@ -48,8 +48,8 @@
   components:
   - type: Sprite
     layers:
-    - map: [ "computerLayerBody" ]
-      state: computer
+# Scp edit - disabled broken ported content.     - map: [ "computerLayerBody" ]
+#       state: computer
     - map: [ "computerLayerKeyboard" ]
       state: generic_keyboard
     - map: [ "computerLayerScreen" ]
@@ -420,7 +420,7 @@
     color: "#82e46f"
     title: comms-console-announcement-title-regional-administration
     global: true
-    announceVoice: Hanson
+# Scp edit - disabled broken ported content.     announceVoice: Hanson
     announceSentBy: false
 
 - type: entity
@@ -435,15 +435,15 @@
       state: generic_keyboard
     - map: ["computerLayerScreen"]
       state: comm
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+# Scp edit - disabled broken ported content.     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+#       state: generic_panel_open
   - type: AccessReader
     access: [[ "MTF" ]]
   - type: CommunicationsConsole
     color: "#1d8bad"
     title: comms-console-announcement-title-o4-headquarters
     global: true
-    announceVoice: Hanson
+    # Scp edit - disabled broken ported content. announceVoice: Hanson
     announceSentBy: false
 
 - type: entity
@@ -1092,4 +1092,3 @@
       state: icarus
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
-

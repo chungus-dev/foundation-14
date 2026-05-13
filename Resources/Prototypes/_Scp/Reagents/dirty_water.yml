@@ -12,16 +12,16 @@
   boilingPoint: 100.0
   meltingPoint: 0.0
   friction: 0.4
-  metabolisms:
-    Poison:
-      effects:
-        - !type:HealthChange
-          damage:
-            types:
-              Poison: 2
-        - !type:Vomit
-          conditions:
-          - !type:ReagentCondition
-            reagent: DirtyWater
-            min: 2
-          probability: 0.2
+  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
+# Scp edit - disabled broken ported content.     Poison:
+#       effects:
+#         - !type:HealthChange
+#           damage:
+#             types:
+#               Poison: 2
+#         - !type:Vomit
+#           conditions:
+#           - !type:ReagentCondition
+#             reagent: DirtyWater
+#             min: 2
+#           probability: 0.2

@@ -391,7 +391,7 @@
     - SecurityPracticeStatic
     #- SecurityAmmoStatic
     - SecurityWeaponsStatic
-    - SecurityStaticSunrise # Sunrise-Add
+# Scp edit - disabled broken ported content.     - SecurityStaticSunrise # Sunrise-Add
     dynamicPacks:
     - SecurityDynamicWeaponsScp # Fire added
     - SalvageSecurityBoards
@@ -402,9 +402,9 @@
     - SecurityAmmo
     - SecurityWeapons
     - SecurityDisablers
-    - SecurityDynamicSunrise # Sunrise-Add
-    - SecurityDynamicSunriseClothing # Sunrise-Add
-    - SecurityDynamicSunriseMech # Sunrise-Add
+# Scp edit - disabled broken ported content.     - SecurityDynamicSunrise # Sunrise-Add
+# Scp edit - disabled broken ported content.     - SecurityDynamicSunriseClothing # Sunrise-Add
+# Scp edit - disabled broken ported content.     - SecurityDynamicSunriseMech # Sunrise-Add
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SyndicateAmmoStatic
@@ -540,7 +540,7 @@
     - Scarves
     - Carpets
     - Bedsheets
-    - UniformStaticSunrise # Sunrise-Add
+# Scp edit - disabled broken ported content.     - UniformStaticSunrise # Sunrise-Add
     - ShoulderPatch # Fire Edit
   - type: EmagLatheRecipes
     emagStaticPacks:

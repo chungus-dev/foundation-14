@@ -21,12 +21,12 @@
     ClothingOuterArmorBasic: 2
     ClothingNeckScarfStripedRed: 3
     ClothingOuterArmorBasicSlim: 2
-    ClothingOuterVestArmorSec : 1 # Sunrise-Edit
+    # Scp edit - disabled broken ported content. ClothingOuterVestArmorSec : 1 # Sunrise-Edit
     ClothingEyesBlindfold: 1
     ClothingShoesBootsCombat: 1
     ClothingShoesBootsWinterSecurityGuard: 2 # Fire-Station
-    HandheldCamera: 6  # Sunrise-Edit
-    PepperSprayBottleBlue: 2  # Sunrise-Edit
+    # Scp edit - disabled broken ported content. HandheldCamera: 6  # Sunrise-Edit
+    # Scp edit - disabled broken ported content. PepperSprayBottleBlue: 2  # Sunrise-Edit
   contrabandInventory:
     ClothingMaskClownSecurity: 1
     ClothingMaskMimeSecurity: 1

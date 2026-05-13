@@ -159,11 +159,11 @@
     - Xenoborg
     - GenpopEnter
     - GenpopLeave
-    - BlueShield # Sunrise
-    - Ntrep # Sunrise
-    - Magistrat # Sunrise
-    - Barber  # Sunrise
-    - Mining # Sunrise
+# Scp edit - disabled broken ported content.     - BlueShield # Sunrise
+# Scp edit - disabled broken ported content.     - Ntrep # Sunrise
+# Scp edit - disabled broken ported content.     - Magistrat # Sunrise
+# Scp edit - disabled broken ported content.     - Barber  # Sunrise
+# Scp edit - disabled broken ported content.     - Mining # Sunrise
     privilegedIdSlot:
       name: id-card-console-privileged-id
       startingItem: UniversalIDCard

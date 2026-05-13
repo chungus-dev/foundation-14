@@ -82,15 +82,17 @@
             ClassDJanitor: [ 1, 1 ]
             # Система безопасности комплекса
             StationAi: [ 1, 1 ]
-        - type: RelativeJobsCount
-          jobs:
-          - targetJob: ClassD
-            dependency:
-              SecurityCommander: 2
-              ExternalAdministrativeZoneCommandant: 2
-              SeniorExternalAdministrativeZoneOfficer: 1
-              ExternalAdministrativeZoneOfficer: 1
-              JuniorExternalAdministrativeZoneOfficer: 1
-            maxSlots: 16
-          totalMaxCount:
-            ClassD: 16
+        # Scp edit start - Sunrise RelativeJobsCount component is unavailable in Foundation14
+        # - type: RelativeJobsCount
+        #   jobs:
+        #   - targetJob: ClassD
+        #     dependency:
+        #       SecurityCommander: 2
+        #       ExternalAdministrativeZoneCommandant: 2
+        #       SeniorExternalAdministrativeZoneOfficer: 1
+        #       ExternalAdministrativeZoneOfficer: 1
+        #       JuniorExternalAdministrativeZoneOfficer: 1
+        #     maxSlots: 16
+        #   totalMaxCount:
+        #     ClassD: 16
+        # Scp edit end

@@ -144,7 +144,7 @@
     - 0,0,8,3
   - type: StorageFill
     contents:
-      - id: WeaponLightMachineGunMG60
+# Scp edit - disabled broken ported content.       - id: WeaponLightMachineGunMG60
       - id: ClothingBeltMtfAmmoMG60
 
 - type: entity
@@ -158,7 +158,7 @@
     - 0,3,3,6
   - type: StorageFill
     contents:
-      - id: WeaponGrenadeLauncherGL70
+# Scp edit - disabled broken ported content.       - id: WeaponGrenadeLauncherGL70
       - id: ClothingBeltMtfGrenadeGL70
 
 - type: entity
@@ -172,7 +172,7 @@
     - 0,3,3,6
   - type: StorageFill
     contents:
-      - id: WeaponRifleBauer127
+# Scp edit - disabled broken ported content.       - id: WeaponRifleBauer127
       - id: ClothingBeltMtfAmmoBauer127
 
 - type: entity
@@ -185,7 +185,7 @@
     - 0,0,6,3
   - type: StorageFill
     contents:
-      - id: WeaponSubMachineGunMP5
+# Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunMP5
       - id: ClothingBeltMtfAmmoMP5
 
 - type: entity
@@ -198,7 +198,7 @@
     - 0,0,6,3
   - type: StorageFill
     contents:
-      - id: WeaponSubMachineGunP90
+# Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunP90
       - id: ClothingBeltMtfAmmoP90
 
 - type: entity
@@ -212,7 +212,7 @@
     - 0,0,3,3
   - type: StorageFill
     contents:
-      - id: WeaponRifleFamas
+# Scp edit - disabled broken ported content.       - id: WeaponRifleFamas
       - id: ClothingBeltMtfAmmoG36
 
 - type: entity
@@ -226,7 +226,7 @@
     - 0,3,3,6
   - type: StorageFill
     contents:
-      - id: WeaponRifleG36
+# Scp edit - disabled broken ported content.       - id: WeaponRifleG36
       - id: ClothingBeltMtfAmmoG36
 
 - type: entity
@@ -254,7 +254,7 @@
     - 0,0,3,3
   - type: StorageFill
     contents:
-      - id: WeaponShotgunCombat
+# Scp edit - disabled broken ported content.       - id: WeaponShotgunCombat
       - id: ClothingBeltMtfAmmoShellShotgun
 
 - type: entity
@@ -282,7 +282,7 @@
     - 0,3,3,6
   - type: StorageFill
     contents:
-      - id: WeaponRifleBR64
+# Scp edit - disabled broken ported content.       - id: WeaponRifleBR64
       - id: ClothingBeltMtfAmmoBR64
 
 - type: entity
@@ -296,7 +296,7 @@
     - 0,0,3,3
   - type: StorageFill
     contents:
-      - id: WeaponShotgunCycler
+# Scp edit - disabled broken ported content.       - id: WeaponShotgunCycler
       - id: ClothingBeltMtfAmmoShellShotgun
 
 - type: entity
@@ -308,12 +308,12 @@
     grid:
     - 0,0,5,1
   - type: StorageFill
-    contents:
-      - id: WeaponPistolACP14
-      - id: MagazineACP14
-        amount: 3
-      - id: MagazineBoxPistol40SP
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponPistolACP14
+# Scp edit - disabled broken ported content.       - id: MagazineACP14
+#         amount: 3
+# Scp edit - disabled broken ported content.       - id: MagazineBoxPistol40SP
+#
 - type: entity
   parent: BaseMtfStorageCrateSmallPistol
   id: MtfStorageCratePistolG22
@@ -323,12 +323,12 @@
     grid:
     - 0,0,5,1
   - type: StorageFill
-    contents:
-      - id: WeaponPistolG22
-      - id: MagazineGlock22
-        amount: 3
-      - id: MagazineBoxPistolSP
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponPistolG22
+# Scp edit - disabled broken ported content.       - id: MagazineGlock22
+#         amount: 3
+# Scp edit - disabled broken ported content.       - id: MagazineBoxPistolSP
+#
 - type: entity
   parent: BaseMtfStorageCrateSmallPistol
   id: MtfStorageCratePistolVP78
@@ -338,12 +338,12 @@
     grid:
     - 0,0,5,1
   - type: StorageFill
-    contents:
-      - id: WeaponPistolVP78
-      - id: MagazinePistol40FMJ
-        amount: 3
-      - id: MagazineBoxPistol40FMJ
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponPistolVP78
+# Scp edit - disabled broken ported content.       - id: MagazinePistol40FMJ
+#         amount: 3
+# Scp edit - disabled broken ported content.       - id: MagazineBoxPistol40FMJ
+#
 - type: entity
   parent: BaseMtfStorageCrateSmallPistol
   id: MtfStorageCrateRevolverSpearhead
@@ -353,12 +353,12 @@
     grid:
     - 0,0,5,1
   - type: StorageFill
-    contents:
-      - id: WeaponRevolverSpearhead
-      - id: SpeedLoaderMagnumSP
-        amount: 3
-      - id: MagazineBoxMagnumSP
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponRevolverSpearhead
+# Scp edit - disabled broken ported content.       - id: SpeedLoaderMagnumSP
+#         amount: 3
+# Scp edit - disabled broken ported content.       - id: MagazineBoxMagnumSP
+#
 - type: entity
   parent: BaseMtfStorageCrateSmallPistol
   id: MtfStorageCrateRevolverSpearheadBlack
@@ -368,12 +368,12 @@
     grid:
     - 0,0,5,1
   - type: StorageFill
-    contents:
-      - id: WeaponRevolverSpearheadBlack
-      - id: SpeedLoaderMagnumSP
-        amount: 3
-      - id: MagazineBoxMagnumSP
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: WeaponRevolverSpearheadBlack
+      # Scp edit - disabled broken ported content. - id: SpeedLoaderMagnumSP
+      # Scp edit - disabled broken ported content.   amount: 3
+      # Scp edit - disabled broken ported content. - id: MagazineBoxMagnumSP
+      # Scp edit - disabled broken ported content.
 # Остальное
 - type: entity
   parent: BaseMtfStorageCrateSmallGranade
@@ -384,10 +384,10 @@
     grid:
     - 0,0,4,1
   - type: StorageFill
-    contents:
-      - id: GrenadeFragTimer
-        amount: 5
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: GrenadeFragTimer
+#         amount: 5
+#
 - type: entity
   parent: BaseMtfStorageCrateSmallGranade
   id: MtfStorageCrateGrenadeBlastTimer
@@ -397,10 +397,10 @@
     grid:
     - 0,0,4,1
   - type: StorageFill
-    contents:
-      - id: GrenadeBlastTimer
-        amount: 5
-
+    contents: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - id: GrenadeBlastTimer
+#         amount: 5
+#
 - type: entity
   parent: BaseMtfStorageCrateSmallGranade
   id: MtfStorageCrateGrenadeFragContact

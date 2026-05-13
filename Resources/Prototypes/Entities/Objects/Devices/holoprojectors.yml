@@ -158,7 +158,7 @@
     - type: HolosignProjector
       signProto: HolosignSecurity
       chargeUse: 90
-      countPerTileLimit: 2   # Sunrise - Added
+# Scp edit - disabled broken ported content.       countPerTileLimit: 2   # Sunrise - Added
     - type: Sprite
       sprite: Objects/Devices/Holoprojectors/security.rsi
       state: icon

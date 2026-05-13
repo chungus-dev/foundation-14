@@ -47,7 +47,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazinePistolSubMachineGunSP
+# Scp edit - disabled broken ported content.         startingItem: MagazinePistolSubMachineGunSP
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
@@ -57,7 +57,7 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgePistolSP
+# Scp edit - disabled broken ported content.         startingItem: CartridgePistolSP
         priority: 1
         whitelist:
           tags:
@@ -71,10 +71,10 @@
   # Sunrise start
   - type: EmitSoundOnPickup
     sound:
-      collection: RiflesPickUp
+# Scp edit - disabled broken ported content.       collection: RiflesPickUp
   - type: EmitSoundOnDrop
     sound:
-      collection: RiflesDrop
+# Scp edit - disabled broken ported content.       collection: RiflesDrop
   - type: EmitSoundOnLand
     sound:
       collection: RiflesDrop

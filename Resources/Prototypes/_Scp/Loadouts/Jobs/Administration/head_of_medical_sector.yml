@@ -64,9 +64,9 @@
 # Neck
 - type: loadout
   id: ScpLoadoutHeadOfMedicalSectorScarf
-  equipment:
-    neck: ClothingNeckScarfCmo
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfCmo
+#
 - type: loadout
   id: ScpLoadoutHeadOfMedicalSectorMantle
   equipment:

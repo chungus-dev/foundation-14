@@ -177,12 +177,12 @@
   - type: AccessReader
     access: [["Medical"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+# Scp edit - disabled broken ported content.     alertAccesses:
+#       red: RedAlertAccesses
+#       blue: BlueAlertAccessesHOS
+#       gamma: GammaAlertAccesses
     # Sunrise-end
-
+#
 - type: entity
   parent: BaseWallLocker
   id: LockerWallEvacRepair

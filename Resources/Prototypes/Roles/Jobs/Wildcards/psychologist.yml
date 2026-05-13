@@ -10,13 +10,15 @@
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
   # Sunrise-Start
-  alternativeTitles:
-  - job-alt-title-psychoanalyst
+# Scp edit - disabled broken ported content.   alternativeTitles:
+#   - job-alt-title-psychoanalyst
   # Sunrise-End
-  special:
-    - !type:AddComponentSpecial
-      components:
-      - type: PsychologistBlockAlcohol
+  # Scp edit start - Sunrise PsychologistBlockAlcohol component is unavailable in Foundation14
+  # special:
+  #   - !type:AddComponentSpecial
+  #     components:
+  #     - type: PsychologistBlockAlcohol
+  # Scp edit end
   access:
   - Medical
   - Maintenance

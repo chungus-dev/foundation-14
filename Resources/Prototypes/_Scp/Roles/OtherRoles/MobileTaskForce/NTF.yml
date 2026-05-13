@@ -1,4 +1,4 @@
-﻿# Командир
+# Командир
 - type: job
   id: NTFLeader
   name: ghost-role-information-mtf-leader-NTF-name
@@ -12,7 +12,7 @@
   icon: JobIconNTFleader
   supervisors: ghost-role-information-mtf-leader-supervisors
   canBeAntag: false
-  radioBold: true
+# Scp edit - disabled broken ported content.   radioBold: true
   weight: 880
   overrideConsoleVisibility: false
   alwaysShowInBanPanel: true

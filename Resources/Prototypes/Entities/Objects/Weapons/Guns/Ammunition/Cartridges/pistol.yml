@@ -101,7 +101,7 @@
   parent: BaseCartridgePistol
   components:
   - type: CartridgeAmmo
-    proto: BulletPistolTraceRubber
+# Scp edit - disabled broken ported content.     proto: BulletPistolTraceRubber
   - type: Sprite
     layers:
       - state: base
@@ -109,4 +109,3 @@
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#00c1b8"
-

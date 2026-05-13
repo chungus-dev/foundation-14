@@ -35,7 +35,7 @@
     volume: -7
     range: 5
     sound:
-      path: /Audio/_Sunrise/Effects/Flying/medibot.ogg
+      path: /Audio/_Scp/Effects/Flying/medibot.ogg
   - type: Fixtures
     fixtures:
       fix1:

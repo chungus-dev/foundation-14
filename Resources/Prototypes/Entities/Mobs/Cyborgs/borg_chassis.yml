@@ -31,10 +31,10 @@
     inherentRadioChannels:
     - Common
     - Binary
-    notifyChannels:
-    - Binary
-    - ScientificService # Fire edit
-
+# Scp edit - disabled broken ported content.     notifyChannels:
+#     - Binary
+#     - ScientificService # Fire edit
+#
 - type: entity
   id: BorgChassisGeneric
   parent: BorgChassisSelectable
@@ -116,45 +116,45 @@
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
 
-- type: entity
-  id: BorgChassisSyndicateMedical
-  parent: [BaseBorgChassisSyndicate, ShowMedicalIcons]
-  name: syndicate medical cyborg
-  description: A combat medical cyborg. Has limited offensive potential, but makes more than up for it with its support capabilities.
-  components:
-    - type: Sprite
-      layers:
-        - state: synd_medical
-        - state: synd_medical_e
-          map: ["enum.BorgVisualLayers.Light"]
-          shader: unshaded
-          visible: false
-        - state: synd_medical_l
-          shader: unshaded
-          map: ["light"]
-          visible: false
-    - type: BorgChassis
-      maxModules: 3
-      moduleWhitelist:
-        tags:
-          - BorgModuleGeneric
-          - BorgModuleMedical
-          - BorgModuleSyndicate
-      hasMindState: synd_medical_e
-      noMindState: synd_medical
-    - type: ShowHealthBars
-    - type: InteractionPopup
-      interactSuccessString: petting-success-syndicate-cyborg
-      interactFailureString: petting-failure-syndicate-cyborg
-      interactSuccessSound:
-        path: /Audio/Ambience/Objects/periodic_beep.ogg
-    - type: SolutionScanner
-    - type: FootstepModifier
-      footstepSoundCollection:
-        collection: FootstepHoverBorg
-        params:
-          volume: -6
-
+# Scp edit - disabled broken ported content. - type: entity
+#   id: BorgChassisSyndicateMedical
+#   parent: [BaseBorgChassisSyndicate, ShowMedicalIcons]
+#   name: syndicate medical cyborg
+#   description: A combat medical cyborg. Has limited offensive potential, but makes more than up for it with its support capabilities.
+#   components:
+#     - type: Sprite
+#       layers:
+#         - state: synd_medical
+#         - state: synd_medical_e
+#           map: ["enum.BorgVisualLayers.Light"]
+#           shader: unshaded
+#           visible: false
+#         - state: synd_medical_l
+#           shader: unshaded
+#           map: ["light"]
+#           visible: false
+#     - type: BorgChassis
+#       maxModules: 3
+#       moduleWhitelist:
+#         tags:
+#           - BorgModuleGeneric
+#           - BorgModuleMedical
+#           - BorgModuleSyndicate
+#       hasMindState: synd_medical_e
+#       noMindState: synd_medical
+#     - type: ShowHealthBars
+#     - type: InteractionPopup
+#       interactSuccessString: petting-success-syndicate-cyborg
+#       interactFailureString: petting-failure-syndicate-cyborg
+#       interactSuccessSound:
+#         path: /Audio/Ambience/Objects/periodic_beep.ogg
+#     - type: SolutionScanner
+#     - type: FootstepModifier
+#       footstepSoundCollection:
+#         collection: FootstepHoverBorg
+#         params:
+#           volume: -6
+#
 - type: entity
   id: BorgChassisSyndicateSaboteur
   parent: BaseBorgChassisSyndicate
@@ -261,8 +261,8 @@
   components:
   - type: Sprite
     layers:
-    - state: janitor_derelict
-      map: ["movement"]
+# Scp edit - disabled broken ported content.     - state: janitor_derelict
+#       map: ["movement"]
     - state: janitor_e_r
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
@@ -281,10 +281,10 @@
   - type: BorgChassis
     maxModules: 5 # One less module slot than the regular module to reflect this being a "broken" cyborg.
     moduleWhitelist:
-      tags:
-      - BorgModuleGeneric
-      - BorgModuleJanitor
-    hasMindState: janitor_e
+# Scp edit - disabled broken ported content.       tags:
+#       - BorgModuleGeneric
+#       - BorgModuleJanitor
+# Scp edit - disabled broken ported content.     hasMindState: janitor_e
     noMindState: janitor_e_r
 
 - type: entity

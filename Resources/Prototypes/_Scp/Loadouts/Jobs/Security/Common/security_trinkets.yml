@@ -1,15 +1,15 @@
 - type: loadout
   id: ScpLoadoutHandheldCamera
-  startingGear: SecurityBodycam
-
+# Scp edit - disabled broken ported content.   startingGear: SecurityBodycam
+#
 - type: loadout
   id: ScpLoadoutPepperSprayBottleBlue
-  startingGear: PeppersprayBlue
-
+# Scp edit - disabled broken ported content.   startingGear: PeppersprayBlue
+#
 - type: loadout
   id: ScpLoadoutSecurityWhistle
-  startingGear: SecurityWhistle
-
+# Scp edit - disabled broken ported content.   startingGear: SecurityWhistle
+#
 - type: loadout
   id: ScpLoadoutTourniquet
-  startingGear: SecurityTourniquet
+# Scp edit - disabled broken ported content.   startingGear: SecurityTourniquet

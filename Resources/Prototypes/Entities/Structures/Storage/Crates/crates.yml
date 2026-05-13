@@ -216,12 +216,12 @@
   - type: AccessReader
     access: [["Engineering"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+# Scp edit - disabled broken ported content.     alertAccesses:
+#       red: RedAlertAccesses
+#       blue: BlueAlertAccessesHOS
+#       gamma: GammaAlertAccesses
     # Sunrise-end
-
+#
 - type: entity
   parent: CrateBaseSecure
   id: CrateMedicalSecure
@@ -234,12 +234,12 @@
   - type: AccessReader
     access: [["Medical"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: CrateBaseSecure
   id: CrateChemistrySecure
@@ -252,12 +252,12 @@
     - type: AccessReader
       access: [["Laboratory"]] # Fire edit
       # Sunrise-start
-      alertAccesses:
-        red: RedAlertAccesses
-        blue: BlueAlertAccessesHOS
-        gamma: GammaAlertAccesses
+      # Scp edit - disabled broken ported content. alertAccesses:
+      # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+      # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+      # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
       # Sunrise-end
-
+      # Scp edit - disabled broken ported content.
 - type: entity
   parent: CrateBaseSecure
   id: CratePrivateSecure
@@ -280,12 +280,12 @@
   - type: AccessReader
     access: [["Research"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: CrateBaseSecure
   id: CratePlasma
@@ -298,12 +298,12 @@
   - type: AccessReader
     access: [["Engineering"], ["Research"], ["Laboratory"]] # Fire edit
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: CrateBaseSecure
   id: CrateSecure
@@ -326,12 +326,12 @@
   - type: AccessReader
     access: [["Service"]] # Fire edit
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: CrateBaseSecure
   id: CrateWeaponSecure
@@ -371,12 +371,12 @@
   - type: AccessReader
     access: [["Administration"]] # Fire edit
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
-
+    # Scp edit - disabled broken ported content.
 - type: entity
   parent: CrateBaseSecure
   id: CrateSyndicateSecure
@@ -937,10 +937,10 @@
   - type: AccessReader
     access: [["Service"]] # Fire edit
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
   - type: Paintable
     group: null

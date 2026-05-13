@@ -1,4 +1,7 @@
-﻿- type: gamePresetPool
-  id: ScpPresetPool
-  presets:
-    Secret: [0, 200]
+# Scp edit start - disabled old Sunrise prototype type unavailable in Foundation14
+# This file is kept commented until the matching subsystem is ported intentionally.
+# - type: gamePresetPool
+#   id: ScpPresetPool
+#   presets:
+#     Secret: [0, 200]
+# Scp edit end

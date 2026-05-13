@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: MentalControlOfficer
   name: job-name-mental-control-officer
   description: job-description-mental-control-officer
@@ -40,9 +40,9 @@
   id: MentalControlOfficerGear
   equipment:
     shoes: ClothingShoesColorBlack
-    id: IAAPDA
+# Scp edit - disabled broken ported content.     id: IAAPDA
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetAltInternalSecurity
-    pocket2: HyperLinkBookCorporateLaw
-  inhand:
-  - BriefcaseIAAFilled
+# Scp edit - disabled broken ported content.     pocket2: HyperLinkBookCorporateLaw
+  inhand: [] # Scp edit - disabled broken ported inhand item.
+# Scp edit - disabled broken ported content.   - BriefcaseIAAFilled

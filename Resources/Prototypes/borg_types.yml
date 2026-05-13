@@ -3,9 +3,9 @@
   id: generic
 
   # Sunrise-Start
-  job: Borg
+# Scp edit - disabled broken ported content.   job: Borg
   # Sunrise-End
-
+#
   # Description
   dummyPrototype: BorgChassisGeneric
 
@@ -26,10 +26,12 @@
   - ScientificService
 
   # Sunrise-Start
-  footstepCollection:
-    collection: FootstepCyborgSpider
-    params:
-      volume: -15
+  # Scp edit start - old Sunrise borg footstep collection is unavailable.
+#   footstepCollection:
+# Scp edit - disabled broken ported content.     collection: FootstepCyborgSpider
+  #   params:
+  #     volume: -15
+  # Scp edit end
   # Sunrise-End
 
   # Visual
@@ -49,7 +51,8 @@
   id: engineering
 
   # Sunrise-Start
-  job: EngineerBorg
+  # Scp edit - job no longer exists on BorgTypePrototype.
+  # job: EngineerBorg
   # Sunrise-End
 
   # Description
@@ -63,7 +66,7 @@
     - BorgModuleEngineering
 
   defaultModules:
-  - BorgModuleStandart
+# Scp edit - disabled broken ported content.   - BorgModuleStandart
   - BorgModuleAdvancedTool
   - BorgModuleCable
   - BorgModuleConstruction
@@ -86,13 +89,13 @@
     damageContainers:
     - Inorganic
     - Silicon
-    - Mech
+# Scp edit - disabled broken ported content.     - Mech
 #  - type: InnateItem # SCP port: component unavailable in Foundation14
 #    instantActions:
 #    - HandheldStationMapUnpowered
 #    - EngiAlertsMonitor
   # Sunrise-End
-
+#
   # Visual
   inventoryTemplateId: borgShort
   spriteBodyState: engineer
@@ -213,7 +216,8 @@
   id: janitor
 
   # Sunrise-Start
-  job: JanitorBorg
+  # Scp edit - job no longer exists on BorgTypePrototype.
+  # job: JanitorBorg
   # Sunrise-End
 
   # Description
@@ -227,7 +231,7 @@
     - BorgModuleJanitor
 
   defaultModules:
-  - BorgModuleStandart
+  - BorgModuleTool # Scp edit - BorgModuleStandart is unavailable.
   - BorgModuleCleaning
   - BorgModuleCustodial
 
@@ -236,10 +240,12 @@
   - FoodAndSanitationService
 
   # Sunrise-Start
-  footstepCollection:
-    collection: FootstepJanitorBorg
-    params:
-      volume: -5
+  # Scp edit start - old Sunrise janitor borg footstep collection is unavailable.
+#   footstepCollection:
+# Scp edit - disabled broken ported content.     collection: FootstepJanitorBorg
+  #   params:
+  #     volume: -5
+  # Scp edit end
   # Sunrise-Start
 
   # Visual
@@ -271,7 +277,8 @@
   id: medical
 
   # Sunrise-Start
-  job: MedicalBorg
+  # Scp edit - job no longer exists on BorgTypePrototype.
+  # job: MedicalBorg
   # Sunrise-End
 
   # Description
@@ -285,7 +292,7 @@
     - BorgModuleMedical
 
   defaultModules:
-  - BorgModuleStandart
+  - BorgModuleTool # Scp edit - BorgModuleStandart is unavailable.
   - BorgModuleChemical
   - BorgModuleTopicals
   - BorgModuleRescue
@@ -311,7 +318,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 3
     baseSprintSpeed : 5
-  - type: FabricateCandy
+  # Scp edit - Sunrise FabricateCandy component is unavailable in Foundation14
+  # - type: FabricateCandy
 #  - type: InnateItem # SCP port: component unavailable in Foundation14
 #    instantActions:
 #    - HandheldStationMapUnpowered
@@ -342,7 +350,8 @@
   id: service
 
   # Sunrise-Start
-  job: ServiceBorg
+  # Scp edit - job no longer exists on BorgTypePrototype.
+  # job: ServiceBorg
   # Sunrise-End
 
   # Description
@@ -357,15 +366,15 @@
 
   # Sunrise-Start
   defaultModules:
-  - BorgModuleStandart
+  - BorgModuleTool # Scp edit - BorgModuleStandart is unavailable.
   - BorgModuleMusique
-  - BorgModulePaperwork
-  - BorgModuleBartender
-  - BorgModuleCooking
+# Scp edit - disabled broken ported content.   - BorgModulePaperwork
+# Scp edit - disabled broken ported content.   - BorgModuleBartender
+# Scp edit - disabled broken ported content.   - BorgModuleCooking
   - BorgModuleClowning
-  - BorgModuleExtensiveGardening
+# Scp edit - disabled broken ported content.   - BorgModuleExtensiveGardening
   # Sunrise-End
-
+#
   radioChannels: # Fire Edit
   - ScientificService
   - FoodAndSanitationService

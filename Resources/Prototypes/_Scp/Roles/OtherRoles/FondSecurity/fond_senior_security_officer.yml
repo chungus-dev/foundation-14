@@ -11,7 +11,7 @@
   icon: JobFondSeniorSecurityOfficer
   supervisors: ghost-role-information-fond-senior-security-officer-supervisors
   canBeAntag: false
-  radioBold: true
+# Scp edit - disabled broken ported content.   radioBold: true
   weight: 820
   overrideConsoleVisibility: false
   alwaysShowInBanPanel: true
@@ -31,7 +31,7 @@
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesColorBlack
     outerClothing: ClothingOuterArmorBulletproof
-    neck: ClothingNeckCloakWhite
+# Scp edit - disabled broken ported content.     neck: ClothingNeckCloakWhite
     belt: ScpClothingBeltSecurityWebbingFilled
     id: KeyCardFondSeniorSecurityOfficer
     ears: ClothingHeadsetAltMTF
@@ -46,15 +46,15 @@
   id: FondSeniorSecurityOfficerGearAltA
   parent: FondSeniorSecurityOfficerGear
   equipment:
-    suitstorage: WeaponSubMachineGunMP5
+# Scp edit - disabled broken ported content.     suitstorage: WeaponSubMachineGunMP5
     pocket2: PouchAmmo
   storage:
     back:
     - Crowbar
-    - MagazineMP5
-    - MagazineMP5
-    - MagazineMP5
-    - MagazineMP5
+# Scp edit - disabled broken ported content.     - MagazineMP5
+    # Scp edit - disabled broken ported content. - MagazineMP5
+    # Scp edit - disabled broken ported content. - MagazineMP5
+    # Scp edit - disabled broken ported content. - MagazineMP5
     - Gauze
     - ScpRadioHandheldSecurity
     - BoxSurvivalSecurity
@@ -64,7 +64,7 @@
   id: FondSeniorSecurityOfficerGearAltB
   parent: FondSeniorSecurityOfficerGear
   equipment:
-    suitstorage: WeaponShotgunSPAS12
+# Scp edit - disabled broken ported content.     suitstorage: WeaponShotgunSPAS12
     pocket2: HandheldCrewMonitor
   storage:
     back:

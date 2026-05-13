@@ -27,10 +27,10 @@
             acts: [ "Destruction" ]
   # Sunrise-start
   - type: Tag
-    tags:
-      - NoPaint
+    tags: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - NoPaint
   # Sunrise-end
-
+#
 - type: entity
   id: HoloFan
   parent: HolosignWetFloor

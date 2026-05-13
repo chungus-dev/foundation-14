@@ -55,7 +55,7 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgePistolSP
+# Scp edit - disabled broken ported content.         startingItem: CartridgePistolSP
         priority: 1
         whitelist:
           tags:
@@ -75,10 +75,10 @@
   # Sunrise start
   - type: EmitSoundOnPickup
     sound:
-      collection: PistolsPickUp
+# Scp edit - disabled broken ported content.       collection: PistolsPickUp
   - type: EmitSoundOnDrop
     sound:
-      collection: PistolsDrop
+# Scp edit - disabled broken ported content.       collection: PistolsDrop
   - type: EmitSoundOnLand
     sound:
       collection: PistolsDrop

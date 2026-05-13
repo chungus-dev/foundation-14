@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: JuniorExternalAdministrativeZoneOfficer
   name: job-name-junior-external-administrative-zone-officer
   description: job-description-junior-external-administrative-zone-officer
@@ -29,8 +29,8 @@
       level: Three
     - type: ScpHolder
       holdableWhitelist:
-        components:
-        - HumanoidAppearance
+        components: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.         - HumanoidAppearance
       holdableBlacklist:
         components:
         - Scp
@@ -72,7 +72,7 @@
     id: KeyCardJuniorLightContainmentZoneSecurityOfficer
     ears: ClothingHeadsetExternalAdministrativeZoneSecurityService
     belt: ScpClothingBeltSecurityWebbingFilled
-    pocket1: HyperLinkBookCorporateLaw
+# Scp edit - disabled broken ported content.     pocket1: HyperLinkBookCorporateLaw
     pocket2: ScpSecurityPDA
   storage:
     back:

@@ -144,7 +144,7 @@
   - type: Tag
     tags:
       - Window
-      - Directional # Sunrise-Edit
+# Scp edit - disabled broken ported content.       - Directional # Sunrise-Edit
   - type: MeleeSound
     soundGroups:
       Brute:

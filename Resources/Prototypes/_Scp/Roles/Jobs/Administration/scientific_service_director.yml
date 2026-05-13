@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: ScientificServiceDirector
   name: job-name-scientific-service-director
   description: job-description-scientific-service-director
@@ -13,7 +13,7 @@
   icon: JobScientificServiceDirector
   supervisors: job-supervisors-director
   canBeAntag: true
-  radioBold: true
+# Scp edit - disabled broken ported content.   radioBold: true
   displayWeight: 50
   accessGroups:
   - ScientificServiceDirector
@@ -42,16 +42,16 @@
   id: ScientificServiceDirectorGear
   equipment:
     eyes: ClothingEyesGlasses
-    neck: ClothingNeckScarfRD
+# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfRD
     jumpsuit: ClothingUniformJumpsuitResearchDirector
     gloves: ClothingHandsGlovesLatex
     shoes: ClothingShoesColorBrown
     back: ClothingBackpackScience
     id: KeyCardScientificServiceDirector
     ears: ClothingHeadsetAltScientificService
-    pocket1: HandheldRoboAnalyzer
+# Scp edit - disabled broken ported content.     pocket1: HandheldRoboAnalyzer
     pocket2: ScientificServiceDirectorPDA
   storage:
     back:
     - Flash
-    - Telebaton
+# Scp edit - disabled broken ported content.     - Telebaton

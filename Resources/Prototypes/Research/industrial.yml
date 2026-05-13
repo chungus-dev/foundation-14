@@ -12,14 +12,14 @@
   defaultToScpScale: 0.1 # Fire Edit
   recipeUnlocks:
   - MiningDrill
-  - MechEquipmentDrill
+# Scp edit - disabled broken ported content.   - MechEquipmentDrill
   - MineralScannerEmpty
   - OreProcessorIndustrialMachineCircuitboard
-  - SheetPlasteel1Lathe
+# Scp edit - disabled broken ported content.   - SheetPlasteel1Lathe
   - ClothingMaskWeldingGas
   - ClothingShoesBootsJump
-  - BorgModuleJetpack # Sunrise-add
-
+# Scp edit - disabled broken ported content.   - BorgModuleJetpack # Sunrise-add
+#
 - type: technology
   id: SpaceScanning
   name: research-technology-space-scanning
@@ -111,7 +111,7 @@
   id: RipleyAPLU
   name: research-technology-ripley-aplu
   icon:
-    sprite: Objects/Specific/Mech/ripley.rsi
+    sprite: Objects/Specific/Mech/mecha.rsi # Scp edit - Ripley sprites live in the merged mecha RSI.
     state: ripley
   discipline: Industrial
   tier: 1

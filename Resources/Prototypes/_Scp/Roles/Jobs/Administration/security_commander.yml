@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: SecurityCommander
   name: job-name-security-commander
   description: job-description-security-commander
@@ -19,7 +19,7 @@
   icon: JobSecurityCommander
   supervisors: job-supervisors-director
   canBeAntag: false
-  radioBold: true # Sunrise-Edit
+# Scp edit - disabled broken ported content.   radioBold: true # Sunrise-Edit
   displayWeight: 80 # Sunrise-Edit
   accessGroups:
   - SecurityCommander
@@ -82,7 +82,7 @@
   equipment:
     head: ClothingHeadHatHoshat
     eyes: ClothingEyesGlassesSecurity
-    neck: ClothingNeckScarfHos
+# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfHos
     outerClothing: ClothingOuterCoatHoSTrench
     jumpsuit: ClothingUniformJumpsuitHoS
     gloves: ClothingHandsGlovesCombat

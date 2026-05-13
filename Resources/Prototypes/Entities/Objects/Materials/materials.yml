@@ -243,13 +243,13 @@
   # Sunrise added start
   - type: EmitSoundOnPickup
     sound:
-      path: /Audio/_Sunrise/Items/Handling/Wood/pickup.ogg
+      path: /Audio/_Scp/Items/Handling/Wood/pickup.ogg
   - type: EmitSoundOnDrop
     sound:
-      path: /Audio/_Sunrise/Items/Handling/Wood/drop.ogg
+      path: /Audio/_Scp/Items/Handling/Wood/drop.ogg
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/_Sunrise/Items/Handling/Wood/drop.ogg
+      path: /Audio/_Scp/Items/Handling/Wood/drop.ogg
   # Sunrise added end
   - type: Material
   - type: PhysicalComposition
@@ -357,7 +357,7 @@
     radius: 1.2
     energy: 2.7
     color: "#4faffb"
-    slots:
+    slots: {} # Scp edit - broken ported entries disabled.
 
 - type: entity
   parent: MaterialBase

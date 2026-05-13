@@ -29,7 +29,7 @@
   - type: StationEvent
     startColor: "#18abf5"
 #    startAudio: Fire edit
-#      path: /Audio/_Sunrise/Announcements/announce_dig.ogg
+#      path: /Audio/_Scp/Announcements/announce_dig.ogg
   - type: CargoGiftsRule
     sender: cargo-gift-default-sender
 

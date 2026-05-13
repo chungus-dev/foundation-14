@@ -48,8 +48,8 @@
       time: 72000 # 20hr
   storage:
     back:
-    - AtmosAlertsMonitor
-
+# Scp edit - disabled broken ported content.     - AtmosAlertsMonitor
+#
 - type: loadout
   id: ScpLoadoutEngineeringTechnicalServiceEngineeringAlertsMonitor
   effects:
@@ -60,8 +60,8 @@
       time: 72000 # 20hr
   storage:
     back:
-    - EngiAlertsMonitor
-
+# Scp edit - disabled broken ported content.     - EngiAlertsMonitor
+#
 - type: loadout
   id: ScpLoadoutEngineeringTechnicalServiceTrayScanner
   effects:
@@ -120,8 +120,8 @@
       time: 1080000 # 300hr
   storage:
     back:
-    - GoldenCrowbarWrench
-
+# Scp edit - disabled broken ported content.     - GoldenCrowbarWrench
+#
 - type: loadout
   id: ScpLoadoutChiefTechnicalSpecialistFigurine
   effects:

@@ -73,9 +73,9 @@
     generalMessages: ScpWallBrickMessages
     departmentMessages:
       EngineeringTechnicalService: ScpWallBrickEngineeringMessages
-    jobMessages:
-      ChiefTechnicalSpecialist: ScpWallBrickEngineeringMessages
-
+# Scp edit - disabled broken ported content.     jobMessages:
+#       ChiefTechnicalSpecialist: ScpWallBrickEngineeringMessages
+#
 - type: entity
   parent: ScpBaseWallDamageableVisuals
   id: ScpBaseWallDamageableVisualsWood

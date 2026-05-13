@@ -12,9 +12,9 @@
   defaultToScpScale: 0.0 # Fire Edit
   recipeUnlocks:
   - ProximitySensor
-  - Nanopaste # Sunrise-Add
-  - HandheldRoboAnalyzer # Sunrise-Add
-
+# Scp edit - disabled broken ported content.   - Nanopaste # Sunrise-Add
+# Scp edit - disabled broken ported content.   - HandheldRoboAnalyzer # Sunrise-Add
+#
 - type: technology
   id: BasicAnomalousResearch
   name: research-technology-basic-anomalous-research

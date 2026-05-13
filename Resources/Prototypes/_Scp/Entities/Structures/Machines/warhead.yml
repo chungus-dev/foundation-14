@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   abstract: true
   parent: [BaseStructure, BaseMajorContraband]
   id: BaseNuclearWarhead
@@ -75,7 +75,7 @@
   id: NuclearWarheadAlpha
   components:
   - type: Nuke
-    explosionType: DefaultStandardEffect
+    explosionType: Default # Scp edit - DefaultStandardEffect is unavailable in Foundation14.
     maxIntensity: 100
     intensitySlope: 400
     totalIntensity: 80000000

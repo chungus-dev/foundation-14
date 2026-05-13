@@ -61,7 +61,7 @@
   # Sunrise start
   - type: EmitSoundOnPickup
     sound:
-      path: /Audio/_Sunrise/Items/Handling/screwdriver_pickup.ogg
+      path: /Audio/_Scp/Items/Handling/screwdriver_pickup.ogg
       params:
         volume: -2
   - type: EmitSoundOnDrop

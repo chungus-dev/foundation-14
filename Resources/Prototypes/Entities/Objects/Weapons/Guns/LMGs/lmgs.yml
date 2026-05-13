@@ -37,7 +37,7 @@
     availableModes:
       - FullAuto
     soundGunshot:
-      collection: m249 # Sunrise-Edit
+# Scp edit - disabled broken ported content.       collection: m249 # Sunrise-Edit
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
   - type: ChamberMagazineAmmoProvider
@@ -48,7 +48,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineRifleBoxSP #Sunrise-Edit
+# Scp edit - disabled broken ported content.         startingItem: MagazineRifleBoxSP #Sunrise-Edit
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
@@ -57,7 +57,7 @@
             - MagazineLightRifleBox
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeRifleSP #Sunrise-Edit
+# Scp edit - disabled broken ported content.         startingItem: CartridgeRifleSP #Sunrise-Edit
         priority: 1
         whitelist:
           tags:
@@ -73,10 +73,10 @@
   # Sunrise start
   - type: EmitSoundOnPickup
     sound:
-      collection: RiflesPickUp
+# Scp edit - disabled broken ported content.       collection: RiflesPickUp
   - type: EmitSoundOnDrop
     sound:
-      collection: RiflesDrop
+# Scp edit - disabled broken ported content.       collection: RiflesDrop
   - type: EmitSoundOnLand
     sound:
       collection: RiflesDrop
@@ -155,7 +155,7 @@
         tags:
         - CartridgeRifle # Sunrise-Edit
       capacity: 200 # Sunrise-Edit
-      proto: CartridgeRifleFMJ # Sunrise-Edit
+# Scp edit - disabled broken ported content.       proto: CartridgeRifleFMJ # Sunrise-Edit
       cycleable: false # No synthesizing ammo for your syndicate masters.
     - type: BallisticAmmoSelfRefiller
       autoRefillRate: 4s

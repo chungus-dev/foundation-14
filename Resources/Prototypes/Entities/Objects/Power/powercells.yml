@@ -199,7 +199,7 @@
   # Sunrise added start - для вайтлиста
   - type: Tag
     tags:
-    - PowerCellHigh
+# Scp edit - disabled broken ported content.     - PowerCellHigh
     - PowerCell
   # Sunrise added end
   # Fire edit start

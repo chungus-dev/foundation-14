@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: RandomHumanoidSpawnerFondSeniorSecurityOfficer
   name: fond senior security officer spawner
   components:
@@ -12,9 +12,9 @@
   id: FondSeniorSecurityOfficer
   parent: CommonMTFCadet
   randomizeName: false
-  voiceWhitelist:
-  - ColinMoriartyFL1
-  - OfficerEnclave
+# Scp edit - disabled broken ported content.   voiceWhitelist:
+#   - ColinMoriartyFL1
+#   - OfficerEnclave
   components:
   - type: GhostRole
     name: ghost-role-information-fond-senior-security-officer-name
@@ -45,12 +45,12 @@
   id: FondSecurityOfficer
   parent: CommonMTFCadet
   randomizeName: false
-  voiceWhitelist:
-  - Crysis2Operator3v1
-  - Crysis2Blackops01
-  - Crysis2Blackops02
-  - Crysis2Overlord1
-  - Crysis2Overlord2
+  # Scp edit - disabled broken ported content. voiceWhitelist:
+  # - Crysis2Operator3v1
+  # - Crysis2Blackops01
+  # - Crysis2Blackops02
+  # - Crysis2Overlord1
+  # - Crysis2Overlord2
   components:
   - type: GhostRole
     name: ghost-role-information-fond-security-officer-name

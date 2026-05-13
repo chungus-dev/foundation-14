@@ -15,6 +15,7 @@ public sealed partial class BuyBeforeCondition : ListingCondition
     /// <summary>
     ///     Listing(s) that if bought, block this purchase, if any.
     /// </summary>
+    [DataField]
     public HashSet<ProtoId<ListingPrototype>>? Blacklist;
 
     public override bool Condition(ListingConditionArgs args)

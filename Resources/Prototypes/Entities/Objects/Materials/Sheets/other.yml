@@ -13,7 +13,7 @@
     tags:
     - Sheet
     - ConstructionMaterial
-    - NoPaint  # Sunrise-edit
+# Scp edit - disabled broken ported content.     - NoPaint  # Sunrise-edit
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -67,7 +67,7 @@
   # Sunrise-Start
   - type: Tag
     tags:
-    - SheetPaper
+# Scp edit - disabled broken ported content.     - SheetPaper
     - Sheet
   # Sunrise-End
 

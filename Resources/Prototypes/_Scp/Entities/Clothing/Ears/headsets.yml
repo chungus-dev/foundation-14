@@ -1,13 +1,13 @@
-﻿# Служба безопасности тяжелой зоны
+# Служба безопасности тяжелой зоны
 
 - type: entity
   parent: [BaseScpHeadset, BaseSecurityLawyerContraband]
   id: ClothingHeadsetHeavyContainmentSecurityService
   components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyHeavyContainmentSecurityService
+# Scp edit - disabled broken ported content.   - type: ContainerFill
+#     containers:
+#       key_slots:
+#       - EncryptionKeyHeavyContainmentSecurityService
   - type: Sprite
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing

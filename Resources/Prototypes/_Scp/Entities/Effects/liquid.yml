@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: BaseLiquidParticle
   abstract: true
   name: liquid particle
@@ -14,8 +14,8 @@
     fixedRotation: false
   - type: Puddle
     solution: blood
-    canSlow: false
-    canSlip: false
+# Scp edit - disabled broken ported content.     canSlow: false
+# Scp edit - disabled broken ported content.     canSlip: false
   - type: Appearance
   - type: SolutionContainerManager
     solutions:

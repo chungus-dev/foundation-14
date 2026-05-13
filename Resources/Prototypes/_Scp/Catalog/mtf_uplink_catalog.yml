@@ -1,4 +1,4 @@
-﻿# Заготовленные наборы
+# Заготовленные наборы
 - type: listing
   id: ScpUplinkMtfUnlockScpKitStart
   name: shop-name-unlock
@@ -30,17 +30,17 @@
   - ScpKitStart
   conditions:
   - !type:BuyBeforeCondition
-    blacklist:
-    - ScpUplinkMtfStorageCrateMedicalNtf
-    - ScpUplinkMtfStorageCrateMedicalScoutNtf
-    - ScpUplinkMtfStorageCrateArmorScoutNtf
-    - ScpUplinkMtfStorageCrateArmorNtf
-    - ScpUplinkMtfStorageCrateArmorMediumNtf
-    - ScpUplinkMtfStorageCrateArmorHDMed
-    - ScpUplinkMtfStorageCrateArmorHD
-    - ScpUplinkMtfStorageCrateArmorHeavyHD
-    - ScpUplinkMtfStorageCrateArmorHDLeader
-    - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+# Scp edit - disabled broken ported content.     blacklist:
+#     - ScpUplinkMtfStorageCrateMedicalNtf
+#     - ScpUplinkMtfStorageCrateMedicalScoutNtf
+#     - ScpUplinkMtfStorageCrateArmorScoutNtf
+#     - ScpUplinkMtfStorageCrateArmorNtf
+#     - ScpUplinkMtfStorageCrateArmorMediumNtf
+#     - ScpUplinkMtfStorageCrateArmorHDMed
+#     - ScpUplinkMtfStorageCrateArmorHD
+#     - ScpUplinkMtfStorageCrateArmorHeavyHD
+#     - ScpUplinkMtfStorageCrateArmorHDLeader
+#     - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
     whitelist:
     - ScpUplinkMtfUnlockScpKitStart
   - !type:BuyerJobCondition
@@ -551,7 +551,7 @@
 
 - type: listing
   id: ScpUplinkPouchExplosiveFilled
-  productEntity: PouchExplosiveFilled
+# Scp edit - disabled broken ported content.   productEntity: PouchExplosiveFilled
   name: shop-name-pouch-explosive-filled
   description: shop-desc-pouch-explosive-filled
   icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: pouch_granade_filled }
@@ -621,7 +621,7 @@
   productEntity: MtfStorageCrateSubMachineGunMP5
   name: shop-name-mp5box
   description: shop-desc-mp5box
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: mp5 }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: mp5 }
   categories:
   - ScpPrimaryArms
   conditions:
@@ -645,7 +645,7 @@
   productEntity: MtfStorageCrateSubMachineGunP90
   name: shop-name-p90box
   description: shop-desc-p90box
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: p90 }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: p90 }
   categories:
   - ScpPrimaryArms
   conditions:
@@ -698,7 +698,7 @@
   productEntity: MtfStorageCrateRifleG36
   name: shop-name-g36box
   description: shop-desc-g36box
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: g36 }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: g36 }
   categories:
   - ScpPrimaryArms
   conditions:
@@ -825,7 +825,7 @@
   productEntity: MtfStorageCrateRifleBR64
   name: shop-name-br64box
   description: shop-desc-br64box
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: br64 }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: br64 }
   cost:
     SupplyPoint: 3
   categories:
@@ -856,7 +856,7 @@
 
 - type: listing
   id: ScpUplinkWeaponEarthGovLaserRifle
-  productEntity: WeaponEarthGovLaserRifle
+# Scp edit - disabled broken ported content.   productEntity: WeaponEarthGovLaserRifle
   icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: eg-r }
   cost:
     SupplyPoint: 1
@@ -888,7 +888,7 @@
 
 - type: listing
   id: ScpUplinkWeaponEarthGovLaserSniper
-  productEntity: WeaponEarthGovLaserSniper
+# Scp edit - disabled broken ported content.   productEntity: WeaponEarthGovLaserSniper
   icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: gov-laser-sniper }
   cost:
     SupplyPoint: 2
@@ -964,7 +964,7 @@
 - type: listing
   id: ScpUplinkWeaponPulseRifle
   productEntity: WeaponPulseRifle
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: pulse-r }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: pulse-r }
   cost:
     SupplyPoint: 3
   categories:
@@ -1002,7 +1002,7 @@
 - type: listing
   id: ScpUplinkWeaponSniperPulseCarbineScp
   productEntity: WeaponSniperPulseCarbineScp
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: pulse-sc }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: pulse-sc }
   cost:
     SupplyPoint: 4
   categories:
@@ -1054,7 +1054,7 @@
   productEntity: MtfStorageCratePistolACP14
   name: shop-name-acp14box
   description: shop-desc-acp14box
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: acp14 }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: acp14 }
   categories:
   - ScpPistols
   conditions:
@@ -1075,7 +1075,7 @@
   productEntity: MtfStorageCratePistolG22
   name: shop-name-glock22box
   description: shop-desc-glock22box
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: g22 }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: g22 }
   categories:
   - ScpPistols
   conditions:
@@ -1117,7 +1117,7 @@
   productEntity: MtfStorageCrateRevolverSpearhead
   name: shop-name-revolversbox
   description: shop-desc-revolversbox
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: spearhead }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: spearhead }
   categories:
   - ScpPistols
   conditions:
@@ -1141,7 +1141,7 @@
 
 - type: listing
   id: ScpUplinkWeaponEarthGovLaserPistol
-  productEntity: WeaponEarthGovLaserPistol
+# Scp edit - disabled broken ported content.   productEntity: WeaponEarthGovLaserPistol
   icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: eg-p }
   cost:
     SupplyPoint: 1
@@ -1203,7 +1203,7 @@
 - type: listing
   id: ScpUplinkWeaponPulsePistolScp
   productEntity: WeaponPulsePistolScp
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: pulse-p }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: pulse-p }
   cost:
     SupplyPoint: 2
   categories:
@@ -1235,7 +1235,7 @@
 # Боеприпасы
 - type: listing
   id: ScpUplinkMagazineLightMachineGunMG60
-  productEntity: MagazineLightMachineGunMG60
+# Scp edit - disabled broken ported content.   productEntity: MagazineLightMachineGunMG60
   cost:
     SupplyPoint: 2
   categories:
@@ -1257,7 +1257,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBauer127
-  productEntity: MagazineBauer127
+# Scp edit - disabled broken ported content.   productEntity: MagazineBauer127
   cost:
     SupplyPoint: 2
   categories:
@@ -1268,7 +1268,7 @@
 
 - type: listing
   id: ScpUplinkMagazineMP5
-  productEntity: MagazineMP5
+# Scp edit - disabled broken ported content.   productEntity: MagazineMP5
   cost:
     SupplyPoint: 1
   categories:
@@ -1279,7 +1279,7 @@
 
 - type: listing
   id: ScpUplinkMagazineP90
-  productEntity: MagazineP90
+# Scp edit - disabled broken ported content.   productEntity: MagazineP90
   cost:
     SupplyPoint: 1
   categories:
@@ -1290,7 +1290,7 @@
 
 - type: listing
   id: ScpUplinkMagazineGlock22
-  productEntity: MagazineGlock22
+# Scp edit - disabled broken ported content.   productEntity: MagazineGlock22
   cost:
     SupplyPoint: 1
   categories:
@@ -1301,7 +1301,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxPistolSP
-  productEntity: MagazineBoxPistolSP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistolSP
   cost:
     SupplyPoint: 1
   categories:
@@ -1312,7 +1312,7 @@
 
 - type: listing
   id: ScpUplinkMagazineRifleSP
-  productEntity: MagazineRifleSP
+# Scp edit - disabled broken ported content.   productEntity: MagazineRifleSP
   cost:
     SupplyPoint: 1
   categories:
@@ -1323,7 +1323,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxRifleSP
-  productEntity: MagazineBoxRifleSP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxRifleSP
   cost:
     SupplyPoint: 1
   categories:
@@ -1334,7 +1334,7 @@
 
 - type: listing
   id: ScpUplinkMagazineRifleHeavySP
-  productEntity: MagazineRifleHeavySP
+# Scp edit - disabled broken ported content.   productEntity: MagazineRifleHeavySP
   cost:
     SupplyPoint: 1
   categories:
@@ -1345,7 +1345,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxHeavyRifleSP
-  productEntity: MagazineBoxHeavyRifleSP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxHeavyRifleSP
   cost:
     SupplyPoint: 1
   categories:
@@ -1356,7 +1356,7 @@
 
 - type: listing
   id: ScpUplinkMagazinePistol40SP
-  productEntity: MagazinePistol40SP
+# Scp edit - disabled broken ported content.   productEntity: MagazinePistol40SP
   cost:
     SupplyPoint: 1
   categories:
@@ -1367,7 +1367,7 @@
 
 - type: listing
   id: ScpUplinkMagazineACP14
-  productEntity: MagazineACP14
+# Scp edit - disabled broken ported content.   productEntity: MagazineACP14
   cost:
     SupplyPoint: 1
   categories:
@@ -1378,7 +1378,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxPistol40SP
-  productEntity: MagazineBoxPistol40SP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistol40SP
   cost:
     SupplyPoint: 1
   categories:
@@ -1389,7 +1389,7 @@
 
 - type: listing
   id: ScpUplinkSpeedLoaderMagnumSP
-  productEntity: SpeedLoaderMagnumSP
+# Scp edit - disabled broken ported content.   productEntity: SpeedLoaderMagnumSP
   cost:
     SupplyPoint: 1
   categories:
@@ -1400,7 +1400,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxMagnumSP
-  productEntity: MagazineBoxMagnumSP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxMagnumSP
   cost:
     SupplyPoint: 2
   categories:
@@ -1422,7 +1422,7 @@
 
 - type: listing
   id: ScpUplinkSpeedLoaderShellShotgun
-  productEntity: SpeedLoaderShellShotgun
+# Scp edit - disabled broken ported content.   productEntity: SpeedLoaderShellShotgun
   cost:
     SupplyPoint: 1
   categories:
@@ -1488,7 +1488,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxMagnumHP
-  productEntity: MagazineBoxMagnumHP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxMagnumHP
   cost:
     SupplyPoint: 3
   categories:
@@ -1499,7 +1499,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxMagnumFMJ
-  productEntity: MagazineBoxMagnumFMJ
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxMagnumFMJ
   cost:
     SupplyPoint: 3
   categories:
@@ -1510,7 +1510,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxPistol40FMJ
-  productEntity: MagazineBoxPistol40FMJ
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistol40FMJ
   cost:
     SupplyPoint: 2
   categories:
@@ -1521,7 +1521,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxPistol40HP
-  productEntity: MagazineBoxPistol40HP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistol40HP
   cost:
     SupplyPoint: 2
   categories:
@@ -1532,7 +1532,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxPistol40AP
-  productEntity: MagazineBoxPistol40AP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistol40AP
   cost:
     SupplyPoint: 3
   categories:
@@ -1543,7 +1543,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxPistolFMJ
-  productEntity: MagazineBoxPistolFMJ
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistolFMJ
   cost:
     SupplyPoint: 2
   categories:
@@ -1554,7 +1554,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxPistolHP
-  productEntity: MagazineBoxPistolHP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistolHP
   cost:
     SupplyPoint: 2
   categories:
@@ -1565,7 +1565,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxPistolAP
-  productEntity: MagazineBoxPistolAP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistolAP
   cost:
     SupplyPoint: 3
   categories:
@@ -1576,7 +1576,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxRifleAP
-  productEntity: MagazineBoxRifleAP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxRifleAP
   cost:
     SupplyPoint: 3
   categories:
@@ -1587,7 +1587,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxRifleFMJ
-  productEntity: MagazineBoxRifleFMJ
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxRifleFMJ
   cost:
     SupplyPoint: 2
   categories:
@@ -1598,7 +1598,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxRifleHP
-  productEntity: MagazineBoxRifleHP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxRifleHP
   cost:
     SupplyPoint: 2
   categories:
@@ -1609,7 +1609,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxHeavyRifleFMJ
-  productEntity: MagazineBoxHeavyRifleFMJ
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxHeavyRifleFMJ
   cost:
     SupplyPoint: 2
   categories:
@@ -1620,7 +1620,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxHeavyRifleHP
-  productEntity: MagazineBoxHeavyRifleHP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxHeavyRifleHP
   cost:
     SupplyPoint: 2
   categories:
@@ -1631,7 +1631,7 @@
 
 - type: listing
   id: ScpUplinkMagazineBoxHeavyRifleAP
-  productEntity: MagazineBoxHeavyRifleAP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxHeavyRifleAP
   cost:
     SupplyPoint: 3
   categories:
@@ -1686,7 +1686,7 @@
 
 - type: listing
   id: ScpUplinkSpeedLoaderShotgunSlug
-  productEntity: SpeedLoaderShotgunSlug
+# Scp edit - disabled broken ported content.   productEntity: SpeedLoaderShotgunSlug
   cost:
     SupplyPoint: 1
   categories:
@@ -1697,7 +1697,7 @@
 
 - type: listing
   id: ScpUplinkSpeedLoaderShotgunIncendiary
-  productEntity: SpeedLoaderShotgunIncendiary
+# Scp edit - disabled broken ported content.   productEntity: SpeedLoaderShotgunIncendiary
   cost:
     SupplyPoint: 2
   categories:
@@ -1710,7 +1710,7 @@
 - type: listing
   id: ScpUplinkMedkitOxygenFilled
   productEntity: MedkitOxygenFilled
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: med-oxygen }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-oxygen }
   cost:
     SupplyPoint: 1
   categories:
@@ -1722,7 +1722,7 @@
 - type: listing
   id: ScpUplinkMedkitBruteFilled
   productEntity: MedkitBruteFilled
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: med-brute }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-brute }
   cost:
     SupplyPoint: 2
   categories:
@@ -1735,7 +1735,7 @@
   id: ScpUplinkMedkitRadiationFilled
   productEntity: MedkitRadiationFilled
   description: shop-desc-antiradkit
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: med-rad }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-rad }
   cost:
     SupplyPoint: 3
   categories:
@@ -1747,7 +1747,7 @@
 - type: listing
   id: ScpUplinkMedkitToxinFilled
   productEntity: MedkitToxinFilled
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: med-toxin }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-toxin }
   cost:
     SupplyPoint: 3
   categories:
@@ -1758,7 +1758,7 @@
 
 - type: listing
   id: ScpUplinkMedkitBurnFilled
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: med-burn }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-burn }
   productEntity: MedkitBurnFilled
   cost:
     SupplyPoint: 2
@@ -1771,7 +1771,7 @@
 - type: listing
   id: ScpUplinkMedkitCombatFilled
   productEntity: MedkitCombatFilled
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: med-black }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-black }
   cost:
     SupplyPoint: 5
   categories:
@@ -1783,7 +1783,7 @@
 - type: listing
   id: ScpUplinkDuffelScpMedicalBundleFilled
   productEntity: ClothingBackpackDuffelScpMedicalBundleFilled
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: med_bundle }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med_bundle }
   cost:
     SupplyPoint: 15
   categories:
@@ -1911,7 +1911,7 @@
 - type: listing
   id: ScpUplinkPinpointerUniversal
   productEntity: PinpointerUniversal
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: universal_pinpointer }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: universal_pinpointer }
   cost:
     SupplyPoint: 1
   categories:
@@ -1933,7 +1933,7 @@
 - type: listing
   id: ScpUplinkBoxHandcuff
   productEntity: BoxHandcuff
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: box_handcuffs }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: box_handcuffs }
   categories:
   - ScpAdditional
   conditions:
@@ -1943,7 +1943,7 @@
 - type: listing
   id: ScpUplinkDeployableBarrier
   productEntity: DeployableBarrier
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: deploy_barrier }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: deploy_barrier }
   categories:
   - ScpAdditional
   conditions:
@@ -1953,7 +1953,7 @@
 - type: listing
   id: ScpUplinkBoxBodyBag
   productEntity: BoxBodyBag
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: box_bodybags }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: box_bodybags }
   categories:
   - ScpAdditional
   conditions:
@@ -1963,7 +1963,7 @@
 - type: listing
   id: ScpUplinkBoxCleanerGrenades
   productEntity: BoxCleanerGrenades
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: box_flashbangs }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: box_flashbangs }
   cost:
     SupplyPoint: 1
   categories:
@@ -1980,7 +1980,7 @@
 - type: listing
   id: ScpUplinkAdvMopItem
   productEntity: AdvMopItem
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: adv-mop }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: adv-mop }
   cost:
     SupplyPoint: 3
   categories:
@@ -1997,7 +1997,7 @@
 - type: listing
   id: ScpUplinkPowerCellScp
   productEntity: PowerCellScp
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: power_cell_nt }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: power_cell_nt }
   cost:
     SupplyPoint: 2
   categories:
@@ -2008,8 +2008,8 @@
 
 - type: listing
   id: ScpUplinkClothingEyesNVD
-  productEntity: ClothingEyesNVDSec
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: nvd }
+# Scp edit - disabled broken ported content.   productEntity: ClothingEyesNVDSec
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: nvd }
   cost:
     SupplyPoint: 6
   categories:
@@ -2020,7 +2020,7 @@
 
 - type: listing
   id: ScpUplinkClothingShoesBootsMagCombat
-  productEntity: ClothingShoesBootsMagCombat
+# Scp edit - disabled broken ported content.   productEntity: ClothingShoesBootsMagCombat
   icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: magbootscombat }
   cost:
     SupplyPoint: 3
@@ -2033,7 +2033,7 @@
 - type: listing
   id: ScpUplinkPortableRecharger
   productEntity: PortableRecharger
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: port_recharge }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: port_recharge }
   cost:
     SupplyPoint: 8
   categories:
@@ -2057,7 +2057,7 @@
 - type: listing
   id: ScpUplinkFlash
   productEntity: Flash
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: flash }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: flash }
   cost:
     SupplyPoint: 1
   categories:
@@ -2069,7 +2069,7 @@
 - type: listing
   id: ScpUplinkStunbaton
   productEntity: Stunbaton
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: stunbaton }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: stunbaton }
   cost:
     SupplyPoint: 1
   categories:
@@ -2124,7 +2124,7 @@
 
 - type: listing
   id: ScpUplinkCyberPistolCHIMP
-  productEntity: CyberPistolCHIMP
+# Scp edit - disabled broken ported content.   productEntity: CyberPistolCHIMP
   cost:
     SupplyPoint: 1
   categories:
@@ -2460,7 +2460,7 @@
   productEntity: MtfStorageCrateGrenadeLauncherGL70
   name: shop-name-gl70box
   description: shop-desc-gl70box
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: gl79 }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: gl79 }
   categories:
   - ScpSpecWeapon
   conditions:
@@ -2507,7 +2507,7 @@
 
 - type: listing
   id: ScpUplinkWeaponEarthGovLaserMG
-  productEntity: WeaponEarthGovLaserMG
+# Scp edit - disabled broken ported content.   productEntity: WeaponEarthGovLaserMG
   icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: eg-mg }
   categories:
   - ScpSpecWeapon
@@ -2530,10 +2530,10 @@
 
 - type: listing
   id: ScpUplinkPowerpackMinigunMG100
-  productEntity: PowerpackMinigunMG100
+# Scp edit - disabled broken ported content.   productEntity: PowerpackMinigunMG100
   name: shop-name-mg100
   description: shop-desc-mg100
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: mg_100 }
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: mg_100 }
   categories:
   - ScpSpecWeapon
   conditions:

@@ -1,8 +1,8 @@
 - type: loadout
   id: ScpLoadoutClothingHeadHatBeretParamedic
-  equipment:
-    head: ClothingHeadHatBeretParamedic
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretParamedic
+#
 - type: loadout
   id: ScpLoadoutClothingHeadHatParamedicsoft
   equipment:

@@ -11,6 +11,8 @@
     sprite: _Scp/Structures/Windows/directional.rsi
   - type: SpriteFade
   - type: DamageVisuals
+    thresholds: [5, 10, 20] # Scp edit - required by current DamageVisualsComponent.
+    trackAllDamage: true
     damageOverlay:
       sprite: _Scp/Effects/DamageOverlay/cracks_directional.rsi
 

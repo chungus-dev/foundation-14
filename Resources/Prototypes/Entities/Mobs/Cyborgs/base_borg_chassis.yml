@@ -74,15 +74,17 @@
       # Only used for NT borgs that can switch type, defined here to avoid copy-pasting the rest of this component.
       enum.BorgSwitchableTypeUiKey.SelectBorgType:
         type: BorgSelectTypeUserInterface
-      enum.BorgVoiceUiKey.Key:
-        type: BorgVoiceBoundUserInterface
+      # Scp edit - Sunrise borg voice UI is unavailable in Foundation14
+      # enum.BorgVoiceUiKey.Key:
+      #   type: BorgVoiceBoundUserInterface
   - type: ActivatableUI
     key: enum.BorgUiKey.Key
   - type: SiliconLawBound
   - type: ActionGrant
     actions:
     - ActionViewLaws
-    - ActionChangeBorgVoice
+    # Scp edit - Sunrise borg voice action is unavailable in Foundation14
+    # - ActionChangeBorgVoice
   - type: EmagSiliconLaw
     stunTime: 5
   - type: SiliconLawProvider
@@ -114,15 +116,17 @@
     allowSelfRepair: false
   # Sunrise-Start
     damage:
-      groups:
-        Brute: -10
       types:
+        Blunt: -10
+        Slash: -10
+        Piercing: -10
         Heat: -5
         Shock: -5
         Caustic: -5
         Structural: -10
-  - type: Loadout
-    prototypes: [ BorgArmorSiliconLoadout ]
+  # Scp edit - old Sunrise borg armor loadout is unavailable.
+  # - type: Loadout
+  #   prototypes: [ BorgArmorSiliconLoadout ]
   # Sunrise-End
   - type: BorgChassis
 #  - type: BorgVoice # Sunrise-TTS: Allow cyborgs to change their voice # SCP port: component unavailable in Foundation14
@@ -189,7 +193,7 @@
   - type: LockedWiresPanel
   - type: Damageable
     damageContainer: Silicon
-    damageModifierSet: Silicon # Sunrise-Edit
+    damageModifierSet: Metallic # Scp edit - old Silicon modifier set is unavailable.
   - type: Destructible
     thresholds:
     - trigger:
@@ -279,10 +283,12 @@
 #    sprintModifier: 0.8
   - type: Strap
     position: Stand
-    buckleOffsets: # Sunrise-Edit
-    - "0,0.15"
+    # Scp edit - old Strap buckleOffsets field is unavailable.
+    # buckleOffsets:
+    # - "0,0.15"
   - type: Stripping
-    useDragDrop: false
+    # Scp edit - old Stripping useDragDrop field is unavailable.
+    # useDragDrop: false
 #  - type: CyborgSparkEffect # SCP port: component unavailable in Foundation14
   # - type: MechVulnerableToEMP # SCP port: component unavailable in Foundation14
   # Sunrise-end

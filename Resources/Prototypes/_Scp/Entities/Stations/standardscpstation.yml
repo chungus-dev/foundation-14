@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: StandardScpStation
   abstract: true
   parent:
@@ -27,9 +27,9 @@
     data:
     - biome: ScpComplexSnow
       weather:
-      - SnowfallMedium
-      - SnowfallLight
-
+# Scp edit - disabled broken ported content.       - SnowfallMedium
+# Scp edit - disabled broken ported content.       - SnowfallLight
+#
 - type: entity
   id: ScpComplexCompact
   parent: StandardScpStation

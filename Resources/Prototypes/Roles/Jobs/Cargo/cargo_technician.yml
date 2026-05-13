@@ -10,15 +10,15 @@
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
   # Sunrise-Start
-  alternativeTitles:
-  - job-alt-title-handyman
+# Scp edit - disabled broken ported content.   alternativeTitles:
+#   - job-alt-title-handyman
   # Sunrise-End
   access:
   - Cargo
   - Maintenance
   extendedAccess:
   - Salvage
-  - CargoPurchaseAccess # Sunrise-add
+# Scp edit - disabled broken ported content.   - CargoPurchaseAccess # Sunrise-add
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: BoxingDay

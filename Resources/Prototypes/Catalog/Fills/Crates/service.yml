@@ -371,7 +371,7 @@
         - id: FoodPacketSyndiTrash
           prob: 0.1
         - id: FoodPacketChowMeinTrash
-          prob: 0.1
+# Scp edit - disabled broken ported content.           prob: 0.1
         - id: FoodPacketDanDanTrash
           prob: 0.1
         - id: FoodPacketMRETrash

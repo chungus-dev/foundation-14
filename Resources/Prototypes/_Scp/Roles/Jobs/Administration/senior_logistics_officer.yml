@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: SeniorLogisticsOfficer
   name: job-name-senior-logistics-officer
   description: job-description-senior-logistics-officer
@@ -16,7 +16,7 @@
   icon: JobSeniorLogisticsOfficer
   supervisors: job-supervisors-director
   canBeAntag: true
-  radioBold: true
+# Scp edit - disabled broken ported content.   radioBold: true
   displayWeight: 40
   accessGroups:
   - SeniorLogisticsOfficer
@@ -37,10 +37,10 @@
 - type: startingGear
   id: SeniorLogisticsOfficerGear
   equipment:
-    head: ClothingHeadBandOrange
+# Scp edit - disabled broken ported content.     head: ClothingHeadBandOrange
     eyes: ClothingEyesGlasses
     mask: ClothingMaskGasExplorer
-    neck: ClothingNeckScarfQm
+# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfQm
     outerClothing: ClothingOuterWinterMiner
     jumpsuit: ClothingUniformJumpsuitQM
     gloves: ClothingHandsGlovesColorLightBrown

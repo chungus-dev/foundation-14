@@ -29,7 +29,7 @@
     - Arsenal
     - Experimental
     - CivilianServices
-    - Biochemical
+# Scp edit - disabled broken ported content.     - Biochemical
     - SCP # Fire
   - type: ApcPowerReceiver
     powerLoad: 200
@@ -79,7 +79,7 @@
     - Science
   # Sunrise-Start
   - type: Item
-    sprite: _Sunrise/Structures/Machines/server.rsi
+    sprite: _Scp/Structures/Machines/server.rsi
     size: Ginormous
   - type: DamageOtherOnHit
     damage:
@@ -121,7 +121,8 @@
       map: ["enum.PowerDeviceVisualLayers.Powered"]
   - type: ResearchClient
   - type: ResearchPointSource
-    pointspersecond: 25
+    pointspersecond:
+      Default: 25
     active: true
   - type: PointLight
     radius: 1.5

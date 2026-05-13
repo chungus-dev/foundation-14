@@ -15,8 +15,8 @@
   id: ScpLoadoutTelebaton
   storage:
     back:
-    - Telebaton
-
+# Scp edit - disabled broken ported content.     - Telebaton
+#
 - type: loadoutGroup
   id: ScpLoadoutGroupBackStorageFlashTelebaton
   name: loadout-group-storage

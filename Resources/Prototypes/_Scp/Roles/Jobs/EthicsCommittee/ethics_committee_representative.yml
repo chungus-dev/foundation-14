@@ -1,17 +1,18 @@
-﻿- type: job
+- type: job
   id: EthicsCommitteeRepresentative
   name: job-name-ethics-committee-representative
   description: job-description-ethics-committee-representative
   playTimeTracker: JobEthicsCommitteeRepresentative
   requirements:
-  - !type:DiscordRoleRequirement
+  # Scp edit - Sunrise DiscordRoleRequirement is unavailable in Foundation14
+  # - !type:DiscordRoleRequirement
   - !type:AgeRequirement
     requiredAge: 32
   weight: 860
   icon: JobEthicsCommitteeRepresentative
   supervisors: job-supervisors-ethics-committee
   canBeAntag: true
-  radioBold: true
+# Scp edit - disabled broken ported content.   radioBold: true
   displayWeight: 50
   accessGroups:
   - EthicsCommittee
@@ -28,7 +29,7 @@
   id: EthicsCommitteeRepresentativeGear
   equipment:
     shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesSunGlassesHudSkill
+# Scp edit - disabled broken ported content.     eyes: ClothingEyesSunGlassesHudSkill
     head: ClothingHeadHatCapEthicsCommittee
     id: KeyCardEthicsCommitteePass
     ears: ClothingHeadsetAltEthicsCommittee

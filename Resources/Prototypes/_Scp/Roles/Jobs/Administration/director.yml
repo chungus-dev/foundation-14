@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: Director
   name: job-name-director
   description: job-description-director
@@ -15,7 +15,7 @@
   supervisors: job-supervisors-O5-command
   canBeAntag: false
   displayWeight: 100
-  radioBold: true
+# Scp edit - disabled broken ported content.   radioBold: true
   accessGroups:
   - Director
   special:

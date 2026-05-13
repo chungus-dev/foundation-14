@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: BaseScpArtifactEffect
   parent: BaseXenoArtifactEffect
   abstract: true
@@ -146,8 +146,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEPolymorph
-    polymorphPrototypeName: SunriseEffectChair
-
+# Scp edit - disabled broken ported content.     polymorphPrototypeName: SunriseEffectChair
+#
 - type: entity
   id: ScpEffectPolyWatermelon
   parent: BaseScpArtifactEffect
@@ -155,8 +155,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEPolymorph
-    polymorphPrototypeName: SunriseEffectWatermelon
-
+# Scp edit - disabled broken ported content.     polymorphPrototypeName: SunriseEffectWatermelon
+#
 - type: entity
   id: ScpEffectPolyAppendix
   parent: BaseScpArtifactEffect
@@ -164,8 +164,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEPolymorph
-    polymorphPrototypeName: SunriseEffectAppendix
-
+# Scp edit - disabled broken ported content.     polymorphPrototypeName: SunriseEffectAppendix
+#
 - type: entity
   id: ScpEffectPolyScrewdriver
   parent: BaseScpArtifactEffect
@@ -200,8 +200,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEPolymorph
-    polymorphPrototypeName: SunriseEffectDisposal
-
+# Scp edit - disabled broken ported content.     polymorphPrototypeName: SunriseEffectDisposal
+#
 - type: entity
   id: ScpEffectPolyTable
   parent: BaseScpArtifactEffect
@@ -209,8 +209,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEPolymorph
-    polymorphPrototypeName: SunriseEffectTable
-
+# Scp edit - disabled broken ported content.     polymorphPrototypeName: SunriseEffectTable
+#
 # SCP port: disabled; depends on the _Sunrise ArtifactWhitelistSwap effect.
 # - type: entity
 #   id: ScpEffectSwap
@@ -230,7 +230,7 @@
 #     otherMapWhitelist:
 #       components:
 #       - Scp106BackRoomMap
-
+#
 - type: entity
   id: EffectMagnetUltra
   parent: BaseScpArtifactEffect
@@ -378,12 +378,17 @@
       components:
       - MobState
     damage:
-      groups:
-        Brute: -300
-        Burn: -300
-
+      types:
+        Blunt: -300
+        Slash: -300
+        Piercing: -300
+        Heat: -300
+        Shock: -300
+        Cold: -300
+        Caustic: -300
+#
 # Scp 173
-
+#
 - type: entity
   id: ScpEffectBlind
   parent: BaseScpArtifactEffect

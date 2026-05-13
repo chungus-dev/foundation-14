@@ -1,8 +1,8 @@
 - type: loadout
   id: ScpLoadoutClothingOuterCoatLabSecurityMedic
-  equipment:
-    outerClothing: ClothingOuterCoatLabSecurityMedic
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatLabSecurityMedic
+#
 - type: loadout
   id: ScpLoadoutClothingEyesHudMedSec
   equipment:
@@ -10,9 +10,9 @@
 
 - type: loadout
   id: ScpLoadoutClothingHeadHatBeretSecurityMedic
-  equipment:
-    head: ClothingHeadHatBeretSecurityMedic
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretSecurityMedic
+#
 - type: loadout
   id: ScpLoadoutKeyCardFieldMedicalSpecialist
   equipment:

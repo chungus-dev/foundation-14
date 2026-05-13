@@ -1,8 +1,8 @@
 - type: loadout
   id: ScpLoadoutClothingEyesSunGlassesHudSkill
-  equipment:
-    eyes: ClothingEyesSunGlassesHudSkill
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     eyes: ClothingEyesSunGlassesHudSkill
+#
 - type: loadout
   id: ScpLoadoutClothingHeadHatCapEthicsCommittee
   equipment:
@@ -99,4 +99,4 @@
   id: ScpLoadoutEthicsCommitteeRepresentativeVetoStamp
   storage:
     back:
-    - RubberStampVeto
+# Scp edit - disabled broken ported content.     - RubberStampVeto

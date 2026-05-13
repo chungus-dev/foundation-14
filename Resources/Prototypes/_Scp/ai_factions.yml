@@ -1,4 +1,4 @@
-﻿- type: npcFaction
+- type: npcFaction
   id: Chaos
   hostile:
   - NanoTrasen
@@ -9,11 +9,11 @@
   - AllHostile
   - Wizard
   # =======
-  - Thief
-  - Carps
-  - Vampire
-  - FleshHuman
-  - Flesh
+# Scp edit - disabled broken ported content.   - Thief
+# Scp edit - disabled broken ported content.   - Carps
+# Scp edit - disabled broken ported content.   - Vampire
+# Scp edit - disabled broken ported content.   - FleshHuman
+# Scp edit - disabled broken ported content.   - Flesh
   # =======
   - SCPs
 

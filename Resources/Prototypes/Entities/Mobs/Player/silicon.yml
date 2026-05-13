@@ -31,7 +31,7 @@
     - Administration
     - EthicsCommittee
     - HeavyContainmentSecurityService
-    - ExternalAdministrativeZoneSecurityService
+# Scp edit - disabled broken ported content.     - ExternalAdministrativeZoneSecurityService
     - Security
     - ScientificService
     - MedicalService
@@ -46,7 +46,7 @@
   - type: ActionGrant
     actions:
     - ActionJumpToCore
-    - ActionSurvCameraLights
+# Scp edit - disabled broken ported content.     - ActionSurvCameraLights
     - ActionAIViewLaws
   - type: UserInterface
     interfaces:
@@ -82,8 +82,8 @@
     canShuttle: false
     title: comms-console-announcement-title-complex-ai # Fire edit
     color: "#5ed7aa"
-    announceVoice: SCP079 # Fire-Edit
-    sound: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-Edit
+# Scp edit - disabled broken ported content.     announceVoice: SCP079 # Fire-Edit
+    sound: /Audio/_Scp/Announcements/announce_dig.ogg # Sunrise-Edit
   - type: ShowJobIcons
   - type: DamagedSiliconAccent
     startPowerCorruptionAtCharIdx: 4
@@ -97,7 +97,7 @@
       - Biological
       - Inorganic
       - Silicon
-      - Mech
+# Scp edit - disabled broken ported content.       - Mech
   # Sunrise-End
   - type: Speech # Sunrise-Edit
     speechVerb: Robotic # Sunrise-Edit
@@ -116,15 +116,15 @@
     - Binary
     - Common
   - type: ActionGrant
-    actions:
-    - ActionAIViewLaws
+    actions: [] # Scp edit - old AI law action is unavailable.
+#     - ActionAIViewLaws
   - type: UserInterface
     interfaces:
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
   - type: ShowJobIcons
   - type: ShowCrewIcons
-
+# Scp edit - disabled broken ported content.
 # Ai
 - type: entity
   id: AiHolder
@@ -190,14 +190,14 @@
 - type: entity
   id: PlayerStationAiPreview
   categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Mobs/Silicon/station_ai.rsi
-    layers:
-    - state: base
-    - state: ai
-      shader: unshaded
-
+  components: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.   - type: Sprite
+#     sprite: Mobs/Silicon/station_ai.rsi
+#     layers:
+#     - state: base
+#     - state: ai
+#       shader: unshaded
+#
 # Empty AI core
 - type: entity
   id: PlayerStationAiEmpty
@@ -261,8 +261,8 @@
           SheetPlasteel:
             min: 2
             max: 2
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
+# Scp edit - disabled broken ported content.       - !type:DoActsBehavior
+#         acts: ["Destruction"]
   - type: DamageVisuals
     thresholds: [25, 50, 75, 100, 200, 300, 400]
     damageDivisor: 4
@@ -281,10 +281,10 @@
     maxCharge: 300000
     startingCharge: 300000
   - type: ApcPowerReceiverBattery
-    idleLoad: 500
+# Scp edit - disabled broken ported content.     idleLoad: 500
     batteryRechargeRate: 1000
     batteryRechargeEfficiency: 0 # Setting to zero until the light flickering issue associated with dynamic power loads is fixed
-  - type: StationAiCore
+# Scp edit - disabled broken ported content.   - type: StationAiCore
   - type: StationAiVision
   - type: InteractionOutline
   - type: Sprite

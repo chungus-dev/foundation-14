@@ -1,4 +1,4 @@
-﻿# Сама конфета
+# Сама конфета
 - type: entity
   parent: FoodInjectableBase
   id: BaseScp330Candy
@@ -92,9 +92,9 @@
     grid:
     - 0,0,4,9
     storageInsertSound:
-      path: /Audio/_Sunrise/Items/Handling/Plastic/pickup.ogg
+      path: /Audio/_Scp/Items/Handling/Plastic/pickup.ogg
     storageRemoveSound:
-      path: /Audio/_Sunrise/Items/Handling/Plastic/drop.ogg
+      path: /Audio/_Scp/Items/Handling/Plastic/drop.ogg
     whitelist:
       components:
       - Scp330Candy

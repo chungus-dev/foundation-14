@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: HeavyContainmentZoneCommandant
   name: job-name-heavy-containment-zone-commandant
   description: job-description-heavy-containment-zone-commandant
@@ -90,11 +90,11 @@
     gloves: ClothingHandsGlovesColorBlackAlt
     shoes: ClothingShoesBootsSecurityGuard
     back: ClothingBackpackSecurity
-    suitstorage: WeaponSubMachineGunMP5
+# Scp edit - disabled broken ported content.     suitstorage: WeaponSubMachineGunMP5
     id: KeyCardHeavyContainmentZoneCommandant
     ears: ClothingHeadsetAltHeavyContainmentSecurityService
     belt: ScpClothingBeltSecurityWebbingFilled
-    pocket1: WeaponPistolG22
+# Scp edit - disabled broken ported content.     pocket1: WeaponPistolG22
     pocket2: ScpSecurityPDA
   storage:
     back:

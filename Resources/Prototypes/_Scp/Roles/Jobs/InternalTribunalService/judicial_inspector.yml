@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: JudicialInspector
   name: job-name-judicial-inspector
   description: job-description-judicial-inspector
@@ -7,7 +7,7 @@
   icon: JobJudicialInspector
   supervisors: job-supervisors-internal-tribunal-service
   canBeAntag: false
-  radioBold: true
+# Scp edit - disabled broken ported content.   radioBold: true
   displayWeight: 75
   weight: 855
   setPreference: false # TODO: После добавления вайт-листа убрать
@@ -27,7 +27,7 @@
 - type: startingGear
   id: JudicialInspectorGear
   equipment:
-    jumpsuit: MagistratUniformSuit
+# Scp edit - disabled broken ported content.     jumpsuit: MagistratUniformSuit
     back: ClothingBackpack
     shoes: ClothingShoesBootsLaceup
     eyes: ClothingEyesGlassesSecurity
@@ -38,7 +38,7 @@
     head: ClothingHeadHatPwig
   storage:
     back:
-    - RubberStampMagistrat
+# Scp edit - disabled broken ported content.     - RubberStampMagistrat
     - ClothingNeckLawyerbadge
-    - GavelHammer
-    - GavelBlock
+# Scp edit - disabled broken ported content.     - GavelHammer
+# Scp edit - disabled broken ported content.     - GavelBlock

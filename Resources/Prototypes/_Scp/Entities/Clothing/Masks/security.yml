@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: [ClothingMaskBase, BaseRestrictedContraband]
   id: ClothingMaskSecurityBandBlack
   name: black security bandana
@@ -26,5 +26,5 @@
       Hair: MASK
   - type: IngestionBlocker
   - type: Tag
-    tags:
-    - TopCovered
+    tags: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     - TopCovered

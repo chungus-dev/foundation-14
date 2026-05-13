@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingBackpackSatchel
   id: ClothingBackpackScp049
   categories: [ HideSpawnMenu ]
@@ -15,15 +15,15 @@
     - 0,0,19,9
     whitelist:
       components:
-      - SurgeryTool
+# Scp edit - disabled broken ported content.       - SurgeryTool
       - Healing
-      - TapePlayer # бумбокс
-      - MusicTape # Касеты бумбокса
+# Scp edit - disabled broken ported content.       - TapePlayer # бумбокс
+# Scp edit - disabled broken ported content.       - MusicTape # Касеты бумбокса
       - Pill
       - Paper
       tags:
       - Syringe
-      - SunriseUplink # рыбаплинк
+# Scp edit - disabled broken ported content.       - SunriseUplink # рыбаплинк
       - PillCanister
       - Pen
   - type: StorageFill
@@ -36,6 +36,6 @@
     - id: Cautery
     - id: Retractor
     - id: Scalpel
-    - id: BoneSetter
-    - id: BoneGel
+# Scp edit - disabled broken ported content.     - id: BoneSetter
+# Scp edit - disabled broken ported content.     - id: BoneGel
     - id: Scp049Contract

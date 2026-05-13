@@ -1,4 +1,4 @@
-﻿- type: reagent
+- type: reagent
   id: Scp207Reagent
   name: reagent-name-cola
   group: Narcotics
@@ -7,47 +7,47 @@
   flavor: soda
   color: "#6c2828"
   recognizable: true
-  metabolisms:
-    Narcotic:
-      effects:
-      - !type:MovementSpeedModifier
-        walkSpeedModifier: 1.75
-        sprintSpeedModifier: 1.75
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentCondition
-          reagent: Scp207Reagent
-          min: 20
-        damage:
-          types:
-            Poison: 0.5
-            Asphyxiation: 0.5
-      - !type:Jitter
-      - !type:GenericStatusEffect
-        key: Stun
-        time: 1
-        type: Remove
-      - !type:GenericStatusEffect
-        key: KnockedDown
-        time: 1
-        type: Remove
-      - !type:ModifyStatusEffect
-        conditions:
-        - !type:ReagentCondition
-          reagent: Haloperidol
-          max: 0.01
-        effectProto: StatusEffectDrowsiness
-        time: 10
-        type: Remove
-      - !type:PopupMessage
-        visualType: Medium
-        messages: ["ephedrine-effect-tight-pain", "ephedrine-effect-heart-pounds"]
-        type: Local
-        probability: 0.05
-    Medicine:
-      effects:
-      - !type:ResetNarcolepsy
-        conditions:
-        - !type:ReagentCondition
-          reagent: Scp207Reagent
-          min: 30
+  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
+# Scp edit - disabled broken ported content.     Narcotic:
+#       effects:
+#       - !type:MovementSpeedModifier
+#         walkSpeedModifier: 1.75
+#         sprintSpeedModifier: 1.75
+#       - !type:HealthChange
+#         conditions:
+#         - !type:ReagentCondition
+#           reagent: Scp207Reagent
+#           min: 20
+#         damage:
+#           types:
+#             Poison: 0.5
+#             Asphyxiation: 0.5
+#       - !type:Jitter
+#       - !type:GenericStatusEffect
+#         key: Stun
+#         time: 1
+#         type: Remove
+#       - !type:GenericStatusEffect
+#         key: KnockedDown
+#         time: 1
+#         type: Remove
+#       - !type:ModifyStatusEffect
+#         conditions:
+#         - !type:ReagentCondition
+#           reagent: Haloperidol
+#           max: 0.01
+#         effectProto: StatusEffectDrowsiness
+#         time: 10
+#         type: Remove
+#       - !type:PopupMessage
+#         visualType: Medium
+#         messages: ["ephedrine-effect-tight-pain", "ephedrine-effect-heart-pounds"]
+#         type: Local
+#         probability: 0.05
+# Scp edit - disabled broken ported content.     Medicine:
+#       effects:
+#       - !type:ResetNarcolepsy
+#         conditions:
+#         - !type:ReagentCondition
+#           reagent: Scp207Reagent
+#           min: 30

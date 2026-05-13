@@ -25,7 +25,7 @@
         amount: 2
       - id: GrenadeStinger
         amount: 2
-
+# Scp edit - disabled broken ported content.
 - type: entity
   parent: PouchExplosive
   id: PouchExplosiveFilledLethal

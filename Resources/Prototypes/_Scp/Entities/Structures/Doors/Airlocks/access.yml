@@ -1,4 +1,4 @@
-﻿# ОБЫЧНЫЕ ШЛЮЗЫ
+# ОБЫЧНЫЕ ШЛЮЗЫ
 
 # Администрация
 
@@ -1057,10 +1057,10 @@
   suffix: External, Security, Glass, Docking, AutoDock
   components:
   - type: PriorityDock
-    tag: DockSecurity
-  
+# Scp edit - disabled broken ported content.     tag: DockSecurity
+#
 # Сторонние
-
+#
 - type: entity
   parent: ScpAirlockShuttle
   id: ScpAirlockChaosInsurgencyShuttleLocked

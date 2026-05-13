@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: SeniorMedicalSpecialist
   name: job-name-senior-medical-specialist
   description: job-description-senior-medical-specialist
@@ -34,9 +34,9 @@
 - type: startingGear
   id: SeniorMedicalSpecialistGear
   equipment:
-    head: ClothingHeadHatBeretParamedic
+# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretParamedic
     eyes: ClothingEyesHudMedical
-    mask: ClothingMaskSterileBlack
+# Scp edit - disabled broken ported content.     mask: ClothingMaskSterileBlack
     neck: ClothingNeckScarfStripedBlack
     outerClothing: ClothingOuterCoatLab
     jumpsuit: ClothingUniformJumpsuitSeniorPhysician

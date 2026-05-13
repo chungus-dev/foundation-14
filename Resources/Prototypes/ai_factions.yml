@@ -28,13 +28,13 @@
   - Xenoborg
   - Dragon
   # Sunrise Edit
-  - Thief
-  - Carps
-  - Vampire
-  - Flesh
-  - BloodCult
-  - Pirate
-  - Soviet
+# Scp edit - disabled broken ported content.   - Thief
+# Scp edit - disabled broken ported content.   - Carps
+# Scp edit - disabled broken ported content.   - Vampire
+# Scp edit - disabled broken ported content.   - Flesh
+# Scp edit - disabled broken ported content.   - BloodCult
+# Scp edit - disabled broken ported content.   - Pirate
+# Scp edit - disabled broken ported content.   - Soviet
 - type: npcFaction
   id: Mouse
   hostile:
@@ -88,7 +88,7 @@
   - Thief
   - Carps
   - Vampire
-  - FleshHuman
+# Scp edit - disabled broken ported content.   - FleshHuman
   - Flesh
   - BloodCult
   - Pirate

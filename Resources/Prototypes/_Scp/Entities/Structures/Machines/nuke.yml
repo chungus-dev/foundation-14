@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: NuclearBomb
   id: NuclearBombScp
   components:
@@ -33,7 +33,7 @@
           YoureFucked: { state: lights-exploding }
   - type: HolidayVisuals
   - type: Nuke
-    explosionType: DefaultStandardEffect
+    explosionType: Default # Scp edit - DefaultStandardEffect is unavailable in Foundation14.
     maxIntensity: 100
     intensitySlope: 400
     totalIntensity: 80000000

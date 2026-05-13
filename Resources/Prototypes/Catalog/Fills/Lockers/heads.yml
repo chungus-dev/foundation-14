@@ -48,13 +48,13 @@
     - id: SpaceCash1000
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
-    - id: FlippoLighterSunriseCap  # Sunrise-Flippo
-    - id: HeadSkeleton # A skull to accompany your skeleton crew
-      conditions:
-      - !type:PlayerCountCondition
-        max: 15
-    - id: WeaponMiniEnergyGun #  Sunrise-edit
-
+# Scp edit - disabled broken ported content.     - id: FlippoLighterSunriseCap  # Sunrise-Flippo
+# Scp edit - disabled broken ported content.     - id: HeadSkeleton # A skull to accompany your skeleton crew
+#       conditions:
+#       - !type:PlayerCountCondition
+#         max: 15
+# Scp edit - disabled broken ported content.     - id: WeaponMiniEnergyGun #  Sunrise-edit
+#
 # No laser table + Laser table
 - type: entityTable
   id: LockerFillCaptainLaser

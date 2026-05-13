@@ -16,9 +16,9 @@
   - Dwarf
   parent: EventHumanoid
   randomizeName: false
-  voiceWhitelist:
-  - CBMTF1
-  - CBMTF2
+# Scp edit - disabled broken ported content.   voiceWhitelist:
+#   - CBMTF1
+#   - CBMTF2
   genderWhitelist:
   - Male
   components:

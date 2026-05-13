@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: white shoulder patch
   description: A simple and convenient tool for groups
   parent: ClothingNeckBase
@@ -95,7 +95,7 @@
       - ClothMade
       - Recyclable
       - WhitelistChameleon
-      requireAllTags: True
+# Scp edit - disabled broken ported content.       requireAllTags: True
   - type: StorageFill
     contents:
     - id: ClothingNeckShoulderPatchWhite

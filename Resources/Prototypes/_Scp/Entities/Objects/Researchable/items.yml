@@ -1,4 +1,4 @@
-﻿# Средства защиты от сцп
+# Средства защиты от сцп
 
 # Scp-173
 
@@ -201,7 +201,7 @@
   id: WeaponGodlikeXRay
   components:
   - type: Sprite
-    sprite: _Sunrise/Objects/Weapons/Guns/Battery/EGE_XR/big.rsi
+    sprite: _Scp/Objects/Weapons/Guns/Battery/EGE_XR/big.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -209,9 +209,9 @@
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: Clothing
-    sprite: _Sunrise/Objects/Weapons/Guns/Battery/EGE_XR/tiny.rsi
+    sprite: _Scp/Objects/Weapons/Guns/Battery/EGE_XR/tiny.rsi
   - type: Item
-    sprite: _Sunrise/Objects/Weapons/Guns/Battery/EGE_XR/tiny.rsi
+    sprite: _Scp/Objects/Weapons/Guns/Battery/EGE_XR/tiny.rsi
     size: Ginormous
   - type: GunWieldBonus
     minAngle: -93
@@ -225,7 +225,7 @@
     - SemiAuto
     - FullAuto
     soundGunshot:
-      path: /Audio/_Sunrise/Weapons/Guns/Lasers/EG_XR.ogg
+      path: /Audio/_Scp/Weapons/Guns/Lasers/EG_XR.ogg
       params:
         pitch: 0.5
   - type: MagazineVisuals
@@ -249,7 +249,7 @@
   id: WeaponARLSniper
   components:
   - type: Sprite
-    sprite: _Sunrise/Objects/Weapons/Guns/Battery/EG_Sniper/big.rsi
+    sprite: _Scp/Objects/Weapons/Guns/Battery/EG_Sniper/big.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -257,9 +257,9 @@
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: Clothing
-    sprite: _Sunrise/Objects/Weapons/Guns/Battery/EG_Sniper/tiny.rsi
+    sprite: _Scp/Objects/Weapons/Guns/Battery/EG_Sniper/tiny.rsi
   - type: Item
-    sprite: _Sunrise/Objects/Weapons/Guns/Battery/EG_Sniper/tiny.rsi
+    sprite: _Scp/Objects/Weapons/Guns/Battery/EG_Sniper/tiny.rsi
     shape:
     - 0,0,4,1
   - type: GunRequiresWield
@@ -275,7 +275,7 @@
     - SemiAuto
     - FullAuto
     soundGunshot:
-      path: /Audio/_Sunrise/Weapons/Guns/Lasers/EG_Sniper.ogg
+      path: /Audio/_Scp/Weapons/Guns/Lasers/EG_Sniper.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 3

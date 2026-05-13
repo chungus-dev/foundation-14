@@ -17,8 +17,8 @@
   jobEntity: StationAiBrain
   jobPreviewEntity: PlayerStationAiPreview
   applyTraits: false
-  alwaysUseSpawner: true # Sunrise-Edit
-
+# Scp edit - disabled broken ported content.   alwaysUseSpawner: true # Sunrise-Edit
+#
 - type: job
   id: Borg
   name: job-name-borg
@@ -34,5 +34,5 @@
   supervisors: job-supervisors-rd
   jobEntity: PlayerBorgBattery
   applyTraits: false
-  alwaysUseSpawner: true # Sunrise-Edit
+  # Scp edit - disabled broken ported content. alwaysUseSpawner: true # Sunrise-Edit
   setPreference: false # Fire added

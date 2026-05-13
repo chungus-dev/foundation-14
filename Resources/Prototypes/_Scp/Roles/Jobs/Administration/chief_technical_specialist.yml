@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: ChiefTechnicalSpecialist
   name: job-name-chief-technical-specialist
   description: job-description-chief-technical-specialist
@@ -15,7 +15,7 @@
   weight: 940
   icon: JobChiefTechnicalSpecialist
   supervisors: job-supervisors-director
-  radioBold: true
+# Scp edit - disabled broken ported content.   radioBold: true
   displayWeight: 70
   canBeAntag: true
   accessGroups:
@@ -41,12 +41,12 @@
     head: ClothingHeadHatHardhatWhite
     eyes: ClothingEyesGlassesMeson
     mask: ClothingMaskGas
-    neck: ClothingNeckScarfCe
+# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfCe
     outerClothing: ClothingOuterWinterColorWhite
     jumpsuit: ClothingUniformJumpsuitChiefEngineer
     gloves: ClothingHandsGlovesFingerlessInsulated
     shoes: ClothingShoesColorBrown
-    back: ClothingBackpackCE
+# Scp edit - disabled broken ported content.     back: ClothingBackpackCE
     id: KeyCardChiefTechnicalSpecialist
     ears: ClothingHeadsetAltEngineeringTechnicalService
     belt: ClothingBeltUtilityEngineering
@@ -54,4 +54,4 @@
   storage:
     back:
     - Flash
-    - Telebaton
+# Scp edit - disabled broken ported content.     - Telebaton

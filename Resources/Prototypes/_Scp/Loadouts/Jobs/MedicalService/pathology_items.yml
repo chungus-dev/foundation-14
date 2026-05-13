@@ -1,14 +1,14 @@
 - type: loadout
   id: ScpLoadoutClothingHeadHatPatologonatHat
-  equipment:
-    head: ClothingHeadHatPatologonatHat
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     head: ClothingHeadHatPatologonatHat
+#
 - type: loadout
   id: ScpLoadoutClothingOuterCoatPatologoanatom
-  equipment:
-    outerClothing: ClothingOuterCoatPatologoanatom
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatPatologoanatom
+#
 - type: loadout
   id: ScpLoadoutClothingHeadHatBeretPatologoanatom
-  equipment:
-    head: ClothingHeadHatBeretPatologoanatom
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretPatologoanatom

@@ -59,9 +59,9 @@
 
 - type: loadout
   id: ScpLoadoutSeniorMedicalSpecialistChemistryBeret
-  equipment:
-    head: ClothingHeadHatBeretChemistry
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretChemistry
+#
 - type: loadout
   id: ScpLoadoutSeniorMedicalSpecialistNurseHat
   equipment:

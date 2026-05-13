@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: SeniorExternalAdministrativeZoneOfficer
   name: job-name-senior-external-administrative-zone-officer
   description: job-description-senior-external-administrative-zone-officer
@@ -30,8 +30,8 @@
       level: Three
     - type: ScpHolder
       holdableWhitelist:
-        components:
-        - HumanoidAppearance
+        components: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.         - HumanoidAppearance
       holdableBlacklist:
         components:
         - Scp
@@ -81,7 +81,7 @@
     gloves: ClothingHandsGlovesSecurity
     shoes: ClothingShoesBootsSecurityGuard
     back: ClothingBackpackSecurity
-    suitstorage: WeaponSubMachineGunMP7
+# Scp edit - disabled broken ported content.     suitstorage: WeaponSubMachineGunMP7
     id: KeyCardSeniorLightContainmentZoneSecurityOfficer
     ears: ClothingHeadsetExternalAdministrativeZoneSecurityService
     belt: ScpClothingBeltSecurityWebbingFilled

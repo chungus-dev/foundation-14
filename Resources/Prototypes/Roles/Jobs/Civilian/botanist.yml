@@ -9,10 +9,10 @@
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
   # Sunrise-Start
-  alternativeTitles:
-  - job-alt-title-gardener
-  - job-alt-title-agronomist
-  - job-alt-title-hydroponics-operator
+# Scp edit - disabled broken ported content.   alternativeTitles:
+#   - job-alt-title-gardener
+#   - job-alt-title-agronomist
+#   - job-alt-title-hydroponics-operator
   # Sunrise-End
   access:
   - Service

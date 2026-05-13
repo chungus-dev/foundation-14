@@ -58,7 +58,7 @@
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
-    sprite: _Sunrise/Structures/Doors/Airlocks/Standard/hydroponics.rsi #Sunrise-Resprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard/hydroponics.rsi #Sunrise-Resprite
   - type: Wires
     layoutId: AirlockService
 
@@ -89,7 +89,7 @@
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
-    sprite: _Sunrise/Structures/Doors/Airlocks/Standard/chemistry.rsi #Sunrise-Resprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard/chemistry.rsi #Sunrise-Resprite
 
 - type: entity
   parent: Airlock
@@ -151,7 +151,7 @@
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
-    sprite: _Sunrise/Structures/Doors/Airlocks/Standard/salvage.rsi #Sunrise-Resprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard/salvage.rsi #Sunrise-Resprite
   - type: Wires
     layoutId: AirlockCargo
   - type: Paintable
@@ -278,7 +278,7 @@
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
-    sprite: _Sunrise/Structures/Doors/Airlocks/Glass/salvage.rsi #Sunrise-Resprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass/salvage.rsi #Sunrise-Resprite
   - type: Wires
     layoutId: AirlockCargo
 
@@ -289,7 +289,7 @@
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
-    sprite: _Sunrise/Structures/Doors/Airlocks/Glass/hydroponics.rsi #Sunrise-Resprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass/hydroponics.rsi #Sunrise-Resprite
   - type: Wires
     layoutId: AirlockService
 
@@ -311,7 +311,7 @@
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
-    sprite: _Sunrise/Structures/Doors/Airlocks/Glass/chemistry.rsi #Sunrise-Resprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass/chemistry.rsi #Sunrise-Resprite
 
 - type: entity
   parent: AirlockMedicalGlass

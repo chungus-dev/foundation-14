@@ -32,15 +32,15 @@
     price: 400
   - type: Storage
     storageOpenSound:
-      path: /Audio/_Sunrise/Structures/Closets/open.ogg
+      path: /Audio/_Scp/Structures/Closets/open.ogg
       params:
         volume: -1
     storageCloseSound:
-      path: /Audio/_Sunrise/Structures/Closets/close.ogg
+      path: /Audio/_Scp/Structures/Closets/close.ogg
       params:
         volume: -1
     storageInsertSound:
-      collection: PistolsDrop
+# Scp edit - disabled broken ported content.       collection: PistolsDrop
     grid:
     - 0,0,0,1
     - 0,0,1,0

@@ -6,7 +6,7 @@
   - type: StorageFill
     contents:
       - id: FlashlightSeclite
-      - id: ClothingHeadHatCapWardenAlt
+# Scp edit - disabled broken ported content.       - id: ClothingHeadHatCapWardenAlt
       - id: ClothingBeltSecurityFilled
       - id: Flash
       - id: ClothingHeadsetAltHeavyContainmentSecurityService
@@ -15,7 +15,7 @@
       - id: ClothingShoesBootsSecurityGuard
       - id: ClothingOuterCoatWarden
       - id: ClothingOuterWinterWarden
-      - id: ClothingOuterCoatWardenAlt
+# Scp edit - disabled broken ported content.       - id: ClothingOuterCoatWardenAlt
       - id: RubberStampSpecialPurposeSquadLeader
       - id: DoorRemoteArmory
       - id: BookSpaceLaw
@@ -24,9 +24,9 @@
       - id: RemoteSignaller
         amount: 2
       - id: Binoculars
-      - id: HyperLinkBookCorporateLaw
-      - id: HandheldCriminalRecordsMonitor
-      - id: PortableSurveillanceCameraMonitor
+# Scp edit - disabled broken ported content.       - id: HyperLinkBookCorporateLaw
+# Scp edit - disabled broken ported content.       - id: HandheldCriminalRecordsMonitor
+# Scp edit - disabled broken ported content.       - id: PortableSurveillanceCameraMonitor
       # Добавлены "Детективные" вещи до добавления отдельного шкафчика/должности под эти дела.
       - id: ForensicScanner
       - id: BoxForensicPad
@@ -60,9 +60,9 @@
       - id: ClothingShoesBootsSecurityGuard
       - id: WeaponMeleeNeedle
         prob: 0.1
-      - id: HyperLinkBookCorporateLaw
-        prob: 0.5
-
+      # Scp edit - disabled broken ported content. - id: HyperLinkBookCorporateLaw
+      # Scp edit - disabled broken ported content.   prob: 0.5
+      # Scp edit - disabled broken ported content.
 - type: entity
   id: ScpLockerSpecialPurposeSquadFilledWardrobe
   parent: ScpLockerSpecialPurposeSquad

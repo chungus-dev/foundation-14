@@ -16,7 +16,7 @@
     - Sheet
     - Metal
     - ConstructionMaterial
-    - NoPaint  # Sunrise-edit
+# Scp edit - disabled broken ported content.     - NoPaint  # Sunrise-edit
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic

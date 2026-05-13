@@ -12,6 +12,36 @@
     },
     {
       "name": "stamp-spsc"
+    },
+    {
+      "name": "stamp-psychologist"
+    },
+    {
+      "name": "stamp-adj"
+    },
+    {
+      "name": "stamp-iaa"
+    },
+    {
+      "name": "stamp-magistrat"
+    },
+    {
+      "name": "stamp-ntrep"
+    },
+    {
+      "name": "stamp-path"
+    },
+    {
+      "name": "stamp-npt"
+    },
+    {
+      "name": "stamp-veto"
+    },
+    {
+      "name": "stamp-redo"
+    },
+    {
+      "name": "stamp-specops"
     }
   ]
 }

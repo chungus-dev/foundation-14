@@ -53,15 +53,15 @@
   - type: Animateable
   - type: Storage
     storageOpenSound:
-      path: /Audio/_Sunrise/Structures/Closets/open.ogg
+      path: /Audio/_Scp/Structures/Closets/open.ogg
       params:
         volume: -1
     storageCloseSound:
-      path: /Audio/_Sunrise/Structures/Closets/close.ogg
+      path: /Audio/_Scp/Structures/Closets/close.ogg
       params:
         volume: -1
     storageInsertSound:
-      collection: RiflesDrop
+# Scp edit - disabled broken ported content.       collection: RiflesDrop
   - type: AccessReader
     access: [["Armory"]]
 

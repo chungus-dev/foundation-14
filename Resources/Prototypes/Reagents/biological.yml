@@ -15,30 +15,30 @@
   standsout: true
   absorbCooldownPerUnit: 0.2 # Fire added
   physicalDesc: reagent-physical-desc-ferrous
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 1.0
-        conditions:
-          - !type:MetabolizerTypeCondition
-            type: [ Human ]
-            inverted: true
-    Food:
-      effects:
-        - !type:AdjustReagent
-          reagent: UncookedAnimalProteins
-          amount: 0.1
-    Medicine:
-      effects:
-      - !type:HealthChange
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Bloodsucker ]
-        damage:
-          groups:
-            Brute: -3
-            Burn: -1.25
+  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
+# Scp edit - disabled broken ported content.     Drink:
+#       effects:
+#       - !type:SatiateThirst
+#         factor: 1.0
+#         conditions:
+#           - !type:MetabolizerTypeCondition
+#             type: [ Human ]
+#             inverted: true
+# Scp edit - disabled broken ported content.     Food:
+#       effects:
+#         - !type:AdjustReagent
+#           reagent: UncookedAnimalProteins
+#           amount: 0.1
+# Scp edit - disabled broken ported content.     Medicine:
+#       effects:
+#       - !type:HealthChange
+#         conditions:
+#         - !type:MetabolizerTypeCondition
+#           type: [ Bloodsucker ]
+#         damage:
+#           groups:
+#             Brute: -3
+#             Burn: -1.25
   plantMetabolism:
     - !type:PlantAdjustWater
       amount: 0.5

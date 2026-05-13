@@ -1,20 +1,20 @@
-﻿- type: reagent
+- type: reagent
   id: Scp500Reagent
   name: reagent-name-scp500
   desc: reagent-desc-scp500
   physicalDesc: reagent-physicaldesc-scp500
   flavor: medicine
   color: "#86caf7"
-  metabolisms:
-    Medicine:
-      effects:
-      - !type:PopupMessage
-        visualType: LargeCaution
-        messages: ["reagent-effect-scp500"]
-        probability: 1
-        type: Local
-      - !type:Rejuvenate
-        conditions:
-        - !type:ReagentCondition
-          reagent: Scp500Reagent
-          min: 1
+  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
+# Scp edit - disabled broken ported content.     Medicine:
+#       effects:
+#       - !type:PopupMessage
+#         visualType: LargeCaution
+#         messages: ["reagent-effect-scp500"]
+#         probability: 1
+#         type: Local
+#       - !type:Rejuvenate
+#         conditions:
+#         - !type:ReagentCondition
+#           reagent: Scp500Reagent
+#           min: 1

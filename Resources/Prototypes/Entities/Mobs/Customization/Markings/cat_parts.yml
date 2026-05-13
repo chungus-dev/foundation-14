@@ -1,9 +1,9 @@
 - type: marking
   id: CatEars
   bodyPart: Special
-  markingCategory: Special
-  speciesRestriction: [Felinid] # Fire edit
-  sponsorOnly: false
+# Scp edit - disabled broken ported content.   markingCategory: Special
+# Scp edit - disabled broken ported content.   speciesRestriction: [Felinid] # Fire edit
+# Scp edit - disabled broken ported content.   sponsorOnly: false
   coloring:
     default:
       type:
@@ -25,9 +25,9 @@
 - type: marking
   id: CatTail
   bodyPart: Tail
-  markingCategory: Tail
-  sponsorOnly: false
-  speciesRestriction: [Felinid] # Fire edit
+# Scp edit - disabled broken ported content.   markingCategory: Tail
+# Scp edit - disabled broken ported content.   sponsorOnly: false
+# Scp edit - disabled broken ported content.   speciesRestriction: [Felinid] # Fire edit
   coloring:
     default:
       type:
@@ -39,4 +39,4 @@
         - !type:SkinColoring
   sprites:
   - sprite: Mobs/Customization/cat_parts.rsi
-    state: tail_cat_wag # Sunrise-Sponsors
+    state: tail_cat # Scp edit - animated Sunrise state is unavailable.

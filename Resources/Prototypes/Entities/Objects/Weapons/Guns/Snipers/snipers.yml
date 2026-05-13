@@ -26,7 +26,7 @@
     - suitStorage
   - type: AmmoCounter
   - type: Gun
-    pump: true  # Sunrise-Edit
+# Scp edit - disabled broken ported content.     pump: true  # Sunrise-Edit
     fireRate: 0.75
     selectedMode: SemiAuto
     availableModes:
@@ -35,10 +35,10 @@
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: BallisticAmmoProvider
     capacity: 5 # Sunrise-Edit
-    proto: CartridgeHeavyRifleRFMJ
+# Scp edit - disabled broken ported content.     proto: CartridgeHeavyRifleRFMJ
     whitelist:
-      tags:
-      - CartridgeHeavyRifleR # Sunrise-Edit
+      tags: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.       - CartridgeHeavyRifleR # Sunrise-Edit
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
@@ -48,10 +48,10 @@
   # Sunrise start
   - type: EmitSoundOnPickup
     sound:
-      collection: SnipersPickUp
+# Scp edit - disabled broken ported content.       collection: SnipersPickUp
   - type: EmitSoundOnDrop
     sound:
-      collection: SnipersDrop
+# Scp edit - disabled broken ported content.       collection: SnipersDrop
   - type: EmitSoundOnLand
     sound:
       collection: SnipersDrop

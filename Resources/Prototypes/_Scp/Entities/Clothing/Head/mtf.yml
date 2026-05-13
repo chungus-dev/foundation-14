@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingHeadHelmetBasic
   id: ClothingHelmetMtf
   name: helmet
@@ -55,7 +55,7 @@
   - type: FoldableClothing
     foldedEquippedPrefix: up
     foldedHeldPrefix: up
-  # TODO 
+  # TODO
   # Убрать костыль и добавить функционал ПНВ.
 
 - type: entity
@@ -96,9 +96,9 @@
   - type: Clothing
     sprite: _Scp/Clothing/Head/Helmets/MTF/mtf_heavy.rsi
   - type: Tag
-    tags:
-    - FullCovered
-
+    tags: [] # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     - FullCovered
+#
 - type: entity
   parent: ClothingHeadHelmetBasic
   id: ClothingHelmetMtfMilitary

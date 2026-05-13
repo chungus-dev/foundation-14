@@ -77,7 +77,7 @@
     availableModes:
     - FullAuto
     soundGunshot:
-      collection: xm1014 # Sunrise-Edit
+# Scp edit - disabled broken ported content.       collection: xm1014 # Sunrise-Edit
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: ItemSlots
@@ -385,4 +385,3 @@
       # Felinid:
         # knockback: 1.5 #half of what resomi take
         # staminaMultiplier: 20
-

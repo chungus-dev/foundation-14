@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ScpClosetGastronomicSpecialistFilled
   parent: ScpClosetGastronomicSpecialist
   suffix: Filled
@@ -59,7 +59,7 @@
       prob: 0.3
     - id: ClothingBeltPlant
     - id: PlantBag ##Some maps don't have nutrivend
-    - id: PlantAnalyzer
+# Scp edit - disabled broken ported content.     - id: PlantAnalyzer
     - id: BoxMouthSwab
     - id: Dropper
     - id: HandLabeler

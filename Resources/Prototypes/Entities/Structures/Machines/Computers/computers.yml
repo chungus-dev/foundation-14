@@ -48,11 +48,11 @@
           East, West: { state: computer_l_r, sprite: _Starlight/Structures/Machines/computers.rsi }
       # Sunrise-End
   - type: AtmosAlertsComputer
-    beepSound:
-      path: /Audio/_Sunrise/Effects/beeps.ogg
+# Scp edit - disabled broken ported content.     beepSound:
+#       path: /Audio/_Scp/Effects/beeps.ogg
       # Sunrise - Start
-      params:
-        volume: -5
+#       params:
+#         volume: -5
       # Sunrise - End
   - type: ActivatableUI
     singleUser: true
@@ -435,10 +435,10 @@
     access: [["Security"], ["HeadOfPersonnel"]]
   # Sunrise added end
   - type: GeneralStationRecordConsole
-    announcementChannels:
-    - Administration
-    - HeavyContainmentSecurityService
-    - ExternalAdministrativeZoneSecurityService
+# Scp edit - disabled broken ported content.     announcementChannels:
+#     - Administration
+#     - HeavyContainmentSecurityService
+#     - ExternalAdministrativeZoneSecurityService
   - type: UserInterface
     interfaces:
         enum.GeneralStationRecordConsoleKey.Key:
@@ -779,7 +779,7 @@
     title: comms-console-announcement-title-chaos # Fire edit
     color: "#ff0000"
     canShuttle: false
-    announceVoice: CBMTF1 # Fire edit
+# Scp edit - disabled broken ported content.     announceVoice: CBMTF1 # Fire edit
     global: true #announce to everyone they're about to fuck shit up
     announceSentBy: false # The title already says who they are.
     sound: /Audio/Announcements/war.ogg

@@ -317,9 +317,11 @@
   # Sunrise-End
   - type: Icon
     state: pda-cook
-  - type: ReplacementAccent # for random sentience event
-    accent: italian
-
+  # Scp edit start - old Italian accent prototype is unavailable.
+  # - type: ReplacementAccent # for random sentience event
+  #   accent: italian
+  # Scp edit end
+#
 - type: entity
   parent: BasePDA
   id: BotanistPDA
@@ -516,7 +518,7 @@
   - type: Pda
     id: QuartermasterIDCard
     penSlot:
-      startingItem: QmPen
+# Scp edit - disabled broken ported content.       startingItem: QmPen
       priority: -1
       whitelist:
         tags:
@@ -655,9 +657,9 @@
   # Sunrise-start
   - type: Summonable
     requiresBibleUser: false
-    specialItem: SpawnPointGhostFoliant
+# Scp edit - disabled broken ported content.     specialItem: SpawnPointGhostFoliant
   # Sunrise-end
-
+#
 - type: entity
   parent: LibrarianPDA
   id: VisitorLibrarianPDA
@@ -798,7 +800,7 @@
   - type: Pda
     id: CEIDCard
     penSlot:
-      startingItem: CEPen
+# Scp edit - disabled broken ported content.       startingItem: CEPen
       priority: -1
       whitelist:
         tags:
@@ -849,7 +851,7 @@
   - type: Pda
     id: CMOIDCard
     penSlot:
-      startingItem: CmoPen
+# Scp edit - disabled broken ported content.       startingItem: CmoPen
       priority: -1
       whitelist:
         tags:
@@ -960,7 +962,7 @@
   - type: Pda
     id: RDIDCard
     penSlot:
-      startingItem: RdPen
+# Scp edit - disabled broken ported content.       startingItem: RdPen
       priority: -1
       whitelist:
         tags:
@@ -1011,7 +1013,7 @@
   - type: Pda
     id: HoSIDCard
     penSlot:
-      startingItem: HosPen
+# Scp edit - disabled broken ported content.       startingItem: HosPen
       priority: -1
       whitelist:
         tags:
@@ -1792,7 +1794,7 @@
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Pda
-    id: SeniorCourierIDCard   # Sunrise-edit
+# Scp edit - disabled broken ported content.     id: SeniorCourierIDCard   # Sunrise-edit
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
@@ -1946,7 +1948,7 @@
   categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Pda
-    id: CentcomOperatorIDCard
+# Scp edit - disabled broken ported content.     id: CentcomOperatorIDCard
     penSlot:
       startingItem: PenCentcom
       whitelist:
@@ -1960,4 +1962,3 @@
   # Sunrise-End
   - type: Icon
     state: pda-centcom
-

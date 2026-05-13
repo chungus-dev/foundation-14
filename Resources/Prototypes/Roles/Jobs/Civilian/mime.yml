@@ -12,9 +12,9 @@
   setPreference: false # Fire added
   overrideConsoleVisibility: false # Fire added
   # Sunrise-Start
-  alternativeTitles:
-  - job-alt-title-pantomimist
-  - job-alt-title-silence-agent
+# Scp edit - disabled broken ported content.   alternativeTitles:
+#   - job-alt-title-pantomimist
+#   - job-alt-title-silence-agent
   # Sunrise-End
   access:
   - Theatre
@@ -22,9 +22,8 @@
   special:
   - !type:AddComponentSpecial
     components:
-    # Sunrise added start
-    - type: ArtifactFunnyTarget
-    # Sunrise added end
+    # Scp edit - Sunrise ArtifactFunnyTarget component is unavailable in Foundation14
+    # - type: ArtifactFunnyTarget
     - type: MimePowers
       preventWriting: true
     - type: FrenchAccent

@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Scp261
   parent:
   - BaseStructure
@@ -46,7 +46,7 @@
     grid:
     - 0,0,4,9
     storageInsertSound:
-      path: /Audio/_Sunrise/Items/Handling/Plastic/pickup.ogg
+      path: /Audio/_Scp/Items/Handling/Plastic/pickup.ogg
     whitelist:
       components:
       - Cash
@@ -101,10 +101,10 @@
     - FoodSnackSwirlLollipop
     - FoodBakedCookieSugar
     - FoodBurgerGhost
-    - DrinkHolyWaterFull
+# Scp edit - disabled broken ported content.     - DrinkHolyWaterFull
     - FoodJellyScp999
     - DrinkMopwataBottleRandom
-    - FoodSoupFacehugger
+# Scp edit - disabled broken ported content.     - FoodSoupFacehugger
     - FoodSnackPopcorn
     - DrinkJuiceLimeCarton
     - DrinkColaCan
@@ -112,16 +112,16 @@
     - FoodSnackSemki
     - FoodGlasstle
     - FoodLaughinPeaPod
-    - FoodMeatSlimeJelly
-    - FoodDemonHellChiliBowl
+# Scp edit - disabled broken ported content.     - FoodMeatSlimeJelly
+# Scp edit - disabled broken ported content.     - FoodDemonHellChiliBowl
     - FoodPizzaWorldpeas
     - FoodBakedWaffleRoffle
-    - FoodMeatDionaRoots
+# Scp edit - disabled broken ported content.     - FoodMeatDionaRoots
     - FoodNoodlesCopy
     - FoodCakeBrain
     - FoodBreadMeatXeno
     - FoodBreadMeatSpider
     - FoodBurgerHuman
     - DrinkSpaceGlue
-    - DrinkUnholyWaterFull
+# Scp edit - disabled broken ported content.     - DrinkUnholyWaterFull
     chance: 1

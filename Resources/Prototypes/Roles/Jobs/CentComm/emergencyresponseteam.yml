@@ -634,7 +634,7 @@
   id: CBURNVeteran
   name: job-name-cburn-veteran
   description: job-description-cburn-veteran
-  playTimeTracker: JobCBURNVeteran
+  playTimeTracker: JobCBURNVeteran # Scp edit - required by current JobPrototype.
   setPreference: false
   startingGear: CBURNGear
   icon: "JobIconNanotrasen"
@@ -654,6 +654,6 @@
   - CentralCommand
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, DeathRattleImplantERT ] #Sunrise-Edit
+# Scp edit - disabled broken ported content.     implants: [ MindShieldImplant, DeathRattleImplantERT ] #Sunrise-Edit
 # Sunrise end
-
+#

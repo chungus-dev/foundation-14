@@ -12,10 +12,10 @@
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
   # Sunrise-Start
-  alternativeTitles:
-  - job-alt-title-jester
-  - job-alt-title-comedian
-  - job-alt-title-harlequin
+# Scp edit - disabled broken ported content.   alternativeTitles:
+#   - job-alt-title-jester
+#   - job-alt-title-comedian
+#   - job-alt-title-harlequin
   # Sunrise-End
   access:
   - Theatre
@@ -23,9 +23,8 @@
   special:
   - !type:AddComponentSpecial
     components:
-    # Sunrise added start
-    - type: ArtifactFunnyTarget
-    # Sunrise added end
+    # Scp edit - Sunrise ArtifactFunnyTarget component is unavailable in Foundation14
+    # - type: ArtifactFunnyTarget
     - type: Clumsy
       gunShootFailDamage:
         types: #literally just picked semi random valus. i tested this once and tweaked it.

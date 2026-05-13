@@ -19,10 +19,7 @@
     - Ammonia
     - NitrousOxide
     - Frezon
-    #Sunrise - Start
-    - Electrovae
-    - ChargedElectrovae
-    #Sunrise - End
+    # Scp edit - Sunrise Electrovae gases are unavailable in Foundation14
     #- Helium3 TODO: fusion
     # remove everything except oxygen to maintain oxygen ratio
     overflowGases:
@@ -122,10 +119,10 @@
       mech-battery-slot: !type:ContainerSlot
   # Sunrise-Start
   - type: Inventory
-    templateId: mechArmor
+# Scp edit - disabled broken ported content.     templateId: mechArmor
   - type: InventorySlots
   - type: Loadout
-    prototypes: [ MechArmorLightLoadout ]
+# Scp edit - disabled broken ported content.     prototypes: [ MechArmorLightLoadout ]
   # - type: RadarBlip # SCP port: component unavailable in Foundation14
     # color: "#FFD700FF"
     # scale: 1.1
@@ -133,7 +130,7 @@
     # requireInSpace: true
   # Sunrise-End
   - type: Damageable
-    damageContainer: Mech
+# Scp edit - disabled broken ported content.     damageContainer: Mech
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Mecha/mechmove03.ogg

@@ -14,9 +14,9 @@
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
   # Sunrise-Start
-  alternativeTitles:
-  - job-alt-title-prospector
-  - job-alt-title-forwarder
+# Scp edit - disabled broken ported content.   alternativeTitles:
+#   - job-alt-title-prospector
+#   - job-alt-title-forwarder
   # Sunrise-End
   access:
   - Cargo
@@ -24,11 +24,11 @@
   - Maintenance
   - External
   # Sunrise-start
-  extendedAccess:
-  - CargoPurchaseAccess
-  - Mining
+  extendedAccess: [] # Scp edit - disabled old Sunrise access entries.
+# Scp edit - disabled broken ported content.   - CargoPurchaseAccess
+# Scp edit - disabled broken ported content.   - Mining
   # Sunrise-end
-
+#
 - type: startingGear
   id: SalvageSpecialistGear
   equipment:
@@ -49,4 +49,3 @@
     outerClothing: ClothingOuterWinterMiner
     neck: ClothingNeckScarfStripedBrown
     gloves: ClothingHandsGlovesColorBlack
-

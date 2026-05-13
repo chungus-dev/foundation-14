@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: HospitalIntern
   name: job-name-hospital-intern
   description: job-description-hospital-intern
@@ -30,7 +30,7 @@
   equipment:
     head: ClothingHeadHatRedsoft
     eyes: ClothingEyesHudMedical
-    mask: ClothingMaskSterileRed
+# Scp edit - disabled broken ported content.     mask: ClothingMaskSterileRed
     neck: ClothingNeckScarfStripedRed
     jumpsuit: ClothingUniformJumpsuitColorWhite
     outerClothing: ClothingOuterCoatLab

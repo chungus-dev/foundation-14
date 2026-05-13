@@ -24,7 +24,7 @@
     shoes: ClothingShoesBootsSecurityGuard
     head: ClothingHeadHatBeretCommand
     mask: ClothingMaskGRU
-    eyes: ClothingEyesNVDSec
+# Scp edit - disabled broken ported content.     eyes: ClothingEyesNVDSec
     gloves: ClothingHandsGlovesMtfMilitary
     outerClothing: ClothingOuterArmorGRU
     belt: ClothingBeltMtfMedicalFilledOperative

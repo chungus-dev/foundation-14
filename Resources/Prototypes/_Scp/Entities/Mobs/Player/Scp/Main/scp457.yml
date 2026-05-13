@@ -83,8 +83,9 @@
           messages: [ "scp-457-extinguished" ]
           probability: 0.25
   - type: Body
-    prototype: Human
-    requiredLegs: 2
+    # Scp edit - Body prototypes/requiredLegs were removed; custom organs need a separate port.
+    # prototype: Human
+    # requiredLegs: 2
   - type: MeleeWeapon
     altDisarm: false
     soundHit:
@@ -103,7 +104,7 @@
   - type: PassiveDamage
     allowedStates:
     - Alive
-    damageCap: 0
+# Scp edit - disabled broken ported content.     damageCap: 0
     damage:
       types:
         Cold: -1

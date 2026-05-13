@@ -1,4 +1,4 @@
-﻿- type: Tag
+- type: Tag
   id: Scp079
 
 - type: entity
@@ -42,7 +42,7 @@
   - type: ActionGrant
     actions:
     - ActionJumpToCore
-    - ActionSurvCameraLights
+# Scp edit - disabled broken ported content.     - ActionSurvCameraLights
     #- ActionAIViewLaws    пока для 079 нет кастом законов - увы, без них
   - type: UserInterface
     interfaces:
@@ -78,7 +78,7 @@
     canShuttle: false
     title: str-079-CommunicationsConsole-title
     color: "#5ed7aa"
-    announceVoice: SCP079
+# Scp edit - disabled broken ported content.     announceVoice: SCP079
     sound: /Audio/_Scp/Scp079/announcement.ogg
   - type: HolographicAvatar
     layerData:
@@ -93,7 +93,7 @@
     - Biological
     - Inorganic
     - Silicon
-    - Mech
+# Scp edit - disabled broken ported content.     - Mech
   - type: Speech
     speechVerb: Robotic
 

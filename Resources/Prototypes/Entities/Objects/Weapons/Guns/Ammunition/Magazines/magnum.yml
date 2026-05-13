@@ -44,7 +44,7 @@
   description: 7-round single stack pistol magazine. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeMagnumSP
+# Scp edit - disabled broken ported content.     proto: CartridgeMagnumSP
   - type: Sprite
     layers:
     - state: base

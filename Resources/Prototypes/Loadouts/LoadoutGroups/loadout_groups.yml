@@ -138,7 +138,7 @@
   id: CaptainOuterClothing
   name: loadout-group-outer-clothing # Fire edit
   loadouts:
-  - CaptainOuterArmor
+# Scp edit - disabled broken ported content.   - CaptainOuterArmor
   - CaptainWintercoat
 
 - type: loadoutGroup
@@ -767,8 +767,8 @@
   loadouts:
   - ChiefEngineerCloak
   - ChiefEngineerMantle
-  - ChiefEngineerScarf
-
+# Scp edit - disabled broken ported content.   - ChiefEngineerScarf
+#
 - type: loadoutGroup
   id: ChiefEngineerOuterClothing
   name: loadout-group-outer-clothing # Fire edit

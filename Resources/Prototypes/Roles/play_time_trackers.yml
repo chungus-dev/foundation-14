@@ -71,6 +71,9 @@
   id: JobCBURN
 
 - type: playTimeTracker
+  id: JobCBURNVeteran # Scp added - used by the ported CBURN veteran job.
+
+- type: playTimeTracker
   id: JobHeadOfPersonnel
 
 - type: playTimeTracker

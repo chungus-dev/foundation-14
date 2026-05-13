@@ -8,8 +8,8 @@
       emergencyLightColor: LawnGreen
       shuttleTime: 600
       # Sunrise edit start
-      extendedAccessOptions:
-        announcement: access-system-accesses-delay-green
+# Scp edit - disabled broken ported content.       extendedAccessOptions:
+#         announcement: access-system-accesses-delay-green
       # Sunrise edit end
     blue:
       announcement: alert-level-blue-announcement
@@ -19,8 +19,8 @@
       emergencyLightColor: DodgerBlue
       shuttleTime: 600
       # Sunrise edit start
-      extendedAccessOptions:
-        announcement: access-system-accesses-delay-blue
+      # Scp edit - disabled broken ported content. extendedAccessOptions:
+      # Scp edit - disabled broken ported content.   announcement: access-system-accesses-delay-blue
       # Sunrise edit end
     violet:
       announcement: alert-level-violet-announcement
@@ -37,8 +37,8 @@
       forceEnableEmergencyLights: true
       shuttleTime: 600
       # Sunrise edit start
-      extendedAccessOptions:
-        announcement: access-system-accesses-delay-yellow
+      # Scp edit - disabled broken ported content. extendedAccessOptions:
+      # Scp edit - disabled broken ported content.   announcement: access-system-accesses-delay-yellow
       # Sunrise edit end
     red:
       announcement: alert-level-red-announcement
@@ -48,14 +48,14 @@
       forceEnableEmergencyLights: true
       shuttleTime: 600 #No reduction in time as we don't have swiping for red alert like in /tg/. Shuttle times are intended to create friction, so having a way to brainlessly bypass that would be dumb.
       # Sunrise edit start
-      extendedAccessOptions:
-        announcement: access-system-accesses-delay-red
+      # Scp edit - disabled broken ported content. extendedAccessOptions:
+      # Scp edit - disabled broken ported content.   announcement: access-system-accesses-delay-red
       # Sunrise edit end
     gamma:
       announcement: alert-level-gamma-announcement
       selectable: false
       sound:
-        path: /Audio/_Sunrise/Misc/siren.ogg # Sunrise-Edit
+        path: /Audio/_Scp/Misc/siren.ogg # Sunrise-Edit
         params:
           volume: -2
       disableSelection: true
@@ -63,8 +63,8 @@
       emergencyLightColor: PaleVioletRed
       forceEnableEmergencyLights: true
       # Sunrise edit start
-      extendedAccessOptions:
-        announcement: access-system-accesses-delay-gamma
+      # Scp edit - disabled broken ported content. extendedAccessOptions:
+      # Scp edit - disabled broken ported content.   announcement: access-system-accesses-delay-gamma
       # Sunrise edit end
     delta:
       announcement: alert-level-delta-announcement
@@ -79,8 +79,8 @@
       forceEnableEmergencyLights: true
       shuttleTime: 1200
       # Sunrise edit start
-      extendedAccessOptions:
-        delay: 0
+      # Scp edit - disabled broken ported content. extendedAccessOptions:
+      # Scp edit - disabled broken ported content.   delay: 0
       # Sunrise edit end
     epsilon:
       announcement: alert-level-epsilon-announcement

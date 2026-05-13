@@ -12,12 +12,12 @@
   - type: RandomSpawner
     offset: 0
     prototypes:
-      - PottedPlantAlt0
-      - PottedPlantAlt1
-      - PottedPlantAlt2
-      - PottedPlantAlt3
-      - PottedPlantAlt4
-      - PottedPlantAlt9  # Sunrise-edit
+# Scp edit - disabled broken ported content.       - PottedPlantAlt0
+# Scp edit - disabled broken ported content.       - PottedPlantAlt1
+# Scp edit - disabled broken ported content.       - PottedPlantAlt2
+# Scp edit - disabled broken ported content.       - PottedPlantAlt3
+# Scp edit - disabled broken ported content.       - PottedPlantAlt4
+# Scp edit - disabled broken ported content.       - PottedPlantAlt9  # Sunrise-edit
       - PottedPlant0
       - PottedPlant1
       - PottedPlant2

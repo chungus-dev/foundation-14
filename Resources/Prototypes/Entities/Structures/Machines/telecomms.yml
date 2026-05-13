@@ -202,9 +202,9 @@
       - EncryptionKeySecurity
       - EncryptionKeyService
       - EncryptionKeyCommand
-      - EncryptionKeyLaw # Sunrise-Edit
-      - EncryptionKeyBlueShield # Sunrise-Edit
-
+# Scp edit - disabled broken ported content.       - EncryptionKeyLaw # Sunrise-Edit
+# Scp edit - disabled broken ported content.       - EncryptionKeyBlueShield # Sunrise-Edit
+#
 - type: entity
   parent: TelecomServer
   id: TelecomServerFilledCommon

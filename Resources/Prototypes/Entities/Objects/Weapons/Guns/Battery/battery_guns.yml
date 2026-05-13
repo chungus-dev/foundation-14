@@ -280,7 +280,7 @@
     fireCost: 62.5
   - type: PacifismAllowedGun
 
-# - type: entity #  Sunrise-Edit Moved to _Sunrise/Entities/Objects/Weapons/Guns/Battery/battery_guns.yml
+# - type: entity #  Sunrise-Edit Moved to _Scp/Entities/Objects/Weapons/Guns/Battery/battery_guns.yml
 #   name: pulse pistol
 #   parent: [BaseWeaponBatterySmall, BaseCentcommContraband]
 #   id: WeaponPulsePistol

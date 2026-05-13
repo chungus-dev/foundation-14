@@ -1,4 +1,4 @@
-﻿# TODO: После добавления реконтейма сделать предметы для реконтейма исследуемыми
+# TODO: После добавления реконтейма сделать предметы для реконтейма исследуемыми
 
 # Tier 1
 
@@ -115,7 +115,7 @@
   id: AnomalousResonanceLaser
   name: research-technology-anomalous-resonance-laser
   icon:
-    sprite: _Sunrise/Objects/Weapons/Guns/Battery/EG_MG/big.rsi
+    sprite: _Scp/Objects/Weapons/Guns/Battery/EG_MG/big.rsi
     state: base
   discipline: SCP
   tier: 3
@@ -132,7 +132,7 @@
   id: AnomalousOpticalDestructor
   name: research-technology-anomalous-optical-destructor
   icon:
-    sprite: _Sunrise/Objects/Weapons/Guns/Battery/EGE_XR/big.rsi
+    sprite: _Scp/Objects/Weapons/Guns/Battery/EGE_XR/big.rsi
     state: base
   discipline: SCP
   tier: 3

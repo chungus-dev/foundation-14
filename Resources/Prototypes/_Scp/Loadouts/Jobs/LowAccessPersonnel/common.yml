@@ -7,9 +7,9 @@
       !type:DepartmentTimeRequirement
       department: LowAccessPersonnel
       time: 180000 # 50 hrs
-  equipment:
-    neck: ClothingNeckPlanetPrisonCellblockPin
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     neck: ClothingNeckPlanetPrisonCellblockPin
+#
 - type: loadout
   id: ScpLoadoutClassDLockdownPin
   groupBy: ClassD
@@ -19,5 +19,5 @@
       !type:DepartmentTimeRequirement
       department: LowAccessPersonnel
       time: 360000 # 100 hrs
-  equipment:
-    neck: ClothingNeckPlanetPrisonLockdownPin
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     neck: ClothingNeckPlanetPrisonLockdownPin

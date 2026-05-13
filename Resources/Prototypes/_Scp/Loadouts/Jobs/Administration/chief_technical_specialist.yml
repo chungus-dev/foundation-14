@@ -49,19 +49,19 @@
 # Back
 - type: loadout
   id: ScpLoadoutChiefTechnicalSpecialistBackpack
-  equipment:
-    back: ClothingBackpackCE
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     back: ClothingBackpackCE
+#
 - type: loadout
   id: ScpLoadoutChiefTechnicalSpecialistSatchel
-  equipment:
-    back: ClothingBackpackSatchelCE
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     back: ClothingBackpackSatchelCE
+#
 - type: loadout
   id: ScpLoadoutChiefTechnicalSpecialistDuffelbag
-  equipment:
-    back: ClothingBackpackDuffelCE
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     back: ClothingBackpackDuffelCE
+#
 # Jumpsuit
 - type: loadout
   id: ScpLoadoutChiefTechnicalSpecialistJumpsuit
@@ -86,9 +86,9 @@
 # Neck
 - type: loadout
   id: ScpLoadoutChiefTechnicalSpecialistScarf
-  equipment:
-    neck: ClothingNeckScarfCe
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfCe
+#
 - type: loadout
   id: ScpLoadoutChiefTechnicalSpecialistMantle
   equipment:
@@ -133,9 +133,9 @@
 # Head
 - type: loadout
   id: ScpLoadoutChiefTechnicalSpecialistBeret
-  equipment:
-    head: ClothingHeadHatBeretCE
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretCE
+#
 - type: loadout
   id: ScpLoadoutChiefTechnicalSpecialistEngineeringBeret
   equipment:
@@ -173,8 +173,8 @@
 
 - type: loadout
   id: ScpLoadoutChiefTechnicalSpecialistSinguloHardHat
-  equipment:
-    head: ClothingHeadHatSingulo
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     head: ClothingHeadHatSingulo
   effects:
   - !type:GroupLoadoutEffect
     proto: ScpBigMasterChiefTechnicalSpecialist

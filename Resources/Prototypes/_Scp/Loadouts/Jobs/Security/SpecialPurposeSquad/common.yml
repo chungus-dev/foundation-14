@@ -24,13 +24,13 @@
 
 - type: loadout
   id: ScpLoadoutClothingUniformTurleneckBlack
-  equipment:
-    jumpsuit: ClothingUniformTurleneckBlack
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     jumpsuit: ClothingUniformTurleneckBlack
+#
 - type: loadout
   id: ScpLoadoutClothingUniformTurleneckBlackSleeveless
-  equipment:
-    jumpsuit: ClothingUniformTurleneckBlackSleeveless
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     jumpsuit: ClothingUniformTurleneckBlackSleeveless
   effects:
   - !type:GroupLoadoutEffect
     proto: CommandantSquadFancyUniformTimer
@@ -53,17 +53,17 @@
 # Пистолет-пулемет
 - type: loadout
   id: ScpLoadoutWeaponSubMachineGunMP5
-  equipment:
-    suitstorage: WeaponSubMachineGunMP5
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     suitstorage: WeaponSubMachineGunMP5
+#
 # Дробовик
 - type: loadout
   id: ScpLoadoutWeaponShotgunSPAS12
-  equipment:
-    suitstorage: WeaponShotgunSPAS12
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     suitstorage: WeaponShotgunSPAS12
+#
 # Пистолет
 - type: loadout
   id: ScpLoadoutWeaponPistolG22
-  equipment:
-    pocket1: WeaponPistolG22
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     pocket1: WeaponPistolG22

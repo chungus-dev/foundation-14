@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Numerics;
 using Content.Shared._Scp.Holding;
 using Content.Shared._Scp.Holding.Components;
@@ -89,7 +88,8 @@ public abstract partial class SharedScp096System
 
     private static Vector2 GetHoldBreakoutDirection(Vector2 holderPosition, Vector2 scpPosition, int holderIndex, int holderCount)
     {
-        Debug.Assert(holderCount > 0);
+        if (holderCount <= 0)
+            return Vector2.Zero;
 
         var direction = holderPosition - scpPosition;
         if (direction.LengthSquared() >= 0.001f)

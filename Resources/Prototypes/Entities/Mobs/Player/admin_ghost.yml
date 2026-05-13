@@ -64,11 +64,11 @@
       enum.GeneralStationRecordConsoleKey.Key:
       # who the fuck named this bruh
         type: GeneralStationRecordConsoleBoundUserInterface
-      # Sunrise-Start
-      enum.GhostThemeUiKey.Key:
-        type: GhostThemeBoundUserInterface
-        requireInputValidation: false
-      # Sunrise-End
+      # Scp edit start - Sunrise ghost theme UI is unavailable in Foundation14
+      # enum.GhostThemeUiKey.Key:
+      #   type: GhostThemeBoundUserInterface
+      #   requireInputValidation: false
+      # Scp edit end
   - type: IntrinsicUI
     uis:
       enum.SolarControlConsoleUiKey.Key:

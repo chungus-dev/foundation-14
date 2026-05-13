@@ -41,8 +41,8 @@
     DefaultDeathgasp:
       collection: MaleDeathGasp
     # Sunrise start
-    SevereCough:
-      collection: MaleSevereCough
+# Scp edit - disabled broken ported content.     SevereCough:
+#       collection: MaleSevereCough
     # Sunrise end
     # Fire start
     Pain:
@@ -92,13 +92,13 @@
       collection: FemaleDeathGasp
     # Sunrise start
     SevereCough:
-      collection: FemaleSevereCough
+# Scp edit - disabled broken ported content.       collection: FemaleSevereCough
     # Sunrise end
     # Fire start
     Pain:
-      collection: FemalePain 
+      collection: FemalePain
     # Fire end
-    
+
 
 - type: emoteSounds
   id: MaleReptilian

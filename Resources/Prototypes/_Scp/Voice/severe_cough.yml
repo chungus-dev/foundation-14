@@ -1,0 +1,16 @@
+# Scp added - emote referenced by ported severe cough sound mappings.
+- type: emote
+  id: SevereCough
+  name: chat-emote-name-severe-cough
+  icon: Interface/Emotes/cough.png
+  category: Vocal
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ "chat-emote-msg-severe-cough" ]
+  chatTriggers:
+  - severe cough
+  - cough hard

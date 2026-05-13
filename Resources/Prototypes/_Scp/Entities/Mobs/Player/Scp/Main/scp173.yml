@@ -38,7 +38,7 @@
     - whitelist:
         components:
         - MobState
-        - HumanoidAppearance
+# Scp edit - disabled broken ported content.         - HumanoidAppearance
         requireAll: true
       damage:
         types:
@@ -65,7 +65,7 @@
         tags:
         - Window
         - Windoor
-        - Directional
+# Scp edit - disabled broken ported content.         - Directional
         - SecureWindoor
         - SecurePlasmaWindoor
         - SecureUraniumWindoor
@@ -88,8 +88,10 @@
     soundHit:
       collection: MetalThud
     damage:
-      groups:
-        Brute: 10
+      types:
+        Blunt: 10
+        Slash: 10
+        Piercing: 10
   - type: Muted
   - type: SafeTime
     addWidget: false

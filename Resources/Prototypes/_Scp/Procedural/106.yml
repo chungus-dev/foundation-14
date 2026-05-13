@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: WallBrick
   id: WallBrick106
   components:
@@ -102,16 +102,22 @@
   - !type:CornerClutterDunGen
     contents: BaseClutter
 
-  - !type:LimitedEntityDunGen
-    entity: Scp106Backrooms
-    limit: 4
-
-  - !type:LimitedEntityDunGen
-    entity: StairsUp106
-
-  - !type:LimitedEntityDunGen
-    entity: StairsDown106
-
+  # Scp edit start - Sunrise LimitedEntityDunGen layer is unavailable in Foundation14
+  # - !type:LimitedEntityDunGen
+  #   entity: Scp106Backrooms
+  #   limit: 4
+  #
+  # Scp edit end
+  # Scp edit start - Sunrise LimitedEntityDunGen layer is unavailable in Foundation14
+  # - !type:LimitedEntityDunGen
+  #   entity: StairsUp106
+  #
+  # Scp edit end
+  # Scp edit start - Sunrise LimitedEntityDunGen layer is unavailable in Foundation14
+  # - !type:LimitedEntityDunGen
+  #   entity: StairsDown106
+  #
+  # Scp edit end
   - !type:MobsDunGen
     minCount: 4
     maxCount: 9

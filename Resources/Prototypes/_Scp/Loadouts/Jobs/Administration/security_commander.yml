@@ -35,24 +35,24 @@
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderCap
-  equipment:
-    head: ClothingHeadHatCapHoS
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     head: ClothingHeadHatCapHoS
   effects:
   - !type:GroupLoadoutEffect
     proto: ScpMasterSecurityCommander
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderBlackCap
-  sponsorOnly: false
-  equipment:
-    head: ClothingHeadHatCapUSSPBlack
-
+# Scp edit - disabled broken ported content.   sponsorOnly: false
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     head: ClothingHeadHatCapUSSPBlack
+#
 - type: loadout
   id: ScpLoadoutSecurityCommanderLeatherCap
-  sponsorOnly: false
-  equipment:
-    head: ClothingHeadHatCapLeatherHoS
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     head: ClothingHeadHatCapLeatherHoS
+#
 # Eyes
 - type: loadout
   id: ScpLoadoutSecurityCommanderSecurityGlasses
@@ -116,25 +116,25 @@
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderLegacyJumpsuit
-  sponsorOnly: false
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitHoSOld
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     jumpsuit: ClothingUniformJumpsuitHoSOld
   effects:
   - !type:GroupLoadoutEffect
     proto: ScpMasterSecurityCommander
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderBlackUniform
-  sponsorOnly: false
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitUSSPBlack
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     jumpsuit: ClothingUniformJumpsuitUSSPBlack
+#
 # Neck
 - type: loadout
   id: ScpLoadoutSecurityCommanderScarf
-  equipment:
-    neck: ClothingNeckScarfHos
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfHos
+#
 - type: loadout
   id: ScpLoadoutSecurityCommanderMantle
   equipment:
@@ -156,33 +156,33 @@
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderGreatcoat
-  equipment:
-    outerClothing: ClothingOuterCoatHoSGreatcoat
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatHoSGreatcoat
   effects:
   - !type:GroupLoadoutEffect
     proto: ScpMasterSecurityCommander
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderBlackOvercoat
-  sponsorOnly: false
-  equipment:
-    outerClothing: ClothingOuterCoatHOSOvercoatBlack
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatHOSOvercoatBlack
   effects:
   - !type:GroupLoadoutEffect
     proto: ScpMasterSecurityCommander
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderOvercoat
-  sponsorOnly: false
-  equipment:
-    outerClothing: ClothingOuterCoatHoSOvercoat
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatHoSOvercoat
+#
 - type: loadout
   id: ScpLoadoutSecurityCommanderOfficerBlackOvercoat
-  sponsorOnly: false
-  equipment:
-    outerClothing: ClothingOuterCoatUSSPOvercoatBlack
-
+  # Scp edit - disabled broken ported content. sponsorOnly: false
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatUSSPOvercoatBlack
+#
 # Suit Storage
 - type: loadout
   id: ScpLoadoutWeaponPistolACP14
@@ -190,18 +190,18 @@
 
 - type: startingGear
   id: GearWeaponPistolACP14
-  equipment:
-    suitstorage: WeaponPistolACP14
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     suitstorage: WeaponPistolACP14
+#
 - type: loadout
   id: ScpLoadoutWeaponRevolverMatebaNew
   startingGear: GearWeaponRevolverMatebaNew
 
 - type: startingGear
   id: GearWeaponRevolverMatebaNew
-  equipment:
-    suitstorage: WeaponRevolverMatebaNew
-
+  equipment: {} # Scp edit - broken ported entries disabled.
+# Scp edit - disabled broken ported content.     suitstorage: WeaponRevolverMatebaNew
+#
 # Pocket 2
 - type: loadout
   id: ScpLoadoutSecurityCommanderPDA

@@ -1,4 +1,4 @@
-﻿# ВЕЩИ АПЛИНКА
+# ВЕЩИ АПЛИНКА
 - type: entity
   parent: WeaponPulseCarbine
   id: WeaponPulseCarbineScp
@@ -26,8 +26,8 @@
           amount: 3
         - id: Tourniquet
           amount: 2
-        - id: MedipenCombatInjector
-          amount: 2
+# Scp edit - disabled broken ported content.         - id: MedipenCombatInjector
+#           amount: 2
         - id: CombatMedipen
           amount: 4
         - id: PunctAutoInjector
@@ -72,8 +72,8 @@
   - type: StorageFill
     contents:
     - id: WeaponLightMachineGunL6
-    - id: MagazineRifleBoxSP
-
+# Scp edit - disabled broken ported content.     - id: MagazineRifleBoxSP
+#
 - type: entity
   parent: CrateCommandSecure
   id: CrateAdministrationSecure
@@ -132,9 +132,9 @@
   - Dwarf
   parent: EventHumanoidMindShielded
   randomizeName: false
-  voiceWhitelist:
-  - CBMTF1
-  - CBMTF2
+# Scp edit - disabled broken ported content.   voiceWhitelist:
+#   - CBMTF1
+#   - CBMTF2
   genderWhitelist:
   - Male
   components:
@@ -199,7 +199,7 @@
 - type: randomHumanoidSettings
   id: CommonMTFLeader
   parent: CommonMTFSpecialist
-  randomizeName: false
+# Scp edit - disabled broken ported content.   randomizeName: false
   components:
   - type: RandomMetadata
     nameSegments:

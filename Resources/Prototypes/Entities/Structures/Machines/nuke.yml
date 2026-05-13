@@ -18,7 +18,7 @@
     enabled: false
   - type: NukeLabel
   - type: Nuke
-    explosionType: DefaultStandardEffect # Sunrise edit
+    explosionType: Default # Scp edit - DefaultStandardEffect is unavailable in Foundation14.
     maxIntensity: 100
     intensitySlope: 5
     totalIntensity: 5000000
@@ -45,8 +45,10 @@
   - type: ContainerContainer
     containers:
       Nuke: !type:ContainerSlot
-  - type: Construction
-    node: nuke
+  # Scp edit start - old nuke construction graph is unavailable in Foundation14
+  # - type: Construction
+  #   node: nuke
+  # Scp edit end
   - type: FTLSmashImmune
 
 - type: entity

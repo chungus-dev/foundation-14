@@ -39,7 +39,7 @@
     Paper: 10
     Envelope: 10
     HandLabeler: 2
-    DrinkInc: 4
+    # Scp edit - disabled broken ported content. DrinkInc: 4
     EncryptionKeyCommon: 6
     EncryptionKeyLogisticsService: 2
     EncryptionKeyEngineeringTechnicalService: 2

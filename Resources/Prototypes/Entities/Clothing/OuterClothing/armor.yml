@@ -320,12 +320,14 @@
   # SUNRISE EDIT
   - type: Tag
     tags:
-    - Vest
-    - FullBodyOuter
+# Scp edit - disabled broken ported content.     - Vest
+# Scp edit - disabled broken ported content.     - FullBodyOuter
     - WhitelistChameleon
-  - type: Construction
-    graph: UpgradeArmorVest
-    node: riot
+  # Scp edit start - old armor upgrade construction graph is unavailable.
+  # - type: Construction
+# Scp edit - disabled broken ported content.     graph: UpgradeArmorVest
+  #   node: riot
+  # Scp edit end
   # SUNRISE EDIT
 
 - type: entity

@@ -66,10 +66,10 @@
     - type: AccessReader
       access: [["Command"]]
       # Sunrise-start
-      alertAccesses:
-        red: RedAlertAccesses
-        blue: BlueAlertAccessesHOS
-        gamma: GammaAlertAccesses
+# Scp edit - disabled broken ported content.       alertAccesses:
+#         red: RedAlertAccesses
+#         blue: BlueAlertAccessesHOS
+#         gamma: GammaAlertAccesses
       # Sunrise-end
     - type: AutoLinkReceiver
       channel: Bridge
@@ -83,10 +83,10 @@
     - type: AccessReader
       access: [["Command"]]
       # Sunrise-start
-      alertAccesses:
-        red: RedAlertAccesses
-        blue: BlueAlertAccessesHOS
-        gamma: GammaAlertAccesses
+      # Scp edit - disabled broken ported content. alertAccesses:
+      # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+      # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+      # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
       # Sunrise-end
     - type: AutoLinkReceiver
       channel: Bridge
@@ -100,10 +100,10 @@
   - type: AccessReader
     access: [["Command"], ["Engineering"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
   - type: AutoLinkReceiver
     channel: Engineering
@@ -117,10 +117,10 @@
   - type: AccessReader
     access: [["Command"], ["Engineering"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
   - type: AutoLinkReceiver
     channel: Engineering
@@ -134,10 +134,10 @@
   - type: AccessReader
     access: [["Command"], ["Research"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
   - type: AutoLinkReceiver
     channel: Research
@@ -151,10 +151,10 @@
   - type: AccessReader
     access: [["Command"], ["Research"]]
     # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      gamma: GammaAlertAccesses
+    # Scp edit - disabled broken ported content. alertAccesses:
+    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
+    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
+    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
     # Sunrise-end
   - type: AutoLinkReceiver
     channel: Research

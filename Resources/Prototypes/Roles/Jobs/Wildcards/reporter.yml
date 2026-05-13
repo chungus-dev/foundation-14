@@ -9,8 +9,8 @@
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
   # Sunrise-Start
-  alternativeTitles:
-  - job-alt-title-journalist
+# Scp edit - disabled broken ported content.   alternativeTitles:
+#   - job-alt-title-journalist
   # Sunrise-End
   access:
   - Service

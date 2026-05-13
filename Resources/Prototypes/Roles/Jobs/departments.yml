@@ -8,9 +8,9 @@
   - CargoTechnician
   - Quartermaster
   - SalvageSpecialist
-  - MailCarrier # Sunrise-Roles
-  - MiningSpecialist # Sunrise-Roles
-
+# Scp edit - disabled broken ported content.   - MailCarrier # Sunrise-Roles
+# Scp edit - disabled broken ported content.   - MiningSpecialist # Sunrise-Roles
+#
 - type: department
   id: Civilian
   name: department-Civilian
@@ -33,9 +33,9 @@
   - Reporter
   - Visitor
   - ServiceWorker
-  - Barber # Sunrise-Roles
-  - ComMaid  # Sunrise-Lust edit
-
+# Scp edit - disabled broken ported content.   - Barber # Sunrise-Roles
+# Scp edit - disabled broken ported content.   - ComMaid  # Sunrise-Lust edit
+#
 # Вынесено в _Sunrise
 #- type: department
 #  id: CentralCommand
@@ -54,7 +54,7 @@
 #  - DeathSquad
 #  editorHidden: true
 #  weight: 120
-
+#
 - type: department
   id: CentralCommand
   name: department-CentralCommand
@@ -95,10 +95,10 @@
   - ERTSecurity
   - ERTEngineer
   - DeathSquad
-  - CentCommOfficial
-  - NanoTrasenRepresentative  #Sunrise-Edit
-  - Adjutant  #Sunrise-edit
-  - ComMaid  # Sunrise-Lust edit
+# Scp edit - disabled broken ported content.   - CentCommOfficial
+# Scp edit - disabled broken ported content.   - NanoTrasenRepresentative  #Sunrise-Edit
+# Scp edit - disabled broken ported content.   - Adjutant  #Sunrise-edit
+  # Scp edit - disabled broken ported content. - ComMaid  # Sunrise-Lust edit
   primary: false
   weight: 100
 
@@ -112,7 +112,7 @@
   roles:
   - AtmosphericTechnician
   - ChiefEngineer
-  - SeniorEngineer  # Sunrise-Senior
+# Scp edit - disabled broken ported content.   - SeniorEngineer  # Sunrise-Senior
   - StationEngineer
   - TechnicalAssistant
 
@@ -125,13 +125,13 @@
   roles:
   - Chemist
   - ChiefMedicalOfficer
-  - SeniorPhysician  # Sunrise-Senior
+# Scp edit - disabled broken ported content.   - SeniorPhysician  # Sunrise-Senior
   - MedicalDoctor
   - MedicalIntern
   - Psychologist
   - Paramedic
-  - MedicalPathologist  # Sunrise-pathologist
-
+# Scp edit - disabled broken ported content.   - MedicalPathologist  # Sunrise-pathologist
+#
 - type: department
   id: Security
   name: department-Security
@@ -141,14 +141,14 @@
   editorHidden: true # Fire added
   roles:
   - HeadOfSecurity
-  - SeniorOfficer  # Sunrise-Senior
+# Scp edit - disabled broken ported content.   - SeniorOfficer  # Sunrise-Senior
   - SecurityCadet
   - SecurityOfficer
   - Detective
   - Warden
-  - Brigmedic  # Sunrise-Brigmedic
-  - SecurityPilot # Sunrise-SecurityPilot
-
+# Scp edit - disabled broken ported content.   - Brigmedic  # Sunrise-Brigmedic
+# Scp edit - disabled broken ported content.   - SecurityPilot # Sunrise-SecurityPilot
+#
 - type: department
   id: Science
   name: department-Science
@@ -157,11 +157,11 @@
   editorHidden: true # Fire added
   roles:
   - ResearchDirector
-  - SeniorResearcher  # Sunrise-Senior
+# Scp edit - disabled broken ported content.   - SeniorResearcher  # Sunrise-Senior
   - Scientist
   - ResearchAssistant
-  - Roboticist  # Sunrise-Edit
-
+# Scp edit - disabled broken ported content.   - Roboticist  # Sunrise-Edit
+#
 - type: department
   id: Silicon
   name: department-Silicon
@@ -181,5 +181,5 @@
   roles:
   - Reporter
   - Psychologist
-  - Barber  # Sunrise-Roles
+  # Scp edit - disabled broken ported content. - Barber  # Sunrise-Roles
   primary: false

@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: PersonnelOfficer
   name: job-name-personnel-officer
   description: job-description-personnel-officer
@@ -22,7 +22,7 @@
   icon: JobPersonnelOfficer
   supervisors: job-supervisors-director
   canBeAntag: false
-  radioBold: true
+# Scp edit - disabled broken ported content.   radioBold: true
   displayWeight: 90
   accessGroups:
   - PersonnelOfficer
@@ -46,7 +46,7 @@
   id: PersonnelOfficerGear
   equipment:
     eyes: ClothingEyesGlasses
-    neck: ClothingNeckScarfHOP
+# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfHOP
     jumpsuit: ClothingUniformJumpsuitHoP
     gloves: ClothingHandsGlovesHop
     shoes: ClothingShoesColorBrown
@@ -58,4 +58,4 @@
   storage:
     back:
     - Flash
-    - Telebaton
+# Scp edit - disabled broken ported content.     - Telebaton

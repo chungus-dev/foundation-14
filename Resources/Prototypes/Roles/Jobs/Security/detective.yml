@@ -15,10 +15,10 @@
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
   # Sunrise-Start
-  alternativeTitles:
-  - job-alt-title-investigator
-  - job-alt-title-incident-analyst
-  - job-alt-title-station-detective
+# Scp edit - disabled broken ported content.   alternativeTitles:
+#   - job-alt-title-investigator
+#   - job-alt-title-incident-analyst
+#   - job-alt-title-station-detective
   # Sunrise-End
   access:
   - Security
@@ -31,9 +31,9 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
-  speciesBlacklist:
-  - Vox
-
+# Scp edit - disabled broken ported content.   speciesBlacklist:
+#   - Vox
+#
 - type: startingGear
   id: DetectiveGear
   equipment:

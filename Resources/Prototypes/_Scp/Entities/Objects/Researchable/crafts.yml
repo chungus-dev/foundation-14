@@ -1,4 +1,4 @@
-﻿# Абстракты
+# Абстракты
 # ASF, RAS, ARL это сокращения от названий технологий, которые открывают эти рецепты
 
 - type: latheRecipe
@@ -81,7 +81,7 @@
 - type: latheRecipe
   parent: BaseASFRecipe
   id: WeaponEarthGovLaserPistol
-  result: WeaponEarthGovLaserPistol
+# Scp edit - disabled broken ported content.   result: WeaponEarthGovLaserPistol
   materials:
     Steel: 1000
     Glass: 100
@@ -92,18 +92,18 @@
 - type: latheRecipe
   parent: BaseASFRecipe
   id: WeaponEarthGovLaserRifle
-  result: WeaponEarthGovLaserRifle
-
+# Scp edit - disabled broken ported content.   result: WeaponEarthGovLaserRifle
+#
 - type: latheRecipe
   parent: BaseASFRecipe
   id: WeaponEarthGovLaserCarbine
-  result: WeaponEarthGovLaserCarbine
-
+# Scp edit - disabled broken ported content.   result: WeaponEarthGovLaserCarbine
+#
 - type: latheRecipe
   parent: BaseASFRecipe
   id: WeaponEarthGovLaserMG
-  result: WeaponEarthGovLaserMG
-
+# Scp edit - disabled broken ported content.   result: WeaponEarthGovLaserMG
+#
 - type: latheRecipe
   parent: BaseASFRecipe
   id: WeaponARLSniper

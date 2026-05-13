@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingMaskGasERT
   id: ClothingMaskMtf
   name: gas mask
@@ -12,8 +12,8 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - FullCovered
-
+# Scp edit - disabled broken ported content.     - FullCovered
+#
 - type: entity
   parent: ClothingMaskGasERT
   id: ClothingMaskMtfTacticalRed

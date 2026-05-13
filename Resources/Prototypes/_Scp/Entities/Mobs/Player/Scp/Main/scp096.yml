@@ -58,7 +58,7 @@
       tags:
       - Wall
       - Window
-      - Directional
+# Scp edit - disabled broken ported content.       - Directional
       - Structure
     cryOutBlacklist:
       components:
@@ -145,7 +145,8 @@
     speed: 2
     distance: 0.25
   - type: Body
-    prototype: Scp096
+    # Scp edit - Body prototypes were removed; custom organs need a separate port.
+    # prototype: Scp096
   - type: Inventory
     templateId: scp096
   - type: Blindable

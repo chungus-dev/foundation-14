@@ -491,9 +491,9 @@
   # Sunrise-Start
   - type: Strap
     position: Stand
-    buckleOffsets:
-    - "-0.2,0"
-    - "0.2,0"
+# Scp edit - disabled broken ported content.     buckleOffsets:
+#     - "-0.2,0"
+#     - "0.2,0"
     size: 200
   # Sunrise-End
 

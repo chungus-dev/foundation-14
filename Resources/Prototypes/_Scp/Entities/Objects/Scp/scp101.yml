@@ -1,6 +1,6 @@
-﻿- type: entity
+- type: entity
   id: Scp101
-  parent: 
+  parent:
   - BaseItemScp
   - ClothingBeltStorageWaistbag
   - BaseBagOpenClose
@@ -38,7 +38,7 @@
     delay: 15
     beepInterval: 15
     beepSound:
-      path: /Audio/_Sunrise/FleshCult/devour_flesh_cultist.ogg
+      path: /Audio/_Scp/FleshCult/devour_flesh_cultist.ogg
     popup: scp-101-processing
     examinable: false
   - type: CleanContainersOnTrigger
@@ -46,7 +46,7 @@
     container: [ storagebase ]
   - type: Storage
     showVerb: false
-    storageInsertSound: /Audio/_Sunrise/FleshCult/flesh_cultist_mutation.ogg
+    storageInsertSound: /Audio/_Scp/FleshCult/flesh_cultist_mutation.ogg
     maxItemSize: Large
     grid:
     - 0,0,3,3

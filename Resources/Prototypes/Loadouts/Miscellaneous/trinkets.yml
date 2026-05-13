@@ -344,7 +344,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorOrange
+# Scp edit - disabled broken ported content.     - TowelColorOrange
   groupBy: "towels"
 
 - type: loadout
@@ -357,7 +357,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorLightBrown
+# Scp edit - disabled broken ported content.     - TowelColorLightBrown
   groupBy: "towels"
 
 - type: loadout
@@ -370,7 +370,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorYellow
+# Scp edit - disabled broken ported content.     - TowelColorYellow
   groupBy: "towels"
 
 - type: loadout
@@ -383,7 +383,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorDarkGreen
+# Scp edit - disabled broken ported content.     - TowelColorDarkGreen
   groupBy: "towels"
 
 - type: loadout
@@ -396,7 +396,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorGreen
+# Scp edit - disabled broken ported content.     - TowelColorGreen
   groupBy: "towels"
 
 - type: loadout
@@ -416,7 +416,7 @@
   # Fire edit end
   storage:
     back:
-    - TowelColorLightBlue
+# Scp edit - disabled broken ported content.     - TowelColorLightBlue
   groupBy: "towels"
 
 - type: loadout
@@ -429,7 +429,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorDarkBlue
+# Scp edit - disabled broken ported content.     - TowelColorDarkBlue
   groupBy: "towels"
 
 - type: loadout
@@ -442,7 +442,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorPurple
+# Scp edit - disabled broken ported content.     - TowelColorPurple
   groupBy: "towels"
 
 - type: loadout
@@ -455,7 +455,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorMaroon
+# Scp edit - disabled broken ported content.     - TowelColorMaroon
   groupBy: "towels"
 
 - type: loadout
@@ -468,7 +468,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorMime
+# Scp edit - disabled broken ported content.     - TowelColorMime
   groupBy: "towels"
 
 - type: loadout
@@ -481,7 +481,7 @@
       time: 180000 # 50hr  # Fire edit
   storage:
     back:
-    - TowelColorOrange # Fire edit
+    - TowelColorWhite # Scp edit - orange towel entity is unavailable.
   groupBy: "towels"
 
 - type: loadout
@@ -494,6 +494,5 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorGold
+# Scp edit - disabled broken ported content.     - TowelColorGold
   groupBy: "towels"
-

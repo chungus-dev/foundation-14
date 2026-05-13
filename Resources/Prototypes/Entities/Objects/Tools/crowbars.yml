@@ -46,7 +46,7 @@
   # Sunrise start
   - type: EmitSoundOnPickup
     sound:
-      path: /Audio/_Sunrise/Items/Handling/crowbar_pickup.ogg
+      path: /Audio/_Scp/Items/Handling/crowbar_pickup.ogg
       params:
         volume: -2
   - type: EmitSoundOnDrop

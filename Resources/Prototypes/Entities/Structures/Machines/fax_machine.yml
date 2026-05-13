@@ -88,8 +88,8 @@
   - type: FaxMachine
     name: "Central Command"
     notifyAdmins: true
-    receiveStationGoal: true # Sunrise-StationGoal
-
+# Scp edit - disabled broken ported content.     receiveStationGoal: true # Sunrise-StationGoal
+#
 - type: entity
   parent: FaxMachineBase
   id: FaxMachineSyndie
@@ -119,7 +119,7 @@
     - type: FaxMachine
       name: "Captain's Office"
       receiveNukeCodes: true
-      receiveStationGoal: true # Sunrise-StationGoal
+      # Scp edit - disabled broken ported content. receiveStationGoal: true # Sunrise-StationGoal
     - type: StealTarget
       stealGroup: FaxMachineCaptain
 
@@ -179,5 +179,3 @@
   - type: ContainerContainer
     containers:
       Paper: !type:ContainerSlot
-
-

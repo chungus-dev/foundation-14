@@ -69,7 +69,7 @@
   id: ScpLoadoutHyperLinkBookCorporateLaw
   storage:
     back:
-    - HyperLinkBookCorporateLaw
+# Scp edit - disabled broken ported content.     - HyperLinkBookCorporateLaw
   groupBy: folders
 
 # Canes
@@ -104,7 +104,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorGray
+# Scp edit - disabled broken ported content.     - TowelColorGray
   groupBy: towels
 
 - type: loadout
@@ -114,7 +114,7 @@
     proto: TowelColorBlackAndDinkystar
   storage:
     back:
-    - TowelColorBlack
+# Scp edit - disabled broken ported content.     - TowelColorBlack
   groupBy: towels
 
 - type: loadout
@@ -127,7 +127,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorRed
+# Scp edit - disabled broken ported content.     - TowelColorRed
   groupBy: towels
 
 - type: loadout
@@ -140,7 +140,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorOrange
+# Scp edit - disabled broken ported content.     - TowelColorOrange
   groupBy: towels
 
 - type: loadout
@@ -153,7 +153,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorLightBrown
+# Scp edit - disabled broken ported content.     - TowelColorLightBrown
   groupBy: towels
 
 - type: loadout
@@ -166,7 +166,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorYellow
+# Scp edit - disabled broken ported content.     - TowelColorYellow
   groupBy: towels
 
 - type: loadout
@@ -179,7 +179,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorDarkGreen
+# Scp edit - disabled broken ported content.     - TowelColorDarkGreen
   groupBy: towels
 
 - type: loadout
@@ -192,7 +192,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorLightBlue
+# Scp edit - disabled broken ported content.     - TowelColorLightBlue
   groupBy: towels
 
 - type: loadout
@@ -205,7 +205,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorDarkBlue
+# Scp edit - disabled broken ported content.     - TowelColorDarkBlue
   groupBy: towels
 
 - type: loadout
@@ -218,7 +218,7 @@
       time: 360000 # 100hr
   storage:
     back:
-    - TowelColorPurple
+# Scp edit - disabled broken ported content.     - TowelColorPurple
   groupBy: towels
 
 - type: loadout
@@ -230,7 +230,7 @@
       time: 180000 # 50hr
   storage:
     back:
-    - TowelColorSilver
+# Scp edit - disabled broken ported content.     - TowelColorSilver
   groupBy: towels
 
 - type: loadout
@@ -242,15 +242,15 @@
       time: 1080000 # 300hr
   storage:
     back:
-    - TowelColorGold
+# Scp edit - disabled broken ported content.     - TowelColorGold
   groupBy: towels
 
 - type: loadout
   id: ScpLoadoutClothingWraps
   storage:
     back:
-    - ClothingWraps
-
+# Scp edit - disabled broken ported content.     - ClothingWraps
+#
 - type: loadout
   id: ScpLoadoutClothingHeadHatFlowerWreath
   storage:
@@ -261,8 +261,8 @@
   id: ScpLoadoutClothingWrapsHigh
   storage:
     back:
-    - ClothingWrapsHigh
-
+# Scp edit - disabled broken ported content.     - ClothingWrapsHigh
+#
 - type: loadout
   id: ScpLoadoutClothingHeadHatHairflower
   storage:

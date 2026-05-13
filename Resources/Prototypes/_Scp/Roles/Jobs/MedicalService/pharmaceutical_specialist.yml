@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: PharmaceuticalSpecialist
   name: job-name-pharmaceutical-specialist
   description: job-description-pharmaceutical-specialist
@@ -35,7 +35,7 @@
   equipment:
     head: ClothingHeadHatRedsoft
     eyes: ClothingEyesGlassesChemical
-    mask: ClothingMaskSterileRed
+# Scp edit - disabled broken ported content.     mask: ClothingMaskSterileRed
     neck: ClothingNeckScarfStripedRed
     outerClothing: ClothingOuterCoatLab
     jumpsuit: ClothingUniformJumpsuitChemistry
