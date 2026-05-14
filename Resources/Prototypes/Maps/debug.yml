@@ -16,17 +16,17 @@
 - type: gameMap
   id: Dev
   mapName: Dev
-  mapPath: /Maps/Test/dev_map.yml # Scp edit - local dev map path
+  mapPath: /Maps/Test/dev_map.yml
   minPlayers: 0
   stations:
     Dev:
-      stationProto: TestStation # Scp edit - Sunrise dev station prototype is unavailable
+      stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
           mapNameTemplate: "Dev"
         - type: StationJobs
           availableJobs:
-            Director: [ -1, -1 ] # Fire edit - куда вы дели санрайздев
+            Director: [ -1, -1 ] # Fire edit
 
 - type: gameMap
   id: TestTeg

@@ -266,11 +266,9 @@
      enum.PdaVisuals.PdaType:
        !type:String
        pda-internsci
-  # Sunrise-Start
   - type: PdaBorderColor
     borderColor: "#627350"
     accentVColor: "#7a2699"
-  # Sunrise-End
   - type: Icon
     state: pda-internsci
 
@@ -288,11 +286,9 @@
      enum.PdaVisuals.PdaType:
        !type:String
        pda-internservice
-  # Sunrise-Start
   - type: PdaBorderColor
     borderColor: "#627350"
     accentVColor: "#198019"
-  # Sunrise-End
   - type: Icon
     state: pda-internservice
 
@@ -310,18 +306,12 @@
      enum.PdaVisuals.PdaType:
        !type:String
        pda-cook
-  # Sunrise-Start
   - type: PdaBorderColor
     borderColor: "#a3b2cc"
     accentVColor: "#198019"
-  # Sunrise-End
   - type: Icon
     state: pda-cook
-  # Scp edit start - old Italian accent prototype is unavailable.
-  # - type: ReplacementAccent # for random sentience event
-  #   accent: italian
-  # Scp edit end
-#
+
 - type: entity
   parent: BasePDA
   id: BotanistPDA
@@ -336,14 +326,11 @@
      enum.PdaVisuals.PdaType:
        !type:String
        pda-hydro
-  # Sunrise-Start
   - type: PdaBorderColor
     borderColor: "#29722e"
     accentVColor: "#6dcc3d"
-  # Sunrise-End
   - type: Icon
     state: pda-hydro
-# Sunrise-Start
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
     preinstalled:
@@ -352,10 +339,6 @@
       - NanoTaskCartridge
       - NewsReaderCartridge
       - PlantAnalyzerCartridge
-      - NavigatorCartridge
-      - MessengerCartridge
-      - PhotoCartridge
-# Sunrise-End
 
 - type: entity
   parent: BasePDA
@@ -543,11 +526,6 @@
     - NanoTaskCartridge
     - NewsReaderCartridge
     - AstroNavCartridge
-    # Sunrise-Start
-    - NavigatorCartridge
-    - MessengerCartridge
-    - PhotoCartridge
-    # Sunrise-End
 
 - type: entity
   parent: BasePDA
@@ -599,11 +577,6 @@
       - NanoTaskCartridge
       - NewsReaderCartridge
       - AstroNavCartridge
-    # Sunrise-Start
-      - NavigatorCartridge
-      - MessengerCartridge
-      - PhotoCartridge
-    # Sunrise-End
 
 - type: entity
   parent: BasePDA
@@ -1039,11 +1012,6 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
-    # Sunrise-Start
-    - NavigatorCartridge
-    - MessengerCartridge
-    - PhotoCartridge
-    # Sunrise-End
 
 - type: entity
   parent: BaseSecurityPDA
@@ -1129,11 +1097,6 @@
       - WantedListCartridge
       - LogProbeCartridge
       - AstroNavCartridge
-    # Sunrise-Start
-      - NavigatorCartridge
-      - MessengerCartridge
-      - PhotoCartridge
-    # Sunrise-End
 
 - type: entity
   parent: CentcomPDA
@@ -1421,11 +1384,6 @@
       - WantedListCartridge
       - LogProbeCartridge
       - AstroNavCartridge
-    # Sunrise-Start
-      - NavigatorCartridge
-      - MessengerCartridge
-      - PhotoCartridge
-    # Sunrise-End
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1622,11 +1580,6 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
-    # Sunrise-Start
-    - NavigatorCartridge
-    - MessengerCartridge
-    - PhotoCartridge
-    # Sunrise-End
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1658,11 +1611,6 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - MedTekCartridge
-    # Sunrise-Start
-    - NavigatorCartridge
-    - MessengerCartridge
-    - PhotoCartridge
-    # Sunrise-End
 
 - type: entity
   parent: ClownPDA
@@ -1849,10 +1797,7 @@
     preinstalled:
     - NotekeeperCartridge
     - NanoTaskCartridge
-    - NavigatorCartridge
     - AstroNavCartridge
-    - MessengerCartridge
-    - PhotoCartridge
   # Sunrise-end
 
 - type: entity
