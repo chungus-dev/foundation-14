@@ -11,29 +11,18 @@
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
   canBeAntag: false
-  displayWeight: 20  # Sunrise
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-investigator
-#   - job-alt-title-incident-analyst
-#   - job-alt-title-station-detective
-  # Sunrise-End
   access:
   - Security
   - Brig
-#  - Maintenance #Sunrise-Edit
-  - Service
+  - Maintenance
   - Detective
   - Cryogenics
   - External
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
-# Scp edit - disabled broken ported content.   speciesBlacklist:
-#   - Vox
-#
 - type: startingGear
   id: DetectiveGear
   equipment:

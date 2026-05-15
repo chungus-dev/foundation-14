@@ -10,25 +10,14 @@
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm
-  displayWeight: 10  # Sunrise
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-prospector
-#   - job-alt-title-forwarder
-  # Sunrise-End
   access:
   - Cargo
   - Salvage
   - Maintenance
   - External
-  # Sunrise-start
-  extendedAccess: [] # Scp edit - disabled old Sunrise access entries.
-# Scp edit - disabled broken ported content.   - CargoPurchaseAccess
-# Scp edit - disabled broken ported content.   - Mining
-  # Sunrise-end
-#
+
 - type: startingGear
   id: SalvageSpecialistGear
   equipment:

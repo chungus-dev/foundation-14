@@ -32,15 +32,6 @@
       - Slicing
     useSound:
       path: /Audio/Items/Culinary/chop.ogg
-  # Sunrise-start
-  # - type: Scalpel # SCP port: component unavailable in Foundation14
-  # - type: SurgeryTool # SCP port: component unavailable in Foundation14
-    # successRate: 0.9
-    # startSound:
-      # path: /Audio/_Scp/Medical/Surgery/scalpel1.ogg
-    # endSound:
-      # path: /Audio/_Scp/Medical/Surgery/scalpel2.ogg
-  # Sunrise-end
 
 - type: entity
   parent: BaseKnife

@@ -29,8 +29,8 @@
       level: Three
     - type: ScpHolder
       holdableWhitelist:
-        components: [] # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.         - HumanoidAppearance
+        components:
+        - HumanoidProfile
       holdableBlacklist:
         components:
         - Scp
@@ -72,7 +72,6 @@
     id: KeyCardJuniorLightContainmentZoneSecurityOfficer
     ears: ClothingHeadsetExternalAdministrativeZoneSecurityService
     belt: ScpClothingBeltSecurityWebbingFilled
-# Scp edit - disabled broken ported content.     pocket1: HyperLinkBookCorporateLaw
     pocket2: ScpSecurityPDA
   storage:
     back:

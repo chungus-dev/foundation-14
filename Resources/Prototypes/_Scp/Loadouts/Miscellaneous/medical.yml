@@ -128,10 +128,6 @@
       time: 1080000 # 300hr
   storage:
     back:
-# Scp edit - disabled broken ported content.     - ClothingNeckStethoscopeGold
-#
-#Neck
-#
 - type: loadout
   id: ScpLoadoutClothingNeckStethoscope
   equipment:
@@ -144,56 +140,6 @@
   equipment:
     mask: ClothingMaskBreathMedical
 
-- type: loadout
-  id: ScpLoadoutClothingMaskBreathMedicalRed
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskBreathMedicalRed
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskBreathMedicalGreen
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskBreathMedicalGreen
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskBreathMedicalOrange
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskBreathMedicalOrange
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskBreathMedicalBlack
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskBreathMedicalBlack
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskBreathMedicalBlue
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskBreathMedicalBlue
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskSterileBlack
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskSterileBlack
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskSterileBlue
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskSterileBlue
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskSterileGreen
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskSterileGreen
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskSterileOrange
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskSterileOrange
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskSterileRed
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskSterileRed
-#
 - type: loadout
   id: ScpLoadoutClothingOuterWinterGen
   equipment:

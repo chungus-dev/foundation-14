@@ -22,12 +22,6 @@
     shoes: ClothingShoesBootsLaceup
 
 - type: loadout
-  id: ScpLoadoutClothingShoesUSSPBlack
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     shoes: ClothingShoesUSSPBlack
-#
-# Вещи
-- type: loadout
   id: ScpLoadoutHandheldStationMap
   storage:
     back:

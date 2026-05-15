@@ -215,13 +215,7 @@
     sprite: _Scp/Structures/Storage/Crates/engicrate_secure.rsi # Fire edit
   - type: AccessReader
     access: [["Engineering"]]
-    # Sunrise-start
-# Scp edit - disabled broken ported content.     alertAccesses:
-#       red: RedAlertAccesses
-#       blue: BlueAlertAccessesHOS
-#       gamma: GammaAlertAccesses
-    # Sunrise-end
-#
+
 - type: entity
   parent: CrateBaseSecure
   id: CrateMedicalSecure
@@ -233,13 +227,7 @@
     sprite: _Scp/Structures/Storage/Crates/medicalcrate_secure.rsi # Fire edit
   - type: AccessReader
     access: [["Medical"]]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 - type: entity
   parent: CrateBaseSecure
   id: CrateChemistrySecure
@@ -251,13 +239,7 @@
       sprite: _Scp/Structures/Storage/Crates/chemcrate_secure.rsi # Fire edit
     - type: AccessReader
       access: [["Laboratory"]] # Fire edit
-      # Sunrise-start
-      # Scp edit - disabled broken ported content. alertAccesses:
-      # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-      # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-      # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-      # Sunrise-end
-      # Scp edit - disabled broken ported content.
+
 - type: entity
   parent: CrateBaseSecure
   id: CratePrivateSecure
@@ -279,13 +261,7 @@
     sprite: _Scp/Structures/Storage/Crates/scicrate_secure.rsi # Fire edit
   - type: AccessReader
     access: [["Research"]]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 - type: entity
   parent: CrateBaseSecure
   id: CratePlasma
@@ -297,13 +273,7 @@
     sprite: _Scp/Structures/Storage/Crates/plasma.rsi # Fire edit
   - type: AccessReader
     access: [["Engineering"], ["Research"], ["Laboratory"]] # Fire edit
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 - type: entity
   parent: CrateBaseSecure
   id: CrateSecure
@@ -325,13 +295,7 @@
     sprite: _Scp/Structures/Storage/Crates/hydro_secure.rsi # Fire edit
   - type: AccessReader
     access: [["Service"]] # Fire edit
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 - type: entity
   parent: CrateBaseSecure
   id: CrateWeaponSecure
@@ -343,9 +307,6 @@
     sprite: _Scp/Structures/Storage/Crates/weapon.rsi # Fire edit
   - type: AccessReader
     access: [["Armory"]]
-  # - type: Pierceable # SCP port: component unavailable in Foundation14
-    # level: Metal
-
 
 - type: entity
   parent: [ CrateBaseSecure, BaseSecurityContraband ]
@@ -370,13 +331,7 @@
     sprite: _Scp/Structures/Storage/Crates/command.rsi # Fire edit
   - type: AccessReader
     access: [["Administration"]] # Fire edit
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 - type: entity
   parent: CrateBaseSecure
   id: CrateSyndicateSecure
@@ -936,12 +891,6 @@
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: AccessReader
     access: [["Service"]] # Fire edit
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
   - type: Paintable
     group: null
 

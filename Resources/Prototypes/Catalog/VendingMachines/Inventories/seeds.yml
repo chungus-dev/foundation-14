@@ -38,12 +38,7 @@
     ScpTowercapSeeds: 5 # Fire edit
     WheatSeeds: 5
     WatermelonSeeds: 5
-    # Scp edit - disabled broken ported content. CoffeeArabicaSeeds: 5 # Sunrise-add
-    # Scp edit - disabled broken ported content. RedroseSeeds: 5 # Sunrise-add
-    # Scp edit - disabled broken ported content. SunflowerSeeds: 5 # Sunrise-add
-    # Scp edit - disabled broken ported content. WhiteLilySeeds: 3 # Sunrise - Edit
   contrabandInventory:
-    # Scp edit - disabled broken ported content. WhiteroseSeeds: 5 # Sunrise-add
     TobaccoSeeds: 2
     FoodSnackSemki: 2
     FlyAmanitaSeeds: 1

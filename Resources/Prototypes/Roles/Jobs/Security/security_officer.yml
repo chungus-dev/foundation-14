@@ -14,15 +14,10 @@
   displayWeight: 10
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-law-enforcer
-#   - job-alt-title-security-specialist
-  # Sunrise-End
   access:
   - Security
   - Brig
-  # - Maintenance # Sunrise-Edit
+  - Maintenance
   - External
   - Cryogenics
   special:

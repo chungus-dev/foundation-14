@@ -88,7 +88,6 @@
   loadouts:
   - ScpLoadoutServicePersonnelJumpsuit
   - ScpLoadoutServicePersonnelJumpskirt
-  - ScpLoadoutServicePersonnelMaidJanitor
 
 - type: loadoutGroup
   id: ScpLoadoutGroupServicePersonnelGloves

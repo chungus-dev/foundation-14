@@ -44,7 +44,6 @@
     quickEquip: false
     slots:
     - back
-    - suitStorage  # Sunrise-Add
   - type: Tool
     qualities:
       - Prying

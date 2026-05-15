@@ -173,13 +173,6 @@
     - Snout
     - HeadTop
     - HeadSide
-  # Sunrise-Start
-  - type: Tag
-    tags:
-    - HamsterWearable
-# Scp edit - disabled broken ported content.     - TopCovered
-    - WhitelistChameleon
-  # Sunrise-End
 
 - type: entity
   parent: ClothingHeadBase

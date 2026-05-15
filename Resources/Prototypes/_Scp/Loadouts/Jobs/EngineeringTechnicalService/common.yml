@@ -39,42 +39,6 @@
     gloves: ClothingHandsGlovesColorOrange
 
 - type: loadout
-  id: ScpLoadoutEngineeringTechnicalServiceAtmosAlertsMonitor
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: EngineeringTechnicalService
-      time: 72000 # 20hr
-  storage:
-    back:
-# Scp edit - disabled broken ported content.     - AtmosAlertsMonitor
-#
-- type: loadout
-  id: ScpLoadoutEngineeringTechnicalServiceEngineeringAlertsMonitor
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: EngineeringTechnicalService
-      time: 72000 # 20hr
-  storage:
-    back:
-# Scp edit - disabled broken ported content.     - EngiAlertsMonitor
-#
-- type: loadout
-  id: ScpLoadoutEngineeringTechnicalServiceTrayScanner
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: EngineeringTechnicalService
-      time: 7200 # 2hr
-  storage:
-    back:
-    - trayScanner
-
-- type: loadout
   id: ScpLoadoutEngineeringTechnicalServiceFlashlightLantern
   effects:
   - !type:JobRequirementLoadoutEffect
@@ -110,18 +74,6 @@
     back:
     - GeigerCounter
 
-- type: loadout
-  id: ScpLoadoutEngineeringTechnicalServiceGoldenCrowbarWrench
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: EngineeringTechnicalService
-      time: 1080000 # 300hr
-  storage:
-    back:
-# Scp edit - disabled broken ported content.     - GoldenCrowbarWrench
-#
 - type: loadout
   id: ScpLoadoutChiefTechnicalSpecialistFigurine
   effects:

@@ -39,7 +39,6 @@
         layer:
         - MachineLayer
   - type: EntityStorage
-    maxSize: 1.05 # Sunrise edit - неправильные спрайты в ящиках (#3611)
     # Fire edit start
     whitelist:
       components:

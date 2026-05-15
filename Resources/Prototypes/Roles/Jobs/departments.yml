@@ -2,20 +2,18 @@
   id: Cargo
   name: department-Cargo
   description: department-Cargo-description
-  color: "#9E6A34" # Sunrise edit
+  color: "#A46106"
   editorHidden: true # Fire added
   roles:
   - CargoTechnician
   - Quartermaster
   - SalvageSpecialist
-# Scp edit - disabled broken ported content.   - MailCarrier # Sunrise-Roles
-# Scp edit - disabled broken ported content.   - MiningSpecialist # Sunrise-Roles
-#
+
 - type: department
   id: Civilian
   name: department-Civilian
   description: department-Civilian-description
-  color: "#4e7c22" # Sunrise edit
+  color: "#9FED58"
   weight: -10
   editorHidden: true # Fire added
   roles:
@@ -33,28 +31,7 @@
   - Reporter
   - Visitor
   - ServiceWorker
-# Scp edit - disabled broken ported content.   - Barber # Sunrise-Roles
-# Scp edit - disabled broken ported content.   - ComMaid  # Sunrise-Lust edit
-#
-# Вынесено в _Sunrise
-#- type: department
-#  id: CentralCommand
-#  name: department-CentralCommand
-#  description: department-CentralCommand-description
-#  color: "#0c344d"
-#  editorHidden: true # Fire added
-#  roles:
-#  - CBURN
-#  - ERTLeader
-#  - ERTChaplain
-#  - ERTJanitor
-#  - ERTMedical
-#  - ERTSecurity
-#  - ERTEngineer
-#  - DeathSquad
-#  editorHidden: true
-#  weight: 120
-#
+
 - type: department
   id: CentralCommand
   name: department-CentralCommand
@@ -77,7 +54,7 @@
   id: Command
   name: department-Command
   description: department-Command-description
-  color: "#065290" # Sunrise-Edit 2
+  color: "#334E6D"
   editorHidden: true # Fire added
   roles:
   - Captain
@@ -95,10 +72,6 @@
   - ERTSecurity
   - ERTEngineer
   - DeathSquad
-# Scp edit - disabled broken ported content.   - CentCommOfficial
-# Scp edit - disabled broken ported content.   - NanoTrasenRepresentative  #Sunrise-Edit
-# Scp edit - disabled broken ported content.   - Adjutant  #Sunrise-edit
-  # Scp edit - disabled broken ported content. - ComMaid  # Sunrise-Lust edit
   primary: false
   weight: 100
 
@@ -106,13 +79,11 @@
   id: Engineering
   name: department-Engineering
   description: department-Engineering-description
-  color: "#c07d1e" # Sunrise edit
-  weight: 10  # Sunrise-weights
+  color: "#EFB341"
   editorHidden: true # Fire added
   roles:
   - AtmosphericTechnician
   - ChiefEngineer
-# Scp edit - disabled broken ported content.   - SeniorEngineer  # Sunrise-Senior
   - StationEngineer
   - TechnicalAssistant
 
@@ -120,53 +91,47 @@
   id: Medical
   name: department-Medical
   description: department-Medical-description
-  color: "#3b627a" # Sunrise edit
+  color: "#52B4E9"
   editorHidden: true # Fire added
   roles:
   - Chemist
   - ChiefMedicalOfficer
-# Scp edit - disabled broken ported content.   - SeniorPhysician  # Sunrise-Senior
   - MedicalDoctor
   - MedicalIntern
   - Psychologist
   - Paramedic
-# Scp edit - disabled broken ported content.   - MedicalPathologist  # Sunrise-pathologist
-#
+
 - type: department
   id: Security
   name: department-Security
   description: department-Security-description
-  color: "#770101" # Sunrise edit
+  color: "#DE3A3A"
   weight: 20
   editorHidden: true # Fire added
   roles:
   - HeadOfSecurity
-# Scp edit - disabled broken ported content.   - SeniorOfficer  # Sunrise-Senior
   - SecurityCadet
   - SecurityOfficer
   - Detective
   - Warden
-# Scp edit - disabled broken ported content.   - Brigmedic  # Sunrise-Brigmedic
-# Scp edit - disabled broken ported content.   - SecurityPilot # Sunrise-SecurityPilot
-#
+
 - type: department
   id: Science
   name: department-Science
   description: department-Science-description
-  color: "#984EB4" # Sunrise edit
+  color: "#D381C9"
   editorHidden: true # Fire added
   roles:
   - ResearchDirector
-# Scp edit - disabled broken ported content.   - SeniorResearcher  # Sunrise-Senior
   - Scientist
   - ResearchAssistant
-# Scp edit - disabled broken ported content.   - Roboticist  # Sunrise-Edit
-#
+
 - type: department
   id: Silicon
   name: department-Silicon
   description: department-Silicon-description
   color: "#D381C9"
+  editorHidden: true # Fire added
   roles:
   - Borg
   - StationAi
@@ -175,11 +140,10 @@
   id: Specific
   name: department-Specific
   description: department-Specific-description
-  color: "#7f7f7f" # Sunrise edit
-  weight: 5  # Sunrise-weights
+  color: "#9FED58"
   editorHidden: true # Fire added
+  weight: 10
   roles:
   - Reporter
   - Psychologist
-  # Scp edit - disabled broken ported content. - Barber  # Sunrise-Roles
   primary: false

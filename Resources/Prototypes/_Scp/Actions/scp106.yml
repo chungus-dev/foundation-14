@@ -69,9 +69,8 @@
       delay: 3
     canTargetSelf: false
     whitelist:
-      components: [] # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.       - HumanoidAppearance
-#
+      components:
+      - HumanoidProfile
 - type: entity
   id: Scp106LeavePhantom
   components:

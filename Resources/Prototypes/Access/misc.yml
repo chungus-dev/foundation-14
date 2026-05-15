@@ -57,23 +57,13 @@
   - Theatre
   - Bar
   - Chemistry
-  - Paramedic # Sunrise-edit
   - Kitchen
   - Chapel
   - Hydroponics
   - Atmospherics
   - GenpopEnter
   - GenpopLeave
-# Scp edit - disabled broken ported content.   - Magistrat  # Sunrise-edit
-# Scp edit - disabled broken ported content.   - BlueShield  # Sunrise-edit
-# Scp edit - disabled broken ported content.   - BlueShieldEnsign  # Sunrise-edit
-# Scp edit - disabled broken ported content.   - Ntrep  # Sunrise-edit
-# Scp edit - disabled broken ported content.   - Barber  # Sunrise-edit
-# Scp edit - disabled broken ported content.   - Mail  # Sunrise-edit
-# Scp edit - disabled broken ported content.   - Mining  # Sunrise-edit
-# Scp edit - disabled broken ported content.   - CargoPurchaseAccess  # Sunrise-edit
-# Scp edit - disabled broken ported content.   - ResearchConsoleAccess  # Sunrise-edit
-#
+
 - type: accessGroup
   id: General
   tags:

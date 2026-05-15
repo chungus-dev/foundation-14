@@ -38,7 +38,7 @@
     - whitelist:
         components:
         - MobState
-# Scp edit - disabled broken ported content.         - HumanoidAppearance
+        - HumanoidProfile
         requireAll: true
       damage:
         types:
@@ -65,7 +65,6 @@
         tags:
         - Window
         - Windoor
-# Scp edit - disabled broken ported content.         - Directional
         - SecureWindoor
         - SecurePlasmaWindoor
         - SecureUraniumWindoor

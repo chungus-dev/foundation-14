@@ -19,7 +19,6 @@
   icon: JobHeadOfMedicalSector
   supervisors: job-supervisors-director
   canBeAntag: true
-# Scp edit - disabled broken ported content.   radioBold: true
   displayWeight: 60
   accessGroups:
   - HeadOfMedicalSector
@@ -45,10 +44,7 @@
 - type: startingGear
   id: HeadOfMedicalSectorGear
   equipment:
-# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretParamedic
     eyes: ClothingEyesGlasses
-# Scp edit - disabled broken ported content.     mask: ClothingMaskSterileBlack
-# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfCmo
     outerClothing: ClothingOuterCoatLab
     jumpsuit: ClothingUniformJumpsuitCMO
     gloves: ClothingHandsGlovesLatex
@@ -61,4 +57,3 @@
   storage:
     back:
     - Flash
-# Scp edit - disabled broken ported content.     - Telebaton

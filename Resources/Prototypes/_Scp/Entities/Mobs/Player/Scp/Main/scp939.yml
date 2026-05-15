@@ -74,7 +74,6 @@
 #    - footprint-left-bare-lizard
 #    rightBareFootState:
 #    - footprint-right-bare-lizard
-  # - type: TTS # SCP port: SUNRISE TTS component unavailable
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepScp939

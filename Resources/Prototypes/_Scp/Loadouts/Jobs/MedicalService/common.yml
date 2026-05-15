@@ -34,11 +34,6 @@
     head: ClothingHeadHatBeretSeniorPhysician
 
 - type: loadout
-  id: ScpLoadoutMedicalServiceChemistryBeret
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretChemistry
-#
-- type: loadout
   id: ScpLoadoutMedicalServiceBackpack
   equipment:
     back: ClothingBackpackMedical

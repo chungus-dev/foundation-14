@@ -44,25 +44,19 @@
   description: 7-round single stack pistol magazine. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
-# Scp edit - disabled broken ported content.     proto: CartridgeMagnumSP
+    proto: CartridgeMagnum
   - type: Sprite
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-    - state: stripe
-      color: "#575EF5"
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left-mag
-      - state: inhand-left-stripe
-        color: "#575EF5"
       right:
       - state: inhand-right-mag
-      - state: inhand-right-stripe
-        color: "#575EF5"
 
 - type: entity
   parent: BaseMagazineMagnum

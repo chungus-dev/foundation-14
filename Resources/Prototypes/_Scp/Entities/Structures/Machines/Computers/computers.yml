@@ -48,8 +48,8 @@
   components:
   - type: Sprite
     layers:
-# Scp edit - disabled broken ported content.     - map: [ "computerLayerBody" ]
-#       state: computer
+    - map: [ "computerLayerBody" ]
+      state: computer
     - map: [ "computerLayerKeyboard" ]
       state: generic_keyboard
     - map: [ "computerLayerScreen" ]
@@ -278,6 +278,14 @@
       state: facility_records
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+    - type: AccessReader
+      access: [ [ "Security" ], [ "PersonnelOfficer" ] ]
+    - type: GeneralStationRecordConsole
+  # Scp edit - раскоммитить после портирования
+  #  - announcementChannels:
+  #     - Administration
+  #     - HeavyContainmentSecurityService
+  #     - ExternalAdministrativeZoneSecurityService
 
 - type: entity
   id: ScpComputerPersonnelMonitoring
@@ -420,7 +428,6 @@
     color: "#82e46f"
     title: comms-console-announcement-title-regional-administration
     global: true
-# Scp edit - disabled broken ported content.     announceVoice: Hanson
     announceSentBy: false
 
 - type: entity
@@ -435,15 +442,14 @@
       state: generic_keyboard
     - map: ["computerLayerScreen"]
       state: comm
-# Scp edit - disabled broken ported content.     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-#       state: generic_panel_open
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: AccessReader
     access: [[ "MTF" ]]
   - type: CommunicationsConsole
     color: "#1d8bad"
     title: comms-console-announcement-title-o4-headquarters
     global: true
-    # Scp edit - disabled broken ported content. announceVoice: Hanson
     announceSentBy: false
 
 - type: entity
@@ -869,7 +875,6 @@
   id: ScpComputerSaleConsole
   parent:
   - ScpComputerPalletConsole
-  # - ComputerSaleConsole # SCP port: SUNRISE parent unavailable
 
 - type: entity
   id: ScpComputerFacilityBankConsole
@@ -987,30 +992,6 @@
       state: contraband_sell
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
-
-- type: entity
-  id: ScpComputerFoodAndSanitationServiceSaleConsole
-  parent:
-  - ScpComputerSaleConsole
-  # - ComputerServiceSaleConsole # SCP port: SUNRISE parent unavailable
-
-- type: entity
-  id: ScpComputerSecuritySaleConsole
-  parent:
-  - ScpComputerSaleConsole
-  # - ComputerSecuritySaleConsole # SCP port: SUNRISE parent unavailable
-
-- type: entity
-  id: ScpComputerMedicalServiceSaleConsole
-  parent:
-  - ScpComputerSaleConsole
-  # - ComputerMedicalSaleConsole # SCP port: SUNRISE parent unavailable
-
-- type: entity
-  id: ScpComputerScientificServiceSaleConsole
-  parent:
-  - ScpComputerSaleConsole
-  # - ComputerScienceSaleConsole # SCP port: SUNRISE parent unavailable
 
 - type: entity
   id: ScpComputerShuttleRegionalAdministration

@@ -13,7 +13,6 @@
     tags:
     - Sheet
     - ConstructionMaterial
-# Scp edit - disabled broken ported content.     - NoPaint  # Sunrise-edit
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -64,12 +63,7 @@
         reagents:
         - ReagentId: Cellulose
           Quantity: 3
-  # Sunrise-Start
-  - type: Tag
-    tags:
-# Scp edit - disabled broken ported content.     - SheetPaper
-    - Sheet
-  # Sunrise-End
+
 
 - type: entity
   parent: SheetPaper

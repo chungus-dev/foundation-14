@@ -30,7 +30,6 @@
   equipment:
     head: ClothingHeadHatRedsoft
     eyes: ClothingEyesHudMedical
-# Scp edit - disabled broken ported content.     mask: ClothingMaskSterileRed
     neck: ClothingNeckScarfStripedRed
     jumpsuit: ClothingUniformJumpsuitColorWhite
     outerClothing: ClothingOuterCoatLab

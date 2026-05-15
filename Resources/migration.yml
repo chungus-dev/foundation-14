@@ -2565,4 +2565,11 @@ ClothingUniformJumpsuitBlueDirectorFormal: ClothingUniformJumpsuitDirector
 ClothingHeadHatCapDirector: ClothingHeadHatDirector
 ClothingHandsGlovesDirector: ClothingHandsGlovesDirectorSpecial
 
+# После переноса
+ScpComputerFoodAndSanitationServiceSaleConsole: ScpComputerSaleConsole
+ScpComputerSecuritySaleConsole: ScpComputerSaleConsole
+ScpComputerMedicalServiceSaleConsole: ScpComputerSaleConsole
+ScpComputerScientificServiceSaleConsole: ScpComputerSaleConsole
+WeaponRifleAR18: null
+WeaponRifleAKM: null
 # Fire added end

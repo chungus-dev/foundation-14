@@ -127,16 +127,14 @@
 # Пистолет-пулемет
 - type: loadout
   id: ScpLoadoutWeaponSubMachineGunMP7
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     suitstorage: WeaponSubMachineGunMP7
-#
-# Дробовик
+  equipment:
+    suitstorage: WeaponSubMachineGunWt550 # TODO: Нужно добавить нужные пушки
+
 - type: loadout
   id: ScpLoadoutWeaponShotgunRiot
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     suitstorage: WeaponShotgunRiot
-#
-# Тазер
+  equipment:
+    suitstorage: WeaponShotgunKammerer # TODO: Нужно добавить нужные пушки
+
 - type: loadout
   id: ScpLoadoutWeaponTaser
   equipment:

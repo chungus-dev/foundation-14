@@ -216,7 +216,7 @@
     containers:
       entity_storage:
         id: RCD
-# Scp edit - disabled broken ported content.
+
 - type: entity
   parent: CrateEngineeringSecure
   id: CrateParticleDecelerators

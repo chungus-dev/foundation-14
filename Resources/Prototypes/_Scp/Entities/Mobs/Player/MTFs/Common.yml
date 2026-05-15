@@ -26,8 +26,6 @@
           amount: 3
         - id: Tourniquet
           amount: 2
-# Scp edit - disabled broken ported content.         - id: MedipenCombatInjector
-#           amount: 2
         - id: CombatMedipen
           amount: 4
         - id: PunctAutoInjector
@@ -72,8 +70,6 @@
   - type: StorageFill
     contents:
     - id: WeaponLightMachineGunL6
-# Scp edit - disabled broken ported content.     - id: MagazineRifleBoxSP
-#
 - type: entity
   parent: CrateCommandSecure
   id: CrateAdministrationSecure
@@ -132,9 +128,6 @@
   - Dwarf
   parent: EventHumanoidMindShielded
   randomizeName: false
-# Scp edit - disabled broken ported content.   voiceWhitelist:
-#   - CBMTF1
-#   - CBMTF2
   genderWhitelist:
   - Male
   components:
@@ -145,15 +138,11 @@
     nameFormat: name-format-ert
   - type: ZombieImmune
   - type: Scp049Protection
-  # - type: Mood # SCP port: SUNRISE component unavailable
-    # minimumSpeedModifier: 0.9
   - type: AutoImplant
     implants:
     - Scp049ProtectionImplant
     - DeathRattleImplantMTF
     - MindShieldImplant
-  # - type: TTS # SCP port: SUNRISE TTS component unavailable
-  # - type: NoEmotions # SCP port: component unavailable in Foundation14
   - type: SpeakOnEyeStateChange # переопределение моргания с другими параметрами для охраны и МОГа
     # Часть фраз уходит, так как более разговорная. А эти парни натренированы.
     phraseOnClose:
@@ -199,7 +188,6 @@
 - type: randomHumanoidSettings
   id: CommonMTFLeader
   parent: CommonMTFSpecialist
-# Scp edit - disabled broken ported content.   randomizeName: false
   components:
   - type: RandomMetadata
     nameSegments:

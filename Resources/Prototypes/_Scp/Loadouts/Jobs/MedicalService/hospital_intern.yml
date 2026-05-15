@@ -37,7 +37,7 @@
   - ScpLoadoutBookMedicalReferenceBook
 
 - type: loadoutGroup
-  parent: [ScpLoadoutGroupGlasses]
+  parent: ScpLoadoutGroupGlasses
   id: ScpLoadoutGroupHospitalInternEyes
   minLimit: 1
   loadouts:

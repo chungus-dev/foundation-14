@@ -19,7 +19,6 @@
     - Ammonia
     - NitrousOxide
     - Frezon
-    # Scp edit - Sunrise Electrovae gases are unavailable in Foundation14
     #- Helium3 TODO: fusion
     # remove everything except oxygen to maintain oxygen ratio
     overflowGases:
@@ -67,7 +66,7 @@
   - type: InteractionOutline
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
-    baseSprintSpeed: 3.9 # sunrise-edit
+    baseSprintSpeed: 2
   - type: Tag
     tags:
     - DoorBumpOpener
@@ -75,8 +74,6 @@
   - type: Pullable
   - type: Physics
     bodyType: KinematicController
-    angularDamping: 10 # sunrise-edit
-    linearDamping: 10 # sunrise-edit
   - type: GravityAffected
   - type: Clickable
   - type: WiresPanel
@@ -86,7 +83,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.45
-        density: 10000 # sunrise-edit
+        density: 1000
         mask:
         - MobMask
         layer:
@@ -117,20 +114,7 @@
       mech-pilot-slot: !type:ContainerSlot
       mech-equipment-container: !type:Container
       mech-battery-slot: !type:ContainerSlot
-  # Sunrise-Start
-  - type: Inventory
-# Scp edit - disabled broken ported content.     templateId: mechArmor
-  - type: InventorySlots
-  - type: Loadout
-# Scp edit - disabled broken ported content.     prototypes: [ MechArmorLightLoadout ]
-  # - type: RadarBlip # SCP port: component unavailable in Foundation14
-    # color: "#FFD700FF"
-    # scale: 1.1
-    # shape: Triangle
-    # requireInSpace: true
-  # Sunrise-End
   - type: Damageable
-# Scp edit - disabled broken ported content.     damageContainer: Mech
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Mecha/mechmove03.ogg
@@ -141,18 +125,11 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 500 # Sunrise-edit
+        damage: 400
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
-      # Sunrise-start
-      - !type:SpawnEntitiesBehavior # Sunrise-edit
-        spawn:
-          ScrapSteel:
-            min: 2
-            max: 4
-      # Sunrise-end
       - !type:ChangeConstructionNodeBehavior
         node: start
       - !type:DoActsBehavior
@@ -165,15 +142,8 @@
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-    energy: 3 # Sunrise-edit
-    radius: 18 # Sunrise-edit
     netsync: false
   - type: AccessReader
-  # - type: DamageOverlay # SCP port: component unavailable in Foundation14
-  - type: ExplosionResistance # Sunrise-Edit
-    damageCoefficient: 0.8 # Sunrise-Edit
-  - type: ProtectedFromStepTriggers # Sunrise-added
-  - type: ComplexInteraction # Sunrise-added
 
 # Ripley MK-I
 - type: entity

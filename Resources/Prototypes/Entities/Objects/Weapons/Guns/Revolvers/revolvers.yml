@@ -41,7 +41,6 @@
       tags:
         - CartridgeMagnum
         - SpeedLoaderMagnum
-# Scp edit - disabled broken ported content.     proto: CartridgeMagnumSP
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
@@ -51,21 +50,7 @@
       path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
   - type: StaticPrice
     price: 500
-  # Sunrise start
-  - type: EmitSoundOnPickup
-    sound:
-# Scp edit - disabled broken ported content.       collection: RevolversPickUp
-  - type: EmitSoundOnDrop
-    sound:
-# Scp edit - disabled broken ported content.       collection: RevolversDrop
-  - type: EmitSoundOnLand
-    sound:
-      collection: RevolversDrop
-  - type: EmitSoundOnCollide
-    sound:
-# Scp edit - disabled broken ported content.       collection: RevolversCollide
-  # Sunrise end
-#
+
 - type: entity
   name: Deckard
   parent: [BaseWeaponRevolver, BaseSecurityCommandContraband]

@@ -107,17 +107,6 @@
     head: ClothingHeadHatBeretEngineering
 
 - type: loadout
-  id: ScpLoadoutElectricalTechnicalSpecialistBeret
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobElectricalTechnicalSpecialist
-      time: 360000 # 100 hour
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretAtmos
-#
-- type: loadout
   id: ScpLoadoutElectricalTechnicalSpecialistGasMask
   equipment:
     mask: ClothingMaskGas

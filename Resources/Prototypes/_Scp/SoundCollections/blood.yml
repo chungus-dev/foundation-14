@@ -1,0 +1,17 @@
+- type: soundCollection
+  id: BleedingStart
+  files:
+  - /Audio/_Scp/Effects/Liquid/BloodLoss/Bleeding/sound1.ogg
+  - /Audio/_Scp/Effects/Liquid/BloodLoss/Bleeding/sound2.ogg
+  - /Audio/_Scp/Effects/Liquid/BloodLoss/Bleeding/sound3.ogg
+  - /Audio/_Scp/Effects/Liquid/BloodLoss/Bleeding/sound4.ogg
+
+- type: soundCollection
+  id: BloodDripping
+  files:
+  - /Audio/_Scp/Effects/Liquid/BloodLoss/Drip/sound1.ogg
+  - /Audio/_Scp/Effects/Liquid/BloodLoss/Drip/sound2.ogg
+  - /Audio/_Scp/Effects/Liquid/BloodLoss/Drip/sound3.ogg
+  - /Audio/_Scp/Effects/Liquid/BloodLoss/Drip/sound4.ogg
+  - /Audio/_Scp/Effects/Liquid/BloodLoss/Drip/sound5.ogg
+  - /Audio/_Scp/Effects/Liquid/BloodLoss/Drip/sound6.ogg

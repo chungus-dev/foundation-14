@@ -101,7 +101,6 @@
   parent: BaseCartridgePistol
   components:
   - type: CartridgeAmmo
-# Scp edit - disabled broken ported content.     proto: BulletPistolTraceRubber
   - type: Sprite
     layers:
       - state: base

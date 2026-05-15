@@ -24,9 +24,9 @@
       - EncryptionKeyCommand
       - EncryptionKeyCommon
   - type: Sprite
-    sprite:  _Scp/Clothing/Ears/Headsets/cargo.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/cargo.rsi
   - type: Clothing
-    sprite: _Scp/Clothing/Ears/Headsets/cargo.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/cargo.rsi
 
 - type: entity
   parent: ClothingHeadsetAlt
@@ -40,9 +40,9 @@
       - EncryptionKeyCentCom
       - EncryptionKeyStationMaster
   - type: Sprite
-    sprite: _Scp/Clothing/Ears/Headsets/centcom.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/centcom.rsi
   - type: Clothing
-    sprite: _Scp/Clothing/Ears/Headsets/centcom.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/centcom.rsi
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseCommandContraband]
@@ -55,9 +55,9 @@
       key_slots:
       - EncryptionKeyStationMaster
   - type: Sprite
-    sprite: _Scp/Clothing/Ears/Headsets/command.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/command.rsi
   - type: Clothing
-    sprite: _Scp/Clothing/Ears/Headsets/command.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/command.rsi
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseCommandContraband]
@@ -72,9 +72,9 @@
       - EncryptionKeyCommand
       - EncryptionKeyCommon
   - type: Sprite
-    sprite: _Scp/Clothing/Ears/Headsets/engineering.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/engineering.rsi
   - type: Clothing
-    sprite: _Scp/Clothing/Ears/Headsets/engineering.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/engineering.rsi
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseCommandContraband]
@@ -89,9 +89,9 @@
       - EncryptionKeyCommand
       - EncryptionKeyCommon
   - type: Sprite
-    sprite: _Scp/Clothing/Ears/Headsets/medical.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/medical.rsi
   - type: Clothing
-    sprite: _Scp/Clothing/Ears/Headsets/medical.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/medical.rsi
   - type: StealTarget
     stealGroup: ClothingHeadsetAltMedical
 
@@ -108,9 +108,9 @@
       - EncryptionKeyCommand
       - EncryptionKeyCommon
   - type: Sprite
-    sprite: _Scp/Clothing/Ears/Headsets/security.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing
-    sprite: _Scp/Clothing/Ears/Headsets/security.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/security.rsi
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseCommandContraband]
@@ -125,9 +125,9 @@
       - EncryptionKeyCommand
       - EncryptionKeyCommon
   - type: Sprite
-    sprite: _Scp/Clothing/Ears/Headsets/science.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/science.rsi
   - type: Clothing
-    sprite: _Scp/Clothing/Ears/Headsets/science.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/science.rsi
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseSyndicateContraband]
@@ -144,9 +144,9 @@
       key_slots:
       - EncryptionKeySyndie
   - type: Sprite
-    sprite: _Scp/Clothing/Ears/Headsets/syndicate.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/syndicate.rsi
   - type: Clothing
-    sprite: _Scp/Clothing/Ears/Headsets/syndicate.rsi # Sunrise-Edit
+    sprite: Clothing/Ears/Headsets/syndicate.rsi
 
 - type: entity
   parent: ClothingHeadsetAlt
@@ -162,9 +162,9 @@
         key_slots:
           - EncryptionKeyFreelance
     - type: Sprite
-      sprite: _Scp/Clothing/Ears/Headsets/freelance.rsi # Sunrise-Edit
+      sprite: Clothing/Ears/Headsets/freelance.rsi
     - type: Clothing
-      sprite: _Scp/Clothing/Ears/Headsets/freelance.rsi # Sunrise-Edit
+      sprite: Clothing/Ears/Headsets/freelance.rsi
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseMagicalContraband]

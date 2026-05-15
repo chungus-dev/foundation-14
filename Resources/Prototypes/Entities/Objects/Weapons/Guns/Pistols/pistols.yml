@@ -55,7 +55,6 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-# Scp edit - disabled broken ported content.         startingItem: CartridgePistolSP
         priority: 1
         whitelist:
           tags:
@@ -72,17 +71,6 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
-  # Sunrise start
-  - type: EmitSoundOnPickup
-    sound:
-# Scp edit - disabled broken ported content.       collection: PistolsPickUp
-  - type: EmitSoundOnDrop
-    sound:
-# Scp edit - disabled broken ported content.       collection: PistolsDrop
-  - type: EmitSoundOnLand
-    sound:
-      collection: PistolsDrop
-  # Sunrise end
 
 - type: entity
   name: viper

@@ -11,7 +11,6 @@
   icon: JobFondSecurityOfficer
   supervisors: ghost-role-information-fond-security-officer-supervisors
   canBeAntag: false
-# Scp edit - disabled broken ported content.   radioBold: false
   weight: 810
   overrideConsoleVisibility: false
   alwaysShowInBanPanel: true
@@ -46,15 +45,10 @@
   id: FondSecurityOfficerGearAltA
   parent: FondSecurityOfficerGear
   equipment:
-# Scp edit - disabled broken ported content.     suitstorage: WeaponSubMachineGunMP5
     pocket2: PouchAmmo
   storage:
     back:
     - Crowbar
-# Scp edit - disabled broken ported content.     - MagazineMP5
-    # Scp edit - disabled broken ported content. - MagazineMP5
-    # Scp edit - disabled broken ported content. - MagazineMP5
-    # Scp edit - disabled broken ported content. - MagazineMP5
     - Gauze
     - ScpRadioHandheldSecurity
     - BoxSurvivalSecurity
@@ -63,7 +57,6 @@
   id: FondSecurityOfficerGearAltB
   parent: FondSecurityOfficerGear
   equipment:
-# Scp edit - disabled broken ported content.     suitstorage: WeaponShotgunSPAS12
     pocket2: ScpRadioHandheldSecurity
   storage:
     back:

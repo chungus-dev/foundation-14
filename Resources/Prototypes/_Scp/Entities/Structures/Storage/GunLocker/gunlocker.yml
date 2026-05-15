@@ -61,7 +61,6 @@
       params:
         volume: -1
     storageInsertSound:
-# Scp edit - disabled broken ported content.       collection: RiflesDrop
   - type: AccessReader
     access: [["Armory"]]
 

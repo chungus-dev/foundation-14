@@ -8,8 +8,6 @@
   save: false
   components:
   - type: ShowScp096FaceDamageHud
-  # - type: TTS # SCP port: SUNRISE TTS component unavailable
-    # voice: SCP079
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:
@@ -42,8 +40,6 @@
   - type: ActionGrant
     actions:
     - ActionJumpToCore
-# Scp edit - disabled broken ported content.     - ActionSurvCameraLights
-    #- ActionAIViewLaws    пока для 079 нет кастом законов - увы, без них
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
@@ -78,7 +74,6 @@
     canShuttle: false
     title: str-079-CommunicationsConsole-title
     color: "#5ed7aa"
-# Scp edit - disabled broken ported content.     announceVoice: SCP079
     sound: /Audio/_Scp/Scp079/announcement.ogg
   - type: HolographicAvatar
     layerData:
@@ -93,7 +88,6 @@
     - Biological
     - Inorganic
     - Silicon
-# Scp edit - disabled broken ported content.     - Mech
   - type: Speech
     speechVerb: Robotic
 
@@ -402,9 +396,6 @@
   - type: CargoSellBlacklist
   - type: StationAiVision
     range: 20
-  # - type: TTS # SCP port: SUNRISE TTS component unavailable
-    # voice: SCP079
-
 
 
 # постер для КС

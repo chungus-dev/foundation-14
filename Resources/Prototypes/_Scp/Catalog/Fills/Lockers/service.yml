@@ -59,7 +59,6 @@
       prob: 0.3
     - id: ClothingBeltPlant
     - id: PlantBag ##Some maps don't have nutrivend
-# Scp edit - disabled broken ported content.     - id: PlantAnalyzer
     - id: BoxMouthSwab
     - id: Dropper
     - id: HandLabeler

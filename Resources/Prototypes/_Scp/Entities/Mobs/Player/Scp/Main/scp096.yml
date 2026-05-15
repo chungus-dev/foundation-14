@@ -58,7 +58,6 @@
       tags:
       - Wall
       - Window
-# Scp edit - disabled broken ported content.       - Directional
       - Structure
     cryOutBlacklist:
       components:

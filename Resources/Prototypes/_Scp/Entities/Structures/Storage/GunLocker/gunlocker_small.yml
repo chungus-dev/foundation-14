@@ -40,7 +40,6 @@
       params:
         volume: -1
     storageInsertSound:
-# Scp edit - disabled broken ported content.       collection: PistolsDrop
     grid:
     - 0,0,0,1
     - 0,0,1,0

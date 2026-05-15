@@ -15,7 +15,6 @@
   supervisors: job-supervisors-O5-command
   canBeAntag: false
   displayWeight: 100
-# Scp edit - disabled broken ported content.   radioBold: true
   accessGroups:
   - Director
   special:

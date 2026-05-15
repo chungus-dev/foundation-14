@@ -25,23 +25,17 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
   canBeAntag: false
-  displayWeight: 100 # Sunrise-Edit
-# Scp edit - disabled broken ported content.   radioBold: true # Sunrise-Edit
   accessGroups:
   - AllAccess
-  overrideConsoleVisibility: false
+  overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
   special:
   - !type:AddImplantSpecial
-# Scp edit - disabled broken ported content.     implants: [ MindShieldImplant, TrackingImplant, DeathRattleImplantBlueShield ]
   - !type:AddComponentSpecial
     components:
-      # Scp edit - Sunrise ArtifactFunnyTarget component is unavailable in Foundation14
       # - type: ArtifactFunnyTarget
       - type: CommandStaff
-# Scp edit - disabled broken ported content.   speciesBlacklist:
-#   - Vox # Sunrise-Edit
-#
+
 - type: startingGear
   id: CaptainGear
   equipment:

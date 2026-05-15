@@ -73,7 +73,6 @@
     tags:
     - Wall
     - Diagonal
-# Scp edit - disabled broken ported content.     - ForceNoTileWalls # Fire added
   - type: IconSmooth
     mode: Diagonal
     key: walls
@@ -262,22 +261,15 @@
         damage: 300
       behaviors:
       - !type:SpawnEntitiesBehavior
-        spawn: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.           CultGirder: # sunrise-edit
-#             min: 1
-#             max: 1
+        spawn:
+          Girder:
+            min: 1
+            max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
     key: walls
     base: cult
-  # Sunrise-Start
-  # Scp edit start - old cult girder construction graph is unavailable.
-  # - type: Construction
-# Scp edit - disabled broken ported content.     graph: CultGirder
-  #   node: wall
-  # Scp edit end
-  # Sunrise-End
 
 - type: entity
   parent: BaseWall
@@ -511,31 +503,29 @@
   suffix: indestructible
   categories: [ HideSpawnMenu ] # Fire added
   components:
-  # - type: Ricochetable # SCP port: component unavailable in Foundation14
-    # chance: 1
-  - type: Sprite
-    sprite: _Scp/Structures/Walls/plastitanium.rsi # Sunrise-edit
-  - type: Icon
-    sprite: _Scp/Structures/Walls/plastitanium.rsi # Sunrise-edit
-  - type: IconSmooth
-    key: walls
-    base: plastitanium
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
-        mask:
-        - FullTileMask
-        layer:
-        - WallLayer
-        density: 4000
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallicStrong
-  - type: RadiationBlocker
-    resistance: 5
+    - type: Sprite
+      sprite: Structures/Walls/plastitanium.rsi
+    - type: Icon
+      sprite: Structures/Walls/plastitanium.rsi
+    - type: IconSmooth
+      key: walls
+      base: plastitanium
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+          mask:
+          - FullTileMask
+          layer:
+          - WallLayer
+          density: 4000
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: StructuralMetallicStrong
+    - type: RadiationBlocker
+      resistance: 5
 
 - type: entity
   parent: WallPlastitaniumIndestructible
@@ -567,10 +557,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: _Scp/Structures/Walls/plastitanium_diagonal.rsi # Sunrise-edit
+    sprite: Structures/Walls/plastitanium_diagonal.rsi
     state: state0
   - type: Icon
-    sprite: _Scp/Structures/Walls/plastitanium_diagonal.rsi # Sunrise-edit
+    sprite: Structures/Walls/plastitanium_diagonal.rsi
     state: state0
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -587,10 +577,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: _Scp/Structures/Walls/plastitanium_diagonal.rsi # Sunrise-edit
+    sprite: Structures/Walls/plastitanium_diagonal.rsi
     state: state0
   - type: Icon
-    sprite: _Scp/Structures/Walls/plastitanium_diagonal.rsi # Sunrise-edit
+    sprite: Structures/Walls/plastitanium_diagonal.rsi
     state: state0
   - type: Destructible
     thresholds:
@@ -879,10 +869,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: _Scp/Structures/Walls/shuttle_diagonal.rsi # Sunrise-edit
+    sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
   - type: Icon
-    sprite: _Scp/Structures/Walls/shuttle_diagonal.rsi # Sunrise-edit
+    sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
   - type: Physics
     bodyType: Static
@@ -899,13 +889,10 @@
       fix1:
         shape:
           !type:PolygonShape
-          vertices:
-          # Sunrise-Start
-          - "0.5,-0.5"
-          - "-0.5,-0.5"
-          - "-0.5,0.1"
-          - "0.5,0.5"
-          # Sunrise-End
+            vertices:
+            - "-0.5,-0.5"
+            - "0.5,0.5"
+            - "0.5,-0.5"
         mask:
         - FullTileMask
         layer:
@@ -980,9 +967,9 @@
   - type: RadiationBlocker
     resistance: 5
   - type: Sprite
-    sprite: _Scp/Structures/Walls/shuttle.rsi # Sunrise-edit
+    sprite: Structures/Walls/shuttle.rsi
   - type: Icon
-    sprite: _Scp/Structures/Walls/shuttle.rsi # Sunrise-edit
+    sprite: Structures/Walls/shuttle.rsi
     state: full
   - type: Construction
     graph: Girder
@@ -1444,9 +1431,9 @@
   name: mining wall
   components:
   - type: Sprite
-    sprite: _Scp/Structures/Walls/mining.rsi # Sunrise-edit
+    sprite: Structures/Walls/mining.rsi
   - type: Icon
-    sprite: _Scp/Structures/Walls/mining.rsi # Sunrise-edit
+    sprite: Structures/Walls/mining.rsi
   - type: Destructible
     thresholds:
     - trigger:
@@ -1458,9 +1445,10 @@
   - type: IconSmooth
     key: walls
     base: mining
-  # - type: RandomIconSmooth # sunrise-edit # We dont have diferent 2.5d sprites
-  #   randomStates:
-  #   - mining
+  - type: RandomIconSmooth
+    randomStates:
+    - mining
+    - miningB
   - type: Appearance
 
 - type: entity
@@ -1471,10 +1459,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: _Scp/Structures/Walls/mining_diagonal.rsi # Sunrise-edit
+    sprite: Structures/Walls/mining_diagonal.rsi
     state: state0
   - type: Icon
-    sprite: _Scp/Structures/Walls/mining_diagonal.rsi # Sunrise-edit
+    sprite: Structures/Walls/mining_diagonal.rsi
     state: state0
   - type: Damageable
     damageContainer: StructuralInorganic

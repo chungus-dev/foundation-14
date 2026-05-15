@@ -8,25 +8,18 @@
       time: 10h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 50h # Sunrise-edit
+      time: 10h
       inverted: true # stop playing intern if you're good at security!
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
   canBeAntag: false
-  displayWeight: 0 # Sunrise-Edit
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-security-trainee
-#   - job-alt-title-security-rookie
-#   - job-alt-title-security-recruit
-  # Sunrise-End
   access:
   - Security
   - Brig
-  # - Maintenance # sunrise-edit
+  - Maintenance
   - External
   - Cryogenics
   special:

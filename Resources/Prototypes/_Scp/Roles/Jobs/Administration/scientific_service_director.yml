@@ -13,7 +13,6 @@
   icon: JobScientificServiceDirector
   supervisors: job-supervisors-director
   canBeAntag: true
-# Scp edit - disabled broken ported content.   radioBold: true
   displayWeight: 50
   accessGroups:
   - ScientificServiceDirector
@@ -42,16 +41,13 @@
   id: ScientificServiceDirectorGear
   equipment:
     eyes: ClothingEyesGlasses
-# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfRD
     jumpsuit: ClothingUniformJumpsuitResearchDirector
     gloves: ClothingHandsGlovesLatex
     shoes: ClothingShoesColorBrown
     back: ClothingBackpackScience
     id: KeyCardScientificServiceDirector
     ears: ClothingHeadsetAltScientificService
-# Scp edit - disabled broken ported content.     pocket1: HandheldRoboAnalyzer
     pocket2: ScientificServiceDirectorPDA
   storage:
     back:
     - Flash
-# Scp edit - disabled broken ported content.     - Telebaton

@@ -317,7 +317,6 @@
     tags:
     - CorgiWearable
     - WhitelistChameleon
-  - type: FlashImmunity # Sunrise-Edit
 
 #Brigmedic Hardsuit
 - type: entity

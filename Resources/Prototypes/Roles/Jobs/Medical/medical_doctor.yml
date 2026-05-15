@@ -10,13 +10,8 @@
   startingGear: DoctorGear
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo
-  displayWeight: 20  # Sunrise
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-surgeon
-  # Sunrise-End
   access:
   - Medical
   - Maintenance

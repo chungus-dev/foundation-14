@@ -4,10 +4,7 @@
   components:
   - type: Metabolizer
     metabolizerTypes: [ Scp096 ]
-# Scp edit - disabled broken ported content.     groups:
-#     - id: Gas
-#       rateModifier: 100.0
-#
+
 - type: entity
   id: OrganScp096Heart
   parent: OrganHumanHeart

@@ -15,15 +15,11 @@
     - 0,0,19,9
     whitelist:
       components:
-# Scp edit - disabled broken ported content.       - SurgeryTool
       - Healing
-# Scp edit - disabled broken ported content.       - TapePlayer # бумбокс
-# Scp edit - disabled broken ported content.       - MusicTape # Касеты бумбокса
       - Pill
       - Paper
       tags:
       - Syringe
-# Scp edit - disabled broken ported content.       - SunriseUplink # рыбаплинк
       - PillCanister
       - Pen
   - type: StorageFill
@@ -36,6 +32,4 @@
     - id: Cautery
     - id: Retractor
     - id: Scalpel
-# Scp edit - disabled broken ported content.     - id: BoneSetter
-# Scp edit - disabled broken ported content.     - id: BoneGel
     - id: Scp049Contract

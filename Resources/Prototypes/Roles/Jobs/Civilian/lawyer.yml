@@ -8,12 +8,7 @@
       time: 2.5h
   startingGear: LawyerGear
   icon: "JobIconLawyer"
-  canBeAntag: false
-  supervisors: job-supervisors-magistrate
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-lawyer
-  # Sunrise-End
+  supervisors: job-supervisors-hop
   setPreference: false # Fire added
   overrideConsoleVisibility: false # Fire added
   access:

@@ -14,8 +14,6 @@
     fixedRotation: false
   - type: Puddle
     solution: blood
-# Scp edit - disabled broken ported content.     canSlow: false
-# Scp edit - disabled broken ported content.     canSlip: false
   - type: Appearance
   - type: SolutionContainerManager
     solutions:

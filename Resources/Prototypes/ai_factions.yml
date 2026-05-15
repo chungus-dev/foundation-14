@@ -23,18 +23,11 @@
   - Xeno
   - Zombie
   - Revolutionary
+  - Dragon
   - AllHostile
   - Wizard
   - Xenoborg
-  - Dragon
-  # Sunrise Edit
-# Scp edit - disabled broken ported content.   - Thief
-# Scp edit - disabled broken ported content.   - Carps
-# Scp edit - disabled broken ported content.   - Vampire
-# Scp edit - disabled broken ported content.   - Flesh
-# Scp edit - disabled broken ported content.   - BloodCult
-# Scp edit - disabled broken ported content.   - Pirate
-# Scp edit - disabled broken ported content.   - Soviet
+
 - type: npcFaction
   id: Mouse
   hostile:
@@ -59,12 +52,6 @@
   - Xeno
   - AllHostile
   - Dragon
-  # Sunrise Edit
-  - Pirate
-  - Soviet
-  - Carps
-  - Flesh
-  - Xenoborg
 
 - type: npcFaction
   id: SimpleHostile
@@ -84,15 +71,6 @@
   - AllHostile
   - Wizard
   - Xenoborg
-  # Sunrise Edit
-  - Thief
-  - Carps
-  - Vampire
-# Scp edit - disabled broken ported content.   - FleshHuman
-  - Flesh
-  - BloodCult
-  - Pirate
-  - Soviet
 
 - type: npcFaction
   id: SimpleNeutral
@@ -108,19 +86,11 @@
   - Xeno
   - PetsNT
   - Zombie
+  - Dragon
   - AllHostile
   - Wizard
   - Xenoborg
-  - Dragon
-  # Sunrise Edit
-  - Thief
-  - Carps
-  - Vampire
-  - FleshHuman
-  - Flesh
-  - BloodCult
-  - Pirate
-  - Soviet
+
 - type: npcFaction
   id: Xeno
   hostile:
@@ -138,15 +108,7 @@
   - Wizard
   - Dragon
   - Xenoborg
-  # Sunrise Edit
-  - Thief
-  - Carps
-  - Vampire
-  - FleshHuman
-  - Flesh
-  - BloodCult
-  - Pirate
-  - Soviet
+
 - type: npcFaction
   id: Zombie
   hostile:
@@ -165,15 +127,7 @@
   - Wizard
   - Dragon
   - Xenoborg
-  # Sunrise Edit
-  - Thief
-  - Carps
-  - Vampire
-  - FleshHuman
-  - Flesh
-  - BloodCult
-  - Pirate
-  - Soviet
+
 - type: npcFaction
   id: Revolutionary
   hostile:
@@ -183,18 +137,11 @@
   - NanoTrasen
   - Zombie
   - SimpleHostile
+  - Dragon
   - AllHostile
   - Wizard
   - Xenoborg
-  - Dragon
-  # Sunrise Edit
-  - Carps
-  - Vampire
-  - FleshHuman
-  - Flesh
-  - BloodCult
-  - Pirate
-  - Soviet
+
 - type: npcFaction
   id: AllHostile
   hostile:
@@ -203,6 +150,7 @@
   - SCPs
   # Fire added end
   - NanoTrasen
+  - Dragon
   - Mouse
   - Passive
   - PetsNT
@@ -214,16 +162,7 @@
   - Revolutionary
   - Wizard
   - Xenoborg
-  - Dragon
-  # Sunrise Edit
-  - Thief
-  - Carps
-  - Vampire
-  - FleshHuman
-  - Flesh
-  - BloodCult
-  - Pirate
-  - Soviet
+
 - type: npcFaction
   id: Wizard
   hostile:
@@ -232,6 +171,7 @@
   - SCPs
   # Fire added end
   - NanoTrasen
+  - Dragon
   - Mouse
   - Passive
   - PetsNT
@@ -243,17 +183,6 @@
   - Revolutionary
   - AllHostile
   - Xenoborg
-  - Dragon
-  # Sunrise Edit
-  - Thief
-  - Carps
-  - Vampire
-  - FleshHuman
-  - Flesh
-  - Xeno
-  - BloodCult
-  - Pirate
-  - Soviet
 
 - type: npcFaction
   id: Xenoborg

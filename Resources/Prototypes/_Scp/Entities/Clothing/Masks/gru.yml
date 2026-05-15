@@ -8,6 +8,3 @@
     sprite: _Scp/Clothing/Mask/gru.rsi
   - type: Clothing
     sprite: _Scp/Clothing/Mask/gru.rsi
-  - type: Tag
-    tags: [] # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     - FullCovered

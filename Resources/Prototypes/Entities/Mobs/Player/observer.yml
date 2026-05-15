@@ -68,23 +68,6 @@
     radius: 6
     castShadows: false
     enabled: false
-  # Sunrise-Start
-  - type: InteractionPopup
-    successChance: 1.0
-    interactSuccessString: petting-success-cat
-    interactFailureString: petting-failure-generic
-    interactSuccessSpawn: EffectHearts
-    interactSuccessSound:
-      path: /Audio/Animals/cat_meow.ogg
-  - type: Pullable
-  # Scp edit start - Sunrise ghost theme UI is unavailable in Foundation14
-  # - type: UserInterface
-  #   interfaces:
-  #     enum.GhostThemeUiKey.Key:
-  #       type: GhostThemeBoundUserInterface
-  #       requireInputValidation: false
-  # Scp edit end
-  # Sunrise-End
   - type: MovementSpeedModifier # Fire Edit
     baseSprintSpeed: 12
     baseWalkSpeed: 20

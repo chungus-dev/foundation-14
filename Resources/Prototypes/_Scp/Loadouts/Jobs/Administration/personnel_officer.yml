@@ -36,11 +36,6 @@
 
 # Neck
 - type: loadout
-  id: ScpLoadoutPersonnelOfficerScarf
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfHOP
-#
-- type: loadout
   id: ScpLoadoutPersonnelOfficerMantle
   equipment:
     neck: ClothingNeckMantleHOP

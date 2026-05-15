@@ -34,9 +34,7 @@
 - type: startingGear
   id: SeniorMedicalSpecialistGear
   equipment:
-# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretParamedic
     eyes: ClothingEyesHudMedical
-# Scp edit - disabled broken ported content.     mask: ClothingMaskSterileBlack
     neck: ClothingNeckScarfStripedBlack
     outerClothing: ClothingOuterCoatLab
     jumpsuit: ClothingUniformJumpsuitSeniorPhysician

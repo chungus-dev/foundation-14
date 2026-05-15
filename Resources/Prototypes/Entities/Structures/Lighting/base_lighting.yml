@@ -10,11 +10,6 @@
   description: "An always powered light."
   suffix: Always powered
   components:
-  # Sunrise start
-  # - type: DamageOverlay # SCP port: component unavailable in Foundation14
-    # damagePopupType: SmallFloating
-    # isStructure: true
-  # Sunrise end
   # Fire added start
   - type: LightFlicking
   - type: BloomOverlayVisuals
@@ -452,8 +447,8 @@
   components:
   - type: PointLight
     enabled: false
-    radius: 7 # Sunrise-Edit
-    energy: 1 # Sunrise-Edit
+    radius: 7.4 # Fire edit
+    energy: 1.1 # Fire edit
     offset: "0, 0.4"
     color: "#7CFC00"
     mask: /Textures/Effects/LightMasks/double_cone.png

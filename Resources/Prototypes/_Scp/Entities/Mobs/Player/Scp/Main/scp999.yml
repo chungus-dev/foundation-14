@@ -170,8 +170,6 @@
     actions:
     - Scp999Wallify
     - Scp999Rest
-  # - type: TTS # SCP port: SUNRISE TTS component unavailable
-    # voice: Neco
   - type: GuideHelp
     guides:
     - ScpResearch

@@ -6,7 +6,6 @@
   - type: StorageFill
     contents:
       - id: FlashlightSeclite
-# Scp edit - disabled broken ported content.       - id: ClothingHeadHatCapWardenAlt
       - id: ClothingBeltSecurityFilled
       - id: Flash
       - id: ClothingHeadsetAltExternalAdministrativeZoneSecurityService
@@ -15,14 +14,9 @@
       - id: ClothingShoesBootsSecurityGuard
       - id: ClothingOuterCoatWarden
       - id: ClothingOuterWinterWarden
-# Scp edit - disabled broken ported content.       - id: ClothingOuterCoatWardenAlt
       - id: RubberStampCommandantSquadLeader
       - id: DoorRemoteArmory
       - id: Binoculars
-# Scp edit - disabled broken ported content.       - id: HyperLinkBookCorporateLaw
-# Scp edit - disabled broken ported content.       - id: HandheldCriminalRecordsMonitor
-# Scp edit - disabled broken ported content.       - id: PortableSurveillanceCameraMonitor
-      # Добавлены "Детективные" вещи до добавления отдельного шкафчика/должности под эти дела.
       - id: ForensicScanner
       - id: BoxForensicPad
       - id: BoxEvidenceMarkers
@@ -55,9 +49,6 @@
       - id: ClothingShoesBootsSecurityGuard
       - id: WeaponMeleeNeedle
         prob: 0.1
-      # Scp edit - disabled broken ported content. - id: HyperLinkBookCorporateLaw
-      # Scp edit - disabled broken ported content.   prob: 0.5
-      # Scp edit - disabled broken ported content.
 - type: entity
   id: ScpLockerAmnesticologistFilled
   parent: ScpLockerAmnesticologist
@@ -90,11 +81,6 @@
       prob: 0.7
     - id: LauncherSyringe
       prob: 0.15
-# Scp edit - disabled broken ported content.     - id: ClothingHeadHelmetSecurityMedic
-# Scp edit - disabled broken ported content.     - id: ClothingOuterVestSecurityMedic
-#       prob: 0.5
-# Scp edit - disabled broken ported content.     - id: ClothingOuterCoatLabSecurityMedic
-#       prob: 0.5
     - id: BoxVialAmnesiacA
     - id: BoxVialAmnesiacB
     - id: ChemistryVialAmnesiacC

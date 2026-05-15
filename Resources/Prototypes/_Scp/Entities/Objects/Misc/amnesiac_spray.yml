@@ -5,7 +5,7 @@
   description: It's a canister with liquid inside.
   components:
   - type: Sprite
-    sprite: _Scp/Objects/Misc/pepperspray.rsi # Scp edit - use migrated Sunrise spray states.
+    sprite: _Scp/Objects/Misc/pepperspray.rsi
     layers:
     - state: item
     - state: overlay

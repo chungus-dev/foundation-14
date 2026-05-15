@@ -75,7 +75,6 @@
     id: KeyCardJuniorHeavyContainmentZoneOfficer
     ears: ClothingHeadsetHeavyContainmentSecurityService
     belt: ScpClothingBeltSecurityWebbingFilled
-# Scp edit - disabled broken ported content.     pocket1: HyperLinkBookCorporateLaw
     pocket2: ScpSecurityPDA
   storage:
     back:

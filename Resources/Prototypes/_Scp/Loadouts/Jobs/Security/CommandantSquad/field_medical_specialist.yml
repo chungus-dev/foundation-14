@@ -1,18 +1,8 @@
 - type: loadout
-  id: ScpLoadoutClothingOuterCoatLabSecurityMedic
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatLabSecurityMedic
-#
-- type: loadout
   id: ScpLoadoutClothingEyesHudMedSec
   equipment:
     eyes: ClothingEyesHudMedSec
 
-- type: loadout
-  id: ScpLoadoutClothingHeadHatBeretSecurityMedic
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretSecurityMedic
-#
 - type: loadout
   id: ScpLoadoutKeyCardFieldMedicalSpecialist
   equipment:
@@ -39,12 +29,6 @@
     pocket2: ScpMedicalPDA
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupOuterClothingClothingOuterCoatLabSecurityMedic
-  name: loadout-group-outer-clothing
-  loadouts:
-  - ScpLoadoutClothingOuterCoatLabSecurityMedic
-
-- type: loadoutGroup
   id: ScpLoadoutGroupShoesClothingShoesColorRed
   name: loadout-group-shoes
   loadouts:
@@ -61,12 +45,6 @@
   name: loadout-group-eyes
   loadouts:
   - ScpLoadoutClothingEyesHudMedSec
-
-- type: loadoutGroup
-  id: ScpLoadoutGroupHeadClothingHeadHatBeretSecurityMedic
-  name: loadout-group-head
-  loadouts:
-  - ScpLoadoutClothingHeadHatBeretSecurityMedic
 
 - type: loadoutGroup
   id: ScpLoadoutGroupIdKeyCardFieldMedicalSpecialist

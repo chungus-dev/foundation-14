@@ -47,11 +47,6 @@
         - GPS
         - WeldingMask
         - RemoteSignaller
-# Scp edit - disabled broken ported content.         - ImprovisedCrowbar
-# Scp edit - disabled broken ported content.         - ImprovisedScrewdriver
-# Scp edit - disabled broken ported content.         - ImprovisedWirecutter
-# Scp edit - disabled broken ported content.         - ImprovisedWrench
-# Scp edit - disabled broken ported content.         - ImprovisedMultitool
       components:
         - StationMap
         - SprayPainter
@@ -151,8 +146,6 @@
         - GlassBeaker
         - ChemDispensable
         - CentrifugeCompatible
-# Scp edit - disabled broken ported content.         - Patch
-# Scp edit - disabled broken ported content.         - PatchPack
       components:
         - Injector
         - Pill
@@ -231,6 +224,5 @@
       tags:
         - Grenade
         - HandGrenade
-# Scp edit - disabled broken ported content.         - HandGrenadeAmmo
   - type: ExplosionResistance
     damageCoefficient: 0.0

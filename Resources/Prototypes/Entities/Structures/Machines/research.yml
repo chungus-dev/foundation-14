@@ -29,7 +29,6 @@
     - Arsenal
     - Experimental
     - CivilianServices
-# Scp edit - disabled broken ported content.     - Biochemical
     - SCP # Fire
   - type: ApcPowerReceiver
     powerLoad: 200
@@ -77,34 +76,6 @@
   - type: GuideHelp
     guides:
     - Science
-  # Sunrise-Start
-  - type: Item
-    sprite: _Scp/Structures/Machines/server.rsi
-    size: Ginormous
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 15
-  - type: DamageOnHit
-    damage:
-      types:
-        Blunt: 5
-  - type: DamageOnLand
-    damage:
-      types:
-        Blunt: 30
-  - type: EmitSoundOnLand
-    sound:
-      collection: MetalBreak
-      params:
-        variation: 0.25
-  - type: MultiHandedItem
-  - type: HeldSpeedModifier
-    walkModifier: 0.6
-    sprintModifier: 0.6
-  - type: StaticPrice
-    price: 40000
-  # Sunrise-End
 
 - type: entity
   id: BaseResearchAndDevelopmentPointSource

@@ -12,8 +12,7 @@
   - type: FaxMachine
     name: fax-name-regional-administration
     notifyAdmins: true
-# Scp edit - disabled broken ported content.     receiveStationGoal: true
-#
+
 - type: entity
   parent: FaxMachineBase
   id: FaxMachineO4HQ
@@ -71,7 +70,6 @@
   - type: FaxMachine
     name: fax-name-complex-director-office
     receiveNukeCodes: true
-    # Scp edit - disabled broken ported content. receiveStationGoal: true
   - type: StealTarget
     stealGroup: FaxMachineCaptain
   - type: ScpDirectorFax

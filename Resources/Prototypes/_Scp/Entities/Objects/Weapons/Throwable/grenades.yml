@@ -21,6 +21,3 @@
     proto: BulletAmnesiacAGasGrenade
     deleteOnSpawn: true
   - type: SpentAmmoVisuals
-  - type: Tag
-    tags: [] # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     - HandGrenadeAmmo

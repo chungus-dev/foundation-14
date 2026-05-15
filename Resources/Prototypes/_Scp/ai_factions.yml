@@ -8,13 +8,6 @@
   - Zombie
   - AllHostile
   - Wizard
-  # =======
-# Scp edit - disabled broken ported content.   - Thief
-# Scp edit - disabled broken ported content.   - Carps
-# Scp edit - disabled broken ported content.   - Vampire
-# Scp edit - disabled broken ported content.   - FleshHuman
-# Scp edit - disabled broken ported content.   - Flesh
-  # =======
   - SCPs
 
 - type: npcFaction
@@ -29,11 +22,4 @@
   - AllHostile
   - Wizard
   - Syndicate
-  # =======
-  - Thief
-  - Carps
-  - Vampire
-  - FleshHuman
-  - Flesh
-  # =======
   - Chaos

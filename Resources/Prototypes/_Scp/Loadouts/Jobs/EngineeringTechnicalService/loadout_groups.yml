@@ -8,16 +8,12 @@
   minLimit: 0
   maxLimit: 2
   loadouts:
-  - ScpLoadoutEngineeringTechnicalServiceAtmosAlertsMonitor
-  - ScpLoadoutEngineeringTechnicalServiceEngineeringAlertsMonitor
-  - ScpLoadoutEngineeringTechnicalServiceTrayScanner
   - ScpLoadoutEngineeringTechnicalServiceFlashlightLantern
   - ScpLoadoutEngineeringTechnicalServiceGasAnalyzer
   - ScpLoadoutEngineeringTechnicalServiceGeigerCounter
   - ScpLoadoutGeneralTechnicalSpecialistFigurine
   - ScpLoadoutElectricalTechnicalSpecialistFigurine
   - ScpLoadoutChiefTechnicalSpecialistFigurine
-  - ScpLoadoutEngineeringTechnicalServiceGoldenCrowbarWrench
   - ScpLoadoutEngineeringTechnicalServiceSingularityToy
 
 # Lead Technical Specialist
@@ -30,10 +26,6 @@
   loadouts:
   - ScpLoadoutLeadTechnicalSpecialistEngineeringBeret
   - ScpLoadoutClothingHeadBandRed
-  - ScpLoadoutClothingHeadBandOrange
-  - ScpLoadoutElectricalTechnicalSpecialistBeret
-  - ScpLoadoutClothingHeadBandYellow
-  - ScpLoadoutClothingHeadBandCyan
   - ScpLoadoutLeadTechnicalSpecialistRedHardHat
   - ScpLoadoutLeadTechnicalSpecialistOrangeHardHat
   - ScpLoadoutLeadTechnicalSpecialistYellowHardHat
@@ -52,9 +44,6 @@
   - ScpLoadoutLeadTechnicalSpecialistGasMask
   - ScpLoadoutLeadTechnicalSpecialistAtmosGasMask
   - ScpLoadoutClothingMaskBandRed
-  - ScpLoadoutClothingMaskBandOrange
-  - ScpLoadoutClothingMaskBandYellow
-  - ScpLoadoutClothingMaskBandCyan
 
 - type: loadoutGroup
   id: ScpLoadoutGroupLeadTechnicalSpecialistNeck
@@ -64,8 +53,6 @@
   loadouts:
   - ScpLoadoutClothingNeckScarfStripedRed
   - ScpLoadoutClothingNeckScarfStripedOrange
-  - ScpLoadoutClothingNeckScarfStripedYellow
-  - ScpLoadoutClothingNeckScarfStripedCyan
   - ScpLoadoutClothingNeckScarfStripedLightBlue
   - ScpLoadoutClothingNeckTieRed
 
@@ -137,10 +124,7 @@
   minLimit: 0
   loadouts:
   - ScpLoadoutGeneralTechnicalSpecialistEngineeringBeret
-  - ScpLoadoutGeneralTechnicalSpecialistAtmosBeret
   - ScpLoadoutClothingHeadBandRed
-  - ScpLoadoutClothingHeadBandOrange
-  - ScpLoadoutClothingHeadBandYellow
   - ScpLoadoutGeneralTechnicalSpecialistDarkYellowHardHat
   - ScpLoadoutGeneralTechnicalSpecialistYellowHardHat
   - ScpLoadoutGeneralTechnicalSpecialistOrangeHardHat
@@ -156,8 +140,6 @@
   maxLimit: 1
   loadouts:
   - ScpLoadoutClothingMaskBandRed
-  - ScpLoadoutClothingMaskBandOrange
-  - ScpLoadoutClothingMaskBandYellow
   - ScpLoadoutGeneralTechnicalSpecialistGasMask
 
 - type: loadoutGroup
@@ -168,7 +150,6 @@
   loadouts:
   - ScpLoadoutClothingNeckScarfStripedRed
   - ScpLoadoutClothingNeckScarfStripedOrange
-  - ScpLoadoutClothingNeckScarfStripedYellow
   - ScpLoadoutClothingNeckTieRed
 
 - type: loadoutGroup
@@ -228,11 +209,7 @@
   maxLimit: 1
   loadouts:
   - ScpLoadoutElectricalTechnicalSpecialistEngineeringBeret
-  - ScpLoadoutElectricalTechnicalSpecialistBeret
   - ScpLoadoutClothingHeadBandRed
-  - ScpLoadoutClothingHeadBandOrange
-  - ScpLoadoutClothingHeadBandYellow
-  - ScpLoadoutClothingHeadBandCyan
   - ScpLoadoutElectricalTechnicalSpecialistRedHardHat
   - ScpLoadoutElectricalTechnicalSpecialistOrangeHardHat
   - ScpLoadoutElectricalTechnicalSpecialistYellowHardHat
@@ -251,9 +228,6 @@
   - ScpLoadoutElectricalTechnicalSpecialistGasMask
   - ScpLoadoutElectricalTechnicalSpecialistAtmosGasMask
   - ScpLoadoutClothingMaskBandRed
-  - ScpLoadoutClothingMaskBandOrange
-  - ScpLoadoutClothingMaskBandYellow
-  - ScpLoadoutClothingMaskBandCyan
 
 - type: loadoutGroup
   id: ScpLoadoutGroupElectricalTechnicalSpecialistNeck
@@ -263,8 +237,6 @@
   loadouts:
   - ScpLoadoutClothingNeckScarfStripedRed
   - ScpLoadoutClothingNeckScarfStripedOrange
-  - ScpLoadoutClothingNeckScarfStripedYellow
-  - ScpLoadoutClothingNeckScarfStripedCyan
   - ScpLoadoutClothingNeckScarfStripedLightBlue
   - ScpLoadoutClothingNeckTieRed
 

@@ -82,7 +82,6 @@
   minLimit: 0
   loadouts:
   - ScpLoadoutScientificServiceDirectorMantle
-  - ScpLoadoutScientificServiceDirectorScarf
 
 - type: loadoutGroup
   id: ScpLoadoutGroupScientificServiceDirectorOuterClothing
@@ -115,9 +114,6 @@
   loadouts:
   - ScpLoadoutSecurityCommanderHat
   - ScpLoadoutSecurityCommanderBeret
-  - ScpLoadoutSecurityCommanderCap
-  - ScpLoadoutSecurityCommanderBlackCap
-  - ScpLoadoutSecurityCommanderLeatherCap
 
 - type: loadoutGroup
   id: ScpLoadoutGroupSecurityCommanderNeck
@@ -125,7 +121,6 @@
   minLimit: 0
   loadouts:
   - ScpLoadoutSecurityCommanderMantle
-  - ScpLoadoutSecurityCommanderScarf
 
 - type: loadoutGroup
   id: ScpLoadoutGroupSecurityCommanderOuterClothing
@@ -133,10 +128,6 @@
   loadouts:
   - ScpLoadoutSecurityCommanderTrenchCoat
   - ScpLoadoutSecurityCommanderWinterCoat
-  - ScpLoadoutSecurityCommanderGreatcoat
-  - ScpLoadoutSecurityCommanderBlackOvercoat
-  - ScpLoadoutSecurityCommanderOvercoat
-  - ScpLoadoutSecurityCommanderOfficerBlackOvercoat
 
 - type: loadoutGroup
   id: ScpLoadoutGroupSecurityCommanderJumpsuit
@@ -148,8 +139,6 @@
   - ScpLoadoutSecurityCommanderTurtleneckJumpskirt
   - ScpLoadoutSecurityCommanderFormalSuit
   - ScpLoadoutSecurityCommanderFormalJumpskirt
-  - ScpLoadoutSecurityCommanderLegacyJumpsuit
-  - ScpLoadoutSecurityCommanderBlackUniform
 
 - type: loadoutGroup
   id: ScpLoadoutGroupSecurityCommanderWeapon
@@ -167,13 +156,8 @@
   maxLimit: 1
   loadouts:
   - ScpLoadoutChiefTechnicalSpecialistWhiteHardHat
-  - ScpLoadoutClothingHeadBandWhite
-  - ScpLoadoutChiefTechnicalSpecialistBeret
   - ScpLoadoutChiefTechnicalSpecialistEngineeringBeret
   - ScpLoadoutClothingHeadBandRed
-  - ScpLoadoutClothingHeadBandOrange
-  - ScpLoadoutClothingHeadBandYellow
-  - ScpLoadoutClothingHeadBandCyan
   - ScpLoadoutChiefTechnicalSpecialistRedHardHat
   - ScpLoadoutChiefTechnicalSpecialistOrangeHardHat
   - ScpLoadoutChiefTechnicalSpecialistYellowHardHat
@@ -182,7 +166,6 @@
   - ScpLoadoutClothingHeadHatRedsoft
   - ScpLoadoutClothingHeadHatOrangesoft
   - ScpLoadoutClothingHeadHatYellowsoft
-  - ScpLoadoutChiefTechnicalSpecialistSinguloHardHat
 
 - type: loadoutGroup
   id: ScpLoadoutGroupChiefTechnicalSpecialistMask
@@ -193,10 +176,6 @@
   - ScpLoadoutChiefTechnicalSpecialistGasMask
   - ScpLoadoutChiefTechnicalSpecialistAtmosGasMask
   - ScpLoadoutClothingMaskBandRed
-  - ScpLoadoutClothingMaskBandOrange
-  - ScpLoadoutClothingMaskBandYellow
-  - ScpLoadoutClothingMaskBandCyan
-  - ScpLoadoutClothingMaskBandWhite
 
 - type: loadoutGroup
   id: ScpLoadoutGroupChiefTechnicalSpecialistNeck
@@ -207,8 +186,6 @@
   - ScpLoadoutChiefTechnicalSpecialistScarf
   - ScpLoadoutClothingNeckScarfStripedRed
   - ScpLoadoutClothingNeckScarfStripedOrange
-  - ScpLoadoutClothingNeckScarfStripedYellow
-  - ScpLoadoutClothingNeckScarfStripedCyan
   - ScpLoadoutClothingNeckScarfStripedLightBlue
   - ScpLoadoutClothingNeckTieRed
 
@@ -219,7 +196,6 @@
   loadouts:
   - ScpLoadoutChiefTechnicalSpecialistChiefWinterCoat
   - ScpLoadoutClothingOuterWinterColorWhite
-  - ScpLoadoutClothingOuterFlannelWhite
   - ScpLoadoutChiefTechnicalSpecialistHazardVest
   - ScpLoadoutChiefTechnicalSpecialistEngineeringWinterCoat
   - ScpLoadoutChiefTechnicalSpecialistAtmosWinterCoat
@@ -264,9 +240,9 @@
   id: ScpLoadoutGroupChiefTechnicalSpecialistBackpack
   name: loadout-group-backpack
   loadouts:
-  - ScpLoadoutChiefTechnicalSpecialistBackpack
-  - ScpLoadoutChiefTechnicalSpecialistSatchel
-  - ScpLoadoutChiefTechnicalSpecialistDuffelbag
+  - ScpLoadoutEngineeringTechnicalServiceEngineeringBackpack
+  - ScpLoadoutEngineeringTechnicalServiceEngineeringSatchel
+  - ScpLoadoutEngineeringTechnicalServiceEngineeringDuffelbag
 
 # Personnel Officer
 
@@ -283,7 +259,6 @@
   minLimit: 0
   loadouts:
   - ScpLoadoutPersonnelOfficerMantle
-  - ScpLoadoutPersonnelOfficerScarf
 
 - type: loadoutGroup
   id: ScpLoadoutGroupPersonnelOfficerOuterClothing
@@ -315,21 +290,16 @@
   minLimit: 0
   loadouts:
   - ScpLoadoutHeadOfMedicalSectorBeret
-  - ScpLoadoutClothingHeadHatBeretParamedic
   - ScpLoadoutMedicalServiceSeniorBeret
   - ScpLoadoutMedicalServiceBeret
-  - ScpLoadoutMedicalServiceChemistryBeret
-  - ScpLoadoutClothingHeadHatBeretPatologoanatom
   - ScpLoadoutMedicalServiceNurseHat
   - ScpLoadoutMedicalServiceBlueSurgicalCap
   - ScpLoadoutMedicalServiceGreenSurgicalCap
   - ScpLoadoutMedicalServicePurpleSurgicalCap
-  - ScpLoadoutClothingHeadHatPatologonatHat
   - ScpLoadoutClothingHeadHatParamedicsoft
   - ScpLoadoutClothingHeadHatBlacksoft
   - ScpLoadoutClothingHeadHatRedsoft
   - ScpLoadoutClothingHeadHatOrangesoft
-  - ScpLoadoutClothingHeadHatCyansoft
   - ScpLoadoutClothingHeadHatBluesoft
   - ScpLoadoutMedicalServiceHeadMirror
 
@@ -339,18 +309,8 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutClothingMaskSterileBlack
-  - ScpLoadoutClothingMaskSterileRed
-  - ScpLoadoutClothingMaskSterileOrange
-  - ScpLoadoutClothingMaskSterileGreen
   - ScpLoadoutHeadOfMedicalSectorSterileMask
-  - ScpLoadoutClothingMaskSterileBlue
-  - ScpLoadoutClothingMaskBreathMedicalBlack
-  - ScpLoadoutClothingMaskBreathMedicalRed
-  - ScpLoadoutClothingMaskBreathMedicalOrange
-  - ScpLoadoutClothingMaskBreathMedicalGreen
   - ScpLoadoutClothingMaskBreathMedical
-  - ScpLoadoutClothingMaskBreathMedicalBlue
 
 - type: loadoutGroup
   id: ScpLoadoutGroupHeadOfMedicalSectorNeck
@@ -358,12 +318,10 @@
   minLimit: 0
   loadouts:
   - ScpLoadoutHeadOfMedicalSectorMantle
-  - ScpLoadoutHeadOfMedicalSectorScarf
   - ScpLoadoutClothingNeckScarfStripedRed
   - ScpLoadoutClothingNeckScarfStripedOrange
   - ScpLoadoutClothingNeckScarfStripedGreen
   - ScpLoadoutClothingNeckScarfStripedLightBlue
-  - ScpLoadoutClothingNeckScarfStripedCyan
   - ScpLoadoutClothingNeckScarfStripedBlue
   - ScpLoadoutClothingNeckStethoscope
 
@@ -379,7 +337,6 @@
   - ScpLoadoutMedicalServiceChemistryLabCoat
   - ScpLoadoutClothingOuterCoatLabGene
   - ScpLoadoutMedicalServiceSeniorLabCoat
-  - ScpLoadoutClothingOuterCoatPatologoanatom
   - ScpLoadoutClothingOuterWinterViro
   - ScpLoadoutMedicalServiceChemistryWinterCoat
   - ScpLoadoutClothingOuterWinterGen
@@ -390,7 +347,6 @@
   - ScpLoadoutClothingOuterWinterColorRed
   - ScpLoadoutClothingOuterWinterColorOrange
   - ScpLoadoutClothingOuterWinterColorGreen
-  - ScpLoadoutClothingOuterWinterColorCyan
   - ScpLoadoutClothingOuterWinterColorBlue
   - ScpLoadoutClothingOuterCoatParamedicWB
 
@@ -428,7 +384,6 @@
   - ScpLoadoutClothingShoesColorRed
   - ScpLoadoutClothingShoesColorOrange
   - ScpLoadoutClothingShoesColorGreen
-  - ScpLoadoutClothingShoesColorCyan
   - ScpLoadoutClothingShoesColorBlue
   - ScpLoadoutMedicalServiceWinterBoots
 
@@ -441,16 +396,12 @@
   loadouts:
   - ScpLoadoutSeniorLogisticsOfficerSoftCap
   - ScpLoadoutSeniorLogisticsOfficerBeret
-  - ScpLoadoutClothingHeadBandOrange
-  - ScpLoadoutClothingHeadBandYellow
   - ScpLoadoutClothingHeadBandBrown
-  - ScpLoadoutClothingHeadBandPurple
   - ScpLoadoutSeniorLogisticsOfficerOrangeHardHat
   - ScpLoadoutSeniorLogisticsOfficerYellowHardHat
   - ScpLoadoutSeniorLogisticsOfficerDarkYellowHardHat
   - ScpLoadoutClothingHeadHatOrangesoft
   - ScpLoadoutClothingHeadHatYellowsoft
-  - ScpLoadoutClothingHeadHatBrownsoft
   - ScpLoadoutClothingHeadHatBrownFlatcap
   - ScpLoadoutClothingHeadHatFedoraBrown
   - ScpLoadoutClothingHeadHatAnimalCatBrown
@@ -464,10 +415,7 @@
   maxLimit: 1
   loadouts:
   - ScpLoadoutClothingMaskGasExplorer
-  - ScpLoadoutClothingMaskBandOrange
-  - ScpLoadoutClothingMaskBandYellow
   - ScpLoadoutClothingMaskBandBrown
-  - ScpLoadoutClothingMaskBandPurple
 
 - type: loadoutGroup
   id: ScpLoadoutGroupSeniorLogisticsOfficerNeck
@@ -475,9 +423,7 @@
   minLimit: 0
   loadouts:
   - ScpLoadoutSeniorLogisticsOfficerMantle
-  - ScpLoadoutSeniorLogisticsOfficerScarf
   - ScpLoadoutClothingNeckScarfStripedOrange
-  - ScpLoadoutClothingNeckScarfStripedYellow
   - ScpLoadoutClothingNeckScarfStripedBrown
   - ScpLoadoutClothingNeckScarfStripedPurple
 

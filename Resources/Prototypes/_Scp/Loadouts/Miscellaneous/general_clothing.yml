@@ -4,26 +4,6 @@
     head: ClothingHeadBandRed
 
 - type: loadout
-  id: ScpLoadoutClothingHeadBandWhite
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadBandWhite
-#
-- type: loadout
-  id: ScpLoadoutClothingHeadBandOrange
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadBandOrange
-#
-- type: loadout
-  id: ScpLoadoutClothingHeadBandYellow
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadBandYellow
-#
-- type: loadout
-  id: ScpLoadoutClothingHeadBandCyan
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadBandCyan
-#
-- type: loadout
   id: ScpLoadoutClothingHeadHatBlacksoft
   equipment:
     head: ClothingHeadHatBlacksoft
@@ -48,21 +28,6 @@
   equipment:
     head: ClothingHeadHatBluesoft
 
-- type: loadout
-  id: ScpLoadoutClothingHeadHatCyansoft
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadHatCyansoft
-#
-- type: loadout
-  id: ScpLoadoutClothingHeadBandPurple
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadBandPurple
-#
-- type: loadout
-  id: ScpLoadoutClothingHeadHatBrownsoft
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadHatBrownsoft
-#
 - type: loadout
   id: ScpLoadoutClothingHeadHatBrownFlatcap
   equipment:
@@ -96,35 +61,10 @@
 #Mask
 
 - type: loadout
-  id: ScpLoadoutClothingMaskBandWhite
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskBandWhite
-#
-- type: loadout
   id: ScpLoadoutClothingMaskBandRed
   equipment:
     mask: ClothingMaskBandRed
 
-- type: loadout
-  id: ScpLoadoutClothingMaskBandOrange
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskBandOrange
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskBandYellow
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskBandYellow
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskBandCyan
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskBandCyan
-#
-- type: loadout
-  id: ScpLoadoutClothingMaskBandPurple
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     mask: ClothingMaskBandPurple
-#
 - type: loadout
   id: ScpLoadoutClothingMaskGasExplorer
   equipment:
@@ -162,16 +102,6 @@
   equipment:
     neck: ClothingNeckScarfStripedBlue
 
-- type: loadout
-  id: ScpLoadoutClothingNeckScarfStripedYellow
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfStripedYellow
-#
-- type: loadout
-  id: ScpLoadoutClothingNeckScarfStripedCyan
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfStripedCyan
-#
 - type: loadout
   id: ScpLoadoutClothingNeckScarfStripedLightBlue
   equipment:
@@ -220,11 +150,6 @@
     outerClothing: ClothingOuterWinterColorWhite
 
 - type: loadout
-  id: ScpLoadoutClothingOuterFlannelWhite
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterFlannelWhite
-#
-- type: loadout
   id: ScpLoadoutClothingOuterWinterColorBrown
   equipment:
     outerClothing: ClothingOuterWinterColorBrown
@@ -265,11 +190,6 @@
     outerClothing: ClothingOuterCoatTrench
 
 - type: loadout
-  id: ScpLoadoutClothingOuterWinterColorCyan
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterWinterColorCyan
-#
-- type: loadout
   id: ScpLoadoutClothingOuterWinterColorBlack
   equipment:
     outerClothing: ClothingOuterWinterColorBlack
@@ -296,11 +216,6 @@
   equipment:
     shoes: ClothingShoesColorPurple
 
-- type: loadout
-  id: ScpLoadoutClothingShoesColorCyan
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     shoes: ClothingShoesColorCyan
-#
 - type: loadout
   id: ScpLoadoutClothingShoesColorGreen
   equipment:

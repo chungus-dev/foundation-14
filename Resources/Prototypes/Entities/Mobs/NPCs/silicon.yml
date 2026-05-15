@@ -306,7 +306,6 @@
     interactFailureString: petting-failure-cleanbot
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
-  - type: StationAiVision # Sunrise-edit AI Vision on NT Bots
     range: 0
 
 - type: entity

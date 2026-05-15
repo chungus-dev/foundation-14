@@ -8,10 +8,7 @@
     sprite: _Scp/Clothing/Shoes/Boots/chaosboots.rsi
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
-  - type: FootstepModifier
-    footstepSoundCollection:
-# Scp edit - disabled broken ported content.       collection: FootstepBoots
-#
+
 - type: entity
   parent: ClothingShoesBootsChaos
   id: ClothingShoesBootsChaosFilled

@@ -21,23 +21,15 @@
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain
   canBeAntag: false
-# Scp edit - disabled broken ported content.   radioBold: true # Sunrise-Edit
-  displayWeight: 80 # Sunrise-Edit
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-security-chief
-#   - job-alt-title-law-enforcement-chief
-#   - job-alt-title-station-sheriff
-  # Sunrise-End
   access:
   - HeadOfSecurity
   - Command
   - Brig
   - Security
   - Armory
-  # - Maintenance # Sunrise-Edit
+  - Maintenance
   - External
   - Detective
   - Cryogenics
@@ -45,13 +37,10 @@
   - GenpopLeave
   special:
   - !type:AddImplantSpecial
-# Scp edit - disabled broken ported content.     implants: [ MindShieldImplant, DeathRattleImplantBlueShield ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-# Scp edit - disabled broken ported content.   speciesBlacklist:
-#   - Vox # Sunrise-Edit
-#
+
 - type: startingGear
   id: HoSGear
   equipment:

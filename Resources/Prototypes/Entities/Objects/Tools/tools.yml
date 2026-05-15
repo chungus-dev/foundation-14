@@ -58,18 +58,6 @@
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/screwdriver_drop.ogg
-  # Sunrise start
-  - type: EmitSoundOnPickup
-    sound:
-      path: /Audio/_Scp/Items/Handling/screwdriver_pickup.ogg
-      params:
-        volume: -2
-  - type: EmitSoundOnDrop
-    sound:
-      path: /Audio/Items/screwdriver_drop.ogg
-      params:
-        volume: -2
-  # Sunrise end
   - type: Tag
     tags:
     - Screwdriver

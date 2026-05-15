@@ -5,11 +5,6 @@
   - type: RandomSpawner
     offset: 0
     prototypes:
-# Scp edit - disabled broken ported content.     - PottedPlantAlt0
-# Scp edit - disabled broken ported content.     - PottedPlantAlt1
-# Scp edit - disabled broken ported content.     - PottedPlantAlt2
-# Scp edit - disabled broken ported content.     - PottedPlantAlt3
-# Scp edit - disabled broken ported content.     - PottedPlantAlt4
     - PottedPlant0
     - PottedPlant1
     - PottedPlant2

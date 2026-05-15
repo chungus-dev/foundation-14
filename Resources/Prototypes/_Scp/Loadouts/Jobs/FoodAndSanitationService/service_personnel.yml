@@ -31,14 +31,6 @@
     jumpsuit: ClothingUniformJumpskirtJanitor
 
 - type: loadout
-  id: ScpLoadoutServicePersonnelMaidJanitor
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ScpMaidServicePersonnel
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     jumpsuit: ClothingUniformJumpskirtElegantMaid
-#
-- type: loadout
   id: ScpLoadoutServicePersonnelOrangeGloves
   equipment:
     gloves: ClothingHandsGlovesColorOrange

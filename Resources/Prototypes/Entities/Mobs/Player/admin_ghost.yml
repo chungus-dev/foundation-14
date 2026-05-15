@@ -64,11 +64,6 @@
       enum.GeneralStationRecordConsoleKey.Key:
       # who the fuck named this bruh
         type: GeneralStationRecordConsoleBoundUserInterface
-      # Scp edit start - Sunrise ghost theme UI is unavailable in Foundation14
-      # enum.GhostThemeUiKey.Key:
-      #   type: GhostThemeBoundUserInterface
-      #   requireInputValidation: false
-      # Scp edit end
   - type: IntrinsicUI
     uis:
       enum.SolarControlConsoleUiKey.Key:
@@ -94,10 +89,6 @@
     followEntity: true
   - type: CargoOrderConsole
   - type: CrewMonitoringConsole
-    # Sunrise - Start отключаем verb
-#  - type: CrewMonitoringCorpseAlert # SCP port: component unavailable in Foundation14
-#    showToggleVerb: false
-    # Sunrise - End
   - type: GeneralStationRecordConsole
     canDeleteEntries: true
   - type: DeviceNetwork

@@ -6,26 +6,18 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 15h #  Sunrise-edit
+      time: 10h
       inverted: true # stop playing intern if you're good at science!
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science
   canBeAntag: false
-  displayWeight: 0 # Sunrise-Edit
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-lab-technician
-  # Sunrise-End
   access:
   - Research
   - Maintenance
-  # Sunrise-Start
-  extendedAccess: [] # Scp edit - disabled old Sunrise access entries.
-# Scp edit - disabled broken ported content.   - ResearchConsoleAccess
-  # Sunrise-End
+
 - type: startingGear
   id: ResearchAssistantGear
   equipment:

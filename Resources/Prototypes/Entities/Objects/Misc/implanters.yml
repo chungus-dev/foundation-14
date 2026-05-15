@@ -89,8 +89,6 @@
   description: A disposable syringe exclusively designed for the injection of subdermal implants.
   components:
   - type: Implanter
-    currentMode: Inject  # Sunrise-Edit
-    implantOnly: true  # Sunrise-Edit
   - type: Tag
     tags:
     - Trash

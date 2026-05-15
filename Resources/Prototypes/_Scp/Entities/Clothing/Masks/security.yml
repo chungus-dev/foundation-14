@@ -25,6 +25,3 @@
     layers:
       Hair: MASK
   - type: IngestionBlocker
-  - type: Tag
-    tags: [] # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     - TopCovered

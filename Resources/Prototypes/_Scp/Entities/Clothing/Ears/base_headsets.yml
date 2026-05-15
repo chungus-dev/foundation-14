@@ -4,16 +4,9 @@
   id: BaseScpHeadset
   components:
   - type: EncryptionKeyHolder
-    # Scp edit - disabled broken ported content. keyBlacklist:
-    # Scp edit - disabled broken ported content.   tags:
-    # Scp edit - disabled broken ported content.   - PreventInsertingIntoHeadset
-    # Scp edit - disabled broken ported content.
 - type: entity
   abstract: true
   parent: ClothingHeadsetAlt
   id: BaseScpHeadsetAlt
   components:
   - type: EncryptionKeyHolder
-    # Scp edit - disabled broken ported content. keyBlacklist:
-    # Scp edit - disabled broken ported content.   tags:
-    # Scp edit - disabled broken ported content.   - PreventInsertingIntoHeadset

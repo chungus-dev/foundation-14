@@ -17,15 +17,9 @@
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
   supervisors: job-supervisors-captain
-# Scp edit - disabled broken ported content.   radioBold: true # Sunrise-Edit
-  displayWeight: 70 # Sunrise-Edit
-  canBeAntag: true # RaMbUt878-edit
+  canBeAntag: false
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-chief-mechanic
-  # Sunrise-End
   access:
   - Maintenance
   - Engineering
@@ -37,13 +31,11 @@
   - Cryogenics
   special:
   - !type:AddImplantSpecial
-# Scp edit - disabled broken ported content.     implants: [ DeathRattleImplantBlueShield ] # Sunrise-Edit
+    implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-# Scp edit - disabled broken ported content.   speciesBlacklist:
-#   - Vox # Sunrise-Edit
-#
+
 - type: startingGear
   id: ChiefEngineerGear
   equipment:

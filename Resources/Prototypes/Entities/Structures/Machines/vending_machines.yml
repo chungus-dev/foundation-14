@@ -266,7 +266,6 @@
     guides:
     - Bartender
     - Drinks
-  # - type: PlayerCountDependentStock  # Sunrise-Edit; SCP port: component unavailable in Foundation14
 
 - type: entity
   parent: VendingMachineBooze

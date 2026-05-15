@@ -16,7 +16,6 @@
   icon: JobSeniorLogisticsOfficer
   supervisors: job-supervisors-director
   canBeAntag: true
-# Scp edit - disabled broken ported content.   radioBold: true
   displayWeight: 40
   accessGroups:
   - SeniorLogisticsOfficer
@@ -37,10 +36,8 @@
 - type: startingGear
   id: SeniorLogisticsOfficerGear
   equipment:
-# Scp edit - disabled broken ported content.     head: ClothingHeadBandOrange
     eyes: ClothingEyesGlasses
     mask: ClothingMaskGasExplorer
-# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfQm
     outerClothing: ClothingOuterWinterMiner
     jumpsuit: ClothingUniformJumpsuitQM
     gloves: ClothingHandsGlovesColorLightBrown

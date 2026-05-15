@@ -42,14 +42,8 @@
           - FireAxe
   - type: Lock
   - type: AccessReader
-    access: [["LifeSupport"], ["Administration"]] # Fire edit
-    # Sunrise-start
-# Scp edit - disabled broken ported content.     alertAccesses:
-#       red: RedAlertAccesses
-#       blue: BlueAlertAccessesHOS
-#       gamma: GammaAlertAccesses
-    # Sunrise-end
-#
+    access: [["LifeSupport"], ["Administration"]]
+
 - type: entity
   parent: FireAxeCabinet
   id: FireAxeCabinetOpen

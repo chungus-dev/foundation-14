@@ -15,7 +15,6 @@
   weight: 940
   icon: JobChiefTechnicalSpecialist
   supervisors: job-supervisors-director
-# Scp edit - disabled broken ported content.   radioBold: true
   displayWeight: 70
   canBeAntag: true
   accessGroups:
@@ -41,12 +40,10 @@
     head: ClothingHeadHatHardhatWhite
     eyes: ClothingEyesGlassesMeson
     mask: ClothingMaskGas
-# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfCe
     outerClothing: ClothingOuterWinterColorWhite
     jumpsuit: ClothingUniformJumpsuitChiefEngineer
     gloves: ClothingHandsGlovesFingerlessInsulated
     shoes: ClothingShoesColorBrown
-# Scp edit - disabled broken ported content.     back: ClothingBackpackCE
     id: KeyCardChiefTechnicalSpecialist
     ears: ClothingHeadsetAltEngineeringTechnicalService
     belt: ClothingBeltUtilityEngineering
@@ -54,4 +51,3 @@
   storage:
     back:
     - Flash
-# Scp edit - disabled broken ported content.     - Telebaton

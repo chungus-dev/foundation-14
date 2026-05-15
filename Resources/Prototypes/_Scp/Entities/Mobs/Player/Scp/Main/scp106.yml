@@ -71,8 +71,6 @@
     - Scp106RandomTeleportAction
     - Scp106BackroomsAction
     - ActionScp106Shop
-  # - type: TTS # SCP port: SUNRISE TTS component unavailable
-    # voice: HearthstoneSotis
   - type: Vocal
     sounds:
       Male: SCP106

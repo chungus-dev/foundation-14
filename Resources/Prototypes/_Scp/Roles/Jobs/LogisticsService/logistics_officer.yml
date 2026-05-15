@@ -31,9 +31,7 @@
 - type: startingGear
   id: LogisticsOfficerGear
   equipment:
-# Scp edit - disabled broken ported content.     head: ClothingHeadBandOrange
     eyes: ClothingEyesGlasses
-# Scp edit - disabled broken ported content.     mask: ClothingMaskBandOrange
     neck: ClothingNeckScarfStripedOrange
     outerClothing: ClothingOuterWinterColorOrange
     jumpsuit: ClothingUniformJumpsuitCargo

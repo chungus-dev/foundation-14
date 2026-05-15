@@ -12,7 +12,6 @@
   icon: JobIconLLHleader
   supervisors: ghost-role-information-mtf-LLH-leader-supervisors
   canBeAntag: false
-# Scp edit - disabled broken ported content.   radioBold: true
   weight: 890
   overrideConsoleVisibility: false
   alwaysShowInBanPanel: true

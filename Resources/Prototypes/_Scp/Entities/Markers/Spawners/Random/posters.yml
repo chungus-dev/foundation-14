@@ -46,20 +46,6 @@
   - type: RandomSpawner
     offset: 0
     prototypes:
-# Scp edit - disabled broken ported content.     - PosterLegitDejaVu
-# Scp edit - disabled broken ported content.     - PosterLegitDontPanic
-# Scp edit - disabled broken ported content.     - PosterLegitBarDrinks
-# Scp edit - disabled broken ported content.     - PosterLegitBotanyFood
-# Scp edit - disabled broken ported content.     - PosterLegitHotDonkExplosion
-# Scp edit - disabled broken ported content.     - PosterLegitEatMeat
-# Scp edit - disabled broken ported content.     - PosterLegitMoreBread
-# Scp edit - disabled broken ported content.     - PosterLegitPieSlice
-# Scp edit - disabled broken ported content.     - PosterLegitPizzaHope
-# Scp edit - disabled broken ported content.     - PosterLegitMedicate
-# Scp edit - disabled broken ported content.     - PosterLegitNoTouching
-# Scp edit - disabled broken ported content.     - PosterLegitChknDnnr
-# Scp edit - disabled broken ported content.     - PosterContrabandSaucerNumberOne
-# Scp edit - disabled broken ported content.     - PosterContrabandBreadLies
     - PosterLegitCleanliness # poster3_legit
     - PosterLegitHelpOthers # poster4_legit
     - PosterLegitScience # poster7_legit
@@ -85,7 +71,6 @@
     - PosterLegitMime # poster41_legit
     - PosterLegitVacation # poster48_legit
     - PosterLegitPeriodicTable # poster49_legit
-# Scp edit - disabled broken ported content.     - PosterContrabandAriralInSpace
     - PosterContrabandSmoke # poster7_contraband
     - PosterContrabandMissingGloves # poster9_contraband
     - PosterContrabandEAT # poster14_contraband

@@ -2231,7 +2231,7 @@
   id: FloorMowedAstroGrass
   name: tiles-mowed-astro-grass
   parent: FloorGrass
-  sprite: /Textures/Tiles/Planet/Grass/grass.png # SCP port: SUNRISE mowed grass texture unavailable
+  sprite: /Textures/Tiles/Planet/Grass/grass.png
   variants: 4
   placementVariants:
   - 1.0

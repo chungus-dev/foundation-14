@@ -3,13 +3,10 @@
   name: job-name-visitor
   description: job-description-visitor
   playTimeTracker: JobVisitor
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 36000 #10 hr # Sunrise-RoleTime
   canBeAntag: false
   icon: JobIconVisitor
   setPreference: false
-  overrideConsoleVisibility: false # Fire added
+  overrideConsoleVisibility: false # Scp edit
   access:
   - Maintenance
   extendedAccess:

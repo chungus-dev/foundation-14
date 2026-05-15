@@ -8,11 +8,6 @@
   supervisors: job-supervisors-hop
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-custodian
-#   - job-alt-title-mop-master
-  # Sunrise-End
   access:
   - Service
   - Janitor

@@ -4,6 +4,6 @@
   - name: mask
     slotTexture: mask
     slotFlags: MASK
-    uiWindowPos: 0,2 # Sunrise-edit
-    strippingWindowPos: 0,1 # Sunrise-edt
+    uiWindowPos: 0,2
+    strippingWindowPos: 0,1
     displayName: Mask

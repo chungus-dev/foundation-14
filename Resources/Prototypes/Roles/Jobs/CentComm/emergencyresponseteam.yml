@@ -629,31 +629,3 @@
     head: ClothingHeadHelmetHardsuitERTJanitor
     neck: ClothingNeckScarfStripedPurple
     eyes: ClothingEyesGlassesSunglasses
-
-- type: job
-  id: CBURNVeteran
-  name: job-name-cburn-veteran
-  description: job-description-cburn-veteran
-  playTimeTracker: JobCBURNVeteran # Scp edit - required by current JobPrototype.
-  setPreference: false
-  startingGear: CBURNGear
-  icon: "JobIconNanotrasen"
-  supervisors: job-supervisors-centcom
-  overrideConsoleVisibility: false # Fire added
-  canBeAntag: false
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 180000 # 50 hours
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 36000 # 10 hours
-  accessGroups:
-  - AllAccess
-  access:
-  - CentralCommand
-  special:
-  - !type:AddImplantSpecial
-# Scp edit - disabled broken ported content.     implants: [ MindShieldImplant, DeathRattleImplantERT ] #Sunrise-Edit
-# Sunrise end
-#

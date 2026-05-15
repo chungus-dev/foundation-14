@@ -1057,10 +1057,6 @@
   suffix: External, Security, Glass, Docking, AutoDock
   components:
   - type: PriorityDock
-# Scp edit - disabled broken ported content.     tag: DockSecurity
-#
-# Сторонние
-#
 - type: entity
   parent: ScpAirlockShuttle
   id: ScpAirlockChaosInsurgencyShuttleLocked

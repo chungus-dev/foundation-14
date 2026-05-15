@@ -27,7 +27,6 @@
   - ScpLoadoutToyFigurineSpaceDragon
   - ScpLoadoutToyFigurineQueen
   - ScpLoadoutToyFigurineQuartermaster
-  - ScpLoadoutLegendaryGoldenWeh
 
 # Logistics Officer
 
@@ -37,12 +36,9 @@
   minLimit: 0
   loadouts:
   - ScpLoadoutLogisticsOfficerSoftCap
-  - ScpLoadoutClothingHeadBandOrange
-  - ScpLoadoutClothingHeadBandYellow
   - ScpLoadoutClothingHeadBandBrown
   - ScpLoadoutClothingHeadHatOrangesoft
   - ScpLoadoutClothingHeadHatYellowsoft
-  - ScpLoadoutClothingHeadHatBrownsoft
   - ScpLoadoutClothingHeadHatBrownFlatcap
   - ScpLoadoutClothingHeadHatAnimalCatBrown
   - ScpLoadoutClothingHeadHelmetCosmonaut
@@ -53,8 +49,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutClothingMaskBandOrange
-  - ScpLoadoutClothingMaskBandYellow
   - ScpLoadoutClothingMaskBandBrown
 
 - type: loadoutGroup
@@ -64,7 +58,6 @@
   maxLimit: 1
   loadouts:
   - ScpLoadoutClothingNeckScarfStripedOrange
-  - ScpLoadoutClothingNeckScarfStripedYellow
   - ScpLoadoutClothingNeckScarfStripedBrown
 
 - type: loadoutGroup

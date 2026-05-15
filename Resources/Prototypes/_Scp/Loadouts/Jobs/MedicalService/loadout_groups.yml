@@ -38,19 +38,14 @@
   loadouts:
   - ScpLoadoutSeniorMedicalSpecialistSeniorBeret
   - ScpLoadoutSeniorMedicalSpecialistBeret
-  - ScpLoadoutClothingHeadHatBeretParamedic
-  - ScpLoadoutSeniorMedicalSpecialistChemistryBeret
-  - ScpLoadoutClothingHeadHatBeretPatologoanatom
   - ScpLoadoutSeniorMedicalSpecialistNurseHat
   - ScpLoadoutSeniorMedicalSpecialistBlueSurgicalCap
   - ScpLoadoutSeniorMedicalSpecialistGreenSurgicalCap
   - ScpLoadoutSeniorMedicalSpecialistPurpleSurgicalCap
-  - ScpLoadoutClothingHeadHatPatologonatHat
   - ScpLoadoutClothingHeadHatParamedicsoft
   - ScpLoadoutClothingHeadHatBlacksoft
   - ScpLoadoutClothingHeadHatRedsoft
   - ScpLoadoutClothingHeadHatOrangesoft
-  - ScpLoadoutClothingHeadHatCyansoft
   - ScpLoadoutClothingHeadHatBluesoft
   - ScpLoadoutSeniorMedicalSpecialistHeadMirror
 
@@ -60,18 +55,8 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutClothingMaskSterileBlack
-  - ScpLoadoutClothingMaskSterileRed
-  - ScpLoadoutClothingMaskSterileOrange
-  - ScpLoadoutClothingMaskSterileGreen
   - ScpLoadoutSeniorMedicalSpecialistSterileMask
-  - ScpLoadoutClothingMaskSterileBlue
-  - ScpLoadoutClothingMaskBreathMedicalBlack
-  - ScpLoadoutClothingMaskBreathMedicalRed
-  - ScpLoadoutClothingMaskBreathMedicalOrange
-  - ScpLoadoutClothingMaskBreathMedicalGreen
   - ScpLoadoutClothingMaskBreathMedical
-  - ScpLoadoutClothingMaskBreathMedicalBlue
 
 - type: loadoutGroup
   id: ScpLoadoutGroupSeniorMedicalSpecialistNeck
@@ -84,7 +69,6 @@
   - ScpLoadoutClothingNeckScarfStripedOrange
   - ScpLoadoutClothingNeckScarfStripedGreen
   - ScpLoadoutClothingNeckScarfStripedLightBlue
-  - ScpLoadoutClothingNeckScarfStripedCyan
   - ScpLoadoutClothingNeckScarfStripedBlue
   - ScpLoadoutClothingNeckStethoscope
 
@@ -99,7 +83,6 @@
   - ScpLoadoutSeniorMedicalSpecialistChemistryLabCoat
   - ScpLoadoutClothingOuterCoatLabGene
   - ScpLoadoutSeniorMedicalSpecialistSeniorLabCoat
-  - ScpLoadoutClothingOuterCoatPatologoanatom
   - ScpLoadoutClothingOuterWinterViro
   - ScpLoadoutSeniorMedicalSpecialistChemistryWinterCoat
   - ScpLoadoutClothingOuterWinterGen
@@ -110,7 +93,6 @@
   - ScpLoadoutClothingOuterWinterColorRed
   - ScpLoadoutClothingOuterWinterColorOrange
   - ScpLoadoutClothingOuterWinterColorGreen
-  - ScpLoadoutClothingOuterWinterColorCyan
   - ScpLoadoutClothingOuterWinterColorBlue
   - ScpLoadoutClothingOuterCoatParamedicWB
 
@@ -148,7 +130,6 @@
   - ScpLoadoutClothingShoesColorRed
   - ScpLoadoutClothingShoesColorOrange
   - ScpLoadoutClothingShoesColorGreen
-  - ScpLoadoutClothingShoesColorCyan
   - ScpLoadoutClothingShoesColorBlue
   - ScpLoadoutSeniorMedicalSpecialistWinterBoots
 
@@ -175,7 +156,6 @@
   - ScpLoadoutPharmaceuticalSpecialistPurpleSurgicalCap
   - ScpLoadoutClothingHeadHatRedsoft
   - ScpLoadoutClothingHeadHatOrangesoft
-  - ScpLoadoutClothingHeadHatCyansoft
   - ScpLoadoutPharmaceuticalSpecialistHeadMirror
 
 - type: loadoutGroup
@@ -184,13 +164,7 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutClothingMaskSterileRed
-  - ScpLoadoutClothingMaskSterileOrange
-  - ScpLoadoutClothingMaskSterileGreen
   - ScpLoadoutPharmaceuticalSpecialistSterileMask
-  - ScpLoadoutClothingMaskBreathMedicalRed
-  - ScpLoadoutClothingMaskBreathMedicalOrange
-  - ScpLoadoutClothingMaskBreathMedicalGreen
   - ScpLoadoutClothingMaskBreathMedical
 
 - type: loadoutGroup
@@ -203,7 +177,6 @@
   - ScpLoadoutClothingNeckScarfStripedOrange
   - ScpLoadoutClothingNeckScarfStripedGreen
   - ScpLoadoutClothingNeckScarfStripedLightBlue
-  - ScpLoadoutClothingNeckScarfStripedCyan
   - ScpLoadoutClothingNeckStethoscope
 
 - type: loadoutGroup
@@ -219,7 +192,6 @@
   - ScpLoadoutClothingOuterWinterColorRed
   - ScpLoadoutClothingOuterWinterColorOrange
   - ScpLoadoutClothingOuterWinterColorGreen
-  - ScpLoadoutClothingOuterWinterColorCyan
 
 - type: loadoutGroup
   id: ScpLoadoutGroupPharmaceuticalSpecialistJumpsuit
@@ -251,7 +223,6 @@
   - ScpLoadoutClothingShoesColorRed
   - ScpLoadoutClothingShoesColorOrange
   - ScpLoadoutClothingShoesColorGreen
-  - ScpLoadoutClothingShoesColorCyan
   - ScpLoadoutPharmaceuticalSpecialistWinterBoots
 
 - type: loadoutGroup
@@ -277,18 +248,13 @@
   - ScpLoadoutMedicalServiceNurseHat
   - ScpLoadoutClothingHeadHatRedsoft
   - ScpLoadoutClothingHeadHatOrangesoft
-  - ScpLoadoutClothingHeadHatCyansoft
 
 - type: loadoutGroup
   id: ScpLoadoutGroupMedicalMask
   name: loadout-group-medical-mask
   minLimit: 0
   loadouts:
-  - ScpLoadoutClothingMaskSterileRed
-  - ScpLoadoutClothingMaskSterileGreen
   - ScpLoadoutMedicalServiceSterileMask
-  - ScpLoadoutClothingMaskBreathMedicalRed
-  - ScpLoadoutClothingMaskBreathMedicalGreen
   - ScpLoadoutClothingMaskBreathMedical
 
 - type: loadoutGroup
@@ -300,7 +266,6 @@
   - ScpLoadoutClothingNeckScarfStripedRed
   - ScpLoadoutClothingNeckScarfStripedGreen
   - ScpLoadoutClothingNeckScarfStripedLightBlue
-  - ScpLoadoutClothingNeckScarfStripedCyan
   - ScpLoadoutClothingNeckStethoscope
 
 - type: loadoutGroup
@@ -312,7 +277,6 @@
   - ScpLoadoutClothingOuterWinterColorWhite
   - ScpLoadoutClothingOuterWinterColorRed
   - ScpLoadoutClothingOuterWinterColorGreen
-  - ScpLoadoutClothingOuterWinterColorCyan
   - ScpLoadoutMedicalServiceWinterCoat
 
 - type: loadoutGroup
@@ -345,7 +309,6 @@
   - ScpLoadoutClothingShoesColorRed
   - ScpLoadoutClothingShoesColorOrange
   - ScpLoadoutClothingShoesColorGreen
-  - ScpLoadoutClothingShoesColorCyan
   - ScpLoadoutMedicalServiceWinterBoots
 
 # Psychotherapist
@@ -374,7 +337,6 @@
   maxLimit: 1
   loadouts:
   - ScpLoadoutClothingNeckScarfStripedLightBlue
-  - ScpLoadoutClothingNeckScarfStripedCyan
 
 - type: loadoutGroup
   id: ScpLoadoutGroupPsychotherapistOuterClothing
@@ -385,7 +347,6 @@
   - ScpLoadoutClothingOuterCoatLab
   - ScpLoadoutPsychotherapistWinterCoat
   - ScpLoadoutClothingOuterWinterColorWhite
-  - ScpLoadoutClothingOuterWinterColorCyan
 
 - type: loadoutGroup
   id: ScpLoadoutGroupPsychotherapistJumpsuit

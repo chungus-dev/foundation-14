@@ -31,8 +31,7 @@
         - id: ClothingHeadHatBeretEngineering
         - id: ClothingOuterWinterCE
         - id: ClothingNeckCloakCe
-# Scp edit - disabled broken ported content.         - id: ClothingNeckCloakLegacyCe # Sunrise-edit
-#
+
 - type: entity
   id: DresserChiefMedicalOfficerFilled
   categories: [ HideSpawnMenu ] # Fire edit
@@ -86,10 +85,7 @@
         - id: ClothingUniformJumpsuitHosFormal
         - id: ClothingOuterWinterHoS
         - id: ClothingNeckCloakHos
-        # Sunrise edit start
-# Scp edit - disabled broken ported content.         - id: ClothingHoSMantleCoat
-        # Sunrise edit end
-#
+
 - type: entity
   id: DresserQuarterMasterFilled
   categories: [ HideSpawnMenu ] # Fire edit
@@ -124,8 +120,6 @@
         - id: ClothingOuterWinterRD
         - id: ClothingOuterCoatRD
         - id: ClothingNeckCloakRd
-# Scp edit - disabled broken ported content.         - id: ClothingNeckCloakLegacyRd # Sunris-edit
-#
 - type: entity
   id: DresserWardenFilled
   categories: [ HideSpawnMenu ] # Fire edit

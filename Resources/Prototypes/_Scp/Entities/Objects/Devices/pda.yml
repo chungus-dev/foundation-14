@@ -25,8 +25,8 @@
         tags:
         - Write
     idSlot:
-      whitelist: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.         requireAllTags: true
+      whitelist:
+        requireAll: true
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
     preinstalled:
@@ -393,7 +393,6 @@
   components:
   - type: Pda
     penSlot:
-# Scp edit - disabled broken ported content.       startingItem: CEPen
       priority: -1
       whitelist:
         tags:
@@ -429,7 +428,6 @@
   components:
   - type: Pda
     penSlot:
-# Scp edit - disabled broken ported content.       startingItem: QmPen
       priority: -1
       whitelist:
         tags:
@@ -465,7 +463,6 @@
   components:
   - type: Pda
     penSlot:
-# Scp edit - disabled broken ported content.       startingItem: CmoPen
       priority: -1
       whitelist:
         tags:
@@ -501,7 +498,6 @@
   components:
   - type: Pda
     penSlot:
-# Scp edit - disabled broken ported content.       startingItem: RdPen
       priority: -1
       whitelist:
         tags:
@@ -537,7 +533,6 @@
   components:
   - type: Pda
     penSlot:
-# Scp edit - disabled broken ported content.       startingItem: HosPen
       priority: -1
       whitelist:
         tags:

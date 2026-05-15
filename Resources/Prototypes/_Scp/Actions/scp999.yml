@@ -47,10 +47,7 @@
     range: 3
     targetingIndicator: true
     interactOnMiss: false
-# Scp edit - disabled broken ported content.     ignoreContainer: true
   - type: EntityTargetAction
-    # Scp edit - Sunrise SmileLoveActionEvent is unavailable in Foundation14
-    # event: !type:SmileLoveActionEvent
     canTargetSelf: false
     whitelist:
       components:

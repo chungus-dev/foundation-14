@@ -20,9 +20,6 @@
       SupplyPoint: 0
     buySuccessSound:
       path: /Audio/Effects/Arcade/newgame.ogg
-  - type: Tag
-    tags: [] # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     - NTUplink
   - type: Item
     shape:
     - 0,0,1,1

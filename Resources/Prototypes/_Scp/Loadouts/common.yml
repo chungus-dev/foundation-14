@@ -25,25 +25,12 @@
   - ScpLoadoutCigPackBlack
   - ScpLoadoutCigarCase
   - ScpLoadoutCigarGold
-  # Scp edit - disabled broken ported content. - ScpLoadoutHyperLinkBookCorporateLaw
   - ScpLoadoutClothingWraps
   - ScpLoadoutClothingWrapsHigh
   - ScpLoadoutOffsetCane
   - ScpLoadoutOffsetCaneWood
   - ScpLoadoutCane
   - ScpLoadoutTowelColorWhite
-  - ScpLoadoutTowelColorGray
-  - ScpLoadoutTowelColorBlack
-  - ScpLoadoutTowelColorRed
-  - ScpLoadoutTowelColorOrange
-  - ScpLoadoutTowelColorLightBrown
-  - ScpLoadoutTowelColorYellow
-  - ScpLoadoutTowelColorDarkGreen
-  - ScpLoadoutTowelColorLightBlue
-  - ScpLoadoutTowelColorDarkBlue
-  - ScpLoadoutTowelColorPurple
-  - ScpLoadoutTowelColorSilver
-  - ScpLoadoutTowelColorGold
 
 - type: loadoutGroup
   id: ScpLoadoutGroupSocks
@@ -147,4 +134,3 @@
   - ScpLoadoutClothingBackpack
   - ScpLoadoutClothingBackpackSatchel
   - ScpLoadoutClothingBackpackDuffel
-  - ScpLoadoutClothingCommonModsuit

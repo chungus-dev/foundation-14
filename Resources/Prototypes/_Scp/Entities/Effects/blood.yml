@@ -13,8 +13,6 @@
   - type: Appearance
   - type: Puddle
     solution: blood
-# Scp edit - disabled broken ported content.     canSlow: false
-# Scp edit - disabled broken ported content.     canSlip: false
   - type: SolutionContainerManager
     solutions:
       blood:

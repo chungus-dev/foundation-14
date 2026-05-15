@@ -111,9 +111,7 @@
     - AllComplex
   - type: Item
     heldPrefix: blue
-  - type: PresetIdCard
-# Scp edit - disabled broken ported content.     job: CentCommOperator
-#
+
 - type: entity
   parent: PenCentcom
   id: PenRegionalAdministration

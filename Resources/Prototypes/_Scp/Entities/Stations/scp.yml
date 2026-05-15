@@ -8,8 +8,6 @@
   - BaseStationNanotrasen
   - BaseStationRecords
   - BaseStationJobsSpawning
-  - BaseStationShuttles # SCP port: replacement for SUNRISE BaseCentCommShuttles
-  # - BaseStationImmortal # SCP port: SUNRISE parent unavailable
-  # - BaseStationDontSelling # SCP port: SUNRISE parent unavailable
+  - BaseStationShuttles
   components:
   - type: Transform

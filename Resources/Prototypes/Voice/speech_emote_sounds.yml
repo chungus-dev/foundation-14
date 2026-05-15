@@ -40,10 +40,6 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
-    # Sunrise start
-# Scp edit - disabled broken ported content.     SevereCough:
-#       collection: MaleSevereCough
-    # Sunrise end
     # Fire start
     Pain:
       collection: MalePain
@@ -90,10 +86,6 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
-    # Sunrise start
-    SevereCough:
-# Scp edit - disabled broken ported content.       collection: FemaleSevereCough
-    # Sunrise end
     # Fire start
     Pain:
       collection: FemalePain
@@ -189,10 +181,6 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
-    # Sunrise start
-    SevereCough:
-      collection: MaleSevereCough
-    # Sunrise end
   params:
     variation: 0.125
 
@@ -237,10 +225,6 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
-    # Sunrise start
-    SevereCough:
-      collection: FemaleSevereCough
-    # Sunrise end
   params:
     variation: 0.125
 
@@ -364,10 +348,6 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
-    # Sunrise start
-    SevereCough:
-      collection: MaleSevereCough
-    # Sunrise end
   params:
     variation: 0.125
     pitch: 0.75
@@ -411,10 +391,6 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
-    # Sunrise start
-    SevereCough:
-      collection: FemaleSevereCough
-    # Sunrise end
   params:
     variation: 0.125
     pitch: 0.75

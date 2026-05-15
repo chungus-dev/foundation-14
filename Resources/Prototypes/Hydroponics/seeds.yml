@@ -480,7 +480,6 @@
     - ScpLog # Fire edit
   mutationPrototypes:
     - steelcap
-# Scp edit - disabled broken ported content.     - glasscap #Sunrise-add
   lifespan: 80
   maturation: 15
   ligneous: true

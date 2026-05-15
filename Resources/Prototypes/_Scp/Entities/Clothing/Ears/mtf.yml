@@ -14,7 +14,7 @@
   parent: ClothingHeadsetAltMTF
   id: ClothingHeadsetAltMTFRRH
   name: headset
-# Scp edit - disabled broken ported content.   description: A compact communication device with an encrypted channel. It has additional modules whose origin is not specified in the documentation.
+  description: A compact communication device with an encrypted channel. It has additional modules whose origin is not specified in the documentation.
   suffix: MTF
   components:
   - type: ContainerFill

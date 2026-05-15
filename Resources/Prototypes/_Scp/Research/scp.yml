@@ -110,33 +110,4 @@
   - ClothingShoesSilent
 
 # Tier 3
-
-- type: technology
-  id: AnomalousResonanceLaser
-  name: research-technology-anomalous-resonance-laser
-  icon:
-    sprite: _Scp/Objects/Weapons/Guns/Battery/EG_MG/big.rsi
-    state: base
-  discipline: SCP
-  tier: 3
-  costList:
-    Scp: 20000
-  recipeUnlocks:
-  - WeaponEarthGovLaserPistol
-  - WeaponEarthGovLaserRifle
-  - WeaponEarthGovLaserCarbine
-  - WeaponEarthGovLaserMG
-  - WeaponARLSniper
-
-- type: technology
-  id: AnomalousOpticalDestructor
-  name: research-technology-anomalous-optical-destructor
-  icon:
-    sprite: _Scp/Objects/Weapons/Guns/Battery/EGE_XR/big.rsi
-    state: base
-  discipline: SCP
-  tier: 3
-  costList:
-    Scp: 35000
-  recipeUnlocks:
-  - WeaponGodlikeXRay
+# Temporary removed, requires new design docs for research system

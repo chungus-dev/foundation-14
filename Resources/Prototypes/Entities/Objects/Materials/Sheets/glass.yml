@@ -16,7 +16,6 @@
     tags:
     - Sheet
     - ConstructionMaterial
-# Scp edit - disabled broken ported content.     - NoPaint  # Sunrise-edit
   - type: Material
   - type: Damageable
     damageContainer: Inorganic

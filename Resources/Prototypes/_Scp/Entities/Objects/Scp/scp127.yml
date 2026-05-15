@@ -27,7 +27,6 @@
     capacity: 60
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 10
-    rechargeSound: /Audio/_Scp/FleshCult/flesh_cultist_mutation.ogg
     showExamineText: false
   - type: Wieldable
   - type: GunWieldBonus
@@ -45,22 +44,7 @@
     availableModes:
     - SemiAuto
     - FullAuto
-    soundGunshot:
-      path: /Audio/_Scp/FleshCult/spike_gun_shot.ogg
-    soundEmpty:
-      path: /Audio/_Scp/FleshCult/spike_gun_reload.ogg
-    soundMode:
-      path: /Audio/_Scp/FleshCult/flesh_pudge_dead.ogg
     defaultDirection: 1, 0
-  - type: EmitSoundOnPickup
-    sound:
-# Scp edit - disabled broken ported content.       collection: RiflesPickUp
-  - type: EmitSoundOnDrop
-    sound:
-# Scp edit - disabled broken ported content.       collection: RiflesDrop
-  - type: EmitSoundOnLand
-    sound:
-      collection: RiflesDrop
   - type: GuideHelp
     guides:
     - ScpResearch

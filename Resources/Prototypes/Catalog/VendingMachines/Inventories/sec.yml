@@ -20,16 +20,13 @@
     RiotShield: 2
     RiotLaserShield: 2
     RiotBulletShield: 2
-    # Scp edit - disabled broken ported content. BolaSecurity: 6 # Sunrise-Edit
-    RadioHandheldExternalAdministrativeZoneSecurityService: 5 # Fire added
-    RadioHandheldHeavyContainmentSecurityService: 5 # Fire added
-  # security officers need to follow a diet regimen!
+    # Scp edit start
+    RadioHandheldExternalAdministrativeZoneSecurityService: 5
+    RadioHandheldHeavyContainmentSecurityService: 5
+    # Scp edit end
   contrabandInventory:
     WeaponMeleeNeedle: 2
     FoodDonutHomer: 12
     FoodBoxDonut: 2
-    # Scp edit - disabled broken ported content. ModularReceiverAuto: 1 #Sunrise-Edit
     #box evidence
   emaggedInventory:
-    # Scp edit - disabled broken ported content. ClothingEyesGlassesNVG: 1 # Sunrise Edit
-    SmokeGrenade: 1 # Sunrise Edit

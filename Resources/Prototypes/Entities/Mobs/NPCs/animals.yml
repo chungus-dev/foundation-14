@@ -3666,11 +3666,6 @@
   id: MobDionaNymph
   description: It's like a cat, only.... branch-ier.
   components:
-  # Sunrise-Start
-#  - type: VentCrawler # Sunrise-edit # SCP port: component unavailable in Foundation14
-  - type: Item
-    size: Large
-  # Sunrise-End
   - type: Sprite
     drawdepth: Mobs
     layers:

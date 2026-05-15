@@ -63,13 +63,7 @@
     stateDoorClosed: mining_door
   - type: AccessReader
     access: [["Salvage"]]
-    # Sunrise-start
-# Scp edit - disabled broken ported content.     alertAccesses:
-#       red: RedAlertAccesses
-#       blue: BlueAlertAccessesHOS
-#       gamma: GammaAlertAccesses
-    # Sunrise-end
-#
+
 # Command
 - type: entity
   id: LockerCaptain
@@ -128,13 +122,7 @@
     stateDoorClosed: eng_elec_door
   - type: AccessReader
     access: [ [ "Engineering" ] ]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 # Welding supplies
 - type: entity
   id: LockerWeldingSupplies
@@ -149,13 +137,7 @@
     stateDoorClosed: eng_weld_door
   - type: AccessReader
     access: [ [ "Engineering" ] ]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 # Atmos tech
 - type: entity
   id: LockerAtmospherics
@@ -170,13 +152,7 @@
     stateDoorClosed: atmos_door
   - type: AccessReader
     access: [ [ "Atmospherics" ] ]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 # Engineer
 - type: entity
   id: LockerEngineer
@@ -191,13 +167,7 @@
     stateDoorClosed: eng_secure_door
   - type: AccessReader
     access: [ [ "Engineering" ] ]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 # Evac Repair
 - type: entity
   parent: LockerBase
@@ -247,13 +217,7 @@
   components:
   - type: AccessReader
     access: [ [ "Kitchen" ] ]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 # Botanist
 - type: entity
   id: LockerBotanist
@@ -268,13 +232,7 @@
     stateDoorClosed: hydro_door
   - type: AccessReader
     access: [ [ "Hydroponics" ] ]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 # Medicine
 - type: entity
   id: LockerMedicine
@@ -290,13 +248,7 @@
     stateDoorClosed: med_door
   - type: AccessReader
     access: [ [ "Medical" ] ]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 # Medical doctor
 - type: entity
   id: LockerMedical
@@ -311,13 +263,7 @@
     stateDoorClosed: med_secure_door
   - type: AccessReader
     access: [ [ "Medical" ] ]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 # Paramedic
 - type: entity
   id: LockerParamedic
@@ -332,14 +278,8 @@
     stateDoorClosed: paramed_door
   - type: AccessReader
     access: [ [ "Medical" ] ]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
-    # Scp edit - disabled broken ported content.
+
+
 # Chemical
 - type: entity
   id: LockerChemistry
@@ -354,13 +294,7 @@
     stateDoorClosed: chemical_door
   - type: AccessReader
     access: [ [ "Chemistry" ] ]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 # CMO
 - type: entity
   id: LockerChiefMedicalOfficer
@@ -404,13 +338,7 @@
     stateDoorClosed: science_door
   - type: AccessReader
     access: [ [ "Research" ] ]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 # HoS
 - type: entity
   id: LockerHeadOfSecurity
@@ -455,13 +383,7 @@
     stateDoorClosed: brigmedic_door
   - type: AccessReader
     access: [["Medical"]]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
-    # Scp edit - disabled broken ported content.
+
 # Security Officer
 - type: entity
   id: LockerSecurity
@@ -699,12 +621,6 @@
   - type: Appearance
   - type: AccessReader
     access: [["Theatre"]]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
   - type: EntityStorageVisuals
     stateBaseClosed: clown
     stateDoorOpen: clown_open
@@ -720,12 +636,6 @@
   - type: Appearance
   - type: AccessReader
     access: [["Theatre"]]
-    # Sunrise-start
-    # Scp edit - disabled broken ported content. alertAccesses:
-    # Scp edit - disabled broken ported content.   red: RedAlertAccesses
-    # Scp edit - disabled broken ported content.   blue: BlueAlertAccessesHOS
-    # Scp edit - disabled broken ported content.   gamma: GammaAlertAccesses
-    # Sunrise-end
   - type: EntityStorageVisuals
     stateBaseClosed: mime
     stateDoorOpen: mime_open

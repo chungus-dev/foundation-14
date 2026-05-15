@@ -5,6 +5,9 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  # Fire added start
+  - type: BloodSplatterer
+  # Fire added end
   - type: Sprite
     layers:
     - state: icon
@@ -70,14 +73,14 @@
     - Back
     - suitStorage
   - type: AmmoCounter
-  #- type: GunRequiresWield #remove when inaccuracy on spreads is fixed # Sunrise-Edit
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 2
     selectedMode: FullAuto
     availableModes:
     - FullAuto
     soundGunshot:
-# Scp edit - disabled broken ported content.       collection: xm1014 # Sunrise-Edit
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: ItemSlots
@@ -151,12 +154,6 @@
     sprite: Objects/Weapons/Guns/Shotguns/enforcer_inhands_64x.rsi
   - type: BallisticAmmoProvider
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
-  - type: Gun
-    soundGunshot:
-      collection: xm1014 # Sunrise-Edit
-  - type: Tag # Fire Edit
-    tags:
-    - LockerGun5x1
 
 - type: entity
   parent: WeaponShotgunEnforcer
@@ -330,58 +327,3 @@
     fireRate: 2
   - type: GunSpreadModifier
     spread: 1.2
-
-- type: entity
-  name: BaseWeaponShotgun
-  parent: BaseItem # SCP port: SUNRISE gun-weight parent unavailable
-  id: BaseWeaponShotgunAny
-  description: A rooty tooty point and shooty.
-  abstract: true
-  components:
-  # Fire added start
-  - type: BloodSplatterer
-    probability: 0.55
-  # Fire added end
-  - type: Sprite
-    layers:
-    - state: icon
-      map: [ "enum.GunVisualLayers.Base" ]
-  - type: Item
-    size: Large
-    shape:
-    - 0,0,4,0
-  - type: Clothing
-    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
-    quickEquip: false
-    slots:
-    - Back
-    - suitStorage
-  - type: AmmoCounter
-  - type: Gun
-    fireRate: 2
-    selectedMode: SemiAuto
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      collection: xm1014 # Sunrise-Edit
-    soundEmpty:
-      path: /Audio/Weapons/Guns/Empty/empty.ogg
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-        ents: []
-  - type: StaticPrice
-    price: 500
-  # - type: RestrictByUserTag # SCP port: SUNRISE component unavailable
-    # doestContain:
-    # - Abductor
-    # messages:
-    # - abductor-gun-restricted-1
-  # - type: KnockbackByUserTag # SCP port: component unavailable in Foundation14
-    # doestContain:
-      # Resomi:
-        # knockback: 3
-        # staminaMultiplier: 20
-      # Felinid:
-        # knockback: 1.5 #half of what resomi take
-        # staminaMultiplier: 20

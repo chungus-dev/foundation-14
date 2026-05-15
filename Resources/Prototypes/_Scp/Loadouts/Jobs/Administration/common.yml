@@ -11,20 +11,12 @@
     back:
     - Flash
 
-- type: loadout
-  id: ScpLoadoutTelebaton
-  storage:
-    back:
-# Scp edit - disabled broken ported content.     - Telebaton
-#
 - type: loadoutGroup
   id: ScpLoadoutGroupBackStorageFlashTelebaton
   name: loadout-group-storage
-  minLimit: 2
-  maxLimit: 2
+  minLimit: 1
   loadouts:
   - ScpLoadoutFlash
-  - ScpLoadoutTelebaton
 
 - type: loadoutGroup
   id: ScpLoadoutGroupBackStorageFlash

@@ -74,8 +74,6 @@
         Blunt: 40
     attackRate: 1.25
     range: 2
-  # - type: TTS # SCP port: SUNRISE TTS component unavailable
-    # voice: Dota2Pudge
   - type: GuideHelp
     guides:
     - ScpResearch

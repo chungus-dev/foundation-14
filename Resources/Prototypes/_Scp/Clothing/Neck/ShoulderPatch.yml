@@ -95,7 +95,7 @@
       - ClothMade
       - Recyclable
       - WhitelistChameleon
-# Scp edit - disabled broken ported content.       requireAllTags: True
+      requireAll: true
   - type: StorageFill
     contents:
     - id: ClothingNeckShoulderPatchWhite

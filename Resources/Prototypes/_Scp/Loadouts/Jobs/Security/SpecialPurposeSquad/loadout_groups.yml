@@ -61,8 +61,6 @@
   name: loadout-group-jumpsuit
   loadouts:
   - ScpLoadoutClothingUniformSecurityBlack
-  - ScpLoadoutClothingUniformTurleneckBlack
-  - ScpLoadoutClothingUniformTurleneckBlackSleeveless
   - ScpLoadoutClothingUniformSecurityBlackCamouflage
 
 - type: loadoutGroup

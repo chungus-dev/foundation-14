@@ -88,8 +88,7 @@
   - type: FaxMachine
     name: "Central Command"
     notifyAdmins: true
-# Scp edit - disabled broken ported content.     receiveStationGoal: true # Sunrise-StationGoal
-#
+
 - type: entity
   parent: FaxMachineBase
   id: FaxMachineSyndie
@@ -119,63 +118,5 @@
     - type: FaxMachine
       name: "Captain's Office"
       receiveNukeCodes: true
-      # Scp edit - disabled broken ported content. receiveStationGoal: true # Sunrise-StationGoal
     - type: StealTarget
       stealGroup: FaxMachineCaptain
-
-# sunrise-start
-# handled_fax
-
-- type: entity
-  name: handheld_FaxBase
-  parent: BaseItem
-  id: HandheldFaxBase
-  description: Portable fax.
-  categories: [ HideSpawnMenu ] # Fire-edit
-  components:
-  - type: Item
-    size: Normal
-  - type: Sprite
-    sprite: Structures/Machines/fax_machine.rsi
-    drawdepth: SmallObjects
-    layers:
-    - state: icon
-      map: [ "enum.FaxMachineVisuals.VisualState" ]
-  - type: Icon
-    sprite: Structures/Machines/fax_machine.rsi
-    state: icon
-  - type: Appearance
-  - type: ActivatableUI
-    key: enum.FaxUiKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.FaxUiKey.Key:
-        type: FaxBoundUi
-  - type: ApcPowerReceiver
-    needsPower: false
-    powerLoad: 250
-  - type: FaxMachine
-    paperSlot:
-      insertSound: /Audio/Machines/scanning.ogg
-      ejectSound: /Audio/Machines/tray_eject.ogg
-      whitelist:
-        components:
-          - FaxableObject
-  - type: GenericVisualizer
-    visuals:
-      enum.PowerDeviceVisuals.Powered:
-        enum.FaxMachineVisuals.VisualState:
-          True: { state: idle }
-          False: { state: icon }
-      enum.FaxMachineVisuals.VisualState:
-        enum.FaxMachineVisuals.VisualState:
-          Printing: { state: printing }
-          Normal: {state: idle}
-  - type: DeviceNetwork
-    deviceNetId: Wireless
-    receiveFrequencyId: Fax
-    transmitFrequencyId: Fax
-  - type: ItemSlots
-  - type: ContainerContainer
-    containers:
-      Paper: !type:ContainerSlot

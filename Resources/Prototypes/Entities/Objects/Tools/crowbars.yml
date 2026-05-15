@@ -40,21 +40,7 @@
     - Belt
   - type: Item
     sprite: Objects/Tools/crowbar.rsi
-    size: Normal
-    shape:
-    - 0,0,0,1
-  # Sunrise start
-  - type: EmitSoundOnPickup
-    sound:
-      path: /Audio/_Scp/Items/Handling/crowbar_pickup.ogg
-      params:
-        volume: -2
-  - type: EmitSoundOnDrop
-    sound:
-      path: /Audio/Items/crowbar_drop.ogg
-      params:
-        volume: -2
-  # Sunrise end
+    size: Small
   # Fire edit start - исследования сцп
   - type: ScpInteractTool
     delay: 30

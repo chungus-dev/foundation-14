@@ -22,14 +22,10 @@
     - Back
     - suitStorage
   - type: AmmoCounter
-  - type: GunWieldBonus # Sunrise-start
-    minAngle: -20
-    maxAngle: -45
   - type: Gun
     minAngle: 23
     maxAngle: 90
     angleIncrease: 1.25
-    angleDecay: 20  # Sunrise-end
     fireRate: 5
     selectedMode: FullAuto
     availableModes:
@@ -65,27 +61,6 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
-  # Sunrise start
-  - type: EmitSoundOnPickup
-    sound:
-# Scp edit - disabled broken ported content.       collection: RiflesPickUp
-  - type: EmitSoundOnDrop
-    sound:
-# Scp edit - disabled broken ported content.       collection: RiflesDrop
-  - type: EmitSoundOnLand
-    sound:
-      collection: RiflesDrop
-  # - type: KnockbackByUserTag # SCP port: component unavailable in Foundation14
-    # doestContain:
-      # Resomi:
-        # knockback: 0.1
-      # Felinid:
-        # knockback: 0.1
-  - type: CursorOffsetRequiresWield
-  - type: EyeCursorOffset
-    maxOffset: 1
-    pvsIncrease: 0.1
-  # Sunrise end
 
 - type: entity
   name: AKMS

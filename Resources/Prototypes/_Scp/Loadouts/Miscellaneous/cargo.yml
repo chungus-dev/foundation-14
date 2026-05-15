@@ -117,15 +117,3 @@
   storage:
     back:
     - ToyFigurineQueen
-
-- type: loadout
-  id: ScpLoadoutLegendaryGoldenWeh
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: LogisticsService
-      time: 1080000 # 300hr
-  storage:
-    back:
-# Scp edit - disabled broken ported content.     - LegendaryGoldenWeh

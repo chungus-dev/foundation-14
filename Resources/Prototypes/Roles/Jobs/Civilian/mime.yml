@@ -11,19 +11,12 @@
   supervisors: job-supervisors-hop
   setPreference: false # Fire added
   overrideConsoleVisibility: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-pantomimist
-#   - job-alt-title-silence-agent
-  # Sunrise-End
   access:
   - Theatre
   - Maintenance
   special:
   - !type:AddComponentSpecial
     components:
-    # Scp edit - Sunrise ArtifactFunnyTarget component is unavailable in Foundation14
-    # - type: ArtifactFunnyTarget
     - type: MimePowers
       preventWriting: true
     - type: FrenchAccent

@@ -36,7 +36,7 @@
       prob: 0.25
     #- id: ClothingBeltSheathFilled Не ну а че как клоун?
     - id: ClothingHeadsetAltCommand
-    #- id: ClothingOuterArmorCaptainCarapace # Sunrise-Edit
+    - id: ClothingOuterArmorCaptainCarapace
     - id: BoxCaptainCircuitboards
     - id: DoorRemoteCustom
     - id: MedalCase
@@ -48,13 +48,13 @@
     - id: SpaceCash1000
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
-# Scp edit - disabled broken ported content.     - id: FlippoLighterSunriseCap  # Sunrise-Flippo
-# Scp edit - disabled broken ported content.     - id: HeadSkeleton # A skull to accompany your skeleton crew
-#       conditions:
-#       - !type:PlayerCountCondition
-#         max: 15
-# Scp edit - disabled broken ported content.     - id: WeaponMiniEnergyGun #  Sunrise-edit
-#
+    - id: OrganSkeletonPersonHead # A skull to accompany your skeleton crew
+      conditions:
+      - !type:PlayerCountCondition
+        max: 15
+    - id: PlushieLizardJobCaptain
+      prob: 0.02
+
 # No laser table + Laser table
 - type: entityTable
   id: LockerFillCaptainLaser

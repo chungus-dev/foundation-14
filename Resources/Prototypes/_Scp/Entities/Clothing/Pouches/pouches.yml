@@ -25,7 +25,6 @@
         - DiscreteHealthAnalyzer
         - Dropper
         - CentrifugeCompatible
-# Scp edit - disabled broken ported content.         - Patch
       components:
         - Injector
         - Pill
@@ -79,7 +78,6 @@
       tags:
       - HandGrenade
       - Grenade
-# Scp edit - disabled broken ported content.       - HandGrenadeAmmo
       components:
       - ProjectileGrenade
       - FlashOnTrigger

@@ -19,18 +19,13 @@
     damageContainer: StructuralInorganic # Fire edit
   - type: Destructible
     thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 30
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  # Sunrise-start
-  - type: Tag
-    tags: [] # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.       - NoPaint
-  # Sunrise-end
-#
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
 - type: entity
   id: HoloFan
   parent: HolosignWetFloor

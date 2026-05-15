@@ -13,8 +13,6 @@
   recipeUnlocks:
   - WeaponProtoKineticAccelerator
   - ShuttleGunKineticCircuitboard
-# Scp edit - disabled broken ported content.   - MechEquipmentKineticAccelerator # Sunrise-Add
-# Scp edit - disabled broken ported content.   - BorgModuleMiningCombat # Sunrise-Add
   # These are roundstart but not replenishable for salvage
 #
 - type: technology
@@ -39,16 +37,7 @@
   - MagazineBoxMagnumIncendiary
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxRifleIncendiary
-# Scp edit - disabled broken ported content.   - MagazinePistolSubMachineGunTopMountedIncendiary #Sunrise-Add
-# Scp edit - disabled broken ported content.   - MagazinePistolHighCapacityIncendiary # Sunrise-Add
-# Scp edit - disabled broken ported content.   - MagazineRifleHeavyIncendiary # Sunrise-Add
-# Scp edit - disabled broken ported content.   - MagazineBoxHeavyRifleIncendiary # Sunrise-Add
-# Scp edit - disabled broken ported content.   - MagazineRifleBoxIncendiary # Sunrise-Add
-# Scp edit - disabled broken ported content.   - MagazineLightRifleBeltBoxIncendiary # Sunrise-Add
-# Scp edit - disabled broken ported content.   - SpeedLoaderShotgunIncendiary # Sunrise-Add
-# Scp edit - disabled broken ported content.   radioChannels: # Sunrise-Add
-#   - Security
-#
+
 - type: technology
   id: WeaponizedLaserManipulation
   name: research-technology-weaponized-laser-manipulation
@@ -61,12 +50,7 @@
   defaultToScpScale: 0.5 # Fire Edit
   recipeUnlocks:
   - WeaponLaserCarbine
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   - WeaponMechCombatFiredartLaser
-# Scp edit - disabled broken ported content.   - WeaponEnergyGun
-# Scp edit - disabled broken ported content.   - WeaponMiniEnergyGun
-  # Sunrise-End
-#
+
 - type: technology
   id: NonlethalAmmunition
   name: research-technology-nonlethal-ammunition
@@ -82,13 +66,6 @@
   - BoxShellTranquilizer
   - BoxBeanbag
   - WeaponDisabler
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   - WeaponMechCombatDisabler
-# Scp edit - disabled broken ported content.   - MagazinePistolSubMachineGunTopMountedRubber
-# Scp edit - disabled broken ported content.   - MagazinePistolSubMachineGunRubber
-  # Sunrise-End
-  # Scp edit - disabled broken ported content. radioChannels: # Sunrise-Add
-  # - Security # Scp edit - old radioChannels entry is unavailable.
 
 - type: technology
   id: UraniumMunitions
@@ -106,21 +83,11 @@
   - MagazinePistolSubMachineGunUranium
   - MagazineLightRifleUranium
   - SpeedLoaderMagnumUranium
-# Scp edit - disabled broken ported content.   - MagazineMagnumUranium
   - MagazineBoxPistolUranium
   - MagazineBoxMagnumUranium
   - MagazineBoxLightRifleUranium
   - MagazineBoxRifleUranium
   - BoxShotgunUranium
-# Scp edit - disabled broken ported content.   - MagazinePistolSubMachineGunTopMountedUranium #Sunrise-Add
-# Scp edit - disabled broken ported content.   - MagazinePistolHighCapacityUranium # Sunrise-Add
-# Scp edit - disabled broken ported content.   - MagazineRifleHeavyUranium # Sunrise-Add
-# Scp edit - disabled broken ported content.   - MagazineBoxHeavyRifleUranium # Sunrise-Add
-# Scp edit - disabled broken ported content.   - MagazineRifleBoxUranium # Sunrise-Add
-# Scp edit - disabled broken ported content.   - MagazineLightRifleBeltBoxUranium # Sunrise-Add
-# Scp edit - disabled broken ported content.   - SpeedLoaderShotgunUranium # Sunrise-Add
-  # Scp edit - disabled broken ported content. radioChannels: # Sunrise-Add
-  # - Security # Scp edit - old radioChannels entry is unavailable.
 
 - type: technology
   id: AdvancedRiotControl
@@ -135,14 +102,8 @@
   recipeUnlocks:
   - Truncheon
   - TelescopicShield
-  # - HoloprojectorSecurity #Fire-Station
+  # - HoloprojectorSecurity # Fire edit
   - WeaponDisablerSMG
-# Scp edit - disabled broken ported content.   - FlareGunSecurityUpgrade # Sunrise-Add
-# Scp edit - disabled broken ported content.   - VestSecUpgradePlate # Sunrise-Add
-# Scp edit - disabled broken ported content.   - VestSecUpgradeStab # Sunrise-Add
-# Scp edit - disabled broken ported content.   - VestSecUpgradeHeat # Sunrise-Add
-  # Scp edit - disabled broken ported content. radioChannels: # Sunrise-Add
-  # - Security # Scp edit - old radioChannels entry is unavailable.
 
 - type: technology
   id: ExplosiveTechnology
@@ -192,8 +153,7 @@
   defaultToScpScale: 0.5 # Fire Edit
   recipeUnlocks:
   - WeaponLaserCannon
-# Scp edit - disabled broken ported content.   - WeaponMechCombatSolarisLaser #Sunrise-Add
-#
+
 - type: technology
   id: WaveParticleHarnessing
   name: research-technology-wave-particle-harnessing
@@ -206,8 +166,7 @@
   defaultToScpScale: 0.5 # Fire Edit
   recipeUnlocks:
   - WeaponXrayCannon
-# Scp edit - disabled broken ported content.   - WeaponMechCombatXray  #Sunrise-Add
-#
+
 - type: technology
   id: KineticModifications
   name: research-technology-kinetic-modifications
@@ -271,10 +230,6 @@
   recipeUnlocks:
   - WeaponAdvancedLaser
   - PortableRecharger
-# Scp edit - disabled broken ported content.   - WeaponMechCombatImmolationGun # Sunrise-Add
-# Scp edit - disabled broken ported content.   - WeaponMechCombatIon # Sunrise-Add
-  # Scp edit - disabled broken ported content. radioChannels: # Sunrise-Add
-  # - Security # Scp edit - old radioChannels entry is unavailable.
 
 - type: technology
   id: ThermalWeaponry
@@ -300,28 +255,8 @@
   cost: 15000
   defaultToScpScale: 0.3 # Fire Edit
   recipeUnlocks:
-# Scp edit - disabled broken ported content.   - ShellEMPArtillery # Sunrise-Edit
+  - GrenadeEMP
   - PowerCageHigh
   - ShuttleGunDusterCircuitboard
-  # Sunrise-start
-# Scp edit - disabled broken ported content.   - ComputerGunneryCircuitboard
-# Scp edit - disabled broken ported content.   - ShuttleGunLongbowCircuitboard
-# Scp edit - disabled broken ported content.   - ShuttleGunVympelCircuitboard
-# Scp edit - disabled broken ported content.   - ShuttleGunTeslaOrionCircuitboard
-# Scp edit - disabled broken ported content.   - ShuttleGunBeamstormMachineGunCircuitboard
-# Scp edit - disabled broken ported content.   - MagazineBauer127
-  #- MagazineBauer127Penetrator # To much
-  #- MagazineBauer127Blast # To much
-# Scp edit - disabled broken ported content.   - MagazineBauer127Frag
-# Scp edit - disabled broken ported content.   - MagazineBauer127Emp
-# Scp edit - disabled broken ported content.   - MagazineBoxBelt127Empty
-  #- MagazineBoxBelt127 # To much
-# Scp edit - disabled broken ported content.   - MagazineBoxBelt127Artillery
-  #- MagazineBoxBelt127Blast # To much
-# Scp edit - disabled broken ported content.   - MagazineBoxBelt127Frag
-# Scp edit - disabled broken ported content.   - MagazineBoxBelt127Emp
-  # Sunrise-end
   technologyPrerequisites:
   - BasicShuttleArmament
-  # Scp edit - disabled broken ported content. radioChannels: # Sunrise-Add
-  # - Security # Scp edit - old radioChannels entry is unavailable.

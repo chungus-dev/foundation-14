@@ -22,9 +22,7 @@
           amount: 2
         - id: BungoSeeds
           amount: 2
-# Scp edit - disabled broken ported content.         - id: LanternfruitSeeds #Sunrise-add
-#           amount: 2
-#
+
 - type: entity
   parent: CrateHydroSecure
   id: CrateHydroponicsSeedsMedicinal

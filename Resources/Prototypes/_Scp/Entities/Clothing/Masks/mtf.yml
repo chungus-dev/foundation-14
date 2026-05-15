@@ -12,8 +12,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-# Scp edit - disabled broken ported content.     - FullCovered
-#
+
 - type: entity
   parent: ClothingMaskGasERT
   id: ClothingMaskMtfTacticalRed
@@ -28,7 +27,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - FullCovered
 
 - type: entity
   parent: ClothingMaskGasERT
@@ -44,7 +42,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - FullCovered
 
 - type: entity
   parent: ClothingMaskGasERT
@@ -60,4 +57,3 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - FullCovered

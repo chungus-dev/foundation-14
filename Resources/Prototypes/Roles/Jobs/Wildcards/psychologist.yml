@@ -6,14 +6,8 @@
   startingGear: PsychologistGear
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
-  displayWeight: 10  # Sunrise
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-psychoanalyst
-  # Sunrise-End
-  # Scp edit start - Sunrise PsychologistBlockAlcohol component is unavailable in Foundation14
   # special:
   #   - !type:AddComponentSpecial
   #     components:

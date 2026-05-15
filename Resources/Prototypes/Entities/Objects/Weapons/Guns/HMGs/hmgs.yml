@@ -24,21 +24,11 @@
     availableModes:
     - FullAuto
     soundGunshot:
-      collection: m249 # Sunrise-Edit
+      path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
   - type: StaticPrice
     price: 500
-  # Sunrise-Start
-  # - type: KnockbackByUserTag # SCP port: component unavailable in Foundation14
-    # doestContain:
-      # Resomi:
-        # knockback: 0.01
-        # staminaMultiplier: 100
-      # Felinid:
-        # knockback: 0.01
-        # staminaMultiplier: 100
-  # Sunrise-End
   # No chamber because HMG may want its own
 
 - type: entity

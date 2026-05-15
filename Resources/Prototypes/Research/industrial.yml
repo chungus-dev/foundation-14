@@ -12,14 +12,11 @@
   defaultToScpScale: 0.1 # Fire Edit
   recipeUnlocks:
   - MiningDrill
-# Scp edit - disabled broken ported content.   - MechEquipmentDrill
   - MineralScannerEmpty
   - OreProcessorIndustrialMachineCircuitboard
-# Scp edit - disabled broken ported content.   - SheetPlasteel1Lathe
   - ClothingMaskWeldingGas
   - ClothingShoesBootsJump
-# Scp edit - disabled broken ported content.   - BorgModuleJetpack # Sunrise-add
-#
+
 - type: technology
   id: SpaceScanning
   name: research-technology-space-scanning
@@ -126,8 +123,6 @@
   - RipleyCentralElectronics
   - RipleyPeripheralsElectronics
   - MechEquipmentGrabber
-  - PowerCageSmall  # Sunrise-Add
-  - PowerCageRechargerCircuitboard  # Sunrise-Add
 
 # Tier 2
 

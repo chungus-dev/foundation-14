@@ -79,8 +79,7 @@
         - id: ClothingUniformJumpskirtHosFormal
         - id: ClothingUniformJumpsuitHosFormal
         - id: ClothingOuterWinterHoS
-# Scp edit - disabled broken ported content.         - id: ClothingHoSMantleCoat
-#
+
 - type: entity
   id: ScpDresserQuarterMasterFilled
   parent:

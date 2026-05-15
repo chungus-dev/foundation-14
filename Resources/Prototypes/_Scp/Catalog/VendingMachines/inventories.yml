@@ -122,12 +122,10 @@
     ClothingEyesEyepatchHudSecurity: 2
     ClothingMaskSecurityBandBlack: 3
     ClothingNeckMantleSecurity: 3
-    # Scp edit - disabled broken ported content. ClothingNeckKailoRen: 2
     ClothingNeckScarfStripedBlack: 2
     ClothingUniformSecurity: 3
     ClothingUniformSecurity2: 3
     ClothingUniformSecurity3: 3
-    # Scp edit - disabled broken ported content. ClothingUniformJumpsuitBlackturtleneck: 2
     ClothingOuterArmorSecurity: 3
     ClothingBeltSecurityWebbing: 5
     ClothingHandsGlovesSecurity: 3
@@ -139,8 +137,6 @@
     ClothingShoesBootsCombat: 1
     ClothingShoesBootsWinterSecurityGuard: 2
   contrabandInventory:
-    # Scp edit - disabled broken ported content. ClothingHeadHatWithPaces: 1  # ))
-    # Scp edit - disabled broken ported content.
 - type: vendingMachineInventory
   id: ScpSecTechInventory
   startingInventory:
@@ -162,16 +158,11 @@
     Bola: 6
     RadioHandheldExternalAdministrativeZoneSecurityService: 5
     RadioHandheldHeavyContainmentSecurityService: 5
-    # Scp edit - disabled broken ported content. HandheldCamera: 6
-    # Scp edit - disabled broken ported content. PepperSprayBottleBlue: 2
   contrabandInventory:
     WeaponMeleeNeedle: 2
     FoodDonutHomer: 12
     FoodBoxDonut: 2
-    # Scp edit - disabled broken ported content. ModularReceiverAuto: 1
   emaggedInventory:
-    # Scp edit - disabled broken ported content. ClothingEyesGlassesNVG: 1
-    # Scp edit - disabled broken ported content.
 - type: vendingMachineInventory
   id: ScpPTechInventory
   startingInventory:
@@ -188,8 +179,6 @@
     BoxFolderPlasticClipboardEmpty: 2
     Paper: 10
     HandLabeler: 2
-    # Scp edit - disabled broken ported content. DrinkInc: 4
-    #EncryptionKeyCommon: 6  удален общий канал
     EncryptionKeyLogisticsService: 2
     EncryptionKeyEngineeringTechnicalService: 2
     EncryptionKeyMedicalService: 2

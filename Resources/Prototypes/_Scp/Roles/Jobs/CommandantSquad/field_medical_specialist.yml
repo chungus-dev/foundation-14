@@ -34,7 +34,6 @@
     - type: ScpHolder
       holdableWhitelist:
         components: [] # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.         - HumanoidAppearance
       holdableBlacklist:
         components:
         - Scp
@@ -46,13 +45,11 @@
 - type: startingGear
   id: FieldMedicalSpecialistGear
   equipment:
-# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatLabSecurityMedic
     jumpsuit: ClothingUniformJumpsuitBrigmedic
     shoes: ClothingShoesColorRed
     back: ClothingBackpackBrigmedic
     gloves: ClothingHandsGlovesLatex
     eyes: ClothingEyesHudMedSec
-# Scp edit - disabled broken ported content.     head: ClothingHeadHatBeretSecurityMedic
     id: KeyCardFieldMedicalSpecialist
     ears: ClothingHeadsetFieldMedicalSpecialist
     belt: ClothingBeltMedicalFilled

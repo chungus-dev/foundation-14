@@ -163,7 +163,6 @@
     - AnomalyScanner
     - RubberStampApproved
     - RubberStampDenied
-# Scp edit - disabled broken ported content.     - RubberStampRedo
     - RubberStampEthicsCommittee
     - RubberStampRegionalCommand
     - RubberStampO4Command
@@ -171,10 +170,7 @@
     - BoxFolderCentComThreePapers
     - Emag
     - AccessBreaker
-# Scp edit - disabled broken ported content.     - ClothingEyesHudDiagnosticERT
-    # fire-end
-#
-#Gladiator with spear
+
 - type: startingGear
   id: GladiatorGear
   equipment:

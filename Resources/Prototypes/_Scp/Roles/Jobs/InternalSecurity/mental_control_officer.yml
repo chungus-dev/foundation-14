@@ -40,9 +40,6 @@
   id: MentalControlOfficerGear
   equipment:
     shoes: ClothingShoesColorBlack
-# Scp edit - disabled broken ported content.     id: IAAPDA
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetAltInternalSecurity
-# Scp edit - disabled broken ported content.     pocket2: HyperLinkBookCorporateLaw
   inhand: [] # Scp edit - disabled broken ported inhand item.
-# Scp edit - disabled broken ported content.   - BriefcaseIAAFilled

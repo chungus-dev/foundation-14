@@ -5,15 +5,10 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
-  # Fire added start
+  # Scp added start
   - type: BloodSplatterer
     probability: 0.5
-  # Fire added end
-  # - type: RestrictByUserTag # SCP port: SUNRISE component unavailable
-    # doestContain:
-    # - Abductor
-    # messages:
-    # - abductor-gun-restricted-1
+  # Scp added end
   - type: Sprite
   - type: Item
     size: Large
@@ -47,38 +42,26 @@
     slots:
       gun_magazine:
         name: Magazine
-# Scp edit - disabled broken ported content.         startingItem: MagazinePistolSubMachineGunSP
+        startingItem: MagazinePistolSubMachineGun
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
         whitelist:
           tags:
-          - MagazinePistolSubMachineGun
+            - MagazinePistolSubMachineGun
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-# Scp edit - disabled broken ported content.         startingItem: CartridgePistolSP
         priority: 1
         whitelist:
           tags:
-          - CartridgePistol
+            - CartridgePistol
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
-  # Sunrise start
-  - type: EmitSoundOnPickup
-    sound:
-# Scp edit - disabled broken ported content.       collection: RiflesPickUp
-  - type: EmitSoundOnDrop
-    sound:
-# Scp edit - disabled broken ported content.       collection: RiflesDrop
-  - type: EmitSoundOnLand
-    sound:
-      collection: RiflesDrop
-  # Sunrise end
 
 - type: entity
   name: Atreides

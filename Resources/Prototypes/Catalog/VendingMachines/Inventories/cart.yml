@@ -1,36 +1,14 @@
 - type: vendingMachineInventory
   id: PTechInventory
-  # Fire Edit Start
-  # startingInventory:
-  #   PassengerPDA: 5
-  #   ClearPDA: 5
-  #   PassengerIDCard: 5
-  #   ClothingHeadsetGrey: 5
-  #   RubberStampApproved: 1
-  #   RubberStampDenied: 1
-  #   Paper: 10
-  #   Envelope: 10
-  #   HandLabeler: 2
-  #   EncryptionKeyCargo: 2
-  #   EncryptionKeyEngineering: 2
-  #   EncryptionKeyMedical: 2
-  #   EncryptionKeyScience: 2
-  #   EncryptionKeySecurity: 1
-  #   EncryptionKeyService: 3
-  # contrabandInventory:
-  #   BalloonNT: 2
-  #   LuxuryPen: 1
-  # emaggedInventory:
-  #   CyberPen: 1 # Sunrise Edit
-  #   BalloonSyn: 2 # Sunrise Edit
-  # Fire Edit End
-  startingInventory: # Fire Edit Start
+  startingInventory:
+    # Fire added start
     BaseFoundationPDA: 8
     ScpEngineeringPDA: 2
     ScpMedicalPDA: 2
     ScpSecurityPDA: 1
     KeyCardEmpty: 5
     KeyCardPassEmpty: 2
+    # Fire added end
     ClothingHeadsetGrey: 5
     RubberStampApproved: 1
     RubberStampDenied: 1
@@ -39,7 +17,6 @@
     Paper: 10
     Envelope: 10
     HandLabeler: 2
-    # Scp edit - disabled broken ported content. DrinkInc: 4
     EncryptionKeyCommon: 6
     EncryptionKeyLogisticsService: 2
     EncryptionKeyEngineeringTechnicalService: 2

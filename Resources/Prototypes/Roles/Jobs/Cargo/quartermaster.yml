@@ -17,20 +17,12 @@
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain
-  canBeAntag: true # Sunrise-Edit
-# Scp edit - disabled broken ported content.   radioBold: true # Sunrise-Edit
-  displayWeight: 40  # Sunrise-Edit
+  canBeAntag: false
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-intendant
-#   - job-alt-title-director-of-logistics
-  # Sunrise-End
   access:
   - Cargo
   - Salvage
-# Scp edit - disabled broken ported content.   - CargoPurchaseAccess  # Sunrise-Edit
   - Quartermaster
   - Maintenance
   - External
@@ -39,13 +31,11 @@
   - Cryogenics
   special:
   - !type:AddImplantSpecial
-# Scp edit - disabled broken ported content.     implants: [ DeathRattleImplantBlueShield ] # Sunrise-Edit
+    implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-# Scp edit - disabled broken ported content.   speciesBlacklist:
-#   - Vox # Sunrise-Edit
-#
+
 - type: startingGear
   id: QuartermasterGear
   equipment:

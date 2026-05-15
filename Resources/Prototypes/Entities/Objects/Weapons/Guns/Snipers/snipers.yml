@@ -5,13 +5,13 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
-  # Fire added start
+  # Scp added start
   - type: BloodSplatterer
     amount: 3, 7
     probability: 1
     bloodLineProbability: 0.7
     pierceLevel: Metal
-  # Fire added end
+  # Scp added end
   - type: Sprite
     layers:
     - state: base
@@ -26,7 +26,6 @@
     - suitStorage
   - type: AmmoCounter
   - type: Gun
-# Scp edit - disabled broken ported content.     pump: true  # Sunrise-Edit
     fireRate: 0.75
     selectedMode: SemiAuto
     availableModes:
@@ -34,40 +33,17 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: BallisticAmmoProvider
-    capacity: 5 # Sunrise-Edit
-# Scp edit - disabled broken ported content.     proto: CartridgeHeavyRifleRFMJ
+    capacity: 10
+    proto: CartridgeLightRifle
     whitelist:
-      tags: [] # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.       - CartridgeHeavyRifleR # Sunrise-Edit
+      tags:
+      - CartridgeLightRifle
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
         ents: []
   - type: StaticPrice
     price: 500
-  # Sunrise start
-  - type: EmitSoundOnPickup
-    sound:
-# Scp edit - disabled broken ported content.       collection: SnipersPickUp
-  - type: EmitSoundOnDrop
-    sound:
-# Scp edit - disabled broken ported content.       collection: SnipersDrop
-  - type: EmitSoundOnLand
-    sound:
-      collection: SnipersDrop
-  - type: CursorOffsetRequiresWield
-  - type: EyeCursorOffset
-    maxOffset: 2
-    pvsIncrease: 0.2
-  # - type: KnockbackByUserTag # SCP port: component unavailable in Foundation14
-    # doestContain:
-      # Resomi:
-        # knockback: 4
-        # staminaMultiplier: 15
-      # Felinid:
-        # knockback: 2
-        # staminaMultiplier: 15
-  # Sunrise end
 
 - type: entity
   name: Kardashev-Mosin

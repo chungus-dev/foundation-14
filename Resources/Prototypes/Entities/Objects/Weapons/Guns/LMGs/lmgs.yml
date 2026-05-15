@@ -37,7 +37,7 @@
     availableModes:
       - FullAuto
     soundGunshot:
-# Scp edit - disabled broken ported content.       collection: m249 # Sunrise-Edit
+      path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
   - type: ChamberMagazineAmmoProvider
@@ -48,7 +48,7 @@
     slots:
       gun_magazine:
         name: Magazine
-# Scp edit - disabled broken ported content.         startingItem: MagazineRifleBoxSP #Sunrise-Edit
+        startingItem: MagazineLightRifleBox
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
@@ -57,11 +57,10 @@
             - MagazineLightRifleBox
       gun_chamber:
         name: Chamber
-# Scp edit - disabled broken ported content.         startingItem: CartridgeRifleSP #Sunrise-Edit
         priority: 1
         whitelist:
           tags:
-            - CartridgeRifle  #Sunrise-Edit
+            - CartridgeLightRifle
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -70,30 +69,6 @@
     price: 500
   - type: UseDelay
     delay: 1
-  # Sunrise start
-  - type: EmitSoundOnPickup
-    sound:
-# Scp edit - disabled broken ported content.       collection: RiflesPickUp
-  - type: EmitSoundOnDrop
-    sound:
-# Scp edit - disabled broken ported content.       collection: RiflesDrop
-  - type: EmitSoundOnLand
-    sound:
-      collection: RiflesDrop
-  # - type: KnockbackByUserTag # SCP port: component unavailable in Foundation14
-    # doestContain:
-      # Resomi:
-        # knockback: 0.02
-        # staminaMultiplier: 100
-      # Felinid:
-        # knockback: 0.01
-        # staminaMultiplier: 100
-  # - type: RestrictByUserTag # SCP port: SUNRISE component unavailable
-    # doestContain:
-    # - Abductor
-    # messages:
-    # - abductor-gun-restricted-1
-  # Sunrise end
 
 - type: entity
   name: L6 SAW
@@ -135,7 +110,7 @@
       availableModes:
         - FullAuto
       soundGunshot:
-        collection: m249 # Sunrise-Edit
+        path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
       soundEmpty:
         path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
     - type: Sprite
@@ -153,9 +128,9 @@
     - type: BallisticAmmoProvider
       whitelist:
         tags:
-        - CartridgeRifle # Sunrise-Edit
-      capacity: 200 # Sunrise-Edit
-# Scp edit - disabled broken ported content.       proto: CartridgeRifleFMJ # Sunrise-Edit
+        - CartridgeLightRifle
+      capacity: 100
+      proto: CartridgeLightRifle
       cycleable: false # No synthesizing ammo for your syndicate masters.
     - type: BallisticAmmoSelfRefiller
       autoRefillRate: 4s

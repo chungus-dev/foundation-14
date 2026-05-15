@@ -12,9 +12,9 @@
   # Fire added end
   - type: Sprite
     drawdepth: SmallObjects
-    sprite: _Starlight/Structures/Walls/railing.rsi # Sunrise-Edit
+    sprite: _Starlight/Structures/Walls/railing.rsi # Scp edit
   - type: Icon
-    sprite: _Starlight/Structures/Walls/railing.rsi # Sunrise-Edit
+    sprite: _Starlight/Structures/Walls/railing.rsi # Scp edit
   - type: Physics
     bodyType: Static
   - type: InteractionOutline

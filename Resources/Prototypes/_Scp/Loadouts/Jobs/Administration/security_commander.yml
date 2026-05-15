@@ -34,27 +34,6 @@
     head: ClothingHeadHatBeretHoS
 
 - type: loadout
-  id: ScpLoadoutSecurityCommanderCap
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadHatCapHoS
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ScpMasterSecurityCommander
-
-- type: loadout
-  id: ScpLoadoutSecurityCommanderBlackCap
-# Scp edit - disabled broken ported content.   sponsorOnly: false
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadHatCapUSSPBlack
-#
-- type: loadout
-  id: ScpLoadoutSecurityCommanderLeatherCap
-  # Scp edit - disabled broken ported content. sponsorOnly: false
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     head: ClothingHeadHatCapLeatherHoS
-#
-# Eyes
-- type: loadout
   id: ScpLoadoutSecurityCommanderSecurityGlasses
   equipment:
     eyes: ClothingEyesGlassesSecurity
@@ -82,59 +61,38 @@
   id: ScpLoadoutSecurityCommanderJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoS
-  groupBy: "jumpsuit"
+  groupBy: jumpsuit
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHoS
-  groupBy: "jumpskirt"
+  groupBy: jumpskirt
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderTurtleneckJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitHoSAlt
-  groupBy: "jumpsuit"
+  groupBy: jumpsuit
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderTurtleneckJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHoSAlt
-  groupBy: "jumpskirt"
+  groupBy: jumpskirt
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderFormalSuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitHosFormal
-  groupBy: "jumpsuit"
+  groupBy: jumpsuit
 
 - type: loadout
   id: ScpLoadoutSecurityCommanderFormalJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtHosFormal
-  groupBy: "jumpskirt"
+  groupBy: jumpskirt
 
-- type: loadout
-  id: ScpLoadoutSecurityCommanderLegacyJumpsuit
-  # Scp edit - disabled broken ported content. sponsorOnly: false
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     jumpsuit: ClothingUniformJumpsuitHoSOld
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ScpMasterSecurityCommander
-
-- type: loadout
-  id: ScpLoadoutSecurityCommanderBlackUniform
-  # Scp edit - disabled broken ported content. sponsorOnly: false
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     jumpsuit: ClothingUniformJumpsuitUSSPBlack
-#
-# Neck
-- type: loadout
-  id: ScpLoadoutSecurityCommanderScarf
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfHos
-#
 - type: loadout
   id: ScpLoadoutSecurityCommanderMantle
   equipment:
@@ -153,60 +111,6 @@
   id: ScpLoadoutSecurityCommanderWinterCoat
   equipment:
     outerClothing: ClothingOuterWinterHoS
-
-- type: loadout
-  id: ScpLoadoutSecurityCommanderGreatcoat
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatHoSGreatcoat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ScpMasterSecurityCommander
-
-- type: loadout
-  id: ScpLoadoutSecurityCommanderBlackOvercoat
-  # Scp edit - disabled broken ported content. sponsorOnly: false
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatHOSOvercoatBlack
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ScpMasterSecurityCommander
-
-- type: loadout
-  id: ScpLoadoutSecurityCommanderOvercoat
-  # Scp edit - disabled broken ported content. sponsorOnly: false
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatHoSOvercoat
-#
-- type: loadout
-  id: ScpLoadoutSecurityCommanderOfficerBlackOvercoat
-  # Scp edit - disabled broken ported content. sponsorOnly: false
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     outerClothing: ClothingOuterCoatUSSPOvercoatBlack
-#
-# Suit Storage
-- type: loadout
-  id: ScpLoadoutWeaponPistolACP14
-  startingGear: GearWeaponPistolACP14
-
-- type: startingGear
-  id: GearWeaponPistolACP14
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     suitstorage: WeaponPistolACP14
-#
-- type: loadout
-  id: ScpLoadoutWeaponRevolverMatebaNew
-  startingGear: GearWeaponRevolverMatebaNew
-
-- type: startingGear
-  id: GearWeaponRevolverMatebaNew
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     suitstorage: WeaponRevolverMatebaNew
-#
-# Pocket 2
-- type: loadout
-  id: ScpLoadoutSecurityCommanderPDA
-  equipment:
-    pocket2: SecurityCommanderPDA
 
 - type: loadoutGroup
   id: ScpLoadoutGroupPocket2SecurityCommanderPDA

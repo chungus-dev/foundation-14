@@ -39,28 +39,14 @@
         enum.WiresVisualLayers.MaintenancePanel:
           True: { visible: false }
           False: { visible: true }
-      # Sunrise-Start
-      enum.EdgeConnectionVisuals.ConnectionMask:
-        computerLayerBody:
-          None: { state: computer, sprite: Structures/Machines/computers.rsi }
-          West: { state: computer_r, sprite: _Starlight/Structures/Machines/computers.rsi }
-          East: { state: computer_l, sprite: _Starlight/Structures/Machines/computers.rsi }
-          East, West: { state: computer_l_r, sprite: _Starlight/Structures/Machines/computers.rsi }
-      # Sunrise-End
   - type: AtmosAlertsComputer
-# Scp edit - disabled broken ported content.     beepSound:
-#       path: /Audio/_Scp/Effects/beeps.ogg
-      # Sunrise - Start
-#       params:
-#         volume: -5
-      # Sunrise - End
   - type: ActivatableUI
     singleUser: true
     key: enum.AtmosAlertsComputerUiKey.Key
   - type: UserInterface
     interfaces:
         enum.AtmosAlertsComputerUiKey.Key:
-            type: SunriseAtmosAlertsComputerBoundUserInterface # Sunrise - edit
+            type: AtmosAlertsComputerBoundUserInterface
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: GuideHelp
@@ -217,7 +203,6 @@
       - Syndicate
   - type: RadarConsole
     maxRange: 384
-  # - type: WorldLoader # SCP port: SUNRISE world loader unavailable
   #   radius: 1536
   - type: PointLight
     radius: 1.5
@@ -430,15 +415,7 @@
   name: station records computer
   description: This can be used to check station records.
   components:
-  # Sunrise added start
-  - type: AccessReader
-    access: [["Security"], ["HeadOfPersonnel"]]
-  # Sunrise added end
   - type: GeneralStationRecordConsole
-# Scp edit - disabled broken ported content.     announcementChannels:
-#     - Administration
-#     - HeavyContainmentSecurityService
-#     - ExternalAdministrativeZoneSecurityService
   - type: UserInterface
     interfaces:
         enum.GeneralStationRecordConsoleKey.Key:
@@ -518,11 +495,9 @@
       state: generic_panel_open
   - type: ResearchClient
   - type: ResearchConsole
-  # Sunrise-Edit-Start
-  #- type: ActiveRadio
-  #  channels:
-  #  - Science
-  # Sunrise-Edit-End
+  - type: ActiveRadio
+    channels:
+    - Science
   - type: TechnologyDatabase
   - type: ActivatableUI
     key: enum.ResearchConsoleUiKey.Key
@@ -779,7 +754,6 @@
     title: comms-console-announcement-title-chaos # Fire edit
     color: "#ff0000"
     canShuttle: false
-# Scp edit - disabled broken ported content.     announceVoice: CBMTF1 # Fire edit
     global: true #announce to everyone they're about to fuck shit up
     announceSentBy: false # The title already says who they are.
     sound: /Audio/Announcements/war.ogg

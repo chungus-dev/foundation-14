@@ -84,7 +84,7 @@
   defaultToScpScale: 0.1 # Fire Edit
   recipeUnlocks:
   - FatExtractorMachineCircuitboard
-  # - BiofabricatorMachineCircuitboard #Sunrise-edit
+  - BiofabricatorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
 
 # Tier 2

@@ -304,8 +304,6 @@
     sprite: _Scp/Clothing/OuterClothing/Armor/scp_riot.rsi # Fire Edit
   - type: Clothing
     sprite: _Scp/Clothing/OuterClothing/Armor/scp_riot.rsi # Fire Edit
-  # - type: Pierceable # SCP port: component unavailable in Foundation14
-    # level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -317,18 +315,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: GroupExamine
-  # SUNRISE EDIT
   - type: Tag
     tags:
-# Scp edit - disabled broken ported content.     - Vest
-# Scp edit - disabled broken ported content.     - FullBodyOuter
     - WhitelistChameleon
-  # Scp edit start - old armor upgrade construction graph is unavailable.
-  # - type: Construction
-# Scp edit - disabled broken ported content.     graph: UpgradeArmorVest
-  #   node: riot
-  # Scp edit end
-  # SUNRISE EDIT
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]

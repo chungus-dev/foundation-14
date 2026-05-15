@@ -129,7 +129,7 @@
   id: LockerAtmosphericsFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerAtmospherics
-# Scp edit - disabled broken ported content.   categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: EntityTableContainerFill
     containers:

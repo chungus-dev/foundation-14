@@ -13,7 +13,6 @@
     ClothingNeckStethoscope: 2
     Saw: 2
     Tourniquet: 3
-    #DrinkChangelingStingCan: 2 # Fire edit
-    DrinkBeerCan: 2 #Sunrise-Edit
+    DrinkChangelingStingCan: 2
   emaggedInventory:
     DrinkNukieCan: 2

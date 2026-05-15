@@ -16,8 +16,6 @@
     - id: SpaceCash1000
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
-# Scp edit - disabled broken ported content.     - id: FlippoLighterSunriseCap
-#
 - type: entity
   id: ScpLockerDirectorFilled
   suffix: Filled
@@ -47,12 +45,6 @@
     - id: RubberStampDenied
     - id: RubberStampSeniorLogisticsOfficer
     - id: AstroNavCartridge
-# Scp edit - disabled broken ported content.     - id: ClothingOuterSuitCargo
-# Scp edit - disabled broken ported content.     - id: BluespaceBox
-    # Scp edit - disabled broken ported content. - id: BluespaceBox
-    # Scp edit - disabled broken ported content.   prob: 0.25
-# Scp edit - disabled broken ported content.     - id: FlippoLighterSunriseQm
-#
 - type: entity
   id: ScpLockerSeniorLogisticsOfficerFilled
   suffix: Filled
@@ -84,8 +76,6 @@
     - id: RubberStampDenied
     - id: RubberStampPersonnelOfficer
     - id: ClothingEyesHudCommand
-# Scp edit - disabled broken ported content.     - id: FlippoLighterSunriseHop
-#
 - type: entity
   id: ScpLockerPersonnelOfficerFilled
   suffix: Filled
@@ -112,8 +102,6 @@
     - id: RCD
     - id: RCDAmmo
     - id: RubberStampChiefTechnicalSpecialist
-# Scp edit - disabled broken ported content.     - id: FlippoLighterSunriseCe
-#
 - type: entity
   id: ScpLockerChiefTechnicalSpecialistFilled
   suffix: Filled
@@ -138,14 +126,10 @@
     - id: DoorRemoteMedical
     - id: HandheldCrewMonitor
     - id: Hypospray
-# Scp edit - disabled broken ported content.     - id: ClothingEyesUniversalMedicalHud
-# Scp edit - disabled broken ported content.     - id: AdvancedDefibrillator
     - id: MedicalTechFabCircuitboard
     - id: MedkitFilled
     - id: RubberStampHeadOfMedicalSector
     - id: MedTekCartridge
-# Scp edit - disabled broken ported content.     - id: FlippoLighterSunriseCmo
-#
 - type: entity
   id: ScpLockerHeadOfMedicalSectorFilled
   suffix: Filled
@@ -170,8 +154,6 @@
     - id: ProtolatheMachineCircuitboard
     - id: ResearchComputerCircuitboard
     - id: RubberStampScientificServiceDirector
-# Scp edit - disabled broken ported content.     - id: FlippoLighterSunriseRd
-#
 - type: entity
   id: ScpLockerScientificServiceDirectorFilled
   suffix: Filled
@@ -201,8 +183,6 @@
     - id: SecurityTechFabCircuitboard
     - id: WantedListCartridge
     - id: DrinkHosFlask
-# Scp edit - disabled broken ported content.     - id: FlippoLighterSunriseHos
-#
 - type: entity
   id: ScpLockerSecurityCommanderFilled
   suffix: Filled

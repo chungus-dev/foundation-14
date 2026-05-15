@@ -19,8 +19,7 @@
   icon: JobSecurityCommander
   supervisors: job-supervisors-director
   canBeAntag: false
-# Scp edit - disabled broken ported content.   radioBold: true # Sunrise-Edit
-  displayWeight: 80 # Sunrise-Edit
+  displayWeight: 80
   accessGroups:
   - SecurityCommander
   special:
@@ -82,7 +81,6 @@
   equipment:
     head: ClothingHeadHatHoshat
     eyes: ClothingEyesGlassesSecurity
-# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfHos
     outerClothing: ClothingOuterCoatHoSTrench
     jumpsuit: ClothingUniformJumpsuitHoS
     gloves: ClothingHandsGlovesCombat

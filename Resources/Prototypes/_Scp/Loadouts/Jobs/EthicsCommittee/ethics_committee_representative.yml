@@ -1,9 +1,4 @@
 - type: loadout
-  id: ScpLoadoutClothingEyesSunGlassesHudSkill
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     eyes: ClothingEyesSunGlassesHudSkill
-#
-- type: loadout
   id: ScpLoadoutClothingHeadHatCapEthicsCommittee
   equipment:
     head: ClothingHeadHatCapEthicsCommittee
@@ -33,12 +28,6 @@
   name: loadout-group-shoes
   loadouts:
   - ScpLoadoutClothingShoesBootsLaceup
-
-- type: loadoutGroup
-  id: ScpLoadoutGroupEyesClothingEyesSunGlassesHudSkill
-  name: loadout-group-eyes
-  loadouts:
-  - ScpLoadoutClothingEyesSunGlassesHudSkill
 
 - type: loadoutGroup
   id: ScpLoadoutGroupHeadClothingHeadHatCapEthicsCommittee
@@ -94,9 +83,3 @@
   id: ScpLoadoutEthicsCommitteeRepresentativeOpenFormalCoat
   equipment:
     outerClothing: ClothingOuterCoatBlackFancyOpen
-
-- type: loadout
-  id: ScpLoadoutEthicsCommitteeRepresentativeVetoStamp
-  storage:
-    back:
-# Scp edit - disabled broken ported content.     - RubberStampVeto

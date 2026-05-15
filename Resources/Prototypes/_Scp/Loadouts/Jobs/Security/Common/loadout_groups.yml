@@ -72,8 +72,6 @@
   minLimit: 0
   maxLimit: 3
   loadouts:
-  - ScpLoadoutHandheldCamera
-  - ScpLoadoutPepperSprayBottleBlue
   - ScpLoadoutSecurityWhistle
   - ScpLoadoutTourniquet
   - ScpLoadoutFlashlightSeclite

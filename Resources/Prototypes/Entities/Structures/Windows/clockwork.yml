@@ -11,7 +11,8 @@
   - type: Icon
     sprite: Structures/Windows/clockwork_window.rsi
   - type: Repairable
-    doAfterDelay: 5 # Sunrise-Edit
+    fuelCost: 10
+    doAfterDelay: 2
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass
@@ -144,8 +145,6 @@
             - "-0.5,-0.5"
             - "0.5,0.5"
             - "0.5,-0.5"
-# Scp edit - disabled broken ported content.         mask:
-#         - FullTileMask
         layer:
         - GlassLayer
   - type: Airtight

@@ -35,11 +35,6 @@
 
 # Neck
 - type: loadout
-  id: ScpLoadoutScientificServiceDirectorScarf
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     neck: ClothingNeckScarfRD
-#
-- type: loadout
   id: ScpLoadoutScientificServiceDirectorMantle
   equipment:
     neck: ClothingNeckMantleRD
@@ -57,18 +52,6 @@
   id: ScpLoadoutScientificServiceDirectorWinterCoat
   equipment:
     outerClothing: ClothingOuterWinterRD
-
-# Pocket 1
-- type: loadout
-  id: ScpLoadoutHandheldRoboAnalyzer
-  equipment: {} # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.     pocket1: HandheldRoboAnalyzer
-#
-- type: loadoutGroup
-  id: ScpLoadoutGroupPocket1HandheldRoboAnalyzer
-  name: loadout-group-storage
-  loadouts:
-  - ScpLoadoutHandheldRoboAnalyzer
 
 # Pocket 2
 - type: loadout

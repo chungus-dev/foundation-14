@@ -75,12 +75,6 @@
   parent: BaseMagazinePistol
   suffix: DEBUG
   components:
-# Scp edit - disabled broken ported content.   - type: Tag
-#     tags:
-#       - MagazineDebug
-# Scp edit - disabled broken ported content.   - type: BallisticAmmoProvider
-#     proto: CartridgeDebug
-#     capacity: 1000
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi
 

@@ -296,19 +296,8 @@
       - id: DrinkMopwataBottleRandom
       - id: SpectralLocator
       - id: LidSalami
-        weight: 0.10
-      # Sunrise-start
-# Scp edit - disabled broken ported content.       - id: SprayPaintBlue
-# Scp edit - disabled broken ported content.       - id: SprayPaintRed
-# Scp edit - disabled broken ported content.       - id: SprayPaintGreen
-# Scp edit - disabled broken ported content.       - id: SprayPaintOrange
-# Scp edit - disabled broken ported content.       - id: DeathPaint
-# Scp edit - disabled broken ported content.       - id: MechPaintRipleyZairjah
-# Scp edit - disabled broken ported content.       - id: MechPaintRipleyHauler
-# Scp edit - disabled broken ported content.       - id: MechPaintRipleyFirestarter
-# Scp edit - disabled broken ported content.       - id: MechPaintRipleyAluminizer
-      # Sunrise-end
-#
+        weight: 0.05
+
 - type: entity
   name: Maint Loot Spawner
   suffix: Tools+Cells+Mats
@@ -331,7 +320,7 @@
     children:
     # Common Group
     - !type:GroupSelector
-      weight: 85  # Sunrise-edit
+      weight: 95
       children:
       - id: Machete
       - id: Claymore
@@ -341,16 +330,9 @@
       - id: RifleStock
       - id: ModularReceiver
       - id: HydroponicsToolScythe
-      # Sunrise-start
-# Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunMakeshift
-# Scp edit - disabled broken ported content.       - id: WeaponPistolMakeshiftCrafted
-# Scp edit - disabled broken ported content.       - id: WeaponRevolverMakeshift
-# Scp edit - disabled broken ported content.       - id: WeaponSniperMakeshift
-# Scp edit - disabled broken ported content.       - id: WeaponMeleeSwitchblade
-      # Sunrise-end
     # Rare Group
     - !type:GroupSelector
-      weight: 15 # Sunrise-edit
+      weight: 5
       children:
       - id: Lighter
       - id: Matchbox
@@ -361,12 +343,6 @@
         weight: 2
       - id: Syringe
       - id: Mousetrap
-      # Sunrise-start
-# Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunImprovised
-# Scp edit - disabled broken ported content.       - id: WeaponPistolImprovised
-# Scp edit - disabled broken ported content.       - id: WeaponRevolverImprovised
-# Scp edit - disabled broken ported content.       - id: WeaponSniperImprovised
-      # Sunrise-end
       - !type:GroupSelector
         weight: 2
         children:

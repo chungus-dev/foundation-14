@@ -25,7 +25,6 @@
     - id: Tourniquet
       amount: 2
     - id: HandHeldMassScanner
-# Scp edit - disabled broken ported content.     - id: Telebaton
     - id: FoodTinMRE
 
 - type: entity
@@ -44,8 +43,6 @@
     - 0,0,4,3
   - type: StorageFill
     contents:
-# Scp edit - disabled broken ported content.     - id: PortableSurveillanceCameraMonitorUnpowered
-# Scp edit - disabled broken ported content.     - id: HandheldCriminalRecordsMonitorUnpowered
     - id: PinpointerUniversal
     - id: HandHeldMassScanner
     - id: DoubleEmergencyOxygenTankFilled
@@ -54,7 +51,6 @@
     - id: Tourniquet
       amount: 2
     - id: FoodTinMRE
-# Scp edit - disabled broken ported content.     - id: FoodSnackMaysonEnergy
     - id: DrinkMREFlask
 
 - type: entity

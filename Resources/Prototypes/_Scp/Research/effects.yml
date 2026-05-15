@@ -67,15 +67,6 @@
       types:
         Structural: 200
 
-# SCP port: disabled; depends on the _Sunrise ArtifactBoltAirlocks effect.
-# - type: entity
-#   id: ScpEffectBoltAirlocks
-#   parent: BaseScpArtifactEffect
-#   description: artifact-effect-hint-data-deleted
-#   categories: [ HideSpawnMenu ]
-#   components:
-#   - type: ArtifactBoltAirlocks
-
 - type: entity
   id: ScpEffectTeslaDischarge
   parent: BaseScpArtifactEffect
@@ -89,47 +80,6 @@
       shootMaxInterval: 4
       shootRange: 6
 
-# SCP port: disabled; depends on the _Sunrise ArtifactStartGameRule effect.
-# - type: entity
-#   id: ScpEffectSpawn2054X
-#   parent: BaseScpArtifactEffect
-#   description: artifact-effect-hint-data-deleted
-#   categories: [ HideSpawnMenu ]
-#   components:
-#   - type: XenoArtifactNode
-#     maxDurability: 1
-#     maxDurabilityCanDecreaseBy:
-#       min: 0
-#       max: 0
-#     triggerDecreasesDurability: true
-#   - type: ArtifactStartGameRule
-#     rules:
-#       Scp2054X: 1
-
-
-#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣤⣤⣤⣴⡶⠶⠶⠶⠶⠶⠶⠶⠶⠤⠤⢤⣤⣤⣤⣤⣤⣄⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-#  ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠟⠋⠀⠀⠀⠀⢀⣀⠤⠖⠚⢉⣉⣉⣉⣉⣀⠀⠀⠀⠀⠀⠀⠈⠉⠩⠛⠛⠛⠻⠷⣦⣄⡀⠀⠀⠀⠀⠀⠀
-#  ⠀⠀⠀⠀⠀⠀⠀⣠⡿⠋⠀⠀⠀⣀⠤⠒⣉⠤⢒⣊⡉⠠⠤⠤⢤⡄⠈⠉⠉⠀⠂⠀⠀⠐⠂⠀⠉⠉⠉⠉⠂⠀⠙⠻⣶⣄⠀⠀⠀⠀
-#  ⠀⠀⠀⠀⠀⠀⣰⡿⠁⠀⠀⡠⠊⢀⠔⣫⠔⠊⠁⠀⠀⠀⠀⠀⠀⠙⡄⠀⠀⠀⠀⠀⠘⣩⠋⠀⠀⠀⠉⠳⣄⠀⠀⠀⠈⢻⡇⠀⠀⠀
-#  ⠀⠀⠀⠀⠀⣰⡿⠁⠀⠀⠀⠀⠀⠁⠜⠁⣀⣤⣴⣶⣶⣶⣤⣤⣀⠀⠃⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠈⠆⠀⠀⠀⠸⣧⡀⠀⠀
-#  ⠀⠀⠀⣠⣾⣿⣥⠤⢄⡀⠀⢠⣤⠔⢠⣾⣿⣿⣿⣿⣿⣯⣄⡈⠙⢿⣦⠀⠀⠀⠀⡀⢀⣤⣶⣿⣿⣿⣿⣿⣦⠀⣀⣀⣀⣀⡙⢿⣦⡀
-#  ⠀⣠⡾⣻⠋⢀⣠⣴⠶⠾⢶⣤⣄⡚⠉⠉⠉⠁⣠⣼⠏⠉⠙⠛⠷⡾⠛⠀⠀⠀⠘⠛⢿⡟⠛⠋⠉⠉⠉⠁⠀⠀⠀⠀⠀⠦⣝⠦⡙⣿
-#  ⢰⡟⠁⡇⢠⣾⠋⠀⠀⣼⣄⠉⠙⠛⠷⠶⠶⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣇⠀⠀⠀⠠⣦⣄⣴⡾⢛⡛⠻⠷⠘⡄⢸⣿
-#  ⢸⡇⠀⡇⢸⣇⢀⣤⣴⣿⠻⠷⣦⣄⣀⠀⠀⠀⢀⡀⠀⣀⠰⣤⡶⠶⠆⠀⠀⠀⠀⠀⠈⠛⢿⣦⣄⠀⠈⠉⠉⠁⢸⣇⠀⠀⣠⠃⢸⣿
-#  ⠸⣿⡀⢇⠘⣿⡌⠁⠈⣿⣆⠀⠀⠉⢻⣿⣶⣦⣤⣀⡀⠀⠀⢻⣦⠰⡶⠿⠶⠄⠀⠀⠀⣠⣾⠿⠟⠓⠦⡄⠀⢀⣾⣿⡇⢈⠡⠔⣿⡟
-#  ⠀⠙⢿⣌⡑⠲⠄⠀⠀⠙⢿⣿⣶⣦⣼⣿⣄⠀⠈⠉⠛⠻⣿⣶⣯⣤⣀⣀⡀⠀⠘⠿⠾⠟⠁⠀⠀⢀⣀⣤⣾⣿⢿⣿⣇⠀⠀⣼⡟⠀
-#  ⠀⠀⠀⠹⣿⣇⠀⠀⠀⠀⠈⢻⣦⠈⠙⣿⣿⣷⣶⣤⣄⣠⣿⠁⠀⠈⠉⠙⢻⡟⠛⠻⠿⣿⠿⠛⠛⢻⣿⠁⢈⣿⣨⣿⣿⠀⢰⡿⠀⠀
-#  ⠀⠀⠀⠀⠈⢻⣇⠀⠀⠀⠀⠀⠙⢷⣶⡿⠀⠈⠙⠛⠿⣿⣿⣶⣶⣦⣤⣤⣼⣧⣤⣤⣤⣿⣦⣤⣤⣶⣿⣷⣾⣿⣿⣿⡟⠀⢸⡇⠀⠀
-#  ⠀⠀⠀⠀⠀⠈⢿⣦⠀⠀⠀⠀⠀⠀⠙⢷⣦⡀⠀⠀⢀⣿⠁⠉⠙⠛⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⢸⣷⠀⠀
-#  ⠀⠀⠀⠀⠀⠀⠀⠙⢷⣄⠀⢀⡀⠀⣀⡀⠈⠻⢷⣦⣾⡃⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⢹⡟⠉⠉⣿⠏⢡⣿⠃⣾⣷⡿⠁⠀⠘⣿⠀⠀
-#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⣤⣉⠒⠤⣉⠓⠦⣀⡈⠉⠛⠿⠶⢶⣤⣤⣾⣧⣀⣀⣀⣿⣄⣠⣼⣿⣤⣿⠷⠾⠟⠋⠀⠀⠀⠀⣿⠀⠀
-#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⣶⣄⡉⠒⠤⢌⣑⠲⠤⣀⡀⠀⠀⠀⠈⠍⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⣠⠏⠀⢰⠀⠀⣿⡄⠀
-#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠿⢷⣦⣄⡉⠑⠒⠪⠭⢄⣀⣀⠀⠐⠒⠒⠒⠒⠀⠀⠐⠒⠊⠉⠀⢀⡠⠚⠀⠀⢸⡇⠀
-#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⢷⣦⣀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠓⠒⠒⠒⠊⠁⠀⠀⠀⢠⣿⠃⠀
-#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠷⠶⣶⣦⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⠟⠁⠀⠀
-#  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠛⠷⠶⠶⠶⠶⠶⠾⠛⠛⠉⠀⠀⠀⠀⠀
-
-
 - type: entity
   id: ScpEffectShuffleUltra
   parent: BaseScpArtifactEffect
@@ -139,33 +89,6 @@
   - type: XAEShuffle
     radius: 70
 
-- type: entity
-  id: ScpEffectPolyChair
-  parent: BaseScpArtifactEffect
-  description: artifact-effect-hint-data-deleted
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: XAEPolymorph
-# Scp edit - disabled broken ported content.     polymorphPrototypeName: SunriseEffectChair
-#
-- type: entity
-  id: ScpEffectPolyWatermelon
-  parent: BaseScpArtifactEffect
-  description: artifact-effect-hint-data-deleted
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: XAEPolymorph
-# Scp edit - disabled broken ported content.     polymorphPrototypeName: SunriseEffectWatermelon
-#
-- type: entity
-  id: ScpEffectPolyAppendix
-  parent: BaseScpArtifactEffect
-  description: artifact-effect-hint-data-deleted
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: XAEPolymorph
-# Scp edit - disabled broken ported content.     polymorphPrototypeName: SunriseEffectAppendix
-#
 - type: entity
   id: ScpEffectPolyScrewdriver
   parent: BaseScpArtifactEffect
@@ -194,44 +117,6 @@
     polymorphPrototypeName: ScpEffectToyRubberDuck
 
 - type: entity
-  id: ScpEffectPolyDisposal
-  parent: BaseScpArtifactEffect
-  description: artifact-effect-hint-data-deleted
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: XAEPolymorph
-# Scp edit - disabled broken ported content.     polymorphPrototypeName: SunriseEffectDisposal
-#
-- type: entity
-  id: ScpEffectPolyTable
-  parent: BaseScpArtifactEffect
-  description: artifact-effect-hint-data-deleted
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: XAEPolymorph
-# Scp edit - disabled broken ported content.     polymorphPrototypeName: SunriseEffectTable
-#
-# SCP port: disabled; depends on the _Sunrise ArtifactWhitelistSwap effect.
-# - type: entity
-#   id: ScpEffectSwap
-#   parent: BaseScpArtifactEffect
-#   description: artifact-effect-hint-data-deleted
-#   categories: [ HideSpawnMenu ]
-#   components:
-#   - type: ArtifactWhitelistSwap
-#     targetWhitelist:
-#       components:
-#       - Scp
-#       - MobState
-#       requireAll: true
-#     targetBlacklist:
-#       components:
-#       - Scp096Face
-#     otherMapWhitelist:
-#       components:
-#       - Scp106BackRoomMap
-#
-- type: entity
   id: EffectMagnetUltra
   parent: BaseScpArtifactEffect
   description: artifact-effect-hint-data-deleted
@@ -242,25 +127,6 @@
     - type: GravityWell
       maxRange: 10
       baseRadialAcceleration: 90
-
-# SCP port: disabled; depends on the _Sunrise AddComponentsInRadius,
-# AnomalyAccent, and TimedRemoveComponents effects.
-# - type: entity
-#   id: ScpEffectShiftedAsciiTableAccent
-#   parent: BaseScpArtifactEffect
-#   description: artifact-effect-hint-data-deleted
-#   categories: [ HideSpawnMenu ]
-#   components:
-#   - type: AddComponentsInRadius
-#     whitelist:
-#       components:
-#       - HumanoidAppearance
-#     components:
-#     - type: AnomalyAccent
-#     - type: TimedRemoveComponents
-#       removeAfter: 300
-#       components:
-#       - type: AnomalyAccent
 
 # Scp 939
 
@@ -282,24 +148,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: ArtifactScp939Sleep
-
-# SCP port: disabled; depends on the _Sunrise ArtifactModifyHunger effect.
-# - type: entity
-#   id: ScpArtifactHunger
-#   parent: BaseScpArtifactEffect
-#   description: artifact-effect-hint-data-deleted
-#   categories: [ HideSpawnMenu ]
-#   components:
-#   - type: ArtifactModifyHunger
-
-# SCP port: disabled; depends on the _Sunrise ArtifactModifyThirst effect.
-# - type: entity
-#   id: ScpEffectThirst
-#   parent: BaseScpArtifactEffect
-#   description: artifact-effect-hint-data-deleted
-#   categories: [ HideSpawnMenu ]
-#   components:
-#   - type: ArtifactModifyThirst
 
 # Scp 106
 

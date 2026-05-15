@@ -480,5 +480,3 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: BoxFolderQmClipboard
-  - type: AccessReader #Sunrise-edit
-    access: [["Logistics"]] # Fire edit

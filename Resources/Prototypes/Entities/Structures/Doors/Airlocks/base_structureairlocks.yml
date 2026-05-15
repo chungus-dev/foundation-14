@@ -60,7 +60,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.46,-0.46,0.46,0.46" # Sunrise edit - фикс двойных шлюзов
+          bounds: "-0.49,-0.49,0.49,0.49" # don't want this colliding with walls or they won't close
         density: 100
         mask:
         - FullTileMask
@@ -188,11 +188,6 @@
     - Airlocks
     - WirePanels
     - Networking
-  # Sunrise-start
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
-  # Sunrise-end
   placement:
     mode: SnapgridCenter
 
@@ -226,7 +221,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.46,-0.46,0.46,0.46" # Sunrise edit - фикс двойных шлюзов
+          bounds: "-0.49,-0.49,0.49,0.49" # don't want this colliding with walls or they won't close
         density: 100
         mask:
         - FullTileMask

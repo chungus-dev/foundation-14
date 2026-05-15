@@ -11,8 +11,6 @@
   - BaseFacilitySiliconLawScpDefault
   - BaseStationNanotrasen # Дает фракцию
   - ScpComplexGoal # Цели комплекса по изучению SCP
-  # - BaseStationAntagsTargets # SCP port: SUNRISE station target parent unavailable
-  # - BaseStationCryoTeleport # Телепорт в крио. Я в нем уверен на 99%. А я не уверен
   - BaseStationRegionalAdministration # Добавляет неиспользуемое(игровое) ЦК. Настоящее ЦК через BaseComplexTransitHub
   - BaseComplexTransitHub
   - BaseStationCargo
@@ -27,9 +25,8 @@
     data:
     - biome: ScpComplexSnow
       weather:
-# Scp edit - disabled broken ported content.       - SnowfallMedium
-# Scp edit - disabled broken ported content.       - SnowfallLight
-#
+      - WeatherSnowfallMedium
+      - WeatherSnowfallLight
 - type: entity
   id: ScpComplexCompact
   parent: StandardScpStation

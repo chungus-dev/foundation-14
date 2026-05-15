@@ -4,10 +4,10 @@
   parent: [BaseScpHeadset, BaseSecurityLawyerContraband]
   id: ClothingHeadsetHeavyContainmentSecurityService
   components:
-# Scp edit - disabled broken ported content.   - type: ContainerFill
-#     containers:
-#       key_slots:
-#       - EncryptionKeyHeavyContainmentSecurityService
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyHeavyContainmentSecurityService
   - type: Sprite
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing

@@ -492,31 +492,9 @@
     state: moth-box
   - type: EntityTableContainerFill
     containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: FoodDonkpocketMoth
-          amount: 6
-        # Sunrise Start
-        - id: FoodDonkpocketMoth
-          amount: 1
-          prob: 0.10
-        - id: FoodDonkpocketMoth
-          amount: 1
-          prob: 0.10
-        - id: FoodDonkpocketMoth
-          amount: 1
-          prob: 0.10
-        - id: FoodDonkpocketMoth
-          amount: 1
-          prob: 0.10
-        - id: FoodDonkpocketMoth
-          amount: 1
-          prob: 0.10
-        - id: FoodDonkpocketMoth
-          amount: 1
-          prob: 0.10
-        # Sunrise End
-
+      storagebase:
+        id: FoodDonkpocketMoth
+        amount: 6
 
 - type: entity
   id: HappyHonk

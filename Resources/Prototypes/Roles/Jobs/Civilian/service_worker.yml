@@ -12,11 +12,6 @@
   supervisors: job-supervisors-service
   overrideConsoleVisibility: false # Fire added
   setPreference: false # Fire added
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   alternativeTitles:
-#   - job-alt-title-attendant
-#   - job-alt-title-waiter
-  # Sunrise-End
   access:
   - Service
   - Maintenance

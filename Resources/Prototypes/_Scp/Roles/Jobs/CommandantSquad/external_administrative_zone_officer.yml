@@ -30,8 +30,8 @@
       level: Three
     - type: ScpHolder
       holdableWhitelist:
-        components: [] # Scp edit - broken ported entries disabled.
-# Scp edit - disabled broken ported content.         - HumanoidAppearance
+        components:
+        - HumanoidProfile
       holdableBlacklist:
         components:
         - Scp
@@ -81,7 +81,6 @@
     gloves: ClothingHandsGlovesColorBlack
     shoes: ClothingShoesBootsSecurityGuard
     back: ClothingBackpackSecurity
-# Scp edit - disabled broken ported content.     suitstorage: WeaponSubMachineGunMP7
     id: KeyCardLightContainmentZoneSecurityOfficer
     ears: ClothingHeadsetExternalAdministrativeZoneSecurityService
     belt: ScpClothingBeltSecurityWebbingFilled
