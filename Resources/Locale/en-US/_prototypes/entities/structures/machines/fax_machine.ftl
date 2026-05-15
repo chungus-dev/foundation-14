@@ -1,0 +1,11 @@
+ent-FaxMachineBase = fax machine
+    .desc = A clever technology that allows you to copy or send documents.
+ent-FaxMachineCentcom = CentComm long range fax machine
+    .suffix = CentCom
+    .desc = { ent-FaxMachineBase.desc }
+ent-FaxMachineSyndie = syndicate long range fax machine
+    .suffix = Syndicate
+    .desc = { ent-FaxMachineBase.desc }
+ent-FaxMachineCaptain = captain long range fax machine
+    .suffix = NukeCodes
+    .desc = { ent-FaxMachineBase.desc }

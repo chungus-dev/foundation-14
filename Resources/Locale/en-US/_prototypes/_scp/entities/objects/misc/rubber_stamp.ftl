@@ -14,12 +14,9 @@ ent-RubberStampSeniorLogisticsOfficer = quartermaster's rubber stamp
     .desc = { ent-RubberStampBase.desc }
 ent-RubberStampScientificServiceDirector = { ent-RubberStampBase }
     .desc = { ent-RubberStampBase.desc }
-ent-RubberStampRegionalAdministration = { ent-RubberStampBase }
-    .desc = { ent-RubberStampBase.desc }
 ent-RubberStampCommandantSquadLeader = { ent-RubberStampBase }
     .desc = { ent-RubberStampBase.desc }
 ent-RubberStampSpecialPurposeSquadLeader = { ent-RubberStampBase }
     .desc = { ent-RubberStampBase.desc }
-
-ent-RubberStampBase = generic rubber stamp
-    .desc = A rubber stamp for stamping important documents.
+ent-RubberStampRegionalAdministration = { ent-RubberStampBase }
+    .desc = { ent-RubberStampBase.desc }

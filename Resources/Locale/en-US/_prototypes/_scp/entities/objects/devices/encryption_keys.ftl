@@ -12,6 +12,8 @@ ent-EncryptionKeyEthicsCommittee = { ent-EncryptionKey }
     .desc = { ent-EncryptionKey.desc }
 ent-EncryptionKeyInternalTribunalService = { ent-EncryptionKey }
     .desc = { ent-EncryptionKey.desc }
+ent-ScpEncryptionKeySecurity = { ent-EncryptionKeySecurity }
+    .desc = { ent-EncryptionKeySecurity.desc }
 ent-EncryptionKeyHeavyContainmentSecurityService = { ent-EncryptionKey }
     .desc = { ent-EncryptionKey.desc }
 ent-EncryptionKeyExternalAdministrativeZoneSecurityService = { ent-EncryptionKey }
@@ -30,6 +32,3 @@ ent-EncryptionKeyChaos = { ent-EncryptionKey }
     .desc = { ent-EncryptionKey.desc }
 ent-EncryptionKeyGRU = { ent-EncryptionKey }
     .desc = { ent-EncryptionKey.desc }
-
-ent-EncryptionKey = encryption key
-    .desc = A small cypher chip for headsets.

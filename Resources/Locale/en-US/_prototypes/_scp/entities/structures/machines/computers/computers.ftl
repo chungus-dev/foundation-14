@@ -42,6 +42,8 @@ ent-ScpComputerCommunicationChaosInsurgency = chaos insurgency communications co
     .desc = { ent-SyndicateComputerComms.desc }
 ent-ScpComputerCommunicationRegionalAdministration = { ent-CentcommComputerComms }
     .desc = { ent-CentcommComputerComms.desc }
+ent-ScpComputerCommunicationO4Headquarters = { ent-ScpComputerCommunicationRegionalAdministration }
+    .desc = { ent-ScpComputerCommunicationRegionalAdministration.desc }
 ent-ScpComputerSolarControl = { ent-ComputerSolarControl }
     .desc = { ent-ComputerSolarControl.desc }
 ent-ScpComputerRadar = { ent-ComputerRadar }
@@ -115,6 +117,16 @@ ent-ScpComputerFineRecords = fine records computer
 ent-ScpComputerContrabandSale = contraband exchanger computer
     .desc = This can be used to validate contraband and exchange it to the station account. Only security can modify them.
     .suffix = Finance, Security
+ent-ScpComputerShuttleRegionalAdministration = RCC shuttle console
+    .desc = Console for remote control of the Central Command Representative's shuttle.
+ent-ScpComputerShuttleSecurity = security shuttle console
+    .desc = Console for remote control of the security shuttle.
+ent-ScpComputerPlayerConsole = command line computer
+    .desc = { ent-BaseComputer.desc }
+ent-ScpComputerCodes = code console
+    .desc = A console designed for entering codes. It beeps ominously.
+ent-ScpComputerIcarus = icarus terminal
+    .desc = An ominous terminal with some ports and keypads, the screen is scrolling with illegible nonsense. It has a strange marking on the side, a red ring with a gold circle within.
 ent-ScpComputerFoodAndSanitationServiceSaleConsole = service sale console
     .desc = Used to sell goods from linked teleport pods. Don't try to unscrew me, idiot.
     .suffix = Finance, Service
@@ -127,132 +139,3 @@ ent-ScpComputerMedicalServiceSaleConsole = medical sale console
 ent-ScpComputerScientificServiceSaleConsole = science sale console
     .desc = Used to sell goods from linked teleport pods. Don't try to unscrew me, idiot.
     .suffix = Finance, RND
-ent-ScpComputerShuttleRegionalAdministration = RCC shuttle console
-    .desc = Console for remote control of the Central Command Representative's shuttle.
-ent-ScpComputerShuttleSecurity = security shuttle console
-    .desc = Console for remote control of the security shuttle.
-ent-ScpComputerPlayerConsole = command line computer
-    .desc = { ent-BaseComputer.desc }
-ent-ScpComputerCodes = code console
-    .desc = A console designed for entering codes. It beeps ominously.
-ent-ScpComputerIcarus = icarus terminal
-    .desc = An ominous terminal with some ports and keypads, the screen is scrolling with illegible nonsense. It has a strange marking on the side, a red ring with a gold circle within.
-
-ent-CentcommComputerComms = central command communications computer
-    .desc = A computer used to make world wide announcements via keyboard. The superior cousin of the regular communications computer.
-
-ent-ComputerAlert = atmospheric alerts computer
-    .desc = Used to access the station's atmospheric automated alert system.
-
-ent-ComputerAnalysisConsole = analysis console
-    .desc = A computer used to interface with the artifact analyzer.
-
-ent-ComputerAtmosMonitoring = atmospheric network monitor
-    .desc = Used to monitor the station's atmospheric networks.
-
-ent-computerBodyScanner = body scanner computer
-    .desc = A body scanner.
-
-ent-ComputerCargoBounty = cargo bounty computer
-    .desc = Used to manage currently active bounties.
-
-ent-ComputerCargoOrders = cargo request computer
-    .desc = Used to order supplies and approve requests.
-
-ent-ComputerCargoOrdersEngineering = engineering request computer
-    .desc = Used by the engineering department to order supplies.
-
-ent-ComputerCargoOrdersMedical = medical request computer
-    .desc = Used by the medical department to order supplies.
-
-ent-ComputerCargoOrdersScience = science request computer
-    .desc = Used by the science department to order supplies.
-
-ent-ComputerCargoOrdersSecurity = security request computer
-    .desc = Used by the security department to order supplies.
-
-ent-ComputerCargoOrdersService = service request computer
-    .desc = Used by the service department to order supplies.
-
-ent-ComputerCloningConsole = cloning console computer
-    .desc = The centerpiece of the cloning system, medicine's greatest accomplishment. It has lots of ports and wires.
-
-ent-ComputerComms = communications computer
-    .desc = A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
-
-ent-ComputerCrewMonitoring = crew monitoring console
-    .desc = Used to monitor active health sensors built into most of the crew's uniforms.
-
-ent-ComputerCriminalRecords = criminal records computer
-    .desc = This can be used to check criminal records. Only security can modify them.
-
-ent-ComputerEmergencyShuttle = emergency shuttle console
-    .desc = Handles authorization to early launch the shuttle.
-
-ent-ComputerFundingAllocation = funding allocation computer
-    .desc = Terminal for controlling the distribution of funds and pay to departments.
-
-ent-ComputerId = ID card computer
-    .desc = Terminal for programming Nanotrasen employee ID cards to access parts of the station.
-
-ent-ComputerIFF = IFF computer
-    .desc = Allows you to control the IFF characteristics of this vessel.
-
-ent-ComputerIFFSyndicate = IFF computer
-    .desc = Allows you to control the IFF and stealth characteristics of this vessel.
-    .suffix = Syndicate
-
-ent-ComputerMassMedia = news manager console
-    .desc = Write your message to the world!
-
-ent-ComputerMedicalRecords = medical records computer
-    .desc = This can be used to check medical records.
-
-ent-ComputerPalletConsole = cargo sale computer
-    .desc = Used to sell goods loaded onto cargo pallets.
-
-ent-ComputerPowerMonitoring = power monitoring computer
-    .desc = It monitors power levels across the station.
-
-ent-ComputerRadar = mass scanner computer
-    .desc = A computer for detecting nearby bodies, displaying them by position and mass.
-
-ent-ComputerResearchAndDevelopment = R&D computer
-    .desc = A computer used to interface with R&D tools.
-
-ent-ComputerRoboticsControl = robotics control console
-    .desc = Used to remotely monitor, disable and destroy the station's cyborgs.
-
-ent-ComputerSensorMonitoring = sensor monitoring computer
-    .desc = A flexible console for monitoring all kinds of sensors.
-    .suffix = TESTING, DO NOT MAP
-
-ent-ComputerShuttle = shuttle console
-    .desc = Used to pilot a shuttle.
-
-ent-ComputerShuttleCargo = cargo shuttle console
-    .desc = Used to pilot the cargo shuttle.
-
-ent-ComputerShuttleSyndie = syndicate shuttle console
-    .desc = Used to pilot a syndicate shuttle.
-
-ent-ComputerSolarControl = solar control computer
-    .desc = A controller for solar panel arrays.
-
-ent-ComputerStationRecords = personnel registry console
-    .desc = Designed for viewing, editing, and printing personnel records. Provides access to dossiers, biometric data, and service information of staff members. All changes are logged. Unauthorized use of the terminal is prohibited.
-
-ent-ComputerSurveillanceCameraMonitor = camera monitor
-    .desc = A surveillance camera monitor. You're watching them. Maybe.
-
-ent-ComputerSurveillanceWirelessCameraMonitor = wireless camera monitor
-    .desc = A wireless surveillance camera monitor. You're watching them. Maybe.
-
-ent-StationAiFixerComputer = AI restoration console
-    .desc = Used to repair damaged artificial intelligences.
-
-ent-StationAiUploadComputer = AI upload console
-    .desc = Used to update the laws of the station AI.
-
-ent-SyndicateComputerComms = syndicate communications computer
-    .desc = A computer capable of remotely hacking into the station's communications systems. Using this to make an announcement will alert the station to your presence.

@@ -6,10 +6,3 @@ ent-ClassDBotanistIDCard = { ent-ClassDIDCard }
     .desc = { ent-ClassDIDCard.desc }
 ent-ClassDJanitorIDCard = { ent-ClassDIDCard }
     .desc = { ent-ClassDIDCard.desc }
-
-ent-IDCardStandard = identification card
-    .desc = A card necessary to access various areas aboard the station.
-
-ent-NukieAgentIDCard = passenger ID card
-    .suffix = Nukie
-    .desc = { ent-AgentIDCard.desc }

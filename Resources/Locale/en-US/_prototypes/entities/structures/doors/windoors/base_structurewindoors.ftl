@@ -1,0 +1,12 @@
+ent-BaseWindoor = { ent-BaseStructure }
+    .desc = { ent-BaseStructure.desc }
+ent-BaseSecureWindoor = { ent-BaseDeltaPressureReinforcedGlassQuarter }
+    .desc = { ent-BaseDeltaPressureReinforcedGlassQuarter.desc }
+ent-BasePlasmaWindoor = { ent-BaseDeltaPressurePlasmaQuarter }
+    .desc = { ent-BaseDeltaPressurePlasmaQuarter.desc }
+ent-BaseSecurePlasmaWindoor = { ent-BaseDeltaPressureReinforcedPlasmaQuarter }
+    .desc = { ent-BaseDeltaPressureReinforcedPlasmaQuarter.desc }
+ent-BaseUraniumWindoor = { ent-BaseDeltaPressurePlasmaQuarter }
+    .desc = { ent-BaseDeltaPressurePlasmaQuarter.desc }
+ent-BaseSecureUraniumWindoor = { ent-BaseDeltaPressureReinforcedPlasmaQuarter }
+    .desc = { ent-BaseDeltaPressureReinforcedPlasmaQuarter.desc }

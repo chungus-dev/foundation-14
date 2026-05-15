@@ -34,6 +34,3 @@ ent-TelecomServerFilledLogistics = { ent-TelecomServer }
 ent-TelecomServerFilledFoodAndSanitationDepartment = { ent-TelecomServer }
     .suffix = Service
     .desc = { ent-TelecomServer.desc }
-
-ent-TelecomServer = telecommunication server
-    .desc = When powered and filled with encryption keys it allows radio headset communication.

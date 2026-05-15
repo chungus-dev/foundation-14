@@ -112,27 +112,15 @@ ent-ScpFloorTileItemConcrete = concrete tile
     .desc = { ent-ScpFloorTileItemSteel.desc }
 ent-ScpFloorTileItemConcreteMono = concrete mono tile
     .desc = { ent-ScpFloorTileItemSteel.desc }
-ent-ScpFloorTileItemWood = { ent-FloorTileItemWood }
-    .desc = { ent-FloorTileItemWood.desc }
-ent-ScpFloorTileItemWoodPattern = { ent-FloorTileItemWoodPattern }
-    .desc = { ent-FloorTileItemWoodPattern.desc }
-ent-ScpFloorTileItemWoodLarge = { ent-FloorTileItemWoodLarge }
-    .desc = { ent-FloorTileItemWoodLarge.desc }
 ent-ScpFloorTileItemAnechoic1 = anechoic chamber tile
     .desc = { ent-ScpFloorTileItemSteel.desc }
 ent-ScpFloorTileItemAnechoic2 = { ent-ScpFloorTileItemAnechoic1 }
     .desc = { ent-ScpFloorTileItemAnechoic1.desc }
 ent-ScpFloorTileItemAnechoic3 = { ent-ScpFloorTileItemAnechoic1 }
     .desc = { ent-ScpFloorTileItemAnechoic1.desc }
-
-ent-FloorTileItemBase = { ent-BaseItem }
-    .desc = These could work as a pretty decent throwing weapon.
-
-ent-FloorTileItemWood = wood floor
-    .desc = { ent-FloorTileItemBase.desc }
-
-ent-FloorTileItemWoodLarge = large wood floor
-    .desc = { ent-FloorTileItemBase.desc }
-
-ent-FloorTileItemWoodPattern = wood pattern floor
-    .desc = { ent-FloorTileItemBase.desc }
+ent-ScpFloorTileItemWood = { ent-FloorTileItemWood }
+    .desc = { ent-FloorTileItemWood.desc }
+ent-ScpFloorTileItemWoodLarge = { ent-FloorTileItemWoodLarge }
+    .desc = { ent-FloorTileItemWoodLarge.desc }
+ent-ScpFloorTileItemWoodPattern = { ent-FloorTileItemWoodPattern }
+    .desc = { ent-FloorTileItemWoodPattern.desc }

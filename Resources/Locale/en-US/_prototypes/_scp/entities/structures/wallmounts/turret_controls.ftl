@@ -9,6 +9,3 @@ ent-ScpWeaponEnergyTurretSecurityControlPanel = { ent-ScpWeaponEnergyTurretStati
 ent-ScpWeaponEnergyTurretAdministrationControlPanel = { ent-ScpWeaponEnergyTurretStationControlPanelBase }
     .suffix = Administration
     .desc = { ent-ScpWeaponEnergyTurretStationControlPanelBase.desc }
-
-ent-WeaponEnergyTurretStationControlPanelBase = sentry turret control panel
-    .desc = A wall-mounted interface for remotely configuring the operational parameters of linked sentry turrets.

@@ -8,12 +8,3 @@ ent-ScpRandomPosterDClass = { ent-MarkerBase }
     .desc = { ent-MarkerBase.desc }
 ent-ScpRandomPosterScp049 = { ent-RandomPosterLegit }
     .desc = { ent-RandomPosterLegit.desc }
-
-ent-RandomPosterAny = random poster spawner
-    .desc = { ent-MarkerBase.desc }
-
-ent-RandomPosterContraband = random contraband poster spawner
-    .desc = { ent-MarkerBase.desc }
-
-ent-RandomPosterLegit = random legit poster spawner
-    .desc = { ent-MarkerBase.desc }

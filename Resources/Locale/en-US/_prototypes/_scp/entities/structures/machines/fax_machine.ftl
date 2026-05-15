@@ -31,6 +31,3 @@ ent-FaxMachineQuartermaster = quartermaster fax machine
     .desc = { ent-FaxMachineBase.desc }
 ent-FaxMachineEthicsCommitteeRep = ethics committee representative fax machine
     .desc = { ent-FaxMachineBase.desc }
-
-ent-FaxMachineBase = fax machine
-    .desc = A clever technology that allows you to copy or send documents.

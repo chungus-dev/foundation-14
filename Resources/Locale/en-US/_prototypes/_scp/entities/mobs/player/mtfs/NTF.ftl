@@ -1,15 +1,3 @@
-ent-RandomHumanoidSpawnerNTFLeader = { "" }
-    .desc = { "" }
-ent-RandomHumanoidSpawnerNTFSpecialist = { "" }
-    .desc = { "" }
-ent-RandomHumanoidSpawnerNTFCadet = { "" }
-    .desc = { "" }
-ent-SpawnerMTFSquadNTF = { ent-SpawnPointScpBase }
-    .suffix = NTF
-    .desc = { ent-SpawnPointScpBase.desc }
-ent-SpawnerMTFSquadNTFSpawnOnTrigger = { ent-SpawnerOnTriggerMTFBase }
-    .suffix = NTF | SpawnOnTrigger
-    .desc = { ent-SpawnerOnTriggerMTFBase.desc }
 ent-IDCardNTFLeader = { ent-IDCardMTFStandard }
     .desc = { ent-IDCardMTFStandard.desc }
 ent-IDCardNTFSpecialist = { ent-IDCardMTFStandard }

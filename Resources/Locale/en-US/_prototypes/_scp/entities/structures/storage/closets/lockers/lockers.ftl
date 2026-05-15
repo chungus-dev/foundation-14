@@ -117,35 +117,3 @@ ent-LockerExternalAdministrativeZoneFieldDoctor = eaz field doctor locker
     .desc = { ent-LockerBaseSecure.desc }
 ent-LockerHeavyContainmentZoneFieldDoctor = hcz field doctor locker
     .desc = { ent-LockerBaseSecure.desc }
-
-ent-LockerAtmospherics = atmospheric technician's locker
-    .desc = { ent-LockerBase.desc }
-
-ent-LockerBooze = booze storage
-    .desc = This is where the bartender keeps the booze.
-
-ent-LockerBotanist = botanist's locker
-    .desc = { ent-LockerBase.desc }
-
-ent-LockerBrigmedic = brigmedic locker
-    .desc = { ent-LockerBaseSecure.desc }
-
-ent-LockerCaptain = captain's locker
-    .desc = { ent-LockerBaseSecure.desc }
-
-ent-LockerChemistry = chemical locker
-    .desc = { ent-LockerBase.desc }
-
-ent-LockerFreezer = freezer
-    .suffix = Kitchen, Locked
-    .desc = { ent-LockerFreezerBase.desc }
-
-ent-LockerFreezerBase = freezer
-    .suffix = No Access
-    .desc = { ent-LockerBase.desc }
-
-ent-LockerHeadOfPersonnel = head of personnel's locker
-    .desc = { ent-LockerBaseSecure.desc }
-
-ent-LockerSyndicatePersonal = armory closet
-    .desc = It's a personal storage unit for operative gear.

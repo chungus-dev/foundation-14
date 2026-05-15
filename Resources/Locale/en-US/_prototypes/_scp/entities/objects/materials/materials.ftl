@@ -13,14 +13,3 @@ ent-ScpMaterialWoodPlank10 = { ent-MaterialWoodPlank10 }
     .desc = { ent-MaterialWoodPlank10.desc }
 ent-ScpMaterialWoodPlank1 = { ent-MaterialWoodPlank1 }
     .desc = { ent-MaterialWoodPlank1.desc }
-
-ent-MaterialBase = { ent-BaseItem }
-    .desc = A raw material.
-
-ent-MaterialWoodPlank1 = { ent-MaterialWoodPlank }
-    .suffix = Single
-    .desc = { ent-MaterialWoodPlank.desc }
-
-ent-MaterialWoodPlank10 = { ent-MaterialWoodPlank }
-    .suffix = 10
-    .desc = { ent-MaterialWoodPlank.desc }

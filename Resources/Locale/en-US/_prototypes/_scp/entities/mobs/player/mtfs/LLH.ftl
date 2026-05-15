@@ -1,13 +1,3 @@
-ent-RandomHumanoidSpawnerLLHLeader = { "" }
-    .desc = { "" }
-ent-RandomHumanoidSpawnerLLHSpecialist = { "" }
-    .desc = { "" }
-ent-SpawnerMTFSquadLLH = { ent-SpawnPointScpBase }
-    .suffix = LLH
-    .desc = { ent-SpawnPointScpBase.desc }
-ent-SpawnerMTFSquadLLHSpawnOnTrigger = { ent-SpawnerOnTriggerMTFBase }
-    .suffix = LLH | SpawnOnTrigger
-    .desc = { ent-SpawnerOnTriggerMTFBase.desc }
 ent-IDCardLLHLeader = { ent-IDCardMTFStandard }
     .desc = { ent-IDCardMTFStandard.desc }
 ent-IDCardLLHSpecialist = { ent-IDCardMTFStandard }

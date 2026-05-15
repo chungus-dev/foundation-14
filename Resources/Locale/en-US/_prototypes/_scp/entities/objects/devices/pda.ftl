@@ -47,13 +47,3 @@ ent-DirectorsPDA = director's PDA
     .desc = A personal PDA for the director with elevated access privileges, a high-priority calendar, encrypted mail, and secure archives. Used for decision-making and management of critical facility resources.
 ent-MTFPDA = MTF PDA
     .desc = A field PDA for mobile operative units: quick access to maps, target data, orders, and action logs. Optimized for use in autonomous and extreme operational conditions.
-
-ent-AgentIDCard = passenger ID card
-    .suffix = Agent
-    .desc = { ent-IDCardStandard.desc }
-
-ent-BasePDA = PDA
-    .desc = Personal Data Assistant.
-
-ent-BotanistPDA = botanist PDA
-    .desc = Has an earthy scent.

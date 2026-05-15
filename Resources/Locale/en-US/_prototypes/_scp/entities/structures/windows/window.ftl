@@ -72,12 +72,3 @@ ent-ScpReinforcedUraniumWindowDiagonal = { ent-ReinforcedUraniumWindow }
     .desc = { ent-ReinforcedUraniumWindow.desc }
 ent-ScpTintedWindow = { ent-TintedWindow }
     .desc = { ent-TintedWindow.desc }
-
-ent-TintedWindow = tinted window
-    .desc = { ent-Window.desc }
-
-ent-Window = window
-    .desc = Don't smudge up the glass down there.
-
-ent-WindowRCDResistant = { ent-Window }
-    .desc = { ent-Window.desc }

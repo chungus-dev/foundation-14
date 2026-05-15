@@ -22,35 +22,3 @@ ent-ScpDresserScientificServiceDirectorFilled = { ent-DresserResearchDirectorFil
 ent-ScpDresserSquadLeaderFilled = { ent-DresserWardenFilled }
     .suffix = { ent-DresserWardenFilled.suffix }
     .desc = { ent-DresserWardenFilled.desc }
-
-ent-DresserCaptainFilled = { ent-Dresser }
-    .suffix = Filled, Captain
-    .desc = { ent-Dresser.desc }
-
-ent-DresserChiefEngineerFilled = { ent-Dresser }
-    .suffix = Filled, Chief Engineer
-    .desc = { ent-Dresser.desc }
-
-ent-DresserChiefMedicalOfficerFilled = { ent-Dresser }
-    .suffix = Filled, Chief Medical Officer
-    .desc = { ent-Dresser.desc }
-
-ent-DresserHeadOfPersonnelFilled = { ent-Dresser }
-    .suffix = Filled, Head Of Personnel
-    .desc = { ent-Dresser.desc }
-
-ent-DresserHeadOfSecurityFilled = { ent-Dresser }
-    .suffix = Filled, Head Of Security
-    .desc = { ent-Dresser.desc }
-
-ent-DresserQuarterMasterFilled = { ent-Dresser }
-    .suffix = Filled, Quarter Master
-    .desc = { ent-Dresser.desc }
-
-ent-DresserResearchDirectorFilled = { ent-Dresser }
-    .suffix = Filled, Research Director
-    .desc = { ent-Dresser.desc }
-
-ent-DresserWardenFilled = { ent-Dresser }
-    .suffix = Filled, Warden
-    .desc = { ent-Dresser.desc }

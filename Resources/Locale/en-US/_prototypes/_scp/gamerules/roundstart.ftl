@@ -14,5 +14,7 @@ ent-BasicFoundationEventScheduler = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
 ent-BasicFoundationChillEventScheduler = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
+ent-FreeScpRule = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }
 ent-Scp = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
