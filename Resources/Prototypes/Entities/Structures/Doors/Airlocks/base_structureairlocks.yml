@@ -9,10 +9,6 @@
     flags:
     - Anchorable
   - type: Rotatable
-  # - type: Ricochetable # SCP port: component unavailable in Foundation14
-    # chance: 1
-  # - type: Pierceable # SCP port: component unavailable in Foundation14
-    # level: HardenedMetal
   - type: StationAiWhitelist
   - type: MeleeSound
     soundGroups:
@@ -91,7 +87,6 @@
     fuel: 5
     time: 3
   - type: Airlock
-    openUnlitVisible: true
   - type: NavMapDoor
   - type: DoorBolt
   - type: Appearance

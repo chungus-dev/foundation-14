@@ -4,6 +4,8 @@
   components:
   - type: Sprite
     sprite: _Scp/Structures/Doors/Airlocks/Standard/basic.rsi
+  - type: Airlock
+    openUnlitVisible: true
   - type: Door
     crushDamage:
       types:
@@ -30,6 +32,8 @@
         collection: GlassSmack
   - type: Door
     occludes: false
+  - type: Airlock
+    openUnlitVisible: true
   - type: Occluder
     enabled: false
   - type: Sprite
