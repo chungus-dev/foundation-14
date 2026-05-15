@@ -1,4 +1,4 @@
-﻿using System.Numerics;
+using System.Numerics;
 using Content.Client.Resources;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -27,6 +27,10 @@ public sealed partial class LauncherConnectingGui
     protected override void EnteredTree()
     {
         base.EnteredTree();
+
+        var logoTexture = _resource.GetTexture("/Textures/_Scp/Logo/logo-hollow.png");
+        Logo.Texture = logoTexture;
+        Logo.TextureScale = new Vector2(0.125f, 0.125f);
     }
 
     protected override void ExitedTree()
@@ -38,9 +42,38 @@ public sealed partial class LauncherConnectingGui
 
     private void UpdateAnimation(FrameEventArgs args)
     {
+        if (_animationState == null)
+            return;
+
+        _animationTime += args.DeltaSeconds;
+
+        var delay = _animationState.GetDelay(_animationFrame);
+        if (_animationTime < delay)
+            return;
+
+        _animationTime -= delay;
+        _animationFrame++;
+
+        if (_animationFrame >= _animationState.Icons[0].Length)
+            _animationFrame = 0;
+
+        ConnectionAnimation.DisplayRect.Texture = _animationState.GetFrame(RsiDirection.South, _animationFrame);
     }
 
     private void SetAnimation()
     {
+        if (!_resource.TryGetResource(new ResPath(AnimationPath).ToRootedPath(), out _rsiResource))
+            return;
+
+        if (!_rsiResource.RSI.TryGetState(AnimationState, out var state))
+            return;
+
+        _animationState = state;
+        _animationFrame = 0;
+        _animationTime = 0;
+
+        ConnectionAnimation.DisplayRect.Texture = _animationState.GetFrame(RsiDirection.South, 0);
+        ConnectionAnimation.DisplayRect.TextureScale = AnimationScale;
+        ConnectionAnimation.DisplayRect.Stretch = TextureRect.StretchMode.Scale;
     }
 }

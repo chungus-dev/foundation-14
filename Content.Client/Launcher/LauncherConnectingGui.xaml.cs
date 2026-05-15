@@ -40,6 +40,8 @@ namespace Content.Client.Launcher
             _clipboard = clipboard;
 
             RobustXamlLoader.Load(this);
+            // Scp added - partial animation control needs dependencies.
+            IoCManager.InjectDependencies(this);
 
             LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);
 

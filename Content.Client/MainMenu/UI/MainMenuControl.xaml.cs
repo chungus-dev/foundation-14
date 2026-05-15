@@ -20,7 +20,7 @@ public sealed partial class MainMenuControl : Control
     public MainMenuControl(IResourceCache resCache, IConfigurationManager configMan)
     {
         RobustXamlLoader.Load(this);
-        IoCManager.InjectDependencies(this); // Fire added
+        IoCManager.InjectDependencies(this); // Scp added - partial animation control needs dependencies.
 
         LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);
 
