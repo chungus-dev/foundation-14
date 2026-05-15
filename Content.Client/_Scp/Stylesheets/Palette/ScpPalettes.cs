@@ -33,6 +33,8 @@ public static class ScpPalettes
     public static readonly Color ButtonPressed = SCPWhite.WithLightness(0.65f);
     public static readonly Color ButtonDisabled = SCPWhite.WithLightness(0.4f);
 
+    public static readonly Color PanelDarkWithAlpha75 = PanelDark.WithAlpha(0.75f);
+
     // --- Сборка палитр ---
 
     /// <summary>

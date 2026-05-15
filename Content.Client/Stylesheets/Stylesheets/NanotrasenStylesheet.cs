@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Content.Client._Scp.Stylesheets.Stylesheets.Sheetlets; // Scp added - force SCP theme rules to load last
 using Content.Client.Stylesheets.Fonts;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
@@ -55,6 +56,9 @@ public partial class NanotrasenStylesheet : CommonStylesheet
             // Finally, load all the other sheetlets.
             GetAllSheetletRules<PalettedStylesheet, CommonSheetletAttribute>(man),
             GetAllSheetletRules<NanotrasenStylesheet, CommonSheetletAttribute>(man),
+            // Scp added start - force SCP theme after vanilla/common sheetlets
+            GetSheetletRules<NanotrasenStylesheet>(typeof(ScpThemeSheetlet), man),
+            // Scp added end
         };
 
         Stylesheet = new Stylesheet(rules.SelectMany(x => x).ToArray());

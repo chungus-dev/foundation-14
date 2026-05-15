@@ -1,5 +1,7 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client._Scp.Stylesheets.Palette;
+using Content.Client._Scp.Stylesheets.Stylesheets.Sheetlets;
 using Content.Client.Lobby.UI.Loadouts;
 using Content.Client.Lobby.UI.Roles;
 using Content.Shared.Clothing;
@@ -165,14 +167,15 @@ public sealed partial class HumanoidProfileEditor
 
                 category.AddChild(new PanelContainer
                 {
-                    PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
+                    PanelOverride = new StyleBoxFlat { BackgroundColor = ScpPalettes.SCPWhite }, // Scp edit
                     Children =
                         {
                             new Label
                             {
                                 Text = Loc.GetString("humanoid-profile-editor-department-jobs-label",
                                     ("departmentName", departmentName)),
-                                Margin = new Thickness(5f, 0, 0, 0)
+                                Margin = new Thickness(5f, 0, 0, 0),
+                                FontColorOverride = ScpPalettes.Primary.Background, // Scp added
                             }
                         }
                 });
