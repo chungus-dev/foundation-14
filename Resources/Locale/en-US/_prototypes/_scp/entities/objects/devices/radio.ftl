@@ -20,3 +20,6 @@ ent-RadioHandheldExternalAdministrativeZoneSecurityService = { ent-RadioHandheld
 ent-RadioHandheldExternalAdministrativeZoneSecurityServiceEnabled = { ent-RadioHandheldExternalAdministrativeZoneSecurityService }
     .suffix = Enabled
     .desc = { ent-RadioHandheldExternalAdministrativeZoneSecurityService.desc }
+
+ent-RadioHandheldSecurity = security radio
+    .desc = A handy security radio.

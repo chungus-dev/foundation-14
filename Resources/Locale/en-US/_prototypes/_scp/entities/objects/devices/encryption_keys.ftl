@@ -30,3 +30,6 @@ ent-EncryptionKeyChaos = { ent-EncryptionKey }
     .desc = { ent-EncryptionKey.desc }
 ent-EncryptionKeyGRU = { ent-EncryptionKey }
     .desc = { ent-EncryptionKey.desc }
+
+ent-EncryptionKey = encryption key
+    .desc = A small cypher chip for headsets.

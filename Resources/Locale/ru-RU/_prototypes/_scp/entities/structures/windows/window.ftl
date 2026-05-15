@@ -72,3 +72,6 @@ ent-ScpReinforcedUraniumWindowDiagonal = { ent-ReinforcedUraniumWindow }
     .desc = { ent-ReinforcedUraniumWindow.desc }
 ent-ScpTintedWindow = матовое окно
     .desc = { ent-Window.desc }
+
+ent-Window = окно
+    .desc = Смотри не заляпай.

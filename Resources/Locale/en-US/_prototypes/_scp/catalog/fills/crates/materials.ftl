@@ -4,3 +4,7 @@ ent-CrateMaterialDiamond = diamond crate
     .desc = 3 diamond.
 ent-CrateMaterialConcrete = concrete crate
     .desc = 90 concrete.
+
+ent-MaterialWoodPlank = wood
+    .suffix = Full
+    .desc = { ent-MaterialBase.desc }

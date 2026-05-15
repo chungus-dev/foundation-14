@@ -20,3 +20,6 @@ ent-RubberStampCommandantSquadLeader = { ent-RubberStampBase }
     .desc = { ent-RubberStampBase.desc }
 ent-RubberStampSpecialPurposeSquadLeader = { ent-RubberStampBase }
     .desc = { ent-RubberStampBase.desc }
+
+ent-RubberStampBase = generic rubber stamp
+    .desc = A rubber stamp for stamping important documents.

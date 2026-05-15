@@ -240,7 +240,8 @@
     - 0,0,3,3
   - type: StorageFill
     contents:
-      - id: WeaponRifleAR18
+      # Scp edit - disabled broken ported content.
+      # - id: WeaponRifleAR18
       - id: ClothingBeltMtfAmmoAR18
 
 - type: entity

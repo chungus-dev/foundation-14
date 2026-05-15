@@ -216,3 +216,6 @@ ent-PosterEngineeringSchema = engineering equipment schema
     .desc = An information poster depicting systems used by space shuttles and a wrench.
 ent-PosterRickRoll = "Rick" poster
     .desc = Oh, what's this?
+
+ent-PosterBase = { ent-BaseSign }
+    .desc = { ent-BaseSign.desc }

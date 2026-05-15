@@ -91,10 +91,6 @@
     maxItemSize: Small
     grid:
     - 0,0,4,9
-    storageInsertSound:
-      path: /Audio/_Scp/Items/Handling/Plastic/pickup.ogg
-    storageRemoveSound:
-      path: /Audio/_Scp/Items/Handling/Plastic/drop.ogg
     whitelist:
       components:
       - Scp330Candy

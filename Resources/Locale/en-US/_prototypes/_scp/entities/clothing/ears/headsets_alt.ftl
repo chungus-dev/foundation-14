@@ -24,3 +24,6 @@ ent-ClothingHeadsetAltLogistics = { ent-ClothingHeadsetAlt }
     .desc = { ent-ClothingHeadsetAlt.desc }
 ent-ClothingHeadsetAltChaos = { ent-ClothingHeadsetAlt }
     .desc = { ent-ClothingHeadsetAlt.desc }
+
+ent-ClothingHeadsetAlt = headset
+    .desc = An updated, modular intercom that fits over the head. Takes encryption keys.

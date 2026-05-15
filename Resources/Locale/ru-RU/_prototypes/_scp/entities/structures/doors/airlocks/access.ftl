@@ -382,3 +382,10 @@ ent-HighSecThirdPartyLocked = { ent-ScpHighSecDoor }
 ent-HighSecChaosInsurgencyLocked = { ent-ScpHighSecDoor }
     .suffix = { access-name-chaos-insurgency }, Закрыт
     .desc = { ent-ScpHighSecDoor.desc }
+
+ent-AirlockMaintRnDLocked = { ent-AirlockScienceLocked }
+    .desc = { ent-AirlockScienceLocked.desc }
+
+ent-AirlockScienceLocked = { ent-AirlockScience }
+    .suffix = Научный, Закрыт
+    .desc = { ent-AirlockScience.desc }

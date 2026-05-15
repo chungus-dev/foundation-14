@@ -9,3 +9,6 @@ ent-ScpWeaponEnergyTurretSecurityControlPanel = { ent-ScpWeaponEnergyTurretStati
 ent-ScpWeaponEnergyTurretAdministrationControlPanel = { ent-ScpWeaponEnergyTurretStationControlPanelBase }
     .suffix = Администрация
     .desc = { ent-ScpWeaponEnergyTurretStationControlPanelBase.desc }
+
+ent-WeaponEnergyTurretStationControlPanelBase = панель управления охранной турелью
+    .desc = Настенный интерфейс для удаленной настройки рабочих параметров связанных охранных турелей.

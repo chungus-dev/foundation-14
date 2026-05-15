@@ -17,3 +17,15 @@ ent-ScpShuttersWindowOpen = { ent-ShuttersWindow }
     .desc = { ent-ShuttersWindow.desc }
 ent-ScpShuttersFrame = каркас ставни
     .desc = Каркас для сборки ставни.
+
+ent-BaseShutter = ставни
+    .desc = Страшно подумать, что могут скрывать эти ставни.
+
+ent-ShuttersNormal = { ent-BaseShutter }
+    .desc = { ent-BaseShutter.desc }
+
+ent-ShuttersRadiation = радиационные ставни
+    .desc = Зачем делать ставни радиоактивными?
+
+ent-ShuttersWindow = оконные ставни
+    .desc = Лучшее (TM) место чтобы поглядеть, как взрываются твои друзья!

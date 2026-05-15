@@ -111,3 +111,31 @@ ent-ScpLockerThirdParty = { ent-LockerBase }
     .desc = { ent-LockerBase.desc }
 ent-ScpLockerPrisoner = шкаф заключённого
     .desc = Надёжный шкаф для личных вещей заключённого на время его пребывания в тюрьме.
+
+ent-LockerAtmospherics = шкаф атмосферного техника
+    .desc = { ent-LockerBase.desc }
+
+ent-LockerBooze = шкафчик со спиртным
+    .desc = Здесь бармен хранит алкоголь.
+
+ent-LockerBotanist = шкаф ботаника
+    .desc = { ent-LockerBase.desc }
+
+ent-LockerBrigmedic = шкаф бригмедика
+    .desc = { ent-LockerBaseSecure.desc }
+
+ent-LockerCaptain = шкаф капитана
+    .desc = { ent-LockerBaseSecure.desc }
+
+ent-LockerChemistry = шкаф химика
+    .desc = { ent-LockerBase.desc }
+
+ent-LockerFreezer = холодильник
+    .desc = { ent-LockerBase.desc }
+    .suffix = Кухня, Закрыт
+
+ent-LockerHeadOfPersonnel = шкаф главы персонала
+    .desc = { ent-LockerBaseSecure.desc }
+
+ent-LockerSyndicatePersonal = { ent-LockerSyndicate }
+    .desc = Это персональное хранилище для оперативного снаряжения.

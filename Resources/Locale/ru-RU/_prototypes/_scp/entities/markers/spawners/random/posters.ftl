@@ -13,3 +13,12 @@ ent-ScpRandomPosterDClass = спавнер случайный плакат д к
 ent-ScpRandomPosterScp049 = спавнер случайный плакат 049
     .desc = { ent-MarkerBase.desc }
     .suffix = SCP | КС-049
+
+ent-RandomPosterAny = спавнер случайный плакат
+    .desc = { ent-MarkerBase.desc }
+
+ent-RandomPosterContraband = спавнер случайный контрабанда плакат
+    .desc = { ent-MarkerBase.desc }
+
+ent-RandomPosterLegit = спавнер случайный легальный плакат
+    .desc = { ent-MarkerBase.desc }

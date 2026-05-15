@@ -112,6 +112,11 @@
   equipment:
     outerClothing: ClothingOuterWinterHoS
 
+- type: loadout
+  id: ScpLoadoutSecurityCommanderPDA
+  equipment:
+    pocket2: SecurityCommanderPDA
+
 - type: loadoutGroup
   id: ScpLoadoutGroupPocket2SecurityCommanderPDA
   name: loadout-group-pda

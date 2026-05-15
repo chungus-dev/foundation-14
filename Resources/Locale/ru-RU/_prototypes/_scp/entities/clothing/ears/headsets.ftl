@@ -16,3 +16,6 @@ ent-ClothingHeadsetFoodAndSanitation = { ent-ClothingHeadset } сервисно�
     .desc = { ent-ClothingHeadset.desc }
 ent-ClothingHeadsetEmpty = пустая { ent-ClothingHeadset }
     .desc = { ent-ClothingHeadset.desc } Изначально не имеет ключей шифрования.
+
+ent-ClothingHeadset = гарнитура
+    .desc = Модифицированный модульный интерком, надеваемый на голову. Принимает ключи шифрования.

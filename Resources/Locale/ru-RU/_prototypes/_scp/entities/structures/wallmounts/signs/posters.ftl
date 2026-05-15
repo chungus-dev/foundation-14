@@ -234,3 +234,6 @@ ent-PosterEngineeringSchema = схема инженерного оборудов
     .desc = Информационный плакат, изображающий системы используемые космическими шаттлами и гаечного ключа
 ent-PosterRickRoll = плакат "Рик"
     .desc = Ого, что же это?
+
+ent-PosterBase = { ent-BaseSign }
+    .desc = { ent-BaseSign.desc }

@@ -1,8 +1,8 @@
-ent-ScpRailingWood = { ent-RailingWood }
-    .desc = { ent-RailingWood.desc }
-ent-ScpRailingCornerWood = { ent-RailingCornerWood }
-    .desc = { ent-RailingCornerWood.desc }
-ent-ScpRailingCornerWoodSmall = { ent-RailingCornerWoodSmall }
-    .desc = { ent-RailingCornerWoodSmall.desc }
-ent-ScpRailingRoundWood = { ent-RailingRoundWood }
-    .desc = { ent-RailingRoundWood.desc }
+ent-ScpRailingWood = деревянные перила
+    .desc = Простое деревянное ограждение, предназначенное для защиты таких идиотов, как ты, от падения. В нем есть немного стиля.
+ent-ScpRailingCornerWood = деревянные перила
+    .desc = Простое деревянное ограждение, предназначенное для защиты таких идиотов, как ты, от падения. В нем есть немного стиля.
+ent-ScpRailingCornerWoodSmall = деревянные перила
+    .desc = Простое деревянное ограждение, предназначенное для защиты таких идиотов, как ты, от падения. В нем есть немного стиля.
+ent-ScpRailingRoundWood = деревянные перила
+    .desc = Простое деревянное ограждение, предназначенное для защиты таких идиотов, как ты, от падения. В нем есть немного стиля.

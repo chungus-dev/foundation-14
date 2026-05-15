@@ -14,3 +14,6 @@ ent-ClothingHeadsetLogistics = { ent-ClothingHeadset }
     .desc = { ent-ClothingHeadset.desc }
 ent-ClothingHeadsetFoodAndSanitation = { ent-ClothingHeadset }
     .desc = { ent-ClothingHeadset.desc }
+
+ent-ClothingHeadset = headset
+    .desc = An updated, modular intercom that fits over the head. Takes encryption keys.

@@ -1,8 +1,8 @@
-ent-ScpRailingWood = { ent-RailingWood }
-    .desc = { ent-RailingWood.desc }
-ent-ScpRailingCornerWood = { ent-RailingCornerWood }
-    .desc = { ent-RailingCornerWood.desc }
-ent-ScpRailingCornerWoodSmall = { ent-RailingCornerWoodSmall }
-    .desc = { ent-RailingCornerWoodSmall.desc }
-ent-ScpRailingRoundWood = { ent-RailingRoundWood }
-    .desc = { ent-RailingRoundWood.desc }
+ent-ScpRailingWood = railingwood
+    .desc = Basic wooden railing meant to protect idiots like you from falling. This one has some fashion to it.
+ent-ScpRailingCornerWood = railingwood
+    .desc = Basic wooden railing meant to protect idiots like you from falling. This one has some fashion to it.
+ent-ScpRailingCornerWoodSmall = railingwood
+    .desc = Basic wooden railing meant to protect idiots like you from falling. This one has some fashion to it.
+ent-ScpRailingRoundWood = railingwood
+    .desc = Basic wooden railing meant to protect idiots like you from falling. This one has some fashion to it.

@@ -4,7 +4,6 @@ ent-ScpFacilityBeacon = маяк учреждения
 ent-ScpFacilityBeaconUnanchored = { ent-ScpFacilityBeacon }
     .suffix = общий, незакреплённый
     .desc = { ent-ScpFacilityBeacon.desc }
-# Родительские
 ent-ScpFacilityBeaconAdministration = { ent-ScpFacilityBeacon }
     .suffix = руководство
     .desc = { ent-ScpFacilityBeacon.desc }
@@ -32,7 +31,6 @@ ent-ScpFacilityBeaconLowAccessPersonnel = { ent-ScpFacilityBeacon }
 ent-ScpFacilityBeaconScpContainment = { ent-ScpFacilityBeacon }
     .suffix = содержание SCP
     .desc = { ent-ScpFacilityBeacon.desc }
-# Кабинеты
 ent-ScpFacilityBeaconFacilityDirectorOffice = { ent-ScpFacilityBeaconAdministration }
     .suffix = кабинет Директора
     .desc = { ent-ScpFacilityBeaconAdministration.desc }
@@ -69,7 +67,6 @@ ent-ScpFacilityBeaconAmnesticologistOffice = { ent-ScpFacilityBeaconMedicalServi
 ent-ScpFacilityBeaconParapsychologistOffice = { ent-ScpFacilityBeaconScientificService }
     .suffix = кабинет Парапсихолога
     .desc = { ent-ScpFacilityBeaconScientificService.desc }
-# Камеры SCP
 ent-ScpFacilityBeaconScp173Containment = { ent-ScpFacilityBeaconScpContainment }
     .suffix = содержание SCP-173
     .desc = { ent-ScpFacilityBeaconScpContainment.desc }
@@ -112,7 +109,6 @@ ent-ScpFacilityBeaconScpItemContainment = { ent-ScpFacilityBeaconScpContainment 
 ent-ScpFacilityBeaconScpHumanoidContainment = { ent-ScpFacilityBeaconScpContainment }
     .suffix = содержание гуманоидов
     .desc = { ent-ScpFacilityBeaconScpContainment.desc }
-# Отделы
 ent-ScpFacilityBeaconCommandantSquad = { ent-ScpFacilityBeaconSecurity }
     .suffix = комендантский отряд
     .desc = { ent-ScpFacilityBeaconSecurity.desc }
@@ -128,7 +124,6 @@ ent-ScpFacilityBeaconClassDContainmentZone = { ent-ScpFacilityBeaconLowAccessPer
 ent-ScpFacilityBeaconLifeSupport = { ent-ScpFacilityBeaconEngineeringTechnicalService }
     .suffix = жизнеобеспечение
     .desc = { ent-ScpFacilityBeaconEngineeringTechnicalService.desc }
-# Специальное
 ent-ScpFacilityBeaconCheckpointEntranceToLightA = { ent-ScpFacilityBeacon }
     .suffix = КПП АЗ-ЛЗС А
     .desc = { ent-ScpFacilityBeacon.desc }

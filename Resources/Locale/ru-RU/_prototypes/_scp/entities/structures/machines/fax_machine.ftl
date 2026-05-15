@@ -31,3 +31,6 @@ ent-FaxMachineQuartermaster = факс квартирмейстера
     .desc = { ent-FaxMachineBase.desc }
 ent-FaxMachineEthicsCommitteeRep = факс представителя комитета по этике
     .desc = { ent-FaxMachineBase.desc }
+
+ent-FaxMachineBase = факс
+    .desc = Хитрая технология позволяющая копировать или отправлять документы.

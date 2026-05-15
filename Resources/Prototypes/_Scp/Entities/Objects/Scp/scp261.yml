@@ -45,8 +45,6 @@
     maxItemSize: Small
     grid:
     - 0,0,4,9
-    storageInsertSound:
-      path: /Audio/_Scp/Items/Handling/Plastic/pickup.ogg
     whitelist:
       components:
       - Cash

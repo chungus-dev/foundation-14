@@ -124,3 +124,15 @@ ent-ScpFloorTileItemAnechoic2 = { ent-ScpFloorTileItemAnechoic1 }
     .desc = { ent-ScpFloorTileItemAnechoic1.desc }
 ent-ScpFloorTileItemAnechoic3 = { ent-ScpFloorTileItemAnechoic1 }
     .desc = { ent-ScpFloorTileItemAnechoic1.desc }
+
+ent-FloorTileItemBase = { ent-BaseItem }
+    .desc = These could work as a pretty decent throwing weapon.
+
+ent-FloorTileItemWood = wood floor
+    .desc = { ent-FloorTileItemBase.desc }
+
+ent-FloorTileItemWoodLarge = large wood floor
+    .desc = { ent-FloorTileItemBase.desc }
+
+ent-FloorTileItemWoodPattern = wood pattern floor
+    .desc = { ent-FloorTileItemBase.desc }

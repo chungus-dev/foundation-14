@@ -1,5 +1,5 @@
 ent-BaseBloodSplatter = blood splatter
-    .desc = { ent-Footstep.desc }
+    .desc = Trace of liquid
 ent-BaseBloodParticle = blood splatter
     .desc = { ent-BaseLiquidParticle.desc }
 ent-BloodSplatter1 = { ent-BaseBloodSplatter }

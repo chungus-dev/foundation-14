@@ -90,54 +90,170 @@ ent-ScpComputerFrame = { ent-ComputerFrame }
     .desc = { ent-ComputerFrame.desc }
 ent-ScpComputerBroken = { ent-ComputerBroken }
     .desc = { ent-ComputerBroken.desc }
-ent-ScpComputerShipyard = { ent-ComputerShipyard }
-    .desc = { ent-ComputerShipyard.desc }
-ent-ScpComputerSaleConsole = { ent-ComputerSaleConsole }
-    .desc = { ent-ComputerSaleConsole.desc }
-    .suffix = { ent-ComputerSaleConsole.suffix }
-ent-ScpComputerFacilityBankConsole = { ent-ComputeStationBankConsole }
-    .desc = { ent-ComputeStationBankConsole.desc }
-    .suffix = { ent-ComputeStationBankConsole.suffix }
-ent-ScpComputerLogisticsSalaryConsole = { ent-ComputeCargoSalaryConsole }
-    .desc = { ent-ComputeCargoSalaryConsole.desc }
-    .suffix = { ent-ComputeCargoSalaryConsole.suffix }
+ent-ScpComputerShipyard = консоль верфи
+    .desc = Используется для покупки и продажи шаттлов
+ent-ScpComputerSaleConsole = консоль продажи
+    .desc = Используется для продажи товаров из связанных телепортационных капсул. Не пытайся открутить меня, идиот.
+    .suffix = Финансы
+ent-ScpComputerFacilityBankConsole = консоль станционного банка
+    .desc = Здесь вы можете снять все деньги со счета станции и улететь на Мальдивы или узнать, когда деды придут за вашими головами. Не пытайся открутить меня, идиот.
+    .suffix = Финансы
+ent-ScpComputerLogisticsSalaryConsole = консоль зарплаты грузового отдела
+    .desc = Здесь капитан может установить максимальную зарплату для себя и минимальную для всех остальных, вот он, тоталитаризм. Не пытайся открутить меня, идиот.
+    .suffix = Финансы
 ent-ScpComputerLogisticsFinanceConsole = финансовая консоль логистического отдела
-    .desc = { ent-ComputerCargoFinanceConsole.desc }
-    .suffix = { ent-ComputerCargoFinanceConsole.suffix }
-ent-ScpComputerBountySaleConsole = { ent-ComputerBountySaleConsole }
-    .desc = { ent-ComputerBountySaleConsole.desc }
-    .suffix = { ent-ComputerBountySaleConsole.suffix }
+    .desc = Здесь вы можете увидеть доходы станции и текущий баланс. Не пытайся открутить меня, идиот.
+    .suffix = Финансы
+ent-ScpComputerBountySaleConsole = консоль выполнения заказов
+    .desc = Здесь вы можете отправить запрошенные товары
+    .suffix = Финансы
 ent-ScpComputerCallMtfConsole = консоль вызова МОГ
-    .desc = { ent-ComputerCallErtConsole.desc }
+    .desc = { ent-BaseComputer.desc }
     .suffix = ВЫЗОВ МОГ
-ent-ScpComputerApproveMtfConsole = { ent-ComputerApproveErtConsole }
-    .desc = { ent-ComputerApproveErtConsole.desc }
-    .suffix = { ent-ComputerApproveErtConsole.suffix }
-ent-ScpComputerFineRecords = { ent-ComputerFineRecords }
-    .desc = { ent-ComputerFineRecords.desc }
-    .suffix = { ent-ComputerFineRecords.suffix }
-ent-ScpComputerContrabandSale = { ent-ComputerContrabandSale }
-    .desc = { ent-ComputerContrabandSale.desc }
-    .suffix = { ent-ComputerContrabandSale.suffix }
-ent-ScpComputerFoodAndSanitationServiceSaleConsole = { ent-ComputerServiceSaleConsole }
-    .desc = { ent-ComputerServiceSaleConsole.desc }
-    .suffix = { ent-ComputerServiceSaleConsole.suffix }
-ent-ScpComputerSecuritySaleConsole = { ent-ComputerSecuritySaleConsole }
-    .desc = { ent-ComputerSecuritySaleConsole.desc }
-    .suffix = { ent-ComputerSecuritySaleConsole.suffix }
-ent-ScpComputerMedicalServiceSaleConsole = { ent-ComputerMedicalSaleConsole }
-    .desc = { ent-ComputerMedicalSaleConsole.desc }
-    .suffix = { ent-ComputerMedicalSaleConsole.suffix }
-ent-ScpComputerScientificServiceSaleConsole = { ent-ComputerScienceSaleConsole }
-    .desc = { ent-ComputerScienceSaleConsole.desc }
-    .suffix = { ent-ComputerScienceSaleConsole.suffix }
-ent-ScpComputerShuttleRegionalAdministration = { ent-ComputerShuttleCentComm }
-    .desc = { ent-ComputerShuttleCentComm.desc }
-ent-ScpComputerShuttleSecurity = { ent-ComputerShuttleSecurity }
-    .desc = { ent-ComputerShuttleSecurity.desc }
-ent-ScpComputerPlayerConsole = { ent-CommandConsoleComputer }
-    .desc = { ent-CommandConsoleComputer.desc }
-ent-ScpComputerCodes = { ent-CodeConsole }
-    .desc = { ent-CodeConsole.desc }
-ent-ScpComputerIcarus = { ent-ComputerIcarus }
-    .desc = { ent-ComputerIcarus.desc }
+ent-ScpComputerApproveMtfConsole = консоль подтверждения ОБР
+    .desc = { ent-BaseComputer.desc }
+    .suffix = ВЫЗОВОВБР
+ent-ScpComputerFineRecords = компьютер учета штрафов
+    .desc = Используется для проверки штрафов и их назначения преступным отбросам. Только служба безопасности может их изменять.
+    .suffix = Финансы, Безопасность
+ent-ScpComputerContrabandSale = компьютер обмена контрабанды
+    .desc = Используется для подтверждения контрабанды и обмена ее на станционный счет. Только служба безопасности может его использовать.
+    .suffix = Финансы, Безопасность
+ent-ScpComputerFoodAndSanitationServiceSaleConsole = консоль продаж сервисного отдела
+    .desc = Используется для продажи товаров из связанных телепортационных капсул. Не пытайся открутить меня, идиот.
+    .suffix = Финансы, Сервис
+ent-ScpComputerSecuritySaleConsole = консоль продаж службы безопасности
+    .desc = Используется для продажи товаров из связанных телепортационных капсул. Не пытайся открутить меня, идиот.
+    .suffix = Финансы, Безопасность
+ent-ScpComputerMedicalServiceSaleConsole = консоль продаж медицинского отдела
+    .desc = Используется для продажи товаров из связанных телепортационных капсул. Не пытайся открутить меня, идиот.
+    .suffix = Финансы, Медицина
+ent-ScpComputerScientificServiceSaleConsole = консоль продаж научного отдела
+    .desc = Используется для продажи товаров из связанных телепортационных капсул. Не пытайся открутить меня, идиот.
+    .suffix = Финансы, НИОКР
+ent-ScpComputerShuttleRegionalAdministration = консоль шаттла ККЦ
+    .desc = Консоль для удаленного управления шаттлом Представителя Центрального Командования.
+ent-ScpComputerShuttleSecurity = консоль шаттла безопасности
+    .desc = Консоль для удаленного управления шаттлом службы безопасности.
+ent-ScpComputerPlayerConsole = комьютер консоли командования
+    .desc = { ent-BaseComputer.desc }
+ent-ScpComputerCodes = кодовая консоль
+    .desc = Консоль, предназначенная для ввода кода. Страшно пищит.
+ent-ScpComputerIcarus = терминал икарус
+    .desc = Зловещий терминал с несколькими портами и клавиатурами, на экране прокручивается неразборчивый бред. На боку у него странная маркировка - красное кольцо с золотым кругом внутри.
+
+ent-ComputerAlert = консоль оповещений
+    .desc = Используется для доступа к автоматизированной системе оповещения станции.
+
+ent-ComputerAnalysisConsole = аналитическая консоль
+    .desc = Компьютер, используемый для взаимодействия с анализатором артефактов.
+
+ent-ComputerAtmosMonitoring = консоль мониторинга атмосферы
+    .desc = Используется для мониторинга атмосферных сетей станции.
+
+ent-computerBodyScanner = сканер тела
+    .desc = Это сканер тела.
+
+ent-ComputerCargoBounty = консоль запросов
+    .desc = Используется для управления текущими активными запросами.
+
+ent-ComputerCargoOrders = консоль заказа грузов
+    .desc = Используется для оформления запросов и одобрения заказов.
+
+ent-ComputerCargoOrdersEngineering = инженерная консоль заказа грузов
+    .desc = Используется инженерным отделом для заказа припасов.
+
+ent-ComputerCargoOrdersMedical = медицинская консоль заказа грузов
+    .desc = Используется медицинским отделом для заказа припасов.
+
+ent-ComputerCargoOrdersScience = научная консоль заказа грузов
+    .desc = Используется научным отделом для заказа припасов.
+
+ent-ComputerCargoOrdersSecurity = охранная консоль заказа грузов
+    .desc = Используется отделом безопасности для заказа припасов.
+
+ent-ComputerCargoOrdersService = сервисная консоль заказа грузов
+    .desc = Используется отделом обслуживания для заказа припасов.
+
+ent-ComputerCloningConsole = консоль клонирования
+    .desc = Центральный элемент системы клонирования, величайшее достижение медицины. У неё много портов и проводов.
+
+ent-ComputerComms = консоль связи
+    .desc = Консоль, используемая для подачи объявлений на всю станцию посредством клавиатуры, изменения уровня угрозы и вызова эвакуационного шаттла.
+
+ent-ComputerCrewMonitoring = консоль мониторинга персонала
+    .desc = Используется для отслеживания активных датчиков здоровья, встроенных в униформу большинства членов персонала.
+
+ent-ComputerCriminalRecords = консоль криминальных записей
+    .desc = Её можно использовать для проверки судимостей. Редактировать их может только служба безопасности.
+
+ent-ComputerEmergencyShuttle = консоль аварийного шаттла
+    .desc = Выдаёт разрешение на досрочный запуск шаттла.
+
+ent-ComputerFundingAllocation = компьютер распределения финансирования
+    .desc = Терминал для контроля распределения средств и оплаты труда по отделам.
+
+ent-ComputerId = консоль ID карт
+    .desc = Компьютер для программирования ID карт сотрудников Фонда, для доступа к разным частям станции.
+
+ent-ComputerIFF = консоль системы опознавания
+    .desc = Позволяет контролировать параметры системы опознавания судна или станции.
+
+ent-ComputerIFFSyndicate = консоль системы опознавания
+    .desc = Позволяет контролировать параметры системы опознавания судна или станции.
+    .suffix = Синдикат
+
+ent-ComputerMassMedia = консоль управления новостями
+    .desc = Отправьте своё послание миру!
+
+ent-ComputerMedicalRecords = консоль медицинских карт
+    .desc = Её можно использовать для проверки медицинской истории.
+
+ent-ComputerPalletConsole = консоль продажи товаров
+    .desc = Используется для продажи товаров, размещённых на грузовых поддонах.
+
+ent-ComputerPowerMonitoring = консоль контроля питания
+    .desc = Он отслеживает показатели энергии по всей станции.
+
+ent-ComputerRadar = консоль сканера массы
+    .desc = Компьютер для отслеживания близлежащих космических тел, отображающий их позицию и массу.
+
+ent-ComputerResearchAndDevelopment = исследовательская консоль
+    .desc = Компьютер, используемый для взаимодействия с оборудованием для НИОКР.
+
+ent-ComputerRoboticsControl = консоль управления робототехникой
+    .desc = Используется для дистанционного контроля, отключения и уничтожения киборгов станции.
+
+ent-ComputerSensorMonitoring = консоль мониторинга датчиков
+    .desc = Гибкая консоль для мониторинга всех видов датчиков.
+    .suffix = ТЕСТ, НЕ МАППИТЬ
+
+ent-ComputerShuttle = консоль управления шаттлом
+    .desc = Используется для пилотирования корабля.
+
+ent-ComputerShuttleCargo = консоль управления грузовым шаттлом
+    .desc = Используется для пилотирования грузового шаттла.
+
+ent-ComputerShuttleSyndie = консоль управления шаттлом Синдиката
+    .desc = Используется для пилотирования корабля Синдиката.
+
+ent-ComputerSolarControl = консоль контроля солнечных батарей
+    .desc = Контроллер массивов солнечных батарей.
+
+ent-ComputerStationRecords = консоль реестра персонала
+    .desc = Предназначена для просмотра, редактирования и печати персональных записей сотрудников. Обеспечивает доступ к досье, биометрическим данным и служебным характеристикам персонала. Все изменения фиксируются. Использование терминала без соответствующего допуска запрещено.
+
+ent-ComputerSurveillanceCameraMonitor = монитор камер
+    .desc = Монитор камер наблюдения. Вы наблюдаете за ними. Возможно.
+
+ent-ComputerSurveillanceWirelessCameraMonitor = монитор беспроводных камер
+    .desc = Монитор беспроводных камер наблюдения. Вы наблюдаете за ними. Возможно.
+
+ent-StationAiFixerComputer = консоль восстановления ИИ
+    .desc = Используется для ремонта поврежденных искусственных интеллектов.
+
+ent-StationAiUploadComputer = консоль загрузки ИИ
+    .desc = Используется для обновления законов станционного ИИ.
+
+ent-SyndicateComputerComms = консоль связи Синдиката
+    .desc = Консоль, позволяющая удалённо вмешиваться в систему связи станции. Использование этой консоли для подачи объявления предупредит станцию о вашем присутствии.

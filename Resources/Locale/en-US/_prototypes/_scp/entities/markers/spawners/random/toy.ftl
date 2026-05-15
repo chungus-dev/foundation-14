@@ -1,10 +1,10 @@
-ent-ScpToySpawner = { ent-ToySpawner }
-    .desc = { ent-ToySpawner.desc }
+ent-ScpToySpawner = Toy Spawner
+    .desc = { ent-MarkerBase.desc }
 ent-ScpPlushieCatSpawner = plushie cat spawner
     .desc = { ent-MarkerBase.desc }
 ent-ScpPlushieFoxSpawner = plushie fox spawner
     .desc = { ent-MarkerBase.desc }
-ent-ScpFigureSpawner = { ent-FigureSpawner }
-    .desc = { ent-FigureSpawner.desc }
-ent-ScpSpacemenFigureSpawner = { ent-SpacemenFigureSpawner }
-    .desc = { ent-SpacemenFigureSpawner.desc }
+ent-ScpFigureSpawner = Prize Figurine Spawner
+    .desc = { ent-MarkerBase.desc }
+ent-ScpSpacemenFigureSpawner = Spacemen Minifigure Spawner
+    .desc = { ent-MarkerBase.desc }

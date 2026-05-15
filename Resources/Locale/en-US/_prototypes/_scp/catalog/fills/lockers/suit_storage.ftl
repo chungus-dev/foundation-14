@@ -16,3 +16,27 @@ ent-SuitStorageChiefTechnicalSpecialist = { ent-SuitStorageCE }
 ent-SuitStorageLifeSupport = { ent-SuitStorageAtmos }
     .suffix = Life support
     .desc = { ent-SuitStorageAtmos.desc }
+
+ent-SuitStorageAtmos = { ent-SuitStorageBase }
+    .suffix = Atmospheric Technician
+    .desc = { ent-SuitStorageBase.desc }
+
+ent-SuitStorageCaptain = { ent-SuitStorageBase }
+    .suffix = Captain
+    .desc = { ent-SuitStorageBase.desc }
+
+ent-SuitStorageCE = { ent-SuitStorageBase }
+    .suffix = Chief Engineer
+    .desc = { ent-SuitStorageBase.desc }
+
+ent-SuitStorageCMO = { ent-SuitStorageBase }
+    .suffix = Chief Medical Officer
+    .desc = { ent-SuitStorageBase.desc }
+
+ent-SuitStorageHOS = { ent-SuitStorageBase }
+    .suffix = Head of Security
+    .desc = { ent-SuitStorageBase.desc }
+
+ent-SuitStorageRD = { ent-SuitStorageBase }
+    .suffix = Research Director
+    .desc = { ent-SuitStorageBase.desc }

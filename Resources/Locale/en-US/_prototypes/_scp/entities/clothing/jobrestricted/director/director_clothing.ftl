@@ -1,7 +1,7 @@
-ent-ClothingHeadHatDirector = { ent-ClothingHeadHatIAA }
-    .desc = { ent-ClothingHeadHatIAA.desc }
-ent-ClothingUniformJumpsuitDirector = { ent-ClothingUniformJumpsuitNtrep }
-    .desc = { ent-ClothingUniformJumpsuitNtrep.desc }
+ent-ClothingHeadHatDirector = mystery hat
+    .desc = Black and white style hat. Reminiscent of secret agents from movies and TV shows.
+ent-ClothingUniformJumpsuitDirector = nt representive suit
+    .desc = That suit that is better not to see.
 ent-ClothingOuterCoatDirectorTrench = { ent-ClothingOuterCoatHoSTrench }
     .desc = { ent-ClothingOuterCoatHoSTrench.desc }
 ent-ClothingHandsGlovesDirectorSpecial = { ent-ClothingHandsGlovesHop }

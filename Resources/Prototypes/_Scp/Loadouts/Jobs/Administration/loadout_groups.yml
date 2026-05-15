@@ -140,13 +140,6 @@
   - ScpLoadoutSecurityCommanderFormalSuit
   - ScpLoadoutSecurityCommanderFormalJumpskirt
 
-- type: loadoutGroup
-  id: ScpLoadoutGroupSecurityCommanderWeapon
-  name: loadout-group-weapon
-  loadouts:
-  - ScpLoadoutWeaponPistolACP14
-  - ScpLoadoutWeaponRevolverMatebaNew
-
 # Chief Technical Specialist
 
 - type: loadoutGroup

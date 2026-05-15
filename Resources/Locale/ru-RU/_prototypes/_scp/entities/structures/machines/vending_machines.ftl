@@ -53,3 +53,59 @@ ent-ScpVendingMachineO5Drobe = торговый автомат экипиров�
     .desc = { ent-VendingMachineCentDrobe.desc }
 ent-ScpVendingMachineChemicals = { ent-VendingMachineChemicals }
     .desc = { ent-VendingMachineChemicals.desc }
+
+ent-VendingBarDrobe = БарДероб
+    .desc = Стильный автомат для раздачи самой стильной барной униформы!
+
+ent-VendingMachine = торговый автомат
+    .desc = Просто добавь капитализма!
+
+ent-VendingMachineBooze = АлкоМат
+    .desc = Чудо технологической мысли, по замыслу способное смешать именно ту смесь, которую вы хотите выпить, стоит вам только попросить.
+
+ent-VendingMachineBoozeSyndicate = КровоМат
+    .desc = Переделанный АлкоМат для повышения боевого духа оперативников. На одной стороне виден отпечаток кроваво-красного боевого костюма, а краска на другой стороне будто бы обгорела.
+
+ent-VendingMachineCargoDrobe = ГрузоШкаф
+    .desc = Высокотехнологичный торговый автомат для бесплатной покупки одежды, связанной с доставкой грузов.
+
+ent-VendingMachineCart = ПТех
+    .desc = Автомат ПТех! Предоставляем ШИКАРНЫЙ выбор картриджей для КПК.
+
+ent-VendingMachineCentDrobe = ЦентШкаф
+    .desc = Единственный в своём роде торговый автомат для удовлетворения всех ваших командных эстетических потребностей!
+
+ent-VendingMachineChefDrobe = ШефШкаф
+    .desc = Этот торговый автомат, возможно, и не выдаёт мясо, но он точно выдаёт одежду для поваров.
+
+ent-VendingMachineChemDrobe = ХимШкаф
+    .desc = Торговый автомат для выдачи одежды, связанной с химией.
+
+ent-VendingMachineChemicals = ХимкоМат
+    .desc = Вероятно, не кофемашина.
+
+ent-VendingMachineDinnerware = ПосудоМат
+    .desc = Поставщик оборудования для кухонь и ресторанов.
+
+ent-VendingMachineHydrobe = ГидроРоб
+    .desc = Автомат с запоминающимся названием. Он раздаёт одежду и снаряжение, связанные с ботаникой.
+
+ent-VendingMachineJaniDrobe = УборШкаф
+    .desc = Самоочищающийся торговый автомат, выдающий одежду для уборщиков.
+
+ent-VendingMachineLawDrobe = ЗаконШкаф
+    .desc = Протест! Этот шкаф обеспечивает верховенство закона... и адвоката одеждой...
+
+ent-VendingMachineNutri = БотаМакс
+    .desc = Торговый автомат, содержащий питательные средства для растений и ботанические инструменты.
+
+ent-VendingMachineSeeds = { ent-VendingMachineSeedsUnlocked }
+    .desc = { ent-VendingMachineSeedsUnlocked.desc }
+    .suffix = Гидропоника
+
+ent-VendingMachineSeedsUnlocked = МегаРаздатчик Семян
+    .desc = Для тех случаев, когда семена нужны срочно. Лучший ассортимент семян на станции!
+    .suffix = Разблокированный
+
+ent-VendingMachineSyndieDrobe = СиндиШкаф
+    .desc = Шкаф-машина, закодированная синдикатом, содержит элитную экипировку для различных операций.

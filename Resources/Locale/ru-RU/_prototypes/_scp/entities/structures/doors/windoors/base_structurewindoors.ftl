@@ -10,3 +10,9 @@ ent-ScpBaseUraniumWindoor = { ent-BaseWindoor }
     .desc = { ent-BaseWindoor.desc }
 ent-ScpBaseSecureUraniumWindoor = { ent-BaseSecureWindoor }
     .desc = { ent-BaseSecureWindoor.desc }
+
+ent-BaseSecureWindoor = { ent-BaseWindoor }
+    .desc = { ent-BaseWindoor.desc }
+
+ent-BaseWindoor = { ent-BaseStructure }
+    .desc = { ent-BaseStructure.desc }

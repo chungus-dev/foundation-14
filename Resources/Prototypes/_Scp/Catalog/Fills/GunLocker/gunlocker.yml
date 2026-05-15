@@ -193,7 +193,9 @@
     - state: locked
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
-  - type: StorageFill
-    contents:
-      - id: WeaponRifleAR18
-        amount: 4
+  # Scp edit start - disabled broken ported AR18 content.
+  # - type: StorageFill
+  #   contents:
+  #   - id: WeaponRifleAR18
+  #     amount: 4
+  # Scp edit end

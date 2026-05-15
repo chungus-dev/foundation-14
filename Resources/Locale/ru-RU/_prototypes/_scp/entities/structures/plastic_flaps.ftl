@@ -12,3 +12,6 @@ ent-ScpPlasticFlapsAirtightClear = герметичные пластиковые
 ent-ScpPlasticFlapsAirtightOpaque = герметичные пластиковые занавески
     .desc = Прочные, чуть крепче обычных, герметичные пластиковые занавески. Пройти через них? Ха! Даже не мечтай.
     .suffix = Герметичные, Непрозрачные
+
+ent-PlasticFlapsBase = { ent-BaseStructureDynamic }
+    .desc = { ent-BaseStructureDynamic.desc }

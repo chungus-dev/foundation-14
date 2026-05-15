@@ -75,3 +75,63 @@ ent-ScpAirlockHydroponicsGlass = { ent-AirlockGlass }
 ent-ScpAirlockMaintGlass = { ent-AirlockGlass }
     .suffix = { id-card-access-level-maintenance }
     .desc = { ent-AirlockGlass.desc }
+
+ent-AirlockEngineering = { ent-Airlock }
+    .suffix = Инженерный
+    .desc = { ent-Airlock.desc }
+
+ent-AirlockEngineeringGlass = { ent-AirlockGlass }
+    .suffix = Инженерный
+    .desc = { ent-AirlockGlass.desc }
+
+ent-AirlockFreezer = { ent-Airlock }
+    .suffix = Морозильник
+    .desc = { ent-Airlock.desc }
+
+ent-AirlockHydroponics = { ent-Airlock }
+    .suffix = Гидропоника
+    .desc = { ent-Airlock.desc }
+
+ent-AirlockHydroponicsGlass = { ent-AirlockGlass }
+    .suffix = Гидропоника
+    .desc = { ent-AirlockGlass.desc }
+
+ent-AirlockMaint = { ent-Airlock }
+    .desc = { ent-Airlock.desc }
+    .suffix = Техобслуживание
+
+ent-AirlockMaintGlass = { ent-AirlockGlass }
+    .suffix = Техобслуживание
+    .desc = { ent-AirlockGlass.desc }
+
+ent-AirlockMedical = { ent-Airlock }
+    .suffix = Медицинский
+    .desc = { ent-Airlock.desc }
+
+ent-AirlockMedicalGlass = { ent-AirlockGlass }
+    .suffix = Медицинский
+    .desc = { ent-AirlockGlass.desc }
+
+ent-AirlockScience = { ent-Airlock }
+    .suffix = Научный
+    .desc = { ent-Airlock.desc }
+
+ent-AirlockScienceGlass = { ent-AirlockGlass }
+    .suffix = Научный
+    .desc = { ent-AirlockGlass.desc }
+
+ent-AirlockSecurity = { ent-Airlock }
+    .suffix = Служба Безопасности
+    .desc = { ent-Airlock.desc }
+
+ent-AirlockSecurityGlass = { ent-AirlockGlass }
+    .suffix = Служба Безопасности
+    .desc = { ent-AirlockGlass.desc }
+
+ent-AirlockVirology = { ent-AirlockMedical }
+    .suffix = Вирусология
+    .desc = { ent-AirlockMedical.desc }
+
+ent-AirlockVirologyGlass = { ent-AirlockMedicalGlass }
+    .suffix = Вирусология
+    .desc = { ent-AirlockMedicalGlass.desc }

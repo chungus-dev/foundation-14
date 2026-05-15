@@ -306,7 +306,7 @@
     interactFailureString: petting-failure-cleanbot
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
-    range: 0
+    # Scp edit - removed obsolete InteractionPopup range field.
 
 - type: entity
   parent:

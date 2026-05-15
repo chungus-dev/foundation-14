@@ -1,2 +1,2 @@
 ent-LocusKitUpgrade = upgrade kit (locus)
-    .desc = { ent-BaseSecurityUpgrade.desc }
+    .desc = { ent-BaseItem.desc }

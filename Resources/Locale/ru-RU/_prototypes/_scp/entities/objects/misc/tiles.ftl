@@ -130,3 +130,18 @@ ent-ScpFloorAnechoic2 = { ent-ScpFloorAnechoic1 }
     .desc = { ent-ScpFloorAnechoic1.desc }
 ent-ScpFloorAnechoic3 = { ent-ScpFloorAnechoic1 }
     .desc = { ent-ScpFloorAnechoic1.desc }
+
+ent-FloorTileItemBase = { ent-BaseItem }
+    .desc = Может послужить неплохим метательным оружием.
+
+ent-FloorTileItemConcrete = бетонная плитка
+    .desc = { ent-FloorTileItemBase.desc }
+
+ent-FloorTileItemWood = деревянный пол
+    .desc = { ent-FloorTileItemBase.desc }
+
+ent-FloorTileItemWoodLarge = большой деревянный пол
+    .desc = { ent-FloorTileItemBase.desc }
+
+ent-FloorTileItemWoodPattern = деревянный узорчатый пол
+    .desc = { ent-FloorTileItemBase.desc }

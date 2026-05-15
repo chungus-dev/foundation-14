@@ -12,3 +12,6 @@ ent-ScpPlasticFlapsAirtightClear = airtight plastic flaps
 ent-ScpPlasticFlapsAirtightOpaque = airtight plastic flaps
     .desc = Heavy duty, slightly stronger, airtight plastic flaps. Definitely can't get past those. No way.
     .suffix = Airtight, Opaque
+
+ent-PlasticFlapsBase = { ent-BaseStructureDynamic }
+    .desc = { ent-BaseStructureDynamic.desc }

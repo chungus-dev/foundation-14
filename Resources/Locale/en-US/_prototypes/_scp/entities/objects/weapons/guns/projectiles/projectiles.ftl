@@ -1,2 +1,2 @@
 ent-BulletAmnesiacAGasGrenade = amnesiac gase grenade
-    .desc = { ent-BulletSmokeGrenade.desc }
+    .desc = { ent-BaseItem.desc }

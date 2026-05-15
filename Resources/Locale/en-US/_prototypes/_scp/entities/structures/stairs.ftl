@@ -14,3 +14,15 @@ ent-StairScpWood = { ent-StairWood }
     .desc = { ent-StairWood.desc }
 ent-StairScpWoodStage = { ent-StairStageWood }
     .desc = { ent-StairStageWood.desc }
+
+ent-Stairs = stairs
+    .desc = The greatest invention since rocket-propelled grenades.
+    .suffix = Steel
+
+ent-StairStageWood = { ent-Stairs }
+    .suffix = Wood, stage
+    .desc = { ent-Stairs.desc }
+
+ent-StairWood = { ent-Stairs }
+    .suffix = Wood
+    .desc = { ent-Stairs.desc }

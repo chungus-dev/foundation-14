@@ -6,3 +6,6 @@ ent-ClassDBotanistIDCard = { ent-ClassDIDCard }
     .desc = { ent-ClassDIDCard.desc }
 ent-ClassDJanitorIDCard = { ent-ClassDIDCard }
     .desc = { ent-ClassDIDCard.desc }
+
+ent-IDCardStandard = ID карта
+    .desc = Карта, необходимая для доступа в различные области комплекса.

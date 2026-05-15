@@ -8,5 +8,4 @@
     revertOnDeath: false
     revertOnCrit: false
     revertOnDelete: false
-    polymorphSound: /Audio/_Scp/FleshCult/devour_flesh_cultist.ogg
     polymorphPopup: polymorph-popup-scp427
