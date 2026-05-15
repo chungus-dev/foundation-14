@@ -1,0 +1,3 @@
+# Scp added - group used by restored SCP reagent reactions.
+- type: reactiveGroup
+  id: Unholy

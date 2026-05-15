@@ -12,3 +12,18 @@ reagent-desc-scp173 = Красно-бурая вязкая жидкость, р�
 scp173-reagent-effect-nausea = Вас тошнит от этой мерзости!
 scp173-reagent-effect-disgusting = Эта смесь вызывает сильное отвращение!
 scp173-reagent-effect-burning = Внутри все горит от этой отвратительной субстанции!
+
+reagent-name-scp330-vomit = SCP-330: рвота
+reagent-desc-scp330-vomit = Вызывает рвоту.
+
+reagent-name-scp330-heal = SCP-330: лечение
+reagent-desc-scp330-heal = Постепенно исцеляет все типы урона.
+
+reagent-name-scp330-calm-down = SCP-330: успокоение
+reagent-desc-scp330-calm-down = Вызывает успокаивающий эффект.
+
+reagent-name-scp330-paralysis = SCP-330: паралич
+reagent-desc-scp330-paralysis = Вызывает временный паралич.
+
+reagent-name-scp330-nothing = SCP-330: без эффекта
+reagent-desc-scp330-nothing = Ничего не делает.

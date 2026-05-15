@@ -11,80 +11,77 @@
   id: Scp330Vomit
   name: reagent-name-scp330-vomit
   desc: reagent-desc-scp330-vomit
-  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
-# Scp edit - disabled broken ported content.     Food:
-#       effects:
-#       - !type:SatiateHunger
-#         factor: 0.5
-#       - !type:Vomit
-#         conditions:
-#         - !type:ReagentCondition
-#           reagent: Scp330Vomit
-#           min: 1
-#
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateHunger
+        factor: 0.5
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: Scp330Vomit
+          min: 1
 - type: reagent
   parent: BaseScp330Reagent
   id: Scp330PoisonHeal
   name: reagent-name-scp330-heal
   desc: reagent-desc-scp330-heal
-  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
-# Scp edit - disabled outdated metabolism group.     Food:
-#       effects:
-#       - !type:SatiateHunger
-#         factor: 0.5
-# Scp edit - disabled broken ported content.     Medicine:
-#       effects:
-#       - !type:HealthChange
-#         damage:
-#           groups:
-#             Brute: -2
-#             Burn: -2
-#             Toxin: -2
-#             Genetic: -2
-#
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateHunger
+        factor: 0.5
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Brute: -2
+          Burn: -2
+          Toxin: -2
+          Genetic: -2
 - type: reagent
   parent: BaseScp330Reagent
   id: Scp330CalmDown
   name: reagent-name-scp330-calm-down
   desc: reagent-desc-scp330-calm-down
-  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
-# Scp edit - disabled outdated metabolism group.     Food:
-#       effects:
-#       - !type:SatiateHunger
-#         factor: 0.5
-#       - !type:CalmDownEffect
-#         speedUpBy: 10
-#         conditions:
-#         - !type:ReagentCondition
-#           reagent: Scp330CalmDown
-#           min: 1
-#
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateHunger
+        factor: 0.5
+      - !type:CalmDownEffect
+        speedUpBy: 10
+        conditions:
+        - !type:ReagentCondition
+          reagent: Scp330CalmDown
+          min: 1
+
 - type: reagent
   parent: BaseScp330Reagent
   id: Scp330Nothing
   name: reagent-name-scp330-nothing
   desc: reagent-desc-scp330-nothing
-  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
-# Scp edit - disabled outdated metabolism group.     Food:
-#       effects:
-#       - !type:SatiateHunger
-#         factor: 0.5
-#
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateHunger
+        factor: 0.5
+
 - type: reagent
   parent: BaseScp330Reagent
   id: Scp330Paralysis
   name: reagent-name-scp330-paralysis
   desc: reagent-desc-scp330-paralysis
-  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
-# Scp edit - disabled outdated metabolism group.     Food:
-#       effects:
-#       - !type:SatiateHunger
-#         factor: 0.5
-#       - !type:ModifyStatusEffect
-#         effectProto: StatusEffectFearStupor
-#         time: 10
-#         type: Add
-#         conditions:
-#         - !type:ReagentCondition
-#           reagent: Scp330Paralysis
-#           min: 1
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateHunger
+        factor: 0.5
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectFearStupor
+        time: 10
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: Scp330Paralysis
+          min: 1

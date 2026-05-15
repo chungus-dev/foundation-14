@@ -11,57 +11,57 @@
   boilingPoint: 100.0
   meltingPoint: 0.0
   friction: 0.4
-  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
-# Scp edit - disabled broken ported content.     Medicine:
-#       effects:
-#       - !type:EyeDamage
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
-#       - !type:Emote
-#         emote: Crying
-#         probability: 0.3
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
-#       - !type:ModifyStatusEffect # TODO: Шанс срабатывания
-#         effectProto: StatusEffectFearStupor
-#         time: 1
-#         type: Add
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
-#       - !type:AdjustTemperature
-#         amount: -3000
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
-#       - !type:MovementSpeedModifier
-#         walkSpeedModifier: 1.1
-#         sprintSpeedModifier: 1.1
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
-#       - !type:Jitter
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
-#       - !type:Vomit
-#         probability: 0.05
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
-# Scp edit - disabled broken ported content.     Drink:
-#       effects:
-#       - !type:SatiateThirst
-#         factor: 4
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EyeDamage
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:Emote
+        emote: Crying
+        probability: 0.3
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectFearStupor
+        time: 1
+        type: Add
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:AdjustTemperature
+        amount: -3000
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.1
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:Jitter
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:Vomit
+        probability: 0.05
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 4
   plantMetabolism:
   - !type:PlantAdjustWater
     amount: 2
@@ -109,39 +109,37 @@
   color: "#4F002B"
   recognizable: false
   physicalDesc: reagent-physical-desc-slimy
-  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
-# Scp edit - disabled broken ported content.     Poison:
-#       effects:
-#       - !type:Vomit
-#         probability: 0.15
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
-#       - !type:Jitter
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
-#       - !type:AdjustTemperature
-#         amount: -5000
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
-# Scp edit - disabled outdated metabolism group.     Medicine:
-#       effects:
-#       - !type:Oxygenate
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
-#       - !type:ReduceRotting
-#         seconds: 5
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Scp096 ]
-#           inverted: true
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:Vomit
+        probability: 0.15
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:Jitter
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:AdjustTemperature
+        amount: -5000
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:Oxygenate
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
+      - !type:ReduceRotting
+        seconds: 5
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Scp096 ]
+          inverted: true
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 15
@@ -172,16 +170,16 @@
       - !type:Extinguish
       - !type:AdjustTemperature
         amount: -4000
-# Scp edit - disabled broken ported content.     Unholy:
-#       methods: [ Touch ]
-#       effects:
-#       - !type:HealthChange
-#         damage:
-#           types:
-#             Heat: 3
-#       - !type:Emote
-#         emote: Scream
-#         probability: 0.5
+    Unholy:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 3
+      - !type:Emote
+        emote: Scream
+        probability: 0.5
   tileReactions:
   - !type:SpillTileReaction
   - !type:ExtinguishTileReaction

@@ -6,17 +6,16 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: jelly
   color: "#d38323"
-  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
-# Scp edit - disabled broken ported content.     Food:
-#       effects:
-#       - !type:HealthChange # TODO: Моментальный эффект
-#         damage:
-#           groups:
-#             Burn: -5
-#             Brute: -5
-#             Airloss: -5
-#             Toxin: -5
-#
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Burn: -5
+          Brute: -5
+          Airloss: -5
+          Toxin: -5
+
 - type: reagent
   id: JellyPizzaReagent
   name: reagent-name-jelly-pizza
@@ -25,13 +24,12 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: jelly
   color: "#d38323"
-  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
-# Scp edit - disabled outdated metabolism group.     Food:
-#       effects:
-#       - !type:HealthChange
-#         damage:
-#           groups:
-#             Burn: -10
-#             Brute: -10
-#             Airloss: -10
-#             Toxin: -10
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Burn: -10
+          Brute: -10
+          Airloss: -10
+          Toxin: -10
