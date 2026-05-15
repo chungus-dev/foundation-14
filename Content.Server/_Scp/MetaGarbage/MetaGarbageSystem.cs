@@ -113,7 +113,7 @@ public sealed partial class MetaGarbageSystem : EntitySystem
         if (!_enableSpawning)
             return false;
 
-        if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2))
+        if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2, false))
             return false;
 
         var mapPrototype = Prototype(ent);

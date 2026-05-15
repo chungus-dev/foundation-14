@@ -31,13 +31,15 @@ public sealed partial class RandomHumanoidSettingsPrototype : IPrototype, IInher
     [DataField("speciesBlacklist")]
     public HashSet<string> SpeciesBlacklist { get; private set; } = new();
 
-    [DataField]
-    public List<Gender>? GenderWhitelist = [];
-
     /// <summary>
     ///     Extra components to add to this entity.
     /// </summary>
     [DataField]
     [AlwaysPushInheritance]
     public ComponentRegistry? Components { get; private set; }
+
+    // Scp added start
+    [DataField]
+    public List<Gender>? GenderWhitelist;
+    // Scp added end
 }

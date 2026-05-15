@@ -2572,4 +2572,7 @@ ScpComputerMedicalServiceSaleConsole: ScpComputerSaleConsole
 ScpComputerScientificServiceSaleConsole: ScpComputerSaleConsole
 WeaponRifleAR18: null
 WeaponRifleAKM: null
+
+Girder: ScpGirder
+ReinforcedGirder: ScpReinforcedGirder
 # Fire added end

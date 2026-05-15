@@ -8,15 +8,15 @@ namespace Content.IntegrationTests.Tests.Interaction;
 public abstract partial class InteractionTest
 {
     // Tiles
-    protected const string Floor = "FloorSteel";
-    protected const string FloorItem = "FloorTileItemSteel";
-    protected const string Plating = "Plating";
-    protected const string PlatingRCD = "PlatingRCD";
+    protected const string Floor = "ScpFloorSteel"; // Scp edit
+    protected const string FloorItem = "ScpFloorTileItemSteel"; // Scp edit
+    protected const string Plating = "ScpPlating"; // Scp edit
+    protected const string PlatingRCD = "ScpPlating"; // Scp edit
     protected const string Lattice = "Lattice";
     protected const string PlatingBrass = "PlatingBrass";
 
     // Structures
-    protected const string Airlock = "Airlock";
+    protected const string Airlock = "ScpAirlock"; // Scp edit
 
     // Tools/steps
     protected const string Wrench = "Wrench";

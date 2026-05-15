@@ -1911,8 +1911,6 @@ entities:
           pitch: 1
           volume: 2
         path: /Audio/Ambience/ambiruin2.ogg
-      minPointsPerSecond: 40
-      maxPointsPerSecond: 170
       growingPointMultiplier: 0
       corePrototype: AnomalyBluespace
       coreInertPrototype: MobAbomination

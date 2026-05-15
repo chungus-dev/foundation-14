@@ -4,8 +4,8 @@ namespace Content.IntegrationTests.Tests.Construction.Interaction;
 
 public sealed class WallConstruction : InteractionTest
 {
-    public const string Girder = "Girder";
-    public const string WallSolid = "WallSolid";
+    public const string Girder = "ScpGirder";
+    public const string WallSolid = "ScpWallSolid"; // Scp edit
     public const string Wall = "Wall";
 
     [Test]

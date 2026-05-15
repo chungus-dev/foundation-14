@@ -1,0 +1,15 @@
+- type: entity
+  parent: Girder
+  id: ScpGirder
+  components:
+  - type: Construction
+    graph: ScpGirder
+    node: girder
+
+- type: entity
+  parent: ReinforcedGirder
+  id: ScpReinforcedGirder
+  components:
+  - type: Construction
+    graph: ScpGirder
+    node: reinforcedGirder

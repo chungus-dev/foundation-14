@@ -114,6 +114,7 @@ public sealed class SuicideCommandTests : GameTest
     /// This should only deal as much damage as necessary to get to the dead threshold
     /// </summary>
     [Test]
+    [Ignore("SCP: We disabled suicide damage")] // Scp added
     public async Task TestSuicideWhileDamaged()
     {
         var pair = Pair;
@@ -169,6 +170,7 @@ public sealed class SuicideCommandTests : GameTest
     /// Should only ghost the player but not kill them
     /// </summary>
     [Test]
+    [Ignore("SCP: We disabled suicide damage")] // Scp added
     public async Task TestSuicideWhenCannotSuicide()
     {
         var pair = Pair;
@@ -281,6 +283,7 @@ public sealed class SuicideCommandTests : GameTest
     /// with damage spread between slash and blunt
     /// </summary>
     [Test]
+    [Ignore("SCP: We disabled suicide damage")] // Scp added
     public async Task TestSuicideByHeldItemSpreadDamage()
     {
         var pair = Pair;

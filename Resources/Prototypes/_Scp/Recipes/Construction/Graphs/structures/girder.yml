@@ -1,5 +1,5 @@
 - type: constructionGraph
-  id: Girder
+  id: ScpGirder
   start: start
   graph:
     - node: start
@@ -14,7 +14,7 @@
               doAfter: 1
 
     - node: girder
-      entity: Girder
+      entity: ScpGirder
       edges:
         - to: start
           completed:
@@ -135,7 +135,7 @@
               doAfter: 2
 
     - node: wall
-      entity: WallSolid
+      entity: ScpWallSolid
       edges:
         - to: girder
           conditions:
@@ -256,7 +256,7 @@
               doAfter: 5
 
     - node: reinforcedGirder
-      entity: ReinforcedGirder
+      entity: ScpReinforcedGirder
       edges:
         - to: reinforcedWall
           completed:
@@ -312,7 +312,7 @@
               doAfter: 2
 
     - node: reinforcedWall
-      entity: WallReinforced
+      entity: ScpWallReinforced
       edges:
         - to: reinforcedGirder
           conditions:
@@ -510,7 +510,7 @@
               doAfter: 1
 
     - node: wallrust
-      entity: WallSolidRust
+      entity: ScpWallSolidRust
       edges:
         - to: wall
           steps:
@@ -522,7 +522,7 @@
               doAfter: 4
 
     - node: reinforcedWallRust
-      entity: WallReinforcedRust
+      entity: ScpWallReinforcedRust
       edges:
         - to: reinforcedWall
           steps:

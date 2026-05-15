@@ -4,9 +4,9 @@ namespace Content.IntegrationTests.Tests.Construction.Interaction;
 
 public sealed class ComputerConstruction : InteractionTest
 {
-    private const string Computer = "Computer";
-    private const string ComputerId = "ComputerId";
-    private const string ComputerFrame = "ComputerFrame";
+    private const string Computer = "ScpComputer"; // Scp edit
+    private const string ComputerId = "ScpComputerId"; // Scp edit
+    private const string ComputerFrame = "ScpComputerFrame"; // Scp edit
     private const string IdBoard = "IDComputerCircuitboard";
 
     [Test]
@@ -91,7 +91,7 @@ public sealed class ComputerConstruction : InteractionTest
             Screw);
 
         // Construction finished, target entity was replaced with a new one:
-        AssertPrototype("ComputerCargoOrders");
+        AssertPrototype("ScpComputerLogisticsOrders"); // Scp edit
     }
 }
 

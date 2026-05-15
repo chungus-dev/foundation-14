@@ -121,6 +121,9 @@
     sprite: _Scp/Structures/Walls/solid.rsi
   - type: Icon
     sprite: _Scp/Structures/Walls/solid.rsi
+  - type: Construction
+    graph: ScpGirder
+    node: wall
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicScp
@@ -140,6 +143,9 @@
     sprite: _Scp/Structures/Walls/solid_rust.rsi
   - type: Icon
     sprite: _Scp/Structures/Walls/solid_rust.rsi
+  - type: Construction
+    graph: ScpGirder
+    node: wallrust
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicScp
@@ -213,6 +219,9 @@
     sprite: _Scp/Structures/Walls/solid.rsi
   - type: Icon
     sprite: _Scp/Structures/Walls/solid.rsi
+  - type: Construction
+    graph: ScpGirder
+    node: reinforcedWall
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrongScp
@@ -253,6 +262,9 @@
     sprite: _Scp/Structures/Walls/solid_rust.rsi
   - type: Icon
     sprite: _Scp/Structures/Walls/solid_rust.rsi
+  - type: Construction
+    graph: ScpGirder
+    node: reinforcedWallRust
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrongScp

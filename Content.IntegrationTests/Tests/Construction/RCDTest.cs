@@ -12,10 +12,10 @@ namespace Content.IntegrationTests.Tests.Construction;
 public sealed class RCDTest : InteractionTest
 {
     private static readonly EntProtoId RCDProtoId = "RCD";
-    private static readonly ProtoId<RCDPrototype> RCDSettingWall = "WallSolid";
-    private static readonly ProtoId<RCDPrototype> RCDSettingAirlock = "Airlock";
-    private static readonly ProtoId<RCDPrototype> RCDSettingPlating = "Plating";
-    private static readonly ProtoId<RCDPrototype> RCDSettingFloorSteel = "FloorSteel";
+    private static readonly ProtoId<RCDPrototype> RCDSettingWall = "ScpWallSolid"; // Scp edit
+    private static readonly ProtoId<RCDPrototype> RCDSettingAirlock = "ScpAirlock"; // Scp edit
+    private static readonly ProtoId<RCDPrototype> RCDSettingPlating = "ScpPlating"; // Scp edit
+    private static readonly ProtoId<RCDPrototype> RCDSettingFloorSteel = "ScpFloorSteel"; // Scp edit
     private static readonly ProtoId<RCDPrototype> RCDSettingDeconstruct = "Deconstruct";
     private static readonly ProtoId<RCDPrototype> RCDSettingDeconstructTile = "DeconstructTile";
     private static readonly ProtoId<RCDPrototype> RCDSettingDeconstructLattice = "DeconstructLattice";

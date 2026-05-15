@@ -196,6 +196,8 @@ public sealed partial class AnomalyComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? ConnectedVessel;
 
+    // Scp edit start - multipoint Rnd system support
+
     /// <summary>
     /// The minimum amount of research points generated per second
     /// </summary>
@@ -214,6 +216,7 @@ public sealed partial class AnomalyComponent : Component
     {
         { "Default", 70 },
     };
+    // Scp edit end
 
     /// <summary>
     /// The multiplier applied to the point value for the

@@ -87,9 +87,9 @@
       - FloorDark
   - type: Stack
     stackType: FloorTileDark
-  # - type: Construction # Fire Edit
-  #   graph: TileDark
-  #   node: darktile
+  - type: Construction
+    graph: TileDark
+    node: darktile
 
 - type: entity
   name: dark steel diagonal mini tile
@@ -433,9 +433,9 @@
       - FloorWhite
   - type: Stack
     stackType: FloorTileWhite
-  # - type: Construction # Fire Edit
-  #   graph: TileWhite
-  #   node: whitetile
+  - type: Construction
+    graph: TileWhite
+    node: whitetile
 
 - type: entity
   name: offset white steel tile
