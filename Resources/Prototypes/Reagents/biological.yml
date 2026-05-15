@@ -4,7 +4,7 @@
   group: Biological
   desc: reagent-desc-blood
   flavor: metallic
-  color: "#400000" # Fire edit
+  color: "#400000" # Scp edit
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/bloodglass.rsi
     state: icon_empty
@@ -13,32 +13,32 @@
   metamorphicChangeColor: false
   recognizable: true
   standsout: true
-  absorbCooldownPerUnit: 0.2 # Fire added
+  absorbCooldownPerUnit: 0.2 # Scp added
   physicalDesc: reagent-physical-desc-ferrous
-  metabolisms: {} # Scp edit - outdated metabolism groups disabled.
-# Scp edit - disabled broken ported content.     Drink:
-#       effects:
-#       - !type:SatiateThirst
-#         factor: 1.0
-#         conditions:
-#           - !type:MetabolizerTypeCondition
-#             type: [ Human ]
-#             inverted: true
-# Scp edit - disabled broken ported content.     Food:
-#       effects:
-#         - !type:AdjustReagent
-#           reagent: UncookedAnimalProteins
-#           amount: 0.1
-# Scp edit - disabled broken ported content.     Medicine:
-#       effects:
-#       - !type:HealthChange
-#         conditions:
-#         - !type:MetabolizerTypeCondition
-#           type: [ Bloodsucker ]
-#         damage:
-#           groups:
-#             Brute: -3
-#             Burn: -1.25
+  metabolisms:
+    Digestion:
+      metabolites:
+        UncookedAnimalProteins: 0.2
+      effects:
+      - !type:SatiateThirst
+        factor: 1.0
+        conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Human ]
+            inverted: true
+      - !type:EvenHealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Bloodsucker ]
+        damage:
+          Brute: -3
+          Burn: -1.25
+    Bloodstream: # Don't inject someone else's blood into yourself! Your own blood won't actually metabolise.
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.2
   plantMetabolism:
     - !type:PlantAdjustWater
       amount: 0.5

@@ -81,7 +81,7 @@
             ClassDJanitor: [ 1, 1 ]
             # Система безопасности комплекса
             StationAi: [ 1, 1 ]
-        # Scp edit start - Sunrise RelativeJobsCount component is unavailable in Foundation14
+        # Scp edit start - RelativeJobsCount component is unavailable in Foundation14
         # - type: RelativeJobsCount
         #   jobs:
         #   - targetJob: ClassD

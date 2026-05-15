@@ -2,10 +2,6 @@
 - type: borgType
   id: generic
 
-  # Sunrise-Start
-# Scp edit - disabled broken ported content.   job: Borg
-  # Sunrise-End
-#
   # Description
   dummyPrototype: BorgChassisGeneric
 
@@ -17,22 +13,13 @@
     - BorgModuleScience #until sciborgs are added
 
   defaultModules:
+  - BorgModulePrying
   - BorgModuleTool
   - BorgModuleInflatable
   - BorgModuleArtifact
   - BorgModuleAnomaly
-
-  radioChannels: # Fire Edit
-  - ScientificService
-
-  # Sunrise-Start
-  # Scp edit start - old Sunrise borg footstep collection is unavailable.
-#   footstepCollection:
-# Scp edit - disabled broken ported content.     collection: FootstepCyborgSpider
-  #   params:
-  #     volume: -15
-  # Scp edit end
-  # Sunrise-End
+  radioChannels:
+  - ScientificService # Scp edit
 
   # Visual
   inventoryTemplateId: borgShort
@@ -50,52 +37,27 @@
 - type: borgType
   id: engineering
 
-  # Sunrise-Start
-  # Scp edit - job no longer exists on BorgTypePrototype.
-  # job: EngineerBorg
-  # Sunrise-End
-
   # Description
   dummyPrototype: BorgChassisEngineer
 
   # Functional
-  extraModuleCount: 5
+  extraModuleCount: 3
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
     - BorgModuleEngineering
 
   defaultModules:
-# Scp edit - disabled broken ported content.   - BorgModuleStandart
-  - BorgModuleAdvancedTool
-  - BorgModuleCable
+  - BorgModulePrying
+  - BorgModuleTool
   - BorgModuleConstruction
   - BorgModuleRCD
+  - BorgModuleCable
 
-  radioChannels: # Fire Edit
-  - ScientificService
-  - EngineeringTechnicalService
+  radioChannels:
+  - EngineeringTechnicalService # Scp edit
+  - ScientificService # Scp edit
 
-  # Sunrise-Start
-  footstepCollection:
-    collection: FootstepCyborgSpider
-    params:
-      volume: -15
-  addComponents:
-  # Fire added start
-  - type: ShowScp096FaceDamageHud
-  # Fire added end
-  - type: ShowHealthBars
-    damageContainers:
-    - Inorganic
-    - Silicon
-# Scp edit - disabled broken ported content.     - Mech
-#  - type: InnateItem # SCP port: component unavailable in Foundation14
-#    instantActions:
-#    - HandheldStationMapUnpowered
-#    - EngiAlertsMonitor
-  # Sunrise-End
-#
   # Visual
   inventoryTemplateId: borgShort
   spriteBodyState: engineer
@@ -107,146 +69,68 @@
   petSuccessString: petting-success-engineer-cyborg
   petFailureString: petting-failure-engineer-cyborg
 
-# Fire Edit - Start
+
+# Scp edit start - we don't need this
 # Salvage borg
-# - type: borgType
-#   id: mining
-
-#   # Sunrise-Start
-#   job: MiningBorg
-#   # Sunrise-End
-
-#   # Description
-#   dummyPrototype: BorgChassisMining
-
-#   # Functional
-#   extraModuleCount: 6
-#   moduleWhitelist:
-#     tags:
-#     - BorgModuleGeneric
-#     - BorgModuleCargo
-
-#   defaultModules:
-#   - BorgModuleStandart
-#   - BorgModuleMining
-#   - BorgModuleTraversal
-#   - BorgModuleAppraisal
-#   - BorgModuleMiningCombat
-
-#   radioChannels: # Fire Edit
-#   - LogisticsService
-#   - ScientificService
-
-#   # Sunrise-Start
-#   footstepCollection:
-#     collection: FootstepCyborgSpider
-#     params:
-#       volume: -15
-
-#   addComponents:
-#   - type: BorgJetpack
-#     acceleration: 1
-#     friction: 0.3
-#     weightlessModifier: 1.3
-#   - type: Appearance
-#   - type: GenericVisualizer
-#     visuals:
-#       enum.JetpackVisuals.Enabled:
-#         enum.JetpackVisuals.Layer:
-#           True: {state: icon-on}
-#           False: {state: icon}
-#   - type: InnateItem
-#     instantActions:
-#     - HandheldStationMapUnpowered
-#   # Sunrise-End
-
-#   # Visual
-#   inventoryTemplateId: borgTall
-#   spriteBodyState: miner
-#   spriteBodyMovementState: miner_moving
-#   spriteHasMindState: miner_e
-#   spriteNoMindState: miner_e_r
-#   spriteToggleLightState: miner_l
-
-#   # Pet
-#   petSuccessString: petting-success-salvage-cyborg
-#   petFailureString: petting-failure-salvage-cyborg
-# Fire Edit - End
+#- type: borgType
+#  id: mining
+#
+#  # Description
+#  dummyPrototype: BorgChassisMining
+#
+#  # Functional
+#  extraModuleCount: 3
+#  moduleWhitelist:
+#    tags:
+#    - BorgModuleGeneric
+#    - BorgModuleCargo
+#
+#  defaultModules:
+#  - BorgModulePrying
+#  - BorgModuleTool
+#  - BorgModuleMining
+#  - BorgModuleTraversal
+#  - BorgModuleAppraisal
+#
+#  radioChannels:
+#  - Supply
+#  - Science
+#
+#  # Visual
+#  inventoryTemplateId: borgTall
+#  spriteBodyState: miner
+#  spriteBodyMovementState: miner_moving
+#  spriteHasMindState: miner_e
+#  spriteNoMindState: miner_e_r
+#  spriteToggleLightState: miner_l
+#
+#  # Pet
+#  petSuccessString: petting-success-salvage-cyborg
+#  petFailureString: petting-failure-salvage-cyborg
+# Scp edit end
 
 # Janitor borg
 - type: borgType
-  id: mining
+  id: janitor
 
   # Description
-  dummyPrototype: BorgChassisMining
+  dummyPrototype: BorgChassisJanitor
 
   # Functional
   extraModuleCount: 3
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
-    - BorgModuleCargo
-
-  defaultModules:
-  - BorgModulePrying
-  - BorgModuleTool
-  - BorgModuleMining
-  - BorgModuleTraversal
-  - BorgModuleAppraisal
-
-  radioChannels:
-  - Supply
-  - Science
-
-  # Visual
-  inventoryTemplateId: borgTall
-  spriteBodyState: miner
-  spriteBodyMovementState: miner_moving
-  spriteHasMindState: miner_e
-  spriteNoMindState: miner_e_r
-  spriteToggleLightState: miner_l
-
-  # Pet
-  petSuccessString: petting-success-salvage-cyborg
-  petFailureString: petting-failure-salvage-cyborg
-
-
-# Janitor borg
-- type: borgType
-  id: janitor
-
-  # Sunrise-Start
-  # Scp edit - job no longer exists on BorgTypePrototype.
-  # job: JanitorBorg
-  # Sunrise-End
-
-  # Description
-  dummyPrototype: BorgChassisJanitor
-
-  # Functional
-  extraModuleCount: 4
-  moduleWhitelist:
-    tags:
-    - BorgModuleGeneric
     - BorgModuleJanitor
 
   defaultModules:
-  - BorgModuleTool # Scp edit - BorgModuleStandart is unavailable.
+  - BorgModulePrying
   - BorgModuleCleaning
   - BorgModuleCustodial
 
-  radioChannels: # Fire Edit
-  - ScientificService
-  - FoodAndSanitationService
-
-  # Sunrise-Start
-  # Scp edit start - old Sunrise janitor borg footstep collection is unavailable.
-#   footstepCollection:
-# Scp edit - disabled broken ported content.     collection: FootstepJanitorBorg
-  #   params:
-  #     volume: -5
-  # Scp edit end
-  # Sunrise-Start
+  radioChannels:
+  - ScientificService # Scp edit
+  - FoodAndSanitationService # Scp edit
 
   # Visual
   inventoryTemplateId: borgShort
@@ -259,52 +143,33 @@
   # Pet
   petSuccessString: petting-success-janitor-cyborg
   petFailureString: petting-failure-janitor-cyborg
-  addComponents:
-#  - type: FootprintAreaCleaner # SCP port: component unavailable in Foundation14
-  - type: Absorbent
-    pickupAmount: 500
-  - type: SolutionContainerManager
-    solutions:
-      absorbed:
-        maxVol: 500
-  - type: Spillable
-    solution: absorbed
-  - type: RefillableSolution
-    solution: absorbed
+
 
 # Medical borg
 - type: borgType
   id: medical
 
-  # Sunrise-Start
-  # Scp edit - job no longer exists on BorgTypePrototype.
-  # job: MedicalBorg
-  # Sunrise-End
-
   # Description
   dummyPrototype: BorgChassisMedical
 
   # Functional
-  extraModuleCount: 5
+  extraModuleCount: 3
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
     - BorgModuleMedical
 
   defaultModules:
-  - BorgModuleTool # Scp edit - BorgModuleStandart is unavailable.
+  - BorgModulePrying
   - BorgModuleChemical
   - BorgModuleTopicals
   - BorgModuleRescue
 
-  radioChannels: # Fire Edit
-  - ScientificService
-  - MedicalService
+  radioChannels:
+  - ScientificService # Scp edit
+  - MedicalService # Scp edit
 
   addComponents:
-  # Fire added start
-  - type: ShowScp096FaceDamageHud
-  # Fire added end
   - type: SolutionScanner
   - type: ShowHealthBars
     damageContainers:
@@ -312,21 +177,6 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
-  # Sunrise-Start
-  # - type: TTS # SCP port: SUNRISE TTS component unavailable
-    # voice: TurretFloor
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 3
-    baseSprintSpeed : 5
-  # Scp edit - Sunrise FabricateCandy component is unavailable in Foundation14
-  # - type: FabricateCandy
-#  - type: InnateItem # SCP port: component unavailable in Foundation14
-#    instantActions:
-#    - HandheldStationMapUnpowered
-#    - HandheldEmergencyCrewMonitorBorg
-#    entityTargetActions:
-#    - HandheldHealthAnalyzerUnpowered
-  # Sunrise-End
 
   # Visual
   inventoryTemplateId: borgDutch
@@ -349,38 +199,26 @@
 - type: borgType
   id: service
 
-  # Sunrise-Start
-  # Scp edit - job no longer exists on BorgTypePrototype.
-  # job: ServiceBorg
-  # Sunrise-End
-
   # Description
   dummyPrototype: BorgChassisService
 
   # Functional
-  extraModuleCount: 6
+  extraModuleCount: 3
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
     - BorgModuleService
 
-  # Sunrise-Start
   defaultModules:
-  - BorgModuleTool # Scp edit - BorgModuleStandart is unavailable.
+  - BorgModulePrying
   - BorgModuleMusique
-# Scp edit - disabled broken ported content.   - BorgModulePaperwork
-# Scp edit - disabled broken ported content.   - BorgModuleBartender
-# Scp edit - disabled broken ported content.   - BorgModuleCooking
+  - BorgModuleService
   - BorgModuleClowning
-# Scp edit - disabled broken ported content.   - BorgModuleExtensiveGardening
-  # Sunrise-End
-#
-  radioChannels: # Fire Edit
-  - ScientificService
-  - FoodAndSanitationService
-
-  addComponents:
-  - type: SolutionScanner
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  radioChannels:
+  - ScientificService # Scp edit
+  - FoodAndSanitationService # Scp edit
 
   # Visual
   inventoryTemplateId: borgTall

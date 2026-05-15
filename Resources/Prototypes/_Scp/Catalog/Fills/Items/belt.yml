@@ -149,7 +149,7 @@
   parent: ClothingBeltMtfAmmo
   id: ClothingBeltMtfAmmoP90
   categories: [ HideSpawnMenu ]
-  components: [] # Scp edit - storage fill used missing Sunrise magazines.
+  components: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.   - type: StorageFill
 #     contents:
 #       - id: MagazineP90

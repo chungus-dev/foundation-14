@@ -605,9 +605,6 @@
   id: FootstepSound # SharedMoverController checks for this on an entity before playing footstep sounds.
 
 - type: Tag
-  id: FullCovered # Scp added - ported clothing whitelist marker.
-
-- type: Tag
   id: ForceableFollow # Used by FollowerSystem to give tagged entities an altverb to start orbiting the user.
 
 - type: Tag
