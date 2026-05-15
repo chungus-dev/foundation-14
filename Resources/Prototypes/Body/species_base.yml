@@ -10,9 +10,10 @@
   id: BaseSpeciesMob
   save: false
   components:
-  # Fire start
+  # Scp added start
   - type: ScpHoldable
   - type: FieldOfView
+  - type: HoldToFace
   - type: Blinkable
   - type: SpeakOnEyeStateChange
     # Обычные персонажи проговаривают фразы только при ручном переключении глаз через акшен.
@@ -35,7 +36,7 @@
       phobiaType: Necrophobia
       uponComeCloser: None
     - type: WatchingTarget
-  # Fire end
+  # Scp added end
   - type: DamageVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
     targetLayers:
