@@ -1,0 +1,10 @@
+ent-CrateVendingMachineRestockSeedsScpClassDFilled = restock crate for { ent-VendingMachineSeedsDClass } Class-D
+    .desc = Contains a restock kit for the { ent-VendingMachineSeedsDClass } vending machine.
+ent-CrateVendingMachineRestockNutriMaxScpClassDFilled = restock crate for { ent-VendingMachineNutriDClass } Class-D
+    .desc = Contains a restock kit for the { ent-VendingMachineNutriDClass } vending machine.
+ent-CrateVendingMachineRestockChefvendScpClassDFilled = restock crate for { ent-VendingMachineChefvendDClass } Class-D
+    .desc = Contains a restock kit for the { ent-VendingMachineChefvendDClass } vending machine.
+ent-CrateVendingMachineRestockDinnerwareScpClassDFilled = restock crate for { ent-VendingMachineDinnerwareDClass } Class-D
+    .desc = Contains a restock kit for the { ent-VendingMachineDinnerwareDClass } vending machine.
+ent-CrateVendingMachineRestockBoozeScpClassDFilled = restock crate for { ent-VendingMachineBoozeDClass } Class-D
+    .desc = Contains a restock kit for the { ent-VendingMachineBoozeDClass } vending machine.

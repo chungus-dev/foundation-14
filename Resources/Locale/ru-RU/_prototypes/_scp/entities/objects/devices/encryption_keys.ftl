@@ -31,5 +31,3 @@ ent-EncryptionKeyChaos = тёмно-зелёный ключ шифрования
 ent-EncryptionKeyGRU = кроваво-красный ключ шифрования
     .desc = { ent-EncryptionKeyChaos.desc }
 
-ent-EncryptionKey = ключ шифрования
-    .desc = Небольшой шифрующий чип для гарнитуры.

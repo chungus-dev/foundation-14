@@ -1,0 +1,16 @@
+ent-ClothingBackpackSatchelLeatherEthicsCommitteeFilled = { ent-ClothingBackpackSatchelLeather }
+    .desc = { ent-ClothingBackpackSatchelLeather.desc }
+ent-PenEthicsCommittee = Ethics Committee pen
+    .desc = All the power of bureaucracy in one pen.
+ent-ClothingHeadHatCapEthicsCommittee = Ethics Committee representative cap
+    .desc = A cap of justice over the administration!
+ent-ClothingUniformJumpsuitWithWhiteShirt = suit with a white shirt
+    .desc = Looks strict and official.
+ent-ClothingUniformJumpsuitBlackFormal = black formal suit
+    .desc = Looks formal, strict, and official.
+ent-ClothingUniformJumpskirtWithWhiteShirt = skirt suit with a white shirt
+    .desc = Looks strict and official.
+ent-ClothingOuterCoatBlackFancy = black jacket
+    .desc = Elegant black jacket.
+ent-ClothingOuterCoatBlackFancyOpen = open black jacket
+    .desc = Elegant open jacket.

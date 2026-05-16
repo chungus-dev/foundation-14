@@ -290,21 +290,3 @@ ent-ScpUraniumWindoorSecureNukeopLocked = { ent-WindoorSecureUranium }
     .suffix = { id-card-access-level-nuclear-operative }, Закрыт, Уран
     .desc = { ent-WindoorSecureUranium.desc }
 
-ent-WindoorPlasma = плазменное раздвижное окно
-    .desc = Это и розовое окно *и* раздвижная дверь. Невероятно!
-
-ent-WindoorSecure = раздвижное бронеокно
-    .desc = Это и прочное окно, и раздвижная дверь. Вот это да!
-
-ent-WindoorSecurePlasma = плазменное раздвижное бронеокно
-    .desc = Это и прочное розовое окно *и* раздвижная дверь. Впечатляюще!
-
-ent-WindoorSecureSecurityLocked = { ent-WindoorSecure }
-    .suffix = Служба Безопасности, Закрыт
-    .desc = { ent-WindoorSecure.desc }
-
-ent-WindoorSecureUranium = урановое раздвижное бронеокно
-    .desc = Это и прочное окно *и* раздвижная дверь. Оно такое неоново-зелёное, может быть даже на вкус как лайм!
-
-ent-WindoorUranium = урановое раздвижное окно
-    .desc = Это и окно, и раздвижная дверь. Хм? Ох, и оно зелёное!

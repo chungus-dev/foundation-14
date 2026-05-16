@@ -1,0 +1,11 @@
+ent-ClothingHeadHatDirector = facility director's hat
+    .desc = A black-and-white style hat. Made to stand out in the dark.
+ent-ClothingUniformJumpsuitDirector = facility director's uniform
+    .desc = A uniform for special occasions.
+ent-ClothingOuterCoatDirectorTrench = facility director's trench coat
+    .desc = A coat made from a special alloy, providing extra protection and style for people in authority.
+ent-ClothingHandsGlovesDirectorSpecial = facility director's hard gloves
+    .desc = Perfect for paperwork and handling administrative matters.
+ent-ClothingBackpackSatchelLeatherDirectorFilled = facility director's leather satchel
+    .desc = This is a special satchel made exclusively for work.
+    .suffix = Filled

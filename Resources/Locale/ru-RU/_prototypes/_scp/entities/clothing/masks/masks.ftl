@@ -3,5 +3,3 @@ ent-ClothingMaskGasChaosIns = противогаз Повстанца
 ent-ClothingMaskGasMobileTaskForceMH = { ent-ClothingMaskGas }
     .desc = { ent-ClothingMaskGas.desc }
 
-ent-ClothingMaskGas = противогаз
-    .desc = Закрывающая лицо маска, которую можно подключить к дыхательному баллону.

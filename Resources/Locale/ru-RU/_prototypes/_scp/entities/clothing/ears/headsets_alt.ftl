@@ -25,5 +25,3 @@ ent-ClothingHeadsetAltLogistics = { ent-ClothingHeadsetAlt } логистиче�
 ent-ClothingHeadsetAltChaos = полноразмерная тёмно-зелёная гарнитура
     .desc = Звучит чётче, чем гарнитура Фонда. Принимает ключи шифрования.
 
-ent-ClothingHeadsetAlt = полноразмерная гарнитура
-    .desc = Модифицированный модульный интерком, надеваемый на голову. Принимает ключи шифрования.

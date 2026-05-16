@@ -19,5 +19,3 @@ ent-RubberStampCommandantSquadLeader = печать главного комен�
 ent-RubberStampSpecialPurposeSquadLeader = печать командира осн
     .desc = { ent-RubberStampBase.desc }
 
-ent-RubberStampBase = универсальная печать
-    .desc = Печать из резины, для проставления печатей на важных документах.

@@ -1,0 +1,10 @@
+ent-VendingMachineRestockSeedsScpClassD = { ent-VendingMachineSeedsDClass } Class-D restock kit
+    .desc = The label says these seeds were used and passed down by our ancestors. Load them into { ent-VendingMachineSeedsDClass }!
+ent-VendingMachineRestockNutriMaxScpClassD = { ent-VendingMachineNutriDClass } Class-D restock kit
+    .desc = With our fertilizer your hands of gold will turn green! Time to reap the rewards! Load it into { ent-VendingMachineNutriDClass }.
+ent-VendingMachineRestockChefvendScpClassD = { ent-VendingMachineChefvendDClass } Class-D restock kit
+    .desc = Refills { ent-VendingMachineChefvendDClass }. Most importantly, keep the eggs safe.
+ent-VendingMachineRestockDinnerwareScpClassD = { ent-VendingMachineDinnerwareDClass } Class-D restock kit
+    .desc = It is always hot in this kitchen! Place it in the replenishment slot of { ent-VendingMachineDinnerwareDClass } to get started.
+ent-VendingMachineRestockBoozeScpClassD = { ent-VendingMachineBoozeDClass } Class-D restock kit
+    .desc = Insert into { ent-VendingMachineBoozeDClass } to sate thirsting patrons. Not for sale to Foundation personnel.

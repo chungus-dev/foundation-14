@@ -1,0 +1,11 @@
+ent-ScpDoubleBlastDoor = double blast door
+    .desc = Heavy blast door. Better not stand between them while they are operating.
+ent-ScpDoubleBlastDoorOpen = { ent-ScpDoubleBlastDoor }
+    .suffix = Open
+    .desc = { ent-ScpDoubleBlastDoor.desc }
+ent-ScpDoubleBlastDoorNoSound = { ent-ScpDoubleBlastDoor }
+    .suffix = Silent
+    .desc = { ent-ScpDoubleBlastDoor.desc }
+ent-ScpDoubleBlastDoorOpenNoSound = { ent-ScpDoubleBlastDoor }
+    .suffix = Open | Silent
+    .desc = { ent-ScpDoubleBlastDoor.desc }

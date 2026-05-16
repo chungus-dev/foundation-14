@@ -15,4 +15,4 @@ ent-Scp079HoloLocal = ???
 ent-PosterScp079 = плакат «SCP-079»
     .desc = Информационный плакат SCP-079
 str-079-eye-name = { ent-Scp079Holo }
-str-079-CommunicationsConsole-title = \[ДАННЫЕ УДАЛЕНЫ\]
+str-079-CommunicationsConsole-title = ДАННЫЕ УДАЛЕНЫ

@@ -1,0 +1,15 @@
+ent-FireStationUplink20 = suitcase of personal belongings
+    .desc = A small suitcase containing a staff member's personal belongings. Secured. I wonder what it stores inside?
+    .suffix = 20
+ent-FireStationUplink40 = { ent-FireStationUplink20 }
+    .desc = { ent-FireStationUplink20.desc }
+    .suffix = 40
+ent-FireStationUplink60 = { ent-FireStationUplink20 }
+    .desc = { ent-FireStationUplink20.desc }
+    .suffix = 60
+ent-FireStationUplink80 = { ent-FireStationUplink20 }
+    .desc = { ent-FireStationUplink20.desc }
+    .suffix = 80
+ent-FireStationUplink100 = { ent-FireStationUplink20 }
+    .desc = { ent-FireStationUplink20.desc }
+    .suffix = 100

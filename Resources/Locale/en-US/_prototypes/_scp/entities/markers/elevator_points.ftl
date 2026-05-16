@@ -1,0 +1,12 @@
+ent-ElevatorPoint = Elevator point
+    .desc = The point where the elevator teleports.
+    .suffix = Empty
+ent-ElevatorPointComplex = { ent-ElevatorPoint }
+    .desc = { ent-ElevatorPoint.desc }
+    .suffix = Complex
+ent-ElevatorPointIntermediate = { ent-ElevatorPoint }
+    .desc = { ent-ElevatorPoint.desc }
+    .suffix = Intermediate
+ent-ElevatorPointSurface = { ent-ElevatorPoint }
+    .desc = { ent-ElevatorPoint.desc }
+    .suffix = Surface

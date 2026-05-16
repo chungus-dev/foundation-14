@@ -1,0 +1,12 @@
+ent-ClothingNeckShoulderPatchWhite = white shoulder patch
+    .desc = A simple and handy tool for groups.
+ent-ClothingNeckShoulderPatchRed = red shoulder patch
+    .desc = A simple and handy tool for groups.
+ent-ClothingNeckShoulderPatchBlue = blue shoulder patch
+    .desc = A simple and handy tool for groups.
+ent-ClothingNeckShoulderPatchGreen = green shoulder patch
+    .desc = A simple and handy tool for groups.
+ent-ClothingNeckShoulderPatchYellow = yellow shoulder patch
+    .desc = A simple and handy tool for groups.
+ent-BoxCardboardShoulderPatches = box of colored patches
+    .desc = Contains the simplest and most convenient tools for groups.

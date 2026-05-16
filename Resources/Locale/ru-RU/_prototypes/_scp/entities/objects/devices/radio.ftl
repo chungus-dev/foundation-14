@@ -26,8 +26,3 @@ ent-RadioHandheldExternalAdministrativeZoneSecurityServiceEnabled = { ent-RadioH
     .desc = { ent-RadioHandheldExternalAdministrativeZoneSecurityService.desc }
     .suffix = { ent-RadioHandheldExternalAdministrativeZoneSecurityService.suffix }, Включена
 
-ent-RadioHandheld = портативная рация
-    .desc = Удобная портативная рация.
-
-ent-RadioHandheldSecurity = рация охраны
-    .desc = Удобная рация охраны.

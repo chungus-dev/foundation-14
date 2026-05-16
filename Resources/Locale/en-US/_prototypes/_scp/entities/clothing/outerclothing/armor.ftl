@@ -1,0 +1,17 @@
+ent-ClothingOuterArmorChaosVest = rebel vest
+    .desc = A reinforced chest plate that provides protection while allowing maximum mobility and flexibility.
+ent-ClothingOuterCoatSquadLeader = squad leader's coat
+    .desc = A durable coat issued to squad leaders. Reinforced fabric provides extra protection while still maintaining an imposing appearance.
+    .suffix = SCP Security
+ent-ClothingOuterArmorSecurity = security vest
+    .desc = A lightweight Type I armored vest, providing respectable protection against most forms of damage.
+    .suffix = SCP Security
+ent-ClothingOuterArmorSecurityWinter = winter security vest
+    .desc = A reinforced winter vest designed for extended use in low temperatures; its inner lining retains heat exceptionally well.
+    .suffix = { ent-ClothingOuterArmorSecurity.suffix }
+ent-ClothingOuterArmorSecurityBulletproof = security bulletproof vest
+    .desc = A heavy Type III armored vest capable of protecting the wearer from conventional ranged weapons and explosives to a limited extent.
+    .suffix = { ent-ClothingOuterArmorSecurity.suffix }
+ent-ClothingOuterArmorSecurityRiotLight = lightweight riot armor
+    .desc = A lighter variant of standard riot armor. It offers high mobility while also giving the wearer an imposing and authoritative appearance.
+    .suffix = { ent-ClothingOuterArmorSecurity.suffix }

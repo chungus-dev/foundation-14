@@ -1,0 +1,9 @@
+ent-ScpAirlockShuttle = docking airlock
+    .desc = Used to connect two spacecraft together.
+    .suffix = Docking
+ent-ScpAirlockGlassShuttle = docking airlock
+    .desc = Used to connect two spacecraft together.
+    .suffix = Docking, Glass
+ent-ScpAirlockShuttleAssembly = docking airlock frame
+    .desc = An unfinished structure used to connect two spacecraft together.
+    .suffix = Docking

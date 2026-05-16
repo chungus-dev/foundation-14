@@ -1,0 +1,11 @@
+ent-ScpToySpawner = Toy spawner
+    .desc = { ent-MarkerBase.desc }
+ent-ScpPlushieCatSpawner = Cat plushie spawner
+    .desc = { ent-MarkerBase.desc }
+ent-ScpPlushieFoxSpawner = Fox plushie spawner
+    .desc = { ent-MarkerBase.desc }
+ent-ScpFigureSpawner = Figure spawner
+    .desc = { ent-MarkerBase.desc }
+ent-ScpSpacemenFigureSpawner = Spaceman mini-figure spawner
+    .desc = { ent-MarkerBase.desc }
+    .suffix = Librarian use only; map with care!

@@ -1,0 +1,12 @@
+ent-ClothingMaskMtf = gas mask
+    .desc = A standard protective mask with high-density filtration. Its lenses create the feeling of an empty, emotionless gaze.
+    .suffix = MTF
+ent-ClothingMaskMtfTacticalRed = tactical gas mask
+    .desc = A tactical protective mask with high-density filtration. The visor creates the feeling of an empty, emotionless gaze.
+    .suffix = MTF | Red
+ent-ClothingMaskMtfTacticalWhite = tactical gas mask
+    .desc = A tactical protective mask with high-density filtration. The visor creates the feeling of an empty, emotionless gaze.
+    .suffix = MTF | White
+ent-ClothingMaskMtfMilitary = combat gas mask
+    .desc = A tactical combat gas mask with high-density filtration. This model is used by regular troops.
+    .suffix = MTF

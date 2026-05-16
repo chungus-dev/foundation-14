@@ -3,5 +3,3 @@ ent-ScpAirlockAssembly = каркас шлюза
 ent-ScpAirlockLogotypeAssembly = каркас шлюза
     .desc = Он открывается, он закрывается, и он может вас раздавить.
 
-ent-AirlockAssembly = каркас шлюза
-    .desc = Он открывается, он закрывается, и он может вас раздавить.
