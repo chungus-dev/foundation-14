@@ -1,6 +1,5 @@
 - type: entity
   id: BaseBloodSplatter
-  parent: Puddle
   abstract: true
   name: blood splatter
   components:
@@ -22,7 +21,7 @@
   - type: ExaminableSolution
     solution: blood
     locVolume: "examinable-solution-on-examine-volume-puddle"
-  - type: StepTrigger
+  - type: Clickable
   - type: Edible
     edible: Drink
     delay: 0.5
