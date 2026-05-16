@@ -1,9 +1,0 @@
-ent-GunLockerSmallFilledG22 = pistol safe
-    .suffix = Filled, Glock-22 Auto
-    .desc = { ent-GunLockerSmall.desc }
-ent-GunLockerSmallFilledM1984 = pistol safe
-    .suffix = Filled, M1984
-    .desc = { ent-GunLockerSmall.desc }
-ent-GunLockerSmallFilledACP14 = pistol safe
-    .suffix = Filled, ACP14
-    .desc = { ent-GunLockerSmall.desc }

@@ -1,1 +1,0 @@
-lathe-category-scp = SCP
