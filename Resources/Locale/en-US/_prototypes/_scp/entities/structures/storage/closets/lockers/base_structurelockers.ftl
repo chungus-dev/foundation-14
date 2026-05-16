@@ -2,6 +2,5 @@ ent-ScpLockerBaseComponents = { "" }
     .desc = { "" }
 ent-ScpLockerBase = { ent-ScpLockerBaseComponents }
     .desc = { ent-ScpLockerBaseComponents.desc }
-ent-ScpLockerPlasteel = прочный шкаф
-    .desc = Усиленный шкаф из пластали, предназначенный для безопасного хранения оборудования и чувствительных материалов.
-
+ent-ScpLockerPlasteel = reinforced locker
+    .desc = A reinforced plasteel locker designed for secure storage of equipment and sensitive materials.

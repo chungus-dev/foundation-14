@@ -1,50 +1,50 @@
-scp106-already-in-dimension = Вы уже в своем измерении
-scp106-return-to-containment = Внимание персоналу! Особые условия содержания SCP-106 успешно восстановлены.
-scp106-abilities-suppressed = Ваши способности подавлены
-not-enough-essence = Недостаточно эссенции { $count }
-scp106-phantom-killed = Кажется, это была всего лишь иллюзия...
-scp106-not-enough-power = Ваше влияние здесь еще слишком мало, чтобы сделать это.
+scp106-already-in-dimension = You are already in your dimension
+scp106-return-to-containment = Attention, Foundation personnel! Special containment procedures for SCP-106 have been successfully restored.
+scp106-abilities-suppressed = Your abilities are suppressed
+not-enough-essence = Not enough essence { $count }
+scp106-phantom-killed = It seems it was only an illusion...
+scp106-not-enough-power = Your influence here is still too weak to do this.
 scp106-dimension-shift-alarm-announcement =
-    ЭКСТРЕННОЕ СООБЩЕНИЕ ПЕРСОНАЛУ КОМПЛЕКСА!
+    EMERGENCY NOTICE TO COMPLEX STAFF!
     
-    Зафиксировано множественное проникновение за пределы стабильной реальности. Количество затянутых субъектов превышает допустимый порог.
+    Multiple incursions beyond stable reality have been detected. The number of drawn-in subjects exceeds the safe threshold.
     
-    Вероятность пространственного коллапса 95%. Изоляция зоны не гарантирует безопасность. Нормальность дестабилизируется через { $time }.
+    Probability of spatial collapse is 95%. Isolation of the sector does not guarantee safety. Normality will destabilize in { $time }.
     
-    КЛАССИФИКАЦИЯ ИНЦИНДИЕНТА: DIMENSIONAL SHIFT
+    INCIDENT CLASSIFICATION: DIMENSIONAL SHIFT
     
-    Не откликайтесь на их голоса.
+    Do not respond to their voices.
 scp106-many-humans-in-backrooms-alarm-announcement =
-    ОБРАТНЫЙ ОТСЧЁТ НАЧАТ!!
+    COUNTDOWN STARTED!!
     
-    До фазового обрушения: { $time }
+    Until phase collapse: { $time }
     
-    SCP-106 нарушает границы известного. Реальность теряет сцепление
+    SCP-106 breaches the bounds of the known. Reality is losing cohesion
     
-    Выведите выживших. Закройте глаза
-    Не дышите
+    Evacuate survivors. Close your eyes
+    Do not breathe
 scp106-dimension-shift-averted-announcement =
-    Аномальная активность SCP-106 локализована.
-    Пространственные параметры стабилизированы. Реальность восстановила целостность. Критическое количество пропавших субъектов нормализовано.
+    Anomalous activity of SCP-106 has been contained.
+    Spatial parameters have stabilized. Reality has restored its integrity. The critical number of missing subjects has normalized.
     
-    Слушайте тишину, пока она ещё принадлежит вам.
+    Listen to the silence while it still belongs to you.
 scp106-dimension-shift-passed-alarm-announcement =
-    Реальность устояла
+    Reality has held
     
-    Все разломы запечатаны. Континуум скреплён якорями реальности. Слияние миров предотвращено.
-    Комплекс остаётся в пределах известного нам пространства.
+    All rifts have been sealed. The continuum is bound with anchors of reality. World fusion has been prevented.
+    The facility remains within the space we know.
     
-    Персонал, вы сделали невозможное.
-    Но помните: трещины могут появиться снова. Будьте готовы.
+    Personnel, you have achieved the impossible.
+    But remember: fissures can appear again. Be prepared.
 dimensional-shift-start-alarm-announcement =
-    ‼ ИНИЦИИРОВАН ПРОТОКОЛ DIMENSIONAL SHIFT ‼
-    СДЕРЖИВАНИЕ ПРОВАЛЕНО
+    ‼ DIMENSIONAL SHIFT PROTOCOL INITIATED ‼
+    CONTAINMENT BROKEN
     
-    Разломы поглощают структуру комплекса. Локальная геометрия разрушена.
-    Пространственная изоляция невозможна.
+    Cracks are consuming the facility structure. Local geometry is destroyed.
+    Spatial isolation is impossible.
     
-    КОНТАКТ С ПЕРВОЙ РЕАЛЬНОСТЬЮ УТРАЧЕН.
-    ОСТАТОЧНЫЕ ВОСПРИЯТИЯ НЕ СООТВЕТСТВУЮТ ДОПУСТИМЫМ КОГНИТИВНЫМ ОБРАЗЦАМ.
+    CONTACT WITH THE PRIMARY REALITY LOST.
+    RESIDUAL PERCEPTIONS ARE NOT WITHIN ACCEPTABLE COGNITIVE PATTERNS.
     
-    ТРЕХУРОВНЕВАЯ ДЕТОНАЦИЯ АКТИВИРОВАНА.
-    БЕЗОПАСНОСТЬ БУДЕТ ДОСТИГНУТА АБСОЛЮТНОЙ ЦЕНОЙ
+    TRIPLE-LEVEL DETONATION ACTIVATED.
+    ABSOLUTE SECURITY WILL BE REACHED AT ABSOLUTE COST

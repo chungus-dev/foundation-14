@@ -1,18 +1,18 @@
-eye-droplets-failed = Глаза { $name } должны быть открыты
-eye-droplets-used = { $name } закапывает капли себе в глаза
-eye-droplets-first-bonus-end = Глаза начинают пересыхать, придется начать моргать
-eye-droplets-end = Глаза пересохли, кажется капли выветрились!
-close-eye-phrase-1 = Моргаю!
-close-eye-phrase-2 = Моргаю!!
-close-eye-phrase-3 = Закрываю глаза
+eye-droplets-failed = The eyes of { $name } need to be open
+eye-droplets-used = { $name } applies eye drops to their eyes
+eye-droplets-first-bonus-end = Your eyes are starting to dry out, you'll need to start blinking
+eye-droplets-end = The eyes are dry; it looks like the drops have evaporated
+close-eye-phrase-1 = Blinking!
+close-eye-phrase-2 = Blinking!!
+close-eye-phrase-3 = I close my eyes
 close-eye-phrase-4 = { GENDER($entity) ->
-    [female] Закрыла
-    *[other] Закрыл
+    [female] She closed her eyes
+    *[other] He closed his eyes
 }
 open-eye-phrase-1 = { GENDER($entity) ->
-    [female] Открыла глаза
-    *[other] Открыл глаза
+    [female] She opened her eyes
+    *[other] He opened his eyes
 }
-open-eye-phrase-2 = Открываю глаза
-open-eye-phrase-3 = Смотрю
-open-eye-phrase-4 = Вижу
+open-eye-phrase-2 = I open my eyes
+open-eye-phrase-3 = Looking
+open-eye-phrase-4 = I see

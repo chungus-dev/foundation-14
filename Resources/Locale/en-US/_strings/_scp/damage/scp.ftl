@@ -1,23 +1,20 @@
-scp096-face-damaged-1 = Его голова покрыта множеством продольных шрамов, некоторые из которых немного пульсируют.
-scp096-face-damaged-2 = На его голове имеется свежий неглубокий порез, из которого медленно подтекает похожая на кровь жидкость.
-scp096-face-damaged-3 = Вокруг его головы можно заметить несколько порезов, часть из которых начала затягиваться. Самый свежий и глубокий из них необычно быстро пульсирует, выделяя жидкость.
-scp096-face-damaged-4 = Его голова полностью покрыта глубокими порезами, берущими свое начало из глубоких отверстий в коже.
-scp096-face-damaged-5 = Его голова состоит из большой подгнивающей рваной раны с множеством рубленных отверстий, из которых мелкими подтеками вытекает похожая на кровь жидкость.
-scp096-face-damaged-6 = Голова полностью изуродована, сохранив лишь свою округлую вытянутую форму. Из зияющих кровоточащих и уже покрывшихся полупрозрачной коркой ранений вытекает багровая жидкость с лоскутами отслаивающейся кожи. Масса пульсирует.
-
-scp096-face-damaged-science-1 = Состояние стабильное, восстановление не требуется.
-scp096-face-damaged-science-2 = Состояние нормальное, незначительные повреждения.
-scp096-face-damaged-science-3 = Состояние контролируемое, требуется задуматься о восстановлении лица.
-scp096-face-damaged-science-4 = Состояние опасное, требуется немедленно восстановить ткани лица.
-scp096-face-damaged-science-5 = Состояние критическое, ситуация близка к нарушению условий содержания. Требуется немедленное восстановление тканей лица.
-scp096-face-damaged-science-6 = Состояние вышло из-под контроля, ткани лица уничтожены. Требуется насильственное восстановление для восстановления условий содержания.
-
-scp939-damaged-1 = Его хитиновая оболочка покрыта сетью зарубцевавшихся шрамов и царапин, но видимых активных повреждений нет.
-scp939-damaged-2 = На его конечностях и спине видны свежие неглубокие огнестрельные сколы и порезы. Через трещины в панцире сочится вязкая, темная жидкость.
-scp939-damaged-3 = Панцирь на груди и боках серьезно поврежден: глубокие вмятины, проломы и свисающие лоскуты кожи. Жидкость сочится струйками.
-scp939-damaged-4 = Оболочка объекта критически разрушена. Видны обширные участки размозженной ткани, обнажающие мышцы и кость.
-
-scp939-damaged-security-1 = Состояние стабильное. Объект полностью мобилен и опасен.
-scp939-damaged-security-2 = Состояние ослабленное. Повреждения есть, но не снижают его эффективность в бою.
-scp939-damaged-security-3 = Состояние тяжелое. Подвижность и координация нарушены. Объект явно теряет силы. Еще несколько десятков точных попаданий должны его остановить...
-scp939-damaged-security-4 = Состояние критическое. Объект на грани коллапса. Движения заплетающиеся, реакция замедлена. Он практически обессилен.
+scp096-face-damaged-1 = Its head is covered in numerous longitudinal scars, some of which pulsate slightly.
+scp096-face-damaged-2 = Its head has a fresh shallow cut, from which a blood-like fluid slowly seeps.
+scp096-face-damaged-3 = Around its head, several cuts can be seen, some of which have begun to close. The freshest and deepest of them pulses unusually quickly, exuding fluid.
+scp096-face-damaged-4 = Its head is completely covered in deep lacerations that originate from deep openings in the skin.
+scp096-face-damaged-5 = Its head consists of a large decaying jagged wound with many slashed perforations, from which blood-like fluid leaks in small dribbles.
+scp096-face-damaged-6 = The head is utterly disfigured, retaining only its elongated rounded shape. From gaping, bleeding wounds already covered by a translucent scab, crimson fluid mixed with peeling sheets of skin oozes out. The mass pulses.
+scp096-face-damaged-science-1 = Condition stable; no restoration required.
+scp096-face-damaged-science-2 = Condition normal, minor damage.
+scp096-face-damaged-science-3 = Condition controlled; facial restoration should be considered.
+scp096-face-damaged-science-4 = Condition dangerous; immediate restoration of facial tissues is required.
+scp096-face-damaged-science-5 = Condition critical; situation is approaching containment compromise. Immediate restoration of facial tissues is required.
+scp096-face-damaged-science-6 = Condition out of control; facial tissues destroyed. Forced restoration is required to restore containment conditions.
+scp939-damaged-1 = Its chitinous shell is covered in a network of scarred and calloused wounds and scratches, but no active visible damage remains.
+scp939-damaged-2 = Fresh superficial ballistic chips and cuts are visible on its limbs and back. Viscous dark fluid oozes through cracks in the carapace.
+scp939-damaged-3 = The shell on the chest and flanks is severely damaged: deep dents, rents, and hanging flakes of flesh. Fluid streams out in jets.
+scp939-damaged-4 = The object's shell is critically damaged. Extensive areas of crushed tissue are visible, exposing muscle and bone.
+scp939-damaged-security-1 = Condition stable. Object is fully mobile and dangerous.
+scp939-damaged-security-2 = Condition weakened. There is damage, but it does not reduce combat effectiveness.
+scp939-damaged-security-3 = Condition severe. Mobility and coordination are impaired. The object is clearly losing strength. A few more dozen precise hits should stop it...
+scp939-damaged-security-4 = Condition critical. Object is near collapse. Movements are becoming entangled, reaction is slowed. It is virtually depleted.

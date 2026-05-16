@@ -1,2 +1,2 @@
-station-records-ui-employee-class = Класс персонала
-station-records-ui-access-level = Уровень допуска
+station-records-ui-employee-class = Staff class
+station-records-ui-access-level = Access level

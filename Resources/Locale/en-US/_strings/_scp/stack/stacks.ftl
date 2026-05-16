@@ -1,1 +1,1 @@
-stack-concrete = цемент
+stack-concrete = Concrete

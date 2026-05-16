@@ -1,4 +1,3 @@
-job-name-logistics-officer = Логист
-job-description-logistics-officer = Занимается обслуживанием складских помещений и распределением поступающих ресурсов и оборудования по учреждению.
-
-job-supervisors-senior-logistics-officer = квартирмейстеру
+job-name-logistics-officer = Logistics Officer
+job-description-logistics-officer = Handles maintenance of storage facilities and distribution of incoming resources and equipment throughout the complex.
+job-supervisors-senior-logistics-officer = Quartermaster

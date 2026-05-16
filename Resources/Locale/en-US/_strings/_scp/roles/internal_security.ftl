@@ -1,4 +1,4 @@
-job-name-mental-control-officer = Офицер ментального контроля
-job-description-mental-control-officer = Сотрудник ДВБ, а именно администрации по архивно-информационной безопасности. Отвечает за то, дабы информация того или иного Уровня Допуска не попадала в руки персонала меньшего уровня допуска (прим: уборщик с УД0 увидел Фердинанда, сведения о котором
-job-name-internal-security-operative = Оперативник внутренней безопасности
-job-description-internal-security-operative = Сотрудник отдела Внутренней Безопасности, отвечающий за сохранность и живучесть администрации комплекса, представителей ОВБ, СВТ, КпЭ и РАФ. КЛАСС В
+job-name-mental-control-officer = Mental Control Officer
+job-description-mental-control-officer = Staff member of DSB, specifically the archival information security administration. Responsible for ensuring that information of a given Security Clearance Level does not fall into the hands of personnel with lower clearance (e.g. a janitor with CL0 saw Ferdinand, information about whom
+job-name-internal-security-operative = Internal Security Operative
+job-description-internal-security-operative = Staff member of the Internal Security Department responsible for the security and resilience of facility administration, representatives of OVB, SVT, KpE, and RAF. CLASS B

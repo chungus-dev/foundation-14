@@ -1,1 +1,1 @@
-encryption-key-does-not-fit = Этот ключ сюда не подходит.
+encryption-key-does-not-fit = This key does not fit here.

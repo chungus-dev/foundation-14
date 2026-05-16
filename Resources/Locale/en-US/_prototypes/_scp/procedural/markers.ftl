@@ -1,10 +1,10 @@
 ent-Scp106Backrooms = { ent-MarkerBase }
     .desc = { ent-MarkerBase.desc }
-ent-106BaseStairs = Лестница
+ent-106BaseStairs = Stairs
     .desc = { ent-BaseStructure.desc }
 ent-StairsUp106 = { ent-106BaseStairs }
-    .suffix = Наверх
+    .suffix = Up
     .desc = { ent-106BaseStairs.desc }
 ent-StairsDown106 = { ent-106BaseStairs }
-    .suffix = Вниз
+    .suffix = Down
     .desc = { ent-106BaseStairs.desc }

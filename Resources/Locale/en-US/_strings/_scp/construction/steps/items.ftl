@@ -1,4 +1,4 @@
-step-powercell-small-name = маленькую батарею
-step-borg-arm-name = любую руку киборга
-step-proximity-sensor-name = датчик движения
-step-bucket-name = ведро
+step-powercell-small-name = small battery
+step-borg-arm-name = any borg arm
+step-proximity-sensor-name = motion sensor
+step-bucket-name = bucket

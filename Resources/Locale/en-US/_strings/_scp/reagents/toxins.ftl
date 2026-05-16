@@ -1,3 +1,3 @@
 reagent-name-amhc227 = AMH-C227
-reagent-desc-amhc227 = химическое вещество, выделяемое SCP-939 в процессе дыхания. Этот реагент обладает сильными амнестическими свойствами, влияющими на кратковременную память живых существ, находящихся в зоне его действия.
-reagent-physicaldesc-amhc227 = бесцветный газ без выраженного запаха
+reagent-desc-amhc227 = A chemical substance exhaled by SCP-939 during respiration. This reagent has strong amnestic properties affecting the short-term memory of living organisms within the area of its effect.
+reagent-physicaldesc-amhc227 = a colorless gas with no distinct odor

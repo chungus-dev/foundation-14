@@ -1,8 +1,8 @@
-guide-entry-scp-research = Исследования SCP
-guide-entry-scp-research-advanced = Продвинутые исследования SCP
-guide-entry-scp-fear = Система страха
-guide-entry-scp-scp096-about = SCP-096 "Скромник"
-guide-entry-scp-scp096-abilities = Способности
-guide-entry-scp-scp096-containment = Содержание
-guide-entry-scp-scp096-containment-breach = Побег
-guide-entry-scp-scp096-states = Состояния
+guide-entry-scp-research = SCP Research
+guide-entry-scp-research-advanced = Advanced SCP Research
+guide-entry-scp-fear = Fear System
+guide-entry-scp-scp096-about = SCP-096 "Shy Guy"
+guide-entry-scp-scp096-abilities = Abilities
+guide-entry-scp-scp096-containment = Containment
+guide-entry-scp-scp096-containment-breach = Containment Breach
+guide-entry-scp-scp096-states = States

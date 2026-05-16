@@ -1,9 +1,9 @@
 ent-IntercomHeavyContainmentSecurityService = { ent-Intercom }
-    .desc = Интерком. Он был укреплён металлом из шлемов службы безопасности, поэтому открыть его не так-то просто.
-    .suffix = тяжелая зона содержания
+    .desc = Intercom. It is reinforced with metal from security helmets, so it is not so easy to open.
+    .suffix = Heavy containment zone
 ent-IntercomExternalAdministrativeZoneSecurityService = { ent-IntercomHeavyContainmentSecurityService }
     .desc = { ent-IntercomHeavyContainmentSecurityService.desc }
-    .suffix = внешняя-административная зона
+    .suffix = External administrative zone
 ent-IntercomMasterZoneSecurityService = { ent-IntercomHeavyContainmentSecurityService }
-    .desc = Интерком. Он был укреплён металлом из шлемов, которыми владели мастера охраны комплекса, поэтому открыть его не так-то просто.
-    .suffix = мастер СБ комплекса
+    .desc = Intercom. It was reinforced with metal from helmets once used by the facility security masters, so it is not so easy to open.
+    .suffix = Facility security master

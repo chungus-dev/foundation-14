@@ -1,2 +1,2 @@
-reagent-effect-guidebook-scp500 = Полностью исцеляет тело, и избавляет от всех болезней
-reagent-effect-guidebook-calm-down = Вызывает успокаивающий эффект
+reagent-effect-guidebook-scp500 = Fully restores the body and cures all diseases
+reagent-effect-guidebook-calm-down = Induces a calming effect

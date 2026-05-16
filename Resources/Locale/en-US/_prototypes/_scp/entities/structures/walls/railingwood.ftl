@@ -1,8 +1,8 @@
-ent-ScpRailingWood = деревянные перила
-    .desc = Простое деревянное ограждение, предназначенное для защиты таких идиотов, как ты, от падения. В нем есть немного стиля.
-ent-ScpRailingCornerWood = деревянные перила
-    .desc = Простое деревянное ограждение, предназначенное для защиты таких идиотов, как ты, от падения. В нем есть немного стиля.
-ent-ScpRailingCornerWoodSmall = деревянные перила
-    .desc = Простое деревянное ограждение, предназначенное для защиты таких идиотов, как ты, от падения. В нем есть немного стиля.
-ent-ScpRailingRoundWood = деревянные перила
-    .desc = Простое деревянное ограждение, предназначенное для защиты таких идиотов, как ты, от падения. В нем есть немного стиля.
+ent-ScpRailingWood = wooden railing
+    .desc = Simple wooden guardrail designed to protect fools like you from falling. It has a bit of style.
+ent-ScpRailingCornerWood = wooden railing
+    .desc = Simple wooden guardrail designed to protect fools like you from falling. It has a bit of style.
+ent-ScpRailingCornerWoodSmall = wooden railing
+    .desc = Simple wooden guardrail designed to protect fools like you from falling. It has a bit of style.
+ent-ScpRailingRoundWood = wooden railing
+    .desc = Simple wooden guardrail designed to protect fools like you from falling. It has a bit of style.

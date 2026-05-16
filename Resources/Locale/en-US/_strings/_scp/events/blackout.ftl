@@ -1,1 +1,1 @@
-lever-toggled-nothing-happened = Ничего не происходит
+lever-toggled-nothing-happened = Nothing happens

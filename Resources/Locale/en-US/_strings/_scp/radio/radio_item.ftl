@@ -1,24 +1,24 @@
-scp-radio-cycle-channel = Переключить канал связи
-scp-radio-toggle-radio = Вкл/выкл
-scp-radio-current-channel = Текущий канал связи теперь: { $name }
+scp-radio-cycle-channel = Switch radio channel
+scp-radio-toggle-radio = On/Off
+scp-radio-current-channel = Current channel is now: { $name }
 scp-radio-microphone =
-    Микрофон { $value ->
-        [true] включен
-       *[false] выключен
+    Microphone { $value ->
+        [true] enabled
+       *[false] disabled
     }
 scp-radio-radio-status =
-    Рация: { $value ->
-        [true] [bold]включена[/bold]
-       *[false] [bold]выключена[/bold]
+    Radio: { $value ->
+        [true] [bold]On[/bold]
+       *[false] [bold]Off[/bold]
     }
 scp-radio-microphone-status =
-    Микрофон: { $value ->
-        [true] [bold]включен[/bold]
-       *[false] [bold]выключен[/bold]
+    Microphone: { $value ->
+        [true] [bold]On[/bold]
+       *[false] [bold]Off[/bold]
     }
-scp-radio-not-enough-charge = Недостаточно заряда
+scp-radio-not-enough-charge = Insufficient charge
 scp-radio-toggle-message =
     { $name } { $value ->
-        [true] включается
-       *[false] выключается
+        [true] turned on
+       *[false] turned off
     }

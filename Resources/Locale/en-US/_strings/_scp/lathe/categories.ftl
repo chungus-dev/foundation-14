@@ -1,2 +1,2 @@
-lathe-category-depcolors = Цветные
+lathe-category-depcolors = Colors
 lathe-category-scp = SCP

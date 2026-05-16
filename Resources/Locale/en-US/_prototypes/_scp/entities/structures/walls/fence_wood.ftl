@@ -18,4 +18,3 @@ ent-ScpFenceWoodSmallTJunction = { ent-FenceWoodSmallTJunction }
     .desc = { ent-FenceWoodSmallTJunction.desc }
 ent-ScpFenceWoodSmallGate = { ent-FenceWoodSmallGate }
     .desc = { ent-FenceWoodSmallGate.desc }
-

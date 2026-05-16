@@ -1,10 +1,9 @@
-job-name-class-d = Сотрудник класса D
-job-description-class-d = Класс D — расходный персонал, используемый для «чёрных работ», слишком опасных для прочих сотрудников. Один из примеров «необходимого зла» в Фонде.
-job-name-class-d-cook = Повар класса D
-job-description-class-d-cook = Сотрудник класса D. Единственное чем он отличается от всех остальных - доступом на кухню и обязанностью готовить блюда на весь блок D.
-job-name-class-d-botanist = Ботаник класса D
-job-description-class-d-botanist = Сотрудник класса D. Единственное чем он отличается от всех остальных - доступом в ботанику и обязанностью поставлять продукты питания повару блока D.
-job-name-class-d-janitor = Уборщик класса D
-job-description-class-d-janitor = Сотрудник класса D. Единственное чем он отличается от всех остальных - доступом к уборочному инвентарю и обязанностью поддерживать порядок в блоке D.
-
-job-supervisors-security-and-research = службе безопасности и научному персоналу
+job-name-class-d = D-Class
+job-description-class-d = D-Class is expendable staff used for dangerous "black" jobs too hazardous for other personnel. A necessary evil in the Foundation.
+job-name-class-d-cook = D-Class Cook
+job-description-class-d-cook = D-Class personnel. The only thing that sets them apart from everyone else is access to the kitchen and the duty to prepare meals for the entire D block.
+job-name-class-d-botanist = D-Class Botanist
+job-description-class-d-botanist = D-Class personnel. The only thing that sets them apart from everyone else is access to botany and the duty to supply foodstuffs to the D block cook.
+job-name-class-d-janitor = D-Class Janitor
+job-description-class-d-janitor = D-Class personnel. The only thing that sets them apart from everyone else is access to cleaning supplies and the duty to keep the D block tidy.
+job-supervisors-security-and-research = security and research personnel

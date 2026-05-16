@@ -1,7 +1,7 @@
-store-preset-name-ScpUplink = Планшет заказа снаряжения
-store-category-scprecontainment = Восстановление У.С.
-store-category-scpkitstart = Готовые наборы
-store-category-equipment-belts = Подсумки
-store-category-scpprimaryarms = Основное вооружение
-store-category-scientific-equipment = Научное оборудование
-store-category-scpspecweapon = Специализированное вооружение
+store-preset-name-ScpUplink = Equipment Order Tablet
+store-category-scprecontainment = SCP Recontainment
+store-category-scpkitstart = Ready-Made Kits
+store-category-equipment-belts = Pouches
+store-category-scpprimaryarms = Primary Arms
+store-category-scientific-equipment = Scientific Equipment
+store-category-scpspecweapon = Specialized Weapons

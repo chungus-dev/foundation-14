@@ -1,6 +1,6 @@
 ent-ScpTelecomServerFilled = { ent-TelecomServer }
     .desc = { ent-TelecomServerFilled.desc }
-    .suffix = Все
+    .suffix = All
 ent-TelecomServerFilledAdministration = { ent-TelecomServer }
     .desc = { ent-TelecomServer.desc }
     .suffix = { department-Administration }
@@ -34,4 +34,3 @@ ent-TelecomServerFilledLogistics = { ent-TelecomServer }
 ent-TelecomServerFilledFoodAndSanitationDepartment = { ent-TelecomServer }
     .desc = { ent-TelecomServer.desc }
     .suffix = { department-FoodAndSanitationServiceDepartment }
-

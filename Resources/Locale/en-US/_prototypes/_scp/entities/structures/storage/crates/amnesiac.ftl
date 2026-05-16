@@ -1,11 +1,10 @@
-ent-CrateChemistryRawAmnesiac = ящик с сырьём для амнезиака
-    .desc = Содержит кувшин с сырьём для производства амнезиака.
-
-ent-CrateChemistryAmnesiacA = ящик с амнезиаком класса A
-    .desc = Содержит пробирки амнезиака класса A
-ent-CrateChemistryAmnesiacB = ящик с амнезиаком класса B
-    .desc = Содержит пробирки амнезиака класса B
-ent-CrateChemistryAmnesiacC = ящик с амнезиаком класса C
-    .desc = Содержит пробирки амнезиака класса C
-ent-CrateChemistryAmnesiacD = ящик с амнезиаком класса D
-    .desc = Содержит пробирки амнезиака класса D
+ent-CrateChemistryRawAmnesiac = crate with raw amnesiac
+    .desc = Contains a flask with raw materials for amnesiac production.
+ent-CrateChemistryAmnesiacA = crate with class A amnesiac
+    .desc = Contains vials of class A amnesiac
+ent-CrateChemistryAmnesiacB = crate with class B amnesiac
+    .desc = Contains vials of class B amnesiac
+ent-CrateChemistryAmnesiacC = crate with class C amnesiac
+    .desc = Contains vials of class C amnesiac
+ent-CrateChemistryAmnesiacD = crate with class D amnesiac
+    .desc = Contains vials of class D amnesiac

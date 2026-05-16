@@ -1,8 +1,7 @@
-compatibility-mode-warning-title = ПРЕДУПРЕЖДЕНИЕ О РЕЖИМЕ СОВМЕСТИМОСТИ
-compatibility-mode-warning-label = Режим совместимости
-compatibility-mode-warning-attention-label = У вас включен режим совместимости, пожалуйста, прочитайте текст ниже!
+compatibility-mode-warning-title = COMPATIBILITY MODE WARNING
+compatibility-mode-warning-label = Compatibility Mode
+compatibility-mode-warning-attention-label = You have compatibility mode enabled, please read the text below!
 compatibility-mode-warning-text =
-    ​[bold]На сервере используются множество шейдеров и эффектов, которые не работают в режим совместимости. Поэтому они были автоматически отключены, отчего игра может выглядеть странно и неправильно.[/bold]
-    Пожалуйста, выключите режим совместимости в [bold]настройках лаунчера Space Station 14[/bold], убрав галочку с пункта Режим Совместимости. После закройте игру и перезайдите на сервер.
-    ​
-    ​[italic]Если вы не можете выключить режим совместимости сделайте следующее: ECS -> Настройки -> Настройки SCP -> Предупреждение о режиме совместимости.[/italic]
+    ​[bold]The server uses many shaders and effects that do not work in compatibility mode. As a result, they were automatically disabled, and the game may look strange and incorrect.[/bold]
+    Please disable compatibility mode in the [bold]Space Station 14 launcher settings[/bold], by unchecking the Compatibility Mode option. Then close the game and rejoin the server.
+    ​[italic]If you cannot disable compatibility mode, do the following: ECS -> Settings -> SCP Settings -> Compatibility Mode Warning.[/italic]

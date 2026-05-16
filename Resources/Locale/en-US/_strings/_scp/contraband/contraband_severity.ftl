@@ -1,2 +1,2 @@
-contraband-examine-text-Chaos = [color=crimson]Этот предмет является высоко нелегальной контрабандой[/color] [color=green]Повстанцев Хаоса[/color][color=crimson]![/color]
-contraband-examine-text-FoundationEnemy = [color=crimson]Этот предмет принадлежит группе враждебных к Фонду организаций![/color]
+contraband-examine-text-Chaos = [color=crimson]This item is highly illegal contraband[/color] [color=green]of the Chaos Insurgency[/color][color=crimson]![/color]
+contraband-examine-text-FoundationEnemy = [color=crimson]This item belongs to an organization hostile to the Foundation![/color]

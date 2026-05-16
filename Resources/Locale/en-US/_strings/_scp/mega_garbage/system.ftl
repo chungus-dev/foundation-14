@@ -1,6 +1,6 @@
-meta-garbage-no-any-garbage = [bold]Сохраненный межраундовый мусор отсутствует![/bold]
-meta-garbage-statistics = [bold]Статистика собранного межраундового мусора[/bold]
-meta-garbage-no-item-garbage = Не было собрано ни одного предмета!
-meta-garbage-found-items = Список сохраненных предметов:
-meta-garbage-no-liquid-garbage = Не было собрано ни капли жидкости!
-meta-garbage-found-liquid = Объем сохраненных жидкостей:
+meta-garbage-no-any-garbage = [bold]No saved inter-round garbage found![/bold]
+meta-garbage-statistics = [bold]Inter-round garbage collection statistics[/bold]
+meta-garbage-no-item-garbage = No items were collected!
+meta-garbage-found-items = List of saved items:
+meta-garbage-no-liquid-garbage = Not a single drop of liquid was collected!
+meta-garbage-found-liquid = Volume of saved liquids:

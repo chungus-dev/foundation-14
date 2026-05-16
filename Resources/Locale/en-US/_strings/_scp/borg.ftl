@@ -1,1 +1,1 @@
-droid-no-charge = "Недостаточно заряда для активации { $name }"
+droid-no-charge = "Insufficient charge to activate { $name }"

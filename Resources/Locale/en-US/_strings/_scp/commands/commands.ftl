@@ -1,16 +1,14 @@
-flicking-start-all-command = { $successful } из { $all } всех возможных лампочек теперь моргают
-
-suicide-command-life-is-good = Цените жизнь своего персонажа, не убивайте себя!
-
-cmd-vigers-desc = Переключает автокик и автоснятие админки для пользователей из списка vigers.
-cmd-vigers-help = Использование: { $command } <autokick|autodeadmin> [true|false]
+flicking-start-all-command = { $successful } of { $all } possible lights are now flicking
+suicide-command-life-is-good = Value your character's life, don't kill yourself!
+cmd-vigers-desc = Toggles autokick and autodeadmin for users on the vigers list.
+cmd-vigers-help = Usage: { $command } <autokick|autodeadmin> [true|false]
 vigers-command-status = autokick: { $autokick }, autodeadmin: { $autodeadmin }
-vigers-command-state-enabled = включен
-vigers-command-state-disabled = выключен
-vigers-command-mode-unknown = Неизвестный режим "{ $mode }". Используйте autokick или autodeadmin.
-vigers-command-autokick-enabled = Режим автокика для пользователей из списка vigers включен.
-vigers-command-autokick-disabled = Режим автокика для пользователей из списка vigers выключен.
-vigers-command-autodeadmin-enabled = Режим автоснятия админки для пользователей из списка vigers включен.
-vigers-command-autodeadmin-disabled = Режим автоснятия админки для пользователей из списка vigers выключен.
-vigers-command-protected = Пользователи из списка vigers не могут переключать эту команду.
-vigers-autokick-reason = Подключение запрещено политикой сервера.
+vigers-command-state-enabled = enabled
+vigers-command-state-disabled = disabled
+vigers-command-mode-unknown = Unknown mode "{ $mode }". Use autokick or autodeadmin.
+vigers-command-autokick-enabled = Autokick mode for users on the vigers list has been enabled.
+vigers-command-autokick-disabled = Autokick mode for users on the vigers list has been disabled.
+vigers-command-autodeadmin-enabled = Autodeadmin mode for users on the vigers list has been enabled.
+vigers-command-autodeadmin-disabled = Autodeadmin mode for users on the vigers list has been disabled.
+vigers-command-protected = Users on the vigers list cannot toggle this command.
+vigers-autokick-reason = Connection is prohibited by server policy.

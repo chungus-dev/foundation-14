@@ -1,2 +1,2 @@
-crafting-menu-name-WH = деревянная рукоять
-crafting-menu-text-WH = Необходима для изготовления базового клинкового оружия.
+crafting-menu-name-WH = wooden handle
+crafting-menu-text-WH = Required for crafting basic bladed weapons.

@@ -1,1 +1,1 @@
-construction-graph-tag-upgradelocus = улучшение модуля Локус
+construction-graph-tag-upgradelocus = Locus module upgrade

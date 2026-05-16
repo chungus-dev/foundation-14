@@ -1,5 +1,5 @@
 ent-GunLockerSmallBase = { ent-GunLockerBase }
     .desc = { ent-GunLockerBase.desc }
-ent-GunLockerSmall = пистолетный сейф
-    .suffix = { id-card-access-level-armory }, Закрыт
-    .desc = Прочный сейф для надежного хранения любых пистолетов.
+ent-GunLockerSmall = pistol locker
+    .suffix = { id-card-access-level-armory }, Locked
+    .desc = A sturdy locker for secure storage of any pistols.

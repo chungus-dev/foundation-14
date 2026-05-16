@@ -1,12 +1,11 @@
 ent-ScpWeaponEnergyTurretStationControlPanelBase = { ent-WeaponEnergyTurretStationControlPanelBase }
     .desc = { ent-WeaponEnergyTurretStationControlPanelBase.desc }
 ent-ScpWeaponEnergyTurretAIControlPanel = { ent-ScpWeaponEnergyTurretStationControlPanelBase }
-    .suffix = ИИ
+    .suffix = AI
     .desc = { ent-ScpWeaponEnergyTurretStationControlPanelBase.desc }
 ent-ScpWeaponEnergyTurretSecurityControlPanel = { ent-ScpWeaponEnergyTurretStationControlPanelBase }
-    .suffix = Безопасность
+    .suffix = Security
     .desc = { ent-ScpWeaponEnergyTurretStationControlPanelBase.desc }
 ent-ScpWeaponEnergyTurretAdministrationControlPanel = { ent-ScpWeaponEnergyTurretStationControlPanelBase }
-    .suffix = Администрация
+    .suffix = Administration
     .desc = { ent-ScpWeaponEnergyTurretStationControlPanelBase.desc }
-

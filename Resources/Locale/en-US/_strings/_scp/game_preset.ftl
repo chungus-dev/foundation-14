@@ -1,40 +1,40 @@
-scp-title-neutralized = Уровень сложности «Нейтрализован»
+scp-title-neutralized = Difficulty level "Neutralized"
 scp-description-neutralized =
-    Минимальный уровень сложности. Доступны только неопасные SCP-объекты
-    | Неигровые SCP: ДА
-    | SCP-035: НЕТ
-    | Безопасный: ДА
-    | Евклид: НЕТ
-    | Кетер: НЕТ
-scp-title-safe = Уровень сложности «Безопасный»
+    Minimum difficulty level. Only non-dangerous SCP objects are available
+    | Non-playable SCP: YES
+    | SCP-035: NO
+    | Safe: YES
+    | Euclid: NO
+    | Keter: NO
+scp-title-safe = Difficulty level "Safe"
 scp-description-safe =
-    Низкий уровень сложности. Доступны только контроллируемые SCP-объекты
-    | Неигровые SCP: ДА
-    | SCP-035: ДА
-    | Безопасный: ДА
-    | Евклид: Максимум 1
-    | Кетер: НЕТ
-scp-title-euclid = Уровень сложности «Евклид»
+    Low difficulty level. Only controllable SCP objects are available
+    | Non-playable SCP: YES
+    | SCP-035: YES
+    | Safe: YES
+    | Euclid: Up to 1
+    | Keter: NO
+scp-title-euclid = Difficulty level "Euclid"
 scp-description-euclid =
-    Средний уровень сложности. Задуман как стандартный режим игры. Доступные SCP-объекты:
-    | Неигровые SCP: ДА
-    | SCP-035: ДА
-    | Безопасный: ДА
-    | Евклид: Максимум 1
-    | Кетер: Максимум 1
-scp-title-keter = Уровень сложности «Кетер»
+    Medium difficulty level. Designed as the standard game mode. Available SCP objects:
+    | Non-playable SCP: YES
+    | SCP-035: YES
+    | Safe: YES
+    | Euclid: Up to 1
+    | Keter: Up to 1
+scp-title-keter = Difficulty level "Keter"
 scp-description-keter =
-    Высокий уровень сложности. Доступные SCP-объекты:
-    | Неигровые SCP: ДА
-    | SCP-035: ДА
-    | Безопасный: ДА
-    | Евклид: ДА
-    | Кетер: Максимум 1
-scp-title-thaumiel = Уровень сложности «Таумиэль»
+    High difficulty level. Available SCP objects:
+    | Non-playable SCP: YES
+    | SCP-035: YES
+    | Safe: YES
+    | Euclid: YES
+    | Keter: Up to 1
+scp-title-thaumiel = Difficulty level "Thaumiel"
 scp-description-thaumiel =
-    Вы знаете, на что идете. Доступные SCP-объекты:
-    | Неигровые SCP: ДА
-    | SCP-035: ДА
-    | Безопасный: ДА
-    | Евклид: ДА
-    | Кетер: ДА
+    You know what you're getting into. Available SCP objects:
+    | Non-playable SCP: YES
+    | SCP-035: YES
+    | Safe: YES
+    | Euclid: YES
+    | Keter: YES

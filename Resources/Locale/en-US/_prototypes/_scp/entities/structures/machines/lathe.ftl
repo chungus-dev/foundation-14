@@ -1,4 +1,4 @@
-ent-ScpTechFab = фабрикатор альфа
-    .desc = Многоцелевое устройство, способное синтезировать предметы, созданные на основе аномальных исследований. Работает путем переработки загруженных материалов и их преобразования в заданные объекты.
-ent-ScpTechFabCircuitboard = фабрикатор альфа (машинная плата)
-    .desc = Печатная плата фабрикатора альфа.
+ent-ScpTechFab = alpha fabricator
+    .desc = A versatile device capable of synthesizing items created from anomalous research. It works by processing loaded materials and converting them into specified objects.
+ent-ScpTechFabCircuitboard = alpha fabricator (machine board)
+    .desc = Alpha fabricator circuit board.

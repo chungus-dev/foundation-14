@@ -1,1 +1,1 @@
-materials-concrete = цемент
+materials-concrete = cement

@@ -1,5 +1,4 @@
 reagent-name-scp2022 = SCP-2022-D
-reagent-desc-scp2022 = Жидкий солнечный свет, стабилизированный в форме лекарственного состава. Избавляет от депрессии, но крайне опасен в больших дозах.
-
-reagent-effect-scp2022-warmth = Вас окутывает мягкое и приятное тепло по всему телу
-reagent-effect-scp2022-heat-burn = Вы чувствуете невыносимый жар во всём теле!
+reagent-desc-scp2022 = Liquid sunlight, stabilized as a medicinal preparation. It relieves depression, but is extremely dangerous in large doses.
+reagent-effect-scp2022-warmth = A gentle, pleasant warmth envelops your whole body
+reagent-effect-scp2022-heat-burn = You feel unbearable heat throughout your entire body!

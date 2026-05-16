@@ -1,2 +1,2 @@
-ent-DirtyWaterEntity = грязная вода
-    .desc = Грязная, мутная вода.
+ent-DirtyWaterEntity = Dirty water
+    .desc = Dirty, murky water.

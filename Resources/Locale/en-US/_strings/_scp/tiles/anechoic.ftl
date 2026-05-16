@@ -1,1 +1,1 @@
-﻿scp-tiles-anechoic = [SCP] покрытие безэховой камеры
+scp-tiles-anechoic = [SCP] anechoic chamber covering

@@ -1,5 +1,5 @@
 ent-BaseNuclearWarhead = { ent-BaseStructure }
     .desc = { ent-BaseStructure.desc }
-ent-NuclearWarheadAlpha = термоядерная боеголовка «Альфа»
-    .desc = Мощное термоядерное взрывное устройство, сконструированное с помощью жидкого дейтерия. Предназначена для уничтожения подземной части комплекса, вместе со всеми сбежавшими объектами.
-    .suffix = Фонд SCP
+ent-NuclearWarheadAlpha = Thermonuclear warhead "Alpha"
+    .desc = A powerful thermonuclear explosive device constructed with liquid deuterium. It is intended to destroy the underground section of the complex along with all escaped objects.
+    .suffix = SCP Foundation

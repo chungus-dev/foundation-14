@@ -1,1 +1,1 @@
-id-card-examine = Здесь имеется идентификационная подпись, кажется, эта ключ карта принадлежит { $name }, на должности { $job }
+id-card-examine = There is an identification signature; it appears this key card belongs to { $name }, with the position of { $job }

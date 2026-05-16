@@ -1,2 +1,2 @@
-reagent-name-corbocarbonate = Корбокорбонат
-reagent-desc-corbocarbonate = Неизвестное науке вещество
+reagent-name-corbocarbonate = Corbocarbonate
+reagent-desc-corbocarbonate = An unknown chemical substance

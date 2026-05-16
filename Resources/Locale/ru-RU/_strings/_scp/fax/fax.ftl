@@ -1,6 +1,6 @@
-fax-name-regional-administration = [Региональное управление]
-fax-name-o4-headquarters = [Штаб О4]
-fax-name-ethics-committee-office = [Комитет по этике]
+fax-name-regional-administration = Региональное управление
+fax-name-o4-headquarters = Штаб О4
+fax-name-ethics-committee-office = Комитет по этике
 fax-name-complex-director-office = Офис директора комплекса
 fax-name-encrypted = ОШ&Б*?*%!
 fax-name-chief-researcher-office = Кабинет главного научного сотрудника

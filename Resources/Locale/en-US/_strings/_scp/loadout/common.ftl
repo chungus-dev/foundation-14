@@ -1,2 +1,2 @@
-loadout-group-radio = Рация
-loadout-group-key-card = Доступ
+loadout-group-radio = Radio
+loadout-group-key-card = Access

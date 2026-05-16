@@ -1,14 +1,13 @@
-﻿scp-announce-on-spawn-source-name = Автоматическая система оповещения
-
-scp999-announce-on-spawn = Обнаружена активность в камере содержания объекта SCP-999
-scp049-announce-on-spawn = Обнаружена активность в камере содержания объекта SCP-049
-scp173-announce-on-spawn = Обнаружена активность в камере содержания объекта SCP-173
-scp096-announce-on-spawn = Обнаружена активность в камере содержания объекта SCP-096
-scp939-announce-on-spawn = Обнаружена активность в камере содержания объекта SCP-939
-scp106-announce-on-spawn = Обнаружена активность в камере содержания объекта SCP-106
-head-announce-on-spawn = { $name }, { $job }, назначен главой отдела.
-squad-commander-announce-on-spawn = { $name }, { $job }, назначен командиром отряда.
-class-d-announce-on-spawn = Зарегистрирован новый сотрудник класса Д: { $name }, { $job }.
+scp-announce-on-spawn-source-name = Automated alert system
+scp999-announce-on-spawn = Activity detected in the containment chamber of SCP-999
+scp049-announce-on-spawn = Activity detected in the containment chamber of SCP-049
+scp173-announce-on-spawn = Activity detected in the containment chamber of SCP-173
+scp096-announce-on-spawn = Activity detected in the containment chamber of SCP-096
+scp939-announce-on-spawn = Activity detected in the containment chamber of SCP-939
+scp106-announce-on-spawn = Activity detected in the containment chamber of SCP-106
+head-announce-on-spawn = { $name }, { $job }, has been appointed department head.
+squad-commander-announce-on-spawn = { $name }, { $job }, has been appointed squad commander.
+class-d-announce-on-spawn = A new Class-D personnel has been registered: { $name }, { $job }.
 mtf-announce-on-spawn =
-    ВНИМАНИЕ! Мобильная оперативная группа вошла в комплекс.
-    Всем выжившим рекомендуется оставаться в убежище или в любом другом безопасном месте, пока группа не зачистит комплекс.
+    WARNING! The Mobile Task Force has entered the facility.
+    All survivors are advised to remain in shelter or any other safe location until the unit has cleared the facility.
