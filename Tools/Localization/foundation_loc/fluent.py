@@ -11,7 +11,24 @@ MESSAGE_START_RE = re.compile(r"^(?P<id>-?[A-Za-z][A-Za-z0-9_-]*)\s*=")
 VARIABLE_RE = re.compile(r"\{\s*\$([A-Za-z][A-Za-z0-9_-]*)")
 ATTRIBUTE_RE = re.compile(r"^\s+\.([A-Za-z][A-Za-z0-9_-]*)\s*=", re.MULTILINE)
 FUNCTION_RE = re.compile(r"\{\s*([A-Z][A-Z0-9_-]*)\s*\(")
-RICH_TAG_RE = re.compile(r"\[(\/?)([A-Za-z][A-Za-z0-9_-]*)(?:[^\]]*)\]")
+RICH_TAG_RE = re.compile(r"(?<!\\)\[(\/?)([A-Za-z][A-Za-z0-9_-]*)(?:[^\]]*)\]")
+RICH_TAG_NAMES = {
+    "bold",
+    "bolditalic",
+    "bullet",
+    "center",
+    "cmdlink",
+    "color",
+    "emoji",
+    "font",
+    "head",
+    "italic",
+    "keybind",
+    "mono",
+    "protodata",
+    "scramble",
+    "textlink",
+}
 
 
 @dataclass(frozen=True)
@@ -66,20 +83,19 @@ def normalize_fluent_text(text: str) -> str:
 
 def escape_leading_multiline_markup_lines(lines: list[str]) -> list[str]:
     output = list(lines)
-    waiting_for_pattern_start = False
+    in_multiline_pattern = False
 
     for index, line in enumerate(output):
         if _is_pattern_assignment(line):
-            waiting_for_pattern_start = not line.split("=", 1)[1].strip()
+            in_multiline_pattern = True
             continue
 
-        if not waiting_for_pattern_start:
+        if not in_multiline_pattern:
             continue
 
         if not line.strip():
             continue
 
-        waiting_for_pattern_start = False
         output[index] = escape_leading_markup_line(line)
 
     return output
@@ -87,7 +103,11 @@ def escape_leading_multiline_markup_lines(lines: list[str]) -> list[str]:
 
 def escape_leading_markup_line(line: str) -> str:
     stripped = line.lstrip()
-    if not stripped.startswith("[") or stripped.startswith(ZERO_WIDTH_SPACE):
+    if stripped.startswith(ZERO_WIDTH_SPACE):
+        return line
+
+    match = RICH_TAG_RE.match(stripped)
+    if match is None or match.group(2).lower() not in RICH_TAG_NAMES:
         return line
 
     leading_len = len(line) - len(stripped)
@@ -115,6 +135,10 @@ def rich_tags(text: str) -> Counter[str]:
     for closing, tag in RICH_TAG_RE.findall(text):
         tags[f"/{tag}" if closing else tag] += 1
     return tags
+
+
+def strip_rich_tags(text: str) -> str:
+    return RICH_TAG_RE.sub(" ", text)
 
 
 def same_message_payload(left: FluentMessage, right: FluentMessage) -> bool:
@@ -151,9 +175,4 @@ def escape_leading_multiline_markup(value: str) -> str:
     if "\n" not in value:
         return value
 
-    stripped = value.lstrip()
-    if not stripped.startswith("[") or stripped.startswith(ZERO_WIDTH_SPACE):
-        return value
-
-    leading_len = len(value) - len(stripped)
-    return value[:leading_len] + ZERO_WIDTH_SPACE + stripped
+    return "\n".join(escape_leading_markup_line(line) for line in value.split("\n"))

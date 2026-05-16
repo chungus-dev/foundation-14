@@ -27,41 +27,51 @@ foreach ($relativeRoot in $relativeRoots) {
 }
 
 $targetFiles = New-Object System.Collections.Generic.List[string]
-$createdFiles = 0
-$missingFiles = 0
+$prepareReport = Join-Path ([System.IO.Path]::GetTempPath()) ("foundation-loc-prepare-en-" + [System.Guid]::NewGuid().ToString("N") + ".json")
+$prepareArgs = @(
+    "prepare-target-files",
+    "--source-culture-root", $sourceCultureRoot,
+    "--target-culture-root", $targetCultureRoot,
+    "--report-json", $prepareReport
+)
 
 foreach ($relativeRoot in $relativeRoots) {
-    $sourceRoot = Join-Path $sourceCultureRoot $relativeRoot
-    $targetRoot = Join-Path $targetCultureRoot $relativeRoot
-    $sourceRootFull = (Resolve-Path $sourceRoot).Path.TrimEnd("\", "/")
-    $sourceFiles = @(Get-ChildItem -Path $sourceRoot -Recurse -Filter "*.ftl" -File | Sort-Object FullName)
+    $prepareArgs += @("--relative-root", $relativeRoot)
+}
 
-    foreach ($sourceFile in $sourceFiles) {
-        $relativePath = $sourceFile.FullName.Substring($sourceRootFull.Length).TrimStart("\", "/")
-        $targetFile = Join-Path $targetRoot $relativePath
+if ($DryRun) {
+    $prepareArgs += "--dry-run"
+}
 
-        if (-not (Test-Path $targetFile)) {
-            if ($DryRun) {
-                $missingFiles += 1
-                continue
-            }
+Write-Host "Preparing en-US SCP target files..."
+$prepareOutput = python $runner @prepareArgs
+if ($LASTEXITCODE -ne 0) {
+    throw "Failed to prepare en-US target files."
+}
+Write-Host $prepareOutput
 
-            $targetDirectory = Split-Path -Parent $targetFile
-            New-Item -ItemType Directory -Path $targetDirectory -Force | Out-Null
-            Copy-Item -Path $sourceFile.FullName -Destination $targetFile
-            $createdFiles += 1
-        }
+try {
+    $report = Get-Content -Path $prepareReport -Raw | ConvertFrom-Json
+    foreach ($targetFile in $report.target_files) {
+        $targetFiles.Add([string] $targetFile)
+    }
 
-        $targetFiles.Add($targetFile)
+    if ($DryRun -and $report.dry_run_missing_files -gt 0) {
+        Write-Host "Dry run skipped $($report.dry_run_missing_files) missing en-US target file(s). Run without -DryRun to create files only for messages absent from the whole en-US locale."
+    }
+
+    if ($report.prepared_files -gt 0) {
+        Write-Host "Prepared $($report.prepared_files) en-US target file(s) with messages absent from the whole en-US locale."
+    }
+
+    if ($report.skipped_existing_messages -gt 0) {
+        Write-Host "Skipped $($report.skipped_existing_messages) SCP source file(s): their messages already exist somewhere in en-US."
     }
 }
-
-if ($DryRun -and $missingFiles -gt 0) {
-    Write-Host "Dry run skipped $missingFiles missing en-US target file(s). Run without -DryRun to create them from ru-RU sources."
-}
-
-if ($createdFiles -gt 0) {
-    Write-Host "Created $createdFiles missing en-US target file(s) from ru-RU SCP sources."
+finally {
+    if (Test-Path $prepareReport) {
+        Remove-Item -LiteralPath $prepareReport -Force
+    }
 }
 
 $files = @($targetFiles | Sort-Object)

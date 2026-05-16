@@ -16,7 +16,7 @@ from .constants import (
 from .filesystem import iter_files, read_text, remove_empty_files_and_dirs, write_text_if_changed
 from .fluent import normalize_fluent_text
 from .prototypes import build_entity_ftl, extract_entity_localizations, write_entity_ftl
-from .strings import sync_locale_strings
+from .strings import prepare_target_files, sync_locale_strings, write_missing_messages_for_file
 from .validation import validate_locale
 
 
@@ -47,6 +47,22 @@ def main(argv: list[str] | None = None) -> int:
     sync.add_argument("--bidirectional", action="store_true")
     sync.add_argument("--dry-run", action="store_true")
     sync.set_defaults(func=_sync_strings)
+
+    prepare = subparsers.add_parser("prepare-target-file")
+    prepare.add_argument("--source-file", type=Path, required=True)
+    prepare.add_argument("--target-file", type=Path, required=True)
+    prepare.add_argument("--target-locale-root", type=Path, required=True)
+    prepare.add_argument("--relative", type=Path, required=True)
+    prepare.add_argument("--dry-run", action="store_true")
+    prepare.set_defaults(func=_prepare_target_file)
+
+    prepare_many = subparsers.add_parser("prepare-target-files")
+    prepare_many.add_argument("--source-culture-root", type=Path, required=True)
+    prepare_many.add_argument("--target-culture-root", type=Path, required=True)
+    prepare_many.add_argument("--relative-root", type=Path, action="append", required=True)
+    prepare_many.add_argument("--report-json", type=Path, required=True)
+    prepare_many.add_argument("--dry-run", action="store_true")
+    prepare_many.set_defaults(func=_prepare_target_files)
 
     validate = subparsers.add_parser("validate")
     validate.add_argument("--source-culture", default=DEFAULT_SOURCE_CULTURE)
@@ -126,6 +142,42 @@ def _sync_strings(args: argparse.Namespace) -> int:
     print(
         f"scanned_files={result.scanned_files} changed_files={result.changed_files} "
         f"added_messages={result.added_messages}"
+    )
+    return 0
+
+
+def _prepare_target_file(args: argparse.Namespace) -> int:
+    added, changed = write_missing_messages_for_file(
+        args.repo_root / args.source_file,
+        args.repo_root / args.target_file,
+        args.repo_root / args.target_locale_root,
+        args.relative,
+        dry_run=args.dry_run,
+    )
+    print(f"added_messages={added} changed={changed}")
+    return 0
+
+
+def _prepare_target_files(args: argparse.Namespace) -> int:
+    result = prepare_target_files(
+        args.repo_root / args.source_culture_root,
+        args.repo_root / args.target_culture_root,
+        args.relative_root,
+        dry_run=args.dry_run,
+    )
+    report = {
+        "target_files": [str(path) for path in result.target_files],
+        "prepared_files": result.prepared_files,
+        "skipped_existing_messages": result.skipped_existing_messages,
+        "dry_run_missing_files": result.dry_run_missing_files,
+    }
+    report_path = args.repo_root / args.report_json
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(
+        f"target_files={len(result.target_files)} prepared_files={result.prepared_files} "
+        f"skipped_existing_messages={result.skipped_existing_messages} "
+        f"dry_run_missing_files={result.dry_run_missing_files}"
     )
     return 0
 

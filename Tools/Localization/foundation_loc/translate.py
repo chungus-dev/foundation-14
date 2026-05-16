@@ -10,7 +10,7 @@ import sys
 
 from .ai import AiConfig, OpenAICompatibleClient
 from .filesystem import read_text, write_text_if_changed
-from .fluent import FluentMessage, attributes, functions, message_map, normalize_fluent_text, parse_messages, rich_tags, variables
+from .fluent import FluentMessage, attributes, functions, message_map, normalize_fluent_text, parse_messages, rich_tags, strip_rich_tags, variables
 
 
 @dataclass(frozen=True)
@@ -226,15 +226,8 @@ def _messages_to_translate(text: str, source_text: str | None, target_culture: s
             if _should_translate_for_target_language(message, target_culture)
         ]
 
-    source_messages = message_map(source_text)
     messages: list[FluentMessage] = []
-
-    for message_id, target in target_messages.items():
-        source = source_messages.get(message_id)
-        if source is not None and target.text.strip() == source.text.strip():
-            messages.append(target)
-            continue
-
+    for target in target_messages.values():
         if _should_translate_for_target_language(target, target_culture):
             messages.append(target)
 
@@ -455,7 +448,7 @@ def _user_visible_text(text: str) -> str:
 
     visible = "\n".join(values)
     visible = re.sub(r"\{[^}]*\}", " ", visible)
-    visible = re.sub(r"\[[^\]]+\]", " ", visible)
+    visible = strip_rich_tags(visible)
     return ANGLE_TAG_RE.sub(" ", visible)
 
 
