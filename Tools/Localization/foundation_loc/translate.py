@@ -29,6 +29,33 @@ class TranslationRunResult:
     failed_details: tuple[TranslationFailure, ...] = ()
 
 
+@dataclass
+class TranslationProgress:
+    total: int
+    root: Path
+    completed: int = 0
+    active: tuple[Path, ...] = ()
+    last_status_length: int = 0
+
+    def started(self, path: Path) -> None:
+        self.active = (*self.active, path)
+        self.render()
+
+    def finished(self, path: Path) -> None:
+        self.completed += 1
+        self.active = tuple(active_path for active_path in self.active if active_path != path)
+        self.render()
+
+    def render(self) -> None:
+        status = _progress_status(self.completed, self.total, self.active, self.root)
+        padding = " " * max(0, self.last_status_length - len(status))
+        print(f"\r{status}{padding}", end="", file=sys.stderr, flush=True)
+        self.last_status_length = len(status)
+
+    def finish(self) -> None:
+        print(file=sys.stderr, flush=True)
+
+
 def build_translation_prompt(prompt_path: Path, glossary_path: Path | None) -> str:
     prompt = read_text(prompt_path)
     if glossary_path is None or not glossary_path.exists():
@@ -48,13 +75,44 @@ async def translate_files(
     allow_partial: bool = False,
     dry_run: bool = False,
 ) -> TranslationRunResult:
+    pending_files: list[Path] = []
+    preflight_errors: list[TranslationFileError] = []
+
+    for path in files:
+        try:
+            text = read_text(path)
+            source_text = source_texts.get(path) if source_texts else None
+            if _messages_to_translate(text, source_text, target_culture):
+                pending_files.append(path)
+        except Exception as error:
+            preflight_errors.append(TranslationFileError(path, 0, False, error))
+
+    if not pending_files:
+        return TranslationRunResult(
+            0,
+            0,
+            tuple(error.path for error in preflight_errors),
+            tuple(TranslationFailure(
+                path=error.path,
+                translated_messages=error.translated_messages,
+                changed=error.changed,
+                error=_format_translation_error(error.error),
+            ) for error in preflight_errors),
+        )
+
+    skipped_files = len(files) - len(pending_files) - len(preflight_errors)
+    if skipped_files > 0:
+        print(f"skipped_translated_files={skipped_files}", file=sys.stderr, flush=True)
+
     client = OpenAICompatibleClient(AiConfig.from_env())
     semaphore = asyncio.Semaphore(max(1, concurrency))
+    progress = TranslationProgress(total=len(pending_files), root=_common_path_root(pending_files))
 
     async def translate_one(path: Path) -> tuple[int, bool] | TranslationFileError:
         async with semaphore:
+            progress.started(path)
             try:
-                return await translate_file(
+                result = await translate_file(
                     path,
                     client,
                     prompt,
@@ -64,12 +122,17 @@ async def translate_files(
                     allow_partial=allow_partial,
                     dry_run=dry_run,
                 )
+                return result
             except TranslationFileError as error:
                 return error
             except Exception as error:
                 return TranslationFileError(path, 0, False, error)
+            finally:
+                progress.finished(path)
 
-    results = await asyncio.gather(*(translate_one(path) for path in files))
+    translation_results = await asyncio.gather(*(translate_one(path) for path in pending_files))
+    progress.finish()
+    results = [*preflight_errors, *translation_results]
     translated = 0
     changed = 0
     failed: list[Path] = []
@@ -84,7 +147,7 @@ async def translate_files(
                 path=result.path,
                 translated_messages=result.translated_messages,
                 changed=result.changed,
-                error=str(result.error),
+                error=_format_translation_error(result.error),
             ))
             continue
 
@@ -113,7 +176,7 @@ async def translate_file(
 
     for chunk in _chunks(messages, chunk_size):
         try:
-            translated_messages.update(await _translate_chunk(client, prompt, chunk))
+            translated_messages.update(await _translate_chunk(client, prompt, chunk, target_culture))
         except Exception as error:
             raise TranslationFileError(path, len(translated_messages), changed, error) from error
 
@@ -203,15 +266,17 @@ async def _translate_chunk(
     client: OpenAICompatibleClient,
     prompt: str,
     chunk: list[FluentMessage],
+    target_culture: str | None,
 ) -> dict[str, str]:
     payload = [{"id": message.id, "text": message.text} for message in chunk]
     expected = {message.id: message for message in chunk}
     last_error: Exception | None = None
+    last_response: str | None = None
     attempts = 0
-    max_attempts = int(os.environ.get("TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS", "0"))
-    cooldown_seconds = int(os.environ.get("TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS", "60"))
+    max_attempts = int(os.environ.get("TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS", "3"))
+    cooldown_seconds = int(os.environ.get("TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS", "0"))
 
-    # max_attempts==0 (via TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS) means unlimited invalid-response retries
+    # max_attempts==0 (via TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS) means unlimited invalid-response retries.
     while max_attempts <= 0 or attempts < max_attempts:
         attempts += 1
         response = await client.chat([
@@ -220,9 +285,13 @@ async def _translate_chunk(
         ])
 
         try:
-            return _parse_translation_response(response, expected)
+            return _parse_translation_response(response, expected, target_culture)
         except ValueError as error:
+            if isinstance(error, TranslationValidationError):
+                error.ai_response = response
             last_error = error
+            last_response = response
+            _print_ai_response_error(response)
             if max_attempts <= 0 or attempts < max_attempts:
                 max_attempts_text = "unlimited" if max_attempts <= 0 else str(max_attempts)
                 print(
@@ -235,10 +304,17 @@ async def _translate_chunk(
                 )
                 await asyncio.sleep(cooldown_seconds)
 
-    raise TranslationValidationError("AI returned invalid translation repeatedly.") from last_error
+    raise TranslationValidationError(
+        "AI returned invalid translation repeatedly.",
+        ai_response=last_response,
+    ) from last_error
 
 
-def _parse_translation_response(response: str, expected: dict[str, FluentMessage]) -> dict[str, str]:
+def _parse_translation_response(
+    response: str,
+    expected: dict[str, FluentMessage],
+    target_culture: str | None,
+) -> dict[str, str]:
     data = json.loads(_strip_json_fence(response))
     if not isinstance(data, list):
         raise TranslationValidationError("AI translation response must be a JSON list.")
@@ -254,6 +330,7 @@ def _parse_translation_response(response: str, expected: dict[str, FluentMessage
 
         text = item["text"].strip("\n")
         _validate_translated_message(expected[message_id], text)
+        _validate_target_language(message_id, text, target_culture)
         result[message_id] = text
 
     missing = set(expected) - set(result)
@@ -282,6 +359,19 @@ def _validate_translated_message(source: FluentMessage, translated: str) -> None
 
     if _comments(source.text) != _comments(translated):
         raise TranslationValidationError(f"AI changed comments for {source.id}.")
+
+
+def _validate_target_language(message_id: str, text: str, target_culture: str | None) -> None:
+    if target_culture is None:
+        return
+
+    visible = _user_visible_text(text)
+
+    if target_culture.lower().startswith("en") and CYRILLIC_RE.search(visible) is not None:
+        raise TranslationValidationError(f"AI left Cyrillic text in English translation for {message_id}.")
+
+    if target_culture.lower().startswith("ru") and _contains_untranslated_english(visible):
+        raise TranslationValidationError(f"AI left English text in Russian translation for {message_id}.")
 
 
 def _comments(text: str) -> list[str]:
@@ -396,8 +486,55 @@ def _replace_messages(text: str, replacements: dict[str, str]) -> str:
     return "\n".join(output)
 
 
+def _progress_status(completed: int, total: int, active: tuple[Path, ...], root: Path) -> str:
+    width = 24
+    ratio = 1 if total <= 0 else completed / total
+    filled = int(width * ratio)
+    bar = "#" * filled + "-" * (width - filled)
+    percent = int(ratio * 100)
+    active_text = _format_paths(active, root)
+    return f"Translation {completed}/{total} [{bar}] {percent:3d}% | Active: {active_text}"
+
+
+def _format_paths(paths: tuple[Path, ...], root: Path) -> str:
+    if not paths:
+        return "idle"
+
+    return " | ".join(_short_path(path, root) for path in paths)
+
+
+def _short_path(path: Path, root: Path) -> str:
+    try:
+        return str(path.relative_to(root))
+    except ValueError:
+        return str(path)
+
+
+def _common_path_root(paths: list[Path]) -> Path:
+    try:
+        return Path(os.path.commonpath([str(path.parent) for path in paths]))
+    except ValueError:
+        return Path.cwd()
+
+
+def _print_ai_response_error(response: str) -> None:
+    print("\nai_response_begin", file=sys.stderr, flush=True)
+    print(response, file=sys.stderr, flush=True)
+    print("ai_response_end", file=sys.stderr, flush=True)
+
+
+def _format_translation_error(error: Exception) -> str:
+    message = str(error)
+    if isinstance(error, TranslationValidationError) and error.ai_response is not None:
+        return f"{message}\nAI response:\n{error.ai_response}"
+
+    return message
+
+
 class TranslationValidationError(ValueError):
-    pass
+    def __init__(self, message: str, ai_response: str | None = None):
+        super().__init__(message)
+        self.ai_response = ai_response
 
 
 class TranslationFileError(RuntimeError):

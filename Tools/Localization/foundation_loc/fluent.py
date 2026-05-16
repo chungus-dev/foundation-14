@@ -10,7 +10,7 @@ from .constants import ZERO_WIDTH_SPACE
 MESSAGE_START_RE = re.compile(r"^(?P<id>-?[A-Za-z][A-Za-z0-9_-]*)\s*=")
 VARIABLE_RE = re.compile(r"\{\s*\$([A-Za-z][A-Za-z0-9_-]*)")
 ATTRIBUTE_RE = re.compile(r"^\s+\.([A-Za-z][A-Za-z0-9_-]*)\s*=", re.MULTILINE)
-FUNCTION_RE = re.compile(r"\b([A-Z][A-Z0-9_-]*)\s*\(")
+FUNCTION_RE = re.compile(r"\{\s*([A-Z][A-Z0-9_-]*)\s*\(")
 RICH_TAG_RE = re.compile(r"\[(\/?)([A-Za-z][A-Za-z0-9_-]*)(?:[^\]]*)\]")
 
 

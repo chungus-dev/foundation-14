@@ -12,9 +12,14 @@ Rules:
 - Translate attribute values normally while preserving variables like `{ $user }`, functions, XML/rich-text tags, and keybind markup.
 - Do not alter comments.
 - Do not rewrite already-correct English text unless needed.
+- Russian text in user-visible values is forbidden. If an input value is Russian, translate it into natural English.
 - Translate suffixes as short nominative/context-neutral labels.
 - Keep SCP, D-Class, IDs, abbreviations, and proper names unchanged unless the glossary says otherwise.
 - For Foundation/SCP content, prefer the glossary terminology. For inherited upstream station content, preserve the station context.
+
+**IT IS STRICTLY PROHIBITED TO TRANSLATE TEXT THAT HAS ALREADY BEEN TRANSLATED**
+**DO NOT ALTER LINES IN ENGLISH OR SYMBOLS SUCH AS `???`**
+**FOR ENGLISH OUTPUT, DO NOT LEAVE RUSSIAN/CYRILLIC TEXT IN MESSAGE VALUES**
 
 Example:
 

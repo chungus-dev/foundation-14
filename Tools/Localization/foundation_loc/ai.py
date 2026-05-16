@@ -6,8 +6,14 @@ import os
 import sys
 import time
 from typing import Any
+from urllib.parse import urlsplit
 
 from .dependencies import import_or_install
+
+
+DEFAULT_LOCAL_BASE_URL = "http://127.0.0.1:8000/v1"
+DEFAULT_LOCAL_MODEL = "gpt-5.3-codex-spark"
+DEFAULT_LOCAL_API_KEY = "local"
 
 
 @dataclass
@@ -37,10 +43,10 @@ class AiConfig:
     @classmethod
     def from_env(cls) -> "AiConfig":
         base_urls = [
-            base_url.rstrip("/")
-            for base_url in _split_secret_list(os.environ.get("TRANSLATE_AI_BASE_URL", ""))
+            _normalize_base_url(base_url)
+            for base_url in _split_secret_list(os.environ.get("TRANSLATE_AI_BASE_URL", DEFAULT_LOCAL_BASE_URL))
         ]
-        models = _split_secret_list(os.environ.get("TRANSLATE_AI_MODEL", ""))
+        models = _split_secret_list(os.environ.get("TRANSLATE_AI_MODEL", DEFAULT_LOCAL_MODEL))
         keys = _split_secret_list(os.environ.get("TRANSLATE_AI_KEYS", ""))
         proxies = _split_secret_list(os.environ.get("TRANSLATE_AI_PROXIES", ""))
 
@@ -49,7 +55,10 @@ class AiConfig:
         if not models:
             raise ValueError("TRANSLATE_AI_MODEL is required for AI translation.")
         if not keys:
-            raise ValueError("TRANSLATE_AI_KEYS must contain at least one key.")
+            if all(_is_local_base_url(base_url) for base_url in base_urls):
+                keys = [DEFAULT_LOCAL_API_KEY]
+            else:
+                raise ValueError("TRANSLATE_AI_KEYS must contain at least one key.")
 
         endpoint_count = max(len(base_urls), len(models), len(keys), len(proxies) if proxies else 0)
         endpoints = tuple(
@@ -183,3 +192,15 @@ class TransientAiError(RuntimeError):
 def _split_secret_list(value: str) -> list[str]:
     normalized = value.replace("\r", "\n").replace(",", "\n")
     return [item.strip() for item in normalized.split("\n") if item.strip()]
+
+
+def _normalize_base_url(base_url: str) -> str:
+    normalized = base_url.rstrip("/")
+    if "://" not in normalized:
+        normalized = f"http://{normalized}"
+    return normalized
+
+
+def _is_local_base_url(base_url: str) -> bool:
+    host = urlsplit(base_url).hostname
+    return host in {"127.0.0.1", "localhost", "::1"}
