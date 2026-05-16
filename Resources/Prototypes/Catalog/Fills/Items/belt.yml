@@ -54,8 +54,8 @@
     - id: Stunbaton
     - id: Handcuffs
       amount: 2
-    #- id: HoloprojectorSecurity # Fire edit
-    #- id: RadioHandheldSecurity # Fire edit
+    #- id: HoloprojectorSecurity # Scp edit
+    #- id: RadioHandheldSecurity # Scp edit
 
 - type: entity
   id: ClothingBeltSecurityFilled

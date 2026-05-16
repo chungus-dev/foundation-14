@@ -2,7 +2,7 @@
   parent: Airlock
   id: PinionAirlock
   suffix: Pinion, Clockwork
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/clockwork_pinion.rsi
@@ -18,7 +18,7 @@
   parent: AirlockGlass
   id: PinionAirlockGlass
   suffix: Pinion, Clockwork
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/clockwork_pinion.rsi

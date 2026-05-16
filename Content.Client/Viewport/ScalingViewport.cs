@@ -37,9 +37,9 @@ namespace Content.Client.Viewport
 
         private readonly List<CopyPixelsDelegate<Rgba32>> _queuedScreenshots = new();
 
-        // Fire edit start
+        // Scp edit start
         public ShaderInstance? Shader;
-        // Fire edit end
+        // Scp edit end
 
         public int CurrentRenderScale => _curRenderScale;
 
@@ -173,7 +173,7 @@ namespace Content.Client.Viewport
 
             var drawBox = GetDrawBox();
             var drawBoxGlobal = drawBox.Translated(GlobalPixelPosition);
-            // Fire edit start`
+            // Scp edit start`
 
             _viewport.RenderScreenOverlaysBelow(handle, this, drawBoxGlobal);
             handle.DrawingHandleScreen.UseShader(Shader);
@@ -181,7 +181,7 @@ namespace Content.Client.Viewport
             handle.DrawingHandleScreen.UseShader(null);
             _viewport.RenderScreenOverlaysAbove(handle, this, drawBoxGlobal);
 
-            // Fire edit end
+            // Scp edit end
         }
 
         public void Screenshot(CopyPixelsDelegate<Rgba32> callback)

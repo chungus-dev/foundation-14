@@ -9,7 +9,7 @@
   discipline: CivilianServices
   tier: 1
   cost: 5000
-  defaultToScpScale: 0.0 # Fire Edit
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
@@ -44,7 +44,7 @@
   discipline: CivilianServices
   tier: 1
   cost: 5000
-  defaultToScpScale: 0.0 # Fire Edit
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
   - SurveillanceCameraRouterCircuitboard
   - SurveillanceCameraWirelessRouterCircuitboard
@@ -64,7 +64,7 @@
   discipline: CivilianServices
   tier: 1
   cost: 7500
-  defaultToScpScale: 0.0 # Fire Edit
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
     - ComputerTelevisionCircuitboard
     - SynthesizerInstrument
@@ -81,7 +81,7 @@
   discipline: CivilianServices
   tier: 1
   cost: 7500
-  defaultToScpScale: 0.1 # Fire Edit
+  defaultToScpScale: 0.1 # Scp edit
   recipeUnlocks:
   - FatExtractorMachineCircuitboard
   - BiofabricatorMachineCircuitboard
@@ -98,7 +98,7 @@
   discipline: CivilianServices
   tier: 2
   cost: 5000
-  defaultToScpScale: 0.0 # Fire Edit
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
   - FauxTileAstroGrass
   - FauxTileMowedAstroGrass
@@ -147,13 +147,13 @@
   discipline: CivilianServices
   tier: 2
   cost: 10000
-  defaultToScpScale: 0.1 # Fire Edit
+  defaultToScpScale: 0.1 # Scp edit
   recipeUnlocks:
   - AdvMopItem
   - MegaSprayBottle
   - BorgModuleAdvancedCleaning
 
-# - type: technology # Fire Edit
+# - type: technology # Scp edit
 #   id: HONKMech
 #   name: research-technology-honk-mech
 #   icon:
@@ -173,7 +173,7 @@
 #   - HonkerTargetingElectronics
 #   - MechEquipmentHorn
 
-# - type: technology # Fire Edit
+# - type: technology # Scp edit
 #   id: HONKWeapons
 #   name: research-technology-honk-weapons
 #   icon:
@@ -215,7 +215,7 @@
   discipline: CivilianServices
   tier: 2
   cost: 10000
-  defaultToScpScale: 0.0 # Fire Edit
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
@@ -229,11 +229,11 @@
   discipline: CivilianServices
   tier: 2
   cost: 15000
-  defaultToScpScale: 0.3 # Fire Edit
+  defaultToScpScale: 0.3 # Scp edit
   recipeUnlocks:
   - CargoTelepadMachineCircuitboard
 
-# - type: technology # Fire Edit
+# - type: technology # Scp edit
 #   id: PushHorn
 #   name: research-technology-clowning-utilities
 #   icon:

@@ -29,14 +29,14 @@ public abstract partial class SharedXenoArtifactSystem
         XATRelayLocalEvent<ReactionEntityEvent>();
         XATRelayLocalEvent<LandEvent>();
 
-        // Fire edit start
+        // Scp edit start
         XATRelayLocalEvent<EntInsertedIntoContainerMessage>();
         XATRelayLocalEvent<EntRemovedFromContainerMessage>();
         XATRelayLocalEvent<Scp330SelfPunishmentEvent>();
         XATRelayLocalEvent<GotEquippedHandEvent>();
         XATRelayLocalEvent<GotUnequippedHandEvent>();
         XATRelayLocalEvent<DamageChangedOriginEvent>();
-        // Fire edit end
+        // Scp edit end
 
         // special case this one because we need to order the messages
         SubscribeLocalEvent<XenoArtifactComponent, ExaminedEvent>(OnExamined);

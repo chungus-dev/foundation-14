@@ -61,5 +61,5 @@ public sealed partial class PortalComponent : Component
     /// The tag used to identify entities that should be ignored by the portal.
     /// Entities with this tag will not be teleported when they interact with the portal.
     /// </summary>
-    public ProtoId<TagPrototype> IgnorePortalTag = "IgnorePortals"; // Fire added
+    public ProtoId<TagPrototype> IgnorePortalTag = "IgnorePortals"; // Scp added
 }

@@ -50,8 +50,8 @@
     sound:
       collection: ArcadeNoise
       params:
-        volume: -12 # Fire edit
-        maxDistance: 3 # Fire edit
+        volume: -12 # Scp edit
+        maxDistance: 3 # Scp edit
         variation: 0.05
 
 - type: entity
@@ -75,9 +75,9 @@
     rewardMinAmount: 0
     rewardMaxAmount: 0
     possibleRewards:
-    # Fire added start
+    # Scp added start
     - PlushieScp999
-    # Fire added end
+    # Scp added end
     - Basketball
     - BalloonNT
     - BalloonCorgi

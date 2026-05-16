@@ -11,7 +11,7 @@
     heldPrefix: carpet-red
   - type: FloorTile
     outputs:
-      - ScpPlating # Fire Edit
+      - ScpPlating # Scp edit
   - type: Stack
     stackType: FloorCarpetRed
   - type: SpawnAfterInteract #Nuke after convert to FloorTile

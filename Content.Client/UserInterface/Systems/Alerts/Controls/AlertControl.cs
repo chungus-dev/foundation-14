@@ -66,7 +66,7 @@ namespace Content.Client.UserInterface.Systems.Alerts.Controls
                 MaxSize = new Vector2(64, 64),
                 Stretch = SpriteView.StretchMode.None,
                 HorizontalAlignment = HAlignment.Left,
-                SpriteOffset = true, // Fire added
+                SpriteOffset = true, // Scp added
             };
 
             SetupIcon();

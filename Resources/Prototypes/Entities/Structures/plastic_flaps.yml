@@ -44,7 +44,7 @@
 
 - type: entity
   id: PlasticFlapsClear
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: PlasticFlapsBase
   name: plastic flaps
   suffix: Clear
@@ -56,7 +56,7 @@
 
 - type: entity
   id: PlasticFlapsOpaque
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: PlasticFlapsBase
   name: plastic flaps
   suffix: Opaque
@@ -81,7 +81,7 @@
 
 - type: entity
   id: PlasticFlapsAirtightClear
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: PlasticFlapsBase
   name: airtight plastic flaps
   suffix: Airtight, Clear
@@ -105,7 +105,7 @@
   name: airtight plastic flaps
   suffix: Airtight, Opaque
   description: Heavy duty, slightly stronger, airtight plastic flaps. Definitely can't get past those. No way.
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Destructible
     thresholds:

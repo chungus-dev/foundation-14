@@ -521,7 +521,7 @@
     - Scarves
     - Carpets
     - Bedsheets
-    - ShoulderPatch # Fire Edit
+    - ShoulderPatch # Scp edit
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm
@@ -685,7 +685,7 @@
     idleState: icon
     runningState: building
     staticPacks:
-    - ScpFloorTilesStatic # Fire Edit
+    - ScpFloorTilesStatic # Scp edit
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient

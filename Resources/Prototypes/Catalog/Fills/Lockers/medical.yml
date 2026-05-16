@@ -20,7 +20,7 @@
   parent: LockerMedicine
   id: LockerMedicineFilled
   suffix: Filled
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -32,7 +32,7 @@
   id: LockerWallMedicalFilled
   name: medicine wall locker
   suffix: Filled
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -60,7 +60,7 @@
   parent: LockerMedical
   id: LockerMedicalFilled
   suffix: Filled
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -72,7 +72,7 @@
   id: LockerWallMedicalDoctorFilled
   name: medical doctor's wall locker
   suffix: Filled
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -109,7 +109,7 @@
   parent: LockerChemistry
   id: LockerChemistryFilled
   suffix: Filled
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -138,7 +138,7 @@
   parent: LockerParamedic
   id: LockerParamedicFilled
   suffix: Filled
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:

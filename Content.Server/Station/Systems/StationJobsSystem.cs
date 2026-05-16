@@ -430,7 +430,7 @@ public sealed partial class StationJobsSystem : EntitySystem
             var filtered = jobPriorities
                 .Where(p =>
                             p.Value == priority
-                            // Fire edit - null means no explicit disallowed set
+                            // Scp edit - null means no explicit disallowed set
                             && (disallowedJobs == null || !disallowedJobs.Contains(p.Key))
                             && available.Contains(p.Key))
                 .Select(p => p.Key)

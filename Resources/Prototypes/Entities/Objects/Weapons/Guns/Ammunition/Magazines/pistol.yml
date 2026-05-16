@@ -268,7 +268,7 @@
 - type: entity
   parent: BaseMagazinePistolSubMachineGun
   id: MagazinePistolSubMachineGun
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: SMG magazine (.35 auto)
   description: 30-round double-stack magazine for submachine guns. Intended to hold general-purpose kinetic ammunition.
   components:
@@ -470,7 +470,7 @@
 
 - type: entity
   id: MagazinePistolHighCapacityRubber
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: machine pistol magazine (.35 auto rubber)
   parent: BaseMagazinePistolHighCapacity
   components:
@@ -497,7 +497,7 @@
 
 - type: entity
   id: MagazinePistolSubMachineGunRubber
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: SMG magazine (.35 auto rubber)
   parent: BaseMagazinePistolSubMachineGun
   components:

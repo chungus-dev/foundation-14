@@ -1,7 +1,7 @@
 - type: species
   id: Diona
   name: species-name-diona
-  roundStart: false # Fire edit
+  roundStart: false # Scp edit
   prototype: MobDiona
   defaultSkinTone: "#cdb369"
   dollPrototype: AppearanceDiona

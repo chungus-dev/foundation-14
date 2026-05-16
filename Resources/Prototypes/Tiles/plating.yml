@@ -39,7 +39,7 @@
   id: FloorHullReinforced
   name: tiles-hull-reinforced
   sprite: /Textures/Tiles/hull_reinforced.png
-  baseTurf: ScpPlating # Fire edit
+  baseTurf: ScpPlating # Scp edit
   isSubfloor: false
   footstepSounds:
     collection: FootstepHull

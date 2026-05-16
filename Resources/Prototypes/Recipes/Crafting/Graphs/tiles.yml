@@ -51,14 +51,14 @@
           steps:
             - material: Brass
               amount: 1
-    
+
     - node: filledPlate
       entity: FloorTileItemBrassFilled
-      
+
     - node: reebe
       entity: FloorTileItemBrassReebe
 
-# - type: constructionGraph # Fire Edit
+# - type: constructionGraph # Scp edit
 #   id: TileWhite
 #   start: start
 #   graph:
@@ -74,7 +74,7 @@
 #     - node: whitetile
 #       entity: FloorTileItemWhite
 
-# - type: constructionGraph # Fire Edit
+# - type: constructionGraph # Scp edit
 #   id: TileDark
 #   start: start
 #   graph:

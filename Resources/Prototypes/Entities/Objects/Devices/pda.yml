@@ -175,7 +175,7 @@
   parent: BasePDA
   id: PassengerPDA
   name: passenger PDA
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   description: Why isn't it gray?
   components:
   - type: Pda
@@ -188,7 +188,7 @@
   id: TechnicalAssistantPDA
   name: technical assistant PDA
   description: Why isn't it yellow?
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: TechnicalAssistantIDCard
@@ -208,7 +208,7 @@
   id: MedicalInternPDA
   name: medical intern PDA
   description: Why isn't it white?
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: MedicalInternIDCard
@@ -231,7 +231,7 @@
   id: SecurityCadetPDA
   name: security cadet PDA
   description: Why isn't it red?
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: SecurityCadetIDCard
@@ -251,7 +251,7 @@
   id: ResearchAssistantPDA
   name: research assistant PDA
   description: Why isn't it purple?
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ResearchAssistantIDCard
@@ -271,7 +271,7 @@
   id: ServiceWorkerPDA
   name: service worker PDA
   description: Why isn't it gray?
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ServiceWorkerIDCard
@@ -291,7 +291,7 @@
   id: ChefPDA
   name: chef PDA
   description: Covered in grease and flour.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ChefIDCard
@@ -311,7 +311,7 @@
   id: BotanistPDA
   name: botanist PDA
   description: Has an earthy scent.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: BotanistIDCard
@@ -339,7 +339,7 @@
   id: ClownPDA
   name: clown PDA
   description: Looks can be deceiving.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ClownIDCard
@@ -387,7 +387,7 @@
 - type: entity
   parent: ClownPDA
   id: VisitorClownPDA
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   suffix: Visitor
   components:
   - type: Pda
@@ -401,7 +401,7 @@
   id: MimePDA
   name: mime PDA
   description: Suprisingly not on mute.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: MimeIDCard
@@ -451,7 +451,7 @@
   parent: BasePDA
   id: ChaplainPDA
   description: God's chosen PDA.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ChaplainIDCard
@@ -469,7 +469,7 @@
   parent: ChaplainPDA
   id: VisitorChaplainPDA
   suffix: Visitor
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: VisitorIDCard
@@ -482,7 +482,7 @@
   parent: BasePDA
   id: QuartermasterPDA
   description: PDA for the guy that orders the guns.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: QuartermasterIDCard
@@ -514,7 +514,7 @@
   id: CargoPDA
   name: cargo PDA
   description: PDA for the guys that order the pizzas.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: CargoIDCard
@@ -533,7 +533,7 @@
   id: SalvagePDA
   name: salvage PDA
   description: Smells like ash.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: SalvageIDCard
@@ -561,7 +561,7 @@
   id: BartenderPDA
   name: bartender PDA
   description: Smells like beer.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: BartenderIDCard
@@ -580,7 +580,7 @@
   id: LibrarianPDA
   name: librarian PDA
   description: Smells like books.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: LibrarianIDCard
@@ -604,7 +604,7 @@
   parent: LibrarianPDA
   id: VisitorLibrarianPDA
   suffix: Visitor
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: VisitorIDCard
@@ -617,7 +617,7 @@
   id: LawyerPDA
   name: lawyer PDA
   description: For lawyers to poach dubious clients.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: LawyerIDCard
@@ -641,7 +641,7 @@
   parent: LawyerPDA
   id: VisitorLawyerPDA
   suffix: Visitor
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: VisitorIDCard
@@ -654,7 +654,7 @@
   id: JanitorPDA
   name: janitor PDA
   description: Smells like bleach.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: JanitorIDCard
@@ -673,7 +673,7 @@
   id: CaptainPDA
   name: captain PDA
   description: Surprisingly no different from your PDA.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: CaptainIDCard
@@ -698,7 +698,7 @@
   id: HoPPDA
   name: head of personnel PDA
   description: Looks like it's been chewed on.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: HoPIDCard
@@ -724,7 +724,7 @@
   id: CEPDA
   name: chief engineer PDA
   description: Looks like it's barely been used.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: CEIDCard
@@ -749,7 +749,7 @@
   id: EngineerPDA
   name: engineer PDA
   description: Rugged and well-worn.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: EngineeringIDCard
@@ -769,7 +769,7 @@
   id: CMOPDA
   name: chief medical officer PDA
   description: Extraordinarily shiny and sterile.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: CMOIDCard
@@ -795,7 +795,7 @@
   id: MedicalPDA
   name: medical PDA
   description: Shiny and sterile.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: MedicalIDCard
@@ -817,7 +817,7 @@
   parent: MedicalPDA
   id: VisitorMedicalPDA
   suffix: Visitor
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: VisitorIDCard
@@ -830,7 +830,7 @@
   id: ParamedicPDA
   name: paramedic PDA
   description: Shiny and sterile.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ParamedicIDCard
@@ -850,7 +850,7 @@
   id: ChemistryPDA
   name: chemistry PDA
   description: It has a few discolored blotches here and there.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ChemistIDCard
@@ -870,7 +870,7 @@
   id: RnDPDA
   name: research director PDA
   description: It appears surprisingly ordinary.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: RDIDCard
@@ -896,7 +896,7 @@
   id: SciencePDA
   name: science PDA
   description: It's covered with an unknown gooey substance.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ResearchIDCard
@@ -916,7 +916,7 @@
   id: HoSPDA
   name: head of security PDA
   description: Whosoever bears this PDA is the law.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: HoSIDCard
@@ -949,7 +949,7 @@
   id: WardenPDA
   name: warden PDA
   description: The OS appears to have been jailbroken.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: WardenIDCard
@@ -969,7 +969,7 @@
   id: SecurityPDA
   name: security PDA
   description: Red to hide the stains of passenger blood.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: SecurityIDCard
@@ -988,7 +988,7 @@
   id: CentcomPDA
   name: CentComm PDA
   description: Light green sign of walking bureaucracy.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: CentcomIDCard
@@ -1025,7 +1025,7 @@
   name: Admin PDA
   suffix: Admin
   description: If you are not an admin please return this PDA to the nearest admin.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: UniversalIDCard
@@ -1053,7 +1053,7 @@
   parent: CentcomPDA
   id: DeathsquadPDA
   suffix: Death Squad
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: CentcomIDCardDeathsquad
@@ -1066,7 +1066,7 @@
   id: MusicianPDA
   name: musician PDA
   description: It fills you with inspiration.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: MusicianIDCard
@@ -1089,7 +1089,7 @@
   parent: MusicianPDA
   id: VisitorMusicianPDA
   suffix: Visitor
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: VisitorIDCard
@@ -1102,7 +1102,7 @@
   id: AtmosPDA
   name: atmos PDA
   description: Still smells like plasma.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: AtmosIDCard
@@ -1122,7 +1122,7 @@
   id: ClearPDA
   name: clear PDA
   description: 99 and 44/100ths percent pure plastic.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: PassengerIDCard
@@ -1139,7 +1139,7 @@
 - type: entity
   parent: ClearPDA
   id: VisitorPDA
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: VisitorIDCard
@@ -1152,7 +1152,7 @@
   id: SyndiPDA
   name: syndicate PDA
   description: Ok, time to be a productive member of- oh cool I'm a bad guy time to kill people!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: SyndicateIDCard
@@ -1176,7 +1176,7 @@
   id: SyndiOperativePDA
   name: syndicate operative PDA
   description: Death to NT!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: SyndiOperativeIDCard
@@ -1193,7 +1193,7 @@
   id: SyndiCorpsmanPDA
   name: syndicate corpsman PDA
   description: Commander... I need to cook!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: SyndiCorpsmanIDCard
@@ -1216,7 +1216,7 @@
   id: SyndiCommanderPDA
   name: syndicate commander PDA
   description: So what are we, some kind of Nukie squad?
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: SyndiCommanderIDCard
@@ -1234,7 +1234,7 @@
   name: ERT Leader PDA
   suffix: Leader
   description: Red for firepower.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ERTLeaderIDCard
@@ -1267,7 +1267,7 @@
   name: ERT Chaplain PDA
   suffix: Chaplain
   description: Red for firepower, it's blessed.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ERTChaplainIDCard
@@ -1278,7 +1278,7 @@
   name: ERT Engineer PDA
   suffix: Engineer
   description: Red for firepower, it's well-worn.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ERTEngineerIDCard
@@ -1289,7 +1289,7 @@
   name: ERT Janitor PDA
   suffix: Janitor
   description: Red for firepower, it's squeaky clean.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ERTJanitorIDCard
@@ -1300,7 +1300,7 @@
   name: ERT Medic PDA
   suffix: Medic
   description: Red for firepower, it's shiny and sterile.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ERTMedicIDCard
@@ -1311,7 +1311,7 @@
   name: ERT Security PDA
   suffix: Security
   description: Red for firepower, it has tally marks etched on the side.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ERTSecurityIDCard
@@ -1321,7 +1321,7 @@
   id: CBURNPDA
   name: CBURN PDA
   description: Smells like rotten flesh.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: CBURNIDcard
@@ -1335,7 +1335,7 @@
   id: PsychologistPDA
   name: psychologist PDA
   description: Looks immaculately cleaned.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: PsychologistIDCard
@@ -1355,7 +1355,7 @@
   id: ReporterPDA
   name: reporter PDA
   description: Smells like freshly printed press.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ReporterIDCard
@@ -1380,7 +1380,7 @@
   id: ZookeeperPDA
   name: zookeeper PDA
   description: Made with genuine synthetic leather. Crikey!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: ZookeeperIDCard
@@ -1399,7 +1399,7 @@
   id: BoxerPDA
   name: boxer PDA
   description: Float like a butterfly, ringtone like a bee.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: BoxerIDCard
@@ -1419,7 +1419,7 @@
   id: DetectivePDA
   name: detective PDA
   description: Smells like rain... pouring down the rooftops...
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: DetectiveIDCard
@@ -1446,7 +1446,7 @@
   id: BrigmedicPDA
   name: brigmedic PDA
   description: I wonder whose pulse is on the screen? I hope it doesn't stop...
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: BrigmedicIDCard
@@ -1476,7 +1476,7 @@
   name: cluwne PDA
   suffix: Unremoveable
   description: Cursed cluwne PDA.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: CluwneIDCard
@@ -1503,7 +1503,7 @@
   id: SeniorEngineerPDA
   name: senior engineer PDA
   description: Seems to have been taken apart and put back together several times.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: SeniorEngineerIDCard
@@ -1523,7 +1523,7 @@
   id: SeniorResearcherPDA
   name: senior researcher PDA
   description: Looks like it's been through years of chemical burns and explosions.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: SeniorResearcherIDCard
@@ -1544,7 +1544,7 @@
   id: SeniorPhysicianPDA
   name: senior physician PDA
   description: Smells faintly like iron and chemicals.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: SeniorPhysicianIDCard
@@ -1565,7 +1565,7 @@
   id: SeniorOfficerPDA
   name: senior officer PDA
   description: Beaten, battered and broken, but just barely useable.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: SeniorOfficerIDCard
@@ -1585,7 +1585,7 @@
   id: SeniorCourierPDA
   name: senior courier PDA
   description: Smells like postage stamps and shuttle fuel.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: CargoIDCard
@@ -1621,7 +1621,7 @@
   id: PiratePDA
   name: pirate PDA
   description: Yargh!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: PirateIDCard
@@ -1644,7 +1644,7 @@
   name: passenger PDA
   description: Why isn't it gray?
   suffix: Chameleon
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: PdaBorderColor
     borderColor: "#b2b2b2"
@@ -1683,7 +1683,7 @@
   id: WizardPDA
   name: wizard PDA
   description: You hear faint whispers coming from it.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: WizardIDCard
@@ -1707,7 +1707,7 @@
   parent: ClearPDA
   id: ScurretPDA
   description: A temporary PDA granted to scurret temps. Doesn't do much. Wawa!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     id: VisitorIDCard
@@ -1720,7 +1720,7 @@
   id: CentcomOperatorPDA
   name: CentComm PDA
   description: Light green sign of walking bureaucracy.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Pda
     penSlot:

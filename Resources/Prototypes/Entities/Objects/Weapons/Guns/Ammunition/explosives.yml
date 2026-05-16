@@ -74,7 +74,7 @@
 
 - type: entity
   id: GrenadeBlast
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: contact blast grenade
   parent: BaseGrenade
   components:
@@ -143,7 +143,7 @@
 
 - type: entity
   id: GrenadeEMP
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: contact EMP grenade
   parent: BaseGrenade
   components:

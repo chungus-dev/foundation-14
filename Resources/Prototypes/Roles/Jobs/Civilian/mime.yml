@@ -9,8 +9,8 @@
   startingGear: MimeGear
   icon: "JobIconMime"
   supervisors: job-supervisors-hop
-  setPreference: false # Fire added
-  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Scp added
+  overrideConsoleVisibility: false # Scp added
   access:
   - Theatre
   - Maintenance

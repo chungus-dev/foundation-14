@@ -65,5 +65,5 @@ public sealed partial class CCVars
     /// </summary>
     [CVarControl(AdminFlags.VarEdit)]
     public static readonly CVarDef<string> LobbyMusicCollection =
-        CVarDef.Create("audio.lobby_music_collection", "ScpLobbyMusic", CVar.REPLICATED | CVar.SERVER); // Fire edit
+        CVarDef.Create("audio.lobby_music_collection", "ScpLobbyMusic", CVar.REPLICATED | CVar.SERVER); // Scp edit
 }

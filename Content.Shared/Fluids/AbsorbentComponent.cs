@@ -58,5 +58,5 @@ public sealed partial class AbsorbentComponent : Component
     public bool UseAbsorberSolution = true;
 
     [DataField]
-    public float FootprintEnlargement = 0.2f; // Fire edit
+    public float FootprintEnlargement = 0.2f; // Scp edit
 }

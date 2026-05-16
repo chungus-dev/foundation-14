@@ -18,10 +18,10 @@ public abstract class SharedContentAudioSystem : EntitySystem
     {
         base.Initialize();
 
-        // Fire edit start
+        // Scp edit start
         Audio.OcclusionCollisionMask =
             (int)(CollisionGroup.Impassable | CollisionGroup.InteractImpassable);
-        // Fire edit end
+        // Scp edit end
     }
 
     protected void SilenceAudio()

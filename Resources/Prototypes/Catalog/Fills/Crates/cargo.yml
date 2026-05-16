@@ -186,9 +186,9 @@
   id: LotteryPlushiesEntityTable
   table: !type:GroupSelector
     children:
-    # Fire added start
+    # Scp added start
     - id: PlushieScp999
-    # Fire added end
+    # Scp added end
     - id: PlushieRGBee
     - id: PlushieGhost
     - id: PlushieHampter

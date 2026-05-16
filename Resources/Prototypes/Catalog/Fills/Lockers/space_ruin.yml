@@ -4,7 +4,7 @@
   name: closet
   suffix: NTSRA voidsuit locker
   parent: LockerSyndicate
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -24,7 +24,7 @@
   id: LockerSyndicateShipGearBasic
   parent: LockerSyndicate
   suffix: Basic ship gear, Random
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -51,7 +51,7 @@
   id: LockerSyndicateShipGearBasicChameleonKit
   parent: LockerSyndicateShipGearBasic
   suffix: Basic ship gear, Random, Chameleon Kit
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:

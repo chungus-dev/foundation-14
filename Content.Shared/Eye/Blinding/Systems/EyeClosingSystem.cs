@@ -17,7 +17,7 @@ public sealed class EyeClosingSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
 
-    /* Fire edit - вся логика перемещена в BlinkingSystem. Там это тут не нужно
+    /* Scp edit - вся логика перемещена в BlinkingSystem. Там это тут не нужно
     public override void Initialize()
     {
         base.Initialize();
@@ -131,7 +131,7 @@ public sealed class EyeClosingSystem : EntitySystem
             return;
         }
 
-        /* Fire edit - не надо нам этого компонента, у нас свой аналог, который и так у всех есть.
+        /* Scp edit - не надо нам этого компонента, у нас свой аналог, который и так у всех есть.
 
         var naturalEyelids = EnsureComp<EyeClosingComponent>(blindable);
         naturalEyelids.NaturallyCreated = true;
@@ -141,7 +141,7 @@ public sealed class EyeClosingSystem : EntitySystem
     }
 }
 
-/* Fire edit - перемещено в нашу папку и объединено с BlinkingSystem
+/* Scp edit - перемещено в нашу папку и объединено с BlinkingSystem
 public sealed partial class ToggleEyesActionEvent : InstantActionEvent
 {
 }

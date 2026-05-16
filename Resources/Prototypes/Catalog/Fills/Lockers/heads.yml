@@ -19,7 +19,7 @@
   id: LockerQuarterMasterFilled
   suffix: Filled
   parent: LockerQuarterMaster
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -44,7 +44,7 @@
     - id: PinpointerNuclear
     - id: PlushieNuke
       prob: 0.1
-    - id: RubberStampDirector # Fire edit
+    - id: RubberStampDirector # Scp edit
     - id: SpaceCash1000
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
@@ -79,7 +79,7 @@
   id: LockerCaptainFilledNoLaser
   suffix: Filled
   parent: LockerCaptain
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -91,7 +91,7 @@
   id: LockerCaptainFilled
   suffix: Filled, AntiqueLaser
   parent: LockerCaptain
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -103,7 +103,7 @@
   id: LockerCaptainFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerCaptain
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -145,7 +145,7 @@
   id: LockerHeadOfPersonnelFilled
   suffix: Filled
   parent: LockerHeadOfPersonnel
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -190,7 +190,7 @@
   id: LockerChiefEngineerFilled
   suffix: Filled
   parent: LockerChiefEngineer
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -202,7 +202,7 @@
   id: LockerChiefEngineerFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerChiefEngineer
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -246,7 +246,7 @@
   id: LockerChiefMedicalOfficerFilled
   suffix: Filled
   parent: LockerChiefMedicalOfficer
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -258,7 +258,7 @@
   id: LockerChiefMedicalOfficerFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerChiefMedicalOfficer
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -299,7 +299,7 @@
   id: LockerResearchDirectorFilled
   suffix: Filled
   parent: LockerResearchDirector
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -311,7 +311,7 @@
   id: LockerResearchDirectorFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerResearchDirector
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -364,7 +364,7 @@
   id: LockerHeadOfSecurityFilled
   suffix: Filled
   parent: LockerHeadOfSecurity
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -376,7 +376,7 @@
   id: LockerHeadOfSecurityFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerHeadOfSecurity
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:

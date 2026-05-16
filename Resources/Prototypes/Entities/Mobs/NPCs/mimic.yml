@@ -40,9 +40,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 1
     baseSprintSpeed : 1
-  # Fire edit start
+  # Scp edit start
   #- type: Butcherable
   #  spawned:
   #  - id: DrinkChangelingStingCan
   #    amount: 1
-  # Fire edit end
+  # Scp edit end

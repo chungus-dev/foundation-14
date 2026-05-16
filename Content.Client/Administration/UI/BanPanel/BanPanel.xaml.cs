@@ -158,7 +158,7 @@ public sealed partial class BanPanel : DefaultWindow
 
         ReasonTextEdit.Placeholder = new Rope.Leaf(Loc.GetString("ban-panel-reason"));
 
-        // Fire edit start - скрываем ненужные работы и департаменты, отображаем элементы в правильном порядке
+        // Scp edit start - скрываем ненужные работы и департаменты, отображаем элементы в правильном порядке
         var departmentJobs = _protoMan.EnumeratePrototypes<DepartmentPrototype>()
             .Where(x => !x.EditorHidden || x.AlwaysShowInBanPanel)
             .OrderByDescending(x => x.Weight);
@@ -172,7 +172,7 @@ public sealed partial class BanPanel : DefaultWindow
 
             CreateRoleGroup(proto.ID, proto.Color, roles);
         }
-        // Fire edit end
+        // Scp edit end
 
         var antagRoles = _protoMan.EnumeratePrototypes<AntagPrototype>()
                                   .OrderBy(x => x.ID);

@@ -1,4 +1,4 @@
 - type: gameMapPool
   id: DeathMatchMapPool
-  maps: # Fire edit - все стандартные карты удалены в целях оптимизации использования RAM
+  maps: # Scp edit - все стандартные карты удалены в целях оптимизации использования RAM
   - Empty

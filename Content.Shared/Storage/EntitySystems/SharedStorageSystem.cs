@@ -737,7 +737,7 @@ public abstract class SharedStorageSystem : EntitySystem
                 LogImpact.Low,
                 $"{ToPrettyString(player):player} is attempting to take {ToPrettyString(item):item} out of {ToPrettyString(storage):storage}");
 
-            // Fire edit start
+            // Scp edit start
             if (_sharedHandsSystem.TryPickupAnyHand(player, item, handsComp: player.Comp))
             {
                 RaiseLocalEvent(item, new EntityRemovedFromStorageEvent(storage, player));
@@ -745,7 +745,7 @@ public abstract class SharedStorageSystem : EntitySystem
                 if (storage.Comp.StorageRemoveSound != null && !_tag.HasTag(player, storage.Comp.SilentStorageUserTag))
                     Audio.PlayPredicted(storage.Comp.StorageRemoveSound, storage, player, _audioParams);
             }
-            // Fire edit end
+            // Scp edit end
 
             return;
         }
@@ -1045,7 +1045,7 @@ public abstract class SharedStorageSystem : EntitySystem
         bool ignoreStacks = false,
         bool ignoreLocation = false)
     {
-        // Fire edit - убрал из логов МЕТОДА ДЛЯ ПРОВЕРКИ непрохождение проверки на наличие компонента.
+        // Scp edit - убрал из логов МЕТОДА ДЛЯ ПРОВЕРКИ непрохождение проверки на наличие компонента.
         if (!Resolve(uid, ref storageComp, false) || !Resolve(insertEnt, ref item, false))
         {
             reason = null;
@@ -1210,9 +1210,9 @@ public abstract class SharedStorageSystem : EntitySystem
             if (canPlaySound)
                 Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user, _audioParams);
 
-            // Fire edit start
+            // Scp edit start
             RaiseLocalEvent(insertEnt, new EntityInsertedIntoStorageEvent(uid, user));
-            // Fire edit end
+            // Scp edit end
 
             return true;
         }
@@ -1244,9 +1244,9 @@ public abstract class SharedStorageSystem : EntitySystem
         if (canPlaySound)
             Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user, _audioParams);
 
-        // Fire edit start
+        // Scp edit start
         RaiseLocalEvent(insertEnt, new EntityInsertedIntoStorageEvent(uid, user));
-        // Fire edit end
+        // Scp edit end
 
         return true;
     }

@@ -100,7 +100,7 @@
   parent: BaseWall
   id: WallBrick
   name: brick wall
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   # - type: Pierceable # SCP port: component unavailable in Foundation14
     # level: Metal
@@ -138,7 +138,7 @@
   parent: BaseWall
   id: WallClock
   name: clock wall
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/clock.rsi
@@ -168,7 +168,7 @@
   parent: BaseWall
   id: WallClown
   name: bananium wall
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/clown.rsi
@@ -214,7 +214,7 @@
   id: WallMeat
   name: meat wall
   description: Sticky.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Tag
     tags:
@@ -248,7 +248,7 @@
   parent: BaseWall
   id: WallCult
   name: cult wall
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/cult.rsi
@@ -501,7 +501,7 @@
   id: WallPlastitaniumIndestructible
   name: plastitanium wall
   suffix: indestructible
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
     - type: Sprite
       sprite: Structures/Walls/plastitanium.rsi
@@ -532,7 +532,7 @@
   id: WallPlastitanium
   name: plastitanium wall
   suffix: ""
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Destructible
     thresholds:
@@ -553,7 +553,7 @@
   id: WallPlastitaniumDiagonalIndestructible
   name: plastitanium wall
   suffix: diagonal, indestructible
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: Walls
@@ -573,7 +573,7 @@
   id: WallPlastitaniumDiagonal
   name: plastitanium wall
   suffix: diagonal
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: Walls
@@ -603,7 +603,7 @@
   parent: BaseWall
   id: WallReinforced
   name: reinforced wall
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   # - type: Pierceable # SCP port: component unavailable in Foundation14
     # level: HardenedMetal
@@ -678,7 +678,7 @@
   parent: WallReinforced
   id: WallReinforcedRust
   suffix: rusted
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/solid_rust.rsi
@@ -718,7 +718,7 @@
   parent: WallDiagonalBase
   id: WallReinforcedDiagonal
   name: reinforced wall
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: Walls
@@ -760,7 +760,7 @@
   parent: BaseWall
   id: WallRiveted
   name: riveted wall
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/riveted.rsi
@@ -865,7 +865,7 @@
   parent: WallDiagonalBase
   id: WallShuttleDiagonal
   name: shuttle wall
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: Walls
@@ -935,7 +935,7 @@
   parent: BaseWall
   id: WallShuttle
   name: shuttle wall
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -1010,7 +1010,7 @@
   parent: [BaseWall, BaseDeltaPressurePlasma]
   id: WallSolid
   name: solid wall
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/solid.rsi
@@ -1054,7 +1054,7 @@
   parent: WallDiagonalBase
   id: WallSolidDiagonal
   name: solid wall
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: Walls
@@ -1092,7 +1092,7 @@
   parent: WallSolid
   id: WallSolidRust
   suffix: rusted
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/solid_rust.rsi
@@ -1312,7 +1312,7 @@
 - type: entity
   parent: BaseWall
   id: WallWood
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: wood wall
   description: The traditional assistant defense.
   components:
@@ -1427,7 +1427,7 @@
 - type: entity
   parent: BaseWall
   id: WallMining
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: mining wall
   components:
   - type: Sprite
@@ -1454,7 +1454,7 @@
 - type: entity
   parent: WallDiagonalBase
   id: WallMiningDiagonal
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: mining wall
   components:
   - type: Sprite

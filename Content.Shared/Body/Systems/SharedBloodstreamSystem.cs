@@ -474,10 +474,10 @@ public abstract class SharedBloodstreamSystem : EntitySystem
             tempSolution.RemoveAllSolution();
         }
 
-        // Fire added start - звуки капающей крови
+        // Scp added start - звуки капающей крови
         if (_timing.IsFirstTimePredicted)
             _audio.PlayLocal(ent.Comp.BloodDrippingSound, ent, ent);
-        // Fire added end
+        // Scp added end
 
         SolutionContainer.UpdateChemicals(ent.Comp.TemporarySolution.Value);
 

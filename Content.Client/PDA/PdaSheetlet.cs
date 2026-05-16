@@ -47,7 +47,7 @@ public sealed class PdaSheetlet : Sheetlet<NanotrasenStylesheet>
 
             //PDA - Buttons
 
-            // Fire edit start - пришлось убрать Color.FromHex()
+            // Scp edit start - пришлось убрать Color.FromHex()
             E<PdaSettingsButton>()
                 .Pseudo(ContainerButton.StylePseudoClassNormal)
                 .Prop(PdaSettingsButton.StylePropertyBgColor, PdaSettingsButton.NormalBgColor)
@@ -79,7 +79,7 @@ public sealed class PdaSheetlet : Sheetlet<NanotrasenStylesheet>
             E<PdaProgramItem>()
                 .Pseudo(ContainerButton.StylePseudoClassPressed)
                 .Prop(PdaProgramItem.StylePropertyBgColor, PdaProgramItem.HoverColor),
-            // Fire edit end
+            // Scp edit end
 
             //PDA - Text
             E<Label>()

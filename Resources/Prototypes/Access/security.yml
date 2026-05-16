@@ -28,12 +28,12 @@
 
 - type: accessGroup
   id: Security
-  # Fire edit start
+  # Scp edit start
   tags:
   - SecurityCommander
   groups:
   - SecurityHeadless
-  # Fire edit end
+  # Scp edit end
 
 - type: accessGroup
   id: Armory

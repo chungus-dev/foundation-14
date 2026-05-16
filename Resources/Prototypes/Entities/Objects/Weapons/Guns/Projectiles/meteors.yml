@@ -218,7 +218,7 @@
         acts: [ "Destruction" ]
       - !type:PlaySoundBehavior
         sound:
-          collection: MaleScreamsNew #Fire edit
+          collection: MaleScreamsNew #Scp edit
           params:
             volume: 10
       - !type:SpillBehavior

@@ -3,7 +3,7 @@
   parent: BaseWallCloset
   name: maintenance wall closet
   description: It's a storage unit.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -15,7 +15,7 @@
   name: emergency wall closet
   parent: BaseWallCloset
   description: It's a storage unit for emergency breath masks and O2 tanks.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: emergency
@@ -27,7 +27,7 @@
   id: ClosetWallEmergencyN2
   name: emergency nitrogen wall closet
   description: It's full of life-saving equipment. Assuming, that is, that you breathe nitrogen.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: n2
@@ -39,7 +39,7 @@
   name: fire-safety wall closet
   parent: BaseWallCloset
   description: It's a storage unit for fire-fighting supplies.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: fire
@@ -51,7 +51,7 @@
   parent: BaseWallCloset
   name: blue wall closet
   description: "A wardrobe packed with stylish blue clothing."
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -63,7 +63,7 @@
   parent: BaseWallCloset
   name: pink wall closet
   description: "A wardrobe packed with fabulous pink clothing."
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -75,7 +75,7 @@
   parent: BaseWallCloset
   name: black wall closet
   description: "A wardrobe packed with stylish black clothing."
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -87,7 +87,7 @@
   parent: BaseWallCloset
   name: green wall closet
   description: "A wardrobe packed with stylish green clothing."
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -98,7 +98,7 @@
   id: ClosetWallOrange
   parent: BaseWallCloset
   name: prison wall closet
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -110,7 +110,7 @@
   parent: BaseWallCloset
   name: yellow wall closet
   description: "A wardrobe packed with stylish yellow clothing."
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -122,7 +122,7 @@
   parent: BaseWallCloset
   name: white wall closet
   description: "A wardrobe packed with stylish white clothing."
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -134,7 +134,7 @@
   parent: BaseWallCloset
   name: grey wall closet
   description: "A wardrobe packed with a tide of grey clothing."
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -146,7 +146,7 @@
   parent: BaseWallCloset
   name: mixed wall closet
   description: "A wardrobe packed with a mix of colorful clothing."
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -157,7 +157,7 @@
   id: ClosetWallAtmospherics
   parent: BaseWallCloset
   name: atmospherics wall closet
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -168,7 +168,7 @@
   id: LockerWallMedical
   parent: BaseWallLocker
   name: medical wall locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: med
@@ -182,7 +182,7 @@
   id: LockerWallEvacRepair
   name: emergency shuttle emergency wall locker
   description: It's emergencies all the way down.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: eng
@@ -197,13 +197,13 @@
   name: prisoner wall closet
   description: It's a secure locker for an inmate's personal belongings during their time in prison.
   suffix: 1
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
 
 - type: entity
   parent: LockerWallBasePrisoner
   id: LockerWallPrisoner2
   suffix: 2
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_2
@@ -212,7 +212,7 @@
   parent: LockerWallBasePrisoner
   id: LockerWallPrisoner3
   suffix: 3
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_3
@@ -221,7 +221,7 @@
   parent: LockerWallBasePrisoner
   id: LockerWallPrisoner4
   suffix: 4
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_4
@@ -230,7 +230,7 @@
   parent: LockerWallBasePrisoner
   id: LockerWallPrisoner5
   suffix: 5
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_5
@@ -239,7 +239,7 @@
   parent: LockerWallBasePrisoner
   id: LockerWallPrisoner6
   suffix: 6
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_6
@@ -248,7 +248,7 @@
   parent: LockerWallBasePrisoner
   id: LockerWallPrisoner7
   suffix: 7
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_7
@@ -257,7 +257,7 @@
   parent: LockerWallBasePrisoner
   id: LockerWallPrisoner8
   suffix: 8
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_8

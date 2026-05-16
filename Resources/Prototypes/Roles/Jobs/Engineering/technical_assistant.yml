@@ -14,8 +14,8 @@
   icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering
   canBeAntag: false
-  overrideConsoleVisibility: false # Fire added
-  setPreference: false # Fire added
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - Maintenance
   - Engineering

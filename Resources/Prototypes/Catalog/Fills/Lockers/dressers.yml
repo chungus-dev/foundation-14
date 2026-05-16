@@ -1,6 +1,6 @@
 - type: entity
   id: DresserCaptainFilled
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: Dresser
   suffix: Filled, Captain
   components:
@@ -18,7 +18,7 @@
 
 - type: entity
   id: DresserChiefEngineerFilled
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: Dresser
   suffix: Filled, Chief Engineer
   components:
@@ -34,7 +34,7 @@
 
 - type: entity
   id: DresserChiefMedicalOfficerFilled
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: Dresser
   suffix: Filled, Chief Medical Officer
   components:
@@ -53,7 +53,7 @@
 
 - type: entity
   id: DresserHeadOfPersonnelFilled
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: Dresser
   suffix: Filled, Head Of Personnel
   components:
@@ -68,7 +68,7 @@
 
 - type: entity
   id: DresserHeadOfSecurityFilled
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: Dresser
   suffix: Filled, Head Of Security
   components:
@@ -88,7 +88,7 @@
 
 - type: entity
   id: DresserQuarterMasterFilled
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: Dresser
   suffix: Filled, Quarter Master
   components:
@@ -106,7 +106,7 @@
 
 - type: entity
   id: DresserResearchDirectorFilled
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: Dresser
   suffix: Filled, Research Director
   components:
@@ -122,7 +122,7 @@
         - id: ClothingNeckCloakRd
 - type: entity
   id: DresserWardenFilled
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: Dresser
   suffix: Filled, Warden
   components:

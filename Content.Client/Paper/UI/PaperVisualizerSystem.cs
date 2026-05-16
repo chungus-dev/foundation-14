@@ -12,10 +12,10 @@ public sealed class PaperVisualizerSystem : VisualizerSystem<PaperVisualsCompone
         if (args.Sprite == null)
             return;
 
-        // Fire added start - для дневников
+        // Scp added start - для дневников
         if (HasComp<ScpBookVisualsComponent>(uid))
             return;
-        // Fire added end
+        // Scp added end
 
         if (AppearanceSystem.TryGetData<PaperStatus>(uid, PaperVisuals.Status, out var writingStatus, args.Component))
             SpriteSystem.LayerSetVisible((uid, args.Sprite), PaperVisualLayers.Writing, writingStatus == PaperStatus.Written);

@@ -181,7 +181,7 @@
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
-          ScpMaterialWoodPlank: # Fire edit
+          ScpMaterialWoodPlank: # Scp edit
             min: 5
             max: 5
       - !type:PlaySoundBehavior

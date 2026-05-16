@@ -3,7 +3,7 @@
   parent: DoorElectronics
   id: DoorElectronicsCaptain
   suffix: Captain, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Captain"]]
@@ -12,7 +12,7 @@
   parent: DoorElectronics
   id: DoorElectronicsHeadOfPersonnel
   suffix: HeadOfPersonnel, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["HeadOfPersonnel"]]
@@ -21,7 +21,7 @@
   parent: DoorElectronics
   id: DoorElectronicsCommand
   suffix: Command, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Command"]]
@@ -33,7 +33,7 @@
   parent: DoorElectronics
   id: DoorElectronicsBar
   suffix: Bar, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Bar"]]
@@ -44,7 +44,7 @@
   parent: DoorElectronics
   id: DoorElectronicsBarKitchen
   suffix: Bar, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Bar"], ["Kitchen"]]
@@ -55,7 +55,7 @@
   parent: DoorElectronics
   id: DoorElectronicsHydroponics
   suffix: Hydroponics, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Hydroponics"]]
@@ -65,7 +65,7 @@
   parent: DoorElectronics
   id: DoorElectronicsChapel
   suffix: Chapel, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Chapel"]]
@@ -76,7 +76,7 @@
   parent: DoorElectronics
   id: DoorElectronicsTheatre
   suffix: Theatre, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Theatre"]]
@@ -87,7 +87,7 @@
   parent: DoorElectronics
   id: DoorElectronicsKitchen
   suffix: Kitchen, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Kitchen"]]
@@ -98,7 +98,7 @@
   parent: DoorElectronics
   id: DoorElectronicsKitchenHydroponics
   suffix: Kitchen/Hydroponics, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Kitchen"], ["Hydroponics"]]
@@ -109,7 +109,7 @@
   parent: DoorElectronics
   id: DoorElectronicsJanitor
   suffix: Janitor, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Janitor"]]
@@ -119,7 +119,7 @@
   parent: DoorElectronics
   id: DoorElectronicsLawyer
   suffix: Lawyer, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Lawyer"]]
@@ -137,7 +137,7 @@
   parent: DoorElectronics
   id: DoorElectronicsServiceTheatre
   suffix: Service, Theatre, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Service"], ["Theatre"]]
@@ -147,7 +147,7 @@
   parent: DoorElectronics
   id: DoorElectronicsQuartermaster
   suffix: Quartermaster, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Quartermaster"]]
@@ -156,7 +156,7 @@
   parent: DoorElectronics
   id: DoorElectronicsSalvage
   suffix: Salvage, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Salvage"]]
@@ -166,7 +166,7 @@
   parent: DoorElectronics
   id: DoorElectronicsCargo
   suffix: Cargo, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Cargo"]]
@@ -176,7 +176,7 @@
   parent: DoorElectronics
   id: DoorElectronicsChiefEngineer
   suffix: ChiefEngineer, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["ChiefEngineer"]]
@@ -185,7 +185,7 @@
   parent: DoorElectronics
   id: DoorElectronicsAtmospherics
   suffix: Atmospherics, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Atmospherics"]]
@@ -204,7 +204,7 @@
   parent: DoorElectronics
   id: DoorElectronicsMorgue
   suffix: Morgue, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Medical"], ["Detective"], ["Chapel"]]
@@ -214,7 +214,7 @@
   parent: DoorElectronics
   id: DoorElectronicsResearchDirector
   suffix: ResearchDirector, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["ResearchDirector"]]
@@ -240,7 +240,7 @@
   parent: DoorElectronics
   id: DoorElectronicsHeadOfSecurity
   suffix: HeadOfSecurity, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["HeadOfSecurity"]]
@@ -250,7 +250,7 @@
   parent: DoorElectronics
   id: DoorElectronicsArmory
   suffix: Armory, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Armory"]]
@@ -259,7 +259,7 @@
   parent: DoorElectronics
   id: DoorElectronicsDetective
   suffix: Detective, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Detective"]]
@@ -276,7 +276,7 @@
   parent: DoorElectronics
   id: DoorElectronicsSecurityLawyer
   suffix: Security/Lawyer, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Security"], ["Lawyer"]]
@@ -286,7 +286,7 @@
   parent: DoorElectronics
   id: DoorElectronicsBrig
   suffix: Brig, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Brig"]]
@@ -296,7 +296,7 @@
   parent: DoorElectronics
   id: DoorElectronicsChiefMedicalOfficer
   suffix: ChiefMedicalOfficer, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["ChiefMedicalOfficer"]]
@@ -306,7 +306,7 @@
   parent: DoorElectronics
   id: DoorElectronicsChemistry
   suffix: Chemistry, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Chemistry"]]
@@ -324,7 +324,7 @@
   parent: DoorElectronics
   id: DoorElectronicsNukeop
   suffix: Nukeop, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["NuclearOperative"]]
@@ -333,7 +333,7 @@
   parent: DoorElectronics
   id: DoorElectronicsSyndicateAgent
   suffix: SyndicateAgent, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]
@@ -343,7 +343,7 @@
   parent: DoorElectronics
   id: DoorElectronicsCentralCommand
   suffix: CentralCommand, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["CentralCommand"]]
@@ -352,7 +352,7 @@
   parent: DoorElectronics
   id: DoorElectronicsExternal
   suffix: External, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["External"]]
@@ -361,7 +361,7 @@
   parent: DoorElectronics
   id: DoorElectronicsMaintenance
   suffix: Maintenance, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Maintenance"]]
@@ -371,7 +371,7 @@
   parent: DoorElectronics
   id: DoorElectronicsVault
   suffix: Vault, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Security"], ["Command"]]
@@ -380,7 +380,7 @@
   parent: DoorElectronics
   id: DoorElectronicsXenoborg
   suffix: Xenoborg, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Xenoborg"]]

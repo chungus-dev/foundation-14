@@ -5,7 +5,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: Administration # Fire edit
+      department: Administration # Scp edit
       time: 3600 # 1 hour
 
 # Flowers

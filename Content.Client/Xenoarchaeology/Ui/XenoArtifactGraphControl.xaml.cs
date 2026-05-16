@@ -50,10 +50,10 @@ public sealed partial class XenoArtifactGraphControl : BoxContainer
     }
 
     public Color LockedNodeColor { get; set; } = Color.FromHex("#777777");
-    public Color ActiveNodeColor { get; set; } = ScpPalettes.BloodRed; // Fire edit
-    public Color UnlockedNodeColor { get; set; } = ScpPalettes.SCPWhite; // Fire edit
+    public Color ActiveNodeColor { get; set; } = ScpPalettes.BloodRed; // Scp edit
+    public Color UnlockedNodeColor { get; set; } = ScpPalettes.SCPWhite; // Scp edit
     public Color HoveredNodeColor { get; set; } = Color.DimGray;
-    public Color UnlockableNodeColor { get; set; } = ScpPalettes.SCPWhite; // Fire edit
+    public Color UnlockableNodeColor { get; set; } = ScpPalettes.SCPWhite; // Scp edit
 
     public void SetArtifact(Entity<XenoArtifactComponent>? artifact)
     {

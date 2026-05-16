@@ -3,49 +3,49 @@
   parent: BaseWindoor
   name: windoor
   description: It's a window and a sliding door. Wow!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
 
 - type: entity
   id: WindoorSecure
   parent: BaseSecureWindoor
   name: secure windoor
   description: It's a sturdy window and a sliding door. Wow!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
 
 - type: entity
   id: WindoorClockwork
   parent: BaseClockworkWindoor
   name: clockwork windoor
   description: It's a sturdy window and a sliding door. Wow!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
 
 - type: entity
   id: WindoorPlasma
   parent: BasePlasmaWindoor
   name: plasma windoor
   description: It's a pink window *and* a sliding door. Amazing!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
 
 - type: entity
   id: WindoorSecurePlasma
   parent: BaseSecurePlasmaWindoor
   name: secure plasma windoor
   description: It's a sturdy purple window *and* a sliding door. Spectacular!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
 
 - type: entity
   id: WindoorUranium
   parent: BaseUraniumWindoor
   name: uranium windoor
   description: It's a window and a sliding door. Huh? Oh, and it's green!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
 
 - type: entity
   id: WindoorSecureUranium
   parent: BaseSecureUraniumWindoor
   name: secure uranium windoor
   description: It's a sturdy window and a sliding door. It's so neon green, it might even taste like limes!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
 
 # TODO remove these with parameterized prototypes/whatever we end up doing
 # Windoors (alphabetical)
@@ -54,7 +54,7 @@
   parent: WindoorServiceLocked
   id: WindoorBarLocked
   suffix: Bar, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -64,7 +64,7 @@
   parent: WindoorServiceLocked
   id: WindoorBarKitchenLocked
   suffix: Bar&Kitchen, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -74,7 +74,7 @@
   parent: Windoor
   id: WindoorCargoLocked
   suffix: Cargo, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -86,7 +86,7 @@
   parent: Windoor
   id: WindoorChapelLocked
   suffix: Chapel, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -96,7 +96,7 @@
   parent: WindoorServiceLocked
   id: WindoorHydroponicsLocked
   suffix: Hydroponics, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -106,7 +106,7 @@
   parent: WindoorServiceLocked
   id: WindoorJanitorLocked
   suffix: Janitor, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -116,7 +116,7 @@
   parent: WindoorPlasma
   id: PlasmaWindoorJanitorLocked
   suffix: Janitor, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -128,7 +128,7 @@
   parent: WindoorServiceLocked
   id: WindoorKitchenLocked
   suffix: Kitchen, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -138,7 +138,7 @@
   parent: WindoorServiceLocked
   id: WindoorKitchenHydroponicsLocked
   suffix: Kitchen&Hydroponics, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -148,7 +148,7 @@
   parent: Windoor
   id: WindoorServiceLocked
   suffix: Service, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -160,7 +160,7 @@
   parent: WindoorServiceLocked
   id: WindoorTheatreLocked
   suffix: Theatre, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -172,7 +172,7 @@
   parent: WindoorSecure
   id: WindoorSecureArmoryLocked
   suffix: Armory, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -184,7 +184,7 @@
   parent: WindoorSecurePlasma
   id: PlasmaWindoorSecureArmoryLocked
   suffix: Armory, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -196,7 +196,7 @@
   parent: WindoorSecureEngineeringLocked
   id: WindoorSecureAtmosphericsLocked
   suffix: Atmospherics, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -206,7 +206,7 @@
   parent: PlasmaWindoorSecureEngineeringLocked
   id: PlasmaWindoorSecureAtmosphericsLocked
   suffix: Atmospherics, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -216,7 +216,7 @@
   parent: WindoorSecureServiceLocked
   id: WindoorSecureBarLocked
   suffix: Bar, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -226,7 +226,7 @@
   parent: WindoorSecureSecurityLocked
   id: WindoorSecureBrigLocked
   suffix: Brig, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -236,7 +236,7 @@
   parent: WindoorSecure
   id: WindoorSecureCargoLocked
   suffix: Cargo, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -248,7 +248,7 @@
   parent: WindoorSecure
   id: WindoorSecureChapelLocked
   suffix: Chapel, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -258,7 +258,7 @@
   parent: WindoorSecureMedicalLocked
   id: WindoorSecureChemistryLocked
   suffix: Chemistry, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -268,7 +268,7 @@
   parent: WindoorSecurePlasma
   id: PlasmaWindoorSecureChemistryLocked
   suffix: Chemistry, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -280,7 +280,7 @@
   parent: WindoorSecureCommandLocked
   id: WindoorSecureCentralCommandLocked
   suffix: Central Command, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -290,7 +290,7 @@
   parent: PlasmaWindoorSecureCommandLocked
   id: PlasmaWindoorSecureCentralCommandLocked
   suffix: Central Command, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -300,7 +300,7 @@
   parent: WindoorSecureUranium
   id: UraniumWindoorSecureCentralCommandLocked
   suffix: Central Command, Locked, Uranium
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -314,7 +314,7 @@
   parent: WindoorSecure
   id: WindoorSecureCommandLocked
   suffix: Command, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -328,7 +328,7 @@
   parent: WindoorSecurePlasma
   id: PlasmaWindoorSecureCommandLocked
   suffix: Command, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -342,7 +342,7 @@
   parent: WindoorSecureSecurityLocked
   id: WindoorSecureDetectiveLocked
   suffix: Detective, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -352,7 +352,7 @@
   parent: WindoorSecure
   id: WindoorSecureEngineeringLocked
   suffix: Engineering, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -364,7 +364,7 @@
   parent: WindoorSecurePlasma
   id: PlasmaWindoorSecureEngineeringLocked
   suffix: Engineering, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -376,7 +376,7 @@
   parent: WindoorSecureUranium
   id: UraniumWindoorSecureEngineeringLocked
   suffix: Engineering, Locked, Uranium
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -388,7 +388,7 @@
   parent: WindoorSecure
   id: WindoorSecureExternalLocked
   suffix: External, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -400,7 +400,7 @@
   parent: WindoorSecureServiceLocked
   id: WindoorSecureJanitorLocked
   suffix: Janitor, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -410,7 +410,7 @@
   parent: WindoorSecurePlasma
   id: PlasmaWindoorSecureJanitorLocked
   suffix: Janitor, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -422,7 +422,7 @@
   parent: WindoorSecureServiceLocked
   id: WindoorSecureKitchenLocked
   suffix: Kitchen, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -432,7 +432,7 @@
   parent: WindoorSecureSecurityLocked
   id: WindoorSecureSecurityLawyerLocked
   suffix: Security/Lawyer, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -442,7 +442,7 @@
   parent: WindoorSecure
   id: WindoorSecureMedicalLocked
   suffix: Medical, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -454,7 +454,7 @@
   parent: WindoorSecureCommandLocked
   id: WindoorSecureResearchDirectorLocked
   suffix: ResearchDirector, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -464,7 +464,7 @@
   parent: WindoorSecureCargoLocked
   id: WindoorSecureSalvageLocked
   suffix: Salvage, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -474,7 +474,7 @@
   parent: WindoorSecure
   id: WindoorSecureSecurityLocked
   suffix: Security, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -486,7 +486,7 @@
   parent: WindoorSecurePlasma
   id: PlasmaWindoorSecureSecurityLocked
   suffix: Security, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -498,7 +498,7 @@
   parent: WindoorSecure
   id: WindoorSecureScienceLocked
   suffix: Science, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -510,7 +510,7 @@
   parent: WindoorSecurePlasma
   id: PlasmaWindoorSecureScienceLocked
   suffix: Science, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -522,7 +522,7 @@
   parent: WindoorSecure
   id: WindoorSecureServiceLocked
   suffix: Service, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -534,7 +534,7 @@
   parent: WindoorSecureCommandLocked
   id: WindoorSecureHeadOfPersonnelLocked
   suffix: HeadOfPersonnel, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -546,7 +546,7 @@
   parent: Windoor
   id: WindoorSyndicateLocked
   suffix: Syndicate, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -556,7 +556,7 @@
   parent: WindoorSecure
   id: WindoorSecureSyndicateLocked
   suffix: Syndicate, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -566,7 +566,7 @@
   parent: WindoorPlasma
   id: PlasmaWindoorSyndicateLocked
   suffix: Syndicate, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -576,7 +576,7 @@
   parent: WindoorSecurePlasma
   id: PlasmaWindoorSecureSyndicateLocked
   suffix: Syndicate, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -586,7 +586,7 @@
   parent: WindoorUranium
   id: UraniumWindoorSyndicateLocked
   suffix: Syndicate, Locked, Uranium
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -596,7 +596,7 @@
   parent: WindoorSecureUranium
   id: UraniumWindoorSecureSyndicateLocked
   suffix: Syndicate, Locked, Uranium
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -606,7 +606,7 @@
   parent: Windoor
   id: WindoorNukeopLocked
   suffix: Nukeop, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -616,7 +616,7 @@
   parent: WindoorSecure
   id: WindoorSecureNukeopLocked
   suffix: Nukeop, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -626,7 +626,7 @@
   parent: WindoorPlasma
   id: PlasmaWindoorNukeopLocked
   suffix: Nukeop, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -636,7 +636,7 @@
   parent: WindoorSecurePlasma
   id: PlasmaWindoorSecureNukeopLocked
   suffix: Nukeop, Locked, Plasma
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -646,7 +646,7 @@
   parent: WindoorUranium
   id: UraniumWindoorNukeopLocked
   suffix: Nukeop, Locked, Uranium
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -656,7 +656,7 @@
   parent: WindoorSecureUranium
   id: UraniumWindoorSecureNukeopLocked
   suffix: Nukeop, Locked, Uranium
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:

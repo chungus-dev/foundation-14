@@ -2,7 +2,7 @@
 - type: loadoutEffectGroup
   id: SeniorOfficer
   effects:
-    # Fire edit start
+    # Scp edit start
     - !type:JobRequirementLoadoutEffect
       requirement:
         !type:DepartmentTimeRequirement
@@ -13,7 +13,7 @@
         !type:DepartmentTimeRequirement
         department: ExternalAdministrativeZoneSecurityService
         time: 90000 #25 hrs
-    # Fire edit end
+    # Scp edit end
 
 # Head
 - type: loadout

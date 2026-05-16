@@ -22,7 +22,7 @@
           completed:
             - !type:EmptyAllContainers
             - !type:SpawnPrototype
-              prototype: ScpMaterialWoodPlank # Fire edit
+              prototype: ScpMaterialWoodPlank # Scp edit
               amount: 5
             - !type:SpawnPrototype
               prototype: PartRodMetal

@@ -2,7 +2,7 @@
   id: PlasmaWindow
   name: plasma window
   parent: [BaseDeltaPressurePlasma, WindowRCDResistant]
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -59,7 +59,7 @@
   parent: [BaseDeltaPressurePlasmaQuarter, WindowDirectionalRCDResistant]
   name: directional plasma window
   description: Don't smudge up the glass down there.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:
@@ -115,7 +115,7 @@
   parent: PlasmaWindow
   id: PlasmaWindowDiagonal
   suffix: diagonal
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:

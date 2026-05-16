@@ -2,42 +2,42 @@
   parent: BaseSheetStack
   id: Glass
   name: stack-glass
-  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: glass } # Fire Edit
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: glass } # Scp edit
   spawn: SheetGlass1
 
 - type: stack
   parent: BaseSheetStack
   id: ReinforcedGlass
   name: stack-reinforced-glass
-  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: rglass } # Fire Edit
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: rglass } # Scp edit
   spawn: SheetRGlass1
 
 - type: stack
   parent: BaseSheetStack
   id: PlasmaGlass
   name: stack-plasma-glass
-  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: pglass } # Fire Edit
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: pglass } # Scp edit
   spawn: SheetPGlass1
 
 - type: stack
   parent: BaseSheetStack
   id: ReinforcedPlasmaGlass
   name: stack-reinforced-plasma-glass
-  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: rpglass } # Fire Edit
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: rpglass } # Scp edit
   spawn: SheetRPGlass1
 
 - type: stack
   parent: BaseSheetStack
   id: UraniumGlass
   name: stack-uranium-glass
-  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: uglass } # Fire Edit
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: uglass } # Scp edit
   spawn: SheetUGlass1
 
 - type: stack
   parent: BaseSheetStack
   id: ReinforcedUraniumGlass
   name: stack-reinforced-uranium-glass
-  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: ruglass } # Fire Edit
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/glass.rsi, state: ruglass } # Scp edit
   spawn: SheetRUGlass1
 
 - type: stack

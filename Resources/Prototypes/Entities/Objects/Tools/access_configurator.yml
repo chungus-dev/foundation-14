@@ -19,7 +19,7 @@
         - Belt
     - type: AccessOverrider
       accessLevels:
-      # Fire added start - новые доступы
+      # Scp added start - новые доступы
       - Administration
       - ComplexDirector
       - ScientificServiceDirector
@@ -49,7 +49,7 @@
       - Research
       - Security
       - Service
-      # Fire added end
+      # Scp added end
       privilegedIdSlot:
         name: id-card-console-privileged-id
         ejectSound: /Audio/Machines/id_swipe.ogg
@@ -90,7 +90,7 @@
     sprite: Objects/Tools/universal_access_configurator.rsi
   - type: AccessOverrider
     accessLevels:
-    # Fire added start - новые доступы
+    # Scp added start - новые доступы
     - Administration
     - ComplexDirector
     - ScientificServiceDirector
@@ -117,7 +117,7 @@
     - ChaosInsurgency
     - ThirdParty
     - O5
-    # Fire added end
+    # Scp added end
     - Armory
     - Atmospherics
     - Bar

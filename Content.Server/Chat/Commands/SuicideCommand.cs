@@ -30,10 +30,10 @@ namespace Content.Server.Chat.Commands
             if (player.Status != SessionStatus.InGame || player.AttachedEntity == null)
                 return;
 
-            // Fire edit start
+            // Scp edit start
             shell.WriteLine(Loc.GetString("suicide-command-life-is-good"));
             return;
-            // Fire edit end
+            // Scp edit end
 
             var minds = _e.System<SharedMindSystem>();
 

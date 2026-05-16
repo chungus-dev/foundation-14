@@ -19,7 +19,7 @@
   graph: WebStructures
   startNode: start
   targetNode: table
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter

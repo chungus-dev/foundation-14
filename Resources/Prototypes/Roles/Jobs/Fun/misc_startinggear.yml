@@ -149,10 +149,10 @@
   id: MobAghostGear
   equipment:
     back: ClothingBackpackSatchelAdmin
-    id: ScpAdminPDA # Fire edit
-    belt: ClothingBeltMtfUtilityFilled # Fire edit
-    eyes: ClothingEyesHudOmni # Fire edit
-    # head: ClothingHeadHatCowboyWhite # Fire edit
+    id: ScpAdminPDA # Scp edit
+    belt: ClothingBeltMtfUtilityFilled # Scp edit
+    eyes: ClothingEyesHudOmni # Scp edit
+    # head: ClothingHeadHatCowboyWhite # Scp edit
   storage:
     back:
     - GasAnalyzer

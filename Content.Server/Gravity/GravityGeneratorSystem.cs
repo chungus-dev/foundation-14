@@ -16,7 +16,7 @@ public sealed class GravityGeneratorSystem : SharedGravityGeneratorSystem
         SubscribeLocalEvent<GravityGeneratorComponent, EntParentChangedMessage>(OnParentChanged);
         SubscribeLocalEvent<GravityGeneratorComponent, ChargedMachineActivatedEvent>(OnActivated);
 
-        // Fire edit
+        // Scp edit
         // SubscribeLocalEvent<GravityGeneratorComponent, ChargedMachineDeactivatedEvent>(OnDeactivated);
     }
 
@@ -48,7 +48,7 @@ public sealed class GravityGeneratorSystem : SharedGravityGeneratorSystem
         }
     }
 
-    /* Fire edit
+    /* Scp edit
     private void OnDeactivated(Entity<GravityGeneratorComponent> ent, ref ChargedMachineDeactivatedEvent args)
     {
         ent.Comp.GravityActive = false;

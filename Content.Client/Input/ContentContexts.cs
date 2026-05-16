@@ -13,9 +13,9 @@ namespace Content.Client.Input
         {
             var common = contexts.GetContext("common");
 
-            // Fire added start
+            // Scp added start
             common.AddFunction(ContentKeyFunctions.HoldToFace);
-            // Fire added end
+            // Scp added end
 
             common.AddFunction(ContentKeyFunctions.FocusChat);
             common.AddFunction(ContentKeyFunctions.FocusLocalChat);
@@ -122,11 +122,11 @@ namespace Content.Client.Input
             aghost.AddFunction(ContentKeyFunctions.TryPullObject);
             aghost.AddFunction(ContentKeyFunctions.MovePulledObject);
             aghost.AddFunction(ContentKeyFunctions.ReleasePulledObject);
-            // Fire added start
+            // Scp added start
             aghost.AddFunction(ContentKeyFunctions.RotateObjectClockwise);
             aghost.AddFunction(ContentKeyFunctions.RotateObjectCounterclockwise);
             aghost.AddFunction(ContentKeyFunctions.FlipObject);
-            // Fire added end
+            // Scp added end
 
             var ghost = contexts.New("ghost", "human");
             ghost.AddFunction(EngineKeyFunctions.MoveUp);

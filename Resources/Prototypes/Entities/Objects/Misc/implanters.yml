@@ -92,7 +92,7 @@
   - type: Tag
     tags:
     - Trash
-    - MetaGarbagePreventSaving # Fire added
+    - MetaGarbagePreventSaving # Scp added
 
 - type: entity
   id: ImplanterAdmeme

@@ -1,14 +1,14 @@
 - type: vendingMachineInventory
   id: PTechInventory
   startingInventory:
-    # Fire added start
+    # Scp added start
     BaseFoundationPDA: 8
     ScpEngineeringPDA: 2
     ScpMedicalPDA: 2
     ScpSecurityPDA: 1
     KeyCardEmpty: 5
     KeyCardPassEmpty: 2
-    # Fire added end
+    # Scp added end
     ClothingHeadsetGrey: 5
     RubberStampApproved: 1
     RubberStampDenied: 1

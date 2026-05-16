@@ -52,10 +52,10 @@
         color: "#FF0000"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
-      # Fire added start - генетический урон
+      # Scp added start - генетический урон
       Genetic:
         sprite: _Scp/Mobs/Effects/genetic_damage.rsi
-      # Fire added end
+      # Scp added end
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,0.5
   - type: JobStatus

@@ -170,9 +170,9 @@ public abstract class SharedPoweredLightSystem : EntitySystem
             _storage.PlayPickupAnimation(bulbUid, xform.Coordinates, itemXform.Coordinates, itemXform.LocalRotation, user: user);
         }
 
-        // Fire edit start
+        // Scp edit start
         RaiseLocalEvent(uid, new LightInsertEvent(bulbUid));
-        // Fire edit end
+        // Scp edit end
 
         return true;
     }
@@ -197,9 +197,9 @@ public abstract class SharedPoweredLightSystem : EntitySystem
         // try to place bulb in hands
         _handsSystem.PickupOrDrop(userUid, bulb);
 
-        // Fire edit start
+        // Scp edit start
         RaiseLocalEvent(uid, new LightEjectEvent(bulb));
-        // Fire edit end
+        // Scp edit end
 
         return bulb;
     }

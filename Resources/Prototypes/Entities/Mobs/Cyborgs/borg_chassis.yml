@@ -31,7 +31,7 @@
     inherentRadioChannels:
     - Common
     - Binary
-    - ScientificService # Fire edit
+    - ScientificService # Scp edit
 
 - type: entity
   id: BorgChassisGeneric
@@ -46,7 +46,7 @@
   id: BorgChassisMining
   parent: BorgChassisSelectable
   name: salvage cyborg
-  # components: # Fire Edit
+  # components: # Scp edit
   # - type: BorgSwitchableType
   #   selectedBorgType: mining
 

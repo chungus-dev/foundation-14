@@ -2,7 +2,7 @@
   id: ReinforcedUraniumWindow
   name: reinforced uranium window
   parent: [BaseDeltaPressureReinforcedPlasma, WindowRCDResistant]
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -59,7 +59,7 @@
   parent: [BaseDeltaPressureReinforcedPlasmaQuarter, WindowDirectionalRCDResistant]
   name: directional reinforced uranium window
   description: Don't smudge up the glass down there.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:
@@ -117,7 +117,7 @@
   parent: ReinforcedUraniumWindow
   id: ReinforcedUraniumWindowDiagonal
   suffix: diagonal
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:

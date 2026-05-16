@@ -1,4 +1,4 @@
-# Fire edit - я поубирал лишние амбиенты, не заливайте сюда их обратно
+# Scp edit - я поубирал лишние амбиенты, не заливайте сюда их обратно
 # Заливать только новые. Все чисто наши амбиенты хранятся отдельно, сюда не срать
 
 - type: ambientMusic
@@ -231,7 +231,7 @@
       ignoreAnchored: true
       percent: 0.25
       tiles:
-        - ScpPlating # Fire Edit
+        - ScpPlating # Scp edit
       range: 2
 
 - type: rules

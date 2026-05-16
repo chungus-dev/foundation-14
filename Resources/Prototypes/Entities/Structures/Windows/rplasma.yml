@@ -2,7 +2,7 @@
   id: ReinforcedPlasmaWindow
   name: reinforced plasma window
   parent: [BaseDeltaPressureReinforcedPlasma, WindowRCDResistant]
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -62,7 +62,7 @@
   parent: [BaseDeltaPressureReinforcedPlasmaQuarter, WindowDirectionalRCDResistant]
   name: directional reinforced plasma window
   description: Don't smudge up the glass down there.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:
@@ -120,7 +120,7 @@
   parent: ReinforcedPlasmaWindow
   id: ReinforcedPlasmaWindowDiagonal
   suffix: diagonal
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:

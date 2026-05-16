@@ -76,7 +76,7 @@
 
 - type: entity
   id: PottedPlant3
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: PottedPlantBase
   components:
   - type: Sprite
@@ -106,7 +106,7 @@
 - type: entity
   id: PottedPlant7
   parent: PottedPlantBase
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: plant-07
@@ -123,7 +123,7 @@
   parent: PottedPlantBase
   name: "bioluminescent potted plant"
   description: "It produces light!"
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: plant-09
@@ -156,7 +156,7 @@
 - type: entity
   id: PottedPlant13
   parent: PottedPlantBase
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: plant-13
@@ -164,7 +164,7 @@
 - type: entity
   id: PottedPlant14
   parent: PottedPlantBase
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: plant-14
@@ -179,7 +179,7 @@
 - type: entity
   id: PottedPlant16
   parent: PottedPlantBase
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: plant-16
@@ -201,7 +201,7 @@
 - type: entity
   id: PottedPlant19
   parent: PottedPlantBase
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: plant-19
@@ -209,7 +209,7 @@
 - type: entity
   id: PottedPlant20
   parent: PottedPlantBase
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: plant-20
@@ -257,7 +257,7 @@
   id: PottedPlant26
   parent: PottedPlantBase
   description: Is it just me, or is it blinking?
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: plant-26
@@ -290,7 +290,7 @@
 - type: entity
   id: PottedPlant30
   parent: PottedPlant27
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: plant-30

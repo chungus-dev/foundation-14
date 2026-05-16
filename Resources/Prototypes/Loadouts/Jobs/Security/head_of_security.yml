@@ -5,7 +5,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobSecurityCommander # Fire Edit
+      role: JobSecurityCommander # Scp edit
       time: 72000 #20 hrs
 
 

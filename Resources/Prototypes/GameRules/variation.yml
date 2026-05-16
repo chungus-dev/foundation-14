@@ -62,7 +62,7 @@
   parent: BaseVariationPass
   components:
   - type: EntitySpawnVariationPass
-    tilesPerEntityAverage: 220  # Fire edit
+    tilesPerEntityAverage: 220  # Scp edit
     tilesPerEntityStdDev: 5
     entities:
     - id: DecalSpawnerGraffiti
@@ -148,8 +148,8 @@
   parent: BaseVariationPass
   components:
   - type: PuddleMessVariationPass
-    tilesPerSpillAverage: 250 # Fire edit
-    tilesPerSpillStdDev: 20 # Fire edit
+    tilesPerSpillAverage: 250 # Scp edit
+    tilesPerSpillStdDev: 20 # Scp edit
     randomPuddleSolutionFill: RandomFillTrashPuddleBloodbath
 
 - type: entity
@@ -157,8 +157,8 @@
   parent: BaseVariationPass
   components:
   - type: CutWireVariationPass
-    wireCutChance: 0.05 # Fire edit
-    maxWiresCut: 30 # Fire edit
+    wireCutChance: 0.05 # Scp edit
+    maxWiresCut: 30 # Scp edit
     blacklist:
       components:
       - ParticleAcceleratorControlBox

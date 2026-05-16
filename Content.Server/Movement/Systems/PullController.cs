@@ -122,10 +122,10 @@ public sealed class PullController : VirtualController
             return false;
         }
 
-        // Fire edit start - route cursor-move through ScpHolding before vanilla pulling handles the same input.
+        // Scp edit start - route cursor-move through ScpHolding before vanilla pulling handles the same input.
         if (_scpHolding.TryMoveHeldToCursor(player, coords))
             return false;
-        // Fire edit end
+        // Scp edit end
 
         if (!_pullerQuery.TryComp(player, out var pullerComp))
             return false;

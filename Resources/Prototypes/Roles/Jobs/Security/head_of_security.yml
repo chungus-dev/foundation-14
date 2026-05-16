@@ -21,8 +21,8 @@
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain
   canBeAntag: false
-  overrideConsoleVisibility: false # Fire added
-  setPreference: false # Fire added
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - HeadOfSecurity
   - Command

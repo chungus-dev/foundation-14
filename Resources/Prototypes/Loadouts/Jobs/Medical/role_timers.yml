@@ -5,17 +5,17 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPharmaceuticalSpecialist # Fire Edit
+      role: JobPharmaceuticalSpecialist # Scp edit
       time: 21600 #6 hrs
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobMedicalSpecialist # Fire Edit
+      role: JobMedicalSpecialist # Scp edit
       time: 21600 #6 hrs
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: MedicalService # Fire Edit
+      department: MedicalService # Scp edit
       time: 216000 # 60 hrs
 
 # Other Timers
@@ -36,7 +36,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobHeadOfMedicalSector # Fire Edit
+      role: JobHeadOfMedicalSector # Scp edit
       time: 72000 #20 hrs
 
 # Jumpsuit

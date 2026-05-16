@@ -806,7 +806,7 @@
     sprite: _Scp/Objects/Tiles/wood.rsi
   - type: FloorTile
     outputs:
-    - ScpPlating # Fire Edit
+    - ScpPlating # Scp edit
     - ScpFloorWood
   - type: Stack
     stackType: ScpFloorTileWood

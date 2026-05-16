@@ -1,7 +1,7 @@
 - type: accessGroup
   id: AllAccess
   tags:
-  # Fire added start - новые доступы
+  # Scp added start - новые доступы
   - Administration
   - ComplexDirector
   - ScientificServiceDirector
@@ -29,7 +29,7 @@
   - ThirdParty
   - O5
   - Bunker
-  # Fire added end
+  # Scp added end
   - EmergencyShuttleRepealAll
   - Captain
   - HeadOfPersonnel

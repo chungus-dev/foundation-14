@@ -12,9 +12,9 @@
     HandLabeler: 3
     ClothingBeltMedical: 2
     ClothingHandsGlovesLatex: 2
-    # Fire edit start
+    # Scp edit start
     ClothingHeadsetMedicalService: 2
-    # Fire edit end
+    # Scp edit end
     ClothingOuterWinterChem: 2
     ClothingEyesGlassesChemical: 2
   contrabandInventory:

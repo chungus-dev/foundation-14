@@ -14,10 +14,10 @@
 - type: npcFaction
   id: NanoTrasen
   hostile:
-  # Fire added start
+  # Scp added start
   - Chaos
   - SCPs
-  # Fire added end
+  # Scp added end
   - SimpleHostile
   - Syndicate
   - Xeno
@@ -43,9 +43,9 @@
   friendly:
   - NanoTrasen
   hostile:
-  # Fire added start
+  # Scp added start
   - SCPs
-  # Fire added end
+  # Scp added end
   - Mouse
   - SimpleHostile
   - Zombie
@@ -56,10 +56,10 @@
 - type: npcFaction
   id: SimpleHostile
   hostile:
-  # Fire added start
+  # Scp added start
   - Chaos
   - SCPs
-  # Fire added end
+  # Scp added end
   - NanoTrasen
   - Syndicate
   - Passive
@@ -78,9 +78,9 @@
 - type: npcFaction
   id: Syndicate
   hostile:
-  # Fire added start
+  # Scp added start
   - SCPs
-  # Fire added end
+  # Scp added end
   - NanoTrasen
   - SimpleHostile
   - Xeno
@@ -94,10 +94,10 @@
 - type: npcFaction
   id: Xeno
   hostile:
-  # Fire added start
+  # Scp added start
   - Chaos
   - SCPs
-  # Fire added end
+  # Scp added end
   - NanoTrasen
   - Syndicate
   - Passive
@@ -112,10 +112,10 @@
 - type: npcFaction
   id: Zombie
   hostile:
-  # Fire added start
+  # Scp added start
   - Chaos
   - SCPs
-  # Fire added end
+  # Scp added end
   - NanoTrasen
   - SimpleNeutral
   - SimpleHostile
@@ -131,9 +131,9 @@
 - type: npcFaction
   id: Revolutionary
   hostile:
-  # Fire added start
+  # Scp added start
   - SCPs
-  # Fire added end
+  # Scp added end
   - NanoTrasen
   - Zombie
   - SimpleHostile
@@ -145,10 +145,10 @@
 - type: npcFaction
   id: AllHostile
   hostile:
-  # Fire added start
+  # Scp added start
   - Chaos
   - SCPs
-  # Fire added end
+  # Scp added end
   - NanoTrasen
   - Dragon
   - Mouse
@@ -166,10 +166,10 @@
 - type: npcFaction
   id: Wizard
   hostile:
-  # Fire added start
+  # Scp added start
   - Chaos
   - SCPs
-  # Fire added end
+  # Scp added end
   - NanoTrasen
   - Dragon
   - Mouse

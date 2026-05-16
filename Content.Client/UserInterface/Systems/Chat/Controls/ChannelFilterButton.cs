@@ -9,11 +9,11 @@ namespace Content.Client.UserInterface.Systems.Chat.Controls;
 
 public sealed class ChannelFilterButton : ChatPopupButton<ChannelFilterPopup>
 {
-    // Fire edit start
+    // Scp edit start
     private static readonly Color ColorNormal = ScpPalettes.SCPWhite;
     private static readonly Color ColorHovered = ScpPalettes.SCPWhite.WithLightness(0.3f); // primary color[0] + 0.30 L
     private static readonly Color ColorPressed = ScpPalettes.SCPWhite.WithLightness(0.12f); // primary color[0] + 0.12 L
-    // Fire edit end
+    // Scp edit end
     private readonly TextureRect? _textureRect;
     private readonly ChatUIController _chatUIController;
 

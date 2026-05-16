@@ -48,9 +48,9 @@ public sealed class SignalSwitchSystem : EntitySystem
 
         args.Handled = true;
 
-        // Fire added start
+        // Scp added start
         var ev = new SignalSwitchActivatedEvent(comp.State, args.User);
         RaiseLocalEvent(uid, ref ev);
-        // Fire added end
+        // Scp added end
     }
 }

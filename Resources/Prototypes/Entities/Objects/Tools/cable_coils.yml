@@ -15,9 +15,9 @@
   - type: Stack
     stackType: Cable
   - type: Sprite
-    sprite: _Scp/Objects/Tools/cable-coils.rsi # Fire edit
+    sprite: _Scp/Objects/Tools/cable-coils.rsi # Scp edit
   - type: Item
-    sprite: _Scp/Objects/Tools/cable-coils.rsi # Fire edit
+    sprite: _Scp/Objects/Tools/cable-coils.rsi # Scp edit
     size: Small
     storedRotation: -90
   - type: CablePlacer

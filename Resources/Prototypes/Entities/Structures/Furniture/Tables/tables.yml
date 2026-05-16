@@ -4,7 +4,7 @@
   parent: BaseStructure
   name: table frame
   description: Pieces of metal that make the frame of a table.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Furniture/Tables/frame.rsi
@@ -58,7 +58,7 @@
 
 - type: entity
   id: CounterWoodFrame
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: BaseStructure
   name: wooden counter frame
   description: Pieces of wood that make the frame of a table.
@@ -162,7 +162,7 @@
   parent: TableBase
   name: table
   description: A square piece of metal standing on four metal legs.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Furniture/Tables/generic.rsi
@@ -207,7 +207,7 @@
   parent: TableBase
   name: reinforced table
   description: A square piece of metal standing on four metal legs. Extra robust.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Furniture/Tables/reinforced.rsi
@@ -255,7 +255,7 @@
   parent: TableBase
   name: glass table
   description: A square piece of glass, standing on four metal legs.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Furniture/Tables/glass.rsi
@@ -365,7 +365,7 @@
   parent: TableBase
   name: reinforced glass table
   description: A square piece of glass, standing on four metal legs. Extra robust.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Furniture/Tables/r_glass.rsi
@@ -423,7 +423,7 @@
   parent: TableBase
   name: plasma glass table
   description: A square piece of plasma glass, standing on four metal legs. Pretty!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Furniture/Tables/plasma.rsi
@@ -521,7 +521,7 @@
 
 - type: entity
   id: TableWood
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: TableBase
   name: wood table
   description: Do not apply fire to this. Rumour says it burns easily.
@@ -571,7 +571,7 @@
 
 - type: entity
   id: TableCarpet
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: TableBase
   name: gambling table
   description: Play em' cowboy.
@@ -602,7 +602,7 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          ScpMaterialWoodPlank: # Fire edit
+          ScpMaterialWoodPlank: # Scp edit
             min: 1
             max: 1
           MaterialCloth1:
@@ -627,7 +627,7 @@
   parent: TableBase
   name: stone table
   description: Literally the sturdiest thing you have ever seen.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Furniture/Tables/stone.rsi
@@ -655,7 +655,7 @@
   parent: TableBase
   name: web table
   description: Really smooth and surprisingly durable.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Damageable
     damageModifierSet: Web
@@ -690,7 +690,7 @@
   id: TableXeno
   name: xeno table
   description: I wouldn't put the silverware on it.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Furniture/Tables/xeno.rsi
@@ -935,7 +935,7 @@
 
 - type: entity
   id: TableCounterWood
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: CounterBase
   name: wood counter
   description: Do not apply fire to this. Rumour says it burns easily.

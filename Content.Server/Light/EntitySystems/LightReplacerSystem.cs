@@ -131,7 +131,7 @@ public sealed class LightReplacerSystem : SharedLightReplacerSystem
         {
             if (!TryComp<LightBulbComponent>(fixtureBulbUid.Value, out var fixtureBulb))
                 return false;
-            // Fire edit
+            // Scp edit
             if (fixtureBulb.State == LightBulbState.Normal && !HasComp<MalfunctionLightComponent>(fixtureBulbUid))
                 return false;
         }
@@ -182,7 +182,7 @@ public sealed class LightReplacerSystem : SharedLightReplacerSystem
             return false;
 
         // only normal (non-broken) bulbs can be inserted inside light replacer
-        // Fire edit
+        // Scp edit
         if (bulb.State != LightBulbState.Normal || HasComp<MalfunctionLightComponent>(bulbUid))
         {
             if (showTooltip && userUid != null)

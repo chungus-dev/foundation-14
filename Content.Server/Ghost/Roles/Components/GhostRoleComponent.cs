@@ -6,7 +6,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server.Ghost.Roles.Components;
 
 [RegisterComponent]
-// Fire edit - пошло нахуй
+// Scp edit - пошло нахуй
 // [Access(typeof(GhostRoleSystem))]
 public sealed partial class GhostRoleComponent : Component
 {

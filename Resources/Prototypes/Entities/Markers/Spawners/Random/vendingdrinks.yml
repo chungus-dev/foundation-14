@@ -10,11 +10,11 @@
       - sprite: Structures/Machines/VendingMachines/random.rsi
         state: drink
   - type: RandomSpawner
-  # Fire edit start
+  # Scp edit start
     rarePrototypes:
     - Scp261
     rareChance: 0.03
-  # Fire edit end
+  # Scp edit end
     prototypes:
       - VendingMachineCoffee
       - VendingMachineCola #Robust Sofdrinks

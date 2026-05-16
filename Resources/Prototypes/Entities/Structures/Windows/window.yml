@@ -3,7 +3,7 @@
   parent: [BaseDeltaPressureGlass, BaseStructure]
   name: window
   description: Don't smudge up the glass down there.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:
@@ -104,7 +104,7 @@
   parent: Window
   id: TintedWindow
   name: tinted window
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -133,7 +133,7 @@
   parent: [BaseDeltaPressureGlassQuarter, BaseStructure]
   name: directional window
   description: Don't smudge up the glass down there.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:
@@ -236,7 +236,7 @@
   parent: WindowDirectional
   name: directional frosted window
   description: Don't smudge up the glass down there.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:
@@ -255,7 +255,7 @@
   parent: Window
   id: WindowDiagonal
   suffix: diagonal
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:

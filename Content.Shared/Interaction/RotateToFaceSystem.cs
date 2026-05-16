@@ -18,7 +18,7 @@ namespace Content.Shared.Interaction
         [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
 
-        // Fire edit start - для осматривания на стульях
+        // Scp edit start - для осматривания на стульях
         private EntityQuery<StrapComponent> _strapQuery;
         private EntityQuery<BuckleComponent> _buckleQuery;
 
@@ -29,7 +29,7 @@ namespace Content.Shared.Interaction
             _strapQuery = GetEntityQuery<StrapComponent>();
             _buckleQuery = GetEntityQuery<BuckleComponent>();
         }
-        // Fire edit end
+        // Scp edit end
 
         /// <summary>
         /// Tries to rotate the entity towards the target rotation. Returns false if it needs to keep rotating.
@@ -95,7 +95,7 @@ namespace Content.Shared.Interaction
             if (!_actionBlockerSystem.CanChangeDirection(user))
                 return false;
 
-            // Fire edit start - для осматривания на стульях
+            // Scp edit start - для осматривания на стульях
             if (_buckleQuery.TryComp(user, out var buckle) && buckle.BuckledTo is { } strap)
             {
                 if (_strapQuery.TryComp(strap, out var strapComp) && strapComp.AllowRotation)
@@ -121,7 +121,7 @@ namespace Content.Shared.Interaction
 
                 return false;
             }
-            // Fire edit end
+            // Scp edit end
 
             if (!Resolve(user, ref xform))
                 return false;

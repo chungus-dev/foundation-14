@@ -6,8 +6,8 @@
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-hop
-  overrideConsoleVisibility: false # Fire added
-  setPreference: false # Fire added
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - Chapel
   - Maintenance

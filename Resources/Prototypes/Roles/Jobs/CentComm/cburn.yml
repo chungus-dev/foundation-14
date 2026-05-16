@@ -7,7 +7,7 @@
   startingGear: CBURNGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
-  overrideConsoleVisibility: false # Fire added
+  overrideConsoleVisibility: false # Scp added
   canBeAntag: false
   requirements:
     - !type:DepartmentTimeRequirement

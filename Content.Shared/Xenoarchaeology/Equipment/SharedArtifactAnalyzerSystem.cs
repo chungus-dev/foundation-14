@@ -21,10 +21,10 @@ public abstract class SharedArtifactAnalyzerSystem : EntitySystem
 {
     [Dependency] private readonly SharedPowerReceiverSystem _powerReceiver = default!;
     [Dependency] private readonly SharedDeviceLinkSystem _deviceLink = default!;
-    // Fire edit start - сканирование на расстоянии для сцп
+    // Scp edit start - сканирование на расстоянии для сцп
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
-    // Fire edit end
+    // Scp edit end
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -42,10 +42,10 @@ public abstract class SharedArtifactAnalyzerSystem : EntitySystem
         SubscribeLocalEvent<AnalysisConsoleComponent, LinkAttemptEvent>(OnLinkAttemptConsole);
         SubscribeLocalEvent<AnalysisConsoleComponent, PortDisconnectedEvent>(OnPortDisconnectedConsole);
 
-        // Fire edit start - сканирование артефактов на расстоянии
+        // Scp edit start - сканирование артефактов на расстоянии
         // Ивент вызывается при открытии консоли и сообщает, что нужно поискать артефакты в радиусе для сканирования
         SubscribeLocalEvent<AnalysisConsoleComponent, ConsoleServerSearchForArtifactInRadius>(OnSearchInRadius);
-        // Fire edit end
+        // Scp edit end
     }
 
     private void OnItemPlaced(Entity<ArtifactAnalyzerComponent> ent, ref ItemPlacedEvent args)
@@ -174,7 +174,7 @@ public abstract class SharedArtifactAnalyzerSystem : EntitySystem
         return true;
     }
 
-    // Fire added start
+    // Scp added start
     private void OnSearchInRadius(Entity<AnalysisConsoleComponent> ent, ref ConsoleServerSearchForArtifactInRadius args)
     {
         if (!TryGetAnalyzer(ent, out var analyzer))
@@ -201,5 +201,5 @@ public abstract class SharedArtifactAnalyzerSystem : EntitySystem
 
         return true;
     }
-    // Fire added end
+    // Scp added end
 }

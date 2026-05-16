@@ -271,7 +271,7 @@
   - type: Sprite
     sprite: Mobs/Silicon/Bots/cleanbot.rsi
     state: cleanbot
-  # - type: Construction #Fire edit
+  # - type: Construction #Scp edit
   #   graph: CleanBot
   #   node: bot
   - type: Absorbent

@@ -21,11 +21,11 @@ public sealed class AnalysisConsoleBoundUserInterface(EntityUid owner, Enum uiKe
     {
         base.Open();
 
-        // Fire edit start - анализ артефакта на расстоянии
+        // Scp edit start - анализ артефакта на расстоянии
         // При открытии окна сообщает, что нужно поискать артефакт рядом
         // Специально стоит выше создания окна, чтобы успел отобразиться спрайт выбранной штуки
         SendPredictedMessage(new ConsoleServerSearchForArtifactInRadius());
-        // Fire edit end
+        // Scp edit end
 
         _consoleMenu = this.CreateWindow<AnalysisConsoleMenu>();
         _consoleMenu.SetOwner(Owner);

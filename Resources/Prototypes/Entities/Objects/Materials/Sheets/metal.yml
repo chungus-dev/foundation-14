@@ -5,9 +5,9 @@
   description: A sheet of metal, used often on the station in various applications.
   components:
   - type: Sprite
-    sprite: _Scp/Objects/Materials/Sheets/metal.rsi # Fire Edit
+    sprite: _Scp/Objects/Materials/Sheets/metal.rsi # Scp edit
   - type: Item
-    sprite: _Scp/Objects/Materials/Sheets/metal.rsi # Fire Edit
+    sprite: _Scp/Objects/Materials/Sheets/metal.rsi # Scp edit
     size: Normal
   - type: StaticPrice
     price: 0
@@ -114,13 +114,13 @@
     - brass_2
     - brass_3
   - type: Sprite
-    sprite: Objects/Materials/Sheets/metal.rsi # Fire Edit
+    sprite: Objects/Materials/Sheets/metal.rsi # Scp edit
     state: brass_3
     layers:
     - state: brass_3
       map: ["base"]
   - type: Item
-    sprite: Objects/Materials/Sheets/metal.rsi # Fire Edit
+    sprite: Objects/Materials/Sheets/metal.rsi # Scp edit
     heldPrefix: brass
   - type: Appearance
   - type: FloorTile

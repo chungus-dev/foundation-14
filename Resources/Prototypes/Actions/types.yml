@@ -234,7 +234,7 @@
     priority: -100
   - type: InstantAction
     event: !type:ToggleCombatActionEvent
-  - type: ScpHoldRestricted # Fire edit - block combat mode while held
+  - type: ScpHoldRestricted # Scp edit - block combat mode while held
     stage: Soft
 
 - type: entity
@@ -369,7 +369,7 @@
   - type: Action
     icon: Interface/Actions/eyeopen.png
     iconOn: Interface/Actions/eyeclose.png
-    useDelay: 2 # Fire edit
+    useDelay: 2 # Scp edit
   - type: InstantAction
     event: !type:ToggleEyesActionEvent
 

@@ -1,7 +1,7 @@
 - type: cargoProduct
   id: MaterialGlass
   icon:
-    sprite: _Scp/Objects/Materials/Sheets/glass.rsi # Fire Edit
+    sprite: _Scp/Objects/Materials/Sheets/glass.rsi # Scp edit
     state: glass_3
   product: CrateMaterialGlass
   cost: 1500
@@ -11,7 +11,7 @@
 - type: cargoProduct
   id: MaterialSteel
   icon:
-    sprite: _Scp/Objects/Materials/Sheets/metal.rsi # Fire Edit
+    sprite: _Scp/Objects/Materials/Sheets/metal.rsi # Scp edit
     state: steel_3
   product: CrateMaterialSteel
   cost: 1500
@@ -21,7 +21,7 @@
 - type: cargoProduct
   id: MaterialPlastic
   icon:
-    sprite: _Scp/Objects/Materials/Sheets/other.rsi # Fire Edit
+    sprite: _Scp/Objects/Materials/Sheets/other.rsi # Scp edit
     state: plastic_3
   product: CrateMaterialPlastic
   cost: 2000
@@ -41,7 +41,7 @@
 - type: cargoProduct
   id: MaterialPlasteel
   icon:
-    sprite: _Scp/Objects/Materials/Sheets/metal.rsi # Fire Edit
+    sprite: _Scp/Objects/Materials/Sheets/metal.rsi # Scp edit
     state: plasteel_3
   product: CrateMaterialPlasteel
   cost: 1600
@@ -51,20 +51,20 @@
 - type: cargoProduct
   id: MaterialGold
   icon:
-    sprite: _Scp/Objects/Materials/ingots.rsi # Fire Edit
+    sprite: _Scp/Objects/Materials/ingots.rsi # Scp edit
     state: gold_3
   product: CrateMaterialGold
-  cost: 12000 # Fire edit
+  cost: 12000 # Scp edit
   category: cargoproduct-category-name-materials
   group: market
 
 - type: cargoProduct
   id: MaterialSilver
   icon:
-    sprite: _Scp/Objects/Materials/ingots.rsi # Fire Edit
+    sprite: _Scp/Objects/Materials/ingots.rsi # Scp edit
     state: silver_3
   product: CrateMaterialSilver
-  cost: 10000 # Fire edit
+  cost: 10000 # Scp edit
   category: cargoproduct-category-name-materials
   group: market
 
@@ -81,7 +81,7 @@
 - type: cargoProduct
   id: MaterialPlasma
   icon:
-    sprite: _Scp/Objects/Materials/Sheets/other.rsi # Fire Edit
+    sprite: _Scp/Objects/Materials/Sheets/other.rsi # Scp edit
     state: plasma
   product: CrateMaterialPlasma
   cost: 1500

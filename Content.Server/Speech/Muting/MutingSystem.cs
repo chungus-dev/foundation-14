@@ -25,10 +25,10 @@ namespace Content.Server.Speech.Muting
             if (args.Handled)
                 return;
 
-            // Fire edit start
+            // Scp edit start
             if (component.Allowed.Contains(args.Emote.ID))
                 return;
-            // Fire edit end
+            // Scp edit end
 
             //still leaves the text so it looks like they are pantomiming a laugh
             if (args.Emote.Category.HasFlag(EmoteCategory.Vocal))

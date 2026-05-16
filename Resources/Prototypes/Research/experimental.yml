@@ -9,7 +9,7 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  defaultToScpScale: 0.0 # Fire Edit
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
   - ProximitySensor
 
@@ -22,7 +22,7 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  defaultToScpScale: 0.0 # Fire Edit
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
   - AnomalyScanner
   - AnomalyLocator
@@ -39,7 +39,7 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  defaultToScpScale: 0.0 # Fire Edit
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
   - NodeScanner
   - AnalysisComputerCircuitboard
@@ -54,7 +54,7 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  defaultToScpScale: 0.1 # Fire Edit
+  defaultToScpScale: 0.1 # Scp edit
   recipeUnlocks:
   - TechDiskComputerCircuitboard
 
@@ -150,7 +150,7 @@
   discipline: Experimental
   tier: 3
   cost: 10000
-  defaultToScpScale: 0.3 # Fire Edit
+  defaultToScpScale: 0.3 # Scp edit
   recipeUnlocks:
   - DeviceQuantumSpinInverter
 
@@ -163,6 +163,6 @@
   discipline: Experimental
   tier: 3
   cost: 10000
-  defaultToScpScale: 0.3 # Fire Edit
+  defaultToScpScale: 0.3 # Scp edit
   recipeUnlocks:
   - DeviceDesynchronizer

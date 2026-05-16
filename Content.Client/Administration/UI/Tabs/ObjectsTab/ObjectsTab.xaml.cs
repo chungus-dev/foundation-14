@@ -163,7 +163,7 @@ public sealed partial class ObjectsTab : Control
         button.AddChild(entry);
         button.StyleClasses.Clear();
 
-        button.HoverExtenstionEnabled = false; // Fire added
+        button.HoverExtenstionEnabled = false; // Scp added
     }
 
     private bool DataFilterCondition(string filter, ListData listData)

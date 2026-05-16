@@ -2,7 +2,7 @@
   id: LockerWardenFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerWarden
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -17,7 +17,7 @@
   id: LockerWardenFilled
   suffix: Filled
   parent: LockerWarden
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -63,7 +63,7 @@
   id: LockerSecurityFilled
   suffix: Filled
   parent: LockerSecurity
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -104,7 +104,7 @@
   id: LockerBrigmedicFilled
   suffix: Brigmedic, Filled
   parent: LockerBrigmedic
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -150,7 +150,7 @@
   id: LockerDetectiveFilled
   suffix: Filled
   parent: LockerDetective
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -184,7 +184,7 @@
   id: ClosetBombFilled
   parent: ClosetBomb
   suffix: Filled
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:

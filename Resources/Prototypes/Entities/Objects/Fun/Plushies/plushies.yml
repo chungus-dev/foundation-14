@@ -55,7 +55,7 @@
   parent: BasePlushie
   id: PlushieThrongler
   name: throngler plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: A stuffed toy to remind cargo techs of what they can no longer have.
   components:
   - type: Sprite
@@ -118,7 +118,7 @@
 - type: entity
   parent: PlushieGhost
   id: PlushieGhostRevenant
-  categories: [ HideSpawnMenu, DoNotMap ] # Fire edit
+  categories: [ HideSpawnMenu, DoNotMap ] # Scp edit
   name: revenant soft toy
   description: So soft it almost makes you want to take a nap...
   components:
@@ -238,7 +238,7 @@
   parent: BasePlushie
   id: PlushieNuke
   name: nukie plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: A stuffed toy that resembles a syndicate nuclear operative. The tag claims operatives to be purely fictitious.
   components:
   - type: Sprite
@@ -261,7 +261,7 @@
   parent: BasePlushie
   id: PlushieRouny
   name: rouny plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: Rouny.
   components:
   - type: Sprite
@@ -302,7 +302,7 @@
   parent: BasePlushie
   id: PlushieArachind
   name: arachnid plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: An adorable stuffed toy that resembles an arachnid. It feels silky..
   components:
   - type: Sprite
@@ -396,7 +396,7 @@
   id: PlushieExperiment #Arf!
   name: experiment plushie
   description: A plushie of a canid of sorts. It yearns to be detonated on a landmine.
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     sprite: Objects/Fun/Plushies/expi.rsi
@@ -578,7 +578,7 @@
   parent: BasePlushie
   id: PlushieDiona
   name: diona plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: An adorable stuffed toy that resembles a diona. Love water and cuddles. Do not wet!
   components:
   - type: Sprite
@@ -741,7 +741,7 @@
   parent: BasePlushie
   id: PlushieRatvar
   name: ratvar plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: A large stuffed doll of the elder god Ratvar.
   components:
   - type: Sprite
@@ -764,7 +764,7 @@
   parent: BasePlushie
   id: PlushieNar
   name: nar'sie plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: A large stuffed doll of the elder goddess Nar'Sie.
   components:
   - type: Sprite
@@ -827,7 +827,7 @@
   parent: PlushieCarp
   id: PlushieMagicarp
   name: magicarp plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: An adorable stuffed toy resembling the exceedingly rare magicarp.
   components:
   - type: Sprite
@@ -851,7 +851,7 @@
   parent: PlushieCarp
   id: PlushieRainbowCarp
   name: rainbow carp plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: An adorable stuffed toy resembling the legendary rainbow carp.
   components:
   - type: Sprite
@@ -874,7 +874,7 @@
   parent: PlushieCarp
   id: PlushieHolocarp
   name: holocarp plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: A holographic stuffed toy resembling science's nemesis - the holocarp.
   components:
   - type: Sprite
@@ -898,7 +898,7 @@
   parent: BasePlushie
   id: PlushieSlime
   name: slime plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: An adorable stuffed toy that resembles a slime. It's basically a hacky sack.
   components:
   - type: Sprite
@@ -1004,7 +1004,7 @@
   parent: BasePlushie
   id: PlushieVox
   name: vox plushie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   description: SKREEEEEEEEEEEE!
   components:
   - type: Sprite
@@ -1283,7 +1283,7 @@
 - type: entity
   parent: BasePlushie
   id: ToyAmongPequeno
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: among pequeño
   description: Sus!
   components:

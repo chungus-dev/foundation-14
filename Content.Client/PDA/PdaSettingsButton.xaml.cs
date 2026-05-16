@@ -12,17 +12,17 @@ public sealed partial class PdaSettingsButton : ContainerButton
     public const string StylePropertyFgColor = "foregroundColor";
     public const string StylePropertyBgColor = "backgroundColor";
 
-    // Fire edit start
+    // Scp edit start
     public static readonly string NormalBgColor = ScpPalettes.PanelDarker.ToHex();
     public static readonly string HoverColor = ScpPalettes.LightGray.ToHex();
     public static readonly string PressedColor = ScpPalettes.BloodRedDarker.ToHex();
     public static readonly string DisabledFgColor = ScpPalettes.LightGray.ToHex();
     public static readonly string EnabledFgColor = ScpPalettes.SCPWhite.ToHex();
-    // Fire edit end
+    // Scp edit end
 
     private readonly StyleBoxFlat _styleBox = new()
     {
-        BackgroundColor = ScpPalettes.PanelDark, // Fire edit
+        BackgroundColor = ScpPalettes.PanelDark, // Scp edit
     };
 
     public string? Text

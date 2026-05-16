@@ -474,10 +474,10 @@
   name: seeds-towercap-name
   noun: seeds-noun-spores
   displayName: seeds-towercap-display-name
-  plantRsi: _Scp/Objects/Specific/Hydroponics/towercap.rsi # Fire edit
-  packetPrototype: ScpTowercapSeeds # Fire edit
+  plantRsi: _Scp/Objects/Specific/Hydroponics/towercap.rsi # Scp edit
+  packetPrototype: ScpTowercapSeeds # Scp edit
   productPrototypes:
-    - ScpLog # Fire edit
+    - ScpLog # Scp edit
   mutationPrototypes:
     - steelcap
   lifespan: 80

@@ -828,7 +828,7 @@ CrateVendingMachineRestockChangFilled: VendingMachineRestockChang
 CrateVendingMachineRestockDiscountDansFilled: VendingMachineRestockDiscountDans
 CrateVendingMachineRestockDonutFilled: VendingMachineRestockDonut
 
-# Fire added start
+# Scp added start
 ClosetWallAtmospherics: null
 ClosetWallWardrobeAtmosphericsFilled: null
 WardrobeBotanist: ScpLockerBotanistPhytogeneticist
@@ -2660,4 +2660,4 @@ RightLegSkeleton: null
 WeaponSniperGarand: null
 Girder: ScpGirder
 ReinforcedGirder: ScpReinforcedGirder
-# Fire added end
+# Scp added end

@@ -33,7 +33,7 @@
   icon:
     sprite: /Textures/Interface/Misc/security_icons.rsi
     state: hud_suspected
-  
+
 - type: securityIcon
   parent: SecurityIcon
   id: SecurityIconHostile
@@ -62,7 +62,7 @@
   layer: Mod
   isShaded: true
   icon:
-    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi # Fire Edit
+    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi # Scp edit
     state: MindShield
 - type: securityIcon
   id: CrewBorderIcon

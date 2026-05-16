@@ -1,7 +1,7 @@
 - type: species
   id: Vox
   name: species-name-vox
-  roundStart: false # Fire edit
+  roundStart: false # Scp edit
   prototype: MobVox
   dollPrototype: AppearanceVox
   skinColoration: VoxFeathers

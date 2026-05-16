@@ -3,7 +3,7 @@
   graph: ClosetSteel
   startNode: start
   targetNode: done
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-storage
   objectType: Structure
 
@@ -12,7 +12,7 @@
   graph: ClosetSteelSecure
   startNode: start
   targetNode: done
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-storage
   objectType: Structure
 
@@ -22,7 +22,7 @@
   graph: ClosetFreezer
   startNode: start
   targetNode: done
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-storage
   objectType: Structure
 

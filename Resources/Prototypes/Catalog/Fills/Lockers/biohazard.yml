@@ -2,7 +2,7 @@
   id: ClosetL3Filled
   suffix: Filled, Generic
   parent: ClosetL3
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -20,7 +20,7 @@
   id: ClosetL3VirologyFilled
   suffix: Filled, Virology
   parent: ClosetL3Virology
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -38,7 +38,7 @@
   id: ClosetL3SecurityFilled
   suffix: Filled, Security
   parent: ClosetL3Security
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -56,7 +56,7 @@
   id: ClosetL3JanitorFilled
   suffix: Filled, Janitor
   parent: ClosetL3Janitor
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -74,7 +74,7 @@
   id: ClosetL3ScienceFilled
   suffix: Filled, Science
   parent: ClosetL3Science
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:

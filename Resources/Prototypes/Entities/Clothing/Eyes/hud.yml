@@ -22,9 +22,9 @@
   abstract: true
   categories: [ HideSpawnMenu ]
   components:
-  # Fire added start - для скромника
+  # Scp added start - для скромника
   - type: ShowScp096FaceDamageHud
-  # Fire added end
+  # Scp added end
   - type: ShowHealthBars
   - type: ShowHealthIcons
 

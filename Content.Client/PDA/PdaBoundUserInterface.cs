@@ -37,7 +37,7 @@ namespace Content.Client.PDA
                 SendMessage(new PdaToggleFlashlightMessage());
             };
 
-            /* Fire Edit
+            /* Scp edit
             _menu.EjectIdButton.OnPressed += _ =>
             {
                 SendPredictedMessage(new ItemSlotButtonPressedEvent(PdaComponent.PdaIdSlotId));

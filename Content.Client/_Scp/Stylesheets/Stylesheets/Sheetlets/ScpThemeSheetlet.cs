@@ -46,7 +46,7 @@ public sealed class ScpThemeSheetlet : Sheetlet<NanotrasenStylesheet>
         var sliderOutlineTex = sheet.GetTextureOr(new("slider_outline.svg.96dpi.png"), NanotrasenStylesheet.TextureRoot);
         var sliderGrabTex = sheet.GetTextureOr(new("slider_grabber.svg.96dpi.png"), NanotrasenStylesheet.TextureRoot);
 
-        // --- Создание StyleBoxes (Fire edit logic) ---
+        // --- Создание StyleBoxes (Scp edit logic) ---
 
         // Окно: Темный фон, Белая рамка
         var windowBackground = new StyleBoxFlat

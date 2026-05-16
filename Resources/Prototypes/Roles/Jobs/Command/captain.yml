@@ -27,8 +27,8 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
-  overrideConsoleVisibility: false # Fire added
-  setPreference: false # Fire added
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   special:
   - !type:AddImplantSpecial
   - !type:AddComponentSpecial

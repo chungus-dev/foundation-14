@@ -157,10 +157,10 @@
   placement:
     mode: SnapgridCenter
   components:
-  # Fire added start
+  # Scp added start
   - type: ScaleAnimation
     animationKey: puddle_scale_animation
-  # Fire added end
+  # Scp added end
   - type: Clickable
   - type: Slippery
     staminaDamage: 0
@@ -221,4 +221,4 @@
   - type: Tag
     tags:
     - DNASolutionScannable
-    - MetaGarbageSavable # Fire added
+    - MetaGarbageSavable # Scp added

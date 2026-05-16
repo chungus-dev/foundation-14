@@ -18,10 +18,10 @@ namespace Content.Server.Chemistry.TileReactions;
 [DataDefinition]
 public sealed partial class CleanTileReaction : ITileReaction
 {
-    // Fire added start
+    // Scp added start
     [DataField]
     public bool DoubleScp173Reagent = true;
-    // Fire added end
+    // Scp added end
 
     /// <summary>
     /// How much it costs to clean 1 unit of reagent.
@@ -50,9 +50,9 @@ public sealed partial class CleanTileReaction : ITileReaction
         // Multiply as the amount we can actually purge is higher than the react amount.
         var purgeAmount = reactVolume / CleanAmountMultiplier;
 
-        // Fire added start - для удваивания количества вещества 173 от чистящего реагента
+        // Scp added start - для удваивания количества вещества 173 от чистящего реагента
         var puddleSystem = entityManager.System<PuddleSystem>();
-        // Fire added end
+        // Scp added end
 
         foreach (var entity in entities)
         {
@@ -62,7 +62,7 @@ public sealed partial class CleanTileReaction : ITileReaction
                 continue;
             }
 
-            // Fire added start - для удваивания количества вещества 173 от чистящего реагента
+            // Scp added start - для удваивания количества вещества 173 от чистящего реагента
             if (DoubleScp173Reagent && puddleSolutionValue.TryGetReagent(new ReagentId(Scp173Component.Reagent, null), out var quantity))
             {
                 var tempSol = new Solution();
@@ -73,7 +73,7 @@ public sealed partial class CleanTileReaction : ITileReaction
 
                 continue;
             }
-            // Fire added start
+            // Scp added start
 
             var purgeable = solutionContainerSystem.SplitSolutionWithout(puddleSolution.Value, purgeAmount, ReplacementReagent, reagent.ID);
 
@@ -85,7 +85,7 @@ public sealed partial class CleanTileReaction : ITileReaction
                 break;
         }
 
-        // Fire edit - тут санрайз насрал удалением следов, я это удалил.
+        // Scp edit - тут санрайз насрал удалением следов, я это удалил.
 
         return (reactVolume / CleanAmountMultiplier - purgeAmount) * CleanAmountMultiplier;
     }

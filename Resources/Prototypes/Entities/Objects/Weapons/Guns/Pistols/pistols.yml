@@ -5,9 +5,9 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
-  # Fire added start
+  # Scp added start
   - type: BloodSplatterer
-  # Fire added end
+  # Scp added end
   - type: Sprite
     layers:
       - state: base
@@ -23,7 +23,7 @@
   - type: Tag
     tags:
     - Sidearm
-    - LockerPistol # Fire Edit
+    - LockerPistol # Scp edit
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
     quickEquip: false

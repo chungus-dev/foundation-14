@@ -5,7 +5,7 @@
   placement:
     mode: SnapgridCenter
   components:
-  # Fire edit start
+  # Scp edit start
   - type: ProximityReceiver
   - type: FearSource
     phobiaType: Necrophobia
@@ -17,7 +17,7 @@
       min: 0
       max: 150
     playBreathingSound: false
-  # Fire edit end
+  # Scp edit end
   - type: Pullable
   - type: Anchorable
   - type: Sprite

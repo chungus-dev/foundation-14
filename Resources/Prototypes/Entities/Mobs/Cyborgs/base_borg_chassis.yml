@@ -85,7 +85,7 @@
   - type: EmagSiliconLaw
     stunTime: 5
   - type: SiliconLawProvider
-    laws: ScpDefault # Fire edit
+    laws: ScpDefault # Scp edit
   - type: Inventory
     templateId: borg
   - type: Hands
@@ -98,12 +98,12 @@
     channels:
     - Binary
     - Common
-    - ScientificService # Fire edit
+    - ScientificService # Scp edit
   - type: ActiveRadio
     channels:
     - Binary
     - Common
-    - ScientificService # Fire edit
+    - ScientificService # Scp edit
   - type: ZombieImmune
 
   - type: Repairable
@@ -331,7 +331,7 @@
     - NanoTrasen
   - type: Access
     enabled: false
-  # Fire edit start - новые доступы
+  # Scp edit start - новые доступы
     groups:
     - MedicalHeadless
     - EngineeringHeadless
@@ -344,7 +344,7 @@
 
   - type: AccessReader
     access: [["Administration"], ["Research"]]
-  # Fire edit end
+  # Scp edit end
   - type: ShowJobIcons
   - type: InteractionPopup
     interactSuccessSound:

@@ -4,7 +4,7 @@
   id: WeaponEnergyTurretStationBase
   name: sentry turret
   description: A high-tech autonomous weapons system designed to keep unauthorized personnel out of sensitive areas.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Anchorable
     flags:
@@ -146,7 +146,7 @@
   parent: WeaponEnergyTurretStationBase
   id: WeaponEnergyTurretAI
   suffix: AI, Silicon
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["StationAi"], ["ResearchDirector"]]

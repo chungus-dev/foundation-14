@@ -138,10 +138,10 @@
         amount: 2
       - id: RiotShield
         amount: 2
-      # Fire added start
+      # Scp added start
       - id: ClothingMaskGasSwat
         amount: 2
       - id: TearGasGrenade
         amount: 4
-      # Fire added end
+      # Scp added end
 

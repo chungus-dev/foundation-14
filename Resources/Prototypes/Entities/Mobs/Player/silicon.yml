@@ -4,13 +4,13 @@
   description: Components added / removed from an entity that gets inserted into an AI core.
   categories: [ HideSpawnMenu ]
   components:
-  # Fire added start
+  # Scp added start
   - type: ShowScp096FaceDamageHud
-  # Fire added end
+  # Scp added end
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:
-    # Fire edit start
+    # Scp edit start
     - Administration
     - EthicsCommittee
     - HeavyContainmentSecurityService
@@ -20,10 +20,10 @@
     - EngineeringTechnicalService
     - LogisticsService
     - FoodAndSanitationService
-    # Fire edit end
+    # Scp edit end
   - type: ActiveRadio
     channels:
-    # Fire edit start
+    # Scp edit start
     - Administration
     - EthicsCommittee
     - HeavyContainmentSecurityService
@@ -35,7 +35,7 @@
     - EngineeringTechnicalService
     - LogisticsService
     - FoodAndSanitationService
-    # Fire edit end
+    # Scp edit end
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
@@ -76,7 +76,7 @@
     followEntity: false
   - type: CommunicationsConsole
     canShuttle: false
-    title: comms-console-announcement-title-complex-ai # Fire edit
+    title: comms-console-announcement-title-complex-ai # Scp edit
     color: "#5ed7aa"
   - type: ShowJobIcons
   - type: ShowCrewIcons

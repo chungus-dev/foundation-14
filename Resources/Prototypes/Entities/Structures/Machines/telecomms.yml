@@ -189,7 +189,7 @@
   parent: TelecomServer
   id: TelecomServerFilled
   suffix: Filled All
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: ContainerFill
     containers:
@@ -208,9 +208,9 @@
   id: TelecomServerFilledCommon
   suffix: Common
   components:
-  # Fire added start
+  # Scp added start
   - type: ScpAnnounceOnSpawnSource
-  # Fire added end
+  # Scp added end
   - type: ContainerFill
     containers:
       key_slots:
@@ -220,7 +220,7 @@
   parent: TelecomServer
   id: TelecomServerFilledCargo
   suffix: Cargo
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: ContainerFill
     containers:
@@ -231,7 +231,7 @@
   parent: TelecomServer
   id: TelecomServerFilledEngineering
   suffix: Engineering
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: ContainerFill
     containers:
@@ -242,7 +242,7 @@
   parent: TelecomServer
   id: TelecomServerFilledMedical
   suffix: Medical
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: ContainerFill
     containers:
@@ -253,7 +253,7 @@
   parent: TelecomServer
   id: TelecomServerFilledScience
   suffix: Science
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: ContainerFill
     containers:
@@ -264,7 +264,7 @@
   parent: TelecomServer
   id: TelecomServerFilledSecurity
   suffix: Security
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: ContainerFill
     containers:
@@ -275,7 +275,7 @@
   parent: TelecomServer
   id: TelecomServerFilledService
   suffix: Service
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: ContainerFill
     containers:
@@ -286,7 +286,7 @@
   parent: TelecomServer
   id: TelecomServerFilledCommand
   suffix: Command
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: ContainerFill
     containers:

@@ -99,10 +99,10 @@
   name: gold crate
   description: 30 bars of gold.
   components:
-  # Fire edit start
+  # Scp edit start
   - type: AccessReader
     access: [ [ "Research" ], [ "Command" ], [ "Engineering" ] ]
-  # Fire edit end
+  # Scp edit end
   - type: EntityTableContainerFill
     containers:
       entity_storage:
@@ -114,10 +114,10 @@
   name: silver crate
   description: 30 bars of silver.
   components:
-  # Fire edit start
+  # Scp edit start
   - type: AccessReader
     access: [ [ "Research" ], [ "Command" ], [ "Engineering" ] ]
-  # Fire edit end
+  # Scp edit end
   - type: EntityTableContainerFill
     containers:
       entity_storage:

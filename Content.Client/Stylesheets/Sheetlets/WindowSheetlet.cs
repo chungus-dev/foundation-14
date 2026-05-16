@@ -61,7 +61,7 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
                 .Class(DefaultWindow.StyleClassWindowTitle)
                 .FontColor(sheet.HighlightPalette.Text)
                 .Font(sheet.BaseFont.GetFont(14, FontKind.Bold)),
-            /* Fire edit
+            /* Scp edit
             E<Label>()
                 .Class("windowTitleAlert")
                 .FontColor(Color.White)

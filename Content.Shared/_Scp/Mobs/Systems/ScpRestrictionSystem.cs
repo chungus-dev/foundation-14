@@ -60,10 +60,10 @@ public sealed class ScpRestrictionSystem : EntitySystem
 
     private void OnBeingPulled(Entity<ScpRestrictionComponent> ent, ref BeingPulledAttemptEvent args)
     {
-        // Fire added start - let SCP hold validation pass for restricted SCP hold targets.
+        // Scp added start - let SCP hold validation pass for restricted SCP hold targets.
         if (_scpHolding.CanRedirectPullToScpHold(args.Puller, ent))
             return;
-        // Fire added end
+        // Scp added end
 
         var canBePulled = _mobState.IsIncapacitated(ent)
                           || HasComp<SleepingComponent>(ent)

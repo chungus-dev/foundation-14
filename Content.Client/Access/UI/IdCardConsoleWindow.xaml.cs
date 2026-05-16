@@ -31,7 +31,7 @@ namespace Content.Client.Access.UI
         private string? _lastJobProto;
 
         // The job that will be picked if the ID doesn't have a job on the station.
-        private static ProtoId<JobPrototype> _defaultJob = "ClassD"; // Fire edit
+        private static ProtoId<JobPrototype> _defaultJob = "ClassD"; // Scp edit
 
         public IdCardConsoleWindow(IdCardConsoleBoundUserInterface owner, IPrototypeManager prototypeManager,
             List<ProtoId<AccessLevelPrototype>> accessLevels)

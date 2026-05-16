@@ -38,7 +38,7 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     storedRotation: -45
   - type: UseDelay
-  # Fire edit start - исследования сцп
+  # Scp edit start - исследования сцп
   - type: ScpInteractTool
     delay: 30
     cooldown: 1200 # 10 минут
@@ -52,7 +52,7 @@
   - type: GuideHelp
     guides:
     - ScpResearchAdvanced
-  # Fire edit end
+  # Scp edit end
   - type: PhysicalComposition
     materialComposition:
       Steel: 100

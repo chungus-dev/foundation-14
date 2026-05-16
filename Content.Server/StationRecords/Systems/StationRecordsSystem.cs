@@ -93,14 +93,14 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             || !_prototypeManager.HasIndex<JobPrototype>(jobId))
             return;
 
-        // Fire edit - чтобы дешники отображались с именем дешников
+        // Scp edit - чтобы дешники отображались с именем дешников
         var name = MetaData(player).EntityName;
 
         if (_idCard.TryGetIdCard(player, out var idUid))
             name = idUid.Comp.FullName ?? name;
         else
             return;
-        // Fire edit end
+        // Scp edit end
 
         TryComp<FingerprintComponent>(player, out var fingerprintComponent);
         TryComp<DnaComponent>(player, out var dnaComponent);
@@ -156,7 +156,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         // when adding a record that already exists use the old one
         // this happens when respawning as the same character
 
-        /* Fire edit - чтобы сцп(которых всех зовут ???) отображались в манифесте
+        /* Scp edit - чтобы сцп(которых всех зовут ???) отображались в манифесте
         if (GetRecordByName(station, name, records) is {} id)
         {
             SetIdKey(idUid, new StationRecordKey(id, station));
@@ -179,8 +179,8 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             DisplayPriority = jobPrototype.RealDisplayWeight,
             Fingerprint = mobFingerprint,
             DNA = dna,
-            EmployeeClass = employeeClass?.Class, // Fire added
-            AccessLevel = accessLevel?.Level, // Fire added
+            EmployeeClass = employeeClass?.Class, // Scp added
+            AccessLevel = accessLevel?.Level, // Scp added
         };
 
         var key = AddRecordEntry(station, record);
@@ -200,7 +200,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     /// </summary>
     public void SetIdKey(EntityUid? uid, StationRecordKey key)
     {
-        // Fire edit start - фикс странной ошибки???
+        // Scp edit start - фикс странной ошибки???
         if (!Exists(uid))
             return;
 
@@ -209,7 +209,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         {
             keyStorageEntity = id;
         }
-        // Fire edit end
+        // Scp edit end
 
         _keyStorage.AssignKey(keyStorageEntity, key);
     }

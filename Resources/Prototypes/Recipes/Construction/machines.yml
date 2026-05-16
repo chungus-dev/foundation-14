@@ -6,7 +6,7 @@
   category: construction-category-machines
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  hide: true # Fire added
+  hide: true # Scp added
 
 - type: construction
   id: MachineFrame

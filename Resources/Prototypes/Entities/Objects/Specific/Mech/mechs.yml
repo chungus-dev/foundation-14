@@ -3,9 +3,9 @@
   save: false
   abstract: true
   components:
-  # Fire added start
+  # Scp added start
   - type: FieldOfViewOccludable
-  # Fire added end
+  # Scp added end
   - type: MobMover
   - type: Mech
   - type: MechAir

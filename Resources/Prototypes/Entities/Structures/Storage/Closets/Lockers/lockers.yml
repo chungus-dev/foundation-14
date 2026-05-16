@@ -3,7 +3,7 @@
   parent: LockerBase
   name: booze storage
   description: This is where the bartender keeps the booze.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -26,7 +26,7 @@
   id: LockerSteel
   parent: LockerBaseSecure
   name: secure closet
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -39,7 +39,7 @@
   id: LockerQuarterMaster
   parent: LockerBaseSecure
   name: quartermaster's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -54,7 +54,7 @@
   parent: LockerBase
   name: salvage specialist's equipment
   description: Nevermind the pickaxe.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -69,7 +69,7 @@
   id: LockerCaptain
   parent: LockerBaseSecure
   name: captain's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -83,7 +83,7 @@
   id: LockerHeadOfPersonnel
   parent: LockerBaseSecure
   name: head of personnel's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -98,7 +98,7 @@
   id: LockerChiefEngineer
   parent: LockerBaseSecure
   name: chief engineer's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -113,7 +113,7 @@
   id: LockerElectricalSupplies
   parent: LockerBase
   name: electrical supplies locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -128,7 +128,7 @@
   id: LockerWeldingSupplies
   parent: LockerBase
   name: welding supplies locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -143,7 +143,7 @@
   id: LockerAtmospherics
   parent: LockerBase
   name: atmospheric technician's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -158,7 +158,7 @@
   id: LockerEngineer
   parent: LockerBase
   name: engineer's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -174,7 +174,7 @@
   id: LockerEvacRepair
   name: emergency shuttle emergency locker
   description: It's emergencies all the way down.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -190,7 +190,7 @@
   parent: LockerBase
   name: freezer
   suffix: No Access
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -213,7 +213,7 @@
   parent: LockerFreezerBase
   name: freezer
   suffix: Kitchen, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [ [ "Kitchen" ] ]
@@ -223,7 +223,7 @@
   id: LockerBotanist
   parent: LockerBase
   name: botanist's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -239,7 +239,7 @@
   parent: LockerBase
   name: medicine locker
   description: Filled to the brim with medical junk.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -254,7 +254,7 @@
   id: LockerMedical
   parent: LockerBase
   name: medical doctor's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -269,7 +269,7 @@
   id: LockerParamedic
   parent: LockerBase
   name: paramedic's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -285,7 +285,7 @@
   id: LockerChemistry
   parent: LockerBase
   name: chemical locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -300,7 +300,7 @@
   id: LockerChiefMedicalOfficer
   parent: LockerBaseSecure
   name: chief medical officer's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -315,7 +315,7 @@
   id: LockerResearchDirector
   parent: LockerBase
   name: research director's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -329,7 +329,7 @@
   id: LockerScientist
   parent: LockerBase
   name: scientist's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -344,7 +344,7 @@
   id: LockerHeadOfSecurity
   parent: LockerBaseSecure
   name: head of security's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -359,7 +359,7 @@
   id: LockerWarden
   parent: LockerBaseSecure
   name: warden's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -374,7 +374,7 @@
   id: LockerBrigmedic
   parent: LockerBaseSecure
   name: brigmedic locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -389,7 +389,7 @@
   id: LockerSecurity
   parent: LockerBaseSecure
   name: security officer's locker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -458,7 +458,7 @@
   name: prisoner closet
   description: It's a secure locker for an inmate's personal belongings during their time in prison.
   suffix: 1
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Fixtures
     fixtures:
@@ -486,7 +486,7 @@
   parent: LockerPrisoner
   id: LockerPrisoner2
   suffix: 2
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_2
@@ -495,7 +495,7 @@
   parent: LockerPrisoner
   id: LockerPrisoner3
   suffix: 3
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_3
@@ -504,7 +504,7 @@
   parent: LockerPrisoner
   id: LockerPrisoner4
   suffix: 4
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_4
@@ -513,7 +513,7 @@
   parent: LockerPrisoner
   id: LockerPrisoner5
   suffix: 5
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_5
@@ -522,7 +522,7 @@
   parent: LockerPrisoner
   id: LockerPrisoner6
   suffix: 6
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_6
@@ -531,7 +531,7 @@
   parent: LockerPrisoner
   id: LockerPrisoner7
   suffix: 7
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_7
@@ -540,7 +540,7 @@
   parent: LockerPrisoner
   id: LockerPrisoner8
   suffix: 8
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityStorageVisuals
     stateDoorClosed: genpop_door_8
@@ -549,7 +549,7 @@
 - type: entity
   id: LockerDetective
   parent: LockerBooze
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   name: detective's cabinet
   description: Usually cold and empty... like your heart.
   components:
@@ -561,7 +561,7 @@
   parent: LockerSecurity
   name: evidence locker
   description: To store bags of bullet casings and detainee belongings.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Security"]]
@@ -573,7 +573,7 @@
   parent: LockerBaseSecure
   description: It's a personal storage unit with a blood-red design.
   suffix: "Locked"
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -590,7 +590,7 @@
   suffix: once to station
   parent: LockerSyndicatePersonal
   description: Advanced locker technology.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
     - type: ArrivalsBlacklist
     - type: BluespaceLocker
@@ -616,7 +616,7 @@
   id: LockerClown
   name: clown locker
   parent: LockerBaseSecure
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: AccessReader
@@ -631,7 +631,7 @@
   id: LockerMime
   name: mime locker
   parent: LockerBaseSecure
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: AccessReader

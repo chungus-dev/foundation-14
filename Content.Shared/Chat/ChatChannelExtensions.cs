@@ -6,7 +6,7 @@ public static class ChatChannelExtensions
     {
         return channel switch
         {
-            ChatChannel.Server => Color.LightGray, // Fire edit
+            ChatChannel.Server => Color.LightGray, // Scp edit
             ChatChannel.Radio => Color.LimeGreen,
             ChatChannel.LOOC => Color.MediumTurquoise,
             ChatChannel.OOC => Color.LightSkyBlue,

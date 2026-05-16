@@ -2,7 +2,7 @@
   id: WindoorAssembly
   name: windoor assembly
   description: It opens, it closes, and you can see through it!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   parent: BaseStructure
   components:
   - type: InteractionOutline
@@ -54,7 +54,7 @@
   id: WindoorAssemblySecure
   name: secure windoor assembly
   description: It opens, it closes, and you can see through it! This one looks tough.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   parent: WindoorAssembly
   components:
   - type: Sprite
@@ -83,7 +83,7 @@
   id: WindoorAssemblyClockwork
   name: clockwork windoor assembly
   description: It opens, it closes, and you can see through it! This one looks tough.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   parent: WindoorAssembly
   components:
   - type: Sprite
@@ -112,7 +112,7 @@
   id: WindoorAssemblyPlasma
   name: plasma windoor assembly
   description: It opens, it closes, and you can see through it! This one looks purp-, no, pink. Wait...
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   parent: WindoorAssembly
   components:
   - type: Sprite
@@ -143,7 +143,7 @@
   id: WindoorAssemblySecurePlasma
   name: secure plasma windoor assembly
   description: It opens, it closes, and you can see through it! This one looks strong and pin-, no, purple. Hold on...
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   parent: WindoorAssembly
   components:
   - type: Sprite
@@ -176,7 +176,7 @@
   id: WindoorAssemblyUranium
   name: uranium windoor assembly
   description: It opens, it closes, and you can see through it! This one looks sickly green...
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   parent: WindoorAssembly
   components:
   - type: Sprite
@@ -207,7 +207,7 @@
   id: WindoorAssemblySecureUranium
   name: secure uranium windoor assembly
   description: It opens, it closes, and you can see through it! This one looks strong and radioactive-lime-green!
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   parent: WindoorAssembly
   components:
   - type: Sprite

@@ -32,9 +32,9 @@
 
 - type: accessGroup
   id: Service
-  # Fire edit start
+  # Scp edit start
   tags:
   - PersonnelOfficer
   groups:
   - ServiceHeadless
-  # Fire edit end
+  # Scp edit end

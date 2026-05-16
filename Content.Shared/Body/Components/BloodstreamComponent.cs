@@ -17,7 +17,7 @@ namespace Content.Shared.Body.Components;
 /// </summary>
 [RegisterComponent, NetworkedComponent,]
 [AutoGenerateComponentState(fieldDeltas: true), AutoGenerateComponentPause]
-// [Access(typeof(SharedBloodstreamSystem))] Fire edit
+// [Access(typeof(SharedBloodstreamSystem))] Scp edit
 public sealed partial class BloodstreamComponent : Component
 {
     public const string DefaultBloodSolutionName = "bloodstream";
@@ -121,12 +121,12 @@ public sealed partial class BloodstreamComponent : Component
     /// The sound to be played when a weapon instantly deals blood loss damage.
     /// </summary>
     [DataField, AutoNetworkedField]
-    // Fire edit start - новые звуки кровотечения и т.п.
+    // Scp edit start - новые звуки кровотечения и т.п.
     public SoundSpecifier InstantBloodSound = new SoundCollectionSpecifier("BleedingStart");
 
     [DataField]
     public SoundSpecifier BloodDrippingSound = new SoundCollectionSpecifier("BloodDripping", AudioParams.Default.AddVolume(-7f).WithMaxDistance(3f).WithVariation(0.125f));
-    // Fire edit end
+    // Scp edit end
 
     /// <summary>
     /// The sound to be played when some damage actually heals bleeding rather than starting it.

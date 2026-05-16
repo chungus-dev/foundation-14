@@ -9,16 +9,16 @@
 - type: accessLevel
   id: Chemistry
   name: id-card-access-level-chemistry
-  
+
 - type: accessLevel
   id: Paramedic
   name: id-card-access-level-paramedic
 
 - type: accessGroup
   id: Medical
-  # Fire edit start
+  # Scp edit start
   tags:
   - HeadOfMedicalSector
   groups:
   - MedicalHeadless
-  # Fire edit end
+  # Scp edit end

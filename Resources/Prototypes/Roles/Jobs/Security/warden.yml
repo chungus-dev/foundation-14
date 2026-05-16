@@ -15,8 +15,8 @@
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
   canBeAntag: false
-  overrideConsoleVisibility: false # Fire added
-  setPreference: false # Fire added
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - Security
   - Brig

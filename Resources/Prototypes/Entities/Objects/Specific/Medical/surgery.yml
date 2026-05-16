@@ -96,7 +96,7 @@
       # path: /Audio/_Scp/Medical/Surgery/scalpel1.ogg
     # endSound:
       # path: /Audio/_Scp/Medical/Surgery/scalpel2.ogg
-  # Fire edit start - исследования сцп
+  # Scp edit start - исследования сцп
   - type: ScpInteractTool
     delay: 30
     cooldown: 600 # 5 минут
@@ -110,7 +110,7 @@
   - type: GuideHelp
     guides:
     - ScpResearchAdvanced
-  # Fire edit end
+  # Scp edit end
 
 - type: entity
   name: shiv

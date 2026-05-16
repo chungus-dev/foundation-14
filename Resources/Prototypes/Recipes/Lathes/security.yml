@@ -152,7 +152,7 @@
   materials:
     Plastic: 100
 
-# - type: latheRecipe #Fire-Station
+# - type: latheRecipe # Scp edit
 #   parent: BaseToolRecipe
 #   id: HoloprojectorSecurity
 #   result: HoloprojectorSecurityEmpty

@@ -5,7 +5,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobServicePersonnel # Fire Edit
+      role: JobServicePersonnel # Scp edit
       time: 3600 # 1 hour of being the biggest nerd on the station
 
 - type: loadoutEffectGroup
@@ -14,7 +14,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: LogisticsService # Fire Edit
+      department: LogisticsService # Scp edit
       time: 36000 #10 hours of being a space trucker
 
 # Basic options

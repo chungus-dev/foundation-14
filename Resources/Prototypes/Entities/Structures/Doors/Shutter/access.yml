@@ -4,7 +4,7 @@
   parent: BlastDoor
   id: BlastDoorCentralCommand
   suffix: Central Command, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:
@@ -16,7 +16,7 @@
   parent: ShuttersWindow
   id: ShuttersWindowCentralCommand
   suffix: Central Command, Locked
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: ContainerFill
     containers:

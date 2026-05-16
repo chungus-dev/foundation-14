@@ -4,12 +4,12 @@
   save: false
   id: BaseControllable
   components:
-  # Fire edit start
+  # Scp edit start
   - type: GrainOverlay
   - type: VignetteOverlay
   - type: FieldOfViewOccludable
   - type: SinCityOverlay
-  # Fire edit end
+  # Scp edit end
   - type: Sprite
     noRot: true
     drawdepth: Mobs
@@ -82,7 +82,7 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Blunt
-        damage: 1000 # Fire edit
+        damage: 1000 # Scp edit
       behaviors:
       - !type:GibBehavior { }
     - trigger:

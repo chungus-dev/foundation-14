@@ -78,7 +78,7 @@
   - Tiles
   - Concrete
   materials:
-    Concrete: 25 # Fire Edit
+    Concrete: 25 # Scp edit
 
 - type: latheRecipe
   abstract: true

@@ -71,12 +71,12 @@ public sealed record GeneralStationRecord
     [DataField]
     public string? DNA;
 
-    // Fire added start
+    // Scp added start
     [DataField]
     public AccessLevel? AccessLevel;
 
     [DataField]
     public EmployeeClass? EmployeeClass;
-    // Fire added end
+    // Scp added end
 
 }

@@ -32,7 +32,7 @@
               doAfter: 5
           completed:
             - !type:SpawnPrototype
-              prototype: ScpMaterialWoodPlank1 # Fire edit
+              prototype: ScpMaterialWoodPlank1 # Scp edit
               amount: 10
 
     - node: boxMissingTrigger

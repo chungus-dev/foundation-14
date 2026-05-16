@@ -19,11 +19,11 @@ public sealed class MenuButton : ContainerButton
     // public const string StyleClassRedTopButton = "topButtonLabel";
 
     // TODO: KIIIIIILLLLLLLLLLLLLLLLLLLLLLLLLLL --kaylie.
-    // Fire edit start
+    // Scp edit start
     private static readonly Color ColorNormal = ScpPalettes.SCPWhite;
     private static readonly Color ColorHovered = ScpPalettes.SCPWhite.WithLightness(0.3f); // primary color[0] + 0.30 L
     private static readonly Color ColorPressed = ScpPalettes.SCPWhite.WithLightness(0.12f); // primary color[0] + 0.12 L
-    // Fire edit end
+    // Scp edit end
 
     private const float VertPad = 4f;
 

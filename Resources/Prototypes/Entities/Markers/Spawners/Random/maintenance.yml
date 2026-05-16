@@ -216,7 +216,7 @@
           weight: 0.25
         - id: MaterialCloth10
           weight: 0.25
-        - id: ScpMaterialWoodPlank10 # Fire edit
+        - id: ScpMaterialWoodPlank10 # Scp edit
           weight: 0.25
       - id: Plunger
       - id: PowerCellMedium
@@ -270,7 +270,7 @@
       - id: HandLabeler
       - id: GlowstickGreen
       - id: Bucket
-      - id: ScpRadioHandheldCommon # Fire edit
+      - id: ScpRadioHandheldCommon # Scp edit
       - id: AppraisalTool
       - id: ModularReceiver
       - id: WeaponFlareGun
@@ -324,7 +324,7 @@
       children:
       - id: Machete
       - id: Claymore
-      - id: ScpBaseBallBat # Fire edit
+      - id: ScpBaseBallBat # Scp edit
       - id: CombatKnife
       - id: Spear
       - id: RifleStock

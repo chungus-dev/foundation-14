@@ -32,10 +32,10 @@ public sealed partial class ContentAudioSystem
     [Dependency] private readonly RulesSystem _rules = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
 
-    private readonly TimeSpan _minAmbienceTime = TimeSpan.FromSeconds(5); // Fire edit
-    private readonly TimeSpan _maxAmbienceTime = TimeSpan.FromSeconds(20); // Fire edit
+    private readonly TimeSpan _minAmbienceTime = TimeSpan.FromSeconds(5); // Scp edit
+    private readonly TimeSpan _maxAmbienceTime = TimeSpan.FromSeconds(20); // Scp edit
 
-    private const float AmbientMusicFadeTime = 5f; // Fire edit
+    private const float AmbientMusicFadeTime = 5f; // Scp edit
     private static float _volumeSlider;
 
     // Don't need to worry about this being serializable or pauseable as it doesn't affect the sim.
@@ -72,10 +72,10 @@ public sealed partial class ContentAudioSystem
         // On round end summary OR lobby cut audio.
         SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
 
-        // Fire edit start
+        // Scp edit start
         SubscribeNetworkEvent<NetworkAmbientMusicEvent>(OnNetworkAmbientMusic);
         SubscribeNetworkEvent<NetworkAmbientMusicEventStop>(OnNetworkAmbientMusicStop);
-        // Fire edit end
+        // Scp edit end
     }
 
     private void AmbienceCVarChanged(float obj)
@@ -212,9 +212,9 @@ public sealed partial class ContentAudioSystem
         var track = tracks[^1];
         tracks.RemoveAt(tracks.Count - 1);
 
-        // Fire added start
+        // Scp added start
         _sawmill.Info($"Playing new ambience - {track.CanonPath}");
-        // Fire added end
+        // Scp added end
 
         var strim = _audio.PlayGlobal(
             track.ToString(),
@@ -273,7 +273,7 @@ public sealed partial class ContentAudioSystem
         _ambientMusicStream = null;
     }
 
-    // Fire edit start
+    // Scp edit start
 
     private void OnNetworkAmbientMusic(NetworkAmbientMusicEvent ev)
     {
@@ -333,5 +333,5 @@ public sealed partial class ContentAudioSystem
         // Принудительный запуск логики выбора музыки
         UpdateAmbientMusic();
     }
-    // Fire edit end
+    // Scp edit end
 }

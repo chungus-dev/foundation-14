@@ -118,7 +118,7 @@
   category: cargoproduct-category-name-livestock
   group: market
 
-# Fire Edit > start
+# Scp edit > start
 
 #- type: cargoProduct
 #  id: LivestockMonkeyCube
@@ -140,7 +140,7 @@
 #  category: cargoproduct-category-name-livestock
 #  group: market
 
-# Fire Edit > end
+# Scp edit > end
 
 - type: cargoProduct
   id: LivestockMonkeyCube

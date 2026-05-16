@@ -70,7 +70,7 @@ public sealed partial class HolopadWindow : FancyWindow
 
         HolopadContactListPanel.PanelOverride = new StyleBoxFlat
         {
-            BackgroundColor = ScpPalettes.PanelLightDark * Color.DarkGray, // Fire edit
+            BackgroundColor = ScpPalettes.PanelLightDark * Color.DarkGray, // Scp edit
             BorderColor = new Color(82, 82, 82), //new Color(70, 73, 102),
             BorderThickness = new Thickness(2),
         };

@@ -30,14 +30,14 @@
       openOnMove: false
       airtight: false
       capacity: 5 #5 entity capacity to fit all of your friends (or teammates on your nuclear operation without reinforcements).
-      # Fire added start
+      # Scp added start
       whitelist:
         components:
         - MobState
       blacklist:
         components:
         - Scp
-      # Fire added end
+      # Scp added end
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -45,7 +45,7 @@
       damageContainer: Box
     - type: Sprite
       noRot: true
-      sprite: _Scp/Structures/Storage/closet.rsi # Fire edit
+      sprite: _Scp/Structures/Storage/closet.rsi # Scp edit
       layers:
       - state: cardboard
         map: ["enum.StorageVisualLayers.Base"]

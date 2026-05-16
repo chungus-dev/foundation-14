@@ -149,20 +149,20 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-bureaucratic-error-announcement
-#    startAudio: Fire edit
+#    startAudio: Scp edit
     minimumPlayers: 25
     weight: 3
     duration: 1
   - type: BureaucraticErrorRule
     ignoredJobs:
-    # Fire edit start
+    # Scp edit start
     - Scp173
     - Scp939
     - Scp106
     - Scp049
     - Scp999
     - Scp096
-    # Fire edit end
+    # Scp edit end
     - StationAi
     - ResearchAssistant
     - MedicalIntern
@@ -175,7 +175,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-clerical-error-announcement
-#    startAudio: Fire edit
+#    startAudio: Scp edit
     minimumPlayers: 15
     weight: 5
     duration: 1
@@ -378,7 +378,7 @@
   id: GasLeak
   parent: BaseStationEventShortDelay
   components:
-  # Fire edit - убрал звуки аннонсментов
+  # Scp edit - убрал звуки аннонсментов
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
     endAnnouncement: station-event-gas-leak-end-announcement
@@ -674,7 +674,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-#    startAudio: Fire edit
+#    startAudio: Scp edit
 #      path: /Audio/Announcements/attention.ogg
     weight: 5
     minimumPlayers: 25

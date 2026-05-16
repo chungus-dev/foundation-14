@@ -136,10 +136,10 @@ public sealed class ApcSystem : EntitySystem
         if (!Resolve(uid, ref apc, ref battery))
             return;
 
-        // Fire edit start
+        // Scp edit start
         if (HasComp<MalfunctionApcComponent>(uid))
             return;
-        // Fire edit end
+        // Scp edit end
 
         apc.MainBreakerEnabled = !apc.MainBreakerEnabled;
         battery.CanDischarge = apc.MainBreakerEnabled;

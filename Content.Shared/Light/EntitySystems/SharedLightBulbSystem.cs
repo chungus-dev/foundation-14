@@ -12,12 +12,12 @@ public abstract class SharedLightBulbSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
-    // Fire added start
+    // Scp added start
     [Dependency] private readonly TagSystem _tag = default!;
     private static readonly ProtoId<TagPrototype> SavableTag = "MetaGarbageSavable";
     private static readonly ProtoId<TagPrototype> ContainerTag = "MetaGarbageCanBeSpawnedInContainer";
     private static readonly ProtoId<TagPrototype> ReplaceTag = "MetaGarbageReplace";
-    // Fire added end
+    // Scp added end
 
     public override void Initialize()
     {
@@ -66,12 +66,12 @@ public abstract class SharedLightBulbSystem : EntitySystem
         if (!Resolve(uid, ref bulb) || bulb.State == state)
             return;
 
-        // Fire added start - для сохранения между раундами битых лампочек
+        // Scp added start - для сохранения между раундами битых лампочек
         if (state != LightBulbState.Normal)
             _tag.AddTags(uid, ReplaceTag, ContainerTag, SavableTag);
         else
             _tag.RemoveTags(uid, ReplaceTag, ContainerTag, SavableTag);
-        // Fire added end
+        // Scp added end
 
         bulb.State = state;
         Dirty(uid, bulb);

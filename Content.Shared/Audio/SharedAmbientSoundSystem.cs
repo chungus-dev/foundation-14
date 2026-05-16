@@ -79,7 +79,7 @@ public abstract class SharedAmbientSoundSystem : EntitySystem
         };
     }
 
-    // Fire added start - для включения с клиента
+    // Scp added start - для включения с клиента
     public virtual void SetAmbienceWithoutDirty(EntityUid uid, bool value, AmbientSoundComponent? ambience = null)
     {
         if (!_query.Resolve(uid, ref ambience, false) || ambience.Enabled == value)
@@ -97,5 +97,5 @@ public abstract class SharedAmbientSoundSystem : EntitySystem
         ambience.Volume = value;
         QueueUpdate(uid, ambience);
     }
-    // Fire added end
+    // Scp added end
 }

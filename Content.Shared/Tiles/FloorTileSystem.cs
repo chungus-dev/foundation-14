@@ -74,16 +74,16 @@ public sealed class FloorTileSystem : EntitySystem
 
         var map = _transform.ToMapCoordinates(location);
 
-        // Fire added start - фикс невозможности поставит плитку на планете
+        // Scp added start - фикс невозможности поставит плитку на планете
         var biomeQuery = GetEntityQuery<BiomeComponent>();
-        // Fire added end
+        // Scp added end
 
         // Disallow placement close to grids.
         // FTLing close is okay but this makes alignment too finnicky.
         // While you may already have a tile close you want to replace when we get half-tiles that may also be finnicky
         // so we're just gon with this for now.
         const bool inRange = true;
-        // Fire edit start - фикс невозможности поставит плитку на планете
+        // Scp edit start - фикс невозможности поставит плитку на планете
         var state = (inRange, location.EntityId, biomeQuery);
         _mapManager.FindGridsIntersecting(map.MapId, new Box2(map.Position - CheckRange, map.Position + CheckRange), ref state,
             static (EntityUid entityUid, MapGridComponent grid, ref (bool weh, EntityUid EntityId, EntityQuery<BiomeComponent> Biomes) tuple) =>
@@ -93,7 +93,7 @@ public sealed class FloorTileSystem : EntitySystem
 
                 if (tuple.Biomes.HasComp(entityUid))
                     return true;
-                // Fire edit end
+                // Scp edit end
 
                 tuple.weh = false;
                 return false;

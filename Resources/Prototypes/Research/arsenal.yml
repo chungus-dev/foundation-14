@@ -9,7 +9,7 @@
   discipline: Arsenal
   tier: 1
   cost: 5000
-  defaultToScpScale: 0.0 # Fire Edit
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
   - WeaponProtoKineticAccelerator
   - ShuttleGunKineticCircuitboard
@@ -24,7 +24,7 @@
   discipline: Arsenal
   tier: 1
   cost: 10000
-  defaultToScpScale: 0.1 # Fire Edit
+  defaultToScpScale: 0.1 # Scp edit
   recipeUnlocks:
   - BoxShotgunIncendiary
   - MagazineRifleIncendiary
@@ -47,7 +47,7 @@
   discipline: Arsenal
   tier: 1
   cost: 7500
-  defaultToScpScale: 0.5 # Fire Edit
+  defaultToScpScale: 0.5 # Scp edit
   recipeUnlocks:
   - WeaponLaserCarbine
 
@@ -60,7 +60,7 @@
   discipline: Arsenal
   tier: 1
   cost: 5000
-  defaultToScpScale: 0.0 # Fire Edit
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
   - MagazineShotgunBeanbag
   - BoxShellTranquilizer
@@ -71,12 +71,12 @@
   id: UraniumMunitions
   name: research-technology-uranium-munitions
   icon:
-    sprite: _Scp/Objects/Materials/Sheets/other.rsi # Fire Edit
+    sprite: _Scp/Objects/Materials/Sheets/other.rsi # Scp edit
     state: uranium
   discipline: Arsenal
   tier: 1
   cost: 7500
-  defaultToScpScale: 0.3 # Fire Edit
+  defaultToScpScale: 0.3 # Scp edit
   recipeUnlocks:
   - MagazineRifleUranium
   - MagazinePistolUranium
@@ -98,11 +98,11 @@
   discipline: Arsenal
   tier: 1
   cost: 8000
-  defaultToScpScale: 0.0 # Fire Edit
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
   - Truncheon
   - TelescopicShield
-  # - HoloprojectorSecurity # Fire edit
+  # - HoloprojectorSecurity # Scp edit
   - WeaponDisablerSMG
 
 - type: technology
@@ -114,7 +114,7 @@
   discipline: Arsenal
   tier: 1
   cost: 10000
-  defaultToScpScale: 0.1 # Fire Edit
+  defaultToScpScale: 0.1 # Scp edit
   recipeUnlocks:
   - SignallerAdvanced
   - SignalTrigger
@@ -135,7 +135,7 @@
   discipline: Arsenal
   tier: 1
   cost: 5000
-  defaultToScpScale: 0.1 # Fire Edit
+  defaultToScpScale: 0.1 # Scp edit
   recipeUnlocks:
   - ClothingBackpackElectropack
 
@@ -150,7 +150,7 @@
   discipline: Arsenal
   tier: 2
   cost: 10000
-  defaultToScpScale: 0.5 # Fire Edit
+  defaultToScpScale: 0.5 # Scp edit
   recipeUnlocks:
   - WeaponLaserCannon
 
@@ -163,7 +163,7 @@
   discipline: Arsenal
   tier: 2
   cost: 10000
-  defaultToScpScale: 0.5 # Fire Edit
+  defaultToScpScale: 0.5 # Scp edit
   recipeUnlocks:
   - WeaponXrayCannon
 
@@ -226,7 +226,7 @@
   discipline: Arsenal
   tier: 3
   cost: 15000
-  defaultToScpScale: 0.5 # Fire Edit
+  defaultToScpScale: 0.5 # Scp edit
   recipeUnlocks:
   - WeaponAdvancedLaser
   - PortableRecharger
@@ -240,7 +240,7 @@
   discipline: Arsenal
   tier: 2
   cost: 8000
-  defaultToScpScale: 0.5 # Fire Edit
+  defaultToScpScale: 0.5 # Scp edit
   recipeUnlocks:
   - WeaponTemperatureGun
 
@@ -253,7 +253,7 @@
   discipline: Arsenal
   tier: 3
   cost: 15000
-  defaultToScpScale: 0.3 # Fire Edit
+  defaultToScpScale: 0.3 # Scp edit
   recipeUnlocks:
   - GrenadeEMP
   - PowerCageHigh

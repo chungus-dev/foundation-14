@@ -7,9 +7,9 @@ namespace Content.Shared.Speech.Muting
     [RegisterComponent, NetworkedComponent]
     public sealed partial class MutedComponent : Component
     {
-        // Fire edit start
+        // Scp edit start
         [DataField]
         public HashSet<ProtoId<EmotePrototype>> Allowed = [];
-        // Fire edit end
+        // Scp edit end
     }
 }

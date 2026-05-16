@@ -16,7 +16,7 @@
   - type: TimedDespawn
     lifetime: 90
   - type: Damageable
-    damageContainer: StructuralInorganic # Fire edit
+    damageContainer: StructuralInorganic # Scp edit
   - type: Destructible
     thresholds:
     - trigger:

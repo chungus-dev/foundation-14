@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerAlert
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: atmospheric alerts computer
   description: Used to access the station's atmospheric automated alert system.
   components:
@@ -57,7 +57,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerAtmosMonitoring
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: atmospheric network monitor
   description: Used to monitor the station's atmospheric networks.
   components:
@@ -95,13 +95,13 @@
 - type: entity
   parent: BaseComputer
   id: ComputerEmergencyShuttle
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: emergency shuttle console
   description: Handles authorization to early launch the shuttle.
   components:
   - type: AccessReader
     access:
-    - [ Exit ] # Fire Edit
+    - [ Exit ] # Scp edit
   - type: EmergencyShuttleConsole
   - type: ActivatableUI
     key: enum.EmergencyConsoleUiKey.Key
@@ -160,7 +160,7 @@
 - type: entity
   parent: BaseComputerShuttle
   id: ComputerShuttle
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: shuttle console
   description: Used to pilot a shuttle.
   components:
@@ -182,7 +182,7 @@
 - type: entity
   parent: BaseComputerShuttle
   id: ComputerShuttleSyndie
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: syndicate shuttle console
   description: Used to pilot a syndicate shuttle.
   components:
@@ -214,7 +214,7 @@
 - type: entity
   parent: BaseComputerShuttle
   id: ComputerShuttleCargo
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: cargo shuttle console
   description: Used to pilot the cargo shuttle.
   components:
@@ -247,7 +247,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerIFF
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: IFF computer
   description: Allows you to control the IFF characteristics of this vessel.
   components:
@@ -279,7 +279,7 @@
 - type: entity
   parent: ComputerIFF
   id: ComputerIFFSyndicate
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: IFF computer
   suffix: Syndicate
   description: Allows you to control the IFF and stealth characteristics of this vessel.
@@ -302,7 +302,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerPowerMonitoring
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: power monitoring computer
   description: It monitors power levels across the station.
   components:
@@ -345,7 +345,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerMedicalRecords
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: medical records computer
   description: This can be used to check medical records.
   components:
@@ -371,7 +371,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerCriminalRecords
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: criminal records computer
   description: This can be used to check criminal records. Only security can modify them.
   components:
@@ -411,7 +411,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerStationRecords
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: station records computer
   description: This can be used to check station records.
   components:
@@ -437,7 +437,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerCrewMonitoring
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: crew monitoring console
   description: Used to monitor active health sensors built into most of the crew's uniforms.
   components:
@@ -477,7 +477,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerResearchAndDevelopment
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: R&D computer
   description: A computer used to interface with R&D tools.
   components:
@@ -514,7 +514,7 @@
   - type: Computer
     board: ResearchComputerCircuitboard
   - type: AccessReader
-    access: [["Research"]] # Fire edit
+    access: [["Research"]] # Scp edit
   - type: PointLight
     radius: 1.5
     energy: 4.0
@@ -526,7 +526,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerAnalysisConsole
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: analysis console
   description: A computer used to interface with the artifact analyzer.
   components:
@@ -548,7 +548,7 @@
   - type: DeviceNetwork
     deviceNetId: Wired
   - type: DeviceLinkSource
-    range: 25 # Fire Edit
+    range: 25 # Scp edit
     ports:
       - ArtifactAnalyzerSender
   - type: ActivatableUI
@@ -576,12 +576,12 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerId
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: ID card computer
   description: Terminal for programming Nanotrasen employee ID cards to access parts of the station.
   components:
   - type: IdCardConsole
-    # Fire added start - новые доступы
+    # Scp added start - новые доступы
     accessLevels:
     - Administration
     - ComplexDirector
@@ -612,7 +612,7 @@
     - Research
     - Security
     - Service
-    # Fire added end
+    # Scp added end
     privilegedIdSlot:
       name: id-card-console-privileged-id
       ejectSound: /Audio/Machines/id_swipe.ogg
@@ -672,7 +672,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: computerBodyScanner
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: body scanner computer
   description: A body scanner.
   components:
@@ -688,7 +688,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerComms
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: communications computer
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
@@ -705,7 +705,7 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: AccessReader
-    access: [[ "Administration" ]] # Fire edit
+    access: [[ "Administration" ]] # Scp edit
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
   - type: DeviceNetwork
@@ -732,7 +732,7 @@
 - type: entity
   parent: ComputerComms
   id: SyndicateComputerComms
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: syndicate communications computer
   description: A computer capable of remotely hacking into the station's communications systems. Using this to make an announcement will alert the station to your presence.
   components:
@@ -751,7 +751,7 @@
   - type: AccessReader
     access: [[ "NuclearOperative" ]]
   - type: CommunicationsConsole
-    title: comms-console-announcement-title-chaos # Fire edit
+    title: comms-console-announcement-title-chaos # Scp edit
     color: "#ff0000"
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
@@ -801,7 +801,7 @@
 - type: entity
   parent: ComputerComms
   id: CentcommComputerComms
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: central command communications computer
   description: A computer used to make world wide announcements via keyboard. The superior cousin of the regular communications computer.
   components:
@@ -818,7 +818,7 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: AccessReader
-    access: [[ "MTF" ]] # Fire edit
+    access: [[ "MTF" ]] # Scp edit
   - type: CommunicationsConsole
     title: comms-console-announcement-title-centcom
     color: "#1d8bad"
@@ -834,7 +834,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerSolarControl
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: solar control computer
   description: A controller for solar panel arrays.
   components:
@@ -873,7 +873,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerRadar
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: mass scanner computer
   description: A computer for detecting nearby bodies, displaying them by position and mass.
   components:
@@ -907,7 +907,7 @@
 
 - type: entity
   id: ComputerCargoOrders
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: BaseComputerAiAccess
   name: cargo request computer
   description: Used to order supplies and approve requests.
@@ -925,7 +925,7 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: CargoOrderConsole
-    removeLimitAccess: [ "Logistics" ] # Fire edit
+    removeLimitAccess: [ "Logistics" ] # Scp edit
   - type: ActiveRadio
     channels:
     - Supply
@@ -944,7 +944,7 @@
     energy: 4.0
     color: "#b89f25"
   - type: AccessReader
-    access: [["Logistics"]] # Fire edit
+    access: [["Logistics"]] # Scp edit
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice
@@ -961,7 +961,7 @@
 # Request console variants.
 - type: entity
   id: ComputerCargoOrdersEngineering
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: ComputerCargoOrders
   name: engineering request computer
   description: Used by the engineering department to order supplies.
@@ -981,7 +981,7 @@
   - type: CargoOrderConsole
     account: Engineering
     announcementChannel: Engineering
-    removeLimitAccess: [ "ChiefTechnicalSpecialist" ] # Fire edit
+    removeLimitAccess: [ "ChiefTechnicalSpecialist" ] # Scp edit
     mode: SendToPrimary
   - type: ActiveRadio
     channels:
@@ -995,7 +995,7 @@
 
 - type: entity
   id: ComputerCargoOrdersMedical
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: ComputerCargoOrders
   name: medical request computer
   description: Used by the medical department to order supplies.
@@ -1015,7 +1015,7 @@
   - type: CargoOrderConsole
     account: Medical
     announcementChannel: Medical
-    removeLimitAccess: [ "HeadOfMedicalSector" ] # Fire edit
+    removeLimitAccess: [ "HeadOfMedicalSector" ] # Scp edit
     mode: SendToPrimary
   - type: ActiveRadio
     channels:
@@ -1029,7 +1029,7 @@
 
 - type: entity
   id: ComputerCargoOrdersScience
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: ComputerCargoOrders
   name: science request computer
   description: Used by the science department to order supplies.
@@ -1049,7 +1049,7 @@
   - type: CargoOrderConsole
     account: Science
     announcementChannel: Science
-    removeLimitAccess: [ "ScientificServiceDirector" ] # Fire edit
+    removeLimitAccess: [ "ScientificServiceDirector" ] # Scp edit
     mode: SendToPrimary
   - type: ActiveRadio
     channels:
@@ -1063,7 +1063,7 @@
 
 - type: entity
   id: ComputerCargoOrdersSecurity
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: ComputerCargoOrders
   name: security request computer
   description: Used by the security department to order supplies.
@@ -1083,7 +1083,7 @@
   - type: CargoOrderConsole
     account: Security
     announcementChannel: Security
-    removeLimitAccess: [ "SecurityCommander" ] # Fire edit
+    removeLimitAccess: [ "SecurityCommander" ] # Scp edit
     mode: SendToPrimary
   - type: ActiveRadio
     channels:
@@ -1097,7 +1097,7 @@
 
 - type: entity
   id: ComputerCargoOrdersService
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: ComputerCargoOrders
   name: service request computer
   description: Used by the service department to order supplies.
@@ -1117,7 +1117,7 @@
   - type: CargoOrderConsole
     account: Service
     announcementChannel: Service
-    removeLimitAccess: [ "PersonnelOfficer" ] # Fire edit
+    removeLimitAccess: [ "PersonnelOfficer" ] # Scp edit
     mode: SendToPrimary
   - type: ActiveRadio
     channels:
@@ -1127,11 +1127,11 @@
   - type: PointLight
     color: "#afe837"
   - type: AccessReader
-    access: [["Service"]] # Fire edit
+    access: [["Service"]] # Scp edit
 
 - type: entity
   id: ComputerCargoBounty
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: BaseComputerAiAccess
   name: cargo bounty computer
   description: Used to manage currently active bounties.
@@ -1164,7 +1164,7 @@
     energy: 4.0
     color: "#b89f25"
   - type: AccessReader
-    access: [["Logistics"]] # Fire edit
+    access: [["Logistics"]] # Scp edit
   - type: GuideHelp
     guides:
     - CargoBounties
@@ -1173,7 +1173,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerFundingAllocation
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: funding allocation computer
   description: Terminal for controlling the distribution of funds and pay to departments.
   components:
@@ -1194,7 +1194,7 @@
     key: enum.FundingAllocationConsoleUiKey.Key
   - type: ActivatableUIRequiresAccess
   - type: AccessReader
-    access: [["PersonnelOfficer"]] # Fire edit
+    access: [["PersonnelOfficer"]] # Scp edit
   - type: UserInterface
     interfaces:
       enum.FundingAllocationConsoleUiKey.Key:
@@ -1211,7 +1211,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerCloningConsole
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: cloning console computer
   description: The centerpiece of the cloning system, medicine's greatest accomplishment. It has lots of ports and wires.
   components:
@@ -1300,7 +1300,7 @@
 
 - type: entity
   id: ComputerSalvageExpedition
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: BaseComputerAiAccess
   name: salvage expeditions computer
   description: Used to accept salvage missions, if you're tough enough.
@@ -1355,7 +1355,7 @@
 - type: entity
   parent: BaseComputer
   id: ComputerSurveillanceCameraMonitor
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: camera monitor
   description: A surveillance camera monitor. You're watching them. Maybe.
   components:
@@ -1395,7 +1395,7 @@
 - type: entity
   parent: BaseComputer
   id: ComputerSurveillanceWirelessCameraMonitor
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: wireless camera monitor
   description: A wireless surveillance camera monitor. You're watching them. Maybe.
   components:
@@ -1451,7 +1451,7 @@
 
 - type: entity
   id: ComputerPalletConsole
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: BaseComputerAiAccess
   name: cargo sale computer
   description: Used to sell goods loaded onto cargo pallets.
@@ -1487,7 +1487,7 @@
     energy: 4.0
     color: "#b89f25"
   - type: AccessReader
-    access: [["Logistics"]] # Fire edit
+    access: [["Logistics"]] # Scp edit
   - type: GuideHelp
     guides:
     - Cargo
@@ -1495,7 +1495,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerMassMedia
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: news manager console
   description: Write your message to the world!
   components:
@@ -1537,7 +1537,7 @@
   # Putting this as "DO NOT MAP" until the performance issues are fixed.
   # And it's more fleshed out.
   suffix: TESTING, DO NOT MAP
-  categories: [ DoNotMap, HideSpawnMenu ] # Fire edit
+  categories: [ DoNotMap, HideSpawnMenu ] # Scp edit
   components:
     - type: Sprite
       layers:
@@ -1580,7 +1580,7 @@
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerRoboticsControl
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: robotics control console
   description: Used to remotely monitor the station's cyborgs.
   components:
@@ -1618,7 +1618,7 @@
   - type: Computer
     board: RoboticsConsoleCircuitboard
   - type: AccessReader # only used for dangerous things
-    access: [["ScientificServiceDirector"]] # Fire edit
+    access: [["ScientificServiceDirector"]] # Scp edit
   - type: Lock
     unlockOnClick: false
 
@@ -1668,7 +1668,7 @@
 
 - type: entity
   id: StationAiUploadComputer
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: BaseComputer
   name: AI upload console
   description: Used to update the laws of the station AI.
@@ -1690,7 +1690,7 @@
   - type: Computer
     board: StationAiUploadCircuitboard
   - type: AccessReader
-    access: [ [ "ScientificServiceDirector" ] ] # Fire edit
+    access: [ [ "ScientificServiceDirector" ] ] # Scp edit
   - type: Lock
     unlockOnClick: false
   - type: SiliconLawUpdater
@@ -1717,7 +1717,7 @@
 
 - type: entity
   id: StationAiFixerComputer
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: BaseComputer
   name: AI restoration console
   description: Used to repair damaged artifical intelligences.

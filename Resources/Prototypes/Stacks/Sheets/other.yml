@@ -2,19 +2,19 @@
   parent: BaseSheetStack
   id: Plasma
   name: stack-plasma
-  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/other.rsi, state: plasma } # Fire Edit
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/other.rsi, state: plasma } # Scp edit
   spawn: SheetPlasma1
 
 - type: stack
   parent: BaseSheetStack
   id: Plastic
   name: stack-plastic
-  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/other.rsi, state: plastic } # Fire Edit
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/other.rsi, state: plastic } # Scp edit
   spawn: SheetPlastic1
 
 - type: stack
   parent: BaseSheetStack
   id: Uranium
   name: stack-uranium
-  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/other.rsi, state: uranium } # Fire Edit
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/other.rsi, state: uranium } # Scp edit
   spawn: SheetUranium1

@@ -4,7 +4,7 @@
   graph: Seat
   startNode: start
   targetNode: chair
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -53,7 +53,7 @@
   graph: Seat
   startNode: start
   targetNode: chairOffice
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -66,7 +66,7 @@
   graph: Seat
   startNode: start
   targetNode: chairOfficeDark
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -103,7 +103,7 @@
   graph: Seat
   startNode: start
   targetNode: chairWood
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -128,7 +128,7 @@
   graph: RitualSeat
   startNode: start
   targetNode: chairRitual
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -177,7 +177,7 @@
   graph: Seat
   startNode: start
   targetNode: chairWoodBench
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -217,7 +217,7 @@
   graph: Table
   startNode: start
   targetNode: Table
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -230,7 +230,7 @@
   graph: Table
   startNode: start
   targetNode: TableReinforced
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -243,7 +243,7 @@
   graph: Table
   startNode: start
   targetNode: TableGlass
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -268,7 +268,7 @@
   graph: Table
   startNode: start
   targetNode: TableReinforcedGlass
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -281,7 +281,7 @@
   graph: Table
   startNode: start
   targetNode: TablePlasmaGlass
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -306,7 +306,7 @@
   graph: Table
   startNode: start
   targetNode: TableWood
-  hide: true # Fire added
+  hide: true # Scp added
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -319,7 +319,7 @@
   graph: Table
   startNode: start
   targetNode: TableCarpet
-  hide: true # Fire edit
+  hide: true # Scp edit
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -474,7 +474,7 @@
   graph: Table
   startNode: start
   targetNode: CounterWood
-  hide: true # Fire added
+  hide: true # Scp added
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -534,7 +534,7 @@
 
 - type: construction
   id: Dresser
-  hide: true # Fire edit - hidden in favor of ScpDresser
+  hide: true # Scp edit - hidden in favor of ScpDresser
   graph: Dresser
   startNode: start
   targetNode: dresser
@@ -694,7 +694,7 @@
 
 - type: construction
   id: Bookshelf
-  hide: true # Fire edit - hidden in favor of ScpBookshelf
+  hide: true # Scp edit - hidden in favor of ScpBookshelf
   graph: Bookshelf
   startNode: start
   targetNode: bookshelf

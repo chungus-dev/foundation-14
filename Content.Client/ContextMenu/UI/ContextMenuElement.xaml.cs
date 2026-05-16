@@ -83,9 +83,9 @@ namespace Content.Client.ContextMenu.UI
             {
                 AddStylePseudoClass(StylePseudoClassHover);
 
-                // Fire added start - красивый UI
+                // Scp added start - красивый UI
                 HoverColorHelper.SetContentColor(this, HoverColorHelper.InvertedColor);
-                // Fire added end
+                // Scp added end
 
                 return;
             }
@@ -100,9 +100,9 @@ namespace Content.Client.ContextMenu.UI
             {
                 RemoveStylePseudoClass(StylePseudoClassHover);
 
-                // Fire added start - красивый UI
+                // Scp added start - красивый UI
                 HoverColorHelper.SetContentColor(this, HoverColorHelper.NormalColor);
-                // Fire added end
+                // Scp added end
             }
         }
     }

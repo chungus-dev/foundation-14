@@ -108,9 +108,9 @@ namespace Content.Client.Kitchen.UI
             }
             else
             {
-                // Fire edit start
+                // Scp edit start
                 _menu.IngredientsPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = StyleNano.PanelDark };
-                // Fire edit end
+                // Scp edit end
             }
         }
 

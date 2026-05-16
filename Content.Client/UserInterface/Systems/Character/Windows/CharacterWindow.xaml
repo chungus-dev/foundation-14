@@ -6,7 +6,7 @@
     Title="{Loc 'character-info-title'}"
     MinWidth="900"
     MinHeight="720">
-    <!-- Fire edit start -->
+    <!-- Scp edit start -->
     <BoxContainer Orientation="Horizontal" VerticalExpand="True">  <!-- Страхи, класс персонажа и уровень допуска -->
         <ScrollContainer HScrollEnabled="False" VerticalExpand="True" HorizontalExpand="True" MinWidth="430">
             <BoxContainer Orientation="Vertical">
@@ -55,5 +55,5 @@
             </cc:StripeBack>
         </BoxContainer>
     </BoxContainer>
-    <!-- Fire edit end -->
+    <!-- Scp edit end -->
 </windows:CharacterWindow>

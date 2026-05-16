@@ -2,7 +2,7 @@
   parent: MarkerBase
   id: PottedPlantRandom
   name: random potted plant spawner
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:

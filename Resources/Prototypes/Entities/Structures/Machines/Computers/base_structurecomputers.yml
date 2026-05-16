@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseStructureComputer
   id: BaseComputer
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: computer
   placement:
     mode: SnapgridCenter
@@ -59,14 +59,14 @@
     castShadows: false
   - type: EmitSoundOnUIOpen
     sound:
-      # Fire edit start
+      # Scp edit start
       collection: ScpKeyboard
       params:
         maxDistance: 3
         volume: -5
         variation: 0.1
         pitch: 0.9  # low pitch keyboard sounds feel kinda weird
-      # Fire edit end
+      # Scp edit end
     blacklist:
       tags:
       - NoConsoleSound
@@ -95,7 +95,7 @@
 - type: entity
   parent: BaseComputer
   id: BaseComputerAiAccess
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: StationAiWhitelist
   - type: Wires

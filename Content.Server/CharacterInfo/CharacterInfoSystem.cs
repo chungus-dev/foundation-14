@@ -49,16 +49,16 @@ public sealed class CharacterInfoSystem : EntitySystem
                 objectives[issuer].Add(info.Value);
             }
 
-            // Fire edit start - для крутого меню персонажа
+            // Scp edit start - для крутого меню персонажа
             if (_jobs.MindTryGetJob(mindId, out var jobProto))
                 job = jobProto.ID;
-            // Fire edit end
+            // Scp edit end
 
             // Get briefing
             briefing = _roles.MindGetBriefing(mindId);
         }
 
-        // Fire edit
+        // Scp edit
         RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), job, objectives, briefing), args.SenderSession);
     }
 }

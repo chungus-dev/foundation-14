@@ -123,7 +123,7 @@
   graph: Shelf
   startNode: start
   targetNode: ShelfBar
-  hide: true # Fire added
+  hide: true # Scp added
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true

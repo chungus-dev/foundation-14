@@ -68,7 +68,7 @@
     radius: 6
     castShadows: false
     enabled: false
-  - type: MovementSpeedModifier # Fire Edit
+  - type: MovementSpeedModifier # Scp edit
     baseSprintSpeed: 12
     baseWalkSpeed: 20
 

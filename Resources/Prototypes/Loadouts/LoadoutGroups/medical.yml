@@ -9,7 +9,7 @@
 
 - type: loadoutGroup
   id: MedicalBackpack
-  name: loadout-group-backpack # Fire edit
+  name: loadout-group-backpack # Scp edit
   loadouts:
   - MedicalDoctorBackpack
   - MedicalDoctorSatchel
@@ -17,7 +17,7 @@
 
 - type: loadoutGroup
   id: MedicalShoes
-  name: loadout-group-shoes # Fire edit
+  name: loadout-group-shoes # Scp edit
   loadouts:
   - WhiteShoes
   - MedicalWinterBoots
@@ -36,7 +36,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerHead
-  name: loadout-group-head # Fire edit
+  name: loadout-group-head # Scp edit
   minLimit: 0
   loadouts:
   - ChiefMedicalOfficerBeret
@@ -44,7 +44,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit
-  name: loadout-group-jumpsuit # Fire edit
+  name: loadout-group-jumpsuit # Scp edit
   loadouts:
   - ChiefMedicalOfficerJumpsuit
   - ChiefMedicalOfficerJumpskirt
@@ -53,7 +53,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerOuterClothing
-  name: loadout-group-outer-clothing # Fire edit
+  name: loadout-group-outer-clothing # Scp edit
   minLimit: 0
   loadouts:
   - ChiefMedicalOfficerLabCoat
@@ -61,7 +61,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerNeck
-  name: loadout-group-neck # Fire edit
+  name: loadout-group-neck # Scp edit
   minLimit: 0
   loadouts:
   - ChiefMedicalOfficerCloak
@@ -69,14 +69,14 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
-  name: loadout-group-shoes # Fire edit
+  name: loadout-group-shoes # Scp edit
   loadouts:
   - BrownShoes
   - MedicalWinterBoots
 
 - type: loadoutGroup
   id: MedicalDoctorHead
-  name: loadout-group-head # Fire edit
+  name: loadout-group-head # Scp edit
   minLimit: 0
   loadouts:
   - MedicalBeret
@@ -88,7 +88,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorJumpsuit
-  name: loadout-group-jumpsuit # Fire edit
+  name: loadout-group-jumpsuit # Scp edit
   loadouts:
   - MedicalDoctorJumpsuit
   - MedicalDoctorJumpskirt
@@ -98,7 +98,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorOuterClothing
-  name: loadout-group-outer-clothing # Fire edit
+  name: loadout-group-outer-clothing # Scp edit
   minLimit: 0
   loadouts:
   - RegularLabCoat
@@ -121,21 +121,21 @@
 
 - type: loadoutGroup
   id: MedicalInternJumpsuit
-  name: loadout-group-jumpsuit # Fire edit
+  name: loadout-group-jumpsuit # Scp edit
   loadouts:
   - WhiteJumpsuit
   - WhiteJumpskirt
 
 - type: loadoutGroup
   id: ChemistJumpsuit
-  name: loadout-group-jumpsuit # Fire edit
+  name: loadout-group-jumpsuit # Scp edit
   loadouts:
   - ChemistJumpsuit
   - ChemistJumpskirt
 
 - type: loadoutGroup
   id: ChemistOuterClothing
-  name: loadout-group-outer-clothing # Fire edit
+  name: loadout-group-outer-clothing # Scp edit
   minLimit: 0
   loadouts:
   - RegularLabCoat
@@ -144,7 +144,7 @@
 
 - type: loadoutGroup
   id: ChemistBackpack
-  name: loadout-group-backpack # Fire edit
+  name: loadout-group-backpack # Scp edit
   loadouts:
   - ChemistBackpack
   - ChemistSatchel
@@ -152,21 +152,21 @@
 
 - type: loadoutGroup
   id: ParamedicHead
-  name: loadout-group-head # Fire edit
+  name: loadout-group-head # Scp edit
   minLimit: 0
   loadouts:
   - ParamedicHead
 
 - type: loadoutGroup
   id: ParamedicJumpsuit
-  name: loadout-group-jumpsuit # Fire edit
+  name: loadout-group-jumpsuit # Scp edit
   loadouts:
   - ParamedicJumpsuit
   - ParamedicJumpskirt
 
 - type: loadoutGroup
   id: ParamedicOuterClothing
-  name: loadout-group-outer-clothing # Fire edit
+  name: loadout-group-outer-clothing # Scp edit
   minLimit: 0
   loadouts:
   - ParamedicWindbreaker
@@ -174,7 +174,7 @@
 
 - type: loadoutGroup
   id: ParamedicShoes
-  name: loadout-group-shoes # Fire edit
+  name: loadout-group-shoes # Scp edit
   loadouts:
   - BlueShoes
   - WhiteShoes

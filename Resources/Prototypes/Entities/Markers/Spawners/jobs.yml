@@ -53,7 +53,7 @@
   id: SpawnPointQuartermaster
   parent: SpawnPointJobBase
   name: quartermaster
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Quartermaster
@@ -67,7 +67,7 @@
   id: SpawnPointCargoTechnician
   parent: SpawnPointJobBase
   name: cargotechnician
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: CargoTechnician
@@ -80,7 +80,7 @@
   id: SpawnPointSalvageSpecialist
   parent: SpawnPointJobBase
   name: salvagespecialist
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: SalvageSpecialist
@@ -95,7 +95,7 @@
   id: SpawnPointPassenger
   parent: SpawnPointJobBase
   name: passenger
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Passenger
@@ -108,7 +108,7 @@
   id: SpawnPointTechnicalAssistant
   parent: SpawnPointJobBase
   name: technical assistant
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: TechnicalAssistant
@@ -121,7 +121,7 @@
   id: SpawnPointMedicalIntern
   parent: SpawnPointJobBase
   name: medical intern
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: MedicalIntern
@@ -134,7 +134,7 @@
   id: SpawnPointSecurityCadet
   parent: SpawnPointJobBase
   name: security cadet
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: SecurityCadet
@@ -147,7 +147,7 @@
   id: SpawnPointResearchAssistant
   parent: SpawnPointJobBase
   name: research assistant
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: ResearchAssistant
@@ -160,7 +160,7 @@
   id: SpawnPointServiceWorker
   parent: SpawnPointJobBase
   name: service worker
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: ServiceWorker
@@ -173,7 +173,7 @@
   id: SpawnPointBartender
   parent: SpawnPointJobBase
   name: bartender
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Bartender
@@ -186,7 +186,7 @@
   id: SpawnPointChef
   parent: SpawnPointJobBase
   name: chef
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Chef
@@ -199,7 +199,7 @@
   id: SpawnPointBotanist
   parent: SpawnPointJobBase
   name: botanist
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Botanist
@@ -212,7 +212,7 @@
   id: SpawnPointClown
   parent: SpawnPointJobBase
   name: clown
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Clown
@@ -225,7 +225,7 @@
   id: SpawnPointMime
   parent: SpawnPointJobBase
   name: mime
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Mime
@@ -238,7 +238,7 @@
   id: SpawnPointChaplain
   parent: SpawnPointJobBase
   name: chaplain
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Chaplain
@@ -251,7 +251,7 @@
   id: SpawnPointLibrarian
   parent: SpawnPointJobBase
   name: librarian
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Librarian
@@ -264,7 +264,7 @@
   id: SpawnPointLawyer
   parent: SpawnPointJobBase
   name: lawyer
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Lawyer
@@ -277,7 +277,7 @@
   id: SpawnPointJanitor
   parent: SpawnPointJobBase
   name: janitor
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Janitor
@@ -290,7 +290,7 @@
   id: SpawnPointMusician
   parent: SpawnPointJobBase
   name: musician
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Musician
@@ -303,7 +303,7 @@
   id: SpawnPointBorg
   parent: SpawnPointJobBase
   name: cyborg
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Borg
@@ -321,7 +321,7 @@
   id: SpawnPointCaptain
   parent: SpawnPointJobBase
   name: captain
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Captain
@@ -334,7 +334,7 @@
   id: SpawnPointHeadOfPersonnel
   parent: SpawnPointJobBase
   name: headofpersonnel
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: HeadOfPersonnel
@@ -349,7 +349,7 @@
   id: SpawnPointChiefEngineer
   parent: SpawnPointJobBase
   name: chiefengineer
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: ChiefEngineer
@@ -362,7 +362,7 @@
   id: SpawnPointStationEngineer
   parent: SpawnPointJobBase
   name: stationengineer
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: StationEngineer
@@ -375,7 +375,7 @@
   id: SpawnPointAtmos
   parent: SpawnPointJobBase
   name: atmospherics
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: AtmosphericTechnician
@@ -390,7 +390,7 @@
   id: SpawnPointChiefMedicalOfficer
   parent: SpawnPointJobBase
   name: chiefmedicalofficer
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: ChiefMedicalOfficer
@@ -403,7 +403,7 @@
   id: SpawnPointMedicalDoctor
   parent: SpawnPointJobBase
   name: medicaldoctor
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: MedicalDoctor
@@ -416,7 +416,7 @@
   id: SpawnPointParamedic
   parent: SpawnPointJobBase
   name: paramedic
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Paramedic
@@ -429,7 +429,7 @@
   id: SpawnPointChemist
   parent: SpawnPointJobBase
   name: chemist
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Chemist
@@ -444,7 +444,7 @@
   id: SpawnPointResearchDirector
   parent: SpawnPointJobBase
   name: researchdirector
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: ResearchDirector
@@ -457,7 +457,7 @@
   id: SpawnPointScientist
   parent: SpawnPointJobBase
   name: scientist
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Scientist
@@ -472,7 +472,7 @@
   id: SpawnPointHeadOfSecurity
   parent: SpawnPointJobBase
   name: headofsecurity
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: HeadOfSecurity
@@ -485,7 +485,7 @@
   id: SpawnPointWarden
   parent: SpawnPointJobBase
   name: warden
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Warden
@@ -498,7 +498,7 @@
   id: SpawnPointSecurityOfficer
   parent: SpawnPointJobBase
   name: securityofficer
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: SecurityOfficer
@@ -511,7 +511,7 @@
   id: SpawnPointDetective
   parent: SpawnPointJobBase
   name: detective
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Detective
@@ -538,7 +538,7 @@
   id: SpawnPointERTLeader
   parent: SpawnPointJobBase
   name: ERTleader
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: ERTLeader
@@ -551,7 +551,7 @@
   id: SpawnPointERTChaplain
   parent: SpawnPointJobBase
   name: ERTchaplain
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: ERTChaplain
@@ -564,7 +564,7 @@
   id: SpawnPointERTEngineer
   parent: SpawnPointJobBase
   name: ERTengineer
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: ERTEngineer
@@ -577,7 +577,7 @@
   id: SpawnPointERTMedical
   parent: SpawnPointJobBase
   name: ERTmedical
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: ERTMedical
@@ -590,7 +590,7 @@
   id: SpawnPointERTSecurity
   parent: SpawnPointJobBase
   name: ERTsecurity
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: ERTSecurity
@@ -603,7 +603,7 @@
   id: SpawnPointERTJanitor
   parent: SpawnPointJobBase
   name: ERTjanitor
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: ERTJanitor
@@ -618,7 +618,7 @@
   id: SpawnPointReporter
   parent: SpawnPointJobBase
   name: reporter
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Reporter
@@ -631,7 +631,7 @@
   id: SpawnPointPsychologist
   parent: SpawnPointJobBase
   name: psychologist
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: SpawnPoint
     job_id: Psychologist

@@ -128,7 +128,7 @@
   parent: MarkerBase
   id: RandomPosterAny
   name: random poster spawner
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:
@@ -154,7 +154,7 @@
   parent: MarkerBase
   id: RandomPosterContraband
   name: random contraband poster spawner
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:
@@ -170,7 +170,7 @@
   parent: MarkerBase
   id: RandomPosterLegit
   name: random legit poster spawner
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:

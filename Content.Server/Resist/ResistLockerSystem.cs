@@ -33,7 +33,7 @@ public sealed class ResistLockerSystem : EntitySystem
 
     private void OnRelayMovement(EntityUid uid, ResistLockerComponent component, ref ContainerRelayMovementEntityEvent args)
     {
-        // Fire edit - перенес component.IsResisting чуть пониже, в AttemptResist
+        // Scp edit - перенес component.IsResisting чуть пониже, в AttemptResist
 
         if (!TryComp(uid, out EntityStorageComponent? storageComponent))
             return;
@@ -52,7 +52,7 @@ public sealed class ResistLockerSystem : EntitySystem
         if (!Resolve(target, ref storageComponent, ref resistLockerComponent))
             return;
 
-        // Fire edit start - чтобы 173 не запирали внутри камеры в контейнере
+        // Scp edit start - чтобы 173 не запирали внутри камеры в контейнере
         var delayTime = resistLockerComponent.ResistTime;
         var isScp173Conainment = HasComp<Scp173Component>(user) && _scp173.IsContained(user);
 
@@ -61,7 +61,7 @@ public sealed class ResistLockerSystem : EntitySystem
         else if (resistLockerComponent.IsResisting)
             return;
 
-        // Fire edit end
+        // Scp edit end
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, user, delayTime, new ResistLockerDoAfterEvent(), target, target: target)
         {

@@ -160,7 +160,7 @@
   name: death-match-title
   description: death-match-description
   maxPlayers: 15
-  showInVote: false # Fire edit
+  showInVote: false # Scp edit
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31

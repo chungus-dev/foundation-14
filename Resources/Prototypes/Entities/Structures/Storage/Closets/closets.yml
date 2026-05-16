@@ -4,7 +4,7 @@
   name: tool closet
   parent: ClosetSteelBase
   description: It's a storage unit for tools.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -18,7 +18,7 @@
   name: radiation suit closet
   parent: ClosetSteelBase
   description: "More comfortable than radiation poisioning."
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -32,7 +32,7 @@
   name: emergency closet
   parent: ClosetSteelBase
   description: It's a storage unit for emergency breath masks and O2 tanks.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -46,7 +46,7 @@
   name: emergency nitrogen closet
   parent: ClosetSteelBase
   description: It's full of life-saving equipment. Assuming, that is, that you breathe nitrogen.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -60,7 +60,7 @@
   name: fire-safety closet
   parent: ClosetSteelBase
   description: It's a storage unit for fire-fighting supplies.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -74,7 +74,7 @@
   name: EOD closet
   parent: ClosetSteelBase
   description: It's a storage unit for explosion-protective suits.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -88,7 +88,7 @@
   name: janitorial bomb suit closet
   parent: ClosetSteelBase
   description: It's a storage unit for janitorial explosion-protective suits.
-  categories: [ DoNotMap, HideSpawnMenu ] # Fire edit
+  categories: [ DoNotMap, HideSpawnMenu ] # Scp edit
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -104,7 +104,7 @@
   parent: ClosetSteelBase
   name: level 3 biohazard gear closet
   description: It's a storage unit for level 3 biohazard gear.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -116,7 +116,7 @@
 - type: entity
   id: ClosetL3Science
   parent: ClosetL3
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -128,7 +128,7 @@
 - type: entity
   id: ClosetL3Virology
   parent: ClosetL3
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -140,7 +140,7 @@
 - type: entity
   id: ClosetL3Security
   parent: ClosetL3
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -152,7 +152,7 @@
 - type: entity
   id: ClosetL3Janitor
   parent: ClosetL3
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -166,7 +166,7 @@
   name: maintenance closet
   parent: ClosetSteelBase
   description: It's a storage unit.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -179,7 +179,7 @@
   name: blood-red closet
   parent: ClosetSteelBase
   description: It's a storage unit with a blood-red design.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -194,7 +194,7 @@
   suffix: Bluespace
   parent: ClosetMaintenance
   description: It's a storage unit... right?
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
     - type: ArrivalsBlacklist
     - type: BluespaceLocker
@@ -214,7 +214,7 @@
   suffix: Bluespace unstable
   parent: ClosetMaintenance
   description: It's a storage unit... right?
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
     - type: ArrivalsBlacklist
     - type: BluespaceLocker

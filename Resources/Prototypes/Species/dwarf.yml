@@ -1,8 +1,8 @@
 - type: species
   id: Dwarf
   name: species-name-dwarf
-  roundStart: false # Fire Edit
+  roundStart: false # Scp edit
   prototype: MobDwarf
   dollPrototype: AppearanceDwarf
   skinColoration: HumanToned
-  maxAge: 85 # Fire-Edit
+  maxAge: 85 # Scp edit

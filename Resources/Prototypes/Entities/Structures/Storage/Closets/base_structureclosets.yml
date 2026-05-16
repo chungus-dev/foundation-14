@@ -107,7 +107,7 @@
 - type: entity
   id: ClosetSteelBase
   parent: ClosetBase
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Construction
     graph: ClosetSteel

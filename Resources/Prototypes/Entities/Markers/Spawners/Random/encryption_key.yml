@@ -2,7 +2,7 @@
 - type: entity
   name: random encryption key spawner
   id: LootSpawnerEncryptionKey
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: MarkerBase
   components:
     - type: Sprite

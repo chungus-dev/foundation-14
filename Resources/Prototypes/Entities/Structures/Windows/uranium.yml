@@ -2,7 +2,7 @@
   id: UraniumWindow
   name: uranium window
   parent: [BaseDeltaPressurePlasma, WindowRCDResistant]
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -57,7 +57,7 @@
   parent: [BaseDeltaPressurePlasmaQuarter, WindowDirectionalRCDResistant]
   name: directional uranium window
   description: Don't smudge up the glass down there.
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:
@@ -110,7 +110,7 @@
   parent: UraniumWindow
   id: UraniumWindowDiagonal
   suffix: diagonal
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:

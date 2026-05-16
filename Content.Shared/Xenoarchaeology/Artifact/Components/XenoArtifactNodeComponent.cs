@@ -71,7 +71,7 @@ public sealed partial class XenoArtifactNodeComponent : Component
     /// The amount of points a node is worth with no scaling
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float BasePointValue = 1000; // Fire edit - а че так дохуя было
+    public float BasePointValue = 1000; // Scp edit - а че так дохуя было
 
     /// <summary>
     /// Amount of points available currently for extracting.

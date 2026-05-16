@@ -25,7 +25,7 @@ public sealed partial class AccessGroupPrototype : IPrototype
     /// <summary>
     /// The access levels associated with this group
     /// </summary>
-    // Fire edit start
+    // Scp edit start
     public HashSet<ProtoId<AccessLevelPrototype>> Tags
     {
         get => GetAllTags();
@@ -37,7 +37,7 @@ public sealed partial class AccessGroupPrototype : IPrototype
 
     [DataField]
     public HashSet<ProtoId<AccessGroupPrototype>> Groups = [];
-    // Fire edit end
+    // Scp edit end
 
     public string GetAccessGroupName()
     {
@@ -47,7 +47,7 @@ public sealed partial class AccessGroupPrototype : IPrototype
         return ID;
     }
 
-    // Fire added start - для улучшения читабельности прототипов
+    // Scp added start - для улучшения читабельности прототипов
     private HashSet<ProtoId<AccessLevelPrototype>> GetAllTags()
     {
         _prototype ??= IoCManager.Resolve<IPrototypeManager>();
@@ -85,5 +85,5 @@ public sealed partial class AccessGroupPrototype : IPrototype
             CollectTagsRecursive(subGroup, result, visitedGroups, ref prototype);
         }
     }
-    // Fire added end
+    // Scp added end
 }

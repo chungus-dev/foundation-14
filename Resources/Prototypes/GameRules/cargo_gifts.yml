@@ -28,7 +28,7 @@
       max: 10
   - type: StationEvent
     startColor: "#18abf5"
-#    startAudio: Fire edit
+#    startAudio: Scp edit
 #      path: /Audio/_Scp/Announcements/announce_dig.ogg
   - type: CargoGiftsRule
     sender: cargo-gift-default-sender

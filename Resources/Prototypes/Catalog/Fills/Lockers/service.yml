@@ -2,7 +2,7 @@
   id: LockerBoozeFilled
   suffix: Filled
   parent: LockerBooze
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: EntityTableContainerFill
     containers:
@@ -40,7 +40,7 @@
   id: ClosetChefFilled
   suffix: Filled
   parent: ClosetChef
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -51,7 +51,7 @@
   id: FillClosetChef
   table: !type:AllSelector
     children:
-    - id: MonkeyCubeBox # Fire Edit
+    - id: MonkeyCubeBox # Scp edit
     - id: SprayBottleWater
     - id: FoodBoxCloth
     - id: ReagentContainerSugar
@@ -75,7 +75,7 @@
   id: ClosetJanitorFilled
   suffix: Filled
   parent: ClosetJanitor
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -108,7 +108,7 @@
   id: ClosetLegalFilled
   suffix: Filled
   parent: ClosetLegal
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: EntityTableContainerFill
     containers:
@@ -129,7 +129,7 @@
   id: LockerBotanistFilled
   suffix: Filled
   parent: LockerBotanist
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: EntityTableContainerFill
     containers:
@@ -162,7 +162,7 @@
   id: LockerBotanistLoot
   suffix: Loot
   parent: LockerBotanist
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: EntityTableContainerFill
     containers:
@@ -187,7 +187,7 @@
   id: ClosetJanitorBombFilled
   parent: ClosetJanitorBomb
   suffix: DO NOT MAP, Filled
-  categories: [ DoNotMap, HideSpawnMenu] # Fire edit
+  categories: [ DoNotMap, HideSpawnMenu] # Scp edit
   components:
   - type: EntityTableContainerFill
     containers:

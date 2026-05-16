@@ -3,7 +3,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyAtmospherics
   suffix: Atmospherics
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/atmospherics.rsi
@@ -13,7 +13,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyAtmosphericsGlass
   suffix: Atmospherics, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/atmospherics.rsi
@@ -24,7 +24,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyCargo
   suffix: Cargo
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/cargo.rsi
@@ -34,7 +34,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyCargoGlass
   suffix: Cargo, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/cargo.rsi
@@ -46,7 +46,7 @@
   name: airlock assembly
   suffix: Pinion, Clockwork
   parent: AirlockAssembly
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/clockwork_pinion.rsi
@@ -61,7 +61,7 @@
   parent: PinionAirlockAssembly
   id: PinionAirlockAssemblyGlass
   suffix: Pinion, Clockwork, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/clockwork_pinion.rsi
@@ -72,7 +72,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyCommand
   suffix: Command
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/command.rsi
@@ -82,7 +82,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyCommandGlass
   suffix: Command, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/command.rsi
@@ -93,7 +93,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyEngineering
   suffix: Engineering
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/engineering.rsi
@@ -103,7 +103,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyEngineeringGlass
   suffix: Engineering, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/engineering.rsi
@@ -114,7 +114,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyExternal
   suffix: External
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/external.rsi
@@ -124,7 +124,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyExternalGlass
   suffix: External, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/external.rsi
@@ -135,7 +135,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyGlass
   suffix: Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/glass.rsi
@@ -146,7 +146,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyFreezer
   suffix: Freezer
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/freezer.rsi
@@ -157,7 +157,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyHydroponics
   suffix: Hydroponics
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/hydroponics.rsi
@@ -167,7 +167,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyHydroponicsGlass
   suffix: Hydroponics, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/hydroponics.rsi
@@ -178,7 +178,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyMaintenance
   suffix: Maintenance
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/maint.rsi
@@ -188,7 +188,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyMaintenanceGlass
   suffix: Maintenance, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/maint.rsi
@@ -199,7 +199,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyMedical
   suffix: Medical
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/medical.rsi
@@ -209,7 +209,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyMedicalGlass
   suffix: Medical, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/medical.rsi
@@ -220,7 +220,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblySalvage
   suffix: Salvage
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/salvage.rsi
@@ -230,7 +230,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblySalvageGlass
   suffix: Salvage, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/salvage.rsi
@@ -241,7 +241,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyScience
   suffix: Science
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/science.rsi
@@ -251,7 +251,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyScienceGlass
   suffix: Science, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/science.rsi
@@ -262,7 +262,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblySecurity
   suffix: Security
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/security.rsi
@@ -272,7 +272,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblySecurityGlass
   suffix: Security, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/security.rsi
@@ -283,7 +283,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyShuttle
   suffix: Shuttle
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/shuttle.rsi
@@ -293,7 +293,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyShuttleGlass
   suffix: Shuttle, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/shuttle.rsi
@@ -304,7 +304,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyVirology
   suffix: Virology
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/virology.rsi
@@ -314,7 +314,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyVirologyGlass
   suffix: Virology, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/virology.rsi
@@ -325,7 +325,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyCentralCommand
   suffix: CentralCommand
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/centcomm.rsi
@@ -335,7 +335,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyCentralCommandGlass
   suffix: CentralCommand, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/centcomm.rsi
@@ -346,7 +346,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyMining
   suffix: Mining
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/mining.rsi
@@ -356,7 +356,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyMiningGlass
   suffix: Mining, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/mining.rsi
@@ -367,7 +367,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblySyndicate
   suffix: Syndicate
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/syndicate.rsi
@@ -377,7 +377,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblySyndicateGlass
   suffix: Syndicate, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/syndicate.rsi
@@ -388,7 +388,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyShuttleSyndicate
   suffix: ShuttleSyndicate
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/shuttle_syndicate.rsi
@@ -398,7 +398,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyShuttleSyndicateGlass
   suffix: ShuttleSyndicate, Glass
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/shuttle_syndicate.rsi
@@ -409,7 +409,7 @@
   parent: AirlockAssembly
   id: AirlockAssemblyHighSec
   suffix: HighSec
-  categories: [ HideSpawnMenu ] # Fire added
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/highsec/highsec.rsi

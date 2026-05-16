@@ -20,7 +20,7 @@ public static class MigrationHideSpawnMenuSyncTool
     /// <summary>
     /// Fallback edit comment used when the environment variable is empty.
     /// </summary>
-    public const string FallbackEditComment = "Fire edit";
+    public const string FallbackEditComment = "Scp edit";
 
     private const string HideSpawnMenuCategory = "HideSpawnMenu";
     private const string MigrationRelativePath = "Resources/migration.yml";

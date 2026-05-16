@@ -10,8 +10,8 @@
   startingGear: ScientistGear
   icon: "JobIconScientist"
   supervisors: job-supervisors-rd
-  overrideConsoleVisibility: false # Fire added
-  setPreference: false # Fire added
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - Research
   - Maintenance

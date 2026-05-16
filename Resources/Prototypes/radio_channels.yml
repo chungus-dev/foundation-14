@@ -3,13 +3,13 @@
   name: chat-radio-common
   keycode: ";"
   frequency: 1459
-  color: "#4bb14b" # Fire edit
-  longRange: true # Fire added
+  color: "#4bb14b" # Scp edit
+  longRange: true # Scp added
 
 - type: radioChannel
   id: CentCom
   name: chat-radio-centcom
-  keycode: '1' # Fire edit - чтобы не конфликтовало
+  keycode: '1' # Scp edit - чтобы не конфликтовало
   frequency: 1337
   color: "#2681a5"
   longRange: true
@@ -17,81 +17,81 @@
 - type: radioChannel
   id: Command
   name: chat-radio-command
-  keycode: '2' # Fire edit - чтобы не конфликтовало
+  keycode: '2' # Scp edit - чтобы не конфликтовало
   frequency: 1353
-  color: "#d1c56b" # Fire edit
+  color: "#d1c56b" # Scp edit
 
 - type: radioChannel
   id: Engineering
   name: chat-radio-engineering
-  keycode: '3' # Fire edit - чтобы не конфликтовало
+  keycode: '3' # Scp edit - чтобы не конфликтовало
   frequency: 1357
-  color: "#cf8f76" # Fire edit
+  color: "#cf8f76" # Scp edit
 
 - type: radioChannel
   id: Medical
   name: chat-radio-medical
-  keycode: '4' # Fire edit - чтобы не конфликтовало
+  keycode: '4' # Scp edit - чтобы не конфликтовало
   frequency: 1355
-  color: "#5b94aa" # Fire edit
+  color: "#5b94aa" # Scp edit
 
 - type: radioChannel
   id: Science
   name: chat-radio-science
-  keycode: '5' # Fire edit - чтобы не конфликтовало
+  keycode: '5' # Scp edit - чтобы не конфликтовало
   frequency: 1351
-  color: "#c49dc4" # Fire edit
+  color: "#c49dc4" # Scp edit
 
 - type: radioChannel
   id: Security
   name: chat-radio-security
-  keycode: '6' # Fire edit - чтобы не конфликтовало
+  keycode: '6' # Scp edit - чтобы не конфликтовало
   frequency: 1359
-  color: "#976162" # Fire edit
+  color: "#976162" # Scp edit
 
 - type: radioChannel
   id: Service
   name: chat-radio-service
-  keycode: '7' # Fire edit - чтобы не конфликтовало
+  keycode: '7' # Scp edit - чтобы не конфликтовало
   frequency: 1349
-  color: "#849b6a" # Fire edit
+  color: "#849b6a" # Scp edit
 
 - type: radioChannel
   id: Supply
   name: chat-radio-supply
-  keycode: '8' # Fire edit - чтобы не конфликтовало
+  keycode: '8' # Scp edit - чтобы не конфликтовало
   frequency: 1347
-  color: "#b99f7d" # Fire edit
+  color: "#b99f7d" # Scp edit
 
 - type: radioChannel
   id: Syndicate
   name: chat-radio-syndicate
-  keycode: '9' # Fire edit - чтобы не конфликтовало
+  keycode: '9' # Scp edit - чтобы не конфликтовало
   frequency: 1213
-  color: "#976162" # Fire edit
+  color: "#976162" # Scp edit
   longRange: true
 
 - type: radioChannel
   id: Handheld
   name: chat-radio-handheld
   frequency: 1330
-  color: "#af9e6b" # Fire edit
+  color: "#af9e6b" # Scp edit
   # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms
   longRange: true
 
 - type: radioChannel
   id: Binary
   name: chat-radio-binary
-  keycode: '<' # Fire edit - чтобы не конфликтовало
+  keycode: '<' # Scp edit - чтобы не конфликтовало
   frequency: 1001
-  color: "#9fd6c1" # Fire edit
+  color: "#9fd6c1" # Scp edit
   # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms
   longRange: true
 
 - type: radioChannel
   id: Freelance
   name: chat-radio-freelance
-  keycode: '\' # Fire edit - чтобы не конфликтовало
+  keycode: '\' # Scp edit - чтобы не конфликтовало
   frequency: 1984
   color: "#f6ce64"
   # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms

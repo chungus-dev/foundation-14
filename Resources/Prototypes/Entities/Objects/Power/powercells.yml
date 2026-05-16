@@ -13,7 +13,7 @@
     maxIntensity: 200
     intensitySlope: 1.5
   - type: Sprite
-    sprite: _Scp/Objects/Power/power_cells.rsi #Objects/Power/power_cells.rsi Fire edit
+    sprite: _Scp/Objects/Power/power_cells.rsi #Objects/Power/power_cells.rsi Scp edit
   - type: SolutionContainerManager
     solutions:
       battery:
@@ -72,7 +72,7 @@
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: small
     - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-      state: fo2small # o2 Fire edit
+      state: fo2small # o2 Scp edit
       shader: unshaded
   - type: Battery
     maxCharge: 360
@@ -80,7 +80,7 @@
   - type: Tag
     tags:
       - PowerCellSmall
-  # Fire edit start
+  # Scp edit start
   - type: GenericVisualizer
     visuals:
       enum.BatteryVisuals.State:
@@ -88,7 +88,7 @@
           Full: { visible: true, state: fo2small }
           Neither: { visible: true, state: fo1small }
           Empty: { visible: false }
-  # Fire edit end
+  # Scp edit end
 
 - type: entity
   id: PowerCellSmallPrinted
@@ -100,13 +100,13 @@
       - map: [ "enum.PowerCellVisualLayers.Base" ]
         state: small
       - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-        state: fo2small # o2 Fire edit
+        state: fo2small # o2 Scp edit
         shader: unshaded
         visible: false
   - type: Battery
     maxCharge: 360
     startingCharge: 0
-  # Fire edit start
+  # Scp edit start
   - type: GenericVisualizer
     visuals:
       enum.BatteryVisuals.State:
@@ -114,7 +114,7 @@
           Full: { visible: true, state: fo2small }
           Neither: { visible: true, state: fo1small }
           Empty: { visible: false }
-  # Fire edit end
+  # Scp edit end
 
 - type: entity
   parent: PowerCellSmall
@@ -138,12 +138,12 @@
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: medium
     - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-      state: fo2medium # o2 Fire edit
+      state: fo2medium # o2 Scp edit
       shader: unshaded
   - type: Battery
     maxCharge: 720
     startingCharge: 720
-  # Fire edit start
+  # Scp edit start
   - type: GenericVisualizer
     visuals:
       enum.BatteryVisuals.State:
@@ -151,7 +151,7 @@
           Full: { visible: true, state: fo2medium }
           Neither: { visible: true, state: fo1medium }
           Empty: { visible: false }
-  # Fire edit end
+  # Scp edit end
 
 - type: entity
   id: PowerCellMediumPrinted
@@ -163,13 +163,13 @@
       - map: [ "enum.PowerCellVisualLayers.Base" ]
         state: medium
       - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-        state: fo2medium # o2 Fire edit
+        state: fo2medium # o2 Scp edit
         shader: unshaded
         visible: false
   - type: Battery
     maxCharge: 720
     startingCharge: 0
-  # Fire edit start
+  # Scp edit start
   - type: GenericVisualizer
     visuals:
       enum.BatteryVisuals.State:
@@ -177,7 +177,7 @@
           Full: { visible: true, state: fo2medium }
           Neither: { visible: true, state: fo1medium }
           Empty: { visible: false }
-  # Fire edit end
+  # Scp edit end
 
 - type: entity
   name: high-capacity power cell
@@ -191,12 +191,12 @@
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: high
     - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-      state: fo2high # o2 Fire edit
+      state: fo2high # o2 Scp edit
       shader: unshaded
   - type: Battery
     maxCharge: 1080
     startingCharge: 1080
-  # Fire edit start
+  # Scp edit start
   - type: GenericVisualizer
     visuals:
       enum.BatteryVisuals.State:
@@ -204,7 +204,7 @@
           Full: { visible: true, state: fo2high }
           Neither: { visible: true, state: fo1high }
           Empty: { visible: false }
-  # Fire edit end
+  # Scp edit end
 
 - type: entity
   id: PowerCellHighPrinted
@@ -216,13 +216,13 @@
       - map: [ "enum.PowerCellVisualLayers.Base" ]
         state: high
       - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-        state: fo2high # o2 Fire edit
+        state: fo2high # o2 Scp edit
         shader: unshaded
         visible: false
   - type: Battery
     maxCharge: 1080
     startingCharge: 0
-  # Fire edit start
+  # Scp edit start
   - type: GenericVisualizer
     visuals:
       enum.BatteryVisuals.State:
@@ -230,7 +230,7 @@
           Full: { visible: true, state: fo2high }
           Neither: { visible: true, state: fo1high }
           Empty: { visible: false }
-  # Fire edit end
+  # Scp edit end
 
 - type: entity
   name: hyper-capacity power cell
@@ -244,12 +244,12 @@
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: hyper
     - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-      state: fo2high # o2 Fire edit
+      state: fo2high # o2 Scp edit
       shader: unshaded
   - type: Battery
     maxCharge: 1800
     startingCharge: 1800
-  # Fire edit start
+  # Scp edit start
   - type: GenericVisualizer
     visuals:
       enum.BatteryVisuals.State:
@@ -257,7 +257,7 @@
           Full: { visible: true, state: fo2high }
           Neither: { visible: true, state: fo1high }
           Empty: { visible: false }
-  # Fire edit end
+  # Scp edit end
 
 - type: entity
   id: PowerCellHyperPrinted
@@ -269,13 +269,13 @@
       - map: [ "enum.PowerCellVisualLayers.Base" ]
         state: hyper
       - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-        state: fo2high # o2 Fire edit
+        state: fo2high # o2 Scp edit
         shader: unshaded
         visible: false
   - type: Battery
     maxCharge: 1800
     startingCharge: 0
-  # Fire edit start
+  # Scp edit start
   - type: GenericVisualizer
     visuals:
       enum.BatteryVisuals.State:
@@ -283,7 +283,7 @@
           Full: { visible: true, state: fo2high }
           Neither: { visible: true, state: fo1high }
           Empty: { visible: false }
-  # Fire edit end
+  # Scp edit end
 
 - type: entity
   parent: BasePowerCell
@@ -297,14 +297,14 @@
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: microreactor
     - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-      state: fo2microreactor # o2 Fire edit
+      state: fo2microreactor # o2 Scp edit
       shader: unshaded
   - type: Battery
     maxCharge: 720
     startingCharge: 720
   - type: BatterySelfRecharger
     autoRechargeRate: 12 # takes 1 minute to charge itself back to full
-  # Fire edit start
+  # Scp edit start
   - type: GenericVisualizer
     visuals:
       enum.BatteryVisuals.State:
@@ -312,7 +312,7 @@
           Full: { visible: true, state: fo2microreactor }
           Neither: { visible: true, state: fo1microreactor }
           Empty: { visible: false }
-  # Fire edit end
+  # Scp edit end
 
 - type: entity
   parent: PowerCellMicroreactor
@@ -324,12 +324,12 @@
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: microreactor
     - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-      state: fo2microreactor # o2 Fire edit
+      state: fo2microreactor # o2 Scp edit
       shader: unshaded
       visible: false
   - type: Battery
     startingCharge: 0
-  # Fire edit start
+  # Scp edit start
   - type: GenericVisualizer
     visuals:
       enum.BatteryVisuals.State:
@@ -337,7 +337,7 @@
           Full: { visible: true, state: fo2microreactor }
           Neither: { visible: true, state: fo1microreactor }
           Empty: { visible: false }
-  # Fire edit end
+  # Scp edit end
 
 - type: entity
   name: antique power cell prototype

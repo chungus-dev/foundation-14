@@ -5,11 +5,11 @@
   name: railing
   description: Basic railing meant to protect idiots like you from falling.
   components:
-  # Fire added start
+  # Scp added start
   - type: Tag
     tags:
     - Scp173DestroyOnCollide
-  # Fire added end
+  # Scp added end
   - type: Sprite
     drawdepth: SmallObjects
     sprite: _Starlight/Structures/Walls/railing.rsi # Scp edit

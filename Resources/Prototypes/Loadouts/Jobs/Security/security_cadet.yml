@@ -12,7 +12,7 @@
 - type: loadoutEffectGroup
   id: MasterCadet5h
   effects:
-  # Fire edit start
+  # Scp edit start
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
@@ -23,12 +23,12 @@
       !type:DepartmentTimeRequirement
       department: ExternalAdministrativeZoneSecurityService
       time: 9000 #2.5 hrs
-  # Fire edit end
+  # Scp edit end
 
 - type: loadoutEffectGroup
   id: MasterCadet10h
   effects:
-  # Fire edit start
+  # Scp edit start
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
@@ -39,12 +39,12 @@
       !type:DepartmentTimeRequirement
       department: ExternalAdministrativeZoneSecurityService
       time: 18000 #5 hrs
-  # Fire edit end
+  # Scp edit end
 
 - type: loadoutEffectGroup
   id: MasterCadet20h
   effects:
-  # Fire edit start
+  # Scp edit start
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
@@ -55,5 +55,5 @@
       !type:DepartmentTimeRequirement
       department: ExternalAdministrativeZoneSecurityService
       time: 36000 #10 hrs
-  # Fire edit end
+  # Scp edit end
 

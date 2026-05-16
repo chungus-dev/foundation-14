@@ -86,10 +86,10 @@ public sealed class HandTeleporterSystem : EntitySystem
 
         var xform = Transform(user);
 
-        // Fire edit start - запрет телепортов в карманном измерении
+        // Scp edit start - запрет телепортов в карманном измерении
         if (HasComp<Scp106BackRoomMapComponent>(xform.MapUid))
             return;
-        // Fire edit end
+        // Scp edit end
 
         // Create the first portal.
         if (Deleted(component.FirstPortal) && Deleted(component.SecondPortal))

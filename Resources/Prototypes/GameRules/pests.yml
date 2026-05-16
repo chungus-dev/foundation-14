@@ -23,8 +23,8 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    #startAnnouncement: station-event-vent-creatures-start-announcement Fire edit
-#    startAudio: Fire edit
+    #startAnnouncement: station-event-vent-creatures-start-announcement Scp edit
+#    startAudio: Scp edit
 #      path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
@@ -72,8 +72,8 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    #startAnnouncement: station-event-vent-creatures-start-announcement Fire edit
-#    startAudio: Fire edit
+    #startAnnouncement: station-event-vent-creatures-start-announcement Scp edit
+#    startAudio: Scp edit
 #      path: /Audio/Announcements/attention.ogg
     weight: 6
     duration: 50
@@ -91,7 +91,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    #startAnnouncement: station-event-vent-creatures-start-announcement Fire edit
+    #startAnnouncement: station-event-vent-creatures-start-announcement Scp edit
 #    startAudio:
 #      path: /Audio/Announcements/attention.ogg
     weight: 6

@@ -127,13 +127,13 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
             volume = MathF.Max(MinVolume, volume);
             _audio.SetVolume(stream, volume, component);
 
-            // Fire edit start - раньше тут использовались методы, которые НЕ работают на клиенте. Я поменял
+            // Scp edit start - раньше тут использовались методы, которые НЕ работают на клиенте. Я поменял
             if (component.Volume.Equals(MinVolume))
             {
                 PredictedDel(stream);
                 _fadeToRemove.Add(stream);
             }
-            // Fire edit end
+            // Scp edit end
         }
 
         foreach (var stream in _fadeToRemove)

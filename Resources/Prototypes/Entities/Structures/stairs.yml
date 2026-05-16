@@ -99,7 +99,7 @@
 
 - type: entity
   id: StairWood
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: Stairs
   suffix: Wood
   components:
@@ -110,7 +110,7 @@
 
 - type: entity
   id: StairStageWood
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: Stairs
   suffix: Wood, stage
   components:

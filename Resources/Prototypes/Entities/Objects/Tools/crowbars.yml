@@ -41,7 +41,7 @@
   - type: Item
     sprite: Objects/Tools/crowbar.rsi
     size: Small
-  # Fire edit start - исследования сцп
+  # Scp edit start - исследования сцп
   - type: ScpInteractTool
     delay: 30
     cooldown: 600 # 5 минут
@@ -56,7 +56,7 @@
   - type: GuideHelp
     guides:
     - ScpResearchAdvanced
-  # Fire edit end
+  # Scp edit end
 
 # Standard (grey) Crowbar
 - type: entity

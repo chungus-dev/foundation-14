@@ -41,7 +41,7 @@ public partial class SharedInteractionSystem
 
     private void OnMoveAttempt(EntityUid uid, BlockMovementComponent component, UpdateCanMoveEvent args)
     {
-        // Fire edit start - do not let a blocker cancel its own shutdown refresh
+        // Scp edit start - do not let a blocker cancel its own shutdown refresh
         if (component.LifeStage > ComponentLifeStage.Running)
             return;
 
@@ -50,7 +50,7 @@ public partial class SharedInteractionSystem
             return;
 
         args.Cancel(); // no more scurrying around
-        // Fire edit end
+        // Scp edit end
     }
 
     private void CancellableInteractEvent(EntityUid uid, BlockMovementComponent component, CancellableEntityEventArgs args)

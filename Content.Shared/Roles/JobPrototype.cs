@@ -154,10 +154,10 @@ namespace Content.Shared.Roles
         [DataField]
         public List<ProtoId<GuideEntryPrototype>>? Guides;
 
-        // Fire added start
+        // Scp added start
         [DataField]
         public bool AlwaysShowInBanPanel;
-        // Fire added end
+        // Scp added end
     }
 
     /// <summary>

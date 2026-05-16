@@ -1017,7 +1017,7 @@ namespace Content.Shared.Chemistry.Components
             ValidateSolution();
         }
 
-        // Fire added start
+        // Scp added start
         public double GetAbsorbCooldown(IPrototypeManager protoMan)
         {
             var total = 0d;
@@ -1029,6 +1029,6 @@ namespace Content.Shared.Chemistry.Components
 
             return total;
         }
-        // Fire added end
+        // Scp added end
     }
 }

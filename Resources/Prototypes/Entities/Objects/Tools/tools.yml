@@ -50,11 +50,11 @@
   id: Screwdriver
   description: Industrial grade torque in a small screwdriving package.
   components:
-  # Fire added start
+  # Scp added start
   - type: BloodSplatterer
     probability: 0.2
     bloodLineProbability: 0.05
-  # Fire added end
+  # Scp added end
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/screwdriver_drop.ogg
@@ -323,12 +323,12 @@
     - HVCable
     - CableTerminal
     - Deconstruct
-    # Fire edit start
+    # Scp edit start
     #- TripleGlassAirlockBasic
     #- TripleGlassAirlock
     - ScpDoubleGlassAirlock
     - ScpDoubleGlassAirlockBasic
-    # Fire edit end
+    # Scp edit end
   - type: LimitedCharges
     maxCharges: 30
   - type: Sprite

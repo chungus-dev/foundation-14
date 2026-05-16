@@ -64,7 +64,7 @@
     boardName: wires-board-name-airalarm
     layoutId: AirAlarm
   - type: AccessReader
-    access: [["LifeSupport"]] # Fire edit
+    access: [["LifeSupport"]] # Scp edit
   - type: ContainerFill
     containers:
       board: [ AirAlarmElectronics ]

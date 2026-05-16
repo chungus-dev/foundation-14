@@ -81,6 +81,6 @@ public sealed class RandomSentienceRule : StationEventSystem<RandomSentienceRule
             ),
             colorOverride: Color.Gold
         );
-        // Fire edit - убрал отмену проигрывания дефолтного звука
+        // Scp edit - убрал отмену проигрывания дефолтного звука
     }
 }

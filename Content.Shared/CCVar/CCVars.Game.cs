@@ -33,7 +33,7 @@ public sealed partial class CCVars
     ///     Controls the default game preset.
     /// </summary>
     public static readonly CVarDef<string>
-        GameLobbyDefaultPreset = CVarDef.Create("game.defaultpreset", "secret", CVar.ARCHIVE); // Fire edit
+        GameLobbyDefaultPreset = CVarDef.Create("game.defaultpreset", "secret", CVar.ARCHIVE); // Scp edit
 
     /// <summary>
     ///     Controls if the game can force a different preset if the current preset's criteria are not met.
@@ -45,7 +45,7 @@ public sealed partial class CCVars
     ///     The preset for the game to fall back to if the selected preset could not be used, and fallback is enabled.
     /// </summary>
     public static readonly CVarDef<string>
-        GameLobbyFallbackPreset = CVarDef.Create("game.fallbackpreset", "Euclid", CVar.ARCHIVE); // Fire edit
+        GameLobbyFallbackPreset = CVarDef.Create("game.fallbackpreset", "Euclid", CVar.ARCHIVE); // Scp edit
 
     /// <summary>
     ///     Controls if people can win the game in Suspicion or Deathmatch.
@@ -88,7 +88,7 @@ public sealed partial class CCVars
         ///     Prototype to use for map pool.
         /// </summary>
         public static readonly CVarDef<string>
-            GameMapPool = CVarDef.Create("game.map_pool", "FireStationMapPool", CVar.SERVERONLY); // Fire-Station-Edit
+            GameMapPool = CVarDef.Create("game.map_pool", "FireStationMapPool", CVar.SERVERONLY); // Scp edit
 
     /// <summary>
     ///     The depth of the queue used to calculate which map is next in rotation.
@@ -360,13 +360,13 @@ public sealed partial class CCVars
     ///     The prototype to use for secret weights.
     /// </summary>
     public static readonly CVarDef<string> SecretWeightPrototype =
-        CVarDef.Create("game.secret_weight_prototype", "ScpSecret", CVar.SERVERONLY); // Fire edit
+        CVarDef.Create("game.secret_weight_prototype", "ScpSecret", CVar.SERVERONLY); // Scp edit
 
     /// <summary>
     ///     The id of the sound collection to randomly choose a sound from and play when the round ends.
     /// </summary>
     public static readonly CVarDef<string> RoundEndSoundCollection =
-        CVarDef.Create("game.round_end_sound_collection", "FireRoundEnd", CVar.SERVERONLY); // Fire-Edit
+        CVarDef.Create("game.round_end_sound_collection", "FireRoundEnd", CVar.SERVERONLY); // Scp edit
 
     /// <summary>
     ///     Whether or not to add every player as a global override to PVS at round end.

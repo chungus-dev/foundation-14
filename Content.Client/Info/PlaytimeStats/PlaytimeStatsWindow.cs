@@ -15,10 +15,10 @@ public sealed partial class PlaytimeStatsWindow : FancyWindow
     [Dependency] private readonly JobRequirementsManager _jobRequirementsManager = default!;
     private ISawmill _sawmill = Logger.GetSawmill("PlaytimeStatsWindow");
 
-    // Fire edit start
+    // Scp edit start
     private readonly Color _altColor = ScpPalettes.PanelDarker;
     private readonly Color _defaultColor = ScpPalettes.PanelDark;
-    // Fire edit end
+    // Scp edit end
 
     private bool _useAltColor;
 

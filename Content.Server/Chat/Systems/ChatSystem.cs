@@ -779,7 +779,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var msg = message;
 
-        // Fire edit: leave message text unchanged.
+        // Scp edit: leave message text unchanged.
 
         return msg;
     }

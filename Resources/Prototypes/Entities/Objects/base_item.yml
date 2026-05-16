@@ -3,9 +3,9 @@
   id: BaseItem
   abstract: true
   components:
-  # Fire added start
+  # Scp added start
   - type: FieldOfViewOccludable
-  # Fire added end
+  # Scp added end
   - type: Item
     size: Small
   - type: Animateable

@@ -23,9 +23,9 @@
   id: AllPlushiesTable
   table: !type:GroupSelector
     children:
-    # Fire edit start
+    # Scp edit start
     - id: PlushieScp999
-    # Fire edit end
+    # Scp edit end
     - !type:NestedSelector
       tableId: AllLizardPlushieTable
     - id: PlushieNuke
@@ -395,7 +395,7 @@
   id: ToySpawner90
   name: Toy Spawner
   suffix: 90
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:
@@ -412,7 +412,7 @@
   id: PlushieSpawner50
   name: Plushie Spawner
   suffix: 50
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:
@@ -429,7 +429,7 @@
   id: SpacemenFigurineSpawner90
   name: Spacemen Minifigure Spawner
   suffix: 90
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:
@@ -446,7 +446,7 @@
   id: MechFigurineSpawner50
   name: Mech Figurine Spawner
   suffix: 50
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:
@@ -463,7 +463,7 @@
   id: ToyWeaponSpawner90
   name: Toy Weapon Spawner
   suffix: 90
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:
@@ -496,7 +496,7 @@
   id: MiscToySpawner90
   name: Miscellaneous Toy Spawner
   suffix: 90
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:
@@ -513,7 +513,7 @@
   id: ToySoundMakerSpawner90
   name: Toy Sound Maker Spawner
   suffix: 90
-  categories: [ HideSpawnMenu ] # Fire edit
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:
