@@ -8808,7 +8808,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
   - uid: 471
     components:
@@ -8821,7 +8820,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
 - proto: APCBasic
   entities:
@@ -9874,7 +9872,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
   - uid: 629
     components:
@@ -38678,7 +38675,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
 - proto: CleanerDispenser
   entities:
@@ -89380,7 +89376,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
 - proto: PsychBed
   entities:
@@ -98487,7 +98482,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
   - uid: 6648
     components:
@@ -98504,7 +98498,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
   - uid: 6649
     components:
@@ -98517,7 +98510,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
   - uid: 6650
     components:
@@ -98530,7 +98522,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
 - proto: ScpComputerSurveillanceCameraMonitor
   entities:
@@ -104622,7 +104613,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
 - proto: ScpTintedWindow
   entities:
@@ -136389,7 +136379,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
   - uid: 21512
     components:
@@ -136402,7 +136391,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
 - proto: SeedExtractor
   entities:
@@ -143068,7 +143056,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-      - Biochemical
       - SCP
 - proto: VendingMachineAmmo
   entities:
