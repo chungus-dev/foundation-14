@@ -3,11 +3,13 @@
   id: ClothingBackpackSatchelLeatherEthicsCommitteeFilled
   categories: [ HideSpawnMenu ]
   components:
-  - type: StorageFill
-    contents:
-    - id: RubberStampEthicsCommittee
-    - id: FlippoEngravedLighter
-    - id: PenEthicsCommittee
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: RubberStampEthicsCommittee
+        - id: FlippoEngravedLighter
+        - id: PenEthicsCommittee
 
 - type: entity
   parent: PenCentcom

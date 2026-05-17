@@ -96,10 +96,12 @@
       - Recyclable
       - WhitelistChameleon
       requireAll: true
-  - type: StorageFill
-    contents:
-    - id: ClothingNeckShoulderPatchWhite
-    - id: ClothingNeckShoulderPatchRed
-    - id: ClothingNeckShoulderPatchBlue
-    - id: ClothingNeckShoulderPatchGreen
-    - id: ClothingNeckShoulderPatchYellow
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingNeckShoulderPatchWhite
+        - id: ClothingNeckShoulderPatchRed
+        - id: ClothingNeckShoulderPatchBlue
+        - id: ClothingNeckShoulderPatchGreen
+        - id: ClothingNeckShoulderPatchYellow

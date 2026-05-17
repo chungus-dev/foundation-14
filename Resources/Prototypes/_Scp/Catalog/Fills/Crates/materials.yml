@@ -4,9 +4,11 @@
   name: solid uranium crate
   description: 30 sheets of uranium.
   components:
-  - type: StorageFill
-    contents:
-      - id: SheetUranium
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: SheetUranium
   - type: AccessReader
     access: [["Research"], ["Command"], ["Engineering"]]
 
@@ -16,10 +18,12 @@
   name: diamond crate
   description: 3 diamond.
   components:
-  - type: StorageFill
-    contents:
-      - id: MaterialDiamond1
-        amount: 3
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: MaterialDiamond1
+          amount: 3
   - type: AccessReader
     access: [["Research"], ["Command"]]
 
@@ -29,7 +33,9 @@
   name: concrete crate
   description: 90 concrete.
   components:
-  - type: StorageFill
-    contents:
-      - id: MaterialConcrete
-        amount: 3
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: MaterialConcrete
+          amount: 3

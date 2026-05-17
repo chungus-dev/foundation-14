@@ -1,4 +1,3 @@
-
 - type: entity
   name: MTF base kit box
   parent: [BoxCardboard, BaseCentcommContraband]
@@ -13,19 +12,21 @@
   - type: Storage
     grid:
     - 0,0,4,3
-  - type: StorageFill
-    contents:
-    - id: DoubleEmergencyOxygenTankFilled
-    - id: PinpointerUniversal
-    - id: DrinkMREFlask
-    - id: FoodSnackNutribrick
-    - id: FireExtinguisherMini
-    - id: CombatMedipen
-      amount: 2
-    - id: Tourniquet
-      amount: 2
-    - id: HandHeldMassScanner
-    - id: FoodTinMRE
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: PinpointerUniversal
+        - id: DrinkMREFlask
+        - id: FoodSnackNutribrick
+        - id: FireExtinguisherMini
+        - id: CombatMedipen
+          amount: 2
+        - id: Tourniquet
+          amount: 2
+        - id: HandHeldMassScanner
+        - id: FoodTinMRE
 
 - type: entity
   name: MTF Leader kit box
@@ -41,17 +42,19 @@
   - type: Storage
     grid:
     - 0,0,4,3
-  - type: StorageFill
-    contents:
-    - id: PinpointerUniversal
-    - id: HandHeldMassScanner
-    - id: DoubleEmergencyOxygenTankFilled
-    - id: CombatMedipen
-      amount: 2
-    - id: Tourniquet
-      amount: 2
-    - id: FoodTinMRE
-    - id: DrinkMREFlask
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: PinpointerUniversal
+        - id: HandHeldMassScanner
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: CombatMedipen
+          amount: 2
+        - id: Tourniquet
+          amount: 2
+        - id: FoodTinMRE
+        - id: DrinkMREFlask
 
 - type: entity
   name: Ambuzol kit
@@ -63,11 +66,13 @@
     layers:
     - state: internals
     - state: syringe
-  - type: StorageFill
-    contents:
-    - id: PillAmbuzolPlus
-      amount: 3
-    - id: PillAmbuzol
-      amount: 4
-    - id: SyringeAmbuzol
-      amount: 2
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: PillAmbuzolPlus
+          amount: 3
+        - id: PillAmbuzol
+          amount: 4
+        - id: SyringeAmbuzol
+          amount: 2

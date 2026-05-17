@@ -142,10 +142,12 @@
   - type: Storage
     grid:
     - 0,0,8,3
-  - type: StorageFill
-    contents:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
 # Scp edit - disabled broken ported content.       - id: WeaponLightMachineGunMG60
-      - id: ClothingBeltMtfAmmoMG60
+        - id: ClothingBeltMtfAmmoMG60
 
 - type: entity
   parent: BaseMtfStorageCrateSpecWeapon
@@ -156,10 +158,12 @@
     grid:
     - 0,0,6,2
     - 0,3,3,6
-  - type: StorageFill
-    contents:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
 # Scp edit - disabled broken ported content.       - id: WeaponGrenadeLauncherGL70
-      - id: ClothingBeltMtfGrenadeGL70
+        - id: ClothingBeltMtfGrenadeGL70
 
 - type: entity
   parent: BaseMtfStorageCrateSpecWeapon
@@ -170,10 +174,12 @@
     grid:
     - 0,0,8,2
     - 0,3,3,6
-  - type: StorageFill
-    contents:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
 # Scp edit - disabled broken ported content.       - id: WeaponRifleBauer127
-      - id: ClothingBeltMtfAmmoBauer127
+        - id: ClothingBeltMtfAmmoBauer127
 
 - type: entity
   parent: BaseMtfStorageCrateWeapon
@@ -183,10 +189,12 @@
   - type: Storage
     grid:
     - 0,0,6,3
-  - type: StorageFill
-    contents:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
 # Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunMP5
-      - id: ClothingBeltMtfAmmoMP5
+        - id: ClothingBeltMtfAmmoMP5
 
 - type: entity
   parent: BaseMtfStorageCrateWeapon
@@ -196,10 +204,12 @@
   - type: Storage
     grid:
     - 0,0,6,3
-  - type: StorageFill
-    contents:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
 # Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunP90
-      - id: ClothingBeltMtfAmmoP90
+        - id: ClothingBeltMtfAmmoP90
 
 - type: entity
   parent: BaseMtfStorageCrateWeapon
@@ -210,11 +220,10 @@
     grid:
     - 0,0,8,2
     - 0,0,3,3
-  - type: StorageFill
-    contents:
-# Scp edit - disabled broken ported content.       - id: WeaponRifleFamas
-      - id: ClothingBeltMtfAmmoG36
-
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: ScpFillMtfStorageCrateRifleFamas
 - type: entity
   parent: BaseMtfStorageCrateWeapon
   id: MtfStorageCrateRifleG36
@@ -224,11 +233,10 @@
     grid:
     - 0,0,5,2
     - 0,3,3,6
-  - type: StorageFill
-    contents:
-# Scp edit - disabled broken ported content.       - id: WeaponRifleG36
-      - id: ClothingBeltMtfAmmoG36
-
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: ScpFillMtfStorageCrateRifleFamas
 - type: entity
   parent: BaseMtfStorageCrateWeapon
   id: MtfStorageCrateRifleAR18
@@ -238,11 +246,13 @@
     grid:
     - 0,0,8,2
     - 0,0,3,3
-  - type: StorageFill
-    contents:
-      # Scp edit - disabled broken ported content.
-      # - id: WeaponRifleAR18
-      - id: ClothingBeltMtfAmmoAR18
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        # Scp edit - disabled broken ported content.
+        # - id: WeaponRifleAR18
+        - id: ClothingBeltMtfAmmoAR18
 
 - type: entity
   parent: BaseMtfStorageCrateWeapon
@@ -253,11 +263,10 @@
     grid:
     - 0,0,8,0
     - 0,0,3,3
-  - type: StorageFill
-    contents:
-# Scp edit - disabled broken ported content.       - id: WeaponShotgunCombat
-      - id: ClothingBeltMtfAmmoShellShotgun
-
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: ScpFillMtfStorageCrateShotgunCombat
 - type: entity
   parent: BaseMtfStorageCrateWeapon
   id: MtfStorageCrateShotgunBulldog
@@ -267,10 +276,12 @@
     grid:
     - 0,0,7,1
     - 0,0,3,3
-  - type: StorageFill
-    contents:
-      - id: WeaponShotgunBulldog
-      - id: ClothingBeltMtfAmmoShellShotgunBulldog
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: WeaponShotgunBulldog
+        - id: ClothingBeltMtfAmmoShellShotgunBulldog
 
 - type: entity
   parent: BaseMtfStorageCrateWeapon
@@ -281,10 +292,12 @@
     grid:
     - 0,0,6,2
     - 0,3,3,6
-  - type: StorageFill
-    contents:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
 # Scp edit - disabled broken ported content.       - id: WeaponRifleBR64
-      - id: ClothingBeltMtfAmmoBR64
+        - id: ClothingBeltMtfAmmoBR64
 
 - type: entity
   parent: BaseMtfStorageCrateWeapon
@@ -295,11 +308,10 @@
     grid:
     - 0,0,8,0
     - 0,0,3,3
-  - type: StorageFill
-    contents:
-# Scp edit - disabled broken ported content.       - id: WeaponShotgunCycler
-      - id: ClothingBeltMtfAmmoShellShotgun
-
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: ScpFillMtfStorageCrateShotgunCombat
 - type: entity
   parent: BaseMtfStorageCrateSmallPistol
   id: MtfStorageCratePistolACP14
@@ -308,8 +320,10 @@
   - type: Storage
     grid:
     - 0,0,5,1
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponPistolACP14
 # Scp edit - disabled broken ported content.       - id: MagazineACP14
 #         amount: 3
@@ -323,8 +337,10 @@
   - type: Storage
     grid:
     - 0,0,5,1
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponPistolG22
 # Scp edit - disabled broken ported content.       - id: MagazineGlock22
 #         amount: 3
@@ -338,8 +354,10 @@
   - type: Storage
     grid:
     - 0,0,5,1
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponPistolVP78
 # Scp edit - disabled broken ported content.       - id: MagazinePistol40FMJ
 #         amount: 3
@@ -353,8 +371,10 @@
   - type: Storage
     grid:
     - 0,0,5,1
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponRevolverSpearhead
 # Scp edit - disabled broken ported content.       - id: SpeedLoaderMagnumSP
 #         amount: 3
@@ -368,11 +388,13 @@
   - type: Storage
     grid:
     - 0,0,5,1
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponRevolverSpearheadBlack
       # Scp edit - disabled broken ported content. - id: SpeedLoaderMagnumSP
-      # Scp edit - disabled broken ported content.   amount: 3
+      #         amount: 3
       # Scp edit - disabled broken ported content. - id: MagazineBoxMagnumSP
       # Scp edit - disabled broken ported content.
 # Остальное
@@ -384,8 +406,10 @@
   - type: Storage
     grid:
     - 0,0,4,1
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: GrenadeFragTimer
 #         amount: 5
 #
@@ -397,8 +421,10 @@
   - type: Storage
     grid:
     - 0,0,4,1
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: GrenadeBlastTimer
 #         amount: 5
 #
@@ -410,10 +436,12 @@
   - type: Storage
     grid:
     - 0,0,4,1
-  - type: StorageFill
-    contents:
-      - id: GrenadeFrag
-        amount: 5
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: GrenadeFrag
+          amount: 5
 
 - type: entity
   parent: BaseMtfStorageCrateSmallGranade
@@ -423,10 +451,12 @@
   - type: Storage
     grid:
     - 0,0,4,1
-  - type: StorageFill
-    contents:
-      - id: GrenadeBlast
-        amount: 5
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: GrenadeBlast
+          amount: 5
 
 - type: entity
   parent: BaseMtfStorageCrateSmallGranade
@@ -436,10 +466,12 @@
   - type: Storage
     grid:
     - 0,0,4,1
-  - type: StorageFill
-    contents:
-      - id: C4
-        amount: 5
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: C4
+          amount: 5
 
 # Коробки экипировки Э-11
 - type: entity
@@ -452,14 +484,16 @@
     - 0,0,11,3
     - 0,3,7,7
     - 7,3,8,5
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterArmorTacticalMed
-      - id: MtfTacticalBackpackMedFilled
-      - id: ClothingBeltMtfMedicalFilledMedic
-      - id: PouchMedical
-      - id: PouchAmmo
-      - id: ClothingEyesHudMedSec
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterArmorTacticalMed
+        - id: MtfTacticalBackpackMedFilled
+        - id: ClothingBeltMtfMedicalFilledMedic
+        - id: PouchMedical
+        - id: PouchAmmo
+        - id: ClothingEyesHudMedSec
 
 - type: entity
   id: MtfStorageCrateMedicalScoutNtf
@@ -471,14 +505,16 @@
     - 0,0,7,7
     - 8,0,10,2
     - 7,3,8,4
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterArmorScout
-      - id: MtfTacticalBackpackMedFilled
-      - id: ClothingBeltMtfMedicalFilledMedic
-      - id: PouchMedical
-      - id: PouchAmmo
-      - id: ClothingEyesHudMedSec
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterArmorScout
+        - id: MtfTacticalBackpackMedFilled
+        - id: ClothingBeltMtfMedicalFilledMedic
+        - id: PouchMedical
+        - id: PouchAmmo
+        - id: ClothingEyesHudMedSec
 
 - type: entity
   id: MtfStorageCrateArmorScoutNtf
@@ -489,13 +525,15 @@
     grid:
     - 0,0,7,7
     - 8,0,10,2
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterArmorScout
-      - id: MtfTacticalBackpackFilled
-      - id: ClothingBeltMtfSparePouch
-      - id: PouchDrop
-      - id: PouchAmmo
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterArmorScout
+        - id: MtfTacticalBackpackFilled
+        - id: ClothingBeltMtfSparePouch
+        - id: PouchDrop
+        - id: PouchAmmo
 
 - type: entity
   id: MtfStorageCrateArmorNtf
@@ -506,13 +544,15 @@
     grid:
     - 0,0,11,3
     - 0,3,7,7
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterArmorTactical
-      - id: MtfTacticalBackpackFilled
-      - id: ClothingBeltMtfSparePouch
-      - id: PouchDrop
-      - id: PouchAmmo
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterArmorTactical
+        - id: MtfTacticalBackpackFilled
+        - id: ClothingBeltMtfSparePouch
+        - id: PouchDrop
+        - id: PouchAmmo
 
 - type: entity
   id: MtfStorageCrateArmorMediumNtf
@@ -523,13 +563,15 @@
     grid:
     - 0,0,11,3
     - 0,3,7,7
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterArmorMedium
-      - id: MtfTacticalBackpackFilled
-      - id: ClothingBeltMtfSparePouch
-      - id: PouchDrop
-      - id: PouchAmmo
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterArmorMedium
+        - id: MtfTacticalBackpackFilled
+        - id: ClothingBeltMtfSparePouch
+        - id: PouchDrop
+        - id: PouchAmmo
 
 # Коробки экипировки Ню-7
 - type: entity
@@ -542,16 +584,18 @@
     - 0,0,11,3
     - 0,3,7,7
     - 7,3,10,5
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterArmorMilitary
-      - id: MtfTacticalBackpackMedFilled
-      - id: ClothingBeltMtfMedicalFilledMedic
-      - id: PouchMedical
-      - id: PouchAmmo
-      - id: ClothingMaskSecurityBalaklava
-      - id: ClothingMaskMtfMilitary
-      - id: ClothingEyesHudMedSec
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterArmorMilitary
+        - id: MtfTacticalBackpackMedFilled
+        - id: ClothingBeltMtfMedicalFilledMedic
+        - id: PouchMedical
+        - id: PouchAmmo
+        - id: ClothingMaskSecurityBalaklava
+        - id: ClothingMaskMtfMilitary
+        - id: ClothingEyesHudMedSec
 
 - type: entity
   id: MtfStorageCrateArmorHD
@@ -563,15 +607,17 @@
     - 0,0,11,3
     - 0,3,7,7
     - 7,3,9,5
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterArmorMilitary
-      - id: MtfTacticalBackpackFilled
-      - id: ClothingBeltMtfSparePouch
-      - id: PouchDrop
-      - id: PouchAmmo
-      - id: ClothingMaskSecurityBalaklava
-      - id: ClothingMaskMtfMilitary
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterArmorMilitary
+        - id: MtfTacticalBackpackFilled
+        - id: ClothingBeltMtfSparePouch
+        - id: PouchDrop
+        - id: PouchAmmo
+        - id: ClothingMaskSecurityBalaklava
+        - id: ClothingMaskMtfMilitary
 
 - type: entity
   id: MtfStorageCrateArmorHeavyHD
@@ -583,15 +629,17 @@
     - 0,0,11,3
     - 0,3,7,7
     - 7,3,9,5
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterArmorMilitaryHeavy
-      - id: MtfTacticalBackpackFilled
-      - id: ClothingBeltMtfSparePouch
-      - id: PouchDrop
-      - id: PouchAmmo
-      - id: ClothingMaskSecurityBalaklava
-      - id: ClothingMaskMtfMilitary
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterArmorMilitaryHeavy
+        - id: MtfTacticalBackpackFilled
+        - id: ClothingBeltMtfSparePouch
+        - id: PouchDrop
+        - id: PouchAmmo
+        - id: ClothingMaskSecurityBalaklava
+        - id: ClothingMaskMtfMilitary
 
 - type: entity
   id: MtfStorageCrateArmorHDLeader
@@ -603,13 +651,15 @@
     - 0,0,7,3
     - 0,3,3,7
     - 3,3,5,5
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterArmorMilitary
-      - id: PouchDrop
-      - id: PouchAmmo
-      - id: ClothingMaskSecurityBalaklava
-      - id: ClothingMaskMtfMilitary
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterArmorMilitary
+        - id: PouchDrop
+        - id: PouchAmmo
+        - id: ClothingMaskSecurityBalaklava
+        - id: ClothingMaskMtfMilitary
 
 - type: entity
   id: MtfStorageCrateArmorHeavyHDLeader
@@ -621,10 +671,28 @@
     - 0,0,7,3
     - 0,3,3,7
     - 3,3,5,5
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterArmorMilitaryHeavy
-      - id: PouchDrop
-      - id: PouchAmmo
-      - id: ClothingMaskSecurityBalaklava
-      - id: ClothingMaskMtfMilitary
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterArmorMilitaryHeavy
+        - id: PouchDrop
+        - id: PouchAmmo
+        - id: ClothingMaskSecurityBalaklava
+        - id: ClothingMaskMtfMilitary
+
+
+- type: entityTable
+  id: ScpFillMtfStorageCrateRifleFamas
+  table: !type:AllSelector
+    children:
+# Scp edit - disabled broken ported content.       - id: WeaponRifleFamas
+    - id: ClothingBeltMtfAmmoG36
+
+
+- type: entityTable
+  id: ScpFillMtfStorageCrateShotgunCombat
+  table: !type:AllSelector
+    children:
+# Scp edit - disabled broken ported content.       - id: WeaponShotgunCombat
+    - id: ClothingBeltMtfAmmoShellShotgun

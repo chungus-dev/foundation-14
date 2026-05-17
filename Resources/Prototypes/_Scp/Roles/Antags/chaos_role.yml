@@ -1,4 +1,4 @@
-﻿#дефиб ПХ медика
+#дефиб ПХ медика
 - type: entity
   parent: [DefibrillatorSyndicate, BaseChaosContraband]
   id: DefibrillatorChaos
@@ -26,14 +26,16 @@
   parent: ClothingBackpackChaos
   id: ClothingBackpackChaosFilled
   components:
-  - type: StorageFill
-    contents:
-    - id: Crowbar
-    - id: FlashlightLantern
-    - id: DrinkWaterBottleFull
-    - id: FoodSnackNutribrick
-      amount: 2
-    - id: Screwdriver
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Crowbar
+        - id: FlashlightLantern
+        - id: DrinkWaterBottleFull
+        - id: FoodSnackNutribrick
+          amount: 2
+        - id: Screwdriver
 
 #ремень ПХ (заполн)
 - type: entity

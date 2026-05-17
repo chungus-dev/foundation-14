@@ -23,14 +23,16 @@
       - PillCanister
       - Pen
       - SurgeryTool
-  - type: StorageFill
-    contents:
-    - id: BookScp049Diary
-    - id: LuxuryPen
-    - id: Hemostat
-    - id: Saw
-    - id: Drill
-    - id: Cautery
-    - id: Retractor
-    - id: Scalpel
-    - id: Scp049Contract
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BookScp049Diary
+        - id: LuxuryPen
+        - id: Hemostat
+        - id: Saw
+        - id: Drill
+        - id: Cautery
+        - id: Retractor
+        - id: Scalpel
+        - id: Scp049Contract

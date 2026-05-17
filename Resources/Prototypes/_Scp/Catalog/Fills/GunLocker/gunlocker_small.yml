@@ -4,8 +4,10 @@
   name: pistol safe
   suffix: Filled, Glock-22 Auto
   components:
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponPistolG22Auto
 #         amount: 6
 #
@@ -15,8 +17,10 @@
   name: pistol safe
   suffix: Filled, M1984
   components:
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponPistolM1984
 #         amount: 6
 #
@@ -26,7 +30,9 @@
   name: pistol safe
   suffix: Filled, ACP14
   components:
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponPistolACP14
 #         amount: 6

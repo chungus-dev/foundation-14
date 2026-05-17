@@ -19,21 +19,23 @@
   parent: ClothingBackpackDuffelMedical
   id: ClothingBackpackDuffelScpMedicalBundleFilled
   components:
-    - type: StorageFill
-      contents:
-        - id: DefibrillatorCompact
-        - id: MedkitCombatFilled
-          amount: 3
-        - id: Tourniquet
-          amount: 2
-        - id: CombatMedipen
-          amount: 4
-        - id: PunctAutoInjector
-          amount: 4
-        - id: PyraAutoInjector
-          amount: 4
-        - id: AirlossAutoInjector
-          amount: 4
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+          - id: DefibrillatorCompact
+          - id: MedkitCombatFilled
+            amount: 3
+          - id: Tourniquet
+            amount: 2
+          - id: CombatMedipen
+            amount: 4
+          - id: PunctAutoInjector
+            amount: 4
+          - id: PyraAutoInjector
+            amount: 4
+          - id: AirlossAutoInjector
+            amount: 4
 
 - type: entity
   parent: BaseImplantOnlyImplanter
@@ -54,10 +56,12 @@
   parent: BoxDeathRattleImplants
   id: BoxMTFImplants
   components:
-    - type: StorageFill
-      contents:
-        - id: DeathRattleImplanterMTF
-          amount: 6
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+          - id: DeathRattleImplanterMTF
+            amount: 6
 
 - type: entity
   parent: PowerCellHigh
@@ -67,9 +71,11 @@
   parent: ClothingBackpackDuffelSecurity
   id: ClothingBackpackDuffelMilitaryFilledLMG
   components:
-  - type: StorageFill
-    contents:
-    - id: WeaponLightMachineGunL6
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: WeaponLightMachineGunL6
 - type: entity
   parent: CrateCommandSecure
   id: CrateAdministrationSecure
@@ -91,11 +97,13 @@
   id: CrateAdministrationRecontainmentCircuitsBoards
   suffix: Filled
   components:
-    - type: StorageFill
-      contents:
-        - id: ScpDefaultCircuitBoard
-        - id: ScpMtfCircuitBoard
-        - id: Intellicard
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage: !type:AllSelector
+          children:
+          - id: ScpDefaultCircuitBoard
+          - id: ScpMtfCircuitBoard
+          - id: Intellicard
 
 - type: entity
   parent: CrateAdministrationSecure
@@ -104,10 +112,12 @@
   description: It contains a «Pandora» cage and a screwdriver. The perfect set to return SCP 173 to his cell!
   suffix: Filled
   components:
-  - type: StorageFill
-    contents:
-    - id: CrateScpCageScp173
-    - id: Screwdriver
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: CrateScpCageScp173
+        - id: Screwdriver
 
 # РАНДОМ ХУМАНОИДЫ ОБЩИЕ
 

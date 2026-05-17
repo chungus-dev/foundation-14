@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: Pill
   id: PillScp500
   suffix: SCP-500
@@ -29,10 +29,12 @@
   - type: Storage
     grid:
     - 0,0,4,9
-  - type: StorageFill
-    contents:
-    - id: PillScp500
-      amount: 47
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: PillScp500
+          amount: 47
   - type: GuideHelp
     guides:
     - ScpResearch

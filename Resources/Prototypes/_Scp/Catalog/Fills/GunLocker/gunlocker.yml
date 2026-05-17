@@ -18,8 +18,10 @@
     - state: locked
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponShotgunSPAS12
 #         amount: 4
 #
@@ -43,8 +45,10 @@
     - state: locked
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponShotgunRiot
 #         amount: 4
 #
@@ -68,8 +72,10 @@
     - state: locked
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunP90
 #         amount: 4
 #
@@ -93,8 +99,10 @@
     - state: locked
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunMP5
 #         amount: 4
 #
@@ -118,8 +126,10 @@
     - state: locked
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponSubMachineGunMP7
 #         amount: 4
 #
@@ -143,8 +153,10 @@
     - state: locked
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponRifleM16A4
 #         amount: 4
 #
@@ -168,8 +180,10 @@
     - state: locked
       map: ["enum.LockVisualLayers.Lock"]
       shader: unshaded
-  - type: StorageFill
-    contents: [] # Scp edit - broken ported entries disabled.
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children: [] # Scp edit - broken ported entries disabled.
 # Scp edit - disabled broken ported content.       - id: WeaponRifleG36
 #         amount: 4
 #

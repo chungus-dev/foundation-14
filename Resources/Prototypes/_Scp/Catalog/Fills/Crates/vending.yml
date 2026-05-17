@@ -4,9 +4,11 @@
   name: MegaSeed restock crate
   description: Contains a restock box for the MegaSeed vending machine.
   components:
-  - type: StorageFill
-    contents:
-      - id: VendingMachineRestockSeedsScpClassD
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: VendingMachineRestockSeedsScpClassD
 
 - type: entity
   id: CrateVendingMachineRestockNutriMaxScpClassDFilled
@@ -14,9 +16,11 @@
   name: NutriMax restock crate
   description: Contains a restock box for the NutriMax vending machine.
   components:
-  - type: StorageFill
-    contents:
-      - id: VendingMachineRestockNutriMaxScpClassD
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: VendingMachineRestockNutriMaxScpClassD
 
 - type: entity
   id: CrateVendingMachineRestockChefvendScpClassDFilled
@@ -24,9 +28,11 @@
   name: ChefVend restock crate
   description: Contains a restock box for the ChefVend.
   components:
-  - type: StorageFill
-    contents:
-      - id: VendingMachineRestockChefvendScpClassD
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: VendingMachineRestockChefvendScpClassD
 
 - type: entity
   id: CrateVendingMachineRestockDinnerwareScpClassDFilled
@@ -34,9 +40,11 @@
   name: Plasteel Chef restock crate
   description: Contains a restock box for the Plasteel Chef vending machine.
   components:
-  - type: StorageFill
-    contents:
-      - id: VendingMachineRestockDinnerwareScpClassD
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: VendingMachineRestockDinnerwareScpClassD
 
 - type: entity
   id: CrateVendingMachineRestockBoozeScpClassDFilled
@@ -44,6 +52,8 @@
   name: Booze-O-Mat restock crate
   description: Contains a restock box for the Booze-O-Mat.
   components:
-  - type: StorageFill
-    contents:
-      - id: VendingMachineRestockBoozeScpClassD
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: VendingMachineRestockBoozeScpClassD

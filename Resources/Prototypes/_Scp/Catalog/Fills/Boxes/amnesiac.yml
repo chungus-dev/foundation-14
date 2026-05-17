@@ -75,37 +75,45 @@
   id: BoxVialAmnesiacA
   suffix: Amnesiac A
   components:
-  - type: StorageFill
-    contents:
-      - id: ChemistryVialAmnesiacA
-        amount: 3
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ChemistryVialAmnesiacA
+          amount: 3
 
 - type: entity
   parent: BoxVialScpBaseSecure
   id: BoxVialAmnesiacB
   suffix: Amnesiac B
   components:
-  - type: StorageFill
-    contents:
-      - id: ChemistryVialAmnesiacB
-        amount: 3
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ChemistryVialAmnesiacB
+          amount: 3
 
 - type: entity
   parent: BoxVialScpBaseSecure
   id: BoxVialAmnesiacC
   suffix: Amnesiac C
   components:
-  - type: StorageFill
-    contents:
-      - id: ChemistryVialAmnesiacC
-        amount: 3
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ChemistryVialAmnesiacC
+          amount: 3
 
 - type: entity
   parent: BoxVialScpBaseSecure
   id: BoxVialAmnesiacD
   suffix: Amnesiac D
   components:
-  - type: StorageFill
-    contents:
-      - id: ChemistryVialAmnesiacD
-        amount: 3
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ChemistryVialAmnesiacD
+          amount: 3
