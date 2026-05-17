@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using Content.Server._Scp.Scp106.Components;
-using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Procedural;
 using Content.Shared._Scp.Scp106.Components;
@@ -9,8 +8,7 @@ using Content.Shared.Atmos.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Procedural;
-using Content.Shared.Tag;
+using Content.Shared.Whitelist;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Events;
@@ -25,7 +23,7 @@ public sealed class StairsSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly DungeonSystem _dungeon = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
@@ -80,7 +78,7 @@ public sealed class StairsSystem : EntitySystem
         Dirty(map, light);
 
         EnsureComp<MapAtmosphereComponent>(map);
-        EnsureComp<Scp106BackRoomMapComponent>(map);
+        var backroom = EnsureComp<Scp106BackRoomMapComponent>(map);
 
         _atmosphere.SetMapSpace(map, false);
 
@@ -94,7 +92,7 @@ public sealed class StairsSystem : EntitySystem
 
         var gridComp = EnsureComp<MapGridComponent>(map);
 
-        await _dungeon.GenerateDungeonAsync(_prototype.Index<DungeonConfigPrototype>("Backrooms"), map, gridComp, Vector2i.Zero, _random.Next());
+        await _dungeon.GenerateDungeonAsync(_prototype.Index(backroom.Dungeon), map, gridComp, Vector2i.Zero, _random.Next());
 
         return mapId;
     }
@@ -116,8 +114,8 @@ public sealed class StairsSystem : EntitySystem
 
     private (EntityUid, StaircaseComponent)? FindValidStairOnFloor(MapId mapId)
     {
-        var query = EntityQueryEnumerator<StaircaseComponent, TagComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var stair, out var tag, out var xform))
+        var query = EntityQueryEnumerator<StaircaseComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var stair, out var xform))
         {
             if (stair.LinkedStair != null)
                 continue;
@@ -125,7 +123,7 @@ public sealed class StairsSystem : EntitySystem
             if (xform.MapID != mapId)
                 continue;
 
-            if (!_tag.HasTag(tag, "UpStairs106"))
+            if (!_whitelist.CheckBoth(uid, stair.Blacklist, stair.Whitelist))
                 continue;
 
             return (uid, stair);

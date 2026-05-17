@@ -35,6 +35,7 @@ namespace Content.Server.Chat.Commands
             return;
             // Scp edit end
 
+            /*
             var minds = _e.System<SharedMindSystem>();
 
             // This check also proves mind not-null for at the end when the mob is ghosted.
@@ -60,6 +61,7 @@ namespace Content.Server.Chat.Commands
                 return;
 
             shell.WriteLine(Loc.GetString("ghost-command-denied"));
+            */
         }
     }
 }

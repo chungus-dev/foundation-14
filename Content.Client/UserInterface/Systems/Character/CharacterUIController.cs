@@ -3,7 +3,6 @@ using System.Numerics;
 using Content.Client._Scp.UI;
 using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
-using Content.Client.Mind;
 using Content.Client.Roles;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
@@ -43,7 +42,6 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
     [Dependency] private readonly ILocalizationManager _loc = default!;
     [UISystemDependency] private readonly EmployeeClassSystem _employeeClass = default!;
     [UISystemDependency] private readonly AccessLevelSystem _accessLevel = default!;
-    [UISystemDependency] private readonly MindSystem _mind = default!;
     [UISystemDependency] private readonly JobSystem _job = default!;
 
     public override void Initialize()

@@ -4,7 +4,6 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Interaction;
-using Content.Shared.Kitchen;
 using Content.Shared.Kitchen.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Audio;
@@ -13,14 +12,12 @@ using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Server.Jittering;
 using Content.Shared._Scp.Research.Misc;
-using Content.Shared.Chemistry.Reagent;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Content.Shared.Jittering;
 using Content.Shared.Power;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Components;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._Scp.Research.ReagentSynthesizer;
@@ -36,7 +33,6 @@ public sealed class ReagentSynthesizerSystem : EntitySystem
     [Dependency] private readonly AppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedEntityEffectsSystem _effects = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
     private readonly FixedPoint2 _requiredVolume = 30f;

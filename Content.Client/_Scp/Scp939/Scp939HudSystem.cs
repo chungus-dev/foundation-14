@@ -128,7 +128,7 @@ public sealed partial class Scp939HudSystem : EquipmentHudSystem<Scp939Component
     {
         foreach (var (ent, baseAlpha) in CachedBaseAlphas)
         {
-            if (!EntityManager.EntityExists(ent))
+            if (!Exists(ent))
                 continue;
 
             _sprite.SetColor(ent.AsNullable(), ent.Comp.Color.WithAlpha(baseAlpha));

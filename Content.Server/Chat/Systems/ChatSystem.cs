@@ -779,7 +779,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var msg = message;
 
-        // Scp edit: leave message text unchanged.
+        msg = _wordreplacement.ApplyReplacements(msg, ChatSanitize_Accent);
 
         return msg;
     }

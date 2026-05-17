@@ -1,15 +1,11 @@
-﻿using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using Content.Server.Explosion.EntitySystems;
-using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Server.GameObjects;
-using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Timer = Robust.Shared.Timing.Timer;
 
@@ -18,7 +14,6 @@ namespace Content.Server._Scp.Scp2398;
 public sealed class Scp2398System : EntitySystem
 {
     [Dependency] private readonly ExplosionSystem _explosion = default!;
-    [Dependency] private readonly PhysicsSystem _physics = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly MobStateSystem _mob = default!;
@@ -69,10 +64,5 @@ public sealed class Scp2398System : EntitySystem
             target,
             maxTileBreak: 0),
             CancellationToken.None);
-
-        // _mob.ChangeMobState(target, MobState.Dead);  // Оно должно гарантированно убивать цель
-
-        // Если надо будет - можно и гибать :)
-        // _body.GibBody(target);
     }
 }

@@ -18,7 +18,6 @@ namespace Content.Server._Scp.ComplexElevator;
 
 public sealed class ComplexElevatorSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly DoorSystem _doorSystem = default!;
@@ -140,7 +139,7 @@ public sealed class ComplexElevatorSystem : EntitySystem
     {
         if (!TryFindElevator(ent.Comp.ElevatorId, out var elevator))
             return;
-            
+
         HandleButtonPress(ent, elevator.Value);
         args.Handled = true;
     }

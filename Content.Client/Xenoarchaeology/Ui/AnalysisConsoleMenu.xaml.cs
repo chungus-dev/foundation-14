@@ -27,10 +27,6 @@ public sealed partial class AnalysisConsoleMenu : FancyWindow
     [Dependency] private readonly IResourceCache _resCache = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    // Scp edit start - ебучий вы случай, почему локаль не поддерживается в эффектах
-    [Dependency] private readonly ILocalizationManager _loc = default!;
-    // Scp edit end
-
     private readonly ArtifactAnalyzerSystem _artifactAnalyzer;
     private readonly XenoArtifactSystem _xenoArtifact;
     private readonly AudioSystem _audio;

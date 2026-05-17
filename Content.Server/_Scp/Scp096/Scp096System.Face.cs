@@ -6,7 +6,6 @@ using Content.Shared._Scp.Scp096.Main.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.EntitySystems;
 
 namespace Content.Server._Scp.Scp096;
 
@@ -14,7 +13,6 @@ public sealed partial class Scp096System
 {
     [Dependency] private readonly BloodSplatterSystem _bloodSplatter = default!;
     [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
 
     private static readonly Angle BloodAngle = Angle.FromDegrees(360f);
     private const float BloodRadians = (float)Math.PI * 2f;

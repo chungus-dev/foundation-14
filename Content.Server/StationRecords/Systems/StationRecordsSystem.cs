@@ -38,7 +38,7 @@ namespace Content.Server.StationRecords.Systems;
 /// </summary>
 public sealed class StationRecordsSystem : SharedStationRecordsSystem
 {
-    [Dependency] private readonly InventorySystem _inventory = default!;
+    // [Dependency] private readonly InventorySystem _inventory = default!; Scp edit
     [Dependency] private readonly StationRecordKeyStorageSystem _keyStorage = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IdCardSystem _idCard = default!;
