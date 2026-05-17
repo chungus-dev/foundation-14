@@ -10,7 +10,7 @@ import sys
 
 from .ai import AiConfig, OpenAICompatibleClient
 from .filesystem import read_text, write_text_if_changed
-from .fluent import FluentMessage, attributes, functions, message_map, normalize_fluent_text, parse_messages, rich_tags, strip_rich_tags, variables
+from .fluent import FluentMessage, attributes, functions, message_map, normalize_entity_message_style, normalize_fluent_text, parse_messages, rich_tags, strip_rich_tags, variables
 
 
 @dataclass(frozen=True)
@@ -321,7 +321,7 @@ def _parse_translation_response(
         if message_id not in expected:
             raise TranslationValidationError(f"AI returned unexpected message id: {message_id}")
 
-        text = item["text"].strip("\n")
+        text = normalize_entity_message_style(item["text"].strip("\n"))
         _validate_translated_message(expected[message_id], text)
         _validate_target_language(message_id, text, target_culture)
         result[message_id] = text
@@ -472,11 +472,28 @@ def _replace_messages(text: str, replacements: dict[str, str]) -> str:
 
     for message in sorted(messages.values(), key=lambda item: item.start):
         output.extend(lines[cursor:message.start])
-        output.extend((replacements.get(message.id) or message.text).splitlines())
+        replacement = replacements.get(message.id)
+        if replacement is None:
+            output.extend(message.text.splitlines())
+        else:
+            output.extend(replacement.splitlines())
+            output.extend(_trailing_blank_lines(message.lines))
         cursor = message.end
 
     output.extend(lines[cursor:])
     return "\n".join(output)
+
+
+def _trailing_blank_lines(lines: tuple[str, ...]) -> list[str]:
+    result: list[str] = []
+    for line in reversed(lines):
+        if line.strip():
+            break
+
+        result.append(line)
+
+    result.reverse()
+    return result
 
 
 def _progress_status(completed: int, total: int, active: tuple[Path, ...], root: Path) -> str:

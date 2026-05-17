@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import Counter
+from collections.abc import Callable
 from dataclasses import dataclass
 import re
 
@@ -74,11 +75,30 @@ def message_map(text: str) -> dict[str, FluentMessage]:
 
 
 def normalize_fluent_text(text: str) -> str:
-    stripped = text.replace("\r\n", "\n").strip("\n")
-    if not stripped.strip():
+    normalized = text.replace("\r\n", "\n")
+    lines = normalized.split("\n")
+    if normalized.endswith("\n"):
+        lines = lines[:-1]
+
+    lines = _trim_outer_blank_lines(lines)
+    if not any(line.strip() for line in lines):
         return ""
 
-    return "\n".join(escape_leading_multiline_markup_lines(stripped.split("\n"))) + "\n"
+    return "\n".join(escape_leading_multiline_markup_lines(lines)) + "\n"
+
+
+def _trim_outer_blank_lines(lines: list[str]) -> list[str]:
+    start = 0
+    while start < len(lines) and not lines[start].strip():
+        start += 1
+
+    end = len(lines)
+    while end > start and not lines[end - 1].strip():
+        end -= 1
+
+    leading = [""] if start > 0 else []
+    trailing = [""] if end < len(lines) else []
+    return leading + lines[start:end] + trailing
 
 
 def escape_leading_multiline_markup_lines(lines: list[str]) -> list[str]:
@@ -160,13 +180,13 @@ def render_pattern(prefix: str, value: str) -> list[str]:
 
 def render_entity_message(message_id: str, name: str | None, description: str | None, suffix: str | None) -> str:
     lines: list[str] = []
-    lines.extend(render_pattern(f"{message_id} =", name or ""))
+    lines.extend(render_pattern(f"{message_id} =", _entity_name(name or "")))
 
     if description:
-        lines.extend(render_pattern("  .desc =", description))
+        lines.extend(render_pattern("  .desc =", _capitalize_value(description)))
 
     if suffix:
-        lines.extend(render_pattern("  .suffix =", suffix))
+        lines.extend(render_pattern("  .suffix =", _capitalize_value(suffix)))
 
     return "\n".join(lines)
 
@@ -176,3 +196,51 @@ def escape_leading_multiline_markup(value: str) -> str:
         return value
 
     return "\n".join(escape_leading_markup_line(line) for line in value.split("\n"))
+
+
+def normalize_entity_message_style(text: str) -> str:
+    parsed = parse_messages(text)
+    if len(parsed) != 1 or not parsed[0].id.startswith("ent-"):
+        return text
+
+    lines = list(parsed[0].lines)
+    if lines:
+        lines[0] = _replace_assignment_value(lines[0], _entity_name)
+
+    for index, line in enumerate(lines):
+        if re.match(r"^\s+\.(?:desc|suffix)\s*=", line):
+            lines[index] = _replace_assignment_value(line, _capitalize_value)
+
+    return "\n".join(lines)
+
+
+def _replace_assignment_value(line: str, transform: Callable[[str], str]) -> str:
+    if "=" not in line:
+        return line
+
+    prefix, value = line.split("=", 1)
+    separator = " " if value.startswith(" ") else ""
+    stripped = value[1:] if value.startswith(" ") else value
+    return f"{prefix}={separator}{transform(stripped)}".rstrip()
+
+
+def _entity_name(value: str) -> str:
+    if _starts_with_fluent_syntax(value):
+        return value
+
+    return value.lower()
+
+
+def _capitalize_value(value: str) -> str:
+    if _starts_with_fluent_syntax(value):
+        return value
+
+    for index, char in enumerate(value):
+        if char.isalpha():
+            return value[:index] + char.upper() + value[index + 1:]
+
+    return value
+
+
+def _starts_with_fluent_syntax(value: str) -> bool:
+    return value.lstrip().startswith(("{", "["))

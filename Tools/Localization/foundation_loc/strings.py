@@ -148,15 +148,15 @@ def _messages_missing_from_locale(source_text: str, known_target_messages: set[s
     ]
 
 
-def _merge_missing_messages(target_text: str, missing: list[FluentMessage], relative: Path) -> str:
+def _merge_missing_messages(target_text: str, missing: list[FluentMessage], _relative: Path) -> str:
     output = target_text.rstrip("\n").splitlines()
     if output:
         output.append("")
         output.append("")
 
-    output.append(f"### Missing from {relative.as_posix()}")
     for message in missing:
-        output.append("")
+        if output and output[-1].strip():
+            output.append("")
         output.extend(message.lines)
 
     return "\n".join(output)
