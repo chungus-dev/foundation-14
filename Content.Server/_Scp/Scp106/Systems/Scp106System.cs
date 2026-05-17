@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server._Scp.Fear;
-using Content.Server._Sunrise.Helpers;
+using Content.Server._Scp.Utility.Helpers;
 using Content.Server.DoAfter;
 using Content.Server.GameTicking;
 using Content.Server.Gateway.Systems;
@@ -9,7 +9,6 @@ using Content.Server.Mind;
 using Content.Server.Store.Systems;
 using Content.Server.Stunnable;
 using Content.Shared._Scp.Fear;
-using Content.Shared._Scp.Other.BunkerMarker;
 using Content.Shared._Scp.Scp106;
 using Content.Shared._Scp.Scp106.Components;
 using Content.Shared._Scp.Scp106.Systems;
@@ -19,14 +18,11 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Physics;
 using Content.Shared.SSDIndicator;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
-using Robust.Shared.Physics;
-using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -38,7 +34,7 @@ public sealed partial class Scp106System : SharedScp106System
     [Dependency] private readonly StairsSystem _stairs = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly SunriseHelpersSystem _helpers = default!;
+    [Dependency] private readonly ScpHelpersSystem _helpers = default!;
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
@@ -172,9 +168,8 @@ public sealed partial class Scp106System : SharedScp106System
 
     private bool CheckHumansInBackrooms()
     {
-        var humansInBackrooms = CountHumansInBackrooms();
-
 #if !DEBUG && !TOOLS
+        var humansInBackrooms = CountHumansInBackrooms();
         if (humansInBackrooms < HumansInBackroomsRequiredToAscent)
             return false;
 #endif

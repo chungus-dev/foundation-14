@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
+using Content.Server._Scp.Utility.Helpers;
 using Content.Server.Doors.Systems;
 using Content.Server.Examine;
 using Content.Server.Explosion.EntitySystems;
@@ -9,7 +10,6 @@ using Content.Server.Ghost;
 using Content.Server.Interaction;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
-using Content.Shared._Scp.Helpers;
 using Content.Shared._Scp.Other.BunkerMarker;
 using Content.Shared._Scp.Other.DamageOnCollide;
 using Content.Shared._Scp.Proximity;
@@ -52,7 +52,7 @@ public sealed partial class Scp173System : SharedScp173System
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly AudioSystem _audio= default!;
     [Dependency] private readonly ExplosionSystem _explosion = default!;
-    [Dependency] private readonly ScpHelpers _helpers = default!;
+    [Dependency] private readonly ScpHelpersSystem _helpers = default!;
     [Dependency] private readonly ScpDamageOnCollideSystem _damageOnCollide = default!;
 
     private readonly SoundSpecifier _storageOpenSound = new SoundCollectionSpecifier("MetalBreak");

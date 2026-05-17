@@ -1,5 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
-using Content.Server._Sunrise.Helpers;
+using Content.Server._Scp.Utility.Helpers;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Mind;
@@ -21,7 +21,7 @@ public sealed class ScpAnnounceOnSpawnSystem : EntitySystem
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly SunriseHelpersSystem _helpers = default!;
+    [Dependency] private readonly ScpHelpersSystem _helpers = default!;
     [Dependency] private readonly JobSystem _job = default!;
     [Dependency] private readonly MindSystem _mind = default!;
 

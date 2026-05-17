@@ -1,10 +1,9 @@
 ﻿using System.Runtime.InteropServices;
 using Content.Server._Scp.Shaders.Highlighting;
-using Content.Shared._Scp.Blinking;
+using Content.Server._Scp.Utility.Helpers;
 using Content.Shared._Scp.Fear;
 using Content.Shared._Scp.Fear.Components;
 using Content.Shared._Scp.Fear.Components.Fears;
-using Content.Shared._Scp.Helpers;
 using Content.Shared._Scp.Watching;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
@@ -19,12 +18,8 @@ public sealed partial class FearSystem
 {
     [Dependency] private readonly HighlightSystem _highlight = default!;
     [Dependency] private readonly EyeWatchingSystem _watching = default!;
-    [Dependency] private readonly ScpHelpers _helpers = default!;
+    [Dependency] private readonly ScpHelpersSystem _helpers = default!;
     [Dependency] private readonly MobStateSystem _mob = default!;
-
-    private const string MoodSomeoneDiedOnMyEyes = "FearSomeoneDiedOnMyEyes";
-    private const string MoodHemophobicBleeding = "FearHemophobicBleeding";
-    private const string MoodHemophobicSeeBlood = "FearHemophobicSeeBlood";
 
     private static readonly TimeSpan HemophobiaCheckCooldown = TimeSpan.FromSeconds(0.5f);
     private TimeSpan _nextHemophobiaCheck = TimeSpan.Zero;
@@ -52,6 +47,7 @@ public sealed partial class FearSystem
         var toggleUsed = new ItemToggledEvent(false, activated, null);
         RaiseLocalEvent(ev.Target, ref toggleUsed);
 
+        /* Что-то сделать с теми, кто посмотрел. Хз что без муда
         // Если activated = true, значит человек умер.
         // Поэтому код ниже требует true, так как реализует логику для смерти.
         if (!activated)
@@ -60,15 +56,7 @@ public sealed partial class FearSystem
         using var realWatchers = ListPoolEntity<BlinkableComponent>.Rent();
         if (!_watching.TryGetWatchers(ev.Target, realWatchers.Value, flags: LookupFlags.Dynamic))
             return;
-
-        foreach (var uid in realWatchers.Value)
-        {
-            // Убийца не будет печалиться смерти убитого
-            if (uid.Owner == ev.Origin)
-                continue;
-
-            AddNegativeMoodEffect(uid, MoodSomeoneDiedOnMyEyes);
-        }
+        */
     }
 
     /// <summary>
@@ -100,7 +88,6 @@ public sealed partial class FearSystem
                 continue;
 
             _highlight.NetHighlightAll(CollectionsMarshal.AsSpan(_hemophobiaBloodList), uid);
-            AddNegativeMoodEffect(uid, MoodHemophobicSeeBlood);
         }
 
         _nextHemophobiaCheck = _timing.CurTime + HemophobiaCheckCooldown;

@@ -2,7 +2,7 @@
 using JetBrains.Annotations;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._Sunrise.Random;
+namespace Content.Shared._Scp.Utility.Random;
 
 public sealed partial class RandomPredictedSystem
 {

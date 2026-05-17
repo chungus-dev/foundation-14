@@ -89,14 +89,8 @@ public abstract partial class SharedFearSystem
         activeCloseFear ??= EnsureComp<ActiveCloseFearComponent>(ent);
         var sourceChanged = hadActive && activeCloseFear.Source != proximity.Comp.Receiver;
 
-        if (!hadActive)
-        {
-            AddNegativeMoodEffect(ent, MoodSourceClose);
-        }
-        else if (sourceChanged)
-        {
-            RemoveSoundEffects(ent.Owner);
-        }
+        if (sourceChanged)
+            RemoveSoundEffects(ent);
 
         activeCloseFear.Source = proximity.Comp.Receiver;
 
@@ -139,6 +133,5 @@ public abstract partial class SharedFearSystem
         SetFearBasedShaderStrength(ent);
 
         RemoveSoundEffects(ent.Owner);
-        RemoveCloseFearMood(ent.Owner);
     }
 }

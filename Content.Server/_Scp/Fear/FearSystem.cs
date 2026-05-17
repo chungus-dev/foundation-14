@@ -3,7 +3,6 @@ using Content.Shared._Scp.Fear.Components;
 using Content.Shared._Scp.Fear.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Rejuvenate;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Scp.Fear;
@@ -90,24 +89,6 @@ public sealed partial class FearSystem : SharedFearSystem
             return false;
 
         return true;
-    }
-
-    protected override void OnShutdown(Entity<FearComponent> ent, ref ComponentShutdown args)
-    {
-        base.OnShutdown(ent, ref args);
-
-        RemoveMoodEffects(ent);
-    }
-
-    protected override void OnRejuvenate(Entity<FearComponent> ent, ref RejuvenateEvent args)
-    {
-        base.OnRejuvenate(ent, ref args);
-
-        RemoveMoodEffects(ent);
-    }
-
-    private void RemoveMoodEffects(EntityUid uid)
-    {
     }
 
     private void OnCleanUp(RoundRestartCleanupEvent args)

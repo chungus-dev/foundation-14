@@ -3,7 +3,7 @@ using Content.Server._Scp.Misc;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
-using Content.Shared._Sunrise.Helpers;
+using Content.Shared._Scp.Utility.Extensions;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;

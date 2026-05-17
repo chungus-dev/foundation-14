@@ -1,4 +1,4 @@
-﻿using Content.Shared._Scp.Helpers;
+﻿using Content.Shared._Scp.Utility.Extensions;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._Scp.Shaders.Grain;

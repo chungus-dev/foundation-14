@@ -1,4 +1,4 @@
-﻿using Content.Server._Sunrise.Helpers;
+﻿using Content.Server._Scp.Utility.Helpers;
 using Content.Server.Chat.Systems;
 using Content.Shared._Scp.Scp106.Components;
 using Content.Shared._Scp.Scp106.Containment;
@@ -20,7 +20,7 @@ public sealed class Scp106ContainmentSystem : SharedScp106ContainmentSystem
     [Dependency] private readonly MobStateSystem _mobState  = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly GibbingSystem _gibbing = default!;
-    [Dependency] private readonly SunriseHelpersSystem _helpers  = default!;
+    [Dependency] private readonly ScpHelpersSystem _helpers  = default!;
 
     private static readonly SoundSpecifier ContainSound = new SoundPathSpecifier("/Audio/_Scp/scp106_contained_sound.ogg");
 

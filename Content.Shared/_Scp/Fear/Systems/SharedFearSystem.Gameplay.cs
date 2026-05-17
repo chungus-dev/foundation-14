@@ -1,6 +1,6 @@
 ﻿using Content.Shared._Scp.Fear.Components;
+using Content.Shared._Scp.Utility.Random;
 using Content.Shared._Scp.Weapons.Ranged;
-using Content.Shared._Sunrise.Random;
 using Content.Shared.Drunk;
 using Content.Shared.Jittering;
 using Content.Shared.Standing;
@@ -24,15 +24,7 @@ public abstract partial class SharedFearSystem
     private const float MinimumAlcoholModifier = 1f;
     private const float MaximumAlcoholModifier = 4f;
 
-    private static readonly EntProtoId DrunkStatusEffect = "StatusEffectDrunk";
     private static readonly EntProtoId AdrenalineStatusEffect = "StatusEffectFearAdrenaline";
-
-    private static readonly Dictionary<FearState, string> FearMoodStates = new()
-    {
-        { FearState.Anxiety, "FearStateAnxiety" },
-        { FearState.Fear, "FearStateFear" },
-        { FearState.Terror, "FearStateTerror" },
-    };
 
     private void InitializeGameplay()
     {
@@ -121,36 +113,6 @@ public abstract partial class SharedFearSystem
         var time = TimeSpan.FromSeconds(ent.Comp.AdrenalineBaseTime * modifier);
 
         _effects.TryAddStatusEffectDuration(ent, AdrenalineStatusEffect, time);
-    }
-
-    /// <summary>
-    /// Выставляет модификаторы настроения, зависящие от уровня страха
-    /// </summary>
-    private void ManageStateBasedMood(Entity<FearComponent> ent)
-    {
-        if (ent.Comp.State == FearState.None)
-            WipeMood(ent);
-
-        if (!FearMoodStates.TryGetValue(ent.Comp.State, out var moodEffect))
-            return;
-
-        AddNegativeMoodEffect(ent, moodEffect);
-    }
-
-    /// <summary>
-    /// Убирает все стандартные модификаторы настроения, зависящие от уровня страха.
-    /// </summary>
-    /// <param name="uid"></param>
-    private void WipeMood(EntityUid uid)
-    {
-    }
-
-    /// <summary>
-    /// Вызывает эффект негативного влияния на настроение.
-    /// Сила эффекта зависит от уровня алкоголя в крови сущности, алкоголь делает негативные эффекты слабее
-    /// </summary>
-    protected void AddNegativeMoodEffect(EntityUid uid, string effect)
-    {
     }
 
     /// <summary>

@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Scp.Mobs.Components;
 using Content.Shared._Scp.SafeTime;
-using Content.Shared._Sunrise.Random;
+using Content.Shared._Scp.Utility.Random;
 using Content.Shared.Actions;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;

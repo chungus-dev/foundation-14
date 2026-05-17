@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using Content.Server._Sunrise.Helpers;
+using Content.Server._Scp.Utility.Helpers;
 using Content.Server.Station.Systems;
 using Content.Server.StationEvents.Events;
 using Content.Shared._Scp.Other.AirlockManEater;
-using Content.Shared._Sunrise.Helpers;
+using Content.Shared._Scp.Utility.Extensions;
 using Content.Shared.Doors.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Tag;
@@ -15,7 +15,7 @@ namespace Content.Server._Scp.GameTicking.Rules.AirlockManEater;
 public sealed class AirlockManEaterRule : StationEventSystem<AirlockManEaterRuleComponent>
 {
     [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly SunriseHelpersSystem _helpers = default!;
+    [Dependency] private readonly ScpHelpersSystem _helpers = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 

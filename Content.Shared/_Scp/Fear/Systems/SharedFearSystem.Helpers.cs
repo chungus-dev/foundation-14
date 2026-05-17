@@ -1,6 +1,7 @@
 ﻿using Content.Shared._Scp.Fear.Components;
 using Content.Shared._Scp.Helpers;
 using Content.Shared._Scp.Shaders;
+using Content.Shared._Scp.Utility.Extensions;
 
 namespace Content.Shared._Scp.Fear.Systems;
 

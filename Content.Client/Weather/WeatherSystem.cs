@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Utility.Helpers;
 using Content.Shared.Light.Components;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.Weather;
@@ -132,7 +132,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
                     var delta = nodePosition - entPos.Position;
                     var distance = delta.Length();
                     occlusion = _audio.GetOcclusion(entPos, delta, distance);
-                    additionalVolume = ScpHelpers.SmoothVolumeDb(distance, 0f, 10f, 10f, -30f, ref _currentWeatherDb, frameTime, 30f);
+                    additionalVolume = SharedScpHelpersSystem.SmoothVolumeDb(distance, 0f, 10f, 10f, -30f, ref _currentWeatherDb, frameTime, 30f);
                 }
                 else
                 {

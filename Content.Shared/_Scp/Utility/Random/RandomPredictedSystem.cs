@@ -2,7 +2,7 @@
 using Content.Shared.Random.Helpers;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._Sunrise.Random;
+namespace Content.Shared._Scp.Utility.Random;
 
 /// <summary>
 /// Система для генерации предсказуемых случайных чисел.

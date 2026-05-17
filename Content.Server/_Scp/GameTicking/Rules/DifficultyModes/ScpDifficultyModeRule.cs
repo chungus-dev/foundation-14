@@ -1,7 +1,6 @@
 ﻿using System.Linq;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Content.Server._Sunrise.Helpers;
+using Content.Server._Scp.Utility.Helpers;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Station.Events;
@@ -22,7 +21,7 @@ public sealed class ScpDifficultyModeRule : GameRuleSystem<ScpDifficultyModeRule
 {
     [Dependency] private readonly StationJobsSystem _stationJobs = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly SunriseHelpersSystem _helpers = default!;
+    [Dependency] private readonly ScpHelpersSystem _helpers = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -199,7 +198,7 @@ public sealed class ScpDifficultyModeRule : GameRuleSystem<ScpDifficultyModeRule
     {
         classification = default;
 
-        if (!_prototype.TryIndex<JobPrototype>(jobId, out var job))
+        if (!_prototype.TryIndex(jobId, out var job))
             return false;
 
         return TryGetScpClassification(job, rule.PlayableWhitelist, rule.PlayableBlacklist, out classification);

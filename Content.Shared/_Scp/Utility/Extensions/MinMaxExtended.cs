@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Random;
 
-namespace Content.Shared._Scp.Helpers;
+namespace Content.Shared._Scp.Utility.Extensions;
 
 [DataDefinition, Serializable]
 public partial struct MinMaxExtended : IEquatable<MinMaxExtended>

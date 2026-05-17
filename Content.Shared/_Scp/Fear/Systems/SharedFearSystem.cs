@@ -1,10 +1,10 @@
 ﻿using Content.Shared._Scp.Fear.Components;
-using Content.Shared._Scp.Helpers;
 using Content.Shared._Scp.Proximity;
 using Content.Shared._Scp.Shaders;
 using Content.Shared._Scp.Shaders.Grain;
 using Content.Shared._Scp.Shaders.Highlighting;
 using Content.Shared._Scp.Shaders.Vignette;
+using Content.Shared._Scp.Utility.Extensions;
 using Content.Shared._Scp.Watching;
 using Content.Shared.Examine;
 using Content.Shared.Mobs.Systems;
@@ -31,9 +31,6 @@ public abstract partial class SharedFearSystem : EntitySystem
     [Dependency] private readonly ProximitySystem _proximity = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    private const string MoodSourceClose = "FearSourceClose";
-    private const string MoodFearSourceSeen = "FearSourceSeen";
-
     private EntityQuery<FearSourceComponent> _fearSourceQuery;
     private EntityQuery<FearComponent> _fearQuery;
 
@@ -45,7 +42,6 @@ public abstract partial class SharedFearSystem : EntitySystem
 
         SubscribeLocalEvent<FearComponent, FearStateChangedEvent>(OnFearStateChanged);
 
-        SubscribeLocalEvent<FearComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<FearComponent, RejuvenateEvent>(OnRejuvenate);
 
         SubscribeLocalEvent<FearComponent, ExaminedEvent>(OnExamine);
@@ -101,7 +97,6 @@ public abstract partial class SharedFearSystem : EntitySystem
         if (!TrySetFearLevel(ent.AsNullable(), source.UponSeenState))
             return;
 
-        AddNegativeMoodEffect(ent, MoodFearSourceSeen);
         HighLightAllVisibleFears(ent);
     }
 
@@ -114,7 +109,6 @@ public abstract partial class SharedFearSystem : EntitySystem
 
         // Добавляем геймплейные проблемы, завязанный на уровне страха
         ManageShootingProblems(ent);
-        ManageStateBasedMood(ent);
         ManageFallOff(ent);
 
         // Проверка на то, что уровень понизился -> мы успокоились.
@@ -127,12 +121,7 @@ public abstract partial class SharedFearSystem : EntitySystem
         TryScream(ent);
     }
 
-    protected virtual void OnShutdown(Entity<FearComponent> ent, ref ComponentShutdown args)
-    {
-        CleanupFear(ent);
-    }
-
-    protected virtual void OnRejuvenate(Entity<FearComponent> ent, ref RejuvenateEvent args)
+    private void OnRejuvenate(Entity<FearComponent> ent, ref RejuvenateEvent args)
     {
         ResetFear(ent);
     }
@@ -203,23 +192,6 @@ public abstract partial class SharedFearSystem : EntitySystem
     private void ResetFear(Entity<FearComponent> ent)
     {
         TrySetFearLevel(ent.AsNullable(), FearState.None);
-        CleanupFear(ent);
-    }
-
-    private void CleanupFear(Entity<FearComponent> ent)
-    {
-        ClearCloseFear(ent);
-
-        RemoveSeenFearMood(ent);
-        WipeMood(ent);
-    }
-
-    private void RemoveSeenFearMood(EntityUid uid)
-    {
-    }
-
-    private void RemoveCloseFearMood(EntityUid uid)
-    {
     }
 
     /// <summary>

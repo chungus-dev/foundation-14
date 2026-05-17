@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Robust.Shared.Random;
 
-namespace Content.Shared._Sunrise.Helpers;
+namespace Content.Shared._Scp.Utility.Extensions;
 
 public static class EnumerableExtensions
 {

@@ -1,9 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 
-namespace Content.Shared._Sunrise.Helpers;
+namespace Content.Shared._Scp.Utility.Helpers;
 
-public abstract partial class SharedSunriseHelpersSystem : EntitySystem
+public abstract partial class SharedScpHelpersSystem : EntitySystem
 {
     #region Get All/First entity
 
@@ -17,7 +16,7 @@ public abstract partial class SharedSunriseHelpersSystem : EntitySystem
     /// <returns>Полный список всех ентити в игре с данными компонентами</returns>
     public IEnumerable<Entity<T1, T2>> GetAll<T1, T2>() where T1 : IComponent where T2 : IComponent
     {
-        var query = EntityManager.AllEntityQueryEnumerator<T1, T2>();
+        var query = AllEntityQuery<T1, T2>();
         while (query.MoveNext(out var uid, out var component1, out var component2))
         {
             yield return (uid, component1, component2);
@@ -66,7 +65,7 @@ public abstract partial class SharedSunriseHelpersSystem : EntitySystem
     {
         entity = null;
 
-        var query = EntityManager.AllEntityQueryEnumerator<T>();
+        var query = AllEntityQuery<T>();
         while (query.MoveNext(out var uid, out var component))
         {
             entity = (uid, component);

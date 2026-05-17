@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using Content.Shared._Scp.Helpers;
 using Content.Shared._Scp.Proximity;
+using Content.Shared._Scp.Utility.Helpers;
 using Content.Shared.Popups;
 using Content.Shared.Storage.Components;
 using Content.Shared.Whitelist;
@@ -12,7 +12,7 @@ public sealed class ScpCageSystem : EntitySystem
     [Dependency] private readonly ProximitySystem _proximity = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly ScpHelpers _helpers = default!;
+    [Dependency] private readonly SharedScpHelpersSystem _helpers = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()

@@ -2,7 +2,7 @@
 using System.Linq;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Station.Components;
-using Content.Shared._Sunrise.Helpers;
+using Content.Shared._Scp.Utility.Helpers;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Station.Components;
 using Robust.Server.GameObjects;
@@ -11,12 +11,12 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 
-namespace Content.Server._Sunrise.Helpers;
+namespace Content.Server._Scp.Utility.Helpers;
 
 /// <summary>
 /// Система-набор хелпер методов
 /// </summary>
-public sealed partial class SunriseHelpersSystem : SharedSunriseHelpersSystem
+public sealed partial class ScpHelpersSystem : SharedScpHelpersSystem
 {
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly MapSystem _map = default!;
@@ -111,8 +111,8 @@ public sealed partial class SunriseHelpersSystem : SharedSunriseHelpersSystem
             tile = new Vector2i(randomX, randomY);
             if (_atmosphere.IsTileSpace(targetGrid, Transform(targetGrid).MapUid, tile)
                 || _atmosphere.IsTileAirBlockedCached(targetGrid, tile)
-                || !_map.TryGetTileRef(targetGrid, gridComp, tile, out var tileRef) // Sunrise added
-                || tileRef.Tile.IsEmpty) // Sunrise added
+                || !_map.TryGetTileRef(targetGrid, gridComp, tile, out var tileRef) // Scp added
+                || tileRef.Tile.IsEmpty) // Scp added
             {
                 continue;
             }

@@ -1,4 +1,4 @@
-﻿namespace Content.Shared._Sunrise.Helpers;
+﻿namespace Content.Shared._Scp.Utility.Extensions;
 
 public static class DictionaryExtensions
 {
