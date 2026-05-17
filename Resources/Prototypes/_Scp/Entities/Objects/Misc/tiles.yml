@@ -13,7 +13,7 @@
       - ScpPlating
       - ScpFloorSteel
   - type: Stack
-    stackType: FloorTileSteel
+    stackType: ScpFloorTileSteel
   - type: Construction
     graph: ScpTileSteel
     node: scpsteeltile
@@ -30,6 +30,8 @@
     outputs:
     - ScpPlating
     - ScpFloorSteelDiagonal
+  - type: Stack
+    stackType: ScpFloorTileSteelDiagonal
 
 - type: entity
   name: steel tile
@@ -43,6 +45,8 @@
     outputs:
     - ScpPlating
     - ScpFloorSteelHalfMono
+  - type: Stack
+    stackType: ScpFloorTileSteelHalfMono
 
 - type: entity
   name: steel tile
@@ -56,6 +60,8 @@
     outputs:
     - ScpPlating
     - ScpFloorSteelHalfMonoVertical
+  - type: Stack
+    stackType: ScpFloorTileSteelHalfMonoVertical
 
 - type: entity
   name: steel tile
@@ -69,6 +75,8 @@
     outputs:
     - ScpPlating
     - ScpFloorSteelHerringbone
+  - type: Stack
+    stackType: ScpFloorTileSteelHerringbone
 
 - type: entity
   name: steel tile
@@ -82,6 +90,8 @@
     outputs:
     - ScpPlating
     - ScpFloorSteelMini
+  - type: Stack
+    stackType: ScpFloorTileSteelMini
 
 - type: entity
   name: steel tile
@@ -95,6 +105,8 @@
     outputs:
     - ScpPlating
     - ScpFloorSteelMono
+  - type: Stack
+    stackType: ScpFloorTileSteelMono
 
 - type: entity
   name: steel tile
@@ -108,6 +120,8 @@
     outputs:
     - ScpPlating
     - ScpFloorSteeloffset
+  - type: Stack
+    stackType: ScpFloorTileSteelOffset
 
 - type: entity
   name: steel tile
@@ -121,6 +135,8 @@
     outputs:
     - ScpPlating
     - ScpFloorSteelPavement
+  - type: Stack
+    stackType: ScpFloorTileSteelPavement
 
 - type: entity
   name: steel tile
@@ -134,6 +150,8 @@
     outputs:
     - ScpPlating
     - ScpFloorSteelPavementVertical
+  - type: Stack
+    stackType: ScpFloorTileSteelPavementVertical
 
 - type: entity
   name: dark tile
@@ -147,6 +165,8 @@
     outputs:
     - ScpPlating
     - ScpFloorDark
+  - type: Stack
+    stackType: ScpFloorTileDark
   - type: Construction
     graph: ScpTileDark
     node: scpdarktile
@@ -163,6 +183,8 @@
     outputs:
     - ScpPlating
     - ScpFloorDarkDiagonal
+  - type: Stack
+    stackType: ScpFloorTileDarkDiagonal
 
 - type: entity
   name: dark tile
@@ -176,6 +198,8 @@
     outputs:
     - ScpPlating
     - ScpFloorDarkHalfMono
+  - type: Stack
+    stackType: ScpFloorTileDarkHalfMono
 
 - type: entity
   name: dark tile
@@ -189,6 +213,8 @@
     outputs:
     - ScpPlating
     - ScpFloorDarkHalfMonoVertical
+  - type: Stack
+    stackType: ScpFloorTileDarkHalfMonoVertical
 
 - type: entity
   name: dark tile
@@ -202,6 +228,8 @@
     outputs:
     - ScpPlating
     - ScpFloorDarkHerringbone
+  - type: Stack
+    stackType: ScpFloorTileDarkHerringbone
 
 - type: entity
   name: dark tile
@@ -215,6 +243,8 @@
     outputs:
     - ScpPlating
     - ScpFloorDarkMini
+  - type: Stack
+    stackType: ScpFloorTileDarkMini
 
 - type: entity
   name: dark tile
@@ -228,6 +258,8 @@
     outputs:
     - ScpPlating
     - ScpFloorDarkMono
+  - type: Stack
+    stackType: ScpFloorTileDarkMono
 
 - type: entity
   name: dark tile
@@ -241,6 +273,8 @@
     outputs:
     - ScpPlating
     - ScpFloorDarkoffset
+  - type: Stack
+    stackType: ScpFloorTileDarkOffset
 
 - type: entity
   name: dark tile
@@ -254,6 +288,8 @@
     outputs:
     - ScpPlating
     - ScpFloorDarkPavement
+  - type: Stack
+    stackType: ScpFloorTileDarkPavement
 
 - type: entity
   name: dark tile
@@ -267,6 +303,8 @@
     outputs:
     - ScpPlating
     - ScpFloorDarkPavementVertical
+  - type: Stack
+    stackType: ScpFloorTileDarkPavementVertical
 
 - type: entity
   name: white tile
@@ -280,6 +318,8 @@
     outputs:
       - ScpPlating
       - ScpFloorWhite
+  - type: Stack
+    stackType: ScpFloorTileWhite
   - type: Construction
     graph: ScpTileWhite
     node: scpwhitetile
@@ -296,6 +336,8 @@
     outputs:
     - ScpPlating
     - ScpFloorWhiteDiagonal
+  - type: Stack
+    stackType: ScpFloorTileWhiteDiagonal
 
 - type: entity
   name: white tile
@@ -309,6 +351,8 @@
     outputs:
     - ScpPlating
     - ScpFloorWhiteHalfMono
+  - type: Stack
+    stackType: ScpFloorTileWhiteHalfMono
 
 - type: entity
   name: white tile
@@ -322,6 +366,8 @@
     outputs:
     - ScpPlating
     - ScpFloorWhiteHalfMonoVertical
+  - type: Stack
+    stackType: ScpFloorTileWhiteHalfMonoVertical
 
 - type: entity
   name: white tile
@@ -335,6 +381,8 @@
     outputs:
     - ScpPlating
     - ScpFloorWhiteHerringbone
+  - type: Stack
+    stackType: ScpFloorTileWhiteHerringbone
 
 - type: entity
   name: white tile
@@ -348,6 +396,8 @@
     outputs:
     - ScpPlating
     - ScpFloorWhiteMini
+  - type: Stack
+    stackType: ScpFloorTileWhiteMini
 
 - type: entity
   name: white tile
@@ -361,6 +411,8 @@
     outputs:
     - ScpPlating
     - ScpFloorWhiteMono
+  - type: Stack
+    stackType: ScpFloorTileWhiteMono
 
 - type: entity
   name: white tile
@@ -374,6 +426,8 @@
     outputs:
     - ScpPlating
     - ScpFloorWhiteoffset
+  - type: Stack
+    stackType: ScpFloorTileWhiteOffset
 
 - type: entity
   name: white tile
@@ -387,6 +441,8 @@
     outputs:
     - ScpPlating
     - ScpFloorWhitePavement
+  - type: Stack
+    stackType: ScpFloorTileWhitePavement
 
 - type: entity
   name: white tile
@@ -400,6 +456,8 @@
     outputs:
     - ScpPlating
     - ScpFloorWhitePavementVertical
+  - type: Stack
+    stackType: ScpFloorTileWhitePavementVertical
 
 - type: entity
   name: blue tile
@@ -413,6 +471,8 @@
     outputs:
     - ScpPlating
     - ScpFloorBlue
+  - type: Stack
+    stackType: ScpFloorTileBlue
 
 - type: entity
   name: green tile
@@ -426,6 +486,8 @@
     outputs:
       - ScpPlating
       - ScpFloorGreen
+  - type: Stack
+    stackType: ScpFloorTileGreen
 
 - type: entity
   name: checker white tile
@@ -439,6 +501,8 @@
     outputs:
       - ScpPlating
       - ScpFloorCheckerWhite
+  - type: Stack
+    stackType: ScpFloorTileCheckerWhite
 
 - type: entity
   name: checker steel tile
@@ -452,6 +516,8 @@
     outputs:
       - ScpPlating
       - ScpFloorCheckerSteel
+  - type: Stack
+    stackType: ScpFloorTileCheckerSteel
 
 - type: entity
   name: checker dark tile
@@ -465,6 +531,8 @@
     outputs:
       - ScpPlating
       - ScpFloorCheckerDark
+  - type: Stack
+    stackType: ScpFloorTileCheckerDark
 
 - type: entity
   name: atmos tile
@@ -478,6 +546,8 @@
     outputs:
       - ScpPlating
       - ScpFloorDepartmentAtmos
+  - type: Stack
+    stackType: ScpFloorTileDepartmentAtmos
 
 - type: entity
   name: cargo tile
@@ -491,6 +561,8 @@
     outputs:
       - ScpPlating
       - ScpFloorDepartmentCargo
+  - type: Stack
+    stackType: ScpFloorTileDepartmentCargo
 
 - type: entity
   name: command tile
@@ -504,6 +576,8 @@
     outputs:
       - ScpPlating
       - ScpFloorDepartmentCom
+  - type: Stack
+    stackType: ScpFloorTileDepartmentCom
 
 - type: entity
   name: engineering tile
@@ -517,6 +591,8 @@
     outputs:
       - ScpPlating
       - ScpFloorDepartmentEng
+  - type: Stack
+    stackType: ScpFloorTileDepartmentEng
 
 - type: entity
   name: medical tile
@@ -530,6 +606,8 @@
     outputs:
       - ScpPlating
       - ScpFloorDepartmentMed
+  - type: Stack
+    stackType: ScpFloorTileDepartmentMed
 
 - type: entity
   name: cience tile
@@ -543,6 +621,8 @@
     outputs:
       - ScpPlating
       - ScpFloorDepartmentRnd
+  - type: Stack
+    stackType: ScpFloorTileDepartmentRnd
 
 - type: entity
   name: security tile
@@ -556,6 +636,8 @@
     outputs:
       - ScpPlating
       - ScpFloorDepartmentSec
+  - type: Stack
+    stackType: ScpFloorTileDepartmentSec
 
 - type: entity
   name: service tile
@@ -569,6 +651,8 @@
     outputs:
       - ScpPlating
       - ScpFloorDepartmentSer
+  - type: Stack
+    stackType: ScpFloorTileDepartmentSer
 
 - type: entity
   name: steel grille
@@ -582,6 +666,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrille1
+  - type: Stack
+    stackType: ScpFloorTileSteelGrille1
 
 - type: entity
   name: steel grille
@@ -595,6 +681,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrille2
+  - type: Stack
+    stackType: ScpFloorTileSteelGrille2
 
 - type: entity
   name: steel grille
@@ -608,6 +696,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrille3
+  - type: Stack
+    stackType: ScpFloorTileSteelGrille3
 
 - type: entity
   name: steel grille
@@ -621,6 +711,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrille4
+  - type: Stack
+    stackType: ScpFloorTileSteelGrille4
 
 - type: entity
   name: steel grille mono
@@ -634,6 +726,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrilleMono1
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleMono1
 
 - type: entity
   name: steel grille mono
@@ -647,6 +741,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrilleMono2
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleMono2
 
 - type: entity
   name: steel grille mono
@@ -660,6 +756,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrilleMono3
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleMono3
 
 - type: entity
   name: steel grille mono
@@ -673,6 +771,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrilleMono4
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleMono4
 
 - type: entity
   name: steel grille offset
@@ -686,6 +786,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrilleOffset1
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleOffset1
 
 - type: entity
   name: steel grille offset
@@ -699,6 +801,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrilleOffset2
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleOffset2
 
 - type: entity
   name: steel grille offset
@@ -712,6 +816,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrilleOffset3
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleOffset3
 
 - type: entity
   name: steel grille offset
@@ -725,6 +831,8 @@
     outputs:
       - ScpPlating
       - ScpFloorSteelGrilleOffset4
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleOffset4
 
 - type: entity
   name: concrete tile
@@ -738,6 +846,8 @@
     outputs:
       - ScpPlating
       - ScpFloorConcrete
+  - type: Stack
+    stackType: ScpFloorTileConcrete
 
 - type: entity
   name: concrete mono tile
@@ -751,6 +861,8 @@
     outputs:
       - ScpPlating
       - ScpFloorConcreteMono
+  - type: Stack
+    stackType: ScpFloorTileConcreteMono
   - type: Construction
     graph: ScpTileConcrete
     node: scpconcretetile
@@ -769,6 +881,8 @@
     outputs:
     - ScpPlating
     - ScpFloorAnechoic1
+  - type: Stack
+    stackType: ScpFloorTileAnechoic1
 
 - type: entity
   parent: ScpFloorTileItemAnechoic1
@@ -781,6 +895,8 @@
     outputs:
     - ScpPlating
     - ScpFloorAnechoic2
+  - type: Stack
+    stackType: ScpFloorTileAnechoic2
 
 - type: entity
   parent: ScpFloorTileItemAnechoic1
@@ -793,6 +909,8 @@
     outputs:
     - ScpPlating
     - ScpFloorAnechoic3
+  - type: Stack
+    stackType: ScpFloorTileAnechoic3
 
 # Wood
 

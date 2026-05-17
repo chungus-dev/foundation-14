@@ -664,6 +664,7 @@
       targets:
         - Lattice
         - Plating
+        - ScpPlating # Scp added
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false

@@ -501,7 +501,6 @@
   id: WallPlastitaniumIndestructible
   name: plastitanium wall
   suffix: indestructible
-  categories: [ HideSpawnMenu ] # Scp added
   components:
     - type: Sprite
       sprite: Structures/Walls/plastitanium.rsi

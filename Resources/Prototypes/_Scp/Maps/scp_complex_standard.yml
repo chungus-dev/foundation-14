@@ -16,7 +16,7 @@
             !type:ScpSiteNameGenerator
             prefixCreator: '15'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/_Scp/Shuttles/emergency_complex.yml
+          emergencyShuttlePath: /Maps/_Scp/Grids/Shuttles/emergency_complex.yml
         - type: StationJobs
           availableJobs:
             # SCP

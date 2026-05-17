@@ -2,6 +2,8 @@
   id: ScpFloorBase
   abstract: true
   baseTurf: ScpPlating
+  baseWhitelist:
+  - PlatingBrass
   isSubfloor: false
   deconstructTools: [ Prying ]
   heatCapacity: 10000

@@ -10,9 +10,7 @@
   - BaseFacilityAlertLevels
   - BaseFacilitySiliconLawScpDefault
   - BaseStationNanotrasen # Дает фракцию
-  - ScpComplexGoal # Цели комплекса по изучению SCP
-  - BaseStationRegionalAdministration # Добавляет неиспользуемое(игровое) ЦК. Настоящее ЦК через BaseComplexTransitHub
-  - BaseComplexTransitHub
+  - BaseFacilityTransitHub
   - BaseStationCargo
   - BaseStationAllEventsEligible
   components:
@@ -27,6 +25,7 @@
       weather:
       - WeatherSnowfallMedium
       - WeatherSnowfallLight
+
 - type: entity
   id: ScpComplexCompact
   parent: StandardScpStation
