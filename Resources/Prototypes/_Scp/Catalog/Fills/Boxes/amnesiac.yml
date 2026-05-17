@@ -18,7 +18,7 @@
           True: { visible: false }
           False: { state: closed, visible: true }
   - type: Sprite
-    sprite: _RMC14/Objects/Storage/vial_box.rsi
+    sprite: _Scp/Objects/Storage/vial_box.rsi
     layers:
     - state: vialbox
       map: ["enum.StorageVisualLayers.Base"]

@@ -8,9 +8,9 @@
     shape:
     - 0,0,3,3
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Belt/sparepouch.rsi
+    sprite: _Scp/Objects/Clothing/Belt/sparepouch.rsi
   - type: Clothing
-    sprite: _RMC14/Objects/Clothing/Belt/sparepouch.rsi
+    sprite: _Scp/Objects/Clothing/Belt/sparepouch.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.5
 
@@ -21,9 +21,9 @@
   description: The M277 is a common rig used by Combat Technicians to carry around materials and other supplies. It consists of a modular belt with various clips. This version sacrifices storage space for specialized material loading clips.
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Belt/construction.rsi
+    sprite: _Scp/Objects/Clothing/Belt/construction.rsi
   - type: Clothing
-    sprite: _RMC14/Objects/Clothing/Belt/construction.rsi
+    sprite: _Scp/Objects/Clothing/Belt/construction.rsi
   - type: Storage
     grid:
     - 0,0,9,1
@@ -69,9 +69,9 @@
   description: The M276 is the standard load-bearing equipment. It consists of a modular belt with various clips. This version lacks any combat functionality, and is commonly used by engineers to transport important tools.
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Belt/utility.rsi
+    sprite: _Scp/Objects/Clothing/Belt/utility.rsi
   - type: Clothing
-    sprite: _RMC14/Objects/Clothing/Belt/utility.rsi
+    sprite: _Scp/Objects/Clothing/Belt/utility.rsi
   - type: Storage
     grid:
     - 0,0,9,1
@@ -121,9 +121,9 @@
   description: The M276 is the standard load-bearing equipment. It consists of a modular belt with various clips. This version is a less common configuration, designed to transport bulkier medical supplies.
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Belt/medical.rsi
+    sprite: _Scp/Objects/Clothing/Belt/medical.rsi
   - type: Clothing
-    sprite: _RMC14/Objects/Clothing/Belt/medical.rsi
+    sprite: _Scp/Objects/Clothing/Belt/medical.rsi
   - type: Storage
     grid:
     - 0,0,9,1
@@ -160,9 +160,9 @@
   description: The M276 is the standard load-bearing equipment. It consists of a modular belt with various clips. This configuration is commonly seen among Military Police and peacekeepers, though it can hold some light munitions.
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Belt/security.rsi
+    sprite: _Scp/Objects/Clothing/Belt/security.rsi
   - type: Clothing
-    sprite: _RMC14/Objects/Clothing/Belt/security.rsi
+    sprite: _Scp/Objects/Clothing/Belt/security.rsi
   - type: Storage
     grid:
     - 0,0,9,1
@@ -197,9 +197,9 @@
   description: The M276 is the standard load-bearing equipment. It consists of a modular belt with various clips. This is the standard variant, designed for bulk ammunition-carrying operations.
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Belt/marine.rsi
+    sprite: _Scp/Objects/Clothing/Belt/marine.rsi
   - type: Clothing
-    sprite: _RMC14/Objects/Clothing/Belt/marine.rsi
+    sprite: _Scp/Objects/Clothing/Belt/marine.rsi
   - type: Storage
     grid:
     - 0,0,9,1
@@ -214,9 +214,9 @@
   description: The M276 is the standard load-bearing equipment. It consists of a modular belt with various clips. This version is designed to carry up to 10 grenades.
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Belt/grenade.rsi
+    sprite: _Scp/Objects/Clothing/Belt/grenade.rsi
   - type: Clothing
-    sprite: _RMC14/Objects/Clothing/Belt/grenade.rsi
+    sprite: _Scp/Objects/Clothing/Belt/grenade.rsi
   - type: Storage
     grid:
     - 0,0,9,1

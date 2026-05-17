@@ -6,9 +6,9 @@
   suffix: MTF
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Back/Satchels/Marines/standard/snow-urban.rsi
+    sprite: _Scp/Objects/Clothing/Back/Satchels/Marines/standard/snow-urban.rsi
   - type: Clothing
-    sprite: _RMC14/Objects/Clothing/Back/Satchels/Marines/standard/snow-urban.rsi
+    sprite: _Scp/Objects/Clothing/Back/Satchels/Marines/standard/snow-urban.rsi
   - type: Storage
     grid:
     - 0,0,6,4
@@ -24,9 +24,9 @@
   suffix: MTF
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Back/Satchels/PMC/medic.rsi
+    sprite: _Scp/Objects/Clothing/Back/Satchels/PMC/medic.rsi
   - type: Clothing
-    sprite: _RMC14/Objects/Clothing/Back/Satchels/PMC/medic.rsi
+    sprite: _Scp/Objects/Clothing/Back/Satchels/PMC/medic.rsi
   - type: Storage
     grid:
     - 0,0,6,4
