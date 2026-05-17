@@ -111,16 +111,17 @@ public abstract class SharedScp035System : EntitySystem
         if (!HasComp<HumanoidProfileComponent>(args.User))
         {
             args.Cancel();
+            return;
+        }
 
-            _stun.TryAddParalyzeDuration(args.Equipee, ent.Comp.EquipAttemptParalyzeDuration);
+        _stun.TryAddParalyzeDuration(args.EquipTarget, ent.Comp.EquipAttemptParalyzeDuration);
 
-            if (_net.IsServer)
-            {
-                _popup.PopupEntity(Loc.GetString("scp-035-reject-you"), args.Equipee, args.Equipee, PopupType.LargeCaution);
+        if (_net.IsServer)
+        {
+            _popup.PopupEntity(Loc.GetString("scp-035-reject-you"), args.EquipTarget, args.EquipTarget, PopupType.LargeCaution);
 
-                var impulse = _random.NextVector2() * ent.Comp.ImpulseModificator;
-                _physics.ApplyLinearImpulse(args.Equipee, impulse);
-            }
+            var impulse = _random.NextVector2() * ent.Comp.ImpulseModificator;
+            _physics.ApplyLinearImpulse(args.EquipTarget, impulse);
         }
     }
 

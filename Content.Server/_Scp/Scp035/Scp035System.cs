@@ -12,6 +12,7 @@ using Content.Server.Mind;
 using Content.Shared._Scp.Scp035;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Clothing;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
@@ -24,7 +25,6 @@ using Content.Shared.Maps;
 using Content.Shared.Pointing;
 using Content.Shared.Popups;
 using Content.Shared.Storage.Components;
-using Content.Shared.Tag;
 using Content.Shared.Throwing;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -43,21 +43,21 @@ public sealed class Scp035System : SharedScp035System
     [Dependency] private readonly HTNSystem _htn = default!;
     [Dependency] private readonly NPCSystem _npc = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly GhostSystem _ghost = default!;
     [Dependency] private readonly TileSystem _tile = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {
@@ -153,7 +153,7 @@ public sealed class Scp035System : SharedScp035System
 
     private void HandleMessaging(Entity<Scp035MaskComponent> entity)
     {
-        var curTime = _gameTiming.CurTime;
+        var curTime = _timing.CurTime;
 
         if (curTime < entity.Comp.NextMessaging)
             return;
@@ -169,7 +169,7 @@ public sealed class Scp035System : SharedScp035System
 
     private void HandleLiquidSpawning(Entity<Scp035MaskComponent> entity)
     {
-        var curTime = _gameTiming.CurTime;
+        var curTime = _timing.CurTime;
         if (curTime < entity.Comp.NextLiquidSpawning)
             return;
 
@@ -186,7 +186,7 @@ public sealed class Scp035System : SharedScp035System
             if (!_solution.TryGetSolution(puddle.Owner, puddle.Comp.SolutionName, out _, out var solution))
                 continue;
 
-            var allReagents = puddle.Comp.Solution.Value.Comp.Solution.GetReagentPrototypes(_prototypeManager);
+            var allReagents = solution.GetReagentPrototypes(_prototype);
             total = allReagents.Where(reagent => reagent.Key.ID == entity.Comp.ReagentName).Aggregate(total, (current, reagent) => current + reagent.Value);
         }
 
@@ -210,14 +210,12 @@ public sealed class Scp035System : SharedScp035System
             }
 
             var lookup = _lookup.GetEntitiesInRange(entity, entity.Comp.EntityCorrosionRange, LookupFlags.Approximate | LookupFlags.Static);
-            var tags = GetEntityQuery<TagComponent>();
             var entityStorage = GetEntityQuery<EntityStorageComponent>();
             var items = GetEntityQuery<ItemComponent>();
             var lights = GetEntityQuery<PoweredLightComponent>();
 
             foreach (var ent in lookup)
             {
-
                 // break whitelist entities
                 if (_whitelist.CheckBoth(ent, entity.Comp.BlacklistStructures, entity.Comp.WhitelistStructures))
                     _damageable.TryChangeDamage(ent, entity.Comp.DamageSpecif, true);
