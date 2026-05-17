@@ -14,3 +14,8 @@ job-name-scp173 = SCP-173 "The Sculpture"
 job-description-scp173 = A sculpture that kills when visual contact is broken. Fast, silent, and lethal if you blink.
 job-name-scp131 = SCP-131 "The Eyeballs"
 job-description-scp131 = Small harmless mechanical entities with a single prominent eye.
+
+
+### Missing from roles/scp.ftl
+job-name-scp2295 = SCP-2295 "Bear with the Patchwork Heart"
+job-description-scp2295 = A friendly ragdoll teddy bear that heals people.

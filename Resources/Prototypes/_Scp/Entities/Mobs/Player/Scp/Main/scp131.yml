@@ -35,8 +35,6 @@
 #    name: ghost-panel-antagonist-scp-minor-name
 #    description: ghost-panel-antagonist-scp-minor-description
 #    priority: 0
-#  - type: ItemRepickupCooldown # SCP port: component unavailable in Foundation14
-#    cooldown: 5
   - type: CanEscapeInventory
   - type: Fixtures
     fixtures:

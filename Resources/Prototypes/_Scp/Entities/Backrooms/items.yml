@@ -240,7 +240,7 @@
   - type: TriggerOnIgnite
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: DefaultStandardEffect
+    explosionType: Default
     maxIntensity: 15
     intensitySlope: 5
     totalIntensity: 50

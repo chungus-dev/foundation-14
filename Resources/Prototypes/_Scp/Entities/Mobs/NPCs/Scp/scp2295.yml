@@ -30,12 +30,10 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
-  - type: GhostPanelAntagonistMarker
-    name: ghost-panel-antagonist-scp-minor-name
-    description: ghost-panel-antagonist-scp-minor-description
-    priority: 0
-  - type: ItemRepickupCooldown
-    cooldown: 5
+  #- type: GhostPanelAntagonistMarker
+  #  name: ghost-panel-antagonist-scp-minor-name
+  #  description: ghost-panel-antagonist-scp-minor-description
+  #  priority: 0
   - type: CanEscapeInventory
   - type: Fixtures
     fixtures:
@@ -78,8 +76,6 @@
       Alive:
         reagent: Omnizine
         quantity: 5
-        minDamage: 0
-        maxDamage: 80
       Critical:
         reagent: Inaprovaline
         quantity: 15

@@ -234,3 +234,8 @@ ent-PosterEngineeringSchema = engineering equipment schematic
   .desc = Informational poster depicting systems used by space shuttles and a wrench
 ent-PosterRickRoll = poster "Rick"
   .desc = Well, what is this?
+
+
+### Missing from entities/structures/wallmounts/signs/posters.ftl
+ent-PosterSCP2295 = SCP-2295 poster
+  .desc = Information poster for SCP-2295
