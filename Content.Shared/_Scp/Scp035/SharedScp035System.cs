@@ -1,7 +1,6 @@
 ﻿using Content.Shared._Scp.Fear.Components;
 using Content.Shared.Actions;
 using Content.Shared.Clothing;
-using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
@@ -11,6 +10,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Rejuvenate;
@@ -21,6 +21,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Shared._Scp.Scp035;
@@ -44,6 +45,15 @@ public abstract class SharedScp035System : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
 
     private readonly SoundSpecifier _equipSound = new SoundCollectionSpecifier("EquipScp035");
+
+    private static readonly EntProtoId RaiseArmyActionId = "ActionScp035RaiseArmy";
+    private static readonly EntProtoId OrderStayActionId = "ActionScp035OrderStay";
+    private static readonly EntProtoId OrderFollowActionId = "ActionScp035OrderFollow";
+    private static readonly EntProtoId OrderKillActionId = "ActionScp035OrderKill";
+    private static readonly EntProtoId OrderLooseActionId = "ActionScp035OrderLoose";
+    private static readonly EntProtoId StunActionId = "ActionScp035Stun";
+
+    private static readonly ProtoId<NpcFactionPrototype> WearerFaction = "SimpleHostile";
 
     public override void Initialize()
     {
@@ -73,16 +83,16 @@ public abstract class SharedScp035System : EntitySystem
         var maskUserComponent = EnsureComp<Scp035MaskUserComponent>(args.Wearer);
         maskUserComponent.Mask = ent;
 
-        _action.AddAction(args.Wearer, "ActionScp035RaiseArmy", maskUserComponent.ActionRaiseArmy);
-        _action.AddAction(args.Wearer, "ActionScp035OrderStay", maskUserComponent.ActionOrderStayEntity);
-        _action.AddAction(args.Wearer, "ActionScp035OrderFollow", maskUserComponent.ActionOrderFollowEntity);
-        _action.AddAction(args.Wearer, "ActionScp035OrderKill", maskUserComponent.ActionOrderKillEmEntity);
-        _action.AddAction(args.Wearer, "ActionScp035OrderLoose", maskUserComponent.ActionOrderLooseEntity);
-        _action.AddAction(args.Wearer, "ActionScp035Stun", maskUserComponent.ActionStunEntity);
+        _action.AddAction(args.Wearer, RaiseArmyActionId, maskUserComponent.ActionRaiseArmy);
+        _action.AddAction(args.Wearer, OrderStayActionId, maskUserComponent.ActionOrderStayEntity);
+        _action.AddAction(args.Wearer, OrderFollowActionId, maskUserComponent.ActionOrderFollowEntity);
+        _action.AddAction(args.Wearer, OrderKillActionId, maskUserComponent.ActionOrderKillEmEntity);
+        _action.AddAction(args.Wearer, OrderLooseActionId, maskUserComponent.ActionOrderLooseEntity);
+        _action.AddAction(args.Wearer, StunActionId, maskUserComponent.ActionStunEntity);
         Dirty(args.Wearer, maskUserComponent);
 
         _faction.ClearFactions(args.Wearer);
-        _faction.AddFaction(args.Wearer, "SimpleHostile");
+        _faction.AddFaction(args.Wearer, WearerFaction);
 
         _mobThreshold.SetMobStateThreshold(args.Wearer, FixedPoint2.New(800), MobState.Critical);
         _mobThreshold.SetMobStateThreshold(args.Wearer, FixedPoint2.New(800), MobState.Dead);

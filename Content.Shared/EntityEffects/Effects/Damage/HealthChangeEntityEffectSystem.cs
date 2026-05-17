@@ -16,7 +16,7 @@ namespace Content.Shared.EntityEffects.Effects.Damage;
 /// <inheritdoc cref="EntityEffectSystem{T,TEffect}"/>
 public sealed partial class HealthChangeEntityEffectSystem : EntityEffectSystem<DamageableComponent, HealthChange>
 {
-    [Dependency] private readonly DamageableSystem _damageable = default!;
+    // [Dependency] private readonly DamageableSystem _damageable = default!; Scp edit
     [Dependency] private readonly HealingSystem _healing = default!;
 
     protected override void Effect(Entity<DamageableComponent> entity, ref EntityEffectEvent<HealthChange> args)
