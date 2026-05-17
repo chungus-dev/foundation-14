@@ -20,6 +20,7 @@
         !type:CableDeviceNode
         nodeGroupID: HVPower
   - type: Battery
+    netsync: false
     maxCharge: 250000
     startingCharge: 0
   - type: ExaminableBattery
@@ -43,7 +44,7 @@
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrongScp
   - type: Anchorable
-    flags: 
+    flags:
     - None
   - type: Destructible
     thresholds:
