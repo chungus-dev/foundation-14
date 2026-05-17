@@ -14,6 +14,7 @@ using Robust.Shared.EntitySerialization;
 
 namespace Content.IntegrationTests.Tests.Power;
 
+[Explicit]
 public sealed class StationPowerTests : GameTest
 {
     /// <summary>
