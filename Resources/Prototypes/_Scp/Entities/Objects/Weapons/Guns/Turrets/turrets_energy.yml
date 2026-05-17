@@ -21,9 +21,15 @@
   id: WeaponEnergyTurretFacilityMachineCircuitboard
   name: facility sentry turret machine board
   description: A machine printed circuit board for a sentry turret.
+  components:
+  - type: MachineBoard
+    prototype: WeaponEnergyTurretFacility
 
 - type: entity
   parent: WeaponEnergyTurretAIMachineCircuitboard
   id: WeaponEnergyTurretCSSMachineCircuitboard
   name: CSS sentry turret machine board
   description: A machine printed circuit board for an facility CSS sentry turret.
+  components:
+  - type: MachineBoard
+    prototype: WeaponEnergyTurretCSS

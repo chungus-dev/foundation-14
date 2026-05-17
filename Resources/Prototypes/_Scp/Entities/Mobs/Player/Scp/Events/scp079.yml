@@ -272,6 +272,8 @@
       station_ai_brain_slot: !type:Container
       station_ai_mind_slot: !type:ContainerSlot
         showEnts: true
+  - type: StaticPrice
+    price: 1000
 
 
 # TODO: т.к. пока что смена лица для ИИ через GenericVisualizer сломано, то приходится использовать такой костыль в виде отдельной сущности. Когда оффы исправят - удалить и сделать нормально

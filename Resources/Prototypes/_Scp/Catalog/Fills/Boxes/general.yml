@@ -3,7 +3,8 @@
   parent: BoxID
   id: ScpBoxKeyCard
   components:
-  - type: StorageFill
-    contents:
-    - id: KeyCardEmpty
-      amount: 4
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: KeyCardEmpty
+        amount: 4

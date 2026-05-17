@@ -136,7 +136,7 @@ public sealed partial class ShuttleSystem
         var lightMap = AddComp<MapLightComponent>(mapUid);
         lightMap.AmbientLightColor = Color.FromHex("#a5a5a5ff");
 
-        var moles = new float[Atmospherics.TotalNumberOfGases];
+        var moles = new float[Atmospherics.AdjustedNumberOfGases];
         moles[(int) Gas.Oxygen] = Atmospherics.OxygenMolesStandard;
         moles[(int) Gas.Nitrogen] = Atmospherics.NitrogenMolesStandard;
 

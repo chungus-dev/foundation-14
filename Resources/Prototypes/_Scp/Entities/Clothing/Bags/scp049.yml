@@ -22,6 +22,7 @@
       - Syringe
       - PillCanister
       - Pen
+      - SurgeryTool
   - type: StorageFill
     contents:
     - id: BookScp049Diary

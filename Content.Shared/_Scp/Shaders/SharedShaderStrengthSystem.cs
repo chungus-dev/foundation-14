@@ -21,7 +21,7 @@ public sealed class SharedShaderStrengthSystem : EntitySystem
         if (!_net.IsClient)
             return false;
 
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(ent, ref ent.Comp, false))
             return false;
 
         ent.Comp.BaseStrength = value;
@@ -46,7 +46,7 @@ public sealed class SharedShaderStrengthSystem : EntitySystem
         if (!_net.IsClient)
             return false;
 
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(ent, ref ent.Comp, false))
             return false;
 
         ent.Comp.BaseStrength = value;
@@ -64,7 +64,7 @@ public sealed class SharedShaderStrengthSystem : EntitySystem
     public bool TrySetAdditionalStrength<T>(Entity<T?> ent, float value)
         where T : IComponent, IShaderStrength
     {
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(ent, ref ent.Comp, false))
             return false;
 
         ent.Comp.AdditionalStrength = value;

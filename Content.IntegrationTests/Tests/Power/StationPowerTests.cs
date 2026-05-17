@@ -21,21 +21,14 @@ public sealed class StationPowerTests : GameTest
     /// </summary>
     private const float MinimumPowerDurationSeconds = 10 * 60;
 
+    // Scp edit start
     private static readonly string[] GameMaps =
     [
-        "Bagel",
-        "Box",
-        "Elkridge",
-        "Fland",
-        "Marathon",
-        "Oasis",
-        "Packed",
-        "Plasma",
-        "Relic",
-        "Snowball",
-        "Reach",
-        "Exo",
+        "ScpComplexCompact",
+        "ScpComplexStandard",
+        "ScpComplexModular",
     ];
+    // Scp edit end
 
     public override PoolSettings PoolSettings => new ()
     {

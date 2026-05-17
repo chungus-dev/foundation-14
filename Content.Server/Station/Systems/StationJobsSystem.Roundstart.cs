@@ -54,7 +54,8 @@ public sealed partial class StationJobsSystem
     /// as there may end up being more round-start slots than available slots, which can cause weird behavior.
     /// A warning to all who enter ye cursed lands: This function is long and mildly incomprehensible. Best used without touching.
     /// </remarks>
-    public Dictionary<NetUserId, (ProtoId<JobPrototype>?, EntityUid)> AssignJobs(Dictionary<NetUserId, HumanoidCharacterProfile> profiles, IReadOnlyList<EntityUid> stations, bool useRoundStartJobs = false)
+    // Scp edit - round-start assignment must use round-start slots by default.
+    public Dictionary<NetUserId, (ProtoId<JobPrototype>?, EntityUid)> AssignJobs(Dictionary<NetUserId, HumanoidCharacterProfile> profiles, IReadOnlyList<EntityUid> stations, bool useRoundStartJobs = true)
     {
         DebugTools.Assert(stations.Count > 0);
 
@@ -99,13 +100,15 @@ public sealed partial class StationJobsSystem
         // The share of the players each station gets in the current iteration of job selection.
         var stationShares = new Dictionary<EntityUid, int>(stations.Count);
 
+        // Scp edit - "Weight > Priority > Station." -> "Priority > Weight > Station."
         // Ok so the general algorithm:
-        // We start with the highest weight jobs and work our way down. We filter jobs by weight when selecting as well.
-        // Weight > Priority > Station.
-        foreach (var weight in _orderedWeights)
+        // We start with the highest player priority and use job weight as the tie-breaker within that priority.
+        // Priority > Weight > Station.
+        for (var selectedPriority = JobPriority.High; selectedPriority > JobPriority.Never; selectedPriority--)
         {
-            for (var selectedPriority = JobPriority.High; selectedPriority > JobPriority.Never; selectedPriority--)
+            foreach (var weight in _orderedWeights)
             {
+        // Scp edit end
                 if (profiles.Count == 0)
                     goto endFunc;
 
@@ -114,7 +117,11 @@ public sealed partial class StationJobsSystem
                 var optionsRemaining = 0;
 
                 // Assigns a player to the given station, updating all the bookkeeping while at it.
-                void AssignPlayer(NetUserId player, ProtoId<JobPrototype> job, EntityUid station)
+                void AssignPlayer(
+                    NetUserId player,
+                    ProtoId<JobPrototype> job,
+                    EntityUid station,
+                    Dictionary<ProtoId<JobPrototype>, int?> currentJobs)
                 {
                     // Remove the player from all possible jobs as that's faster than actually checking what they have selected.
                     foreach (var (k, players) in jobPlayerOptions)
@@ -127,6 +134,11 @@ public sealed partial class StationJobsSystem
                     stationJobs[station][job]--;
                     profiles.Remove(player);
                     assigned.Add(player, (job, station));
+
+                    // Scp added start - allow game rules to update related slot pools during assignment.
+                    var ev = new StationJobAssignedEvent(player, station, job, stationJobs[station], currentJobs);
+                    RaiseLocalEvent(ref ev);
+                    // Scp added end
 
                     optionsRemaining--;
                 }
@@ -249,7 +261,7 @@ public sealed partial class StationJobsSystem
 
                             // Picking players it finds that have the job set.
                             var player = _random.Pick(jobPlayerOptions[job]);
-                            AssignPlayer(player, job, station);
+                            AssignPlayer(player, job, station, currStationSelectingJobs);
                             stationShares[station]--;
 
                             if (currStationSelectingJobs[job] != null)

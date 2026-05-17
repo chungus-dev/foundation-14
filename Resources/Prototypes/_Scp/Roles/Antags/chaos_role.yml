@@ -40,14 +40,16 @@
   parent: ClothingBeltChaos
   id: ClothingBeltChaosFilled
   components:
-  - type: StorageFill
-    contents:
-    - id: Handcuffs
-    - id: GrenadeFlashBang
-    - id: Zipties
-      amount: 2
-    - id: GrenadeStinger
-    - id: RadioHandheld
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Handcuffs
+        - id: GrenadeFlashBang
+        - id: Zipties
+          amount: 2
+        - id: GrenadeStinger
+        - id: RadioHandheld
 
 #очки ПХ
 - type: entity

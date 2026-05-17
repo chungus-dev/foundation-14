@@ -27,6 +27,11 @@ public sealed class PoolSettings : PairSettings
     public bool AdminLogsEnabled { get; init; }
 
     /// <summary>
+    /// Scp added - enables client-side SCP audio effects during the test.
+    /// </summary>
+    public bool AudioEffectsEnabled { get; init; }
+
+    /// <summary>
     /// Set to true if the given server/client pair should be in the lobby.
     /// If the pair is not in the lobby at the end of the test, this test must be marked as dirty.
     /// </summary>
@@ -57,6 +62,7 @@ public sealed class PoolSettings : PairSettings
         // Check that certain settings match.
         return DummyTicker == next.DummyTicker
                && Map == next.Map
-               && InLobby == next.InLobby;
+               && InLobby == next.InLobby
+               && AudioEffectsEnabled == next.AudioEffectsEnabled;
     }
 }

@@ -242,6 +242,10 @@ public abstract partial class SharedScp096System : EntitySystem
         if (_timing.ApplyingState || IsClientSide(ent))
             return;
 
+        RemComp<ActiveScp096WithoutFaceComponent>(ent);
+        RemComp<ActiveScp096HeatingUpComponent>(ent);
+        RemComp<ActiveScp096RageComponent>(ent);
+
         var query = EntityQueryEnumerator<Scp096TargetComponent>();
         while (query.MoveNext(out var uid, out _))
         {

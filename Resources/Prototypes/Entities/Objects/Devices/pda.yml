@@ -332,7 +332,6 @@
       - NotekeeperCartridge
       - NanoTaskCartridge
       - NewsReaderCartridge
-      - PlantAnalyzerCartridge
 
 - type: entity
   parent: BasePDA

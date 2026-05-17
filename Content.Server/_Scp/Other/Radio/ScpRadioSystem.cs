@@ -220,6 +220,9 @@ public sealed class ScpRadioSystem : SharedScpRadioSystem
 
     private void OnPowerCellChanged(Entity<ScpRadioComponent> ent, ref PowerCellChangedEvent args)
     {
+        if (TerminatingOrDeleted(ent))
+            return;
+
         if (!ent.Comp.Enabled)
             return;
 

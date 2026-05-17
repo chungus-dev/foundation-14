@@ -650,7 +650,6 @@
     - WantedListCartridge
     - LogProbeCartridge
     - AstroNavCartridge
-    - PlantAnalyzerCartridge
 
 - type: entity
   parent: ScpBasePDA
@@ -712,7 +711,6 @@
     - WantedListCartridge
     - MedTekCartridge
     - AstroNavCartridge
-    - PlantAnalyzerCartridge
   - type: Clothing
     quickEquip: false
     slots:
