@@ -7,27 +7,29 @@
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Pouches/wy_medkit.rsi
+  - type: Item
+    size: Huge
   - type: Storage
     maxItemSize: Normal
     grid:
     - 0,0,5,1
     whitelist:
       tags:
-        - Bottle
-        - Spray
-        - Brutepack
-        - Bloodpack
-        - Gauze
-        - Ointment
-        - CigPack
-        - PillCanister
-        - Radio
-        - DiscreteHealthAnalyzer
-        - Dropper
-        - CentrifugeCompatible
+      - Bottle
+      - Spray
+      - Brutepack
+      - Bloodpack
+      - Gauze
+      - Ointment
+      - CigPack
+      - PillCanister
+      - Radio
+      - DiscreteHealthAnalyzer
+      - Dropper
+      - CentrifugeCompatible
       components:
-        - Injector
-        - Pill
+      - Injector
+      - Pill
   - type: ExplosionResistance
     damageCoefficient: 0.01
     worn: false
@@ -41,6 +43,8 @@
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Clothing/Pouches/large_drop.rsi
+  - type: Item
+    size: Huge
   - type: Storage
     maxItemSize: Small
     grid:

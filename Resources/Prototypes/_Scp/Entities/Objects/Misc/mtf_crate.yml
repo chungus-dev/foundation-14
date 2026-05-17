@@ -280,8 +280,8 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponShotgunBulldog
         - id: ClothingBeltMtfAmmoShellShotgunBulldog
+        - id: WeaponShotgunBulldog
 
 - type: entity
   parent: BaseMtfStorageCrateWeapon
@@ -509,11 +509,11 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingOuterArmorScout
+        - id: PouchAmmo
         - id: MtfTacticalBackpackMedFilled
         - id: ClothingBeltMtfMedicalFilledMedic
         - id: PouchMedical
-        - id: PouchAmmo
+        - id: ClothingOuterArmorScout
         - id: ClothingEyesHudMedSec
 
 - type: entity
@@ -529,11 +529,11 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingOuterArmorScout
+        - id: PouchAmmo
         - id: MtfTacticalBackpackFilled
         - id: ClothingBeltMtfSparePouch
         - id: PouchDrop
-        - id: PouchAmmo
+        - id: ClothingOuterArmorScout
 
 - type: entity
   id: MtfStorageCrateArmorNtf
