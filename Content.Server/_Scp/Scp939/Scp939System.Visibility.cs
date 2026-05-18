@@ -27,7 +27,7 @@ public sealed partial class Scp939System
 
     private void InitializeVisibility()
     {
-        SubscribeLocalEvent<MobStateComponent, ComponentStartup>(OnMobStartup);
+        SubscribeLocalEvent<MobStateComponent, MapInitEvent>(OnMobStartup);
 
         SubscribeLocalEvent<ActiveScp939VisibilityComponent, EntitySpokeEvent>(OnTargetSpoke);
         SubscribeLocalEvent<ActiveScp939VisibilityComponent, EmoteEvent>(OnTargetEmote);
@@ -66,7 +66,7 @@ public sealed partial class Scp939System
         MobDidSomething((args.User, visibilityComponent));
     }
 
-    private void OnMobStartup(Entity<MobStateComponent> ent, ref ComponentStartup args)
+    private void OnMobStartup(Entity<MobStateComponent> ent, ref MapInitEvent args)
     {
         if (HasComp<Scp939Component>(ent))
             return;

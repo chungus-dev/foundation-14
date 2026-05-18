@@ -23,7 +23,7 @@ public sealed class StationPowerTests : GameTest
     private const float MinimumPowerDurationSeconds = 10 * 60;
 
     // Scp edit start
-    private static readonly string[] GameMaps =
+    public static readonly string[] GameMaps =
     [
         "ScpComplexCompact",
         "ScpComplexStandard",

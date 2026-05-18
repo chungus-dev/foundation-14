@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Content.IntegrationTests.Fixtures;
+using Content.IntegrationTests.Tests.Power;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.Maps;
@@ -230,6 +231,11 @@ public sealed class StationJobsTest : GameTest
             {
                 foreach (var gameMap in prototypeManager.EnumeratePrototypes<GameMapPrototype>())
                 {
+                    // Scp added start - don't test vanilla maps because they always contain disabled vanilla roles
+                    if (!StationPowerTests.GameMaps.Contains(gameMap.ID))
+                        continue;
+                    // Scp added end
+
                     foreach (var (stationId, station) in gameMap.Stations)
                     {
                         if (!station.StationComponentOverrides.TryGetComponent(name, out var comp))

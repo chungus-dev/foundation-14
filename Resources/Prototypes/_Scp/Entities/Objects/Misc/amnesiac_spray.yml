@@ -1,5 +1,5 @@
 - type: entity
-  parent: SprayBottle
+  parent: SprayBottleBase
   id: AmnesiacSpray
   name: amnesiac spray
   description: It's a canister with liquid inside.
@@ -12,7 +12,7 @@
       color: "#ffd900"
   - type: SolutionContainerManager
     solutions:
-      spray:
+      drink:
         maxVol: 40
         reagents:
         - ReagentId: AmnesiacA

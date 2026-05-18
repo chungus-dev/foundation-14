@@ -210,6 +210,9 @@
   parent:
   - ScpComputerIFF
   - ComputerIFFSyndicate
+  components:
+  - type: Computer
+    board: ComputerIFFSyndicateCircuitboard
 
 - type: entity
   id: ScpComputerPowerMonitoring
@@ -405,6 +408,8 @@
       state: comm_syndie
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+  - type: Computer
+    board: SyndicateCommsComputerCircuitboard
 
 - type: entity
   id: ScpComputerCommunicationRegionalAdministration
@@ -429,6 +434,8 @@
     title: comms-console-announcement-title-regional-administration
     global: true
     announceSentBy: false
+  - type: Computer
+    board: CentcommCommsComputerCircuitboard
 
 - type: entity
   id: ScpComputerCommunicationO4Headquarters
@@ -519,6 +526,8 @@
       state: request-eng
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+  - type: Computer
+    board: CargoRequestEngineeringComputerCircuitboard
 
 - type: entity
   id: ScpComputerLogisticsOrdersMedicalService
@@ -536,6 +545,8 @@
       state: request-med
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+  - type: Computer
+    board: CargoRequestMedicalComputerCircuitboard
 
 - type: entity
   id: ScpComputerLogisticsOrdersScientificService
@@ -553,6 +564,8 @@
       state: request-sci
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+  - type: Computer
+    board: CargoRequestScienceComputerCircuitboard
 
 - type: entity
   id: ScpComputerLogisticsOrdersSecurity
@@ -570,6 +583,8 @@
       state: request-sec
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+  - type: Computer
+    board: CargoRequestSecurityComputerCircuitboard
 
 - type: entity
   id: ScpComputerLogisticsOrdersFoodAndSanitationService
@@ -587,6 +602,8 @@
       state: request-srv
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+  - type: Computer
+    board: CargoRequestServiceComputerCircuitboard
 
 - type: entity
   id: ScpComputerLogisticsBounty

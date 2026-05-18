@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingShoesBootsJack, BaseRestrictedContraband]
+  parent: [ClothingShoesBootsJack, BaseScpSecurityContraband]
   id: ClothingShoesBootsSecurityGuard
   name: security shoes
   description: Security combat boots for combat scenarios or combat situations. All combat, all the time.
@@ -11,7 +11,7 @@
     sprite: _Scp/Clothing/Shoes/security_guard.rsi
 
 - type: entity
-  parent: [ClothingShoesBootsJack, BaseRestrictedContraband]
+  parent: [ClothingShoesBootsJack, BaseScpSecurityContraband]
   id: ClothingShoesBootsWinterSecurityGuard
   name: winter security shoes
   description: Security combat boots for combat scenarios or combat situations. All combat, all the time.

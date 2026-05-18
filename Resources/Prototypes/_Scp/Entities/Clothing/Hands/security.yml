@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingHandsGlovesColorBlack, BaseRestrictedContraband]
+  parent: [ClothingHandsGlovesColorBlack, BaseScpSecurityContraband]
   id: ClothingHandsGlovesSecurity
   name: security gloves
   description: Regular black security gloves that do not keep you from frying.
@@ -11,7 +11,7 @@
     sprite: _Scp/Clothing/Hands/black.rsi
 
 - type: entity
-  parent: [ClothingHandsGlovesColorBlack, BaseRestrictedContraband]
+  parent: [ClothingHandsGlovesColorBlack, BaseScpSecurityContraband]
   id: ClothingHandsGlovesWinterSecurity
   name: winter security gloves
   description: Winter black security gloves that do not keep you from frying.
@@ -26,7 +26,7 @@
     coolingCoefficient: 0.85
 
 - type: entity
-  parent: [ClothingHandsGlovesColorBlack, BaseRestrictedContraband]
+  parent: [ClothingHandsGlovesColorBlack, BaseScpSecurityContraband]
   id: ClothingHandsGlovesColorBlackAlt
   suffix: SCP Guard
   components:

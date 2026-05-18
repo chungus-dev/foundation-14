@@ -64,6 +64,12 @@
   - type: RotatingLight
     speed: 90
   - type: Nuke
+  # Scp added start - predeclare nuke slot containers for PrototypeSaveTest.
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      Nuke: !type:ContainerSlot
+  # Scp added end
   - type: FTLSmashImmune
   - type: NavMapBeacon
     color: "#ff0000"

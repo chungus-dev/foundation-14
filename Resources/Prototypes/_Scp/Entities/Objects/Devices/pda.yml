@@ -36,6 +36,7 @@
     - NewsReaderCartridge
   - type: ContainerContainer
     containers:
+      PDA-id: !type:ContainerSlot {} # Scp added - keep PdaSystem from creating this container on spawn.
       PDA-pen: !type:ContainerSlot {}
       PDA-pai: !type:ContainerSlot {}
       Cartridge-Slot: !type:ContainerSlot {}

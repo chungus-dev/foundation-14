@@ -32,6 +32,8 @@
     damageModifierSet: StructuralMetallic
   - type: Transform
     anchored: true
+  - type: Physics
+    bodyType: Static
   - type: Destructible
     thresholds:
     - trigger:
