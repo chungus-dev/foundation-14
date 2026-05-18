@@ -112,13 +112,8 @@ public sealed class ScpThemeSheetlet : Sheetlet<NanotrasenStylesheet>
         var sliderFillBox = new StyleBoxTexture
         {
             Texture = sliderFillTex,
-            ExpandMarginLeft = -3,
-            ExpandMarginTop = -3,
-            ExpandMarginRight = -3,
-            ExpandMarginBottom = -3,
             Modulate = ScpPalettes.SCPWhite,
         };
-        sliderFillBox.SetPadding(StyleBox.Margin.Left, 2f);
         sliderFillBox.SetPatchMargin(StyleBox.Margin.All, 12);
 
         var sliderBackBox = new StyleBoxTexture
