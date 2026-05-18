@@ -6,18 +6,18 @@ namespace Content.Server._Scp.Backrooms.EmitEmotesPeriodically;
 [RegisterComponent]
 public sealed partial class EmitEmotesPeriodicallyComponent : Component
 {
-    [DataField(required: true), ViewVariables]
-    public HashSet<ProtoId<EmotePrototype>> Emotes = new();
+    [DataField(required: true)]
+    public HashSet<ProtoId<EmotePrototype>> Emotes = [];
 
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public EmitMode Mode = EmitMode.All;
 
     #region Timings
 
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public TimeSpan Cooldown = TimeSpan.FromSeconds(30);
 
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public int CooldownVariations;
 
     [ViewVariables]
@@ -32,6 +32,6 @@ public sealed partial class EmitEmotesPeriodicallyComponent : Component
 public enum EmitMode : byte
 {
     All,
-    Random
+    Random,
 }
 

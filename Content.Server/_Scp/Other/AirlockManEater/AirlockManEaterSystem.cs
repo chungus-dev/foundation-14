@@ -13,7 +13,7 @@ using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Timer = Robust.Shared.Timing.Timer;
 
-namespace Content.Server._Scp.Misc.AirlockManEater;
+namespace Content.Server._Scp.Other.AirlockManEater;
 
 // TODO: Фикс отстающего от маски спрайта. Или наоборот.
 public sealed class AirlockManEaterSystem : SharedAirlockManEaterSystem

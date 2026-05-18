@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Numerics;
-using Content.Server._Scp.Misc;
+using Content.Server._Scp.Other;
 using Content.Server.Announcements;
 using Content.Server.Discord;
 using Content.Server.GameTicking.Events;

@@ -46,7 +46,7 @@ public sealed partial class StationJobsSystem
                 stationJobs.SetupAvailableJobs[jobPrototypeId] = [normalized, normalized];
                 return true;
             case true:
-                slots[0] = normalized;
+                slots?[0] = normalized;
                 return true;
         }
     }

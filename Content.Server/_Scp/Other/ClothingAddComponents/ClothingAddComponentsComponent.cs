@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Prototypes;
 
-namespace Content.Server._Scp.Misc.ClothingAddComponents;
+namespace Content.Server._Scp.Other.ClothingAddComponents;
 
 [RegisterComponent]
 public sealed partial class ClothingAddComponentsComponent : Component

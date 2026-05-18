@@ -9,14 +9,14 @@ public sealed partial class DispersingShotSourceComponent : Component
     /// <inheritdoc cref="AngleIncreaseMultiplier"/>.
     /// Устанавливается только через прототипы.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField, Access(typeof(DispersingShotSystem))]
+    [DataField, AutoNetworkedField, Access(typeof(DispersingShotSystem))]
     public float DefaultAngleIncreaseModifier = 2f;
 
     /// <summary>
     /// <inheritdoc cref="MaxAngleMultiplier"/>.
     /// Устанавливается только через прототипы.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField, Access(typeof(DispersingShotSystem))]
+    [DataField, AutoNetworkedField, Access(typeof(DispersingShotSystem))]
     public float DefaultMaxAngleMultiplier = 2f;
 
     /// <summary>

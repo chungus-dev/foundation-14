@@ -4,7 +4,7 @@ using Content.Shared._Scp.Other.Deployable;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 
-namespace Content.Server._Scp.Misc.Deployable;
+namespace Content.Server._Scp.Other.Deployable;
 
 public sealed class DeployableSystem : SharedDeployableSystem
 {

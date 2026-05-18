@@ -6,7 +6,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 
-namespace Content.Server._Scp.Misc.KillGlobalSound;
+namespace Content.Server._Scp.Other.KillGlobalSound;
 
 /// <summary>
 /// Система, созданная для проигрывания отдаленного звука убийства сущности специально для сцп

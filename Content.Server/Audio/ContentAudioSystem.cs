@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Server._Scp.Misc;
+using Content.Server._Scp.Other;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
 using Content.Shared.Audio;

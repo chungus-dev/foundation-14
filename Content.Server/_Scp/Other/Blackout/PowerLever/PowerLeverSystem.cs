@@ -9,7 +9,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
 
-namespace Content.Server._Scp.Misc.Blackout.PowerLever;
+namespace Content.Server._Scp.Other.Blackout.PowerLever;
 
 public sealed class PowerLeverSystem : EntitySystem
 {

@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Content.Server._Scp.Misc;
+using Content.Server._Scp.Other;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;

@@ -4,7 +4,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Server._Scp.Misc.LiquidParticlesGenerator;
+namespace Content.Server._Scp.Other.LiquidParticlesGenerator;
 
 public sealed class LiquidParticlesGeneratorSystem : EntitySystem
 {

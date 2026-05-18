@@ -1,6 +1,6 @@
 ﻿using Content.Shared.Inventory.Events;
 
-namespace Content.Server._Scp.Misc.ClothingAddComponents;
+namespace Content.Server._Scp.Other.ClothingAddComponents;
 
 // TODO: Добавить проверку на наличие аналогичных компонентов у ентити
 // Не используйте пожалуйста это для чего-то сложнее, кроме выдачи одного единственного компонента, который нигде по-другому не выдается

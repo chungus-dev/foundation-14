@@ -1,4 +1,4 @@
-﻿namespace Content.Server._Scp.Misc.AnnounceOnSpawn;
+﻿namespace Content.Server._Scp.Other.AnnounceOnSpawn;
 
 [RegisterComponent]
 public sealed partial class ScpAnnounceOnSpawnSourceComponent : Component;

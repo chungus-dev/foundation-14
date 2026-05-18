@@ -1,4 +1,4 @@
-﻿namespace Content.Server._Scp.Misc.LiquidParticlesGenerator;
+﻿namespace Content.Server._Scp.Other.LiquidParticlesGenerator;
 
 [RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class LiquidParticlesGeneratorComponent : Component

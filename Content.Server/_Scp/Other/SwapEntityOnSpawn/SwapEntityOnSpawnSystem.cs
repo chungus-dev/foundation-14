@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Random;
 
-namespace Content.Server._Scp.Misc.SwapEntityOnSpawn;
+namespace Content.Server._Scp.Other.SwapEntityOnSpawn;
 
 public sealed class SwapEntityOnSpawnSystem : EntitySystem
 {

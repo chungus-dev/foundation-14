@@ -2,7 +2,7 @@
 using Content.Server.Vocalization.Systems;
 using Content.Shared.Advertise.Components;
 
-namespace Content.Server._Scp.Misc.AntiSpam;
+namespace Content.Server._Scp.Other.AntiSpam;
 
 public sealed class AntiSoundSpamSystem : EntitySystem
 {

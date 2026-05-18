@@ -11,7 +11,7 @@ using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 
-namespace Content.Server._Scp.Misc.AnnounceOnSpawn;
+namespace Content.Server._Scp.Other.AnnounceOnSpawn;
 
 public sealed class ScpAnnounceOnSpawnSystem : EntitySystem
 {

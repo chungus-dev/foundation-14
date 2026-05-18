@@ -3,7 +3,7 @@ using Content.Shared.Radio;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Scp.Misc.AnnounceOnSpawn;
+namespace Content.Server._Scp.Other.AnnounceOnSpawn;
 
 [RegisterComponent]
 public sealed partial class ScpAnnounceOnSpawnComponent : Component

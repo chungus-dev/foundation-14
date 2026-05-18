@@ -1,7 +1,7 @@
 ﻿using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 
-namespace Content.Server._Scp.Misc.KillGlobalSound;
+namespace Content.Server._Scp.Other.KillGlobalSound;
 
 [RegisterComponent]
 public sealed partial class KillGlobalSoundComponent : Component
@@ -12,9 +12,9 @@ public sealed partial class KillGlobalSoundComponent : Component
     [DataField(required: true)]
     public EntityWhitelist OriginWhitelist = default!;
 
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float Chance = 1f;
 
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float MaxRadius = 30f;
 }
