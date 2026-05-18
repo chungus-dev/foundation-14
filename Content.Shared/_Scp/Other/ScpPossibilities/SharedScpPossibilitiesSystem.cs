@@ -1,4 +1,4 @@
-using Content.Shared._Sunrise.Random;
+using Content.Shared._Scp.Utility.Random;
 using Content.Shared.Mech;
 using Content.Shared.Mech.Components;
 using Content.Shared.Popups;
@@ -15,6 +15,7 @@ public sealed class SharedScpPossibilitiesSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedEntityStorageSystem _entityStorage = default!;
+
     public override void Initialize()
     {
         base.Initialize();
