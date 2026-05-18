@@ -1,5 +1,7 @@
-﻿defaultWindowTitle: Space Station 14
-windowIconSet: /Textures/Logo/icon
-splashLogo: /Textures/Logo/logo.png
+﻿# Scp edit start
+defaultWindowTitle: "SCP: The Facility"
+windowIconSet: /Textures/_Scp/Logo/icon
+splashLogo: /Textures/_Scp/Logo/logo.png
+# Scp edit end
 
 # PJB PLEASE

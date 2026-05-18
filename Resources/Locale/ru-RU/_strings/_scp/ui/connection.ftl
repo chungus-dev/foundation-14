@@ -1,1 +1,1 @@
-launcher-server-name = SCP: Foundation
+launcher-server-name = SCP: The Facility
