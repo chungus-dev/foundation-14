@@ -1,0 +1,78 @@
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetSecurity
+  name: helmet
+  description: Standard black security gear. Protects the head from impacts.
+  suffix: SCP Guard
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Head/Helmets/security.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Head/Helmets/security.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetSecurity
+  id: ClothingHeadClosedHelmetSecurity
+  name: closed black security helmet
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Head/Helmets/security_2.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Head/Helmets/security_2.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetRiot
+  id: ClothingHeadHelmetSecurityRiot
+  name: riot helmet
+  description: Standard black security gear. Protects the head from impacts.
+  suffix: SCP Guard
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Head/Helmets/security_riot.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Head/Helmets/security_riot.rsi
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatSecBlack
+  name: black security cap
+  description: It's a robust baseball hat in black colour.
+  suffix: SCP Guard
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Head/security_cap.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Head/security_cap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSecurityBeret
+  name: security black beret
+  description: Stylish neck gaiter for your neck, can protect from the cosmic wind?...
+  suffix: SCP Guard
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Head/security_beret.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Head/security_beret.rsi
+
+- type: entity
+  parent: ClothingHeadHatBeretHoS
+  id: ClothingHeadHatCapLeatherSquadLeader
+  name: squad leader cap
+  description: A regulation cap issued to squad leaders. Durable, practical, and a clear mark of authority.
+  suffix: SCP Guard
+
+- type: entity
+  parent: ClothingHeadHatCentcomcap
+  id: ClothingHeadCapBlackSquadLeader
+  name: squad leader cap
+  description: A regulation cap issued to squad leaders. Durable, practical, and a clear mark of authority.
+  suffix: SCP Guard
+
+- type: entity
+  parent: ClothingHeadHatCentcomcap
+  id: ClothingHeadHatCapBlackSquadLeader
+  name: squad leader cap
+  description: A regulation cap issued to squad leaders. Durable, practical, and a clear mark of authority.
+  suffix: SCP Guard

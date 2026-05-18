@@ -1,0 +1,49 @@
+- type: reagent
+  id: АМН-С227
+  name: reagent-name-amhc227
+  desc: reagent-desc-amhc227
+  physicalDesc: reagent-physicaldesc-amhc227
+  group: Special
+  flavor: funny
+  color: "#e5ead0"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:Emote
+        conditions:
+        - !type:ReagentCondition
+          reagent: АМН-С227
+          min: 1
+        emote: Yawn
+        showInChat: true
+        probability: 0.1
+      - !type:MovementSpeedModifier
+        conditions:
+        - !type:ReagentCondition
+          reagent: АМН-С227
+          min: 1
+        walkSpeedModifier: 0.65
+        sprintSpeedModifier: 0.65
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
+        time: 4
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: АМН-С227
+          min: 1
+- type: entity
+  parent: BaseFoam
+  id: АМН-С227Smoke
+  name: smoke
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    sprite: Effects/chemsmoke.rsi
+    state: chemsmoke
+  - type: TimedDespawn
+    lifetime: 10
+  - type: Tag
+    tags:
+    - HideContextMenu

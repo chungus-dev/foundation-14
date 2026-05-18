@@ -6,9 +6,9 @@
   description: A sheet of glass, used often on the station in various applications.
   components:
   - type: Sprite
-    sprite: Objects/Materials/Sheets/glass.rsi
+    sprite: _Scp/Objects/Materials/Sheets/glass.rsi # Scp edit
   - type: Item
-    sprite: Objects/Materials/Sheets/glass.rsi
+    sprite: _Scp/Objects/Materials/Sheets/glass.rsi # Scp edit
     size: Normal
   - type: StaticPrice
     price: 0
@@ -466,11 +466,13 @@
     - cglass_2
     - cglass_3
   - type: Sprite
+    sprite: Objects/Materials/Sheets/glass.rsi # Scp edit
     state: cglass_3
     layers:
     - state: cglass_3
       map: ["base"]
   - type: Item
+    sprite: Objects/Materials/Sheets/glass.rsi # Scp edit
     heldPrefix: cglass
   - type: Construction
     graph: Glass
@@ -500,7 +502,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Extractable
-    grindableSolutionName: cglass
+    grindableSolutionName: brassglass
   - type: SolutionContainerManager
     solutions:
       cglass:

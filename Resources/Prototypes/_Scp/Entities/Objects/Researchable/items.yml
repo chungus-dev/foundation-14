@@ -1,0 +1,193 @@
+# Средства защиты от сцп
+
+# Scp-173
+
+- type: entity # TODO: Превратить в контейнер с химикатом
+  parent: BaseItem
+  id: EyeDroplets
+  suffix: SCP-173 Item
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/patronbottle.rsi # TODO: Нормальный спрайт, а не алкашка
+    state: icon_empty
+    scale: 0.4,0.6
+  - type: Item
+    size: Tiny
+  - type: ReducedBlinking
+    firstBlinkingBonusTime: 30
+    otherBlinkingBonusTime: 120
+    otherBlinkingBonusDuration: 7
+  - type: UseDelay
+    delay: 3
+
+# Scp-096
+
+- type: entity
+  id: BaseScp096Mask
+  abstract: true
+  components:
+  - type: Clothing
+    sprite: _Scp/Clothing/Head/Scp096/scp096_bag-equipped.rsi
+    equipDelay: 3
+    unequipDelay: 10
+  - type: Item
+    size: Normal
+    storedRotation: -90
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    resetOnHandSelected: false
+    animation: WeaponArcDisarm
+    damage:
+      types:
+        Blunt: 0
+  - type: ScpMask
+    targetWhitelist:
+      components:
+      - Scp096
+    damageOriginWhitelist:
+      components:
+      - MobState
+    tearChanceOnDamage: 0.4
+  - type: ClothingAddActions
+    actions:
+    - ScpTearMask
+
+- type: entity
+  parent:
+  - ClothingHeadBase
+  - BaseScp096Mask
+  id: ClothingHeadBagScp096
+  suffix: SCP-096 Item
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Head/Scp096/scp096_bag-icons.rsi
+    state: icon
+  - type: Clothing
+    unequipDelay: 1
+  - type: ScpMask
+    slots:
+    - Head
+    tearTime: 1 # мешок снимается легко
+    tearChanceOnDamage: 0.8
+
+- type: entity
+  parent:
+  - ClothingMaskBase
+  - BaseScp096Mask
+  id: ReinforcedMaskScp096
+  suffix: SCP-096 Item
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Mask/scp-096.rsi
+    layers:
+    - state: icon
+      map: [ "mask" ]
+  - type: Tag
+    tags:
+    - ReinforcedMaskScp096
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetAiPowered
+  suffix: SCP-096 Item
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Head/Helmets/aipowered.rsi
+  - type: Item
+    size: Normal
+  - type: ClothingAddComponents
+    components:
+    - type: Scp096Protection
+      problemChance: 0.002 # 0,2% каждый тик проебаться
+  - type: Tag
+    tags:
+    - ClothingHeadHelmetAiPowered
+
+# Scp-049
+
+- type: entity
+  id: Scp049ProtectionImplanter
+  suffix: SCP-049 Protection
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: Scp049ProtectionImplant
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: Scp049ProtectionImplant
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    whitelist:
+      components:
+      - MobState
+  - type: Scp049ProtectionImplant
+
+# Scp-106
+
+# TODO: Возможно стоит телепортировать его в радиусе от удара куда-то или отбрасывать, чтобы эффектнее смотрелось
+# TODO: чатгпт снова дал идею - использовать заряд и встроенную батарею для работы, визуализировать поле какое-то еще
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterAntiTeleportation
+  suffix: SCP-106 Item
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
+  - type: Item
+    size: Normal
+    storedRotation: -90
+  - type: ClothingAddComponents
+    components:
+    - type: Scp106Protection
+  - type: Tag
+    tags:
+    - ClothingOuterAntiTeleportation
+    - WhitelistChameleon
+
+# Scp-939
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesSilent
+  suffix: SCP-939 Item
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Shoes/Boots/silentboots.rsi
+  - type: Item
+    size: Normal
+    storedRotation: -90
+  - type: ClothingAddComponents
+    components:
+    - type: Scp939Protection
+  - type: FootstepModifier
+    footstepSoundCollection: null
+  - type: Tag
+    tags:
+    - ClothingShoesSilent
+    - WhitelistChameleon
+
+# Scp-035
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadAwareness
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Head/Helmets/techno.rsi
+    layers:
+    - state: icon
+      map: [ "mask" ]
+  - type: Item
+    size: Normal
+    storedRotation: -90
+  - type: ClothingAddComponents
+    components:
+    - type: Scp035MindProtection
+    - type: Scp012Protection
+  - type: Tag
+    tags:
+    - ClothingHeadAwareness

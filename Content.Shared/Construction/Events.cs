@@ -125,6 +125,11 @@ public sealed partial class ConstructionInteractDoAfterEvent : DoAfterEvent
         ClickLocation = entManager.GetNetCoordinates(ev.ClickLocation);
     }
 
+    public ConstructionInteractDoAfterEvent(NetCoordinates clickLocation)
+    {
+        ClickLocation = clickLocation;
+    }
+
     public override DoAfterEvent Clone() => this;
 }
 

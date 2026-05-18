@@ -1,0 +1,43 @@
+- type: entity
+  parent: Railing
+  id: ScpRailingWood
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/wooden_railing.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/wooden_railing.rsi
+  - type: Construction
+    graph: ScpRailingWood
+
+- type: entity
+  parent: RailingCorner
+  id: ScpRailingCornerWood
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/wooden_railing.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/wooden_railing.rsi
+  - type: Construction
+    graph: ScpRailingWood
+
+- type: entity
+  parent: RailingCornerSmall
+  id: ScpRailingCornerWoodSmall
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/wooden_railing.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/wooden_railing.rsi
+  - type: Construction
+    graph: ScpRailingWood
+
+- type: entity
+  parent: RailingRound
+  id: ScpRailingRoundWood
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/wooden_railing.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/wooden_railing.rsi
+  - type: Construction
+    graph: ScpRailingWood

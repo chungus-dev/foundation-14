@@ -7,6 +7,8 @@ using Content.Shared.Fluids.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using System.Linq;
+using Content.Server.Fluids.EntitySystems;
+using Content.Shared._Scp.Scp173;
 
 namespace Content.Server.Chemistry.TileReactions;
 
@@ -16,6 +18,11 @@ namespace Content.Server.Chemistry.TileReactions;
 [DataDefinition]
 public sealed partial class CleanTileReaction : ITileReaction
 {
+    // Scp added start
+    [DataField]
+    public bool DoubleScp173Reagent = true;
+    // Scp added end
+
     /// <summary>
     /// How much it costs to clean 1 unit of reagent.
     /// </summary>
@@ -43,13 +50,30 @@ public sealed partial class CleanTileReaction : ITileReaction
         // Multiply as the amount we can actually purge is higher than the react amount.
         var purgeAmount = reactVolume / CleanAmountMultiplier;
 
+        // Scp added start - для удваивания количества вещества 173 от чистящего реагента
+        var puddleSystem = entityManager.System<PuddleSystem>();
+        // Scp added end
+
         foreach (var entity in entities)
         {
             if (!puddleQuery.TryGetComponent(entity, out var puddle) ||
-                !solutionContainerSystem.TryGetSolution(entity, puddle.SolutionName, out var puddleSolution, out _))
+                !solutionContainerSystem.TryGetSolution(entity, puddle.SolutionName, out var puddleSolution, out var puddleSolutionValue))
             {
                 continue;
             }
+
+            // Scp added start - для удваивания количества вещества 173 от чистящего реагента
+            if (DoubleScp173Reagent && puddleSolutionValue.TryGetReagent(new ReagentId(Scp173Component.Reagent, null), out var quantity))
+            {
+                var tempSol = new Solution();
+                tempSol.AddReagent(Scp173Component.Reagent, quantity.Quantity);
+                puddleSystem.TrySpillAt(tile, tempSol, out _, false);
+
+                purgeAmount -= FixedPoint2.Min(purgeAmount, quantity.Quantity);
+
+                continue;
+            }
+            // Scp added start
 
             var purgeable = solutionContainerSystem.SplitSolutionWithout(puddleSolution.Value, purgeAmount, ReplacementReagent, reagent.ID);
 
@@ -60,6 +84,8 @@ public sealed partial class CleanTileReaction : ITileReaction
             if (purgeable.Volume <= FixedPoint2.Zero)
                 break;
         }
+
+        // Scp edit - тут санрайз насрал удалением следов, я это удалил.
 
         return (reactVolume / CleanAmountMultiplier - purgeAmount) * CleanAmountMultiplier;
     }

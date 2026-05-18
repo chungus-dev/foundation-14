@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseStructure
   id: CryogenicSleepUnit
+  categories: [ HideSpawnMenu ] # Scp edit
   name: cryogenic sleep unit
   description: A super-cooled container that keeps crewmates safe during space travel.
   components:
@@ -60,6 +61,7 @@
 - type: entity
   parent: CryogenicSleepUnit
   id: CryogenicSleepUnitSpawner
+  categories: [ HideSpawnMenu ] # Scp edit
   suffix: Spawner, Roundstart AllJobs
   components:
   - type: ContainerSpawnPoint
@@ -69,6 +71,7 @@
 - type: entity
   parent: CryogenicSleepUnit
   id: CryogenicSleepUnitSpawnerLateJoin
+  categories: [ HideSpawnMenu ] # Scp edit
   suffix: Spawner, LateJoin
   components:
     - type: ContainerSpawnPoint

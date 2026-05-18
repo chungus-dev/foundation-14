@@ -1,0 +1,15 @@
+ent-ScpRandomPosterAny = { ent-RandomPosterAny }
+    .desc = { ent-RandomPosterDesc }
+    .suffix = SCP
+ent-ScpRandomPosterContraband = { ent-RandomPosterContraband }
+    .desc = { ent-RandomPosterContraband.desc }
+    .suffix = SCP
+ent-ScpRandomPosterLegit = { ent-RandomPosterLegit }
+    .desc = { ent-RandomPosterLegit.desc }
+    .suffix = SCP
+ent-ScpRandomPosterDClass = D-Class random poster spawner
+    .desc = { ent-MarkerBase.desc }
+    .suffix = SCP
+ent-ScpRandomPosterScp049 = random SCP-049 poster spawner
+    .desc = { ent-MarkerBase.desc }
+    .suffix = SCP | SCP-049

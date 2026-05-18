@@ -22,6 +22,7 @@ using Robust.Shared.Prototypes;
 namespace Content.IntegrationTests.Tests.Commands;
 
 [TestFixture]
+[Ignore("SCP: We disabled suicide damage")] // Scp added
 public sealed class SuicideCommandTests : GameTest
 {
 

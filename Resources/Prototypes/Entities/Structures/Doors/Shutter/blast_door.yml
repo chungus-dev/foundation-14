@@ -1,8 +1,9 @@
-﻿- type: entity
+- type: entity
   id: BlastDoor
   parent: BaseShutter
   name: blast door
   description: This one says 'BLAST DONGER'.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     containerAccessProvider: board
@@ -13,6 +14,17 @@
       map: ["enum.DoorVisualLayers.Base"]
     - state: welded
       map: ["enum.WeldableLayers.BaseWelded"]
+  - type: Fixtures # Scp edit
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.46,-0.46,0.46,0.46" # don't want this colliding with walls or they won't close
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
   - type: Door
     closeTimeOne: 0.4
     closeTimeTwo: 0.4
@@ -20,10 +32,14 @@
     openTimeTwo: 0.4
     openingAnimationTime: 1.0
     closingAnimationTime: 1.0
-    canPry: false
+    # Scp edit start
+    canPry: true
+    pryTime: 10
+    # Scp edit end
     crushDamage:
       types:
-        Blunt: 25 # yowch
+        Blunt: 50 # yowch
+    unsafeClosing: true # Scp edit
     openSound:
       path: /Audio/Machines/blastdoor.ogg
     closeSound:
@@ -34,7 +50,7 @@
     resistance: 8
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: StrongMetallic
+    damageModifierSet: StructuralMetallicStrongScp
   - type: ContainerFill
     containers:
       board: [ DoorElectronics ]
@@ -50,11 +66,15 @@
     messagePerceivedByOthers: comp-window-knock
     interactSuccessSound:
       path: /Audio/Effects/glass_knock.ogg
+  - type: IconSmooth # Scp edit
+    key: walls
+    mode: NoSprite
 
 - type: entity
   id: BlastDoorOpen
   parent: BlastDoor
   suffix: Open
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Door
     state: Open
@@ -72,6 +92,7 @@
   parent: BaseStructureDynamic
   name: blast door frame
   description: This one says 'BLAST DONGER'.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Shutters/blastdoor.rsi
@@ -140,6 +161,7 @@
   parent: BlastDoorXeno
   id: BlastDoorXenoOpen
   suffix: Open
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Door
     state: Open
@@ -157,6 +179,7 @@
   id: BlastDoorXenoFrame
   name: xeno blast door frame
   description: This one says 'BLAST DONGER'.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Shutters/xeno_blastdoor.rsi

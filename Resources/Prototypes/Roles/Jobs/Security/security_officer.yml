@@ -6,11 +6,14 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 4h
+      time: 2.5h
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
   canBeAntag: false
+  displayWeight: 10
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - Security
   - Brig

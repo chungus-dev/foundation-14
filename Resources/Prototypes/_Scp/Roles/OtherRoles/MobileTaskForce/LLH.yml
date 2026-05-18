@@ -1,0 +1,92 @@
+# Командир
+- type: job
+  id: LLHLeader
+  name: ghost-role-information-mtf-leader-LLH-name
+  description: ghost-role-information-mtf-leader-description
+  playTimeTracker: JobLLHLeader
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 #5 hrs
+  setPreference: false
+  startingGear: LLHLeaderGear
+  icon: JobIconLLHleader
+  supervisors: ghost-role-information-mtf-LLH-leader-supervisors
+  canBeAntag: false
+  weight: 890
+  overrideConsoleVisibility: false
+  alwaysShowInBanPanel: true
+  accessGroups:
+  - AllComplex
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: LLHLeaderGear
+  equipment:
+    jumpsuit: ClothingUniformLLH
+    back: MtfTacticalBackpack
+    shoes: ClothingShoesSwat
+    head: ClothingHelmetMtfTacticalNVG
+    mask: ClothingMaskMtfTacticalWhite
+    eyes: ClothingEyesNVDHighMtf
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorTacticalOmega
+    id: KeyCardMtfLLHLeader
+    ears: ClothingHeadsetAltMTFLLH
+    belt: ClothingBeltMtfSparePouch
+    pocket1: BaseUplinkHightLeader
+    pocket2: MobileTaskForcePDA
+  storage:
+    back:
+    - BoxMtfLeaderKit
+    - Crowbar
+    - CombatKnife
+    - HandheldCrewMonitor
+    - DoorRemoteCustom
+
+# Специалист
+- type: job
+  id: LLHSpecialist
+  name: ghost-role-information-mtf-specialist-LLH-name
+  description: ghost-role-information-mtf-specialist-description
+  playTimeTracker: JobLLHSpecialist
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 #5 hrs
+  setPreference: false
+  startingGear: LLHSpecialistGear
+  icon: JobIconLLH
+  supervisors: ghost-role-information-mtf-LLH-specialist-supervisors
+  canBeAntag: false
+  weight: 885
+  overrideConsoleVisibility: false
+  alwaysShowInBanPanel: true
+  accessGroups:
+  - AllComplex
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: LLHSpecialistGear
+  equipment:
+    jumpsuit: ClothingUniformLLH
+    back: MtfTacticalBackpack
+    shoes: ClothingShoesSwat
+    head: ClothingHelmetMtfTacticalNVG
+    mask: ClothingMaskMtfTacticalWhite
+    eyes: ClothingEyesNVDHighMtf
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorTacticalOmega
+    id: KeyCardMtfLLHSpecialist
+    ears: ClothingHeadsetAltMTFLLH
+    belt: ClothingBeltMtfSparePouch
+    pocket1: BaseUplinkHightSpecialist
+    pocket2: MobileTaskForcePDA
+  storage:
+    back:
+    - Crowbar
+    - BoxMtfBaseKit
+    - CombatKnife
+    - DoorRemoteCustom

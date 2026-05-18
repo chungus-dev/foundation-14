@@ -175,10 +175,11 @@
   - type: StaticPrice
     price: 150
   - type: PryUnpowered
+  # Scp edit start
   - type: Tag
     tags:
-      - DoorRemoteWhitelist
-      # This tag is used by door remotes to allow or not a door remote to normally be able to interact with a door
+    - Windoor
+  # Scp edit end
 
 - type: entity
   id: BaseSecureWindoor

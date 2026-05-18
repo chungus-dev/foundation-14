@@ -1,0 +1,42 @@
+- type: entity
+  parent: AirlockShuttle
+  id: ScpAirlockShuttle
+  suffix: SCP Docking
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard/shuttle.rsi
+
+- type: entity
+  id: ScpAirlockGlassShuttle
+  parent: ScpAirlockShuttle
+  name: external airlock
+  suffix: SCP Glass, Docking
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass/shuttle.rsi
+  - type: Occluder
+    enabled: false
+  - type: Door
+    occludes: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        layer:     #removed opaque from the layer, allowing lasers to pass through glass airlocks
+        - GlassAirlockLayer
+
+- type: entity
+  id: ScpAirlockShuttleAssembly
+  parent: ScpAirlockAssembly
+  suffix: SCP Docking
+  components:
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass/shuttle.rsi
+    state: closed
+    snapCardinals: false
+  - type: Construction
+    graph: AirlockShuttle
+    node: assembly

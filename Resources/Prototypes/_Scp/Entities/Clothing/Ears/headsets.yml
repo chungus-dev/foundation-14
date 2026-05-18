@@ -1,0 +1,118 @@
+# Служба безопасности тяжелой зоны
+
+- type: entity
+  parent: [BaseScpHeadset, BaseSecurityLawyerContraband]
+  id: ClothingHeadsetHeavyContainmentSecurityService
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyHeavyContainmentSecurityService
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/security.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/security.rsi
+
+# Служба безопасности внешней административной зоны
+
+- type: entity
+  parent: [BaseScpHeadset, BaseSecurityContraband]
+  id: ClothingHeadsetFieldMedicalSpecialist
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMedicalService
+      - EncryptionKeyExternalAdministrativeZoneSecurityService
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/brigmedic.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/brigmedic.rsi
+
+- type: entity
+  parent: [BaseScpHeadset, BaseSecurityLawyerContraband]
+  id: ClothingHeadsetExternalAdministrativeZoneSecurityService
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyExternalAdministrativeZoneSecurityService
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/security.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/security.rsi
+
+# Научный отдел
+
+- type: entity
+  parent: BaseScpHeadset
+  id: ClothingHeadsetScientificService
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyScientificService
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/science.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/science.rsi
+
+# Медицинский отдел
+
+- type: entity
+  parent: BaseScpHeadset
+  id: ClothingHeadsetMedicalService
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMedicalService
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/medical.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/medical.rsi
+
+# Инженерно-технический отдел
+
+- type: entity
+  parent: BaseScpHeadset
+  id: ClothingHeadsetEngineeringTechnicalService
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyEngineeringTechnicalService
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/engineering.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/engineering.rsi
+
+# Отдел логистики
+
+- type: entity
+  parent: BaseScpHeadset
+  id: ClothingHeadsetLogistics
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyLogisticsService
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/cargo.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/cargo.rsi
+
+# Департамент продовольствия и санитарной службы
+
+- type: entity
+  parent: BaseScpHeadset
+  id: ClothingHeadsetFoodAndSanitation
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyFoodAndSanitationService
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/service.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/service.rsi

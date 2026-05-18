@@ -1,0 +1,96 @@
+﻿- type: damageModifierSet
+  id: SCP-999
+  coefficients:
+    Blunt: 2.05  # для тестов
+    Slash: 0.05
+    Piercing: 0.05
+    Cold: 0.0
+    Poison: 0.0
+    Cellular: 0.0
+    Radiation: 0.0
+    Caustic: 0.0
+
+- type: damageModifierSet
+  id: SCP-096
+  coefficients:
+    Blunt: 1.0
+    Slash: 1.0
+    Piercing: 1.0
+    Cold: 1.0
+    Caustic: 1.0
+    Heat: 1.0
+    Poison: 0.0
+    Cellular: 0.0
+    Radiation: 0.0
+
+- type: damageModifierSet
+  id: Scp096FaceSet
+  coefficients:
+    Blunt: 1.0
+    Slash: 0.0
+    Piercing: 0.0
+    Cold: 0.0
+    Caustic: 0.0
+    Heat: 0.0
+    Poison: 0.0
+    Cellular: 0.0
+    Radiation: 0.0
+
+- type: damageModifierSet
+  id: StructuralMetallicHardCellsScp
+  coefficients:
+    Blunt: 0.1
+    Slash: 0.1
+    Piercing: 0.1
+    Structural: 0.3
+  flatReductions:
+    Blunt: 30
+    Slash: 30
+    Piercing: 30
+    Heat: 20
+    Structural: 20
+
+- type: damageModifierSet
+  id: StrongMetallicScp # Для ScpHighSecDoor
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.5
+    Piercing: 0.7
+    Shock: 1.2
+  flatReductions:
+    Blunt: 20
+    Slash: 20
+    Piercing: 15
+    Shock: 10
+    Heat: 10
+
+- type: damageModifierSet
+  id: StructuralMetallicStrongScp
+  coefficients:
+    Blunt: 0.3
+    Slash: 0.2
+    Piercing: 0.1
+    Shock: 1.2
+    Structural: 0.5
+  flatReductions:
+    Blunt: 20
+    Slash: 20
+    Piercing: 20
+    Heat: 15
+    Structural: 15
+
+- type: damageModifierSet
+  id: StructuralMetallicScp
+  coefficients:
+    Blunt: 0.8
+    Slash: 0.8
+    Piercing: 0.8
+    Shock: 1.2
+    Heat: 1.2
+    Structural: 0.5
+  flatReductions:
+    Blunt: 15
+    Slash: 15
+    Piercing: 15
+    Heat: 10
+    Structural: 10

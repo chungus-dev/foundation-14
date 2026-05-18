@@ -1,0 +1,42 @@
+- type: entity
+  id: StandardScpStation
+  abstract: true
+  parent:
+  - BaseStation
+  - BaseStationNews # Новости
+  - BaseStationJobsSpawning
+  - BaseStationRecords
+  - BaseStationEvacuation # базовый эвак.. а нужен ли он?
+  - BaseFacilityAlertLevels
+  - BaseFacilitySiliconLawScpDefault
+  - BaseStationNanotrasen # Дает фракцию
+  - BaseFacilityTransitHub
+  - BaseStationCargo
+  - BaseStationAllEventsEligible
+  components:
+  - type: Transform
+  - type: MetaGarbageTarget
+    reagentSaveModifiers:
+      Scp173Reagent: 0.1
+      Blood: 0.1
+  - type: RandomPlanet
+    data:
+    - biome: ScpComplexSnow
+      weather:
+      - WeatherSnowfallMedium
+      - WeatherSnowfallLight
+
+- type: entity
+  id: ScpComplexCompact
+  parent: StandardScpStation
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: ScpComplexStandard
+  parent: StandardScpStation
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: ScpComplexModular
+  parent: StandardScpStation
+  categories: [ HideSpawnMenu ]

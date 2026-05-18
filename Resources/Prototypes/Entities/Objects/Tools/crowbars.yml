@@ -5,6 +5,7 @@
   name: crowbar
   description: A multipurpose tool used for many tasks, such as prying doors or bludgeoning interdimensional invaders.
   components:
+  - type: BloodSplatterer
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/crowbar_drop.ogg
@@ -40,6 +41,22 @@
   - type: Item
     sprite: Objects/Tools/crowbar.rsi
     size: Small
+  # Scp edit start - исследования сцп
+  - type: ScpInteractTool
+    delay: 30
+    cooldown: 600 # 5 минут
+    cooldownMessage: scp-interact-time-left
+    event: !type:ScpSpawnInteractDoAfterEvent
+      toSpawn: Scp173PaintChips
+      maxSpawn: 2
+    sound: /Audio/Effects/break_stone.ogg # TODO: Звук
+    whitelist:
+      components:
+      - Scp173
+  - type: GuideHelp
+    guides:
+    - ScpResearchAdvanced
+  # Scp edit end
 
 # Standard (grey) Crowbar
 - type: entity

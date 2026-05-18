@@ -1,4 +1,4 @@
-﻿# Donut
+# Donut
 
 # There is a newer, better version of the donutbox from tgstation included in the
 # donut.rsi. The reason it isn't implemented is it requires a StackVisuals offsetting
@@ -486,6 +486,7 @@
   parent: FoodBoxDonkpocket
   id: FoodBoxDonkpocketMoth
   name: box of moth-pockets
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: moth-box
@@ -501,6 +502,7 @@
   name: happy honk meal
   suffix: Toy Safe
   description: The toy is more edible than the food.
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     sprite: Objects/Storage/Happyhonk/clown.rsi
@@ -527,6 +529,7 @@
   parent: HappyHonk
   description: A limited mime edition of the happy honk meal.
   suffix: Toy Safe
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Tag
     tags:
@@ -543,6 +546,7 @@
   name: robust nukie meal
   description: A sus meal with a potentially explosive surprise.
   suffix: Toy Unsafe
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     sprite: Objects/Storage/Happyhonk/nukie.rsi
@@ -558,6 +562,7 @@
   id: HappyHonkNukieSnacks
   suffix: Toy Unsafe, Snacks
   name: syndicate snack box
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Storage
     grid:
@@ -583,7 +588,7 @@
           children:
           - id: FoodSaladValid
             weight: 0.05
-            amount: 2
+            amount: 4
           - id: FoodSnackSyndi
             amount: 4
 
@@ -592,6 +597,7 @@
   parent: HappyHonk
   name: woeful cluwne meal
   description: Nothing good can come of this.
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Tag
     tags:
@@ -632,23 +638,47 @@
   parent: HappyHonk
   name: Happy Honk Big Bite Meal
   description: Someone paid good money to get this fast food meal shipped out this way. It smells fresh, somehow.
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
         children:
         - id: FoodBurgerBig
-        - id: DrinkColaBottleFull
-        - !type:NestedSelector
-          tableId: HappyHonkToySafeEntityTable
         - id: FoodMealFriesCheesy
+        - id: DrinkColaBottleFull
         - id: FoodPieAppleSlice
+        - !type:GroupSelector # One item is too big, so the HappyHonkToySafeEntityTable can't  be used like the others.
+          children:
+          - id: ToyMouse
+          - id: ToyAi
+          - id: ToyNuke
+          - id: ToyFigurinePassenger
+          - id: ToyFigurineGriffin
+          - id: ToyIan
+          - id: ToyFigurineOwlman
+          - id: ToyFigurineSkeleton
+          - id: FoamBlade
+          - id: ClothingHeadHatBunny
+          - id: PersonalAI
+          #- id: CrayonBox
+          - id: ToySword
+          - id: RevolverCapGun
+          - id: ToyRubberDuck
+          - id: BikeHorn
+            weight: 0.5
+          - id: GoldenBikeHorn
+            weight: 0.1
+          - !type:NestedSelector
+            tableId: AllFigurineMechsTable
+            weight: 6
 
 - type: entity
   parent: BoxCardboard
   id: FoodBoxCloth
   name: box of FlutterSoft-brand cloth
   description: Fiber is the most important moth meal of the day! Don't skip it or use bottom-of-the-locker junk, buy high-quality FlutterSoft-brand cloth instead.
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/ingredients.rsi

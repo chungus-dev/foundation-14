@@ -18,11 +18,11 @@
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
-    - id: SlimesSpawnHorde
+    - id: SlimesSpawnHorde # Scp edit - old single-event prototype was removed upstream.
     - id: SolarFlare
-    - id: SnakeSpawnHorde
-    - id: SpiderClownSpawnHorde
-    - id: SpiderSpawnHorde
+    - id: SnakeSpawnHorde # Scp edit - old single-event prototype was removed upstream.
+    - id: SpiderClownSpawnHorde # Scp edit - old single-event prototype was removed upstream.
+    - id: SpiderSpawnHorde # Scp edit - old single-event prototype was removed upstream.
     - id: VentClog
 
 - type: entityTable
@@ -118,8 +118,6 @@
       max:  30
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio:
-      path: /Audio/Announcements/announce.ogg
     weight: 8
     duration: 35
   - type: BluespaceArtifactRule
@@ -151,11 +149,20 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-bureaucratic-error-announcement
+#    startAudio: Scp edit
     minimumPlayers: 25
     weight: 3
     duration: 1
   - type: BureaucraticErrorRule
     ignoredJobs:
+    # Scp edit start
+    - Scp173
+    - Scp939
+    - Scp106
+    - Scp049
+    - Scp999
+    - Scp096
+    # Scp edit end
     - StationAi
     - ResearchAssistant
     - MedicalIntern
@@ -168,6 +175,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-clerical-error-announcement
+#    startAudio: Scp edit
     minimumPlayers: 15
     weight: 5
     duration: 1
@@ -244,7 +252,7 @@
       pickPlayer: false
       startingGear: SpaceNinjaGear
       roleLoadout:
-      - RoleSurvivalSpaceNinja
+      - RoleSurvivalEVA
       briefing:
         text: ninja-role-greeting
         color: Green
@@ -323,7 +331,7 @@
   components:
   - type: StationEvent
     weight: 1 # rare
-    duration: null
+    duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
     minimumPlayers: 30
@@ -370,10 +378,9 @@
   id: GasLeak
   parent: BaseStationEventShortDelay
   components:
+  # Scp edit - убрал звуки аннонсментов
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
     weight: 8
   - type: GasLeakRule
@@ -411,10 +418,6 @@
   components:
   - type: StationEvent
     weight: 8
-    startAnnouncement: station-event-solar-flare-start-announcement
-    endAnnouncement: station-event-solar-flare-end-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     duration: 120
     maxDuration: 240
   - type: SolarFlareRule
@@ -446,8 +449,6 @@
     weight: 5
     duration: 60
   - type: VentClogRule
-
-# Critters
 
 - type: entity
   id: SlimesSpawnHorde
@@ -673,8 +674,8 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+#    startAudio: Scp edit
+#      path: /Audio/Announcements/attention.ogg
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20

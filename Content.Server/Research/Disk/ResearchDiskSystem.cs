@@ -1,6 +1,8 @@
 using System.Linq;
+using Content.Shared._Scp.Helpers;
 using Content.Shared.Interaction;
 using Content.Server.Popups;
+using Content.Shared.Research;
 using Content.Shared.Research.Prototypes;
 using Content.Server.Research.Systems;
 using Content.Shared.Research.Components;
@@ -28,8 +30,11 @@ namespace Content.Server.Research.Disk
             if (!TryComp<ResearchServerComponent>(args.Target, out var server))
                 return;
 
-            _research.ModifyServerPoints(args.Target.Value, component.Points, server);
-            _popupSystem.PopupEntity(Loc.GetString("research-disk-inserted", ("points", component.Points)), args.Target.Value, args.User);
+            _research.ModifyServerPoints(args.Target.Value, component.Points, component: server);
+            _popupSystem.PopupEntity(Loc.GetString("research-disk-inserted",
+                ("points", ResearchPointsHelper.PointsToString(component.Points, " ", _prototype))),
+                args.Target.Value,
+                args.User);
             QueueDel(uid);
             args.Handled = true;
         }
@@ -39,8 +44,18 @@ namespace Content.Server.Research.Disk
             if (!component.UnlockAllTech)
                 return;
 
-            component.Points = _prototype.EnumeratePrototypes<TechnologyPrototype>()
-                .Sum(tech => tech.Cost);
+            var allTechValue = new Dictionary<ProtoId<ResearchPointPrototype>, int>();
+
+            foreach (var prototype in _prototype.EnumeratePrototypes<TechnologyPrototype>())
+            {
+                foreach (var (pointType, value) in ResearchPointsHelper.GetPoints(prototype))
+                {
+                    allTechValue.TryGetValue(pointType, out var totalPoints);
+                    allTechValue[pointType] = totalPoints + value;
+                }
+            }
+
+            component.Points = allTechValue;
         }
     }
 }

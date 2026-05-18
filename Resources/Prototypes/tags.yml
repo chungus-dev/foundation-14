@@ -456,6 +456,9 @@
   id: Diagonal # Used by TileWallsCommand and FixRotationsCommand
 
 - type: Tag
+  id: Directional # Scp added - directional occluder/fixture marker used by Scp systems.
+
+- type: Tag
   id: Diamond # CargoBounty: BountySalvageDiamond
 
 - type: Tag
@@ -805,6 +808,21 @@
   id: Igniter # ConstructionGraph: makeshiftstunprod, FireBomb. Common ingredient in machines (HyperConvection)
 
 - type: Tag
+  id: ImprovisedCrowbar # Scp added - ported improvised tool whitelist marker.
+
+- type: Tag
+  id: ImprovisedMultitool # Scp added - ported improvised tool whitelist marker.
+
+- type: Tag
+  id: ImprovisedScrewdriver # Scp added - ported improvised tool whitelist marker.
+
+- type: Tag
+  id: ImprovisedWirecutter # Scp added - ported improvised tool whitelist marker.
+
+- type: Tag
+  id: ImprovisedWrench # Scp added - ported improvised tool whitelist marker.
+
+- type: Tag
   id: Inflatable # Storage whitelist: BorgModuleInflatable
 
 - type: Tag
@@ -1004,6 +1022,9 @@
 
 - type: Tag
   id: NoConsoleSound # Blacklist on BaseComputer, StationMap. Tagged entity will not make sound when opening the UI.
+
+- type: Tag
+  id: NoPaint # Scp added - ported paint-system blacklist marker.
 
 - type: Tag
   id: NotGhostnadoWarpable # Prevents the entity from being selected via "Warp to most followed" ghost warp

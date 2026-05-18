@@ -112,6 +112,10 @@ public abstract partial class SharedGunSystem
 
     private void OnGunSelected(EntityUid uid, GunComponent component, HandSelectedEvent args)
     {
+        // Scp edit start - навык кривой стрельбы
+        RefreshModifiers((uid, component));
+        // Scp edit end
+
         if (Timing.ApplyingState)
             return;
 

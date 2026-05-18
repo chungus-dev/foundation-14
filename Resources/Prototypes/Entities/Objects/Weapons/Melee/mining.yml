@@ -19,13 +19,17 @@
         volume: -3
     damage:
       types:
+        Blunt: 5
+        Slash: 5
         Piercing: 5
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
+        Blunt: 10
+        Slash: 10
         Piercing: 10
-        Structural: 30
+        Structural: 25
   - type: Item
     size: Normal
     shape:
@@ -34,6 +38,21 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     storedRotation: -45
   - type: UseDelay
+  # Scp edit start - исследования сцп
+  - type: ScpInteractTool
+    delay: 30
+    cooldown: 1200 # 10 минут
+    cooldownMessage: scp-interact-time-left
+    event: !type:ScpSpawnInteractDoAfterEvent
+      toSpawn: Scp173Shard
+    sound: /Audio/Effects/break_stone.ogg
+    whitelist:
+      components:
+      - Scp173
+  - type: GuideHelp
+    guides:
+    - ScpResearchAdvanced
+  # Scp edit end
   - type: PhysicalComposition
     materialComposition:
       Steel: 100

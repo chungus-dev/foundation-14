@@ -1,0 +1,14 @@
+flicking-start-all-command = { $successful } of { $all } possible lights are now flicking
+suicide-command-life-is-good = Value your character's life, don't kill yourself!
+cmd-vigers-desc = Toggles autokick and autodeadmin for users on the vigers list.
+cmd-vigers-help = Usage: { $command } <autokick|autodeadmin> [true|false]
+vigers-command-status = autokick: { $autokick }, autodeadmin: { $autodeadmin }
+vigers-command-state-enabled = enabled
+vigers-command-state-disabled = disabled
+vigers-command-mode-unknown = Unknown mode "{ $mode }". Use autokick or autodeadmin.
+vigers-command-autokick-enabled = Autokick mode for users on the vigers list has been enabled.
+vigers-command-autokick-disabled = Autokick mode for users on the vigers list has been disabled.
+vigers-command-autodeadmin-enabled = Autodeadmin mode for users on the vigers list has been enabled.
+vigers-command-autodeadmin-disabled = Autodeadmin mode for users on the vigers list has been disabled.
+vigers-command-protected = Users on the vigers list cannot toggle this command.
+vigers-autokick-reason = Connection is prohibited by server policy.

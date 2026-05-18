@@ -19,9 +19,9 @@ namespace Content.IntegrationTests.Tests.Round;
 [TestFixture]
 public sealed class JobTest : GameTest
 {
-    private static readonly ProtoId<JobPrototype> Passenger = "Passenger";
-    private static readonly ProtoId<JobPrototype> Engineer = "StationEngineer";
-    private static readonly ProtoId<JobPrototype> Captain = "Captain";
+    private static readonly ProtoId<JobPrototype> Passenger = "ClassD"; // Scp edit
+    private static readonly ProtoId<JobPrototype> Engineer = "GeneralTechnicalSpecialist"; // Scp edit
+    private static readonly ProtoId<JobPrototype> Captain = "Director"; // Scp edit
 
     private static string _map = "JobTestMap";
 
@@ -133,8 +133,7 @@ public sealed class JobTest : GameTest
     }
 
     /// <summary>
-    /// Check high priority jobs (e.g., captain) are selected before other roles, even if it means a player does not
-    /// get their preferred job.
+    /// Check higher weight jobs are selected before other roles within the same priority.
     /// </summary>
     [Test]
     public async Task JobWeightTest()
@@ -150,9 +149,9 @@ public sealed class JobTest : GameTest
         var engineer = pair.Server.ProtoMan.Index(Engineer);
         var passenger = pair.Server.ProtoMan.Index(Passenger);
         Assert.That(captain.Weight, Is.GreaterThan(engineer.Weight));
-        Assert.That(engineer.Weight, Is.EqualTo(passenger.Weight));
+        Assert.That(engineer.Weight, Is.GreaterThan(passenger.Weight));
 
-        await pair.SetJobPriorities((Passenger, JobPriority.Medium), (Engineer, JobPriority.High), (Captain, JobPriority.Low));
+        await pair.SetJobPriorities((Passenger, JobPriority.Medium), (Engineer, JobPriority.Medium), (Captain, JobPriority.Medium));
         ticker.ToggleReadyAll(true);
         await pair.Server.WaitPost(() => ticker.StartRound());
         await pair.RunTicksSync(10);

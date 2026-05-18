@@ -149,15 +149,28 @@
   id: MobAghostGear
   equipment:
     back: ClothingBackpackSatchelAdmin
-    id: AdminPDA
+    id: ScpAdminPDA # Scp edit
+    belt: ClothingBeltMtfUtilityFilled # Scp edit
+    eyes: ClothingEyesHudOmni # Scp edit
+    # head: ClothingHeadHatCowboyWhite # Scp edit
   storage:
     back:
     - GasAnalyzer
     - trayScanner
     - AccessConfiguratorUniversal
     - Multitool
+    # fire-start
+    - AnomalyScanner
+    - RubberStampApproved
+    - RubberStampDenied
+    - RubberStampEthicsCommittee
+    - RubberStampRegionalCommand
+    - RubberStampO4Command
+    - RubberStampOverseerCouncil
+    - BoxFolderCentComThreePapers
+    - Emag
+    - AccessBreaker
 
-#Gladiator with spear
 - type: startingGear
   id: GladiatorGear
   equipment:

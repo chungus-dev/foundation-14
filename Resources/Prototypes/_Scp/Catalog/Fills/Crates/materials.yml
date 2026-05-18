@@ -1,0 +1,41 @@
+- type: entity
+  id: CrateMaterialUranium
+  parent: CratePlasma
+  name: solid uranium crate
+  description: 30 sheets of uranium.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: SheetUranium
+  - type: AccessReader
+    access: [["Research"], ["Command"], ["Engineering"]]
+
+- type: entity
+  id: CrateMaterialDiamond
+  parent: CratePrivateSecure
+  name: diamond crate
+  description: Contains 1 diamond.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: MaterialDiamond1
+          amount: 1
+  - type: AccessReader
+    access: [["Research"], ["Command"]]
+
+- type: entity
+  id: CrateMaterialConcrete
+  parent: CrateGenericSteel
+  name: concrete crate
+  description: 90 concrete.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: MaterialConcrete
+          amount: 3

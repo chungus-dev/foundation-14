@@ -5,6 +5,9 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  # Scp added start
+  - type: BloodSplatterer
+  # Scp added end
   - type: Sprite
     layers:
       - state: base
@@ -20,6 +23,7 @@
   - type: Tag
     tags:
     - Sidearm
+    - LockerPistol # Scp edit
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
     quickEquip: false
@@ -48,7 +52,6 @@
         whitelist:
           tags:
             - MagazinePistol
-            - MagazinePistolHighCapacity
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber

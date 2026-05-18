@@ -1,0 +1,15 @@
+# Scp added - placeholder currency used by disabled ported donation uplinks.
+- type: currency
+  id: Suntick
+  displayName: store-currency-display-suntick
+  canWithdraw: false
+
+- type: currency
+  id: SupplyPoint
+  displayName: store-currency-display-supply-point
+  canWithdraw: false
+
+- type: currency
+  id: LifeEssence
+  displayName: store-currency-display-life-essence
+  canWithdraw: false

@@ -38,7 +38,7 @@ namespace Content.Shared.Movement.Pulling.Systems;
 /// <summary>
 /// Allows one entity to pull another behind them via a physics distance joint.
 /// </summary>
-public sealed class PullingSystem : EntitySystem
+public sealed partial class PullingSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
@@ -57,6 +57,8 @@ public sealed class PullingSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+
+        InitializeScpHolding();
 
         UpdatesAfter.Add(typeof(SharedPhysicsSystem));
         UpdatesOutsidePrediction = true;
@@ -509,6 +511,9 @@ public sealed class PullingSystem : EntitySystem
 
         if (pullerComp.Pulling == pullableUid)
             return true;
+
+        if (TryRedirectPullToScpHold(pullerUid, pullableUid, pullerComp, pullableComp, out var holdSuccess))
+            return holdSuccess;
 
         if (!CanPull(pullerUid, pullableUid))
             return false;

@@ -78,8 +78,7 @@
   - Tiles
   - Concrete
   materials:
-    Steel: 25
-    Plastic: 25
+    Concrete: 25 # Scp edit
 
 - type: latheRecipe
   abstract: true

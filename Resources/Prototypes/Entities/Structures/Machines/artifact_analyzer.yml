@@ -129,6 +129,11 @@
       tags:
       - CanPilot # People
       - VimPilot # Pets
+    # Scp added start
+    blacklist:
+      components:
+      - Scp
+    # Scp added end
   - type: Appearance
   - type: GenericVisualizer
     visuals:

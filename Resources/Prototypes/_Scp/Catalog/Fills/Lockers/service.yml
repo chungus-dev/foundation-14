@@ -1,0 +1,86 @@
+- type: entity
+  id: ScpClosetGastronomicSpecialistFilled
+  parent: ScpClosetGastronomicSpecialist
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillClosetChef
+
+- type: entity
+  id: ScpClosetJanitorFilled
+  parent: ScpClosetJanitor
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillClosetJanitor
+
+- type: entity
+  parent: ScpLockerBotanistPhytogeneticist
+  id: ScpLockerBotanistPhytogeneticistFilled
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: ScpFillLockerBotanistPhytogeneticist
+
+- type: entity
+  parent: ScpLockerBooze
+  id: ScpLockerBoozeFilled
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: ScpFillLockerBooze
+
+- type: entity
+  id: ScpClosetLegalFilled
+  parent: ScpClosetLegal
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillClosetLegal
+
+- type: entityTable
+  id: ScpFillLockerBotanistPhytogeneticist
+  table: !type:AllSelector
+    children:
+    - id: ClothingHandsGlovesLeather
+    - id: ClothingOuterApronBotanist
+    - id: ClothingHeadBandBotany
+    - id: ChemistryBottleRobustHarvest
+      prob: 0.3
+    - id: ClothingBeltPlant
+    - id: PlantBag ##Some maps don't have nutrivend
+    - id: BoxMouthSwab
+    - id: Dropper
+    - id: HandLabeler
+    - id: ClothingUniformOveralls
+    - id: ClothingHeadHatTrucker
+      prob: 0.1
+
+- type: entityTable
+  id: ScpFillLockerBooze
+  table: !type:AllSelector
+    children:
+    - id: DrinkShaker
+    - id: ClothingEyesHudBeer
+    - id: HandLabeler
+      amount: 1
+    - id: DrinkBottleBeer
+      prob: 0.5
+    - id: DrinkBottleBeer
+      prob: 0.5
+    - id: DrinkBottleBeer
+      prob: 0.5
+    - id: BoxBeanbag
+      amount: 2
+    - id: RagItem
+      amount: 2

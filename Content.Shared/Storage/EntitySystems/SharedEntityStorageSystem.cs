@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Destructible;
+using Content.Shared.DoAfter;
 using Content.Shared.Foldable;
 using Content.Shared.Hands.Components;
 using Content.Shared.Explosion;
@@ -22,6 +23,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -43,6 +45,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
     [Dependency] private   readonly WeldableSystem _weldable = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
 
     public const string ContainerName = "entity_storage";
 
@@ -115,9 +118,6 @@ public abstract class SharedEntityStorageSystem : EntitySystem
 
     private void OnRelayMovement(EntityUid uid, EntityStorageComponent component, ref ContainerRelayMovementEntityEvent args)
     {
-        if (!HasComp<HandsComponent>(args.Entity))
-            return;
-
         if (!_actionBlocker.CanMove(args.Entity))
             return;
 
@@ -128,7 +128,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         Dirty(uid, component);
 
         if (component.OpenOnMove)
-            TryOpenStorage(args.Entity, uid);
+            TryOpenStorage(args.Entity, uid, requireHands: false);
     }
 
     private void OnFoldAttempt(EntityUid uid, EntityStorageComponent component, ref FoldAttemptEvent args)
@@ -224,7 +224,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         }
     }
 
-    public void OpenStorage(EntityUid uid, EntityStorageComponent? component = null)
+    public void OpenStorage(EntityUid uid, EntityStorageComponent? component = null, EntityUid? user = null, bool force = false)
     {
         if (!Resolve(uid, ref component))
             return;
@@ -234,18 +234,35 @@ public abstract class SharedEntityStorageSystem : EntitySystem
 
         var beforeev = new StorageBeforeOpenEvent();
         RaiseLocalEvent(uid, ref beforeev);
+
+        if (component.DoAfterDelay != 0 && user.HasValue && !force)
+        {
+            var doAfterEventArgs = new DoAfterArgs(EntityManager, user.Value, component.DoAfterDelay, new OpenStorageDoAfterEvent(), uid, target: uid)
+            {
+                BreakOnMove = true,
+                BreakOnDamage = true,
+            };
+
+            _doAfterSystem.TryStartDoAfter(doAfterEventArgs);
+            return;
+        }
+
+        DoOpenStorage(uid, component, user);
+    }
+
+    protected void DoOpenStorage(EntityUid uid, EntityStorageComponent component, EntityUid? user = null)
+    {
         component.Open = true;
         Dirty(uid, component);
         EmptyContents(uid, component);
         ModifyComponents(uid, component);
-        if (_net.IsClient && _timing.IsFirstTimePredicted)
-            _audio.PlayPvs(component.OpenSound, uid);
+        _audio.PlayPredicted(component.OpenSound, uid, user);
         ReleaseGas(uid, component);
         var afterev = new StorageAfterOpenEvent();
         RaiseLocalEvent(uid, ref afterev);
     }
 
-    public void CloseStorage(EntityUid uid, EntityStorageComponent? component = null)
+    public void CloseStorage(EntityUid uid, EntityStorageComponent? component = null, EntityUid? user = null)
     {
         if (!Resolve(uid, ref component))
             return;
@@ -289,8 +306,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
 
         TakeGas(uid, component);
         ModifyComponents(uid, component);
-        if (_net.IsClient && _timing.IsFirstTimePredicted)
-            _audio.PlayPvs(component.CloseSound, uid);
+        _audio.PlayPredicted(component.CloseSound, uid, user);
 
         var afterev = new StorageAfterCloseEvent();
         RaiseLocalEvent(uid, ref afterev);
@@ -377,16 +393,18 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         if (containerAttemptEvent.Cancelled)
             return false;
 
-        // Check the whitelist/blacklist.
-        return _whitelistSystem.CheckBoth(toInsert, component.Blacklist, component.Whitelist);
-    }
-
-    public bool TryOpenStorage(EntityUid user, EntityUid target, bool silent = false)
-    {
-        if (!CanOpen(user, target, silent))
+        if (!_whitelistSystem.CheckBoth(toInsert, component.Blacklist, component.Whitelist))
             return false;
 
-        OpenStorage(target);
+        return HasComp<MobStateComponent>(toInsert) || HasComp<ItemComponent>(toInsert);
+    }
+
+    public bool TryOpenStorage(EntityUid user, EntityUid target, bool silent = false, bool requireHands = true)
+    {
+        if (!CanOpen(user, target, silent, requireHands: requireHands))
+            return false;
+
+        OpenStorage(target, user: user);
         return true;
     }
 
@@ -397,7 +415,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
             return false;
         }
 
-        CloseStorage(target);
+        CloseStorage(target, user: user);
         return true;
     }
 
@@ -409,12 +427,12 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         return component.Open;
     }
 
-    public bool CanOpen(EntityUid user, EntityUid target, bool silent = false, EntityStorageComponent? component = null)
+    public bool CanOpen(EntityUid user, EntityUid target, bool silent = false, EntityStorageComponent? component = null, bool requireHands = true)
     {
         if (!Resolve(target, ref component))
             return false;
 
-        if (!HasComp<HandsComponent>(user))
+        if (!HasComp<HandsComponent>(user) && requireHands)
             return false;
 
         if (_weldable.IsWelded(target))
@@ -498,3 +516,6 @@ public abstract class SharedEntityStorageSystem : EntitySystem
 
     public virtual void ReleaseGas(EntityUid uid, EntityStorageComponent component) { }
 }
+
+[Serializable, NetSerializable]
+public sealed partial class OpenStorageDoAfterEvent : SimpleDoAfterEvent;

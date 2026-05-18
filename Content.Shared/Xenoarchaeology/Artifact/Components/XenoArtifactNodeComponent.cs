@@ -1,5 +1,7 @@
 using Content.Shared.Destructible.Thresholds;
+using Content.Shared.Research;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Xenoarchaeology.Artifact.Components;
 
@@ -64,7 +66,7 @@ public sealed partial class XenoArtifactNodeComponent : Component
     /// The amount of points a node is worth with no scaling
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float BasePointValue = 4000;
+    public float BasePointValue = 1000; // Scp edit - а че так дохуя было
 
     /// <summary>
     /// Amount of points available currently for extracting.
@@ -77,5 +79,12 @@ public sealed partial class XenoArtifactNodeComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public int ConsumedResearchValue;
+
+    /// <summary>
+    /// Type of research points extracted from this node.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public ProtoId<ResearchPointPrototype> ResearchPointType = "Default";
+
     #endregion
 }

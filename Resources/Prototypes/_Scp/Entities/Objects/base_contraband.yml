@@ -1,0 +1,42 @@
+﻿# non-stealth Chaos stuff
+- type: entity
+  id: BaseChaosContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Chaos
+
+# non-stealth Foundation enemy stuff
+- type: entity
+  id: BaseFoundationEnemyContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: FoundationEnemy
+
+# SCP security uniform and equipment restricted to all site security departments.
+- type: entity
+  id: BaseScpSecurityContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ HeavyContainmentSecurityService, ExternalAdministrativeZoneSecurityService ]
+
+# SCP security uniform and equipment restricted to the Special Purpose Squad.
+- type: entity
+  id: BaseSpecialPurposeSquadContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ HeavyContainmentSecurityService ]
+
+# SCP security uniform and equipment restricted to the Commandant Squad.
+- type: entity
+  id: BaseCommandantSquadContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ ExternalAdministrativeZoneSecurityService ]

@@ -622,7 +622,7 @@
       weight: 30
     - id: HolofanProjector
     - id: HoloprojectorField
-    - id: HoloprojectorSecurity
+    # - id: HoloprojectorSecurity # Scp edit
     - id: DeviceQuantumSpinInverter
       amount: !type:ConstantNumberSelector
         value: 2

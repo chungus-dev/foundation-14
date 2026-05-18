@@ -1,11 +1,17 @@
 using System.Linq;
+using System.Numerics;
+using Content.Client._Scp.UI;
 using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
+using Content.Client.Roles;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Character.Controls;
 using Content.Client.UserInterface.Systems.Character.Windows;
 using Content.Client.UserInterface.Systems.Objectives.Controls;
+using Content.Shared._Scp.CharacterInfo.AccessLevel;
+using Content.Shared._Scp.CharacterInfo.EmployeeClass;
+using Content.Shared._Scp.Fear.Components;
 using Content.Shared.Input;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -33,6 +39,10 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly ILocalizationManager _loc = default!;
+    [UISystemDependency] private readonly EmployeeClassSystem _employeeClass = default!;
+    [UISystemDependency] private readonly AccessLevelSystem _accessLevel = default!;
+    [UISystemDependency] private readonly JobSystem _job = default!;
 
     public override void Initialize()
     {
@@ -135,9 +145,12 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window.SpriteView.SetEntity(entity);
 
         UpdateRoleType();
+        UpdateJobInfo(job, ref _window);
+        UpdateFears(entity, ref _window);
+        UpdateEmployeeClass(entity, ref _window);
+        UpdateAccessLevel(entity, ref _window);
 
         _window.NameLabel.Text = entityName;
-        _window.SubText.Text = job;
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
 
@@ -196,7 +209,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             _window.Objectives.AddChild(control);
         }
 
-        _window.RolePlaceholder.Visible = briefing == null && !controls.Any() && !objectives.Any();
+        _window.RolePlaceholder.Visible = false;
     }
 
     private void OnRoleTypeChanged(MindRoleTypeChangedEvent ev, EntitySessionEventArgs _)
@@ -223,6 +236,99 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window.RoleType.FontColorOverride = proto?.Color ?? Color.White;
     }
 
+    private void UpdateJobInfo(string jobProtoId, ref CharacterWindow window)
+    {
+        window.JobInfo.Visible = false;
+        window.SubText.Visible = false;
+        window.Separator.Visible = false;
+
+        if (!_prototypeManager.TryIndex<JobPrototype>(jobProtoId, out var job))
+            return;
+
+        window.JobInfo.Visible = true;
+        window.JobInfo.Text = $"{job.LocalizedName}: {job.LocalizedDescription}";
+
+        window.SetSize = new Vector2(window.Size.X + 1, window.Size.Y + 1);
+        window.SetSize = new Vector2(window.Size.X - 1, window.Size.Y - 1);
+
+        if (!_job.TryGetDepartment(job.ID, out var department))
+            return;
+
+        window.SubText.Text = Loc.GetString(department.Name);
+        window.SubText.Visible = true;
+        window.Separator.Visible = true;
+    }
+
+    private void UpdateFears(EntityUid uid, ref CharacterWindow window)
+    {
+        window.Fears.RemoveAllChildren();
+        window.FearsPlaceholder.Visible = true;
+
+        if (!_ent.TryGetComponent<FearComponent>(uid, out var fear))
+            return;
+
+        foreach (var phobia in fear.Phobias)
+        {
+            if (!_prototypeManager.TryIndex(phobia, out var phobiaProto))
+                continue;
+
+            var item = new ColoredInfo
+            {
+                NameString = _loc.GetString(phobiaProto.Name),
+                DescriptionString = _loc.GetString(phobiaProto.Description),
+                Color = phobiaProto.Color,
+            };
+
+            window.Fears.AddChild(item);
+        }
+
+        window.FearsPlaceholder.Visible = false;
+    }
+
+    private void UpdateEmployeeClass(EntityUid uid, ref CharacterWindow window)
+    {
+        window.EmployeeClass.RemoveAllChildren();
+        window.EmployeeClassPlaceholder.Visible = true;
+
+        if (!_employeeClass.TryGetName(uid, out var name, false))
+            return;
+
+        if (!_employeeClass.TryGetDescription(uid, out var description, false))
+            return;
+
+        var item = new ColoredInfo
+        {
+            NameString = name,
+            DescriptionString = description,
+            Color = EmployeeClassComponent.InfoColor,
+        };
+
+        window.EmployeeClass.AddChild(item);
+        window.EmployeeClassPlaceholder.Visible = false;
+    }
+
+    private void UpdateAccessLevel(EntityUid uid, ref CharacterWindow window)
+    {
+        window.AccessLevel.RemoveAllChildren();
+        window.AccessLevelPlaceholder.Visible = true;
+
+        if (!_accessLevel.TryGetName(uid, out var name, false))
+            return;
+
+        if (!_accessLevel.TryGetDescription(uid, out var description, false))
+            return;
+
+        var item = new ColoredInfo
+        {
+            NameString = name,
+            DescriptionString = description,
+            Color = AccessLevelComponent.InfoColor,
+        };
+
+        window.AccessLevel.AddChild(item);
+        window.AccessLevelPlaceholder.Visible = false;
+    }
+
     private void CharacterDetached(EntityUid uid)
     {
         CloseWindow();
@@ -238,7 +344,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window?.Close();
     }
 
-    private void ToggleWindow()
+    public void ToggleWindow()
     {
         if (_window == null)
             return;

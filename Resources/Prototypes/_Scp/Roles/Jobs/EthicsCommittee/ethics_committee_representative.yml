@@ -1,0 +1,34 @@
+- type: job
+  id: EthicsCommitteeRepresentative
+  name: job-name-ethics-committee-representative
+  description: job-description-ethics-committee-representative
+  playTimeTracker: JobEthicsCommitteeRepresentative
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 32
+  weight: 860
+  icon: JobEthicsCommitteeRepresentative
+  supervisors: job-supervisors-ethics-committee
+  canBeAntag: true
+  displayWeight: 50
+  accessGroups:
+  - EthicsCommittee
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+    - type: EmployeeClass
+      class: B
+    - type: AccessLevel
+      level: Four
+
+- type: startingGear
+  id: EthicsCommitteeRepresentativeGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatCapEthicsCommittee
+    id: KeyCardEthicsCommitteePass
+    ears: ClothingHeadsetAltEthicsCommittee
+    jumpsuit: ClothingUniformJumpsuitWithWhiteShirt
+    back: ClothingBackpackSatchelLeatherEthicsCommitteeFilled
+    pocket2: BaseFoundationPDA

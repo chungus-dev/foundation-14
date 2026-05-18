@@ -1,0 +1,283 @@
+# ВЕЩИ АПЛИНКА
+- type: entity
+  parent: WeaponPulseCarbine
+  id: WeaponPulseCarbineScp
+
+- type: entity
+  parent: WeaponPulseCarbine
+  id: WeaponSniperPulseCarbineScp
+
+- type: entity
+  parent: WeaponPulsePistol
+  id: WeaponPulsePistolScp
+
+- type: entity
+  parent: Hypospray
+  id: HyposprayMTF
+
+- type: entity
+  parent: ClothingBackpackDuffelMedical
+  id: ClothingBackpackDuffelScpMedicalBundleFilled
+  components:
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+          - id: DefibrillatorCompact
+          - id: MedkitCombatFilled
+            amount: 3
+          - id: Tourniquet
+            amount: 2
+          - id: CombatMedipen
+            amount: 4
+          - id: PunctAutoInjector
+            amount: 4
+          - id: PyraAutoInjector
+            amount: 4
+          - id: AirlossAutoInjector
+            amount: 4
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: DeathRattleImplanterMTF
+  suffix: tracking
+  components:
+    - type: Implanter
+      implant: DeathRattleImplantMTF
+
+- type: entity
+  parent: DeathRattleImplant
+  id: DeathRattleImplantMTF
+  components:
+    - type: RattleOnTrigger
+      radioChannel: RegionalAdministration
+
+- type: entity
+  parent: BoxDeathRattleImplants
+  id: BoxMTFImplants
+  components:
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+          - id: DeathRattleImplanterMTF
+            amount: 6
+
+- type: entity
+  parent: PowerCellHigh
+  id: PowerCellScp
+
+- type: entity
+  parent: ClothingBackpackDuffelSecurity
+  id: ClothingBackpackDuffelMilitaryFilledLMG
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: WeaponLightMachineGunL6
+- type: entity
+  parent: CrateCommandSecure
+  id: CrateAdministrationSecure
+  components:
+  - type: Icon
+    sprite: _Scp/Structures/Storage/Crates/administration.rsi
+  - type: Sprite
+    sprite: _Scp/Structures/Storage/Crates/administration.rsi
+  - type: AccessReader
+    access: [ [ "Administration" ] ]
+
+- type: entity
+  parent: PowerCageHigh
+  id: PowerCageMTF
+
+#для ВУСа
+- type: entity
+  parent: CrateAdministrationSecure
+  id: CrateAdministrationRecontainmentCircuitsBoards
+  suffix: Filled
+  components:
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage: !type:AllSelector
+          children:
+          - id: ScpDefaultCircuitBoard
+          - id: ScpMtfCircuitBoard
+          - id: Intellicard
+
+- type: entity
+  parent: CrateAdministrationSecure
+  id: CrateAdministrationCrateScpCageScp173
+  name: crate with «Pandora» cage
+  description: It contains a «Pandora» cage and a screwdriver. The perfect set to return SCP 173 to his cell!
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: CrateScpCageScp173
+        - id: Screwdriver
+
+# РАНДОМ ХУМАНОИДЫ ОБЩИЕ
+
+- type: randomHumanoidSettings
+  id: CommonMTFCadet
+  speciesBlacklist:
+  - Diona
+  - Vox
+  - Felinid
+  - Moth
+  - Arachnid
+  - Reptilian
+  - Vulpkanin
+  - Swine
+  - Tajaran
+  - Demon
+  - SlimePerson
+  - Dwarf
+  parent: EventHumanoidMindShielded
+  randomizeName: false
+  genderWhitelist:
+  - Male
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - NamesCadet
+    - NamesMilitaryLast
+    nameFormat: name-format-ert
+  - type: ZombieImmune
+  - type: Scp049Protection
+  - type: AutoImplant
+    implants:
+    - Scp049ProtectionImplant
+    - DeathRattleImplantMTF
+    - MindShieldImplant
+  - type: SpeakOnEyeStateChange # переопределение моргания с другими параметрами для охраны и МОГа
+    # Часть фраз уходит, так как более разговорная. А эти парни натренированы.
+    phraseOnClose:
+    - close-eye-phrase-1
+    - close-eye-phrase-2
+    phraseOnOpen:
+    - open-eye-phrase-3
+    speakOnAutomaticBlinking: true
+    speakOnlyInScp173Chamber: false
+  - type: Fear
+    phobias:
+    - Exoremophobia
+    proximityBlockerLevel: None
+    seenBlockerLevel: None
+    fearBasedSpreadAngleModifier:
+      Anxiety: 1
+      Fear: 1.2
+      Terror: 2
+    fearBasedGrainStrength:
+      None: 0
+      Anxiety: 15
+      Fear: 45
+      Terror: 100
+    fearBasedVignetteStrength:
+      None: 0
+      Anxiety: 15
+      Fear: 25
+      Terror: 50
+    baseJitterTime: 0
+    fallOffChance: 0
+  - type: ScpRepairableCanSeeExamineHints
+
+- type: randomHumanoidSettings
+  id: CommonMTFSpecialist
+  parent: CommonMTFCadet
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - NamesSpecialist
+    - NamesMilitaryLast
+    nameFormat: name-format-ert
+
+- type: randomHumanoidSettings
+  id: CommonMTFLeader
+  parent: CommonMTFSpecialist
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - NamesLeader
+    - NamesMilitaryLast
+    nameFormat: name-format-ert
+  - type: ScpAnnounceOnSpawn
+    text: mtf-announce-on-spawn
+    useGlobalAnnouncement: true
+    announceOnStationGridEntered: true
+    announceOnArrival: false
+    stationAnnouncementColor: "#065290"
+    stationAnnouncementVoice: CBMTF1
+    stationAnnouncementSound:
+      path: /Audio/_Scp/Effects/Announcement/mtf.ogg
+      params:
+        volume: -5
+
+- type: randomHumanoidSettings
+  id: CommonMTFOperative
+  parent: CommonMTFLeader
+  randomizeName: false
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - NamesOperativeFirst
+    - NamesOperativeLast
+    nameFormat: name-format-ert
+
+# ЗВАНИЯ
+- type: localizedDataset
+  id: NamesLeader
+  values:
+    prefix: names-mtf-leader-first-dataset-
+    count: 1
+
+- type: localizedDataset
+  id: NamesSpecialist
+  values:
+    prefix: names-mtf-specialist-first-dataset-
+    count: 1
+
+- type: localizedDataset
+  id: NamesCadet
+  values:
+    prefix: names-mtf-cadet-first-dataset-
+    count: 1
+
+- type: localizedDataset
+  id: NamesOperativeFirst
+  values:
+    prefix: names-mtf-operative-first-dataset-
+    count: 1
+
+- type: localizedDataset
+  id: NamesOperativeLast
+  values:
+    prefix: names-mtf-operative-last-dataset-
+    count: 24
+
+- type: localizedDataset
+  id: NamesOperativeLeaderLast
+  values:
+    prefix: names-mtf-operative-leader-last-dataset-
+    count: 7
+
+# ПРОЧЕЕ
+- type: entity
+  id: SpawnerOnTriggerMTFBase
+  parent: SpawnPointScpBase
+  suffix: Base | Spawn On Trigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: DeviceLinkSink
+    ports:
+    - Trigger
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: TriggerOnSignal
+  - type: DeleteOnTrigger

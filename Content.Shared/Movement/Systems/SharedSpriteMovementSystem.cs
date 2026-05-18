@@ -3,18 +3,22 @@ using Content.Shared.Movement.Events;
 
 namespace Content.Shared.Movement.Systems;
 
-public abstract class SharedSpriteMovementSystem : EntitySystem
+public abstract partial class SharedSpriteMovementSystem : EntitySystem
 {
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<SpriteMovementComponent, SpriteMoveEvent>(OnSpriteMoveInput);
+        InitializePartial();
     }
 
     private void OnSpriteMoveInput(Entity<SpriteMovementComponent> ent, ref SpriteMoveEvent args)
     {
         if (ent.Comp.IsMoving == args.IsMoving)
+            return;
+
+        if (ShouldBlockMovement(ent, ref args))
             return;
 
         ent.Comp.IsMoving = args.IsMoving;

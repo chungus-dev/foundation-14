@@ -1,6 +1,7 @@
 - type: entity
   parent: ComputerSurveillanceWirelessCameraMonitor
   id: ComputerTelevision
+  categories: [ HideSpawnMenu ] # Scp edit
   name: wooden television
   description: Finally, some decent reception around here...
   components:
@@ -14,6 +15,13 @@
       state: detective_television
   - type: Computer
     board: ComputerTelevisionCircuitboard
+  # Starlight Start
+  - type: GenericVisualizer  # Override to prevent edge connection sprites
+    visuals:
+      enum.EdgeConnectionVisuals.ConnectionMask:
+        console:
+          None: { state: television}
+  # Starlight End
   - type: PointLight
     radius: 1.5
     energy: 3.0

@@ -1,9 +1,12 @@
+using System.Linq;
 using Content.Server.Research.Systems;
 using Content.Server.Xenoarchaeology.Artifact;
 using Content.Shared.Popups;
+using Content.Shared.Research;
 using Content.Shared.Xenoarchaeology.Equipment;
 using Content.Shared.Xenoarchaeology.Equipment.Components;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Xenoarchaeology.Equipment;
 
@@ -31,19 +34,24 @@ public sealed class ArtifactAnalyzerSystem : SharedArtifactAnalyzerSystem
         if (!_research.TryGetClientServer(ent, out var server, out var serverComponent))
             return;
 
-        var sumResearch = 0;
+        var sumResearch = new Dictionary<ProtoId<ResearchPointPrototype>, int>();
         foreach (var node in _xenoArtifact.GetAllNodes(artifact.Value))
         {
             var research = _xenoArtifact.GetResearchValue(node);
             _xenoArtifact.SetConsumedResearchValue(node, node.Comp.ConsumedResearchValue + research);
-            sumResearch += research;
+
+            if (research == 0)
+                continue;
+
+            sumResearch.TryGetValue(node.Comp.ResearchPointType, out var total);
+            sumResearch[node.Comp.ResearchPointType] = total + research;
         }
 
         // 4-16-25: It's a sad day when a scientist makes negative 5k research
-        if (sumResearch <= 0)
+        if (sumResearch.Values.Sum() <= 0)
             return;
 
-        _research.ModifyServerPoints(server.Value, sumResearch, serverComponent);
+        _research.ModifyServerPoints(server.Value, sumResearch, component: serverComponent);
         _audio.PlayPvs(ent.Comp.ExtractSound, artifact.Value);
         _popup.PopupEntity(Loc.GetString("analyzer-artifact-extract-popup"), artifact.Value, PopupType.Large);
     }

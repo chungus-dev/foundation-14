@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseStructureComputer
   id: BaseComputer
+  categories: [ HideSpawnMenu ] # Scp edit
   name: computer
   placement:
     mode: SnapgridCenter
@@ -17,11 +18,7 @@
       - board
   - type: Computer
   - type: ApcPowerReceiver
-    powerLoad: 50
-  - type: PowerState
-    idlePowerDraw: 50
-    workingPowerDraw: 500
-  - type: UIPowerState
+    powerLoad: 200
   - type: ExtensionCableReceiver
   - type: ActivatableUIRequiresPower
   - type: Sprite
@@ -62,11 +59,14 @@
     castShadows: false
   - type: EmitSoundOnUIOpen
     sound:
-      collection: Keyboard
+      # Scp edit start
+      collection: ScpKeyboard
       params:
-        volume: -1
-        variation: 0.10
-        pitch: 1.10  # low pitch keyboard sounds feel kinda weird
+        maxDistance: 3
+        volume: -5
+        variation: 0.1
+        pitch: 0.9  # low pitch keyboard sounds feel kinda weird
+      # Scp edit end
     blacklist:
       tags:
       - NoConsoleSound
@@ -95,6 +95,7 @@
 - type: entity
   parent: BaseComputer
   id: BaseComputerAiAccess
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: StationAiWhitelist
   - type: Wires

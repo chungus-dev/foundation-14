@@ -1,12 +1,13 @@
 - type: entity
   name: Ripley APLU Spawner
   id: SpawnMechRipley
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: MarkerBase
   components:
   - type: Sprite
     layers:
       - state: green
-      - sprite: Objects/Specific/Mech/mecha.rsi
+      - sprite: Objects/Specific/Mech/mecha.rsi # Scp edit - Ripley sprites live in the merged mecha RSI.
         state: ripley
   - type: ConditionalSpawner
     prototypes:

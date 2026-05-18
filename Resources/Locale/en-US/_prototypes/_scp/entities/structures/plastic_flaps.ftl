@@ -1,0 +1,14 @@
+ent-ScpPlasticFlapsBase = { ent-PlasticFlapsBase }
+    .desc = { ent-PlasticFlapsBase.desc }
+ent-ScpPlasticFlapsClear = plastic flaps
+    .desc = Sturdy, heavy plastic flaps. Getting through them? No way.
+    .suffix = Clear
+ent-ScpPlasticFlapsOpaque = plastic flaps
+    .desc = Sturdy, heavy plastic flaps. Getting through them? No way.
+    .suffix = Opaque
+ent-ScpPlasticFlapsAirtightClear = airtight plastic flaps
+    .desc = Sturdy, slightly stronger than normal, airtight plastic flaps. Getting through them? Ha! Don't even dream.
+    .suffix = Airtight, Clear
+ent-ScpPlasticFlapsAirtightOpaque = airtight plastic flaps
+    .desc = Sturdy, slightly stronger than normal, airtight plastic flaps. Getting through them? Ha! Don't even dream.
+    .suffix = Airtight, Opaque

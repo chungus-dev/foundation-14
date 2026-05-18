@@ -4,29 +4,38 @@
   description: Components added / removed from an entity that gets inserted into an AI core.
   categories: [ HideSpawnMenu ]
   components:
+  # Scp added start
+  - type: ShowScp096FaceDamageHud
+  # Scp added end
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:
-    - Binary
-    - Common
-    - Command
-    - Engineering
-    - Medical
-    - Science
-    - Security
-    - Service
-    - Supply
+    # Scp edit start
+    - Administration
+    - EthicsCommittee
+    - HeavyContainmentSecurityService
+    - ExternalAdministrativeZoneSecurityService
+    - ScientificService
+    - MedicalService
+    - EngineeringTechnicalService
+    - LogisticsService
+    - FoodAndSanitationService
+    # Scp edit end
   - type: ActiveRadio
     channels:
-    - Binary
-    - Common
-    - Command
-    - Engineering
-    - Medical
-    - Science
+    # Scp edit start
+    - Administration
+    - EthicsCommittee
+    - HeavyContainmentSecurityService
+    - ExternalAdministrativeZoneSecurityService
     - Security
     - Service
-    - Supply
+    - ScientificService
+    - MedicalService
+    - EngineeringTechnicalService
+    - LogisticsService
+    - FoodAndSanitationService
+    # Scp edit end
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
@@ -67,7 +76,7 @@
     followEntity: false
   - type: CommunicationsConsole
     canShuttle: false
-    title: comms-console-announcement-title-station-ai
+    title: comms-console-announcement-title-complex-ai # Scp edit
     color: "#5ed7aa"
   - type: ShowJobIcons
   - type: ShowCrewIcons
@@ -423,7 +432,10 @@
     # Once it's in a core it's pretty much an abstract entity at that point.
     visible: false
   - type: SiliconLawProvider
-    laws: Crewsimov
+    laws: ScpDefault # Scp edit
+  # Scp added start
+  - type: RetroMonitorView
+  # Scp added end
   - type: SiliconLawBound
   - type: ActionGrant
     actions:
@@ -436,9 +448,12 @@
   - type: ComplexInteraction
   - type: Actions
   - type: Access
+    # Scp edit start
     groups:
-    - AllAccess
-    - Silicon
+    - AllComplex
+    tags:
+    - AI
+    # Scp edit end
   - type: Eye
     drawFov: false
   - type: Examiner

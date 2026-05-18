@@ -73,9 +73,10 @@
     suffix: false
 
 - type: entity
-  parent: BaseGrenade
   id: GrenadeBlast
-  name: blast grenade
+  categories: [ HideSpawnMenu ] # Scp edit
+  name: contact blast grenade
+  parent: BaseGrenade
   components:
   - type: CartridgeAmmo
     proto: BulletGrenadeBlast
@@ -141,9 +142,10 @@
     suffix: false
 
 - type: entity
-  parent: BaseGrenade
   id: GrenadeEMP
-  name: EMP grenade
+  categories: [ HideSpawnMenu ] # Scp edit
+  name: contact EMP grenade
+  parent: BaseGrenade
   components:
   - type: CartridgeAmmo
     proto: BulletGrenadeEMP

@@ -207,11 +207,9 @@ namespace Content.Server.RoundEnd
                 ("time", time),
                 ("units", Loc.GetString(units))),
                 Loc.GetString(name),
-                false,
+                true,
                 null,
                 Color.Gold);
-
-            _audio.PlayGlobal("/Audio/Announcements/shuttlecalled.ogg", Filter.Broadcast(), true);
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;

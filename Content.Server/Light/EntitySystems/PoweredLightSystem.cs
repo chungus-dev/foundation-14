@@ -42,7 +42,13 @@ public sealed class PoweredLightSystem : SharedPoweredLightSystem
         if (light.HasLampOnSpawn != null)
         {
             var entity = Spawn(light.HasLampOnSpawn, Comp<TransformComponent>(uid).Coordinates);
-            ContainerSystem.Insert(entity, light.LightBulbContainer);
+            var canInsert = ContainerSystem.Insert(entity, light.LightBulbContainer);
+
+            if (!canInsert)
+            {
+                QueueDel(entity);
+                return;
+            }
         }
         // need this to update visualizers
         UpdateLight(uid, light);

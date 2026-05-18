@@ -70,6 +70,10 @@
     onPort: Pressed
     offPort: Pressed
     statusPort: Pressed
+    # Scp added start
+    clickSound:
+      path: /Audio/_Scp/Effects/Button/click.ogg
+    # Scp added end
   - type: Rotatable
   - type: Construction
     graph: SignalButtonGraph
@@ -191,6 +195,7 @@
   parent: LockableButton
   id: LockableButtonCaptain
   suffix: Captain
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Captain"]]
@@ -199,6 +204,7 @@
   parent: LockableButton
   id: LockableButtonHeadOfPersonnel
   suffix: HeadOfPersonnel
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["HeadOfPersonnel"]]
@@ -207,6 +213,7 @@
   parent: LockableButton
   id: LockableButtonChiefEngineer
   suffix: ChiefEngineer
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["ChiefEngineer"]]
@@ -215,6 +222,7 @@
   parent: LockableButton
   id: LockableButtonChiefMedicalOfficer
   suffix: ChiefMedicalOfficer
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["ChiefMedicalOfficer"]]
@@ -223,6 +231,7 @@
   parent: LockableButton
   id: LockableButtonHeadOfSecurity
   suffix: HeadOfSecurity
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["HeadOfSecurity"]]
@@ -231,6 +240,7 @@
   parent: LockableButton
   id: LockableButtonResearchDirector
   suffix: ResearchDirector
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["ResearchDirector"]]
@@ -239,6 +249,7 @@
   parent: LockableButton
   id: LockableButtonCommand
   suffix: Command
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Command"]]
@@ -247,6 +258,7 @@
   parent: LockableButton
   id: LockableButtonCryogenics
   suffix: Cryogenics
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Cryogenics"]]
@@ -263,6 +275,7 @@
   parent: LockableButton
   id: LockableButtonDetective
   suffix: Detective
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Detective"]]
@@ -279,6 +292,7 @@
   parent: LockableButton
   id: LockableButtonBrig
   suffix: Brig
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Brig"]]
@@ -287,6 +301,7 @@
   parent: LockableButton
   id: LockableButtonLawyer
   suffix: Lawyer
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Lawyer"]]
@@ -311,6 +326,7 @@
   parent: LockableButton
   id: LockableButtonQuartermaster
   suffix: Quartermaster
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Quartermaster"]]
@@ -319,6 +335,7 @@
   parent: LockableButton
   id: LockableButtonSalvage
   suffix: Salvage
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Salvage"]]
@@ -327,6 +344,7 @@
   parent: LockableButton
   id: LockableButtonCargo
   suffix: Cargo
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Cargo"]]
@@ -359,6 +377,7 @@
   parent: LockableButton
   id: LockableButtonExternal
   suffix: External
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["External"]]
@@ -367,6 +386,7 @@
   parent: LockableButton
   id: LockableButtonJanitor
   suffix: Janitor
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Janitor"]]
@@ -375,6 +395,7 @@
   parent: LockableButton
   id: LockableButtonTheatre
   suffix: Theatre
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Theatre"]]
@@ -383,6 +404,7 @@
   parent: LockableButton
   id: LockableButtonBar
   suffix: Bar
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Bar"]]
@@ -391,6 +413,7 @@
   parent: LockableButton
   id: LockableButtonChemistry
   suffix: Chemistry
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Chemistry"]]
@@ -399,6 +422,7 @@
   parent: LockableButton
   id: LockableButtonKitchen
   suffix: Kitchen
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Kitchen"]]
@@ -407,6 +431,7 @@
   parent: LockableButton
   id: LockableButtonChapel
   suffix: Chapel
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Chapel"]]
@@ -415,6 +440,7 @@
   parent: LockableButton
   id: LockableButtonHydroponics
   suffix: Hydroponics
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Hydroponics"]]
@@ -423,6 +449,7 @@
   parent: LockableButton
   id: LockableButtonAtmospherics
   suffix: Atmospherics
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Atmospherics"]]
@@ -431,6 +458,7 @@
   parent: LockableButton
   id: LockableButtonCentcomm
   suffix: CentComm
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["CentralCommand"]]

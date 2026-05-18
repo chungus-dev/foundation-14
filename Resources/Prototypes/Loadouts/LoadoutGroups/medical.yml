@@ -9,7 +9,7 @@
 
 - type: loadoutGroup
   id: MedicalBackpack
-  name: loadout-group-medical-doctor-backpack
+  name: loadout-group-backpack # Scp edit
   loadouts:
   - MedicalDoctorBackpack
   - MedicalDoctorSatchel
@@ -17,7 +17,7 @@
 
 - type: loadoutGroup
   id: MedicalShoes
-  name: loadout-group-medical-doctor-shoes
+  name: loadout-group-shoes # Scp edit
   loadouts:
   - WhiteShoes
   - MedicalWinterBoots
@@ -36,7 +36,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerHead
-  name: loadout-group-chief-medical-officer-head
+  name: loadout-group-head # Scp edit
   minLimit: 0
   loadouts:
   - ChiefMedicalOfficerBeret
@@ -44,7 +44,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit
-  name: loadout-group-chief-medical-officer-jumpsuit
+  name: loadout-group-jumpsuit # Scp edit
   loadouts:
   - ChiefMedicalOfficerJumpsuit
   - ChiefMedicalOfficerJumpskirt
@@ -53,7 +53,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerOuterClothing
-  name: loadout-group-chief-medical-officer-outerclothing
+  name: loadout-group-outer-clothing # Scp edit
   minLimit: 0
   loadouts:
   - ChiefMedicalOfficerLabCoat
@@ -61,7 +61,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerNeck
-  name: loadout-group-chief-medical-officer-neck
+  name: loadout-group-neck # Scp edit
   minLimit: 0
   loadouts:
   - ChiefMedicalOfficerCloak
@@ -69,26 +69,17 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
-  name: loadout-group-chief-medical-officer-shoes
+  name: loadout-group-shoes # Scp edit
   loadouts:
   - BrownShoes
   - MedicalWinterBoots
 
-#- type: loadoutGroup
-#  id: ChiefMedicalOfficerJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
-
-# Medical Doctor
-
 - type: loadoutGroup
   id: MedicalDoctorHead
-  name: loadout-group-medical-doctor-head
+  name: loadout-group-head # Scp edit
   minLimit: 0
   loadouts:
   - MedicalBeret
-  - SeniorPhysicianBeret
   - MedicalHeadMirror
   - BlueSurgeryCap
   - GreenSurgeryCap
@@ -97,24 +88,21 @@
 
 - type: loadoutGroup
   id: MedicalDoctorJumpsuit
-  name: loadout-group-medical-doctor-jumpsuit
+  name: loadout-group-jumpsuit # Scp edit
   loadouts:
   - MedicalDoctorJumpsuit
   - MedicalDoctorJumpskirt
-  - SeniorPhysicianJumpsuit
-  - SeniorPhysicianJumpskirt
   - MedicalBlueScrubs
   - MedicalGreenScrubs
   - MedicalPurpleScrubs
 
 - type: loadoutGroup
   id: MedicalDoctorOuterClothing
-  name: loadout-group-medical-doctor-outerclothing
+  name: loadout-group-outer-clothing # Scp edit
   minLimit: 0
   loadouts:
   - RegularLabCoat
   - MedicalDoctorWintercoat
-  - SeniorPhysicianLabCoat
 
 - type: loadoutGroup
   id: MedicalDoctorPDA
@@ -133,29 +121,21 @@
 
 - type: loadoutGroup
   id: MedicalInternJumpsuit
-  name: loadout-group-medical-intern-jumpsuit
+  name: loadout-group-jumpsuit # Scp edit
   loadouts:
   - WhiteJumpsuit
   - WhiteJumpskirt
 
-#- type: loadoutGroup
-#  id: MedicalInternJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
-
-# Chemist
-
 - type: loadoutGroup
   id: ChemistJumpsuit
-  name: loadout-group-chemist-jumpsuit
+  name: loadout-group-jumpsuit # Scp edit
   loadouts:
   - ChemistJumpsuit
   - ChemistJumpskirt
 
 - type: loadoutGroup
   id: ChemistOuterClothing
-  name: loadout-group-chemist-outerclothing
+  name: loadout-group-outer-clothing # Scp edit
   minLimit: 0
   loadouts:
   - RegularLabCoat
@@ -164,37 +144,29 @@
 
 - type: loadoutGroup
   id: ChemistBackpack
-  name: loadout-group-chemist-backpack
+  name: loadout-group-backpack # Scp edit
   loadouts:
   - ChemistBackpack
   - ChemistSatchel
   - ChemistDuffel
 
-#- type: loadoutGroup
-#  id: ChemistJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:
-
-# Paramedic
-
 - type: loadoutGroup
   id: ParamedicHead
-  name: loadout-group-paramedic-head
+  name: loadout-group-head # Scp edit
   minLimit: 0
   loadouts:
   - ParamedicHead
 
 - type: loadoutGroup
   id: ParamedicJumpsuit
-  name: loadout-group-paramedic-jumpsuit
+  name: loadout-group-jumpsuit # Scp edit
   loadouts:
   - ParamedicJumpsuit
   - ParamedicJumpskirt
 
 - type: loadoutGroup
   id: ParamedicOuterClothing
-  name: loadout-group-paramedic-outerclothing
+  name: loadout-group-outer-clothing # Scp edit
   minLimit: 0
   loadouts:
   - ParamedicWindbreaker
@@ -202,14 +174,9 @@
 
 - type: loadoutGroup
   id: ParamedicShoes
-  name: loadout-group-paramedic-shoes
+  name: loadout-group-shoes # Scp edit
   loadouts:
   - BlueShoes
   - WhiteShoes
   - MedicalWinterBoots
 
-#- type: loadoutGroup
-#  id: ParamedicJobTrinkets
-#  name: loadout-group-jobtrinkets
-#  minLimit: 0
-#  loadouts:

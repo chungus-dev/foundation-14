@@ -1,0 +1,9 @@
+ent-ClothingHeadsetAltMTF = headset
+    .desc = Compact communication device with an encrypted channel. It provides stable data transmission in hostile conditions.
+    .suffix = MOG
+ent-ClothingHeadsetAltMTFRRH = headset
+    .desc = Compact communication device with an encrypted channel. It has additional modules of undocumented origin.
+    .suffix = MOG
+ent-ClothingHeadsetAltMTFLLH = headset
+    .desc = Compact communication device with an encrypted channel. The housing is deliberately restrained in design, yet the construction includes elements indicating the user’s special status.
+    .suffix = MOG

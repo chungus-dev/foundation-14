@@ -1,0 +1,46 @@
+- type: job
+  id: ClassDJanitor
+  name: job-name-class-d-janitor
+  description: job-description-class-d-janitor
+  playTimeTracker: JobClassDJanitor
+  icon: JobClassDJanitor
+  supervisors: job-supervisors-security-and-research
+  access:
+  - ClassDJanitor
+  weight: 710
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: ClassDAppearance
+    - type: EmployeeClass
+      class: D
+    - type: ScpAnnounceOnSpawn
+      text: class-d-announce-on-spawn
+      channels:
+      - ExternalAdministrativeZoneSecurityService
+      includeJobName: true
+      requiredGameRunLevel: InRound
+    - type: ScpHolder
+      holdableWhitelist:
+        components:
+        - Scp096
+      holdableBlacklist:
+        components:
+        - ActiveScp096Rage
+        - ActiveScp096HeatingUp
+        - ActiveScp096WithoutFace
+
+- type: startingGear
+  id: ClassDJanitorGear
+  equipment:
+    head: ClothingHeadHatPurplesoft
+    jumpsuit: ClothingUniformClassD
+    gloves: ClothingHandsGlovesJanitor
+    shoes: ClothingShoesGaloshes
+    id: KeyCardClassDJanitor
+    belt: ClothingBeltJanitor
+  storage:
+    belt:
+    - Soap
+    - LightReplacer
+    - SprayBottleSpaceCleaner

@@ -10,7 +10,7 @@ namespace Content.Client.Light.Visualizers;
 public sealed class PoweredLightVisualizerSystem : VisualizerSystem<PoweredLightVisualsComponent>
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    // [Dependency] private readonly SharedAudioSystem _audio = default!; Scp edit
 
     public override void Initialize()
     {
@@ -120,6 +120,7 @@ public sealed class PoweredLightVisualizerSystem : VisualizerSystem<PoweredLight
             }
         };
 
+        /* Scp edit - эта параша не выключается, когда ентити пропадает из ПВС рейнжа
         if (comp.BlinkingSound != null)
         {
             var sound = _audio.ResolveSound(comp.BlinkingSound);
@@ -131,6 +132,7 @@ public sealed class PoweredLightVisualizerSystem : VisualizerSystem<PoweredLight
                 }
             });
         }
+        */
 
         return blinkingAnim;
     }

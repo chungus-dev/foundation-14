@@ -1,12 +1,15 @@
 using System.Linq;
+using Content.Shared._Scp.Other.Events;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Doors.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Interaction;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Power.EntitySystems;
@@ -55,6 +58,9 @@ public abstract partial class SharedDoorSystem : EntitySystem
     private readonly HashSet<Entity<DoorComponent>> _activeDoors = new();
 
     private readonly HashSet<Entity<PhysicsComponent>> _doorIntersecting = new();
+
+    private static readonly SoundSpecifier DoorSmashSound = new SoundCollectionSpecifier("DoorSmash",
+        AudioParams.Default.WithVariation(0.125f).WithMaxDistance(7f));
 
     public override void Initialize()
     {
@@ -444,7 +450,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
         if (!HasAccess(uid, user, door))
             return false;
 
-        return !ev.PerformCollisionCheck || !GetColliding(uid).Any();
+        return !ev.PerformCollisionCheck || !GetColliding(uid).Any() || door.UnsafeClosing;
     }
 
     public void StartClosing(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false)
@@ -530,11 +536,19 @@ public abstract partial class SharedDoorSystem : EntitySystem
         var stunTime = door.DoorStunTime + door.OpenTimeOne;
         foreach (var entity in GetColliding(uid, physics))
         {
+            if (!HasComp<MobStateComponent>(entity) || !HasComp<DamageableComponent>(entity))
+                continue;
+
             door.CurrentlyCrushing.Add(entity);
             if (door.CrushDamage != null)
                 _damageableSystem.TryChangeDamage(entity, door.CrushDamage, origin: uid);
 
             _stunSystem.TryUpdateParalyzeDuration(entity, stunTime);
+
+            if (_net.IsServer)
+                Audio.PlayPvs(DoorSmashSound, entity);
+
+            RaiseLocalEvent(uid, new AirlockCrushedEvent(GetNetEntity(entity)));
         }
 
         if (door.CurrentlyCrushing.Count == 0)

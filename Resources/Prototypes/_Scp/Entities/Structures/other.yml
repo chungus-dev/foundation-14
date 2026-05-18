@@ -1,0 +1,24 @@
+﻿- type: entity
+  id: ScpBaseStructureDamageOnSpawn
+  abstract: true
+  components:
+  - type: RandomDamageOnTrigger
+    ignoreResistancesForDamage: true
+    probability: 0.2
+    damageTypes:
+    - Structural
+    keysIn:
+    - random-damage
+  - type: ScpTriggerOnSpawn
+    requiredGameRunLevel: PreRoundLobby
+    keyOut: random-damage
+
+- type: entity
+  parent: ScpBaseStructureDamageOnSpawn
+  id: ScpBaseStructureDamageOnSpawnLow
+  abstract: true
+  components:
+  - type: RandomDamageOnTrigger
+    probability: 0.05
+    maxDamagePercent: 0.4
+    minDamagePercent: 0.1

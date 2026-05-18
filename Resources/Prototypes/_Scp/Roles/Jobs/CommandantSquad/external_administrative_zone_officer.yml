@@ -1,0 +1,91 @@
+- type: job
+  id: ExternalAdministrativeZoneOfficer
+  name: job-name-external-administrative-zone-officer
+  description: job-description-external-administrative-zone-officer
+  playTimeTracker: JobExternalAdministrativeZoneOfficer
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: ExternalAdministrativeZoneSecurityService
+    time: 21600
+  - !type:AgeRequirement
+    requiredAge: 27
+  - !type:AgeRequirement
+    requiredAge: 65
+    inverted: true
+  icon: JobExternalAdministrativeZoneOfficer
+  supervisors: job-supervisors-external-administrative-zone-commandant
+  canBeAntag: false
+  displayWeight: 10
+  weight: 815
+  accessGroups:
+  - SecurityJobCommon
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: ScpHolder
+      holdableWhitelist:
+        components:
+        - HumanoidProfile
+      holdableBlacklist:
+        components:
+        - Scp
+    - type: SpeakOnEyeStateChange # переопределение моргания с другими параметрами для охраны и МОГа
+      # Часть фраз уходит, так как более разговорная. А эти парни натренированы.
+      phraseOnClose:
+      - close-eye-phrase-1
+      - close-eye-phrase-3
+      - close-eye-phrase-4
+      phraseOnOpen:
+      - open-eye-phrase-1
+      - open-eye-phrase-3
+      speakOnAutomaticBlinking: true
+      speakOnlyInScp173Chamber: false
+    - type: Fear # переопределение компонента страха для СБ
+      phobias:
+      - Exoremophobia
+      - Necrophobia
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+      fearBasedSpreadAngleModifier:
+        Anxiety: 1.2
+        Fear: 2
+        Terror: 5
+      fearBasedGrainStrength:
+        None: 0
+        Anxiety: 70
+        Fear: 230
+        Terror: 550
+      fearBasedVignetteStrength:
+        None: 0
+        Anxiety: 30
+        Fear: 60
+        Terror: 350
+      baseJitterTime: 2
+      fallOffChance: 0.01
+
+- type: startingGear
+  id: ExternalAdministrativeZoneOfficerGear
+  equipment:
+    head: ClothingHeadHelmetBasic
+    eyes: ClothingEyesGlassesSecurityGuard
+    mask: ClothingMaskSecurityBandBlack
+    neck: ClothingNeckMantleSecurity
+    jumpsuit: ClothingUniformSecurity2
+    outerClothing: ClothingOuterArmorSecurity
+    gloves: ClothingHandsGlovesColorBlack
+    shoes: ClothingShoesBootsSecurityGuard
+    back: ClothingBackpackSecurity
+    id: KeyCardLightContainmentZoneSecurityOfficer
+    ears: ClothingHeadsetExternalAdministrativeZoneSecurityService
+    belt: ScpClothingBeltSecurityWebbingFilled
+    pocket1: WeaponTaser
+    pocket2: ScpSecurityPDA
+  storage:
+    back:
+    - ScpRadioHandheldSecurityEnabled

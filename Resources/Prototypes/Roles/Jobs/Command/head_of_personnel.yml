@@ -24,6 +24,8 @@
   icon: "JobIconHeadOfPersonnel"
   supervisors: job-supervisors-captain
   canBeAntag: false
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - Command
   - HeadOfPersonnel
@@ -55,7 +57,6 @@
   - GenpopLeave
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
@@ -83,4 +84,3 @@
     mask: ClothingMaskNeckGaiterRed
     neck: ClothingNeckCloakHop
     outerClothing: ClothingOuterWinterHoP
-

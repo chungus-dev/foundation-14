@@ -1,0 +1,91 @@
+#Med
+- type: entity
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
+  id: PouchMedical
+  name: medical pouch
+  description: It can carry small medical supplies.
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Clothing/Pouches/wy_medkit.rsi
+  - type: Item
+    size: Huge
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,5,1
+    whitelist:
+      tags:
+      - Bottle
+      - Spray
+      - Brutepack
+      - Bloodpack
+      - Gauze
+      - Ointment
+      - CigPack
+      - PillCanister
+      - Radio
+      - DiscreteHealthAnalyzer
+      - Dropper
+      - CentrifugeCompatible
+      components:
+      - Injector
+      - Pill
+  - type: ExplosionResistance
+    damageCoefficient: 0.01
+    worn: false
+
+#Drop
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: PouchDrop
+  name: pouch
+  description: A general-purpose pouch used to carry a variety of differently sized items.
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Clothing/Pouches/large_drop.rsi
+  - type: Item
+    size: Huge
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,2,2
+
+- type: entity
+  parent: PouchDrop
+  id: PouchAmmo
+  name: ammo pouch
+  description: It can carry ammo boxes and magazines.
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Clothing/Pouches/large_ammo_mag.rsi
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,4,1
+    whitelist:
+      components:
+      - BallisticAmmoProvider
+
+- type: entity
+  parent: [PouchDrop, ContentsExplosionResistanceBase]
+  id: PouchExplosive
+  name: explosive pouch
+  description: It can carry grenades and other explosives.
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Clothing/Pouches/large_explosive.rsi
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,5,1
+    whitelist:
+      tags:
+      - HandGrenade
+      - Grenade
+      components:
+      - ProjectileGrenade
+      - FlashOnTrigger
+      - ExplodeOnTrigger
+  - type: ExplosionResistance
+    damageCoefficient: 0.01
+    worn: false

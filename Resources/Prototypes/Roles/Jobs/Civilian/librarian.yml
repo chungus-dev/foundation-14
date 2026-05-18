@@ -6,6 +6,8 @@
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-hop
+  setPreference: false # Scp added
+  overrideConsoleVisibility: false # Scp added
   access:
   - Service
   - Maintenance

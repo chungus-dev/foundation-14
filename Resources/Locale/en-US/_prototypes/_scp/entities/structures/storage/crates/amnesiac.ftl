@@ -1,0 +1,10 @@
+ent-CrateChemistryRawAmnesiac = crate with raw amnesiac
+    .desc = Contains a flask with raw materials for amnesiac production.
+ent-CrateChemistryAmnesiacA = crate with class A amnesiac
+    .desc = Contains vials of class A amnesiac
+ent-CrateChemistryAmnesiacB = crate with class B amnesiac
+    .desc = Contains vials of class B amnesiac
+ent-CrateChemistryAmnesiacC = crate with class C amnesiac
+    .desc = Contains vials of class C amnesiac
+ent-CrateChemistryAmnesiacD = crate with class D amnesiac
+    .desc = Contains vials of class D amnesiac

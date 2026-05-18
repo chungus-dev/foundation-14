@@ -1,0 +1,231 @@
+- type: reagent
+  id: AmnesiacA
+  name: reagent-amnesiac-a-name
+  group: Toxins
+  desc: reagent-amnesiac-a-desc
+  flavor: bitter
+  color: "#acb78e"
+  physicalDesc: reagent-physical-desc-nothing
+  reactiveEffects:
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ reagent-amnesiac-a-msg ]
+        probability: 1
+        conditions:
+        - !type:BreathingCondition
+        - !type:InternalsCondition
+          inverted: true
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
+        time: 2
+        type: Add
+        conditions:
+        - !type:BreathingCondition
+        - !type:InternalsCondition
+          inverted: true
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ reagent-amnesiac-a-msg ]
+        probability: 1
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacA
+          min: 5
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
+        time: 5
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacA
+          min: 4
+
+- type: reagent
+  id: AmnesiacB
+  name: reagent-amnesiac-b-name
+  group: Toxins
+  desc: reagent-amnesiac-b-desc
+  flavor: bitter
+  color: "#383e28"
+  physicalDesc: reagent-physical-desc-viscous
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ reagent-amnesiac-b-msg ]
+        probability: 1
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacB
+          min: 5
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
+        time: 7
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacB
+          min: 4
+
+- type: reagent
+  id: AmnesiacC
+  name: reagent-amnesiac-c-name
+  group: Toxins
+  desc: reagent-amnesiac-c-desc
+  flavor: bitter
+  color: "#383e28"
+  physicalDesc: reagent-physical-desc-viscous
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ reagent-amnesiac-c-msg ]
+        probability: 1
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacC
+          min: 5
+      - !type:HealthChange
+        damage:
+          types:
+            Cellular: 0.5
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacC
+          min: 1
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
+        time: 9
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacC
+          min: 4
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectWoozy
+        time: 27
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacC
+          min: 4
+
+- type: reagent
+  id: AmnesiacD
+  name: reagent-amnesiac-d-name
+  group: Toxins
+  desc: reagent-amnesiac-d-desc
+  flavor: bitter
+  color: "#383e28"
+  physicalDesc: reagent-physical-desc-viscous
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ reagent-amnesiac-d-msg ]
+        probability: 1
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacD
+          min: 5
+      - !type:HealthChange
+        damage:
+          types:
+            Cellular: 0.75
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacD
+          min: 1
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
+        time: 12
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacD
+          min: 4
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectWoozy
+        time: 36
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmnesiacD
+          min: 4
+
+- type: reagent
+  id: RawAmnesiac
+  name: reagent-amnesiac-raw-name
+  group: Toxins
+  desc: reagent-amnesiac-raw-desc
+  flavor: bitter
+  color: "#383e28"
+  physicalDesc: reagent-physical-desc-exotic-smelling
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
+        time: 2
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: RawAmnesiac
+          min: 5
+
+# Мнестики ("Анти Амнезиак")
+- type: reagent
+  id: MnesticW
+  name: reagent-mnestic-w-name
+  group: Medicine
+  desc: reagent-mnestic-w-desc
+  flavor: medicine
+  color: "#787e6b"
+  physicalDesc: reagent-physical-desc-nothing
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ reagent-mnestic-w-msg ]
+        probability: 1
+        conditions:
+        - !type:ReagentCondition
+          reagent: MnesticW
+          min: 5
+
+- type: reagent
+  id: MnesticX
+  name: reagent-mnestic-x-name
+  group: Medicine
+  desc: reagent-mnestic-x-desc
+  flavor: medicine
+  color: "#828875"
+  physicalDesc: reagent-physical-desc-nothing
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ reagent-mnestic-x-msg ]
+        probability: 1
+        conditions:
+        - !type:ReagentCondition
+          reagent: MnesticX
+          min: 5

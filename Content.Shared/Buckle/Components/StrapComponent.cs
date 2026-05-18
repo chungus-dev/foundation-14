@@ -19,6 +19,18 @@ public sealed partial class StrapComponent : Component
     public HashSet<EntityUid> BuckledEntities = new();
 
     /// <summary>
+    /// If true, allows the buckled entity to rotate using mouse rotation.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool AllowRotation = true;
+
+    /// <summary>
+    /// The maximum angle from the strap center that the entity can rotate to.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Angle MaxAngle = Angle.FromDegrees(80);
+
+    /// <summary>
     /// Entities that this strap accepts and can buckle
     /// If null it accepts any entity
     /// </summary>

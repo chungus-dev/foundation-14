@@ -1,0 +1,174 @@
+﻿- type: entity
+  id: ScpModeNeutralized
+  parent: BaseGameRule
+  components:
+  - type: ScpDifficultyModeRule
+    scpSlots:
+      Safe:
+        min: -1
+        max: -1
+      Euclid:
+        min: 0
+        max: 0
+      Keter:
+        min: 0
+        max: 0
+    itemBlacklist:
+      components:
+      - Scp035Mask
+
+- type: entity
+  id: ScpModeSafe
+  parent: BaseGameRule
+  components:
+  - type: ScpDifficultyModeRule
+    scpSlots:
+      Safe:
+        min: -1
+        max: -1
+      Euclid:
+        min: 1
+        max: 1
+      Keter:
+        min: 0
+        max: 0
+
+- type: entity
+  id: ScpModeEuclid
+  parent: BaseGameRule
+  components:
+  - type: ScpDifficultyModeRule
+    scpSlots:
+      Safe:
+        min: -1
+        max: -1
+      Euclid:
+        min: 1
+        max: 1
+      Keter:
+        min: 1
+        max: 1
+
+- type: entity
+  id: ScpModeKeter
+  parent: BaseGameRule
+  components:
+  - type: ScpDifficultyModeRule
+    scpSlots:
+      Safe:
+        min: -1
+        max: -1
+      Euclid:
+        min: -1
+        max: -1
+      Keter:
+        min: 1
+        max: 1
+
+- type: entity
+  id: ScpModeThaumiel
+  parent: BaseGameRule
+  components:
+  - type: ScpDifficultyModeRule
+    scpSlots:
+      Safe:
+        min: -1
+        max: -1
+      Euclid:
+        min: -1
+        max: -1
+      Keter:
+        min: -1
+        max: -1
+
+- type: entity
+  id: ScpMetaGarbageSpawn
+  parent: BaseGameRule
+  components:
+  - type: MetaGarbageSpawnRule
+
+- type: entity
+  id: BasicFoundationEventScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 480
+    minMaxEventTiming:
+      min: 360 # 6 mins
+      max: 720 # 12 mins
+    scheduledGameRules: !type:NestedSelector
+      tableId: ScpBasicGameRulesTable
+  - type: RoundstartStationVariationRule
+    rules:
+    - id: ScpSolidWallRustingVariationPass
+    - id: ScpReinforcedWallRustingVariationPass
+
+- type: entity
+  id: BasicFoundationChillEventScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 480
+    minMaxEventTiming:
+      min: 360 # 6 mins
+      max: 720 # 12 mins
+    scheduledGameRules: !type:NestedSelector
+      tableId: ScpBasicChillGameRulesTable
+
+- type: entityTable
+  id: ScpBasicGameRulesTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: ScpBasicCalmEventsTable
+    - !type:NestedSelector
+      tableId: ScpEventsTable
+    - !type:NestedSelector
+      tableId: ScpAntagEventsTable
+    - !type:NestedSelector
+      tableId: CargoGiftsTable
+    - !type:NestedSelector
+      tableId: CalmPestEventsTable
+
+- type: entityTable
+  id: ScpBasicChillGameRulesTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: ScpBasicCalmEventsTable
+    - !type:NestedSelector
+      tableId: ScpEventsTable
+    - !type:NestedSelector
+      tableId: CargoGiftsTable
+    - !type:NestedSelector
+      tableId: CalmPestEventsTable
+
+- type: entityTable
+  id: ScpBasicCalmEventsTable
+  table: !type:AllSelector
+    children:
+    - id: BluespaceArtifact
+    - id: BureaucraticError
+    - id: ClericalError
+    - id: ScpCockroachMigration
+    - id: GreytideVirus
+    - id: IonStorm
+    - id: MassHallucinations
+    - id: MimicVendorRule
+    - id: MouseMigration
+    - id: RandomSentience
+    - id: VentClog
+    - id: GasLeak
+    - id: SolarFlare
+
+- type: entityTable
+  id: ScpAntagEventsTable
+  table: !type:AllSelector
+    children:
+    - id: Scp2054X
+
+- type: entity
+  id: FreeScpRule
+  parent: BaseGameRule
+  components:
+  - type: FreeScpRule

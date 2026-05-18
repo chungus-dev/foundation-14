@@ -1,0 +1,35 @@
+- type: job
+  id: ClassD
+  name: job-name-class-d
+  description: job-description-class-d
+  playTimeTracker: JobClassD
+  icon: JobClassD
+  supervisors: job-supervisors-security-and-research
+  weight: 705
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: ClassDAppearance
+    - type: EmployeeClass
+      class: D
+    - type: ScpAnnounceOnSpawn
+      text: class-d-announce-on-spawn
+      channels:
+      - ExternalAdministrativeZoneSecurityService
+      includeJobName: true
+      requiredGameRunLevel: InRound
+    - type: ScpHolder
+      holdableWhitelist:
+        components:
+        - Scp096
+      holdableBlacklist:
+        components:
+        - ActiveScp096Rage
+        - ActiveScp096HeatingUp
+        - ActiveScp096WithoutFace
+
+- type: startingGear
+  id: ClassDGear
+  equipment:
+    jumpsuit: ClothingUniformClassD
+    shoes: ClothingShoesClassD

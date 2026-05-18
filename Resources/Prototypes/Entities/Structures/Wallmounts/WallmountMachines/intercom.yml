@@ -186,6 +186,7 @@
 
 - type: entity
   id: Intercom
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: IntercomConstructed
   suffix: ""
   components:
@@ -288,6 +289,7 @@
 
 - type: entity
   id: IntercomSecurity
+  categories: [ HideSpawnMenu ] # Scp edit
   parent: BaseIntercomSecure
   suffix: Security
   description: An intercom. It's been reinforced with metal from security helmets, making it a bitch-and-a-half to open.

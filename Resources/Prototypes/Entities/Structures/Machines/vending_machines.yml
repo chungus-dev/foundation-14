@@ -1,4 +1,4 @@
-﻿# base
+# base
 
 - type: entity
   id: VendingMachine
@@ -237,6 +237,7 @@
   id: VendingMachineBooze
   name: Booze-O-Mat
   description: A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: BoozeOMatInventory
@@ -271,6 +272,7 @@
   id: VendingMachineBoozeSyndicate # syndie booze-o-mat for nukie outpost
   name: Bruise-O-Mat
   description: A refurbished Booze-O-Mat for boosting operative morale. An imprint of a blood-red hardsuit is visible on one side, and the paint seems ashed off on the other side.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: BoozeOMatInventory
@@ -305,6 +307,7 @@
   id: VendingMachineCart
   name: PTech
   description: PTech vending! Providing a ROBUST selection of PDAs, cartridges, and anything else a dull paper pusher needs!
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: PTechInventory
@@ -788,6 +791,7 @@
   id: VendingMachineDinnerware
   name: Plasteel Chef's Dinnerware Vendor
   description: A kitchen and restaurant equipment vendor.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: DinnerwareInventory
@@ -970,6 +974,7 @@
   id: VendingMachineNutri
   name: NutriMax
   description: A vending machine containing nutritional substances for plants and botanical tools.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: NutriMaxInventory
@@ -1006,7 +1011,7 @@
   description: A vending machine containing Security equipment. A label reads SECURITY PERSONNEL ONLY.
   components:
   - type: VendingMachine
-    pack: SecTechInventory
+    pack: ScpSecTechInventory # Scp edit
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -1074,6 +1079,7 @@
   parent: VendingMachineSeedsUnlocked
   id: VendingMachineSeeds
   suffix: Hydroponics
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: AccessReader
     access: [["Hydroponics"]]
@@ -1463,6 +1469,7 @@
   id: VendingMachineSalvage
   name: Salvage Vendor
   description: A dwarf's best friend!
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: SalvageEquipmentInventory
@@ -1530,6 +1537,7 @@
   id: VendingMachineHydrobe
   name: HyDrobe
   description: A machine with a catchy name. It dispenses botany related clothing and gear.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: HyDrobeInventory
@@ -1562,6 +1570,7 @@
   id: VendingMachineLawDrobe
   name: LawDrobe
   description: Objection! This wardrobe dispenses the rule of law... and lawyer clothing..
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: LawDrobeInventory
@@ -1592,7 +1601,7 @@
   description: A vending machine for security and security-related clothing!
   components:
   - type: VendingMachine
-    pack: SecDrobeInventory
+    pack: ScpSecDrobeInventory # Scp edit
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -1622,6 +1631,7 @@
   id: VendingBarDrobe
   name: BarDrobe
   description: A stylish vendor to dispense the most stylish bar clothing!
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: BarDrobeInventory
@@ -1649,6 +1659,7 @@
   parent: VendingMachine
   id: VendingMachineChapel
   name: PietyVend
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: PietyVendInventory
@@ -1678,6 +1689,7 @@
   id: VendingMachineCargoDrobe
   name: CargoDrobe
   description: A highly advanced vending machine for buying cargo related clothing for free.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: CargoDrobeInventory
@@ -1738,6 +1750,7 @@
   id: VendingMachineChemDrobe
   name: ChemDrobe
   description: A vending machine for dispensing chemistry related clothing.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: ChemDrobeInventory
@@ -1858,6 +1871,7 @@
   id: VendingMachineChefDrobe
   name: ChefDrobe
   description: This vending machine might not dispense meat, but it certainly dispenses chef related clothing.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: ChefDrobeInventory
@@ -1886,6 +1900,7 @@
   id: VendingMachineDetDrobe
   name: DetDrobe
   description: A machine for all your detective needs, as long as you need clothes.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: DetDrobeInventory
@@ -1914,6 +1929,7 @@
   id: VendingMachineJaniDrobe
   name: JaniDrobe
   description: A self cleaning vending machine capable of dispensing clothing for janitors.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: JaniDrobeInventory
@@ -1974,6 +1990,7 @@
   id: VendingMachineSyndieDrobe
   name: SyndieDrobe
   description: Wardrobe machine encoded by the syndicate, contains elite outfits for various operations.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: SyndieDrobeInventory
@@ -2090,6 +2107,7 @@
   id: VendingMachineCentDrobe
   name: CentDrobe
   description: A one-of-a-kind vending machine for all your centcomm aesthetic needs!
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: CentDrobeInventory
@@ -2118,6 +2136,7 @@
   id: VendingMachineHappyHonk
   name: Happy Honk Dispenser
   description: A happy honk meal box dispenser made by honk! co.
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: VendingMachine
     pack: HappyHonkDispenserInventory
@@ -2219,6 +2238,7 @@
   id: VendingMachineChemicals
   name: ChemVend
   description: Probably not the coffee machine.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: ChemVendInventory
@@ -2248,6 +2268,7 @@
   id: VendingMachineChemicalsSyndicate
   name: SyndieJuice
   description: Not made with freshly squeezed syndies I hope.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: VendingMachine
     pack: ChemVendInventorySyndicate

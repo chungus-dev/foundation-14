@@ -1,0 +1,54 @@
+- type: entity
+  parent: ClothingBackpackSatchelLeather
+  id: ClothingBackpackSatchelLeatherEthicsCommitteeFilled
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: RubberStampEthicsCommittee
+        - id: FlippoEngravedLighter
+        - id: PenEthicsCommittee
+
+- type: entity
+  parent: PenCentcom
+  id: PenEthicsCommittee
+  name: ethics committee pen
+  description: Power of the bureaucracy in one pen.
+
+- type: entity
+  parent: ClothingHeadHatCentcomcap
+  id: ClothingHeadHatCapEthicsCommittee
+  name: ethics committee representative cap
+  description: Cap of justice over administration!
+
+- type: entity
+  parent: ClothingUniformJumpsuitNanotrasen
+  id: ClothingUniformJumpsuitWithWhiteShirt
+  name: suit with white shirt
+  description: It looks strict and formal.
+
+- type: entity
+  parent: ClothingUniformJumpsuitNanotrasen
+  id: ClothingUniformJumpsuitBlackFormal
+  name: black formal suit
+  description: It looks solemn, strict and official.
+
+- type: entity
+  parent: ClothingUniformJumpskirtCentcomFormalDress
+  id: ClothingUniformJumpskirtWithWhiteShirt
+  name: skirt with white shirt
+  description: It looks strict and formal.
+
+- type: entity
+  parent: ClothingOuterCoatHoSTrench
+  id: ClothingOuterCoatBlackFancy
+  name: black jacket
+  description: A fancy black jacket.
+
+- type: entity
+  parent: ClothingOuterCoatHoSTrench
+  id: ClothingOuterCoatBlackFancyOpen
+  name: open black jacket
+  description: A fancy open black jacket.

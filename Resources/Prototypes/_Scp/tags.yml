@@ -1,0 +1,104 @@
+﻿- type: Tag
+  id: IgnorePortals
+
+- type: Tag
+  id: BackroomsMineshaft
+
+- type: Tag
+  id: ShuttleChair
+
+- type: Tag
+  id: ClassDSpawner
+
+- type: Tag
+  id: Windoor
+
+- type: Tag
+  id: LockerPistol
+
+- type: Tag
+  id: LockerGun6x3
+
+- type: Tag
+  id: LockerGun6x2
+
+- type: Tag
+  id: LockerGun5x3
+
+- type: Tag
+  id: LockerGun5x2
+
+- type: Tag
+  id: LockerGun5x1
+
+- type: Tag
+  id: LockerGun4x3
+
+- type: Tag
+  id: LockerGun3x3
+
+- type: Tag
+  id: MetaGarbageSavable
+
+- type: Tag
+  id: MetaGarbagePreventSaving
+
+- type: Tag
+  id: MetaGarbageReplace
+
+- type: Tag
+  id: MetaGarbageCanBeSpawnedInContainer
+
+- type: Tag
+  id: Scp173DestroyOnCollide
+
+- type: Tag
+  id: Scp173DamageOnCollide
+
+- type: Tag
+  id: MTFLoadoutCrate
+
+- type: Tag
+  id: UpgradeLocusKit
+
+- type: Tag
+  id: CanStandUpWithoutAbilityToMove
+
+- type: Tag
+  id: EncryptionScpSecurityCommon
+
+- type: Tag
+  id: PreventInsertingIntoHeadset
+
+- type: Tag
+  id: ScpMuffleCountsThisAsTransparent
+
+- type: Tag
+  id: ScpMuffleCountsThisAsNone
+
+- type: Tag
+  id: Scp330Candy
+
+- type: Tag
+  id: PlushieScp999
+
+- type: Tag
+  id: Scp173PaintBall
+
+- type: Tag
+  id: Scp173Shard
+
+- type: Tag
+  id: ReinforcedMaskScp096
+
+- type: Tag
+  id: ClothingOuterAntiTeleportation
+
+- type: Tag
+  id: ClothingHeadHelmetAiPowered
+
+- type: Tag
+  id: ClothingShoesSilent
+
+- type: Tag
+  id: ClothingHeadAwareness

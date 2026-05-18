@@ -1,0 +1,50 @@
+# Common loadout groups
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupMiscItems
+  name: loadout-group-common-misc-items
+  loadouts:
+  - ScpLoadoutHandheldStationMap
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupTrinkets
+  name: loadout-group-common-trinkets
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - ScpLoadoutClothingHeadHatFlowerWreath
+  - ScpLoadoutClothingHeadHatHairflower
+  - ScpLoadoutClothingMultipleHeadphones
+  - ScpLoadoutPlushieLizard
+  - ScpLoadoutPlushieSpaceLizard
+  - ScpLoadoutCandleRed
+  - ScpLoadoutLighter
+  - ScpLoadoutCigPackGreen
+  - ScpLoadoutCigPackRed
+  - ScpLoadoutCigPackBlue
+  - ScpLoadoutCigPackBlack
+  - ScpLoadoutCigarCase
+  - ScpLoadoutCigarGold
+  - ScpLoadoutClothingWraps
+  - ScpLoadoutClothingWrapsHigh
+  - ScpLoadoutOffsetCane
+  - ScpLoadoutOffsetCaneWood
+  - ScpLoadoutCane
+  - ScpLoadoutTowelColorWhite
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupGlasses
+  name: loadout-group-glasses
+  minLimit: 0
+  loadouts:
+  - ScpLoadoutClothingEyesGlasses
+  - ScpLoadoutClothingEyesGlassesJamjar
+  - ScpLoadoutClothingEyesGlassesJensen
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupBackpack
+  name: loadout-group-backpack
+  loadouts:
+  - ScpLoadoutClothingBackpack
+  - ScpLoadoutClothingBackpackSatchel
+  - ScpLoadoutClothingBackpackDuffel

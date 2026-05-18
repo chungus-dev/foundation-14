@@ -1,0 +1,217 @@
+# Руководство
+
+- type: department
+  id: Administration
+  name: department-Administration
+  description: department-Administration-description
+  color: "#065290"
+  weight: 100
+  roles:
+  - Director
+  - ScientificServiceDirector
+  - SecurityCommander
+  - ChiefTechnicalSpecialist
+  - PersonnelOfficer
+  - HeadOfMedicalSector
+  - SeniorLogisticsOfficer
+
+# Мобильные Оперативные Группы
+
+- type: department
+  id: MobileTaskForce
+  name: department-MobileTaskForce
+  description: department-MobileTaskForce-description
+  color: "#808080"
+  roles:
+  - RRHLeader # А-1
+  - RRHSpecialist
+  - HDLeader # Ню-7
+  - HDSpecialist
+  - HDCadet
+  - MHLeader # Б-7
+  - MHSpecialist
+  - MHCadet
+  - LLHLeader # О-1
+  - LLHSpecialist
+  - NTFLeader # Э-11
+  - NTFSpecialist
+  - NTFCadet
+  editorHidden: true
+  alwaysShowInBanPanel: true
+  weight: 99 # что бы оперативники МОГ показывались под Администрацией комплекса
+
+# Служба безопасности фонда
+
+- type: department
+  id: FondSecurity
+  name: department-FondSecurity
+  description: department-FondSecurity-description
+  color: "#913030"
+  roles:
+  - FondSecurityOfficer
+  - FondSeniorSecurityOfficer
+  editorHidden: true
+  alwaysShowInBanPanel: true
+  weight: 97
+
+# Гады следящие за буквой закона
+
+- type: department
+  id: InternalSecurity
+  name: department-InternalSecurity
+  description: department-InternalSecurity-description
+  editorHidden: true # выводим ОВБ до лучших времен
+  color: "#980000"
+  weight: 95
+  roles:
+  - MentalControlOfficer
+  - InternalSecurityOperative
+
+- type: department
+  id: EthicsCommittee
+  name: department-EthicsCommittee
+  description: department-EthicsCommittee-description
+  color: "#741b47"
+  weight: 90
+  roles:
+  - EthicsCommitteeRepresentative
+
+- type: department
+  id: InternalTribunalService
+  name: department-InternalTribunalService
+  description: department-InternalTribunalService-description
+  editorHidden: true # выводим СВТ до лучших времен
+  color: "#c27ba0"
+  weight: 85
+  roles:
+  - JudicialInspector
+  - TribunalOfficer
+
+# Служба безопасности
+
+- type: department
+  id: HeavyContainmentSecurityService
+  name: department-HeavyContainmentSecurityService
+  description: department-HeavyContainmentSecurityService-description
+  color: "#770101"
+  weight: 80
+  roles:
+  - HeavyContainmentZoneCommandant
+  - SeniorHeavyContainmentZoneOfficer
+  - HeavyContainmentZoneOfficer
+  - JuniorHeavyContainmentZoneOfficer
+
+- type: department
+  id: ExternalAdministrativeZoneSecurityService
+  name: department-ExternalAdministrativeZoneSecurityService
+  description: department-ExternalAdministrativeZoneSecurityService-description
+  color: "#999999"
+  weight: 75
+  roles:
+  - ExternalAdministrativeZoneCommandant
+  - SeniorExternalAdministrativeZoneOfficer
+  - ExternalAdministrativeZoneOfficer
+  - JuniorExternalAdministrativeZoneOfficer
+  - FieldMedicalSpecialist
+
+# Научный отдел
+
+- type: department
+  id: ScientificService
+  name: department-ScientificService
+  description: department-ScientificService-description
+  color: "#43356d"
+  weight: 70
+  roles:
+  - ScientificServiceDirector
+  - LeadResearcher
+  - AnomarchologyResearcher
+  - ProductionSpecialist
+  - JuniorResearcher
+
+# Медицинский отдел
+
+- type: department
+  id: MedicalService
+  name: department-MedicalService
+  description: department-MedicalService-description
+  color: "#3b627a"
+  weight: 65
+  roles:
+  - HeadOfMedicalSector
+  - SeniorMedicalSpecialist
+  - PharmaceuticalSpecialist
+  - MedicalSpecialist
+  - Psychotherapist
+  - HospitalIntern
+
+# Инженерный отдел
+
+- type: department
+  id: EngineeringTechnicalService
+  name: department-EngineeringTechnicalService
+  description: department-EngineeringTechnicalService-description
+  color: "#c07d1e"
+  weight: 60
+  roles:
+  - ChiefTechnicalSpecialist
+  - LeadTechnicalSpecialist
+  - GeneralTechnicalSpecialist
+  - ElectricalTechnicalSpecialist
+  - TechnicalTrainee
+
+# Отдел логистики
+
+- type: department
+  id: LogisticsService
+  name: department-LogisticsService
+  description: department-LogisticsService-description
+  color: "#9E6A34"
+  weight: 55
+  roles:
+  - SeniorLogisticsOfficer
+  - LogisticsOfficer
+
+# Департамент продовольственного и санитарного обслуживания
+
+- type: department
+  id: FoodAndSanitationServiceDepartment
+  name: department-FoodAndSanitationServiceDepartment
+  description: department-FoodAndSanitationServiceDepartment-description
+  color: "#4e7c22"
+  weight: 50
+  roles:
+  - GastronomicSpecialist
+  - BotanistPhytogeneticist
+  - ServicePersonnel
+
+# Класс Д
+
+- type: department
+  id: LowAccessPersonnel
+  name: department-LowAccessPersonnel
+  description: department-LowAccessPersonnel-description
+  color: "#91381e"
+  weight: 45
+  roles:
+  - ClassDCook
+  - ClassDBotanist
+  - ClassDJanitor
+  - ClassD
+
+# Сосать
+
+- type: department
+  id: SCP
+  name: department-SCP
+  description: department-SCP-description
+  color: "#7a7070"
+  weight: 120
+  roles:
+  - Scp049
+  - Scp939
+  - Scp173
+  - Scp999
+  - Scp096
+  - Scp106
+  - Scp082

@@ -93,6 +93,7 @@
   showInVote: false #4boring4vote
   description: greenshift-description
   rules:
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -159,7 +160,7 @@
   name: death-match-title
   description: death-match-description
   maxPlayers: 15
-  showInVote: true
+  showInVote: false # Scp edit
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31

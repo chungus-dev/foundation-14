@@ -1,3 +1,5 @@
+using Content.Shared.Research;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Research.Components
@@ -20,18 +22,22 @@ namespace Content.Shared.Research.Components
     }
 
     [Serializable, NetSerializable]
+    public sealed class ConsoleRediscoverTechnologyMessage : BoundUserInterfaceMessage;
+
+    [Serializable, NetSerializable]
     public sealed class ConsoleServerSelectionMessage : BoundUserInterfaceMessage
     {
 
     }
 
     [Serializable, NetSerializable]
-    public sealed class ResearchConsoleBoundInterfaceState : BoundUserInterfaceState
+    public sealed class ResearchConsoleBoundInterfaceState(
+        Dictionary<ProtoId<ResearchPointPrototype>, int> points,
+        TimeSpan nextRediscover,
+        Dictionary<ProtoId<ResearchPointPrototype>, int> rediscoverCost) : BoundUserInterfaceState
     {
-        public int Points;
-        public ResearchConsoleBoundInterfaceState(int points)
-        {
-            Points = points;
-        }
+        public Dictionary<ProtoId<ResearchPointPrototype>, int> Points = points;
+        public TimeSpan NextRediscover = nextRediscover;
+        public Dictionary<ProtoId<ResearchPointPrototype>, int> RediscoverCost = rediscoverCost;
     }
 }

@@ -8,3 +8,52 @@
   id: RedJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorRed
+
+- type: loadoutEffectGroup
+  id: MasterCadet5h
+  effects:
+  # Scp edit start
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: HeavyContainmentSecurityService
+      time: 9000 #2.5 hrs
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: ExternalAdministrativeZoneSecurityService
+      time: 9000 #2.5 hrs
+  # Scp edit end
+
+- type: loadoutEffectGroup
+  id: MasterCadet10h
+  effects:
+  # Scp edit start
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: HeavyContainmentSecurityService
+      time: 18000 #5 hrs
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: ExternalAdministrativeZoneSecurityService
+      time: 18000 #5 hrs
+  # Scp edit end
+
+- type: loadoutEffectGroup
+  id: MasterCadet20h
+  effects:
+  # Scp edit start
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: HeavyContainmentSecurityService
+      time: 36000 #10 hrs
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: ExternalAdministrativeZoneSecurityService
+      time: 36000 #10 hrs
+  # Scp edit end
+

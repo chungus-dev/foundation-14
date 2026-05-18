@@ -5,9 +5,14 @@
   playTimeTracker: JobCBURN
   setPreference: false
   startingGear: CBURNGear
-  icon: "JobIconCBURN"
+  icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
+  overrideConsoleVisibility: false # Scp added
   canBeAntag: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 18000 # 5 hours
   accessGroups:
   - AllAccess
   access:

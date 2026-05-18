@@ -1,0 +1,35 @@
+uniform sampler2D BLURRED_TEXTURE;
+uniform mediump float coneOpacity;
+
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float ConeAngle;
+uniform highp float ConeFeather;
+uniform highp float ConeIgnoreRadius;
+uniform highp float ConeIgnoreFeather;
+uniform highp float ViewAngle;
+uniform highp vec2 Offset;
+
+void fragment(){
+    highp vec2 pixelSize = vec2(1.0 / SCREEN_PIXEL_SIZE.x, 1.0 / SCREEN_PIXEL_SIZE.y);
+    mediump vec4 color = texture(SCREEN_TEXTURE, UV);
+    highp vec2 finalCoords = FRAGCOORD.xy - Offset.xy;
+
+    mediump float mask = 1.0;
+    mediump float radial = zCircleGradient(pixelSize, finalCoords, 1.0, ConeIgnoreFeather, (ConeIgnoreRadius / ConeIgnoreFeather), 1.0);
+    mask -= radial;
+
+    highp vec2 delta = normalize(finalCoords - (pixelSize * 0.5));
+    highp vec2 viewDir = vec2(sin(ViewAngle), -cos(ViewAngle));
+
+    mediump float cosDelta = dot(delta, viewDir);
+    mediump float coneLimit = cos(radians(ConeAngle * 0.5 + 5.0));
+    mediump float deltaAngle = smoothstep(coneLimit, coneLimit + (radians(ConeFeather) * 0.5), cosDelta);
+
+    mask += clamp(deltaAngle, 0.0, 1.0);
+    mask = 1.0 - clamp(mask, 0.0, 1.0);
+
+    mediump vec4 blurredColor = texture(BLURRED_TEXTURE, UV);
+    mediump vec4 outOfFovColor = mix(blurredColor, vec4(0.0, 0.0, 0.0, 1.0), coneOpacity);
+
+    COLOR = vec4(mix(color.rgb, outOfFovColor.rgb, mask), color.a);
+}

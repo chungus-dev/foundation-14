@@ -1,0 +1,11 @@
+ent-ScpToySpawner = спавнер игрушки
+    .desc = { ent-MarkerBase.desc }
+ent-ScpPlushieCatSpawner = спавнер плюшевой кошки
+    .desc = { ent-MarkerBase.desc }
+ent-ScpPlushieFoxSpawner = спавнер плюшевой лисы
+    .desc = { ent-MarkerBase.desc }
+ent-ScpFigureSpawner = спавнер фигурки
+    .desc = { ent-MarkerBase.desc }
+ent-ScpSpacemenFigureSpawner = спавнер минифигурки космонавтов
+    .desc = { ent-MarkerBase.desc }
+    .suffix = Только для библиотекарей, маппить с осторожностью!

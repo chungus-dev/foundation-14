@@ -1,0 +1,359 @@
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteel
+  name: stack-scp-floor-tile-steel
+  spawn: ScpFloorTileItemSteel
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelDiagonal
+  name: stack-scp-floor-tile-steel-diagonal
+  spawn: ScpFloorTileItemSteelDiagonal
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelHalfMono
+  name: stack-scp-floor-tile-steel-half-mono
+  spawn: ScpFloorTileItemSteelHalfMono
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelHalfMonoVertical
+  name: stack-scp-floor-tile-steel-half-mono-vertical
+  spawn: ScpFloorTileItemSteelHalfMonoVertical
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelHerringbone
+  name: stack-scp-floor-tile-steel-herringbone
+  spawn: ScpFloorTileItemSteelHerringbone
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelMini
+  name: stack-scp-floor-tile-steel-mini
+  spawn: ScpFloorTileItemSteelMini
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelMono
+  name: stack-scp-floor-tile-steel-mono
+  spawn: ScpFloorTileItemSteelMono
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelOffset
+  name: stack-scp-floor-tile-steel-offset
+  spawn: ScpFloorTileItemSteeloffset
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelPavement
+  name: stack-scp-floor-tile-steel-pavement
+  spawn: ScpFloorTileItemSteelPavement
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelPavementVertical
+  name: stack-scp-floor-tile-steel-pavement-vertical
+  spawn: ScpFloorTileItemSteelPavementVertical
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDark
+  name: stack-scp-floor-tile-dark
+  spawn: ScpFloorTileItemDark
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDarkDiagonal
+  name: stack-scp-floor-tile-dark-diagonal
+  spawn: ScpFloorTileItemDarkDiagonal
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDarkHalfMono
+  name: stack-scp-floor-tile-dark-half-mono
+  spawn: ScpFloorTileItemDarkHalfMono
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDarkHalfMonoVertical
+  name: stack-scp-floor-tile-dark-half-mono-vertical
+  spawn: ScpFloorTileItemDarkHalfMonoVertical
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDarkHerringbone
+  name: stack-scp-floor-tile-dark-herringbone
+  spawn: ScpFloorTileItemDarkHerringbone
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDarkMini
+  name: stack-scp-floor-tile-dark-mini
+  spawn: ScpFloorTileItemDarkMini
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDarkMono
+  name: stack-scp-floor-tile-dark-mono
+  spawn: ScpFloorTileItemDarkMono
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDarkOffset
+  name: stack-scp-floor-tile-dark-offset
+  spawn: ScpFloorTileItemDarkoffset
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDarkPavement
+  name: stack-scp-floor-tile-dark-pavement
+  spawn: ScpFloorTileItemDarkPavement
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDarkPavementVertical
+  name: stack-scp-floor-tile-dark-pavement-vertical
+  spawn: ScpFloorTileItemDarkPavementVertical
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWhite
+  name: stack-scp-floor-tile-white
+  spawn: ScpFloorTileItemWhite
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWhiteDiagonal
+  name: stack-scp-floor-tile-white-diagonal
+  spawn: ScpFloorTileItemWhiteDiagonal
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWhiteHalfMono
+  name: stack-scp-floor-tile-white-half-mono
+  spawn: ScpFloorTileItemWhiteHalfMono
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWhiteHalfMonoVertical
+  name: stack-scp-floor-tile-white-half-mono-vertical
+  spawn: ScpFloorTileItemWhiteHalfMonoVertical
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWhiteHerringbone
+  name: stack-scp-floor-tile-white-herringbone
+  spawn: ScpFloorTileItemWhiteHerringbone
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWhiteMini
+  name: stack-scp-floor-tile-white-mini
+  spawn: ScpFloorTileItemWhiteMini
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWhiteMono
+  name: stack-scp-floor-tile-white-mono
+  spawn: ScpFloorTileItemWhiteMono
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWhiteOffset
+  name: stack-scp-floor-tile-white-offset
+  spawn: ScpFloorTileItemWhiteoffset
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWhitePavement
+  name: stack-scp-floor-tile-white-pavement
+  spawn: ScpFloorTileItemWhitePavement
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWhitePavementVertical
+  name: stack-scp-floor-tile-white-pavement-vertical
+  spawn: ScpFloorTileItemWhitePavementVertical
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileBlue
+  name: stack-scp-floor-tile-blue
+  spawn: ScpFloorTileItemBlue
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileGreen
+  name: stack-scp-floor-tile-green
+  spawn: ScpFloorTileItemGreen
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileCheckerWhite
+  name: stack-scp-floor-tile-checker-white
+  spawn: ScpFloorTileItemCheckerWhite
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileCheckerSteel
+  name: stack-scp-floor-tile-checker-steel
+  spawn: ScpFloorTileItemCheckerSteel
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileCheckerDark
+  name: stack-scp-floor-tile-checker-dark
+  spawn: ScpFloorTileItemCheckerDark
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDepartmentAtmos
+  name: stack-scp-floor-tile-department-atmos
+  spawn: ScpFloorTileItemDepartmentAtmos
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDepartmentCargo
+  name: stack-scp-floor-tile-department-cargo
+  spawn: ScpFloorTileItemDepartmentCargo
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDepartmentCom
+  name: stack-scp-floor-tile-department-com
+  spawn: ScpFloorTileItemDepartmentCom
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDepartmentEng
+  name: stack-scp-floor-tile-department-eng
+  spawn: ScpFloorTileItemDepartmentEng
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDepartmentMed
+  name: stack-scp-floor-tile-department-med
+  spawn: ScpFloorTileItemDepartmentMed
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDepartmentRnd
+  name: stack-scp-floor-tile-department-rnd
+  spawn: ScpFloorTileItemDepartmentRnd
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDepartmentSec
+  name: stack-scp-floor-tile-department-sec
+  spawn: ScpFloorTileItemDepartmentSec
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileDepartmentSer
+  name: stack-scp-floor-tile-department-ser
+  spawn: ScpFloorTileItemDepartmentSer
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrille1
+  name: stack-scp-floor-tile-steel-grille-1
+  spawn: ScpFloorTileItemSteelGrille1
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrille2
+  name: stack-scp-floor-tile-steel-grille-2
+  spawn: ScpFloorTileItemSteelGrille2
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrille3
+  name: stack-scp-floor-tile-steel-grille-3
+  spawn: ScpFloorTileItemSteelGrille3
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrille4
+  name: stack-scp-floor-tile-steel-grille-4
+  spawn: ScpFloorTileItemSteelGrille4
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrilleMono1
+  name: stack-scp-floor-tile-steel-grille-mono-1
+  spawn: ScpFloorTileItemSteelGrilleMono1
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrilleMono2
+  name: stack-scp-floor-tile-steel-grille-mono-2
+  spawn: ScpFloorTileItemSteelGrilleMono2
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrilleMono3
+  name: stack-scp-floor-tile-steel-grille-mono-3
+  spawn: ScpFloorTileItemSteelGrilleMono3
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrilleMono4
+  name: stack-scp-floor-tile-steel-grille-mono-4
+  spawn: ScpFloorTileItemSteelGrilleMono4
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrilleOffset1
+  name: stack-scp-floor-tile-steel-grille-offset-1
+  spawn: ScpFloorTileItemSteelGrilleOffset1
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrilleOffset2
+  name: stack-scp-floor-tile-steel-grille-offset-2
+  spawn: ScpFloorTileItemSteelGrilleOffset2
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrilleOffset3
+  name: stack-scp-floor-tile-steel-grille-offset-3
+  spawn: ScpFloorTileItemSteelGrilleOffset3
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileSteelGrilleOffset4
+  name: stack-scp-floor-tile-steel-grille-offset-4
+  spawn: ScpFloorTileItemSteelGrilleOffset4
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileConcrete
+  name: stack-scp-floor-tile-concrete
+  spawn: ScpFloorTileItemConcrete
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileConcreteMono
+  name: stack-scp-floor-tile-concrete-mono
+  spawn: ScpFloorTileItemConcreteMono
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileAnechoic1
+  name: stack-scp-floor-tile-anechoic-1
+  spawn: ScpFloorTileItemAnechoic1
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileAnechoic2
+  name: stack-scp-floor-tile-anechoic-2
+  spawn: ScpFloorTileItemAnechoic2
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileAnechoic3
+  name: stack-scp-floor-tile-anechoic-3
+  spawn: ScpFloorTileItemAnechoic3

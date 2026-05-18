@@ -147,7 +147,7 @@
       path: /Audio/Effects/Weather/snowstorm_weak.ogg
       params:
         loop: true
-        volume: -6
+        volume: -12 # Scp edit
 
 - type: entity
   parent: WeatherBase

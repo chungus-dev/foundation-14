@@ -1,0 +1,6 @@
+﻿- type: entity
+  id: BaseFacilityTransitHub
+  abstract: true
+  components:
+  - type: StationCentcomm
+    map: /Maps/_Scp/Grids/transit_hub.yml

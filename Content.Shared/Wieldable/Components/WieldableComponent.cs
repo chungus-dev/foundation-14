@@ -43,6 +43,11 @@ public sealed partial class WieldableComponent : Component
     public string? WieldedInhandPrefix = "wielded";
 
     public string? OldInhandPrefix = null;
+
+    // Scp added start - форс двуручности
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool ForceTwoHanded;
+    // Scp added end
 }
 
 [Serializable, NetSerializable]

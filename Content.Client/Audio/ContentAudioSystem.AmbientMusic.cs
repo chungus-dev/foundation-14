@@ -1,9 +1,11 @@
 using System.Linq;
 using Content.Client.Gameplay;
+using Content.Shared._Scp.Audio;
 using Content.Shared.Audio;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Random.Rules;
+using Robust.Client.Audio;
 using Robust.Client.Player;
 using Robust.Client.State;
 using Robust.Shared.Audio;
@@ -28,12 +30,12 @@ public sealed partial class ContentAudioSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IStateManager _state = default!;
     [Dependency] private readonly RulesSystem _rules = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
 
-    private readonly TimeSpan _minAmbienceTime = TimeSpan.FromSeconds(30);
-    private readonly TimeSpan _maxAmbienceTime = TimeSpan.FromSeconds(60);
+    private readonly TimeSpan _minAmbienceTime = TimeSpan.FromSeconds(5); // Scp edit
+    private readonly TimeSpan _maxAmbienceTime = TimeSpan.FromSeconds(20); // Scp edit
 
-    private const float AmbientMusicFadeTime = 10f;
+    private const float AmbientMusicFadeTime = 5f; // Scp edit
     private static float _volumeSlider;
 
     // Don't need to worry about this being serializable or pauseable as it doesn't affect the sim.
@@ -69,6 +71,11 @@ public sealed partial class ContentAudioSystem
         _state.OnStateChanged += OnStateChange;
         // On round end summary OR lobby cut audio.
         SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
+
+        // Scp edit start
+        SubscribeNetworkEvent<NetworkAmbientMusicEvent>(OnNetworkAmbientMusic);
+        SubscribeNetworkEvent<NetworkAmbientMusicEventStop>(OnNetworkAmbientMusicStop);
+        // Scp edit end
     }
 
     private void AmbienceCVarChanged(float obj)
@@ -205,6 +212,10 @@ public sealed partial class ContentAudioSystem
         var track = tracks[^1];
         tracks.RemoveAt(tracks.Count - 1);
 
+        // Scp added start
+        _sawmill.Info($"Playing new ambience - {track.CanonPath}");
+        // Scp added end
+
         var strim = _audio.PlayGlobal(
             track.ToString(),
             Filter.Local(),
@@ -261,4 +272,66 @@ public sealed partial class ContentAudioSystem
         FadeOut(_ambientMusicStream);
         _ambientMusicStream = null;
     }
+
+    // Scp edit start
+
+    private void OnNetworkAmbientMusic(NetworkAmbientMusicEvent ev)
+    {
+        // Остановить текущую музыку без задержки
+        PredictedDel(_ambientMusicStream);
+        _ambientMusicStream = null;
+
+        // Найти прототип новой музыки
+        if (!_proto.TryIndex(ev.Prototype, out var proto))
+        {
+            _sawmill.Error($"Invalid ambient music prototype: {ev.Prototype}");
+            return;
+        }
+
+        _musicProto = proto;
+        _interruptable = proto.Interruptable;
+
+        // Получить треки для прототипа
+        var tracks = _ambientSounds[proto.ID];
+        if (tracks.Count == 0)
+            RefreshTracks(proto.Sound, tracks, null);
+
+        // Выбрать и воспроизвести следующий трек
+        var track = tracks[^1];
+        tracks.RemoveAt(tracks.Count - 1);
+
+        _sawmill.Info($"Playing new ambience - {track.CanonPath}");
+
+        var strim = _audio.PlayGlobal(
+            track.ToString(),
+            Filter.Local(),
+            false,
+            AudioParams.Default.WithVolume(proto.Sound.Params.Volume + _volumeSlider));
+
+        _ambientMusicStream = strim?.Entity;
+
+        // Применить fade-in если нужно
+        if (proto.FadeIn && strim != null)
+            FadeIn(_ambientMusicStream, strim.Value.Component, AmbientMusicFadeTime);
+
+        // Обновить список треков если необходимо
+        if (tracks.Count == 0)
+            RefreshTracks(proto.Sound, tracks, track);
+    }
+
+    private void OnNetworkAmbientMusicStop(NetworkAmbientMusicEventStop ev)
+    {
+        // Мгновенная остановка текущей музыки
+        PredictedDel(_ambientMusicStream);
+        _ambientMusicStream = null;
+
+        // Сброс состояния системы
+        _musicProto = null;
+        _interruptable = false;
+        _nextAudio = TimeSpan.MinValue; // Форсируем немедленный выбор
+
+        // Принудительный запуск логики выбора музыки
+        UpdateAmbientMusic();
+    }
+    // Scp edit end
 }

@@ -47,6 +47,10 @@
   components:
   - type: SpawnItemsOnUse
     items:
+      # Scp added start
+      - id: PlushieScp999
+        orGroup: GiftPool
+      # Scp added end
       - id: PresentTrash
       - id: Bucket
         orGroup: GiftPool
@@ -236,7 +240,7 @@
         orGroup: GiftPool
       - id: Machete
         orGroup: GiftPool
-      - id: BaseBallBat
+      - id: ScpBaseBallBat # Scp edit
         orGroup: GiftPool
       - id: CombatKnife
         orGroup: GiftPool

@@ -10,7 +10,7 @@ namespace Content.Shared.Localizations
         [Dependency] private readonly ILocalizationManager _loc = default!;
 
         // Scp edit start: run the fork in Russian while keeping upstream English as the fallback locale.
-        private const string Culture = "ru-RU";
+        private const string Culture = "en-US";
         private const string FallbackCulture = "en-US";
         // Scp edit end
 

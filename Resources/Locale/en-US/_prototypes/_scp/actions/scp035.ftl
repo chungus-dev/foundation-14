@@ -1,0 +1,12 @@
+ent-ActionScp035RaiseArmy = Summon mannequin
+    .desc = The mask creates a strange creature from antimatter that resembles an ordinary mannequin.
+ent-ActionScp035OrderStay = Order to stop
+    .desc = The mask orders the mannequin to stand still.
+ent-ActionScp035OrderFollow = Order to follow
+    .desc = The mask orders the mannequin to follow.
+ent-ActionScp035OrderKill = Order to kill
+    .desc = The mask orders the mannequin to kill.
+ent-ActionScp035OrderLoose = Release order
+    .desc = The mask orders the mannequin to roam.
+ent-ActionScp035Stun = Hypnosis
+    .desc = The mask forces its victim to stop for a brief period of time.

@@ -59,8 +59,6 @@
           shape:
             !type:PhysShapeAabb
             bounds: "-0.5,-0.5,0.5,0.5"
-          mask:
-          - FullTileMask
           layer:
           - GlassLayer
     - type: Destructible
@@ -87,6 +85,11 @@
             True: { visible: True }
             False: { visible: False }
     - type: AnimationPlayer
+    # Scp added start
+    - type: Tag
+      tags:
+      - ScpMuffleCountsThisAsNone
+    # Scp added end
 
 - type: entity
   id: ClockworkGrille
@@ -107,6 +110,11 @@
     graph: ClockGrille
     node: clockGrille
     deconstructionTarget: start
+  # Scp added start
+  - type: Tag
+    tags:
+    - ScpMuffleCountsThisAsNone
+  # Scp added end
 
 - type: entity
   id: GrilleBroken
@@ -136,6 +144,7 @@
   - type: Tag
     tags:
     - ForceNoFixRotations
+    - ScpMuffleCountsThisAsNone # Scp added
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: FlimsyMetallic
@@ -166,6 +175,11 @@
   - type: Construction
     graph: ClockGrille
     node: clockGrilleBroken
+  # Scp added start
+  - type: Tag
+    tags:
+    - ScpMuffleCountsThisAsNone
+  # Scp added end
 
 - type: entity
   id: GrilleDiagonal
@@ -188,6 +202,7 @@
   - type: Tag
     tags:
     - Diagonal
+    - ScpMuffleCountsThisAsNone # Scp added
   - type: Fixtures
     fixtures:
       fix1:
@@ -226,6 +241,7 @@
   - type: Tag
     tags:
     - Diagonal
+    - ScpMuffleCountsThisAsNone # Scp added
   - type: Fixtures
     fixtures:
       fix1:

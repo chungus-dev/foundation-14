@@ -1,3 +1,4 @@
+using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
@@ -36,4 +37,9 @@ public sealed partial class RandomHumanoidSettingsPrototype : IPrototype, IInher
     [DataField]
     [AlwaysPushInheritance]
     public ComponentRegistry? Components { get; private set; }
+
+    // Scp added start
+    [DataField]
+    public List<Gender>? GenderWhitelist;
+    // Scp added end
 }

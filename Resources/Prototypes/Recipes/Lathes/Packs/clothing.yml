@@ -115,6 +115,7 @@
   - ClothingHeadHatWarden
   - ClothingUniformJumpsuitWarden
   - ClothingUniformJumpskirtWarden
+  - ClothingUniformClassD # Scp edit
 
 - type: latheRecipePack
   id: ClothingService

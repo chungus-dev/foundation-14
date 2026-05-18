@@ -5,6 +5,19 @@
   placement:
     mode: SnapgridCenter
   components:
+  # Scp edit start
+  - type: ProximityReceiver
+  - type: FearSource
+    phobiaType: Necrophobia
+    uponComeCloser: Anxiety
+    grainShaderStrength:
+      min: 0
+      max: 400
+    vignetteShaderStrength:
+      min: 0
+      max: 150
+    playBreathingSound: false
+  # Scp edit end
   - type: Pullable
   - type: Anchorable
   - type: Sprite
@@ -44,6 +57,12 @@
       path: /Audio/Items/deconstruct.ogg
     openSound:
       path: /Audio/Items/deconstruct.ogg
+    # Fire start
+    whitelist:
+      components:
+      - Body
+    # Fire end
+
   - type: EntityStorageLayingDownOverride
   - type: Morgue
   - type: ContainerContainer
@@ -121,6 +140,14 @@
       path: /Audio/Items/deconstruct.ogg
     openSound:
       path: /Audio/Items/deconstruct.ogg
+    # Fire start
+    whitelist:
+      components:
+      - Body
+    blacklist:
+      components:
+      - Scp
+    # Fire end
   - type: EntityStorageLayingDownOverride
   - type: Crematorium
   - type: ContainerContainer

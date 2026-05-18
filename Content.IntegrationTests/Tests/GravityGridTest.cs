@@ -12,6 +12,7 @@ namespace Content.IntegrationTests.Tests
     /// making sure that gravity is applied to the correct grids.
     [TestFixture]
     [TestOf(typeof(GravityGeneratorComponent))]
+    [Ignore("We disabled ability to deactivate gravity")] // Scp added
     public sealed class GravityGridTest : GameTest
     {
         [TestPrototypes]

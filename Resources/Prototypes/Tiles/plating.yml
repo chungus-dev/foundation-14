@@ -1,4 +1,4 @@
-﻿- type: tile
+- type: tile
   id: BasePlating
   abstract: true
   friction: 1.5
@@ -37,9 +37,10 @@
 
 - type: tile
   id: FloorHullReinforced
-  parent: BasePlating
   name: tiles-hull-reinforced
   sprite: /Textures/Tiles/hull_reinforced.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemSteel

@@ -15,6 +15,11 @@ public sealed class PillSystem : EntitySystem
 
     private void OnHandleState(EntityUid uid, PillComponent component, ref AfterAutoHandleStateEvent args)
     {
+        // Scp edit start - поддержка нестандартных спрайтов пилюль
+        if (!component.UseStandardVisuals)
+            return;
+        // Scp edit end
+
         if (!TryComp(uid, out SpriteComponent? sprite))
             return;
 

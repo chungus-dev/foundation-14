@@ -1,0 +1,15 @@
+ent-RandomHumanoidSpawnerRRHLeader = { ghost-role-information-mtf-leader-RRH-name }
+    .suffix = МОГ | Альфа-1
+    .desc = { ghost-role-information-mtf-leader-description }
+ent-RandomHumanoidSpawnerRRHSpecialist = { ghost-role-information-mtf-specialist-RRH-name }
+    .suffix = МОГ | Альфа-1
+    .desc = { ghost-role-information-mtf-specialist-description }
+ent-SpawnerMTFSquadRRH = { spawner-squad-name } МОГ Альфа-1
+    .desc = { ent-SpawnerMTFSquadHD.desc }
+    .suffix = Альфа-1
+ent-SpawnerMTFSquadRRHSpawnOnTrigger = { ent-SpawnerMTFSquadRRH }
+    .desc = { ent-SpawnerMTFSquadRRH.desc }
+    .suffix = { ent-SpawnerMTFSquadRRH.suffix }, { spawner-on-trigger-suffix }
+ent-RandomHumanoidSpawnerRRHCadet = { ghost-role-information-mtf-cadet-RRH-name }
+    .suffix = МОГ | Альфа-1
+    .desc = { ghost-role-information-mtf-cadet-description }

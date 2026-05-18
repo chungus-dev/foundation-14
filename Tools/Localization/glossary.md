@@ -14,10 +14,11 @@ Preferred terms:
 - SCP Foundation: Фонд SCP
 - Foundation personnel: персонал Фонда
 - Foundation staff: персонал Фонда
-- D-Class: D-класс
-- Class-D: D-класс
+- D-Class: класс Д
+- Class-D: класс Д
 - Site: Зона
 - facility: комплекс
+- complex: комплекс
 - sector: сектор
 - containment: содержание
 - containment chamber: камера содержания

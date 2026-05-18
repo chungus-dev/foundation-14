@@ -22,6 +22,9 @@
   abstract: true
   categories: [ HideSpawnMenu ]
   components:
+  # Scp added start - для скромника
+  - type: ShowScp096FaceDamageHud
+  # Scp added end
   - type: ShowHealthBars
   - type: ShowHealthIcons
 

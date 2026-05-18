@@ -32,6 +32,7 @@
   parent: IDCardStandard
   id: PassengerIDCard
   name: passenger ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -48,6 +49,7 @@
   parent: [IDCardStandard, BaseGrandTheftContraband]
   id: CaptainIDCard
   name: captain ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -76,6 +78,7 @@
   parent: IDCardStandard
   id: HoPIDCard
   name: head of personnel ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -96,6 +99,7 @@
   parent: IDCardStandard
   id: CEIDCard
   name: chief engineer ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -116,6 +120,7 @@
   parent: IDCardStandard
   id: CMOIDCard
   name: chief medical officer ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -136,6 +141,7 @@
   parent: IDCardStandard
   id: RDIDCard
   name: research director ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -156,6 +162,7 @@
   parent: IDCardStandard
   id: HoSIDCard
   name: head of security ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -176,6 +183,7 @@
   parent: IDCardStandard
   id: QuartermasterIDCard
   name: quartermaster ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -198,6 +206,7 @@
   parent: IDCardStandard
   id: TechnicalAssistantIDCard
   name: technical assistant ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -216,6 +225,7 @@
   parent: IDCardStandard
   id: EngineeringIDCard
   name: engineer ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -234,6 +244,7 @@
   parent: IDCardStandard
   id: AtmosIDCard
   name: atmospheric technician ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -252,6 +263,7 @@
   parent: EngineeringIDCard
   id: SeniorEngineerIDCard
   name: senior engineer ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -270,6 +282,7 @@
   parent: IDCardStandard
   id: MedicalInternIDCard
   name: medical intern ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -288,6 +301,7 @@
   parent: IDCardStandard
   id: MedicalIDCard
   name: medical ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -306,6 +320,7 @@
   parent: IDCardStandard
   id: ParamedicIDCard
   name: paramedic ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -324,6 +339,7 @@
   parent: IDCardStandard
   id: ChemistIDCard
   name: chemist ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -342,6 +358,7 @@
   parent: IDCardStandard
   id: PsychologistIDCard
   name: psychologist ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -360,6 +377,7 @@
   parent: MedicalIDCard
   id: SeniorPhysicianIDCard
   name: senior physician ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -378,6 +396,7 @@
   parent: IDCardStandard
   id: ResearchAssistantIDCard
   name: research assistant ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -396,6 +415,7 @@
   parent: IDCardStandard
   id: ResearchIDCard
   name: research ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -414,6 +434,7 @@
   parent: ResearchIDCard
   id: SeniorResearcherIDCard
   name: senior researcher ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -432,6 +453,7 @@
   parent: IDCardStandard
   id: SecurityCadetIDCard
   name: security cadet ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -450,6 +472,7 @@
   parent: IDCardStandard
   id: SecurityIDCard
   name: security ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -468,6 +491,7 @@
   parent: IDCardStandard
   id: WardenIDCard
   name: warden ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -486,6 +510,7 @@
   parent: IDCardStandard
   id: DetectiveIDCard
   name: detective ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -504,6 +529,7 @@
   parent: IDCardStandard
   id: BrigmedicIDCard
   name: brigmedic ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -520,6 +546,7 @@
   parent: SecurityIDCard
   id: SeniorOfficerIDCard
   name: senior officer ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -538,6 +565,7 @@
   parent: IDCardStandard
   id: ServiceWorkerIDCard
   name: service worker ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -556,6 +584,7 @@
   parent: IDCardStandard
   id: ClownIDCard
   name: clown ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -571,6 +600,7 @@
   parent: IDCardStandard
   id: MimeIDCard
   name: mime ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -589,6 +619,7 @@
   parent: IDCardStandard
   id: MusicianIDCard
   name: musician ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -607,6 +638,7 @@
   parent: IDCardStandard
   id: ChaplainIDCard
   name: chaplain ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -625,6 +657,7 @@
   parent: IDCardStandard
   id: JanitorIDCard
   name: janitor ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -643,6 +676,7 @@
   parent: IDCardStandard
   id: BartenderIDCard
   name: bartender ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -661,6 +695,7 @@
   parent: IDCardStandard
   id: PunPunIDCard
   name: pun pun ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -683,6 +718,7 @@
   parent: IDCardStandard
   id: ChefIDCard
   name: chef ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -701,6 +737,7 @@
   parent: IDCardStandard
   id: BotanistIDCard
   name: botanist ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -719,6 +756,7 @@
   parent: IDCardStandard
   id: LibrarianIDCard
   name: librarian ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -737,6 +775,7 @@
   parent: IDCardStandard
   id: LawyerIDCard
   name: lawyer ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -755,6 +794,7 @@
   parent: IDCardStandard
   id: ReporterIDCard
   name: reporter ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -773,6 +813,7 @@
   parent: IDCardStandard
   id: BoxerIDCard
   name: boxer ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -789,6 +830,7 @@
   parent: IDCardStandard
   id: ZookeeperIDCard
   name: zookeeper ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -807,6 +849,7 @@
   parent: IDCardStandard
   id: CargoIDCard
   name: cargo ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -825,6 +868,7 @@
   parent: IDCardStandard
   id: SalvageIDCard
   name: salvage ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -845,6 +889,7 @@
   parent: IDCardStandard
   id: PrisonerIDCard
   name: prisoner ID card
+  categories: [ HideSpawnMenu ] # Scp added
   description: A generically printed ID card for scummy prisoners.
   components:
   - type: Sprite
@@ -882,6 +927,7 @@
   parent: IDCardStandard
   id: CluwneIDCard
   name: cluwne ID card
+  categories: [ HideSpawnMenu ] # Scp added
   suffix: Unremoveable
   components:
   - type: Sprite
@@ -903,6 +949,7 @@
   parent: IDCardStandard
   id: VisitorIDCard
   name: visitor ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -961,6 +1008,7 @@
   parent: [ IDCardStandard, BaseSyndicateContraband ]
   id: SyndicateIDCard
   name: syndicate ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -985,6 +1033,7 @@
   parent: [ SyndicateIDCard, BaseSyndicateContraband ]
   id: SyndiOperativeIDCard
   name: syndicate operative ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1004,6 +1053,7 @@
   parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
   id: SyndiCorpsmanIDCard
   name: syndicate corpsman ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1022,6 +1072,7 @@
   parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
   id: SyndiCommanderIDCard
   name: syndicate commander ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1065,6 +1116,7 @@
   parent: [ IDCardStandard, BaseMajorContraband ]
   id: PirateIDCard
   name: pirate ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1081,6 +1133,7 @@
   parent: IDCardStandard
   id: XenoborgIDCard
   name: xenoborg ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1093,6 +1146,7 @@
   parent: [ IDCardStandard, BaseMagicalContraband ]
   id: WizardIDCard
   name: wizard ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1116,6 +1170,7 @@
   parent: IDCardStandard
   id: CentcomIDCard
   name: command officer ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1136,6 +1191,7 @@
   parent: IDCardStandard
   id: ERTLeaderIDCard
   name: ERT leader ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1156,6 +1212,7 @@
   parent: IDCardStandard
   id: ERTChaplainIDCard
   name: ERT chaplain ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1176,6 +1233,7 @@
   parent: IDCardStandard
   id: ERTEngineerIDCard
   name: ERT engineer ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1196,6 +1254,7 @@
   parent: IDCardStandard
   id: ERTJanitorIDCard
   name: ERT janitor ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1216,6 +1275,7 @@
   parent: IDCardStandard
   id: ERTMedicIDCard
   name: ERT medic ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1236,6 +1296,7 @@
   parent: IDCardStandard
   id: ERTSecurityIDCard
   name: ERT security ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1256,6 +1317,7 @@
   parent: IDCardStandard
   id: CentcomIDCardDeathsquad
   name: death squad ID card
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     layers:
@@ -1274,6 +1336,7 @@
   parent: IDCardStandard
   id: CBURNIDcard
   name: CBURN ID card
+  categories: [ HideSpawnMenu ] # Scp added
   suffix: CBURN
   components:
   - type: Sprite
@@ -1295,6 +1358,7 @@
   parent: IDCardStandard
   id: UniversalIDCard
   name: universal ID card
+  categories: [ HideSpawnMenu ] # Scp added
   suffix: Admin
   description: An ID card that gives you access beyond your wildest dreams.
   components:

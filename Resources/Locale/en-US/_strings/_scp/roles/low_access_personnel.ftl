@@ -1,0 +1,9 @@
+job-name-class-d = D-Class
+job-description-class-d = D-Class is expendable staff used for dangerous "black" jobs too hazardous for other personnel. A necessary evil in the Foundation.
+job-name-class-d-cook = D-Class Cook
+job-description-class-d-cook = D-Class personnel. The only thing that sets them apart from everyone else is access to the kitchen and the duty to prepare meals for the entire D block.
+job-name-class-d-botanist = D-Class Botanist
+job-description-class-d-botanist = D-Class personnel. The only thing that sets them apart from everyone else is access to botany and the duty to supply foodstuffs to the D block cook.
+job-name-class-d-janitor = D-Class Janitor
+job-description-class-d-janitor = D-Class personnel. The only thing that sets them apart from everyone else is access to cleaning supplies and the duty to keep the D block tidy.
+job-supervisors-security-and-research = security and research personnel

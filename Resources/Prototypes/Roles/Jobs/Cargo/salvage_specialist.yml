@@ -10,6 +10,8 @@
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - Cargo
   - Salvage
@@ -36,4 +38,3 @@
     outerClothing: ClothingOuterWinterMiner
     neck: ClothingNeckScarfStripedBrown
     gloves: ClothingHandsGlovesColorBlack
-

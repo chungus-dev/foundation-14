@@ -1,0 +1,9 @@
+﻿- type: entity
+  parent: PenCap
+  id: PenDirector
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Items/JobRestricted/Director/director_pen.rsi
+    state: icon
+  - type: Item
+    sprite: _Scp/Objects/Items/JobRestricted/Director/director_pen.rsi

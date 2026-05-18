@@ -1,0 +1,9 @@
+job-name-lead-researcher = Senior Researcher
+job-description-lead-researcher = The responsibilities of the Senior Researcher include studying anomalous objects of medium and high hazard level, and assisting containment specialists in developing more effective containment conditions for SCP objects.
+job-name-anomarchology-researcher = Researcher
+job-description-anomarchology-researcher = The duties of staff researchers include studying anomalous objects, developing new equipment, and assisting senior personnel with higher-responsibility and critical projects.
+job-name-production-specialist = Production Specialist
+job-description-production-specialist = A production employee specializing in building complex machinery. Produces materials and objects on autolathes/protolathes, and designs new equipment.
+job-name-junior-researcher = Practical Laboratory Assistant
+job-description-junior-researcher = A junior researcher assigned to one of the staff members.
+job-supervisors-scientific-service-director = to the chief research scientist

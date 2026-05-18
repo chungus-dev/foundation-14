@@ -1,0 +1,927 @@
+- type: entity
+  id: ScpBaseWallDamageableVisuals
+  abstract: true
+  components:
+  - type: DamageVisuals
+    supportIconSmooth: true
+    thresholds: [ 5, 10, 20 ]
+    damageDivisor: 9
+    trackAllDamage: true
+  - type: Appearance
+
+- type: entity
+  parent: ScpBaseWallDamageableVisuals
+  id: ScpBaseWallDamageableVisualsMetal
+  abstract: true
+  components:
+  - type: DamageVisuals
+    damageOverlay:
+      sprite: _Scp/Effects/DamageOverlay/metal.rsi
+  - type: ScpExaminableDamage
+    mode: Structure
+    generalMessages: ScpWallMetalMessages
+    departmentMessages:
+      EngineeringTechnicalService: ScpWallMetalEngineeringMessages
+    jobMessages:
+      ChiefTechnicalSpecialist: ScpWallMetalEngineeringMessages
+
+- type: entity
+  parent: ScpBaseWallDamageableVisuals
+  id: ScpBaseWallDamageableVisualsConcrete
+  abstract: true
+  components:
+  - type: DamageVisuals
+    damageDivisor: 60
+    damageOverlay:
+      sprite: _Scp/Effects/DamageOverlay/concrete.rsi
+  - type: ScpExaminableDamage
+    mode: Structure
+    generalMessages: ScpWallConcreteMessages
+    departmentMessages:
+      EngineeringTechnicalService: ScpWallConcreteEngineeringMessages
+    jobMessages:
+      ChiefTechnicalSpecialist: ScpWallConcreteEngineeringMessages
+
+- type: entity
+  parent: ScpBaseWallDamageableVisuals
+  id: ScpBaseWallDamageableVisualsHardContainment
+  abstract: true
+  components:
+  - type: DamageVisuals
+    damageDivisor: 160
+    damageOverlay:
+      sprite: _Scp/Effects/DamageOverlay/concrete.rsi
+  - type: ScpExaminableDamage
+    mode: Structure
+    generalMessages: ScpWallHardContainmentMessages
+    departmentMessages:
+      EngineeringTechnicalService: ScpWallHardContainmentEngineeringMessages
+    jobMessages:
+      ChiefTechnicalSpecialist: ScpWallHardContainmentEngineeringMessages
+
+- type: entity
+  parent: ScpBaseWallDamageableVisuals
+  id: ScpBaseWallDamageableVisualsBrick
+  abstract: true
+  components:
+  - type: DamageVisuals
+    damageDivisor: 30
+    damageOverlay:
+      sprite: _Scp/Effects/DamageOverlay/brick.rsi
+  - type: ScpExaminableDamage
+    mode: Structure
+    generalMessages: ScpWallBrickMessages
+    departmentMessages:
+      EngineeringTechnicalService: ScpWallBrickEngineeringMessages
+    jobMessages:
+      ChiefTechnicalSpecialist: ScpWallBrickEngineeringMessages
+
+- type: entity
+  parent: ScpBaseWallDamageableVisuals
+  id: ScpBaseWallDamageableVisualsWood
+  abstract: true
+  components:
+  - type: DamageVisuals
+    damageDivisor: 7
+    damageOverlay:
+      sprite: _Scp/Effects/DamageOverlay/wood.rsi
+  - type: ScpExaminableDamage
+    mode: Structure
+    generalMessages: ScpWallWoodMessages
+    departmentMessages:
+      EngineeringTechnicalService: ScpWallWoodEngineeringMessages
+    jobMessages:
+      ChiefTechnicalSpecialist: ScpWallWoodEngineeringMessages
+
+- type: entity
+  id: ScpBaseWallRepairable
+  abstract: true
+  components:
+  - type: ScpRepairable
+    graph: ScpWallRepair
+    targetRules: RequireDamageRule
+    userBlacklist:
+      components:
+      - Scp
+    examineWhitelist:
+      components:
+      - ScpRepairableCanSeeExamineHints
+
+# Стена
+- type: entity
+  parent:
+  - WallSolid
+  - ScpBaseWallDamageableVisualsMetal
+  - ScpBaseStructureDamageOnSpawn
+  - ScpBaseWallRepairable
+  id: ScpWallSolid
+  name: wall
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/solid.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/solid.rsi
+  - type: Construction
+    graph: ScpGirder
+    node: wall
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicScp
+  - type: ScpRepairable
+    graph: ScpWallRepair
+
+- type: entity
+  parent:
+  - WallSolidRust
+  - ScpBaseWallDamageableVisualsMetal
+  - ScpBaseStructureDamageOnSpawn
+  - ScpBaseWallRepairable
+  id: ScpWallSolidRust
+  name: wall
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/solid_rust.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/solid_rust.rsi
+  - type: Construction
+    graph: ScpGirder
+    node: wallrust
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicScp
+  - type: DamageVisuals
+    damageDivisor: 7
+  - type: ScpRepairable
+    graph: ScpWallRepair
+  - type: Tag
+    tags:
+    - Wall
+    - MetaGarbageSavable
+    - MetaGarbageReplace
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: ScpWallSolidDiagonal
+  name: solid wall
+  suffix: diagonal
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _Scp/Structures/Walls/solid_diagonal.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: _Scp/Structures/Walls/solid_diagonal.rsi
+    state: state0
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicScp
+
+# Деревянная стена
+- type: entity
+  parent:
+  - WallWood
+  - ScpBaseStructureDamageOnSpawn
+  - ScpBaseWallDamageableVisualsWood
+  - ScpBaseWallRepairable
+  id: ScpWallWood
+  name: wood wall
+  description: The traditional assistant defense.
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/wood.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/wood.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Wood
+  - type: ScpRepairable
+    graph: ScpWallWoodRepair
+
+# Укрепленная стена
+- type: entity
+  parent:
+  - WallReinforced
+  - ScpBaseWallDamageableVisualsMetal
+  - ScpBaseStructureDamageOnSpawn
+  - ScpBaseWallRepairable
+  id: ScpWallReinforced
+  name: reinforced wall
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/solid.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/solid.rsi
+  - type: Construction
+    graph: ScpGirder
+    node: reinforcedWall
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrongScp
+  - type: DamageVisuals
+    damageDivisor: 90
+  - type: ScpRepairable
+    graph: ScpWallReinforcedRepair
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1800
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 1500
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              ReinforcedGirder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent:
+  - WallReinforcedRust
+  - ScpBaseWallDamageableVisualsMetal
+  - ScpBaseStructureDamageOnSpawn
+  - ScpBaseWallRepairable
+  id: ScpWallReinforcedRust
+  name: reinforced wall
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/solid_rust.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/solid_rust.rsi
+  - type: Construction
+    graph: ScpGirder
+    node: reinforcedWallRust
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrongScp
+  - type: DamageVisuals
+    damageDivisor: 70
+  - type: ScpRepairable
+    graph: ScpWallReinforcedRepair
+  - type: Tag
+    tags:
+    - Wall
+    - MetaGarbageSavable
+    - MetaGarbageReplace
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 1100
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              ReinforcedGirder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: ScpWallReinforcedDiagonal
+  name: reinforced wall
+  suffix: diagonal
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Tag
+    tags:
+    - Diagonal
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _Scp/Structures/Walls/reinforced_diagonal.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Icon
+    sprite: _Scp/Structures/Walls/reinforced_diagonal.rsi
+    state: state0
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrongScp
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1800
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 1500
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              ReinforcedGirder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+# База бетона
+- type: entity
+  parent:
+  - WallBrick
+  - ScpBaseWallDamageableVisualsConcrete
+  - ScpBaseStructureDamageOnSpawn
+  - ScpBaseWallRepairable
+  id: ScpWallConcreteBase
+  name: concrete wall
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicScp
+  - type: ScpRepairable
+    graph: ScpWallConcreteRepair
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1300
+        behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/break_stone.ogg
+            params:
+              volume: -6
+      - trigger:
+          !type:DamageTrigger
+          damage: 1000
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            PartRodMetal1:
+              min: 1
+              max: 3
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/break_stone.ogg
+            params:
+              volume: -6
+
+# Бетонная стена
+- type: entity
+  parent: ScpWallConcreteBase
+  id: ScpWallConcrete
+  name: concrete wall
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/concrete.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/concrete.rsi
+  - type: IconSmooth
+    key: walls
+    base: concrete
+  - type: Construction
+    graph: concreteWall
+    node: concreteWallEnd
+
+- type: entity
+  parent: ScpWallSolidDiagonal
+  id: ScpWallConcreteDiagonal
+  name: concrete wall
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: _Scp/Structures/Walls/concrete_diagonal.rsi
+    state: state0
+  - type: IconSmooth
+    key: walls
+    base: state
+  - type: Icon
+    sprite: _Scp/Structures/Walls/concrete_diagonal.rsi
+    state: state0
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicScp
+  - type: Construction
+    graph: concreteWallDiagonal
+    node: concreteWallDiagonalEnd
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1200
+        behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/break_stone.ogg
+            params:
+              volume: -6
+      - trigger:
+          !type:DamageTrigger
+          damage: 800
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            PartRodMetal1:
+              min: 1
+              max: 2
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/break_stone.ogg
+            params:
+              volume: -6
+
+# Стена Лёгкой Зоны Содержания
+- type: entity
+  parent: ScpWallConcreteBase
+  id: ScpWallConcreteLightContainment
+  name: concrete wall low containment
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/concrete_low_contaiment.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/concrete_low_contaiment.rsi
+  - type: IconSmooth
+    key: walls
+    base: concrete_low_contaiment
+  - type: Construction
+    graph: concreteWallLightContainment
+    node: concreteWallLightContainmentEnd
+
+# Стена Административной Зоны / Научной
+- type: entity
+  parent: ScpWallConcreteBase
+  id: ScpWallConcreteScience
+  name: concrete wall science sector
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/concrete_science.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/concrete_science.rsi
+  - type: IconSmooth
+    key: walls
+    base: concrete_science
+  - type: Construction
+    graph: concreteWallScience
+    node: concreteWallScienceEnd
+
+# Стена Инженерии
+- type: entity
+  parent: ScpWallConcreteBase
+  id: ScpWallConcreteEngineer
+  name: concrete wall engineer sector
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/concrete_engineer.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/concrete_engineer.rsi
+  - type: IconSmooth
+    key: walls
+    base: engineer
+  - type: Construction
+    graph: concreteWallEngineer
+    node: concreteWallEngineerEnd
+
+# Стена Мед отдела
+- type: entity
+  parent: ScpWallConcreteBase
+  id: ScpWallConcreteMedical
+  name: concrete wall medical sector
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/concrete_medical.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/concrete_medical.rsi
+  - type: IconSmooth
+    key: walls
+    base: medical
+  - type: Construction
+    graph: concreteWallMedical
+    node: concreteWallMedicalEnd
+
+# Стена Сдерживания
+
+- type: entity
+  parent:
+  - BaseWall
+  - ScpBaseWallDamageableVisualsHardContainment
+  - ScpBaseStructureDamageOnSpawn
+  - ScpBaseWallRepairable
+  id: ScpWallMetalHardContainment
+  name: metall wall hard containment
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/metall_hard_contaiment.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/metall_hard_contaiment.rsi
+  - type: IconSmooth
+    key: walls
+    base: metall_hard_contaiment
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicHardCellsScp
+  - type: ScpRepairable
+    graph: ScpWallMetalHardRepair
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 2700
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 2500
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              ReinforcedGirder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: StaticPrice
+    price: 150
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: ScpWallMetalHardContainmentDiagonal
+  name: metall wall hard containment
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Tag
+    tags:
+    - Diagonal
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/metall_hard_contaiment_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: _Scp/Structures/Walls/metall_hard_contaiment_diagonal.rsi
+    state: state0
+  - type: IconSmooth
+    mode: Diagonal
+    key: walls
+    base: state
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicHardCellsScp
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 2700
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 2500
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              ReinforcedGirder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+# Огнеупорный Кирпич
+- type: entity
+  parent:
+  - WallBrick
+  - ScpBaseWallDamageableVisualsBrick
+  - ScpBaseStructureDamageOnSpawn
+  - ScpBaseWallRepairable
+  id: ScpWallFireBrick
+  name: fire brick wall
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/fire_brick.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/fire_brick.rsi
+  - type: IconSmooth
+    key: walls
+    base: fire_brick
+  - type: ScpRepairable
+    graph: ScpWallConcreteRepair
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 700
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 500
+        behaviors:
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              Girder:
+                min: 1
+                max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+# Ограничители карт
+- type: entity
+  id: ScpFogWallBorder
+  name: dense fog
+  description: It looks way too dangerous to traverse.
+  suffix: Permanent
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _Scp/Structures/Walls/fog_wall.rsi
+    state: smoke
+  - type: PlacementReplacement
+    key: walls
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+  - type: Occluder
+
+- type: entity
+  parent: BaseWall
+  id: ScpWallRockBorder
+  name: hardened rock wall
+  description: A rough wall of hardened rock.
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/cave.rsi
+    color: "#E2F9FF"
+  - type: Icon
+    sprite: _Scp/Structures/Walls/cave.rsi
+    state: cavewall
+  - type: IconSmooth
+    key: walls
+    base: cavewall
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrongScp
+  - type: RadiationBlocker
+    resistance: 5
+
+- type: entity
+  parent: ScpWallRockBorder
+  id: ScpWallRockBorderCave
+  components:
+  - type: Sprite
+    color: "#4b4b4a"
+
+- type: entity
+  parent: ScpWallRockBorder
+  id: ScpWallRockBorderSand
+  components:
+  - type: Sprite
+    color: "#987654"
+
+- type: entity
+  parent: ScpWallRockBorder
+  id: ScpWallRockBorderRedSand
+  components:
+  - type: Sprite
+    color: "#8C4731"
+
+- type: entity
+  parent: ScpWallRockBorder
+  id: ScpWallRockBorderBasalt
+  components:
+  - type: Sprite
+    color: "#3b3b3b"
+
+# Камень
+- type: entity
+  parent: BaseWall
+  id: ScpWallRock
+  name: rock wall
+  description: A rough wall of rock.
+  components:
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/cave.rsi
+    color: "#E2F9FF"
+  - type: Icon
+    sprite: _Scp/Structures/Walls/cave.rsi
+    state: cavewall
+  - type: IconSmooth
+    key: walls
+    base: cavewall
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 540
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 2000
+
+- type: entity
+  parent: ScpWallRock
+  id: ScpWallRockCave
+  components:
+  - type: Sprite
+    color: "#4b4b4a"
+
+- type: entity
+  parent: ScpWallRock
+  id: ScpWallRockSand
+  components:
+  - type: Sprite
+    color: "#987654"
+
+- type: entity
+  parent: ScpWallRock
+  id: ScpWallRockRedSand
+  components:
+  - type: Sprite
+    color: "#8C4731"
+
+- type: entity
+  parent: ScpWallRock
+  id: ScpWallRockBasalt
+  components:
+  - type: Sprite
+    color: "#3b3b3b"
+
+# Измерение SCP-106
+- type: entity
+  parent: BaseWall
+  id: ScpWallFlesh106
+  name: rotting flesh
+  description: A rotten piece of meat. The stench is terrible. You obviously don't want to touch it.
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/flesh106.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/flesh106.rsi
+  - type: IconSmooth
+    key: walls
+    base: flesh
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrongScp
+
+# Камера содержания SCP-096
+- type: entity
+  id: BaseScpWallScp096Containment
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicScp
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 14000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  parent:
+  - BaseWall
+  - ScpBaseWallRepairable
+  - ScpBaseWallDamageableVisualsMetal
+  id: ScpWallScp096Containment
+  name: SCP-096 containment chamber acoustic isolation wall
+  description: A multilayer containment wall designed to fully absorb sound and vibrational waves produced by SCP-096. Uses materials comparable to those found in anechoic chambers. Structural failure may occur when anomalous acoustic resonance exceeds design limits.
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/scp096_containment.rsi
+  - type: Icon
+    sprite: _Scp/Structures/Walls/scp096_containment.rsi
+  - type: IconSmooth
+    key: walls
+    base: tile
+  - type: DamageVisuals
+    damageDivisor: 250
+    damageOverlay:
+      sprite: _Scp/Effects/DamageOverlay/scp096_containment.rsi
+  - type: ScpRepairable
+    graph: ScpWallScp096ContainmentRepair
+  - type: ScpExaminableDamage
+    generalMessages: ScpWallScp096ContainmentMessages
+    departmentMessages:
+      EngineeringTechnicalService: ScpWallScp096ContainmentEngineeringMessages
+    jobMessages:
+      ChiefTechnicalSpecialist: ScpWallScp096ContainmentEngineeringMessages
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 14000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 12000
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        offset: 0
+        spawn:
+          ScpWallScp096ContainmentShattered:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: [ BaseStructure, BaseScpWallScp096Containment ]
+  id: ScpWallScp096ContainmentShattered
+  name: shattered acoustic isolation debris
+  description: Heavily damaged debris caused by prolonged exposure to acoustic resonance. Repairable. Use a screwdriver to begin repairs.
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Walls/scp096_containment_shattered.rsi
+    state: full
+  - type: IconSmooth
+    key: scp096_containment_shattered
+    base: tile
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - TableMask
+  - type: Construction
+    graph: Scp096ContainmentWallRepair
+    node: start

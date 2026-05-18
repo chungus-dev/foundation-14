@@ -1,9 +1,10 @@
-﻿- type: entity
+- type: entity
   parent: AirlockRCDResistant
   id: AirlockShuttle
   suffix: Docking
   name: external airlock
   description: Necessary for connecting two space craft together.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Docking
   - type: DockingSignalControl
@@ -91,6 +92,7 @@
   id: AirlockGlassShuttle
   parent: AirlockShuttle
   suffix: Glass, Docking
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/shuttle.rsi
@@ -110,6 +112,7 @@
   name: external airlock assembly
   suffix: Docking
   description: An incomplete structure necessary for connecting two space craft together.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Transform
     anchored: true
@@ -126,6 +129,7 @@
 - type: entity
   id: AirlockGlassShuttleSyndicate
   parent: AirlockGlassShuttle
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/shuttle_syndicate.rsi
@@ -133,6 +137,7 @@
 - type: entity
   parent: AirlockShuttle
   id: AirlockShuttleSyndicate
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/shuttle_syndicate.rsi
@@ -140,6 +145,7 @@
 - type: entity
   parent: AirlockShuttle
   id: AirlockShuttleXenoborg
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/shuttle_xenoborg.rsi

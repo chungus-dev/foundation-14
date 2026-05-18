@@ -6,6 +6,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Preferences;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 
 namespace Content.Server.Humanoid.Systems;
@@ -18,6 +19,7 @@ public sealed class RandomHumanoidSystem : EntitySystem
     [Dependency] private readonly HumanoidProfileSystem _humanoidProfile = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ISerializationManager _serialization = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
 
@@ -57,6 +59,9 @@ public sealed class RandomHumanoidSystem : EntitySystem
         }
 
         EntityManager.InitializeAndStartEntity(humanoid);
+
+        if (prototype.GenderWhitelist != null)
+            profile = profile.WithGender(_random.Pick(prototype.GenderWhitelist));
 
         _visualBody.ApplyProfileTo(humanoid, profile);
         _humanoidProfile.ApplyProfileTo(humanoid, profile);

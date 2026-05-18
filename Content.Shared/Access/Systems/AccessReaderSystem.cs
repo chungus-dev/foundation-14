@@ -858,6 +858,18 @@ public sealed class AccessReaderSystem : EntitySystem
             items.Add(idUid.Value);
         }
 
+        if (_inventorySystem.TryGetSlotEntity(uid, "neck", out var neckUid)
+            && HasComp<AccessComponent>(neckUid))
+        {
+            items.Add(neckUid.Value);
+        }
+
+        if (_inventorySystem.TryGetSlotEntity(uid, "jumpsuit", out var jumpsuitUid)
+            && HasComp<AccessComponent>(jumpsuitUid))
+        {
+            items.Add(jumpsuitUid.Value);
+        }
+
         return items.Any();
     }
 

@@ -42,6 +42,8 @@
       Warning: alarm1
       Danger: alarm2
     hideOnDepowered: [ "airAlarmState" ]
+    setOnDepowered:
+      airAlarmBase: alarmp
   - type: Tag
     tags:
       - AirAlarm
@@ -62,7 +64,7 @@
     boardName: wires-board-name-airalarm
     layoutId: AirAlarm
   - type: AccessReader
-    access: [["Atmospherics"]]
+    access: [["LifeSupport"]] # Scp edit
   - type: ContainerFill
     containers:
       board: [ AirAlarmElectronics ]

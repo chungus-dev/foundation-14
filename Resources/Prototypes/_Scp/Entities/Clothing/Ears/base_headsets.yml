@@ -1,0 +1,12 @@
+- type: entity
+  abstract: true
+  parent: ClothingHeadset
+  id: BaseScpHeadset
+  components:
+  - type: EncryptionKeyHolder
+- type: entity
+  abstract: true
+  parent: ClothingHeadsetAlt
+  id: BaseScpHeadsetAlt
+  components:
+  - type: EncryptionKeyHolder

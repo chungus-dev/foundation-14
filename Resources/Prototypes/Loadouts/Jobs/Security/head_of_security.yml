@@ -5,8 +5,9 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobHeadOfSecurity
-      time: 20h
+      role: JobSecurityCommander # Scp edit
+      time: 72000 #20 hrs
+
 
 # Jumpsuit
 - type: loadout

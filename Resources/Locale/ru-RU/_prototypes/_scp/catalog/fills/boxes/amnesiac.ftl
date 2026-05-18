@@ -1,0 +1,16 @@
+ent-BoxVialScpBase = { ent-BoxCardboard }
+    .desc = { ent-BoxCardboard.desc }
+ent-BoxVialScpBaseSecure = { ent-BoxVialScpBase }
+    .desc = { ent-BoxVialScpBase.desc }
+ent-BoxVialAmnesiacA = ящик пробирок амнезиака класса А
+    .desc = Содержит 3 пробирки. { reagent-amnesiac-a-desc }
+    .suffix = Заполненный, Амнезиак A
+ent-BoxVialAmnesiacB = ящик пробирок амнезиака класса B
+    .desc = Содержит 3 пробирки. { reagent-amnesiac-b-desc }
+    .suffix = Заполненный, Амнезиак B
+ent-BoxVialAmnesiacC = ящик пробирок амнезиака класса C
+    .desc = Содержит 3 пробирки. { reagent-amnesiac-c-desc }
+    .suffix = Заполненный, Амнезиак C
+ent-BoxVialAmnesiacD = ящик пробирок амнезиака класса D
+    .desc = Содержит 3 пробирки. { reagent-amnesiac-d-desc }
+    .suffix = Заполненный, Амнезиак D

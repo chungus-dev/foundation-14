@@ -1,0 +1,2577 @@
+# Заготовленные наборы
+- type: listing
+  id: ScpUplinkMtfUnlockScpKitStart
+  name: shop-name-unlock
+  description: shop-desc-unlock
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: limited_supply }
+  categories:
+  - ScpKitStart
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - NTFSpecialist
+    - NTFCadet
+    - HDLeader
+    - HDSpecialist
+    - HDCadet
+
+# Эпсилон-11
+- type: listing
+  id: ScpUplinkMtfStorageCrateMedicalNtf
+  productEntity: MtfStorageCrateMedicalNtf
+  name: shop-name-medicalntf
+  description: shop-desc-medicalntf
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: ntf_med_base_armor }
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpKitStart
+  conditions:
+  - !type:BuyBeforeCondition
+# Scp edit - disabled broken ported content.     blacklist:
+#     - ScpUplinkMtfStorageCrateMedicalNtf
+#     - ScpUplinkMtfStorageCrateMedicalScoutNtf
+#     - ScpUplinkMtfStorageCrateArmorScoutNtf
+#     - ScpUplinkMtfStorageCrateArmorNtf
+#     - ScpUplinkMtfStorageCrateArmorMediumNtf
+#     - ScpUplinkMtfStorageCrateArmorHDMed
+#     - ScpUplinkMtfStorageCrateArmorHD
+#     - ScpUplinkMtfStorageCrateArmorHeavyHD
+#     - ScpUplinkMtfStorageCrateArmorHDLeader
+#     - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+    whitelist:
+    - ScpUplinkMtfUnlockScpKitStart
+  - !type:BuyerJobCondition
+    whitelist:
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateMedicalScoutNtf
+  productEntity: MtfStorageCrateMedicalScoutNtf
+  name: shop-name-medicalscoutntf
+  description: shop-desc-medicalscoutntf
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: ntf_med_scout_armor }
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpKitStart
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMedicalNtf
+    - ScpUplinkMtfStorageCrateMedicalScoutNtf
+    - ScpUplinkMtfStorageCrateArmorScoutNtf
+    - ScpUplinkMtfStorageCrateArmorNtf
+    - ScpUplinkMtfStorageCrateArmorMediumNtf
+    - ScpUplinkMtfStorageCrateArmorHDMed
+    - ScpUplinkMtfStorageCrateArmorHD
+    - ScpUplinkMtfStorageCrateArmorHeavyHD
+    - ScpUplinkMtfStorageCrateArmorHDLeader
+    - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+    whitelist:
+    - ScpUplinkMtfUnlockScpKitStart
+  - !type:BuyerJobCondition
+    whitelist:
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateArmorScoutNtf
+  productEntity: MtfStorageCrateArmorScoutNtf
+  name: shop-name-armorscoutntf
+  description: shop-desc-armorscoutntf
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: ntf_scout_armor }
+  categories:
+  - ScpKitStart
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMedicalNtf
+    - ScpUplinkMtfStorageCrateMedicalScoutNtf
+    - ScpUplinkMtfStorageCrateArmorScoutNtf
+    - ScpUplinkMtfStorageCrateArmorNtf
+    - ScpUplinkMtfStorageCrateArmorMediumNtf
+    - ScpUplinkMtfStorageCrateArmorHDMed
+    - ScpUplinkMtfStorageCrateArmorHD
+    - ScpUplinkMtfStorageCrateArmorHeavyHD
+    - ScpUplinkMtfStorageCrateArmorHDLeader
+    - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+    whitelist:
+    - ScpUplinkMtfUnlockScpKitStart
+  - !type:BuyerJobCondition
+    whitelist:
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateArmorNtf
+  productEntity: MtfStorageCrateArmorNtf
+  name: shop-name-armorntf
+  description: shop-desc-armorntf
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: ntf_base_armor }
+  categories:
+  - ScpKitStart
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMedicalNtf
+    - ScpUplinkMtfStorageCrateMedicalScoutNtf
+    - ScpUplinkMtfStorageCrateArmorScoutNtf
+    - ScpUplinkMtfStorageCrateArmorNtf
+    - ScpUplinkMtfStorageCrateArmorMediumNtf
+    - ScpUplinkMtfStorageCrateArmorHDMed
+    - ScpUplinkMtfStorageCrateArmorHD
+    - ScpUplinkMtfStorageCrateArmorHeavyHD
+    - ScpUplinkMtfStorageCrateArmorHDLeader
+    - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+    whitelist:
+    - ScpUplinkMtfUnlockScpKitStart
+  - !type:BuyerJobCondition
+    whitelist:
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateArmorMediumNtf
+  productEntity: MtfStorageCrateArmorMediumNtf
+  name: shop-name-armormediumntf
+  description: shop-desc-armormediumntf
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: ntf_medium_armor }
+  categories:
+  - ScpKitStart
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMedicalNtf
+    - ScpUplinkMtfStorageCrateMedicalScoutNtf
+    - ScpUplinkMtfStorageCrateArmorScoutNtf
+    - ScpUplinkMtfStorageCrateArmorNtf
+    - ScpUplinkMtfStorageCrateArmorMediumNtf
+    - ScpUplinkMtfStorageCrateArmorHDMed
+    - ScpUplinkMtfStorageCrateArmorHD
+    - ScpUplinkMtfStorageCrateArmorHeavyHD
+    - ScpUplinkMtfStorageCrateArmorHDLeader
+    - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+    whitelist:
+    - ScpUplinkMtfUnlockScpKitStart
+  - !type:BuyerJobCondition
+    whitelist:
+    - NTFSpecialist
+    - NTFCadet
+
+# Ню-7
+- type: listing
+  id: ScpUplinkMtfStorageCrateArmorHDMed
+  productEntity: MtfStorageCrateArmorHDMed
+  name: shop-name-armorhdmed
+  description: shop-desc-armorhdmed
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: armor_military_med }
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpKitStart
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMedicalNtf
+    - ScpUplinkMtfStorageCrateMedicalScoutNtf
+    - ScpUplinkMtfStorageCrateArmorScoutNtf
+    - ScpUplinkMtfStorageCrateArmorNtf
+    - ScpUplinkMtfStorageCrateArmorMediumNtf
+    - ScpUplinkMtfStorageCrateArmorHDMed
+    - ScpUplinkMtfStorageCrateArmorHD
+    - ScpUplinkMtfStorageCrateArmorHeavyHD
+    - ScpUplinkMtfStorageCrateArmorHDLeader
+    - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+    whitelist:
+    - ScpUplinkMtfUnlockScpKitStart
+  - !type:BuyerJobCondition
+    whitelist:
+    - HDSpecialist
+    - HDCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateArmorHD
+  productEntity: MtfStorageCrateArmorHD
+  name: shop-name-armorhd
+  description: shop-desc-armorhd
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: armor_military }
+  categories:
+  - ScpKitStart
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMedicalNtf
+    - ScpUplinkMtfStorageCrateMedicalScoutNtf
+    - ScpUplinkMtfStorageCrateArmorScoutNtf
+    - ScpUplinkMtfStorageCrateArmorNtf
+    - ScpUplinkMtfStorageCrateArmorMediumNtf
+    - ScpUplinkMtfStorageCrateArmorHDMed
+    - ScpUplinkMtfStorageCrateArmorHD
+    - ScpUplinkMtfStorageCrateArmorHeavyHD
+    - ScpUplinkMtfStorageCrateArmorHDLeader
+    - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+    whitelist:
+    - ScpUplinkMtfUnlockScpKitStart
+  - !type:BuyerJobCondition
+    whitelist:
+    - HDSpecialist
+    - HDCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateArmorHeavyHD
+  productEntity: MtfStorageCrateArmorHeavyHD
+  name: shop-name-armorheavyhd
+  description: shop-desc-armorheavyhd
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: armor_military_heavy }
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpKitStart
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMedicalNtf
+    - ScpUplinkMtfStorageCrateMedicalScoutNtf
+    - ScpUplinkMtfStorageCrateArmorScoutNtf
+    - ScpUplinkMtfStorageCrateArmorNtf
+    - ScpUplinkMtfStorageCrateArmorMediumNtf
+    - ScpUplinkMtfStorageCrateArmorHDMed
+    - ScpUplinkMtfStorageCrateArmorHD
+    - ScpUplinkMtfStorageCrateArmorHeavyHD
+    - ScpUplinkMtfStorageCrateArmorHDLeader
+    - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+    whitelist:
+    - ScpUplinkMtfUnlockScpKitStart
+  - !type:BuyerJobCondition
+    whitelist:
+    - HDSpecialist
+    - HDCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateArmorHDLeader
+  productEntity: MtfStorageCrateArmorHDLeader
+  name: shop-name-armorhdleader
+  description: shop-desc-armorhdleader
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: armor_military_lead }
+  categories:
+  - ScpKitStart
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMedicalNtf
+    - ScpUplinkMtfStorageCrateMedicalScoutNtf
+    - ScpUplinkMtfStorageCrateArmorScoutNtf
+    - ScpUplinkMtfStorageCrateArmorNtf
+    - ScpUplinkMtfStorageCrateArmorMediumNtf
+    - ScpUplinkMtfStorageCrateArmorHDMed
+    - ScpUplinkMtfStorageCrateArmorHD
+    - ScpUplinkMtfStorageCrateArmorHeavyHD
+    - ScpUplinkMtfStorageCrateArmorHDLeader
+    - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+    whitelist:
+    - ScpUplinkMtfUnlockScpKitStart
+  - !type:BuyerJobCondition
+    whitelist:
+    - HDLeader
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+  productEntity: MtfStorageCrateArmorHeavyHDLeader
+  name: shop-name-armorheavyhdleader
+  description: shop-desc-armorheavyhdleader
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: armor_military_heavy_lead }
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpKitStart
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMedicalNtf
+    - ScpUplinkMtfStorageCrateMedicalScoutNtf
+    - ScpUplinkMtfStorageCrateArmorScoutNtf
+    - ScpUplinkMtfStorageCrateArmorNtf
+    - ScpUplinkMtfStorageCrateArmorMediumNtf
+    - ScpUplinkMtfStorageCrateArmorHDMed
+    - ScpUplinkMtfStorageCrateArmorHD
+    - ScpUplinkMtfStorageCrateArmorHeavyHD
+    - ScpUplinkMtfStorageCrateArmorHDLeader
+    - ScpUplinkMtfStorageCrateArmorHeavyHDLeader
+    whitelist:
+    - ScpUplinkMtfUnlockScpKitStart
+  - !type:BuyerJobCondition
+    whitelist:
+    - HDLeader
+
+# Экипировка
+- type: listing
+  id: ScpUplinkMtfUnlockScpEquipment
+  name: shop-name-unlock
+  description: shop-desc-unlock
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: limited_supply }
+  categories:
+  - ScpEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkClothingBeltMtfSecurityFilled
+  productEntity: ClothingBeltMtfSecurityFilled
+  name: shop-name-belt-mtf-security
+  description: shop-desc-belt-mtf-security
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: security_belt_filled }
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpEquipment
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkClothingBeltMtfSecurityFilled
+    - ScpUplinkClothingBeltMtfGrenadeFilled
+    - ScpUplinkClothingBeltMtfConstructionFilled
+    - ScpUplinkClothingBeltMtfUtilityFilled
+    - ScpUplinkClothingBeltMtfMedicalFilledOperative
+    - ScpUplinkClothingBeltMtfMedicalFilledMedic
+    whitelist:
+    - ScpUplinkMtfUnlockScpEquipment
+
+- type: listing
+  id: ScpUplinkClothingBeltMtfGrenadeFilled
+  productEntity: ClothingBeltMtfGrenadeFilled
+  name: shop-name-belt-mtf-grenade
+  description: shop-desc-belt-mtf-grenade
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: granage_belt_filled }
+  cost:
+    SupplyPoint: 5
+  categories:
+  - ScpEquipment
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkClothingBeltMtfSecurityFilled
+    - ScpUplinkClothingBeltMtfGrenadeFilled
+    - ScpUplinkClothingBeltMtfConstructionFilled
+    - ScpUplinkClothingBeltMtfUtilityFilled
+    - ScpUplinkClothingBeltMtfMedicalFilledOperative
+    - ScpUplinkClothingBeltMtfMedicalFilledMedic
+    whitelist:
+    - ScpUplinkMtfUnlockScpEquipment
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+
+- type: listing
+  id: ScpUplinkClothingBeltMtfConstructionFilled
+  productEntity: ClothingBeltMtfConstructionFilled
+  name: shop-name-belt-mtf-construction
+  description: shop-desc-belt-mtf-construction
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: construction_belt_filled }
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpEquipment
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkClothingBeltMtfSecurityFilled
+    - ScpUplinkClothingBeltMtfGrenadeFilled
+    - ScpUplinkClothingBeltMtfConstructionFilled
+    - ScpUplinkClothingBeltMtfUtilityFilled
+    - ScpUplinkClothingBeltMtfMedicalFilledOperative
+    - ScpUplinkClothingBeltMtfMedicalFilledMedic
+    whitelist:
+    - ScpUplinkMtfUnlockScpEquipment
+
+- type: listing
+  id: ScpUplinkClothingBeltMtfUtilityFilled
+  productEntity: ClothingBeltMtfUtilityFilled
+  name: shop-name-belt-mtf-utility
+  description: shop-desc-belt-mtf-utility
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: utility_belt_filled }
+  cost:
+    SupplyPoint: 5
+  categories:
+  - ScpEquipment
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkClothingBeltMtfSecurityFilled
+    - ScpUplinkClothingBeltMtfGrenadeFilled
+    - ScpUplinkClothingBeltMtfConstructionFilled
+    - ScpUplinkClothingBeltMtfUtilityFilled
+    - ScpUplinkClothingBeltMtfMedicalFilledOperative
+    - ScpUplinkClothingBeltMtfMedicalFilledMedic
+    whitelist:
+    - ScpUplinkMtfUnlockScpEquipment
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+
+- type: listing
+  id: ScpUplinkClothingBeltMtfMedicalFilledOperative
+  productEntity: ClothingBeltMtfMedicalFilledOperative
+  name: shop-name-belt-mtf-med-operative
+  description: shop-desc-belt-mtf-med-operative
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: med_operative_belt_filled }
+  cost:
+    SupplyPoint: 4
+  categories:
+  - ScpEquipment
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkClothingBeltMtfSecurityFilled
+    - ScpUplinkClothingBeltMtfGrenadeFilled
+    - ScpUplinkClothingBeltMtfConstructionFilled
+    - ScpUplinkClothingBeltMtfUtilityFilled
+    - ScpUplinkClothingBeltMtfMedicalFilledOperative
+    - ScpUplinkClothingBeltMtfMedicalFilledMedic
+    whitelist:
+    - ScpUplinkMtfUnlockScpEquipment
+
+- type: listing
+  id: ScpUplinkClothingBeltMtfMedicalFilledMedic
+  productEntity: ClothingBeltMtfMedicalFilledMedic
+  name: shop-name-belt-mtf-med-medic
+  description: shop-desc-belt-mtf-med-medic
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: med_medic_belt_filled }
+  cost:
+    SupplyPoint: 5
+  categories:
+  - ScpEquipment
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkClothingBeltMtfSecurityFilled
+    - ScpUplinkClothingBeltMtfGrenadeFilled
+    - ScpUplinkClothingBeltMtfConstructionFilled
+    - ScpUplinkClothingBeltMtfUtilityFilled
+    - ScpUplinkClothingBeltMtfMedicalFilledOperative
+    - ScpUplinkClothingBeltMtfMedicalFilledMedic
+    whitelist:
+    - ScpUplinkMtfUnlockScpEquipment
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+# Подсумки
+- type: listing
+  id: ScpUplinkPouchDrop
+  productEntity: PouchDrop
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: pouch_drop }
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpEquipmentBelts
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkPouchAmmo
+  productEntity: PouchAmmo
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: pouch_ammo }
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpEquipmentBelts
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkPouchMedical
+  productEntity: PouchMedical
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: pouch_med }
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpEquipmentBelts
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkPouchExplosive
+  productEntity: PouchExplosive
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: pouch_granade }
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpEquipmentBelts
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkPouchMedicalFilled
+  productEntity: PouchMedicalFilled
+  name: shop-name-pouch-med-filled
+  description: shop-desc-pouch-med-filled
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: pouch_med_filled }
+  cost:
+    SupplyPoint: 5
+  categories:
+  - ScpEquipmentBelts
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkPouchExplosiveFilledNonLethal
+  productEntity: PouchExplosiveFilledNonLethal
+  name: shop-name-pouch-explosive-nonlethal
+  description: shop-desc-pouch-explosive-nonlethal
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: pouch_granade_nonlethal }
+  cost:
+    SupplyPoint: 4
+  categories:
+  - ScpEquipmentBelts
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkPouchExplosiveFilled
+# Scp edit - disabled broken ported content.   productEntity: PouchExplosiveFilled
+  name: shop-name-pouch-explosive-filled
+  description: shop-desc-pouch-explosive-filled
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: pouch_granade_filled }
+  cost:
+    SupplyPoint: 5
+  categories:
+  - ScpEquipmentBelts
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+
+- type: listing
+  id: ScpUplinkPouchExplosiveFilledLethal
+  productEntity: PouchExplosiveFilledLethal
+  name: shop-name-pouch-explosive-lethal
+  description: shop-desc-pouch-explosive-lethal
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: pouch_granade_lethal }
+  cost:
+    SupplyPoint: 7
+  categories:
+  - ScpEquipmentBelts
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkPouchExplosiveFilledIncendiary
+  productEntity: PouchExplosiveFilledIncendiary
+  name: shop-name-pouch-incendiary
+  description: shop-desc-pouch-incendiary
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: pouch_granade_incendiary }
+  cost:
+    SupplyPoint: 7
+  categories:
+  - ScpEquipmentBelts
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+# Основное вооружение
+- type: listing
+  id: ScpUplinkMtfUnlockPrimaryArms
+  name: shop-name-unlock
+  description: shop-desc-unlock
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: limited_supply }
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateSubMachineGunMP5
+  productEntity: MtfStorageCrateSubMachineGunMP5
+  name: shop-name-mp5box
+  description: shop-desc-mp5box
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: mp5 }
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateSubMachineGunP90
+  productEntity: MtfStorageCrateSubMachineGunP90
+  name: shop-name-p90box
+  description: shop-desc-p90box
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: p90 }
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateRifleFamas
+  productEntity: MtfStorageCrateRifleFamas
+  name: shop-name-famas
+  description: shop-desc-famas
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: famas }
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateRifleG36
+  productEntity: MtfStorageCrateRifleG36
+  name: shop-name-g36box
+  description: shop-desc-g36box
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: g36 }
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateRifleAR18
+  productEntity: MtfStorageCrateRifleAR18
+  name: shop-name-ar18box
+  description: shop-desc-ar18box
+  icon: { sprite: _Scp/Interface/Misc/uplink_icons.rsi, state: ar18 }
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateShotgunCombat
+  productEntity: MtfStorageCrateShotgunCombat
+  name: shop-name-scbox
+  description: shop-desc-scbox
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: cshotgun }
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateShotgunBulldog
+  productEntity: MtfStorageCrateShotgunBulldog
+  name: shop-name-bulldogbox
+  description: shop-desc-bulldogbox
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: bulldog }
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateRifleBR64
+  productEntity: MtfStorageCrateRifleBR64
+  name: shop-name-br64box
+  description: shop-desc-br64box
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: br64 }
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkWeaponEarthGovLaserRifle
+# Scp edit - disabled broken ported content.   productEntity: WeaponEarthGovLaserRifle
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: eg-r }
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkWeaponEarthGovLaserSniper
+# Scp edit - disabled broken ported content.   productEntity: WeaponEarthGovLaserSniper
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: gov-laser-sniper }
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    - ScpUplinkWeaponPulseRifle
+    - ScpUplinkWeaponSniperPulseCarbineScp
+    - ScpUplinkMtfStorageCrateShotgunCycler
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateShotgunCycler
+  productEntity: MtfStorageCrateShotgunCycler
+  name: shop-name-cyclerbox
+  description: shop-desc-cyclerbox
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: cycler }
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    - ScpUplinkWeaponPulseRifle
+    - ScpUplinkWeaponSniperPulseCarbineScp
+    - ScpUplinkMtfStorageCrateShotgunCycler
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkWeaponPulseRifle
+  productEntity: WeaponPulseRifle
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: pulse-r }
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    - ScpUplinkWeaponPulseRifle
+    - ScpUplinkWeaponSniperPulseCarbineScp
+    - ScpUplinkMtfStorageCrateShotgunCycler
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkWeaponSniperPulseCarbineScp
+  productEntity: WeaponSniperPulseCarbineScp
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: pulse-sc }
+  cost:
+    SupplyPoint: 4
+  categories:
+  - ScpPrimaryArms
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateSubMachineGunMP5
+    - ScpUplinkMtfStorageCrateSubMachineGunP90
+    - ScpUplinkMtfStorageCrateRifleFamas
+    - ScpUplinkMtfStorageCrateRifleG36
+    - ScpUplinkMtfStorageCrateRifleAR18
+    - ScpUplinkMtfStorageCrateShotgunCombat
+    - ScpUplinkMtfStorageCrateShotgunBulldog
+    - ScpUplinkMtfStorageCrateRifleBR64
+    - ScpUplinkWeaponEarthGovLaserRifle
+    - ScpUplinkWeaponEarthGovLaserSniper
+    - ScpUplinkWeaponPulseRifle
+    - ScpUplinkWeaponSniperPulseCarbineScp
+    - ScpUplinkMtfStorageCrateShotgunCycler
+    whitelist:
+    - ScpUplinkMtfUnlockPrimaryArms
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+# Пистолеты
+- type: listing
+  id: ScpUplinkMtfUnlockPistols
+  name: shop-name-unlock
+  description: shop-desc-unlock
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: limited_supply }
+  categories:
+  - ScpPistols
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkMtfStorageCratePistolACP14
+  productEntity: MtfStorageCratePistolACP14
+  name: shop-name-acp14box
+  description: shop-desc-acp14box
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: acp14 }
+  categories:
+  - ScpPistols
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCratePistolACP14
+    - ScpUplinkMtfStorageCratePistolG22
+    - ScpUplinkMtfStorageCratePistolVP78
+    - ScpUplinkMtfStorageCrateRevolverSpearhead
+    - ScpUplinkWeaponEarthGovLaserPistol
+    - ScpUplinkMtfStorageCrateRevolverSpearheadBlack
+    - ScpUplinkWeaponPulsePistolScp
+    whitelist:
+    - ScpUplinkMtfUnlockPistols
+
+- type: listing
+  id: ScpUplinkMtfStorageCratePistolG22
+  productEntity: MtfStorageCratePistolG22
+  name: shop-name-glock22box
+  description: shop-desc-glock22box
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: g22 }
+  categories:
+  - ScpPistols
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCratePistolACP14
+    - ScpUplinkMtfStorageCratePistolG22
+    - ScpUplinkMtfStorageCratePistolVP78
+    - ScpUplinkMtfStorageCrateRevolverSpearhead
+    - ScpUplinkWeaponEarthGovLaserPistol
+    - ScpUplinkMtfStorageCrateRevolverSpearheadBlack
+    - ScpUplinkWeaponPulsePistolScp
+    whitelist:
+    - ScpUplinkMtfUnlockPistols
+
+- type: listing
+  id: ScpUplinkMtfStorageCratePistolVP78
+  productEntity: MtfStorageCratePistolVP78
+  name: shop-name-vp78box
+  description: shop-desc-vp78box
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: vp78 }
+  categories:
+  - ScpPistols
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCratePistolACP14
+    - ScpUplinkMtfStorageCratePistolG22
+    - ScpUplinkMtfStorageCratePistolVP78
+    - ScpUplinkMtfStorageCrateRevolverSpearhead
+    - ScpUplinkWeaponEarthGovLaserPistol
+    - ScpUplinkMtfStorageCrateRevolverSpearheadBlack
+    - ScpUplinkWeaponPulsePistolScp
+    whitelist:
+    - ScpUplinkMtfUnlockPistols
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateRevolverSpearhead
+  productEntity: MtfStorageCrateRevolverSpearhead
+  name: shop-name-revolversbox
+  description: shop-desc-revolversbox
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: spearhead }
+  categories:
+  - ScpPistols
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCratePistolACP14
+    - ScpUplinkMtfStorageCratePistolG22
+    - ScpUplinkMtfStorageCratePistolVP78
+    - ScpUplinkMtfStorageCrateRevolverSpearhead
+    - ScpUplinkWeaponEarthGovLaserPistol
+    - ScpUplinkMtfStorageCrateRevolverSpearheadBlack
+    - ScpUplinkWeaponPulsePistolScp
+    whitelist:
+    - ScpUplinkMtfUnlockPistols
+  - !type:BuyerJobCondition
+    blacklist:
+    - RRHLeader # А-1
+    - RRHSpecialist
+    - LLHLeader # О-1
+    - LLHSpecialist
+
+- type: listing
+  id: ScpUplinkWeaponEarthGovLaserPistol
+# Scp edit - disabled broken ported content.   productEntity: WeaponEarthGovLaserPistol
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: eg-p }
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpPistols
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCratePistolACP14
+    - ScpUplinkMtfStorageCratePistolG22
+    - ScpUplinkMtfStorageCratePistolVP78
+    - ScpUplinkMtfStorageCrateRevolverSpearhead
+    - ScpUplinkWeaponEarthGovLaserPistol
+    - ScpUplinkMtfStorageCrateRevolverSpearheadBlack
+    - ScpUplinkWeaponPulsePistolScp
+    whitelist:
+    - ScpUplinkMtfUnlockPistols
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateRevolverSpearheadBlack
+  productEntity: MtfStorageCrateRevolverSpearheadBlack
+  name: shop-name-revolversbbox
+  description: shop-desc-revolversbbox
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: spearheadblack }
+  categories:
+  - ScpPistols
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCratePistolACP14
+    - ScpUplinkMtfStorageCratePistolG22
+    - ScpUplinkMtfStorageCratePistolVP78
+    - ScpUplinkMtfStorageCrateRevolverSpearhead
+    - ScpUplinkWeaponEarthGovLaserPistol
+    - ScpUplinkMtfStorageCrateRevolverSpearheadBlack
+    - ScpUplinkWeaponPulsePistolScp
+    whitelist:
+    - ScpUplinkMtfUnlockPistols
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkWeaponPulsePistolScp
+  productEntity: WeaponPulsePistolScp
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: pulse-p }
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpPistols
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCratePistolACP14
+    - ScpUplinkMtfStorageCratePistolG22
+    - ScpUplinkMtfStorageCratePistolVP78
+    - ScpUplinkMtfStorageCrateRevolverSpearhead
+    - ScpUplinkWeaponEarthGovLaserPistol
+    - ScpUplinkMtfStorageCrateRevolverSpearheadBlack
+    - ScpUplinkWeaponPulsePistolScp
+    whitelist:
+    - ScpUplinkMtfUnlockPistols
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+# Боеприпасы
+- type: listing
+  id: ScpUplinkMagazineLightMachineGunMG60
+# Scp edit - disabled broken ported content.   productEntity: MagazineLightMachineGunMG60
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxAntiMateriel
+  productEntity: MagazineBoxAntiMateriel
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBauer127
+# Scp edit - disabled broken ported content.   productEntity: MagazineBauer127
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkMagazineMP5
+# Scp edit - disabled broken ported content.   productEntity: MagazineMP5
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineP90
+# Scp edit - disabled broken ported content.   productEntity: MagazineP90
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineGlock22
+# Scp edit - disabled broken ported content.   productEntity: MagazineGlock22
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxPistolSP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistolSP
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineRifleSP
+# Scp edit - disabled broken ported content.   productEntity: MagazineRifleSP
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxRifleSP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxRifleSP
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineRifleHeavySP
+# Scp edit - disabled broken ported content.   productEntity: MagazineRifleHeavySP
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxHeavyRifleSP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxHeavyRifleSP
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 8
+
+- type: listing
+  id: ScpUplinkMagazinePistol40SP
+# Scp edit - disabled broken ported content.   productEntity: MagazinePistol40SP
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineACP14
+# Scp edit - disabled broken ported content.   productEntity: MagazineACP14
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxPistol40SP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistol40SP
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkSpeedLoaderMagnumSP
+# Scp edit - disabled broken ported content.   productEntity: SpeedLoaderMagnumSP
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxMagnumSP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxMagnumSP
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkBoxLethalshot
+  productEntity: BoxLethalshot
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkSpeedLoaderShellShotgun
+# Scp edit - disabled broken ported content.   productEntity: SpeedLoaderShellShotgun
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkMagazineShotgun
+  productEntity: MagazineShotgun
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkSpeedLoaderMagnumAP
+  productEntity: SpeedLoaderMagnumAP
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkSpeedLoaderMagnumIncendiary
+  productEntity: SpeedLoaderMagnumIncendiary
+  cost:
+    SupplyPoint: 4
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkMagazineBoxMagnumIncendiary
+  productEntity: MagazineBoxMagnumIncendiary
+  cost:
+    SupplyPoint: 6
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkMagazineBoxMagnumAP
+  productEntity: MagazineBoxMagnumAP
+  cost:
+    SupplyPoint: 5
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkMagazineBoxMagnumHP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxMagnumHP
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxMagnumFMJ
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxMagnumFMJ
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxPistol40FMJ
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistol40FMJ
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxPistol40HP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistol40HP
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxPistol40AP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistol40AP
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxPistolFMJ
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistolFMJ
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxPistolHP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistolHP
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxPistolAP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxPistolAP
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkMagazineBoxRifleAP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxRifleAP
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkMagazineBoxRifleFMJ
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxRifleFMJ
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxRifleHP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxRifleHP
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxHeavyRifleFMJ
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxHeavyRifleFMJ
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 8
+
+- type: listing
+  id: ScpUplinkMagazineBoxHeavyRifleHP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxHeavyRifleHP
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineBoxHeavyRifleAP
+# Scp edit - disabled broken ported content.   productEntity: MagazineBoxHeavyRifleAP
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineShotgunIncendiary
+  productEntity: MagazineShotgunIncendiary
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMagazineShotgunSlug
+  productEntity: MagazineShotgunSlug
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkBoxShotgunSlug
+  productEntity: BoxShotgunSlug
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkBoxShotgunIncendiary
+  productEntity: BoxShotgunIncendiary
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkSpeedLoaderShotgunSlug
+# Scp edit - disabled broken ported content.   productEntity: SpeedLoaderShotgunSlug
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkSpeedLoaderShotgunIncendiary
+# Scp edit - disabled broken ported content.   productEntity: SpeedLoaderShotgunIncendiary
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAmmo
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+# Медицина
+- type: listing
+  id: ScpUplinkMedkitOxygenFilled
+  productEntity: MedkitOxygenFilled
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-oxygen }
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMedkitBruteFilled
+  productEntity: MedkitBruteFilled
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-brute }
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMedkitRadiationFilled
+  productEntity: MedkitRadiationFilled
+  description: shop-desc-antiradkit
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-rad }
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMedkitToxinFilled
+  productEntity: MedkitToxinFilled
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-toxin }
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMedkitBurnFilled
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-burn }
+  productEntity: MedkitBurnFilled
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkMedkitCombatFilled
+  productEntity: MedkitCombatFilled
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med-black }
+  cost:
+    SupplyPoint: 5
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkDuffelScpMedicalBundleFilled
+  productEntity: ClothingBackpackDuffelScpMedicalBundleFilled
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: med_bundle }
+  cost:
+    SupplyPoint: 15
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkAmnesiacSpray
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: amnesiac_spray }
+  productEntity: AmnesiacSpray
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+
+- type: listing
+  id: ScpUplinkAmnesiacA
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: box_amnesiac }
+  productEntity: BoxVialAmnesiacA
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+
+- type: listing
+  id: ScpUplinkAmnesiacB
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: box_amnesiac }
+  productEntity: BoxVialAmnesiacB
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+
+- type: listing
+  id: ScpUplinkAmnesiacC
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: box_amnesiac }
+  productEntity: BoxVialAmnesiacC
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+
+- type: listing
+  id: ScpUplinkAmnesiacD
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: box_amnesiac }
+  productEntity: BoxVialAmnesiacD
+  cost:
+    SupplyPoint: 4
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+
+- type: listing
+  id: ScpUplinkBoxAmbuzolKit
+  productEntity: BoxAmbuzolKit
+  name: shop-name-ambuzolkit
+  description: shop-desc-ambuzolkit
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: ambuzol_kit }
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpMedical
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+# Дополнительное
+- type: listing
+  id: ScpUplinkPinpointerUniversal
+  productEntity: PinpointerUniversal
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: universal_pinpointer }
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 6
+
+- type: listing
+  id: ScpUplinkBoxCardboardShoulderPatches
+  productEntity: BoxCardboardShoulderPatches
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: shoulder_patches }
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkBoxHandcuff
+  productEntity: BoxHandcuff
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: box_handcuffs }
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 6
+
+- type: listing
+  id: ScpUplinkDeployableBarrier
+  productEntity: DeployableBarrier
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: deploy_barrier }
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkBoxBodyBag
+  productEntity: BoxBodyBag
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: box_bodybags }
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: ScpUplinkBoxCleanerGrenades
+  productEntity: BoxCleanerGrenades
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: box_flashbangs }
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+
+- type: listing
+  id: ScpUplinkAdvMopItem
+  productEntity: AdvMopItem
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: adv-mop }
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet
+
+- type: listing
+  id: ScpUplinkPowerCellScp
+  productEntity: PowerCellScp
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: power_cell_nt }
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 14
+
+- type: listing
+  id: ScpUplinkClothingEyesNVD
+# Scp edit - disabled broken ported content.   productEntity: ClothingEyesNVDSec
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: nvd }
+  cost:
+    SupplyPoint: 6
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkClothingShoesBootsMagCombat
+# Scp edit - disabled broken ported content.   productEntity: ClothingShoesBootsMagCombat
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: magbootscombat }
+  cost:
+    SupplyPoint: 3
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkPortableRecharger
+  productEntity: PortableRecharger
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: port_recharge }
+  cost:
+    SupplyPoint: 8
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkWeaponTaser
+  productEntity: WeaponTaser
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: taser }
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 4
+
+- type: listing
+  id: ScpUplinkFlash
+  productEntity: Flash
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: flash }
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 5
+
+- type: listing
+  id: ScpUplinkStunbaton
+  productEntity: Stunbaton
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: stunbaton }
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpAdditional
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+# Научное оборудование
+
+- type: listing
+  id: ScpUplinkCrateArtifactContainer
+  productEntity: CrateArtifactContainer
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpScientificEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkHandheldArtifactContainer
+  productEntity: HandheldArtifactContainer
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpScientificEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkClothingEyesGlassesChemical
+  productEntity: ClothingEyesGlassesChemical
+  categories:
+  - ScpScientificEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkMachineAPE
+  productEntity: MachineAPE
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpScientificEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkCyberPistolCHIMP
+# Scp edit - disabled broken ported content.   productEntity: CyberPistolCHIMP
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpScientificEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkAnomalyLocator
+  productEntity: AnomalyLocator
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpScientificEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkAnomalyLocatorWide
+  productEntity: AnomalyLocatorWide
+  cost:
+    SupplyPoint: 1
+  categories:
+  - ScpScientificEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkGeigerCounter
+  productEntity: GeigerCounter
+  categories:
+  - ScpScientificEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkAnomalyScanner
+  productEntity: AnomalyScanner
+  categories:
+  - ScpScientificEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkNodeScanner
+  productEntity: NodeScanner
+  categories:
+  - ScpScientificEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkChemistryBottleArtifexium
+  productEntity: ChemistryBottleArtifexium
+  name: shop-name-bottle-artifexium
+  description: shop-desc-bottle-artifexium
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpScientificEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+# Восстановление Условий Содержания
+- type: listing
+  id: ScpUplinkRecontainmentCircuitsBoards
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: crate_administration }
+  productEntity: CrateAdministrationRecontainmentCircuitsBoards
+  categories:
+  - ScpRecontainment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkCrateAdministrationCrateScpCageScp173
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: closed_scp_cage }
+  productEntity: CrateAdministrationCrateScpCageScp173
+  categories:
+  - ScpRecontainment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkScp049ProtectionImplanter
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: 049_protection_implanter }
+  productEntity: Scp049ProtectionImplanter
+  categories:
+  - ScpRecontainment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkEyeDroplets
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: eye_droplets }
+  productEntity: EyeDroplets
+  categories:
+  - ScpRecontainment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkClothingHeadAwareness
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: head_integra }
+  productEntity: ClothingHeadAwareness
+  categories:
+  - ScpRecontainment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkClothingShoesSilent
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: shoes_silent }
+  productEntity: ClothingShoesSilent
+  categories:
+  - ScpRecontainment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkClothingMaskScp939
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: muzzle }
+  productEntity: ClothingMaskScp939
+  categories:
+  - ScpRecontainment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkClothingOuterAntiTeleportation
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: anti_teleportation_locus }
+  productEntity: ClothingOuterAntiTeleportation
+  categories:
+  - ScpRecontainment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkClothingHeadHelmetAiPowered
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: helmet_obscure }
+  productEntity: ClothingHeadHelmetAiPowered
+  categories:
+  - ScpRecontainment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkClothingHeadBagScp096
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: head_bag_scp_096 }
+  productEntity: ClothingHeadBagScp096
+  categories:
+  - ScpRecontainment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: ScpUplinkLocusKitUpgrade
+  name: shop-name-locuskit
+  description: shop-desc-locuskit
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: locus_upgrade }
+  productEntity: LocusKitUpgrade
+  cost:
+    SupplyPoint: 2
+  categories:
+  - ScpRecontainment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+# Взрывчатка
+- type: listing
+  id: ScpUplinkMtfStorageCrateGrenadeFragTimer
+  productEntity: MtfStorageCrateGrenadeFragTimer
+  name: shop-name-granade-frag-timer
+  description: shop-desc-granade-frag-timer
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: granade_frag_box5 }
+  cost:
+    SupplyPoint: 5
+  categories:
+  - ScpExplosive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateGrenadeBlastTimer
+  productEntity: MtfStorageCrateGrenadeBlastTimer
+  name: shop-name-granade-blast-timer
+  description: shop-desc-granade-blast-timer
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: granade_blast_box5 }
+  cost:
+    SupplyPoint: 5
+  categories:
+  - ScpExplosive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateGrenadeFragContact
+  productEntity: MtfStorageCrateGrenadeFragContact
+  name: shop-name-granade-frag-contact
+  description: shop-desc-granade-frag-contact
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: granade_frag_box5 }
+  cost:
+    SupplyPoint: 6
+  categories:
+  - ScpExplosive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateGrenadeBlastContact
+  productEntity: MtfStorageCrateGrenadeBlastContact
+  name: shop-name-granade-blast-contact
+  description: shop-desc-granade-blast-contact
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: granade_blast_box5 }
+  cost:
+    SupplyPoint: 6
+  categories:
+  - ScpExplosive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+    - NTFLeader # Э-11
+    - NTFSpecialist
+    - NTFCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateC4
+  productEntity: MtfStorageCrateC4
+  name: shop-name-c4crate
+  description: shop-desc-c4crate
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: c4_box5 }
+  cost:
+    SupplyPoint: 8
+  categories:
+  - ScpExplosive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+
+# Специализированное вооружение
+- type: listing
+  id: ScpUplinkMtfUnlockSpecWeapon
+  name: shop-name-unlock
+  description: shop-desc-unlock
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: limited_supply }
+  categories:
+  - ScpSpecWeapon
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateMachineGunMG60
+  productEntity: MtfStorageCrateMachineGunMG60
+  name: shop-name-mg60box
+  description: shop-desc-mg60box
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: mg60 }
+  categories:
+  - ScpSpecWeapon
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMachineGunMG60
+    - ScpUplinkMtfStorageCrateGrenadeLauncherGL70
+    - ScpUplinkMtfStorageCrateRifleBauer127
+    - ScpUplinkWeaponEarthGovLaserMG
+    - ScpUplinkPowerpackMinigunMG100
+    - ScpUplinkClothingBackpackPhlogistonTankScp
+    whitelist:
+    - ScpUplinkMtfUnlockSpecWeapon
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateGrenadeLauncherGL70
+  productEntity: MtfStorageCrateGrenadeLauncherGL70
+  name: shop-name-gl70box
+  description: shop-desc-gl70box
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: gl79 }
+  categories:
+  - ScpSpecWeapon
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMachineGunMG60
+    - ScpUplinkMtfStorageCrateGrenadeLauncherGL70
+    - ScpUplinkMtfStorageCrateRifleBauer127
+    - ScpUplinkWeaponEarthGovLaserMG
+    - ScpUplinkPowerpackMinigunMG100
+    - ScpUplinkClothingBackpackPhlogistonTankScp
+    whitelist:
+    - ScpUplinkMtfUnlockSpecWeapon
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+
+- type: listing
+  id: ScpUplinkMtfStorageCrateRifleBauer127
+  productEntity: MtfStorageCrateRifleBauer127
+  name: shop-name-b127box
+  description: shop-desc-b127box
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: sr127 }
+  categories:
+  - ScpSpecWeapon
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMachineGunMG60
+    - ScpUplinkMtfStorageCrateGrenadeLauncherGL70
+    - ScpUplinkMtfStorageCrateRifleBauer127
+    - ScpUplinkWeaponEarthGovLaserMG
+    - ScpUplinkPowerpackMinigunMG100
+    - ScpUplinkClothingBackpackPhlogistonTankScp
+    whitelist:
+    - ScpUplinkMtfUnlockSpecWeapon
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+
+- type: listing
+  id: ScpUplinkWeaponEarthGovLaserMG
+# Scp edit - disabled broken ported content.   productEntity: WeaponEarthGovLaserMG
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: eg-mg }
+  categories:
+  - ScpSpecWeapon
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMachineGunMG60
+    - ScpUplinkMtfStorageCrateGrenadeLauncherGL70
+    - ScpUplinkMtfStorageCrateRifleBauer127
+    - ScpUplinkWeaponEarthGovLaserMG
+    - ScpUplinkPowerpackMinigunMG100
+    - ScpUplinkClothingBackpackPhlogistonTankScp
+    whitelist:
+    - ScpUplinkMtfUnlockSpecWeapon
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+
+- type: listing
+  id: ScpUplinkPowerpackMinigunMG100
+# Scp edit - disabled broken ported content.   productEntity: PowerpackMinigunMG100
+  name: shop-name-mg100
+  description: shop-desc-mg100
+  icon: { sprite: _Scp/Interface/Misc/nt_icons.rsi, state: mg_100 }
+  categories:
+  - ScpSpecWeapon
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMachineGunMG60
+    - ScpUplinkMtfStorageCrateGrenadeLauncherGL70
+    - ScpUplinkMtfStorageCrateRifleBauer127
+    - ScpUplinkWeaponEarthGovLaserMG
+    - ScpUplinkPowerpackMinigunMG100
+    - ScpUplinkClothingBackpackPhlogistonTankScp
+    whitelist:
+    - ScpUplinkMtfUnlockSpecWeapon
+  - !type:BuyerJobCondition
+    blacklist:
+    - MHLeader # Б-7
+    - MHSpecialist
+    - MHCadet
+
+- type: listing
+  id: ScpUplinkClothingBackpackPhlogistonTankScp
+  productEntity: ClothingBackpackPhlogistonTankScp
+  icon: { sprite: _Scp/Interface/Misc/mtf_store_icon.rsi, state: flamethrower }
+  categories:
+  - ScpSpecWeapon
+  conditions:
+  - !type:BuyBeforeCondition
+    blacklist:
+    - ScpUplinkMtfStorageCrateMachineGunMG60
+    - ScpUplinkMtfStorageCrateGrenadeLauncherGL70
+    - ScpUplinkMtfStorageCrateRifleBauer127
+    - ScpUplinkWeaponEarthGovLaserMG
+    - ScpUplinkPowerpackMinigunMG100
+    - ScpUplinkClothingBackpackPhlogistonTankScp
+    whitelist:
+    - ScpUplinkMtfUnlockSpecWeapon
+  - !type:BuyerJobCondition
+    blacklist:
+    - HDLeader # Ню-7
+    - HDSpecialist
+    - HDCadet

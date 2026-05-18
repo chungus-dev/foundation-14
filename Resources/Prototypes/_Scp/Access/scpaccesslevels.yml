@@ -1,0 +1,129 @@
+﻿# Администрация комплекса
+
+- type: accessLevel
+  id: Administration
+  name: access-name-administration
+
+- type: accessLevel
+  id: ComplexDirector
+  name: access-name-complex-director
+
+- type: accessLevel
+  id: ScientificServiceDirector
+  name: access-name-scientific-service-director
+
+- type: accessLevel
+  id: SecurityCommander
+  name: access-name-security-commander
+
+- type: accessLevel
+  id: ChiefTechnicalSpecialist
+  name: access-name-chief-technical-specialist
+
+- type: accessLevel
+  id: PersonnelOfficer
+  name: access-name-personnel-officer
+
+- type: accessLevel
+  id: HeadOfMedicalSector
+  name: access-name-head-of-medical-sector
+
+- type: accessLevel
+  id: SeniorLogisticsOfficer
+  name: access-name-senior-logistics-officer
+
+- type: accessLevel
+  id: EthicsCommittee
+  name: access-name-ethics-committee
+
+- type: accessLevel
+  id: InternalTribunalService
+  name: access-name-internal-tribunal-service
+
+# СБ
+
+# Охранный уже представлен в ваниле
+# Оружейная уже представлен в ваниле
+
+# Инженерно-технические
+# Теха уже есть в ваниле
+# Инженерный уже есть в ваниле
+- type: accessLevel
+  id: LifeSupport
+  name: access-name-life-support
+
+# Научно-медицинские
+
+- type: accessLevel
+  id: Laboratory
+  name: access-name-laboratory
+
+# Общие
+
+- type: accessLevel
+  id: Checkpoint
+  name: access-name-checkpoint
+
+- type: accessLevel
+  id: Exit
+  name: access-name-exit
+
+- type: accessLevel
+  id: NuclearWarhead
+  name: access-name-nuclear-warhead
+
+#Сервисный уже представлен в ваниле
+
+- type: accessLevel
+  id: Logistics
+  name: access-name-logistics
+
+- type: accessLevel
+  id: AI
+  name: access-name-ai
+
+# SCP
+
+- type: accessLevel
+  id: Safe
+  name: access-name-safe
+
+- type: accessLevel
+  id: Euclid
+  name: access-name-euclid
+
+- type: accessLevel
+  id: Keter
+  name: access-name-keter
+
+# Класс Д
+
+- type: accessLevel
+  id: ClassDCanteen
+  name: access-name-class-d-canteen
+
+- type: accessLevel
+  id: ClassDJanitor
+  name: access-name-class-d-janitor
+
+# Сторонние
+
+- type: accessLevel
+  id: MTF
+  name: access-name-mtf
+
+- type: accessLevel
+  id: ChaosInsurgency
+  name: access-name-chaos-insurgency
+
+- type: accessLevel
+  id: ThirdParty
+  name: access-name-third-party
+
+- type: accessLevel
+  id: O5
+  name: access-name-o5
+
+- type: accessLevel
+  id: Bunker
+  name: access-name-bunker

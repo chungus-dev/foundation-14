@@ -37,4 +37,9 @@ public sealed partial class DamageOnHighSpeedImpactComponent : Component
 
     [DataField("damage", required: true), ViewVariables(VVAccess.ReadWrite)]
     public DamageSpecifier Damage = default!;
+
+    // Scp added start
+    [DataField]
+    public bool UseColor = true;
+    // Scp added end
 }

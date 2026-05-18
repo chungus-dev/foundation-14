@@ -10,6 +10,10 @@
   description: "An always powered light."
   suffix: Always powered
   components:
+  # Scp added start
+  - type: LightFlicking
+  - type: BloomOverlayVisuals
+  # Scp added end
   - type: MeleeSound
     soundGroups:
       Brute:
@@ -33,8 +37,8 @@
     state: base
   - type: PointLight
     color: "#FFE4CE" # 5000K color temp
-    energy: 0.8
-    radius: 10
+    energy: 0.65 # Europa-Edit | 0.8 > 0.65
+    radius: 6 # Europa-Edit | 10 > 6
     softness: 1
     offset: "0, -0.5"
   - type: Damageable
@@ -443,8 +447,8 @@
   components:
   - type: PointLight
     enabled: false
-    radius: 5
-    energy: 0.6
+    radius: 7.4 # Scp edit
+    energy: 1.1 # Scp edit
     offset: "0, 0.4"
     color: "#7CFC00"
     mask: /Textures/Effects/LightMasks/double_cone.png
@@ -506,6 +510,14 @@
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
+  # Scp edit start
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -8
+    range: 5
+    sound:
+      path: /Audio/_Scp/Ambience/Emergency/alarm.ogg
+  # Scp edit end
   placement:
     mode: SnapgridCenter
     snap:

@@ -1,0 +1,8 @@
+﻿- type: blinkIcon
+  id: ClosedEyeIcon
+  priority: -25
+  locationPreference: Right
+  isShaded: false # He knows
+  icon:
+    sprite: /Textures/_Scp/Interface/Misc/scp_icons.rsi
+    state: blink

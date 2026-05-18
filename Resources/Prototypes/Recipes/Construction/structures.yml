@@ -81,6 +81,7 @@
   graph: Barricade
   startNode: start
   targetNode: woodWall
+  hide: true # Scp edit
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter
@@ -663,6 +664,7 @@
       targets:
         - Lattice
         - Plating
+        - ScpPlating # Scp added
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -678,7 +680,7 @@
       failIfSpace: false
     - !type:TileType
       targets:
-        - Plating
+        - ScpPlating # Scp edit
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -688,6 +690,7 @@
   graph: Barricade
   startNode: start
   targetNode: barricadefull
+  hide: true # Scp edit
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter

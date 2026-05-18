@@ -5,9 +5,9 @@
   description: A sheet of material, used often on the station in various applications.
   components:
   - type: Sprite
-    sprite: Objects/Materials/Sheets/other.rsi
+    sprite: _Scp/Objects/Materials/Sheets/other.rsi # Scp edit
   - type: Item
-    sprite: Objects/Materials/Sheets/other.rsi
+    sprite: _Scp/Objects/Materials/Sheets/other.rsi # Scp edit
     size: Normal
   - type: Tag
     tags:
@@ -46,11 +46,13 @@
     materialComposition:
       Paper: 100
   - type: Sprite
+    sprite: Objects/Materials/Sheets/other.rsi # Scp edit
     state: paper_3
     layers:
     - state: paper_3
       map: ["base"]
   - type: Item
+    sprite: Objects/Materials/Sheets/other.rsi # Scp edit
     heldPrefix: paper
   - type: Appearance
   - type: Extractable

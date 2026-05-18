@@ -15,7 +15,9 @@ public sealed class GravityGeneratorSystem : SharedGravityGeneratorSystem
 
         SubscribeLocalEvent<GravityGeneratorComponent, EntParentChangedMessage>(OnParentChanged);
         SubscribeLocalEvent<GravityGeneratorComponent, ChargedMachineActivatedEvent>(OnActivated);
-        SubscribeLocalEvent<GravityGeneratorComponent, ChargedMachineDeactivatedEvent>(OnDeactivated);
+
+        // Scp edit
+        // SubscribeLocalEvent<GravityGeneratorComponent, ChargedMachineDeactivatedEvent>(OnDeactivated);
     }
 
     public override void Update(float frameTime)
@@ -46,6 +48,7 @@ public sealed class GravityGeneratorSystem : SharedGravityGeneratorSystem
         }
     }
 
+    /* Scp edit
     private void OnDeactivated(Entity<GravityGeneratorComponent> ent, ref ChargedMachineDeactivatedEvent args)
     {
         ent.Comp.GravityActive = false;
@@ -58,6 +61,7 @@ public sealed class GravityGeneratorSystem : SharedGravityGeneratorSystem
             _gravitySystem.RefreshGravity(xform.ParentUid, gravity);
         }
     }
+    */
 
     private void OnParentChanged(EntityUid uid, GravityGeneratorComponent component, ref EntParentChangedMessage args)
     {

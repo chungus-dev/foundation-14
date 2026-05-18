@@ -73,16 +73,19 @@
       # Only used for NT borgs that can switch type, defined here to avoid copy-pasting the rest of this component.
       enum.BorgSwitchableTypeUiKey.SelectBorgType:
         type: BorgSelectTypeUserInterface
+      # enum.BorgVoiceUiKey.Key:
+      #   type: BorgVoiceBoundUserInterface
   - type: ActivatableUI
     key: enum.BorgUiKey.Key
   - type: SiliconLawBound
   - type: ActionGrant
     actions:
     - ActionViewLaws
+    # - ActionChangeBorgVoice
   - type: EmagSiliconLaw
     stunTime: 5
   - type: SiliconLawProvider
-    laws: Crewsimov
+    laws: ScpDefault # Scp edit
   - type: Inventory
     templateId: borg
   - type: Hands
@@ -95,13 +98,14 @@
     channels:
     - Binary
     - Common
-    - Science
+    - ScientificService # Scp edit
   - type: ActiveRadio
     channels:
     - Binary
     - Common
-    - Science
+    - ScientificService # Scp edit
   - type: ZombieImmune
+
   - type: Repairable
     damageValue: -10 # 10 seconds to repair from crit
     doAfterDelay: 1
@@ -114,6 +118,8 @@
       - BorgChassis
       - RoboticsConsole
   - type: WiresPanel
+    openingTool: Prying
+    openDelay: 3
   - type: ActivatableUIRequiresPanel
   - type: NameIdentifier
     group: Silicon
@@ -168,6 +174,7 @@
   - type: LockedWiresPanel
   - type: Damageable
     damageContainer: Silicon
+    damageModifierSet: Metallic # Scp edit - old Silicon modifier set is unavailable.
   - type: Destructible
     thresholds:
     - trigger:
@@ -323,14 +330,22 @@
     factions:
     - NanoTrasen
   - type: Access
+    enabled: false
+  # Scp edit start - новые доступы
     groups:
-    - AllAccess
+    - MedicalHeadless
+    - EngineeringHeadless
+    - LogisticsHeadless
+    - ServiceHeadless
     tags:
-    - Borg
+    - Research
+    - Checkpoint
+    - AI
+
   - type: AccessReader
-    access: [["Command"], ["Research"]]
+    access: [["Administration"], ["Research"]]
+  # Scp edit end
   - type: ShowJobIcons
-  - type: ShowCrewIcons
   - type: InteractionPopup
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg

@@ -293,6 +293,7 @@
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSecurity
+  categories: [ HideSpawnMenu ] # Scp edit
   name: security hardsuit helmet
   description: Armored hardsuit helmet for security needs.
   components:
@@ -314,6 +315,7 @@
         Heat: 0.9
   - type: Tag
     tags:
+    - CorgiWearable
     - WhitelistChameleon
 
 #Brigmedic Hardsuit

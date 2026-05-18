@@ -10,6 +10,7 @@
     Flash: 5
     Tourniquet: 5
     FlashlightSeclite: 5
+    ClothingEyesGlassesSecurityGuard: 4 # FireStation Edit
     ClothingEyesGlassesSunglasses: 2
     ClothingEyesHudSecurity: 2
     ClothingEyesEyepatchHudSecurity: 2
@@ -19,11 +20,13 @@
     RiotShield: 2
     RiotLaserShield: 2
     RiotBulletShield: 2
-    RadioHandheldSecurity: 5
-    Bola: 6
-  # security officers need to follow a diet regimen!
+    # Scp edit start
+    RadioHandheldExternalAdministrativeZoneSecurityService: 5
+    RadioHandheldHeavyContainmentSecurityService: 5
+    # Scp edit end
   contrabandInventory:
     WeaponMeleeNeedle: 2
     FoodDonutHomer: 12
     FoodBoxDonut: 2
     #box evidence
+  emaggedInventory:

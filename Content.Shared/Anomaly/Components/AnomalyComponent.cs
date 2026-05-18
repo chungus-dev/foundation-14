@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared.Anomaly.Effects;
 using Content.Shared.Anomaly.Prototypes;
+using Content.Shared.Research;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -195,18 +196,27 @@ public sealed partial class AnomalyComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? ConnectedVessel;
 
+    // Scp edit start - multipoint Rnd system support
+
     /// <summary>
     /// The minimum amount of research points generated per second
     /// </summary>
     [DataField]
-    public int MinPointsPerSecond = 10;
+    public Dictionary<ProtoId<ResearchPointPrototype>, int> MinPointsPerSecond = new()
+    {
+        { "Default", 10 },
+    };
 
     /// <summary>
     /// The maximum amount of research points generated per second
     /// This doesn't include the point bonus for being unstable.
     /// </summary>
     [DataField]
-    public int MaxPointsPerSecond = 70;
+    public Dictionary<ProtoId<ResearchPointPrototype>, int> MaxPointsPerSecond = new()
+    {
+        { "Default", 70 },
+    };
+    // Scp edit end
 
     /// <summary>
     /// The multiplier applied to the point value for the

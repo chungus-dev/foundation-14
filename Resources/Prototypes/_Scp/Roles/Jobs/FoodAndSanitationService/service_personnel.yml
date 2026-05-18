@@ -1,0 +1,35 @@
+﻿- type: job
+  id: ServicePersonnel
+  name: job-name-service-personnel
+  description: job-description-service-personnel
+  playTimeTracker: JobServicePersonnel
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 20
+  icon: JobServicePersonnel
+  supervisors: job-supervisors-personnel-officer
+  weight: 725
+  access:
+  - Service
+  - Bunker
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: One
+
+- type: startingGear
+  id: ServicePersonnelGear
+  equipment:
+    head: ClothingHeadHatPurplesoft
+    eyes: ClothingEyesGlasses
+    gloves: ClothingHandsGlovesJanitor
+    shoes: ClothingShoesGaloshes
+    back: ClothingBackpack
+    id: KeyCardServicePersonnel
+    ears: ClothingHeadsetFoodAndSanitation
+    jumpsuit: ClothingUniformJumpsuitJanitor
+    belt: ClothingBeltJanitorFilled
+    pocket2: ScpServicePDA

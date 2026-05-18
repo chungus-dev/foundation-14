@@ -6,6 +6,8 @@
   startingGear: CargoTechGear
   icon: "JobIconCargoTechnician"
   supervisors: job-supervisors-qm
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - Cargo
   - Maintenance

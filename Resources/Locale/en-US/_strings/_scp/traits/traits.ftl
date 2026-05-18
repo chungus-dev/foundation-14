@@ -1,0 +1,14 @@
+trait-category-fear = [SCP] Fear
+trait-category-scp-traits = [SCP] Flaws
+trait-hemophobia-name = Hemophobia
+trait-hemophobia-desc = Your pulse quickens. Your hands tremble. Every red smear is a reminder that you are not immortal.
+trait-stupor-name = Fear Paralysis
+trait-stupor-desc = In a critical moment, you freeze. Sometimes that saves you. More often, it does not.
+trait-fear-stuttering-name = Broken Voice
+trait-fear-stuttering-desc = Each word is hard to say. In moments of danger, your speech becomes halting, and others notice it.
+trait-fainting-name = Flickering Consciousness
+trait-fainting-desc = Sometimes fear becomes so intense that your brain decides it is easier to shut down. You fall to the ground, and all you hear is silence.
+trait-tunnel-vision-name = Tunnel Vision
+trait-tunnel-vision-desc = In childhood, your mother hit you on the head with a frying pan, and you fell... Once you stood up, you realized the world had narrowed.
+trait-bad-shooter-name = Poor Aim
+trait-bad-shooter-desc = You've always had trouble with accuracy, especially with firearms. The bullets seem to have a life of their own!

@@ -1,5 +1,7 @@
 ﻿using System.Numerics;
+using Content.Client._Scp.Stylesheets.Palette;
 using Content.Client.Resources;
+using Content.Client.Stylesheets.Colorspace;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.Controls;
 
@@ -7,9 +9,11 @@ namespace Content.Client.UserInterface.Systems.Chat.Controls;
 
 public sealed class ChannelFilterButton : ChatPopupButton<ChannelFilterPopup>
 {
-    private static readonly Color ColorNormal = Color.FromHex("#7b7e9e");
-    private static readonly Color ColorHovered = Color.FromHex("#9699bb");
-    private static readonly Color ColorPressed = Color.FromHex("#789B8C");
+    // Scp edit start
+    private static readonly Color ColorNormal = ScpPalettes.SCPWhite;
+    private static readonly Color ColorHovered = ScpPalettes.SCPWhite.WithLightness(0.3f); // primary color[0] + 0.30 L
+    private static readonly Color ColorPressed = ScpPalettes.SCPWhite.WithLightness(0.12f); // primary color[0] + 0.12 L
+    // Scp edit end
     private readonly TextureRect? _textureRect;
     private readonly ChatUIController _chatUIController;
 

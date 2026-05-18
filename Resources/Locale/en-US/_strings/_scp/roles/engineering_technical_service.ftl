@@ -1,0 +1,9 @@
+job-name-lead-technical-specialist = Senior Engineer
+job-description-lead-technical-specialist = A technical specialist with years of experience.
+job-name-electrical-technical-specialist = Electrical Technician
+job-description-electrical-technical-specialist = An electrical engineer responsible for power distribution, electrical equipment, and the heating, ventilation, and air conditioning system (HVAC).
+job-name-general-technical-specialist = Technician
+job-description-general-technical-specialist = A technician who handles maintenance of technical gear and equipment. Did the break room light bulb burn out again? Is your new SCiPhone not working? - They will solve your problems!
+job-name-technical-trainee = Trainee Technician
+job-description-technical-trainee = A trainee technician. They learn under senior technicians and help with minor tasks.
+job-supervisors-chief-technical-specialist = senior engineer

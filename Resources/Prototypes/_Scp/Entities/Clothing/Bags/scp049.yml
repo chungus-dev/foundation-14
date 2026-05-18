@@ -1,0 +1,38 @@
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackScp049
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Unremoveable
+  - type: Sprite
+    sprite: _Scp/Clothing/Back/Satchels/scp049-satchel.rsi
+    state: icon
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,19,9
+    whitelist:
+      components:
+      - Healing
+      - Pill
+      - Paper
+      tags:
+      - Syringe
+      - PillCanister
+      - Pen
+      - SurgeryTool
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BookScp049Diary
+        - id: LuxuryPen
+        - id: Hemostat
+        - id: Saw
+        - id: Drill
+        - id: Cautery
+        - id: Retractor
+        - id: Scalpel
+        - id: Scp049Contract

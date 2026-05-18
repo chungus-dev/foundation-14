@@ -10,6 +10,8 @@
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - Medical
   - Maintenance

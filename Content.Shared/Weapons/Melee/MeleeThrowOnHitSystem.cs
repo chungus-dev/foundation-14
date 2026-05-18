@@ -26,6 +26,24 @@ public sealed class MeleeThrowOnHitSystem : EntitySystem
         SubscribeLocalEvent<MeleeThrowOnHitComponent, LandEvent>(OnLand);
     }
 
+    public bool TrySetThrowParameters(
+        Entity<MeleeThrowOnHitComponent?> ent,
+        float? speed = null,
+        float? distance = null)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return false;
+
+        if (speed != null)
+            ent.Comp.Speed = speed.Value;
+
+        if (distance != null)
+            ent.Comp.Distance = distance.Value;
+
+        Dirty(ent, ent.Comp);
+        return true;
+    }
+
     private void OnThrow(Entity<MeleeThrowOnHitComponent> ent, ref ThrownEvent args)
     {
         if (_delay.IsDelayed(ent.Owner))

@@ -4,6 +4,12 @@
   save: false
   id: BaseControllable
   components:
+  # Scp edit start
+  - type: GrainOverlay
+  - type: VignetteOverlay
+  - type: FieldOfViewOccludable
+  - type: SinCityOverlay
+  # Scp edit end
   - type: Sprite
     noRot: true
     drawdepth: Mobs
@@ -38,6 +44,7 @@
   - type: MindContainer
   - type: RequireProjectileTarget
     active: False
+  - type: StunVisuals
 
 # The progenitor. This should only container the most basic components possible.
 # Only put things on here if every mob *must* have it. This includes ghosts.
@@ -75,7 +82,7 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Blunt
-        damage: 400
+        damage: 1000 # Scp edit
       behaviors:
       - !type:GibBehavior { }
     - trigger:
@@ -89,7 +96,7 @@
           Ash:
             min: 1
             max: 1
-      - !type:BurnBodyBehavior
+      - !type:BurnBodyBehavior { }
       - !type:PlaySoundBehavior
         sound:
           collection: MeatLaserImpact
@@ -123,7 +130,6 @@
       - ActionCritSuccumb
       - ActionCritFakeDeath
       - ActionCritLastWords
-  - type: StoreDamageTakenOnMind
   - type: Deathgasp
   - type: HealthExaminable
     examinableTypes:
@@ -146,8 +152,6 @@
   - type: LightningTarget
     priority: 2
     lightningExplode: false
-  - type: GhostOnMove
-    mustBeDead: true
 
 # Used for mobs that can enter combat mode and can attack.
 - type: entity

@@ -1,3 +1,4 @@
+using Content.Shared._Scp.Blinking;
 using Content.Shared.Actions;
 using Content.Shared.Eye.Blinding.Components;
 using Robust.Shared.Audio.Systems;
@@ -16,6 +17,7 @@ public sealed class EyeClosingSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
 
+    /* Scp edit - вся логика перемещена в BlinkingSystem. Там это тут не нужно
     public override void Initialize()
     {
         base.Initialize();
@@ -26,6 +28,7 @@ public sealed class EyeClosingSystem : EntitySystem
         SubscribeLocalEvent<EyeClosingComponent, CanSeeAttemptEvent>(OnTrySee);
         SubscribeLocalEvent<EyeClosingComponent, AfterAutoHandleStateEvent>(OnHandleState);
     }
+    */
 
     private void OnMapInit(Entity<EyeClosingComponent> eyelids, ref MapInitEvent args)
     {
@@ -128,10 +131,18 @@ public sealed class EyeClosingSystem : EntitySystem
             return;
         }
 
+        /* Scp edit - не надо нам этого компонента, у нас свой аналог, который и так у всех есть.
+
         var naturalEyelids = EnsureComp<EyeClosingComponent>(blindable);
         naturalEyelids.NaturallyCreated = true;
         Dirty(blindable);
+
+        */
     }
 }
 
-public sealed partial class ToggleEyesActionEvent : InstantActionEvent;
+/* Scp edit - перемещено в нашу папку и объединено с BlinkingSystem
+public sealed partial class ToggleEyesActionEvent : InstantActionEvent
+{
+}
+*/

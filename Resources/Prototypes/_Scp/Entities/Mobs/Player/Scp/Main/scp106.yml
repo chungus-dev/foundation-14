@@ -1,0 +1,121 @@
+﻿- type: entity
+  parent:
+  - BaseScp
+  - MobCombat
+  id: Scp106
+  suffix: SCP-106
+  components:
+  - type: AutoGhostRole
+    disconnectDelay: 600
+    pollDuration: 900
+    transferDelay: 180
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Scp/Mobs/Scp/scp-106.rsi
+    layers:
+    - map: [ "base" ]
+      state: base
+      loop: false
+  - type: Scp
+    class: Keter
+  - type: Scp106
+  - type: FearSource
+    uponSeenState: Fear
+    uponComeCloser: Fear
+    grainShaderStrength:
+      min: 0
+      max: 1000
+    vignetteShaderStrength:
+      min: 0
+      max: 400
+  - type: MeleeWeapon
+    bluntStaminaDamageFactor: 1.0
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcPunch
+    soundHit: /Audio/_Scp/Scp106/hit.ogg
+    damage:
+      types:
+        Cellular: 10
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 2
+  - type: ScpAnnounceOnSpawn
+    text: scp106-announce-on-spawn
+    channels:
+    - ScientificService
+    - HeavyContainmentSecurityService
+  # - type: XenoScreech # SCP port: component unavailable in Foundation14
+  - type: Muted
+    allowed:
+    - Laugh
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - SmallMobMask
+        layer:
+        - MobLayer
+  - type: Appearance
+  - type: Scp106Visuals
+    baseLayer: base
+    defaultState: base
+    enteringState: lusha_from_ded
+    exitingState: ded_from_lusha
+  - type: ActionGrant
+    actions:
+    - BecomeTeleportPhantomAction
+    - Scp106RandomTeleportAction
+    - Scp106BackroomsAction
+    - ActionScp106Shop
+  - type: Vocal
+    sounds:
+      Male: SCP106
+      Female: SCP106
+      Unsexed: SCP106
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepScp106
+  - type: AnyDamageSound
+    sound:
+      collection: HurtScp106
+      params:
+        maxDistance: 8
+  - type: KillGlobalSound
+    sound:
+      collection: DistanceKillScp106
+    originWhitelist:
+      components:
+      - Scp106
+  - type: AmbientSound
+    enabled: true
+    volume: -10
+    range: 3
+    sound:
+      path: /Audio/_Scp/Scp106/breath.ogg
+  - type: GuideHelp
+    guides:
+    - ScpResearch
+    - ScpFear
+  - type: Store
+    balance:
+      LifeEssence: 20
+    currencyWhitelist:
+    - LifeEssence
+    categories:
+    - Scp106Abilities
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: StatusEffects
+    allowed:
+    - Stun
+  - type: ComplexInteraction

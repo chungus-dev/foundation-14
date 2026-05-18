@@ -1,0 +1,10 @@
+ent-ActionScp049Resurrect = Resurrection
+    .desc = Turn a dead body into your devoted patient.
+ent-ActionScp049KillResurrected = Kill the resurrected
+    .desc = Instantly kill a previously resurrected patient.
+ent-ActionScp049KillLeavingBeing = Lethal touch
+    .desc = Instantly kill a living being with a touch.
+ent-ActionScp049SelfHeal = Self-healing
+    .desc = Restore health and remove all negative effects.
+ent-ActionScp049HealMinion = Heal patient
+    .desc = Restore life force and remove all negative effects from your patient.

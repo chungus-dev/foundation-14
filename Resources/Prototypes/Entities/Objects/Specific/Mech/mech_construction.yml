@@ -431,3 +431,27 @@
     graph: Vim
     node: start
     defaultTarget: vim
+
+- type: entity
+  id: RipleyChassis
+  categories: [ HideSpawnMenu ] # Scp edit
+  parent: BaseRipleyPart
+  name: ripley chassis
+  description: An in-progress construction of the Ripley APLU mech.
+  components:
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      battery-container: !type:Container
+  - type: MechAssemblyVisuals
+    statePrefix: ripley
+  - type: Sprite
+    noRot: true
+    state: ripley0
+  - type: Construction
+    graph: Ripley
+    node: start
+    defaultTarget: ripley
+
+# Ripley MK-II
+

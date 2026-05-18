@@ -1,0 +1,77 @@
+# Абстракты
+# ASF, RAS, ARL это сокращения от названий технологий, которые открывают эти рецепты
+
+- type: latheRecipe
+  abstract: true
+  id: BaseASFRecipe
+  category: Scp
+  completetime: 2
+  materials:
+    Steel: 300
+    Plastic: 300
+
+- type: latheRecipe
+  abstract: true
+  id: BaseRASRecipe
+  category: Scp
+  completetime: 3
+  materials:
+    Steel: 1000
+    Glass: 300
+    Plastic: 400
+    Silver: 100
+    Uranium: 100
+
+- type: latheRecipe
+  abstract: true
+  id: BaseARLRecipe
+  category: Weapons
+  completetime: 12
+  materials:
+    Steel: 5000
+    Glass: 1000
+    Gold: 1200
+    Silver: 2400
+    Uranium: 1200
+
+# Мирные штуки
+
+- type: latheRecipe
+  id: EyeDroplets
+  parent: BaseASFRecipe
+  result: EyeDroplets
+
+- type: latheRecipe
+  id: ClothingHeadBagScp096
+  parent: BaseASFRecipe
+  result: ClothingHeadBagScp096
+
+- type: latheRecipe
+  id: ReinforcedMaskScp096
+  parent: BaseASFRecipe
+  result: ReinforcedMaskScp096
+
+- type: latheRecipe
+  id: Scp049ProtectionImplanter
+  parent: BaseASFRecipe
+  result: Scp049ProtectionImplanter
+
+- type: latheRecipe
+  id: ClothingHeadAwareness
+  parent: BaseASFRecipe
+  result: ClothingHeadAwareness
+
+- type: latheRecipe
+  id: ClothingShoesSilent
+  parent: BaseRASRecipe
+  result: ClothingShoesSilent
+
+- type: latheRecipe
+  id: ClothingOuterAntiTeleportation
+  parent: BaseRASRecipe
+  result: ClothingOuterAntiTeleportation
+
+- type: latheRecipe
+  id: ClothingHeadHelmetAiPowered
+  parent: BaseRASRecipe
+  result: ClothingHeadHelmetAiPowered

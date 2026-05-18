@@ -1,0 +1,12 @@
+ent-ClothingNeckShoulderPatchWhite = белая наплечная повязка
+    .desc = Простой и удобный инструмент для групп.
+ent-ClothingNeckShoulderPatchRed = красная наплечная повязка
+    .desc = Простой и удобный инструмент для групп.
+ent-ClothingNeckShoulderPatchBlue = синяя наплечная повязка
+    .desc = Простой и удобный инструмент для групп.
+ent-ClothingNeckShoulderPatchGreen = зеленая наплечная повязка
+    .desc = Простой и удобный инструмент для групп.
+ent-ClothingNeckShoulderPatchYellow = желтая наплечная повязка
+    .desc = Простой и удобный инструмент для групп.
+ent-BoxCardboardShoulderPatches = коробка цветных повязок
+    .desc = Содержит самые простые и удобные инструменты для групп.

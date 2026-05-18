@@ -1,0 +1,14 @@
+﻿- type: entity
+  parent:
+  - ScpBaseBallBat
+  - BaseItemScp
+  id: Scp2398
+  suffix: SCP-2398
+  components:
+  - type: Scp
+    class: Safe
+  - type: Scp2398
+    triggerThrowSpeed: 20
+  - type: GuideHelp
+    guides:
+    - ScpResearch

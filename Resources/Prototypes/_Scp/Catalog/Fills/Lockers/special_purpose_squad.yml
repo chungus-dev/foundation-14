@@ -1,0 +1,69 @@
+- type: entity
+  id: LockerHeavyContainmentZoneCommandantFilled
+  suffix: Filled
+  parent: LockerHeavyContainmentZoneCommandant
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: FlashlightSeclite
+        - id: ClothingBeltSecurityFilled
+        - id: Flash
+        - id: ClothingHeadsetAltHeavyContainmentSecurityService
+        - id: ClothingEyesGlassesSecurityGuard
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingShoesBootsSecurityGuard
+        - id: ClothingOuterCoatWarden
+        - id: ClothingOuterWinterWarden
+        - id: RubberStampSpecialPurposeSquadLeader
+        - id: DoorRemoteArmory
+        - id: BookSpaceLaw
+        - id: ClothingBackpackElectropack
+          amount: 2
+        - id: RemoteSignaller
+          amount: 2
+        - id: Binoculars
+        - id: ForensicScanner
+        - id: BoxForensicPad
+        - id: BoxEvidenceMarkers
+        - id: HandLabeler
+
+- type: entity
+  id: LockerHeavyContainmentZoneOfficerFilled
+  suffix: Filled
+  parent: LockerHeavyContainmentZoneOfficer
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: FlashlightSeclite
+          prob: 0.8
+        - id: ClothingUniformSecurity
+          prob: 0.3
+        - id: ClothingUniformSecurity2
+          prob: 0.3
+        - id: ClothingUniformSecurity3
+          prob: 0.3
+        - id: ClothingHeadHelmetSecurity
+        - id: ClothingOuterArmorSecurity
+        - id: ClothingBeltSecurityFilled
+        - id: Flash
+          prob: 0.5
+        - id: ClothingEyesGlassesSecurityGuard
+        - id: ClothingMaskSecurityBandBlack
+        - id: ClothingHeadsetHeavyContainmentSecurityService
+        - id: ClothingHandsGlovesSecurity
+        - id: ClothingShoesBootsSecurityGuard
+        - id: WeaponMeleeNeedle
+          prob: 0.1
+- type: entity
+  id: ScpLockerSpecialPurposeSquadFilledWardrobe
+  parent: ScpLockerSpecialPurposeSquad
+  suffix: Filled, Wardrobe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: ScpFillWardrobeSecurity # TODO: Уникальный инвентарь

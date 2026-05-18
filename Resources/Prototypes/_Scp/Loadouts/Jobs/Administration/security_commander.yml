@@ -1,0 +1,124 @@
+# ID
+- type: loadout
+  id: ScpLoadoutKeyCardSecurityCommander
+  equipment:
+    id: KeyCardSecurityCommander
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardSecurityCommander
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardSecurityCommander
+
+# Ears
+- type: loadout
+  id: ScpLoadoutClothingHeadsetAltSecurityAdministration
+  equipment:
+    ears: ClothingHeadsetAltSecurityAdministration
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupEarsClothingHeadsetAltSecurityAdministration
+  name: loadout-group-ears
+  loadouts:
+  - ScpLoadoutClothingHeadsetAltSecurityAdministration
+
+# Head
+- type: loadout
+  id: ScpLoadoutSecurityCommanderHat
+  equipment:
+    head: ClothingHeadHatHoshat
+
+- type: loadout
+  id: ScpLoadoutSecurityCommanderBeret
+  equipment:
+    head: ClothingHeadHatBeretHoS
+
+- type: loadout
+  id: ScpLoadoutSecurityCommanderSecurityGlasses
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupSecurityCommanderEyes
+  name: loadout-group-eyes
+  loadouts:
+  - ScpLoadoutSecurityCommanderSecurityGlasses
+
+# Gloves
+- type: loadout
+  id: ScpLoadoutSecurityCommanderCombatGloves
+  equipment:
+    gloves: ClothingHandsGlovesCombat
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupSecurityCommanderGloves
+  name: loadout-group-gloves
+  loadouts:
+  - ScpLoadoutSecurityCommanderCombatGloves
+
+# Jumpsuit
+- type: loadout
+  id: ScpLoadoutSecurityCommanderJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoS
+  groupBy: jumpsuit
+
+- type: loadout
+  id: ScpLoadoutSecurityCommanderJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHoS
+  groupBy: jumpskirt
+
+- type: loadout
+  id: ScpLoadoutSecurityCommanderTurtleneckJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSAlt
+  groupBy: jumpsuit
+
+- type: loadout
+  id: ScpLoadoutSecurityCommanderTurtleneckJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHoSAlt
+  groupBy: jumpskirt
+
+- type: loadout
+  id: ScpLoadoutSecurityCommanderFormalSuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHosFormal
+  groupBy: jumpsuit
+
+- type: loadout
+  id: ScpLoadoutSecurityCommanderFormalJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHosFormal
+  groupBy: jumpskirt
+
+- type: loadout
+  id: ScpLoadoutSecurityCommanderMantle
+  equipment:
+    neck: ClothingNeckMantleHOS
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ScpMasterSecurityCommander
+
+# Outer Clothing
+- type: loadout
+  id: ScpLoadoutSecurityCommanderTrenchCoat
+  equipment:
+    outerClothing: ClothingOuterCoatHoSTrench
+
+- type: loadout
+  id: ScpLoadoutSecurityCommanderWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterHoS
+
+- type: loadout
+  id: ScpLoadoutSecurityCommanderPDA
+  equipment:
+    pocket2: SecurityCommanderPDA
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupPocket2SecurityCommanderPDA
+  name: loadout-group-pda
+  loadouts:
+  - ScpLoadoutSecurityCommanderPDA

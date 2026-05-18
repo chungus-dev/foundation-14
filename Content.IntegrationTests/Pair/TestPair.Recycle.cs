@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using Content.Server.GameTicking;
 using Content.Server.Preferences.Managers;
+using Content.Shared._Scp.ScpCCVars;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
@@ -67,6 +68,10 @@ public sealed partial class TestPair
         Assert.That(cfg.GetCVar(CCVars.AdminLogsEnabled), Is.EqualTo(settings.AdminLogsEnabled));
         Assert.That(cfg.GetCVar(CCVars.GameLobbyEnabled), Is.EqualTo(settings.InLobby));
         Assert.That(cfg.GetCVar(CCVars.GameDummyTicker), Is.EqualTo(settings.DummyTicker));
+        // Scp added start - validate client-side audio effect test toggle.
+        Assert.That(Client.CfgMan.GetCVar(ScpCCVars.EchoEnabled), Is.EqualTo(settings.AudioEffectsEnabled));
+        Assert.That(Client.CfgMan.GetCVar(ScpCCVars.AudioMufflingEnabled), Is.EqualTo(settings.AudioEffectsEnabled));
+        // Scp added end
 
         var ticker = Server.System<GameTicker>();
         Assert.That(ticker.DummyTicker, Is.EqualTo(settings.DummyTicker));

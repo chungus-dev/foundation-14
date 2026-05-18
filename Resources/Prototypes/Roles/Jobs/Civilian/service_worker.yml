@@ -10,6 +10,8 @@
   startingGear: ServiceWorkerGear
   icon: "JobIconServiceWorker"
   supervisors: job-supervisors-service
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - Service
   - Maintenance

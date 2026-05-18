@@ -78,6 +78,7 @@
   id: FaxMachineCentcom
   name: CentComm long range fax machine
   suffix: CentCom
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:
@@ -93,6 +94,7 @@
   id: FaxMachineSyndie
   name: syndicate long range fax machine
   suffix: Syndicate
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     layers:
@@ -111,6 +113,7 @@
   id: FaxMachineCaptain
   name: captain long range fax machine
   suffix: NukeCodes
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
     - type: FaxMachine
       name: "Captain's Office"

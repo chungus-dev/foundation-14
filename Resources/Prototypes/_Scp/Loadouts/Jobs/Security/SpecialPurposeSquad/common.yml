@@ -1,0 +1,53 @@
+# Голова
+- type: loadout
+  id: ScpLoadoutClothingHeadHelmetBasic
+  equipment:
+    head: ClothingHeadHelmetBasic
+
+# Уши
+- type: loadout
+  id: ScpLoadoutClothingHeadsetHeavyContainmentSecurityService
+  equipment:
+    ears: ClothingHeadsetHeavyContainmentSecurityService
+
+# Глаза
+- type: loadout
+  id: ScpLoadoutClothingEyesGlassesSecurity
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+
+# Униформа
+- type: loadout
+  id: ScpLoadoutClothingUniformSecurityBlack
+  equipment:
+    jumpsuit: ClothingUniformSecurityBlack
+
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CommandantSquadFancyUniformTimer
+
+- type: loadout
+  id: ScpLoadoutClothingUniformSecurityBlackCamouflage
+  equipment:
+    jumpsuit: ClothingUniformSecurityBlackCamouflage
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CommandantSquadFancyUniformTimer
+
+# Рация
+- type: loadout
+  id: ScpLoadoutRadioHandheldHeavyContainmentSecurityService
+  storage:
+    back:
+    - RadioHandheldHeavyContainmentSecurityServiceEnabled
+
+# Пистолет-пулемет
+- type: loadout
+  id: ScpLoadoutWeaponSubMachineGunMP5
+  equipment: {} # Scp edit - broken ported entries disabled.
+- type: loadout
+  id: ScpLoadoutWeaponShotgunSPAS12
+  equipment: {} # Scp edit - broken ported entries disabled.
+- type: loadout
+  id: ScpLoadoutWeaponPistolG22
+  equipment: {} # Scp edit - broken ported entries disabled.

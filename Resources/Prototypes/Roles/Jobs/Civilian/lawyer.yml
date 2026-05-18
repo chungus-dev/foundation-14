@@ -9,6 +9,8 @@
   startingGear: LawyerGear
   icon: "JobIconLawyer"
   supervisors: job-supervisors-hop
+  setPreference: false # Scp added
+  overrideConsoleVisibility: false # Scp added
   access:
   - Service
   - Lawyer

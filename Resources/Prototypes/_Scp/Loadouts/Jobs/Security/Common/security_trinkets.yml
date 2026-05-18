@@ -1,0 +1,11 @@
+- type: loadout
+  id: ScpLoadoutSecurityWhistle
+  storage:
+    back:
+    - SecurityWhistle
+
+- type: loadout
+  id: ScpLoadoutTourniquet
+  storage:
+    back:
+    - Tourniquet

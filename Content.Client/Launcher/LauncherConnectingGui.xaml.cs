@@ -40,12 +40,16 @@ namespace Content.Client.Launcher
             _clipboard = clipboard;
 
             RobustXamlLoader.Load(this);
+            // Scp added - partial animation control needs dependencies.
+            IoCManager.InjectDependencies(this);
 
             LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);
 
             Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSystem;
 
             ChangeLoginTip();
+            SetAnimation();
+
             RetryButton.OnPressed += ReconnectButtonPressed;
             ReconnectButton.OnPressed += ReconnectButtonPressed;
 
@@ -162,6 +166,7 @@ namespace Content.Client.Launcher
         protected override void FrameUpdate(FrameEventArgs args)
         {
             base.FrameUpdate(args);
+            UpdateAnimation(args);
 
             var button = _state.CurrentPage == LauncherConnecting.Page.ConnectFailed
                 ? RetryButton

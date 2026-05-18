@@ -1,0 +1,9 @@
+ent-ClothingHandsGlovesSecurity = black security gloves
+    .desc = Ordinary black gloves that won't protect you from being fried.
+    .suffix = SCP Security
+ent-ClothingHandsGlovesWinterSecurity = winter security gloves
+    .desc = Winter black gloves that won't protect you from being fried.
+    .suffix = SCP Security
+ent-ClothingHandsGlovesColorBlackAlt = { ent-ClothingHandsGlovesColorBlack }
+    .desc = { ent-ClothingHandsGlovesColorBlack.desc }
+    .suffix = SCP Security

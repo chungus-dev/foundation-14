@@ -28,7 +28,7 @@ public sealed class StaminaComponentTest : GameTest
                 var comp = (StaminaComponent)proto.Components["Stamina"].Component;
 
                 Assert.That(comp.AnimationThreshold,
-                    Is.LessThan(comp.CritThreshold),
+                    Is.LessThan(comp.BaseCritThreshold), // Scp edit - CritThreshold sets on spawn, it can't be modified from YAML so testing it without spawning is bad.
                     $"Animation threshold on {proto.ID} must be less than its crit threshold.");
 
                 // TODO(Kaylie): "value is in range" serializer. Needs some serializationmanager improvements.

@@ -1,0 +1,17 @@
+ent-BoxFolderClipboardWhite = white clipboard
+    .desc = Armament in the hands of advanced Foundation SCP operatives.
+ent-BoxFolderScpBase = { ent-BoxBase }
+    .suffix = SCP
+    .desc = { ent-BoxBase.desc }
+ent-BoxFolderSafe = Safe folder
+    .desc = Folder containing information on a Safe-class object.
+ent-BoxFolderEuclid = Euclid folder
+    .desc = Folder containing information on a Euclid-class object.
+ent-BoxFolderKeter = Keter folder
+    .desc = Folder containing information on a Keter-class object.
+ent-BoxFolderBlueScp = blue folder
+    .desc = A plain blue folder.
+ent-BoxFolderScp = SCP folder
+    .desc = Folder with the Foundation SCP emblem.
+ent-BoxFolderWhiteBlack = black-and-white folder
+    .desc = A stylish folder with a black border.

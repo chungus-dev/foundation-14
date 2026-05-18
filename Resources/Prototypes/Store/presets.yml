@@ -38,8 +38,6 @@
     - SpellbookEvents       #Summon Weapons, Summon Ghosts
     currencyWhitelist:
     - WizCoin
-    expectedFaction:
-    - Wizard
 
 - type: entity
   id: StorePresetChangeling

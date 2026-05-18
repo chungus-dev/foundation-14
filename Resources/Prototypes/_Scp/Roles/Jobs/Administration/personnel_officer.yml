@@ -1,0 +1,58 @@
+- type: job
+  id: PersonnelOfficer
+  name: job-name-personnel-officer
+  description: job-description-personnel-officer
+  playTimeTracker: JobPersonnelOfficer
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: ExternalAdministrativeZoneSecurityService
+    time: 18000
+  - !type:DepartmentTimeRequirement
+    department: MedicalService
+    time: 18000
+  - !type:DepartmentTimeRequirement
+    department: EngineeringTechnicalService
+    time: 18000
+  - !type:DepartmentTimeRequirement
+    department: Administration
+    time: 18000
+  - !type:AgeRequirement
+    requiredAge: 31
+  weight: 950
+  icon: JobPersonnelOfficer
+  supervisors: job-supervisors-director
+  canBeAntag: false
+  displayWeight: 90
+  accessGroups:
+  - PersonnelOfficer
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - FoodAndSanitationService
+      includeJobName: true
+
+- type: startingGear
+  id: PersonnelOfficerGear
+  equipment:
+    eyes: ClothingEyesGlasses
+    jumpsuit: ClothingUniformJumpsuitHoP
+    gloves: ClothingHandsGlovesHop
+    shoes: ClothingShoesColorBrown
+    back: ClothingBackpack
+    id: KeyCardPersonnelOfficer
+    ears: ClothingHeadsetAltAdministration
+    belt: BoxFolderClipboard
+    pocket2: PersonnelOfficerPDA
+  storage:
+    back:
+    - Flash

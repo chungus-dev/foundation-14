@@ -15,17 +15,34 @@ python Tools/Localization/run.py extract-prototypes
 python Tools/Localization/run.py validate
 ```
 
-`extract-prototypes` writes generated entity strings to
-`Resources/Locale/<culture>/_Scp/Prototypes/entities.ftl` and records source hashes in
-`entities.sources.json`. Existing translations are preserved while the source prototype text is unchanged;
-changed source text is reset to English so the next translation run can update it. Generated prototype
-messages that still match the source text are reset before extraction so the translator can pick them up.
+Windows quick translation scripts:
+
+```powershell
+Tools\Localization\translate-scp-ru.cmd
+Tools\Localization\translate-scp-en.cmd
+Tools\Localization\translate-all-ru.cmd
+```
+
+Use `translate-scp-ru.cmd` for fork-owned files in `Resources/Locale/ru-RU/_strings/_scp`
+and `Resources/Locale/ru-RU/_prototypes/_scp`. Use `translate-all-ru.cmd` for every Russian
+`.ftl` file under `Resources/Locale/ru-RU`.
+Use `translate-scp-en.cmd` to translate SCP files from Russian into English; missing `en-US`
+target files are created from the matching `ru-RU` files before translation.
+These scripts accept `-DryRun` for a no-write pass and `-BatchSize <number>` to change how many files
+are passed to one translator process.
+
+`extract-prototypes` writes generated entity strings to the configured prototype output file and records
+source hashes in the configured state file. Existing translations are preserved while the source prototype
+text is unchanged; changed source text is reset to English so the next translation run can update it.
+Generated prototype messages that still match the source text are reset before extraction so the translator
+can pick them up.
 
 `sync-strings --bidirectional` first copies missing source messages into the target culture, then copies
 target-only messages back into the source culture. This keeps fork-owned string additions from existing in
 only one locale.
 
-Fork-owned localization files live under `Resources/Locale/<culture>/_Scp/`.
+Fork-owned localization files live under `Resources/Locale/<culture>/_strings/_scp/` and
+`Resources/Locale/<culture>/_prototypes/_scp/`.
 Single-line upstream edits may use `Scp edit`, and single-line additions may use `Scp added`.
 Use `Scp edit start` / `Scp edit end` and `Scp added start` / `Scp added end` for multi-line edits/additions.
 
@@ -39,12 +56,17 @@ AI translation uses an OpenAI-compatible `/chat/completions` endpoint and reads 
 - `TRANSLATE_AI_COOLDOWN_SECONDS` optional, defaults to `60`
 - `TRANSLATE_AI_TIMEOUT_SECONDS` optional, defaults to `300`
 - `TRANSLATE_AI_MAX_OUTPUT_TOKENS` optional, defaults to `8192`
-- `TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS` optional, defaults to `0` for unlimited invalid-response retries
-- `TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS` optional, defaults to `60`
+- `TRANSLATE_AI_RESPONSE_MAX_ATTEMPTS` optional, defaults to `3`; set to `0` for unlimited invalid-response retries
+- `TRANSLATE_AI_RESPONSE_COOLDOWN_SECONDS` optional, defaults to `0`
 - `LOCALIZATION_CHECKPOINT_FILE_BATCH_SIZE` optional in GitHub Actions, defaults to `10`
 - `LOCALIZATION_TRANSLATION_CHUNK_SIZE` optional in GitHub Actions, defaults to `4000`
 - `LOCALIZATION_TRANSLATION_CONCURRENCY` optional in GitHub Actions, defaults to `2`
 - `LOCALIZATION_MAX_CONTINUATION_ATTEMPTS` optional in GitHub Actions, defaults to `5`
+
+Local runs default to an OpenAI-compatible server at `http://127.0.0.1:8000` with model
+`gpt-5.3-codex-spark`. `TRANSLATE_AI_KEYS` may be omitted for local `127.0.0.1`/`localhost`
+providers; the tool sends a placeholder key because some compatible servers require the
+authorization header to exist.
 
 In GitHub Actions, non-sensitive provider settings should be repository variables or workflow inputs.
 Only API keys and optional proxies should be repository secrets.
@@ -66,7 +88,8 @@ The workflow uses `github.token` only with the GitHub Models endpoint. External 
 OpenRouter free routing can also be used with `TRANSLATE_AI_BASE_URL=https://openrouter.ai/api/v1`,
 the chosen OpenRouter free model ID in `TRANSLATE_AI_MODEL`, and an OpenRouter API key in
 `TRANSLATE_AI_KEYS`.
-For fully local inference, run Ollama or LM Studio and point `TRANSLATE_AI_BASE_URL` at their local `/v1` endpoint.
+For fully local inference with another server, override `TRANSLATE_AI_BASE_URL` and `TRANSLATE_AI_MODEL`
+as needed.
 
 The AI provider is allowed to translate values only. File structure, Fluent message IDs, attributes, comments, placeholders, and final formatting are owned by these tools.
 The translator rewrites messages that still match the source text and messages that are visibly in the wrong language for the target culture, including generated prototype messages.

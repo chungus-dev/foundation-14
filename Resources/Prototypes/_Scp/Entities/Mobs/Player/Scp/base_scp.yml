@@ -1,0 +1,178 @@
+# Пресеты для артефактов-сцп.
+# Для разных сцп нужны разные пресеты
+
+- type: entity
+  id: BaseScpArtifact
+  abstract: true
+  components:
+  - type: ContainerContainer
+    containers:
+      node-container: !type:Container
+        showEnts: False
+        occludes: True
+        ents: [ ]
+  - type: RadiationReceiver
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+      Acidic: [ Touch ]
+  - type: XenoArtifact
+    triggerWeights: ScpDefaultTriggers
+
+- type: entity
+  id: BaseScpArtifactMajor
+  parent: BaseScpArtifact
+  abstract: true
+  components:
+  - type: XenoArtifact
+    nodeCount:
+      min: 9
+      max: 13
+    effectsTable: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: ScpArtifactEffectsDefaultTable
+        weight: 3
+      - !type:NestedSelector
+        tableId: ScpArtifactEffectsUltraFunnyTable
+        weight: 1
+  - type: ResearchClient
+
+- type: entity
+  id: BaseScpArtifactMinor
+  parent: BaseScpArtifact
+  abstract: true
+  components:
+  - type: XenoArtifact
+    nodeCount:
+      min: 3
+      max: 5
+    effectsTable: !type:NestedSelector
+      tableId: ScpArtifactEffectsDefaultTable
+  - type: ResearchClient
+
+- type: entity
+  id: BaseFriendlyScpArtifactMajor
+  parent: BaseScpArtifact
+  abstract: true
+  components:
+  - type: XenoArtifact
+    nodeCount:
+      min: 4
+      max: 8
+    effectsTable: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: ScpArtifactEffectsDefaultFriendlyTable
+        weight: 3
+      - !type:NestedSelector
+        tableId: ScpArtifactEffectsUltraFunnyFriendlyTable
+        weight: 1
+  - type: ResearchClient
+
+- type: entity
+  id: BaseFriendlyScpArtifactMinor
+  parent: BaseScpArtifact
+  abstract: true
+  components:
+  - type: XenoArtifact
+    nodeCount:
+      min: 3
+      max: 5
+    effectsTable: !type:NestedSelector
+      tableId: ScpArtifactEffectsDefaultFriendlyTable
+  - type: ResearchClient
+
+# Приколы-помогаторы с базовыми компонентами
+
+- type: entity
+  abstract: true
+  parent:
+  - BaseItem
+  - BaseScpArtifactMinor
+  id: BaseItemScp
+  components:
+  - type: Scp
+    class: Neutralized
+  - type: Damageable
+  # - type: DamageOverlay # SCP port: component unavailable in Foundation14
+    # damagePopupType: SmallFloating
+    # isStructure: true
+
+- type: entity # Базовый Entity для BaseScp и BaseScpFriendly
+  abstract: true
+  parent:
+  - BaseSimpleMob
+  - MobFlammable
+  id: BaseScpComponents
+  components:
+  - type: Scp
+    class: Neutralized
+  - type: ScpRestriction
+#  - type: FootprintEmitter # SCP port: component unavailable in Foundation14
+  - type: ZombieImmune # ебало игроков представили?
+  - type: FlashImmunity
+    showInExamine: false
+  - type: StationRecordKeyStorage
+#  - type: GhostPanelAntagonistMarker # SCP port: component unavailable in Foundation14
+#    name: ghost-panel-antagonist-scp-name
+#    description: ghost-panel-antagonist-scp-description
+#    priority: -10
+  - type: NpcFactionMember
+    factions:
+    - SCPs
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 99999
+      behaviors:
+      - !type:GibBehavior { }
+      - !type:PlaySoundBehavior
+        sound: !type:SoundPathSpecifier
+          path: /Audio/_Scp/demon-dying.ogg
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 99999
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          Ash:
+            min: 10
+            max: 15
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound: !type:SoundPathSpecifier
+          path: /Audio/_Scp/demon-dying.ogg
+#  - type: ToggleableNightVision # SCP port: component unavailable in Foundation14
+#    effect: ScpEffectNightVision
+  - type: Tag
+    tags:
+    - FootstepSound
+    - CannotSuicide
+    - DoorBumpOpener
+
+- type: entity # Для агрессивных (опасных) SCP
+  abstract: true
+  parent:
+  - BaseScpComponents
+  - BaseScpArtifactMajor
+  id: BaseScp
+  components:
+  - type: FearSource
+    phobiaType: Exoremophobia
+  - type: ScpPossibilities
+  - type: WatchingTarget
+  - type: ProximityReceiver
+
+- type: entity # Для добрых SCP: 131, 999 и т.д.
+  abstract: true
+  parent:
+  - BaseScpComponents
+  - BaseFriendlyScpArtifactMajor
+  id: BaseScpFriendly
+

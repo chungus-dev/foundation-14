@@ -1,0 +1,12 @@
+ent-ScpWindoorAssembly = sliding window frame
+    .desc = It opens, it closes, and you can look right through it!
+ent-ScpWindoorAssemblySecure = armored sliding window frame
+    .desc = It opens, it closes, and you can look right through it! It looks sturdy.
+ent-ScpWindoorAssemblyPlasma = plasma sliding window frame
+    .desc = It opens, it closes, and you can look right through it! It looks violet-, no, pink. Wait...
+ent-ScpWindoorAssemblySecurePlasma = armored plasma sliding window frame
+    .desc = It opens, it closes, and you can look right through it! It looks sturdy and violet-, no, pink. Wait...
+ent-ScpWindoorAssemblyUranium = uranium sliding window frame
+    .desc = It opens, it closes, and you can look right through it! It looks nauseatingly green...
+ent-ScpWindoorAssemblySecureUranium = armored uranium sliding window frame
+    .desc = It opens, it closes, and you can look right through it! It looks sturdy and radioactively lime-green!

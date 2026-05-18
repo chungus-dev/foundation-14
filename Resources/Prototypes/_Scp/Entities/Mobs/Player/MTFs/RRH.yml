@@ -1,0 +1,84 @@
+﻿- type: entity
+  id: RandomHumanoidSpawnerRRHLeader
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertleader
+  - type: RandomHumanoidSpawner
+    settings: RRHLeader
+
+- type: randomHumanoidSettings
+  id: RRHLeader
+  parent: CommonMTFLeader
+  components:
+  - type: GhostRole
+    name: ghost-role-information-mtf-leader-RRH-name
+    description: ghost-role-information-mtf-leader-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: RRHLeader
+  - type: Loadout
+    prototypes: [ RRHLeaderGear ]
+  - type: RandomMetadata
+    nameSegments:
+    - NamesLeader
+    - NamesOperativeLeaderLast
+    nameFormat: name-format-ert
+
+- type: entity
+  id: RandomHumanoidSpawnerRRHSpecialist
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertsecurityeva
+  - type: RandomHumanoidSpawner
+    settings: RRHSpecialist
+
+- type: randomHumanoidSettings
+  id: RRHSpecialist
+  parent: CommonMTFOperative
+  components:
+  - type: GhostRole
+    name: ghost-role-information-mtf-specialist-RRH-name
+    description: ghost-role-information-mtf-specialist-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: RRHSpecialist
+  - type: Loadout
+    prototypes: [ RRHSpecialistGear ]
+
+# Спавнер отряда
+- type: entity
+  id: SpawnerMTFSquadRRH
+  parent: SpawnPointScpBase
+  suffix: RRH
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: RRH
+      sprite: /Textures/_Scp/Interface/Misc/mtf_icons.rsi
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: true
+    table: !type:AllSelector
+      children:
+      - id: RandomHumanoidSpawnerRRHLeader
+      - id: RandomHumanoidSpawnerRRHSpecialist
+        amount: 4
+    offset: 1
+
+# Спавнер, но юзается по кнопке
+- type: entity
+  id: SpawnerMTFSquadRRHSpawnOnTrigger
+  parent: SpawnerOnTriggerMTFBase
+  suffix: RRH | SpawnOnTrigger
+  components:
+  - type: SpawnOnTrigger
+    proto: SpawnerMTFSquadRRH
+  - type: Sprite
+    layers:
+    - state: green
+    - state: RRH
+      sprite: /Textures/_Scp/Interface/Misc/mtf_icons.rsi

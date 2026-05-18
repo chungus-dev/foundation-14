@@ -23,6 +23,9 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
+    #startAnnouncement: station-event-vent-creatures-start-announcement Scp edit
+#    startAudio: Scp edit
+#      path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
     duration: 50
@@ -43,11 +46,14 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
     duration: 50
     minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
-  - type: VentCrittersRule # We don't use Horde here to make RK spawns less predictable.
+  - type: VentCrittersRule
     entries:
     - id: MobMouse
       prob: 0.02
@@ -66,6 +72,9 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
+    #startAnnouncement: station-event-vent-creatures-start-announcement Scp edit
+#    startAudio: Scp edit
+#      path: /Audio/Announcements/attention.ogg
     weight: 6
     duration: 50
   - type: VentCrittersRule
@@ -82,6 +91,9 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
+    #startAnnouncement: station-event-vent-creatures-start-announcement Scp edit
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
     weight: 6
     duration: 50
   - type: VentCrittersRule
@@ -98,6 +110,9 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
     duration: 50
@@ -118,9 +133,6 @@
   id: RandomCritterHorde # My deepest apologies, Mr. Secoff. You just wasted your time :)
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-horde-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6 # Slightly more common than other hordes
     duration: 5
@@ -130,11 +142,6 @@
     table: !type:GroupSelector
       rolls: 3,5
       children:
-      - !type:GroupSelector
-        children: # Increased chances for special snails on purpose. Makes it a bit more interesting.
-        - id: MobSnail
-        - id: MobSnailSpeed
-        - id: MobSnailMoth
       - !type:GroupSelector
         children: # Increased chances for special roaches on purpose. Makes it a bit more interesting.
         - id: MobCockroach

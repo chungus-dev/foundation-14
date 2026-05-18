@@ -12,7 +12,9 @@
     ClothingShoesBootsWork: 3
     ClothingHeadHatHardhatYellow: 3
     ClothingHeadHatHardhatOrange: 3
-    ClothingHeadsetEngineering: 3
+    # Scp edit start
+    ClothingHeadsetEngineeringTechnicalService: 3
+    # Scp edit end
     ClothingOuterWinterEngi: 2
     ClothingNeckScarfStripedOrange: 3
     ClothingShoesBootsWinterEngi: 2

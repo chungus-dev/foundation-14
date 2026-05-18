@@ -1,0 +1,153 @@
+- type: entity
+  id: Scp999
+  suffix: SCP-999
+  parent: BaseScpFriendly
+  components:
+  - type: AutoGhostRole
+    disconnectDelay: 600
+    pollDuration: 900
+    transferDelay: 180
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: _Scp/Mobs/Scp/scp-999.rsi
+    layers:
+    - state: default
+      map: [ "enum.DamageStateVisualLayers.Base", "enum.Scp999States.Default", "movement" ]
+  - type: Item
+    size: Huge
+    sprite: _Scp/Mobs/Scp/scp-999.rsi
+  - type: Clothing
+    sprite: _Scp/Mobs/Scp/scp-999.rsi
+    slots:
+    - HEAD
+  - type: CanEscapeInventory
+  - type: MultiHandedItem
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: movement
+    noMovementLayers:
+      movement:
+        state: default
+  - type: NpcFactionMember
+    factions:
+    - SimpleNeutral # нужно что бы турели не били его т.к. 999 мирный
+  - type: Scp
+    class: Safe
+  - type: ScpRestriction
+    canBePulled: true
+    canMobCollide: true
+  - type: Scp999
+    states:
+      Default: default
+      Wall: wall
+      Rest: rest
+    createJellySound:
+      collection: desecration
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: default
+      Dead:
+        Base: dead
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 80
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - None
+        layer:
+        - None
+        density: 1000
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 4
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Effects/Footsteps/slime1.ogg
+      params:
+        volume: 3
+  - type: Damageable
+    damageModifierSet: SCP-999
+  - type: InteractionPopup
+    interactDelay: 0.5
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      collection: HappyScp999
+    successChance: 1
+  - type: ScpAnnounceOnSpawn
+    text: scp999-announce-on-spawn
+    channels:
+    - ScientificService
+    - HeavyContainmentSecurityService
+  - type: SleepEmitSound
+    snore: /Audio/Voice/Misc/silly_snore.ogg
+    interval: 10
+  - type: AnyDamageSound
+    sound:
+      collection: HurtScp999
+      params:
+        volume: 4
+        maxDistance: 8
+  - type: EmitSoundRandomly
+    sound:
+      collection: IdleScp999
+      params:
+        maxDistance: 6
+  - type: Puller
+    needsHands: false
+  - type: Speech
+    speechSounds: Scp999Speech
+    speechVerb: SmallMob
+    allowedEmotes: [ 'Squeak' ]
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: ReplacementAccent
+    accent: mouse
+  - type: Hunger
+  - type: Reflect
+    reflectProb: 0.2
+    reflects:
+    - Energy
+    - NonEnergy
+#  - type: FootprintEmitter # SCP port: component unavailable in Foundation14
+#    walkStepInterval: 0.3
+#    leftBareFootState:
+#    - dragging-1
+#    - dragging-2
+#    rightBareFootState:
+#    - dragging-1
+#    - dragging-2
+  - type: ActionGrant
+    actions:
+    - Scp999Wallify
+    - Scp999Rest
+  - type: GuideHelp
+    guides:
+    - ScpResearch
+    - ScpResearchAdvanced
+
+- type: speechSounds
+  id: Scp999Speech
+  saySound:
+    collection: IdleScp999
+  askSound:
+    collection: IdleScp999
+  exclaimSound:
+    collection: IdleScp999

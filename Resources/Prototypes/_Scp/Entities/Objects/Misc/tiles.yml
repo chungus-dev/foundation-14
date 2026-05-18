@@ -1,0 +1,966 @@
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: ScpFloorTileItemSteel
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel
+  - type: Item
+    size: Normal
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteel
+  - type: Stack
+    stackType: ScpFloorTileSteel
+  - type: Construction
+    graph: ScpTileSteel
+    node: scpsteeltile
+
+- type: entity
+  name: steel tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelDiagonal
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_diagonal
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorSteelDiagonal
+  - type: Stack
+    stackType: ScpFloorTileSteelDiagonal
+
+- type: entity
+  name: steel tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelHalfMono
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_half_mono
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorSteelHalfMono
+  - type: Stack
+    stackType: ScpFloorTileSteelHalfMono
+
+- type: entity
+  name: steel tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelHalfMonoVertical
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_half_mono_vertical
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorSteelHalfMonoVertical
+  - type: Stack
+    stackType: ScpFloorTileSteelHalfMonoVertical
+
+- type: entity
+  name: steel tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelHerringbone
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_herringbone
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorSteelHerringbone
+  - type: Stack
+    stackType: ScpFloorTileSteelHerringbone
+
+- type: entity
+  name: steel tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelMini
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_mini
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorSteelMini
+  - type: Stack
+    stackType: ScpFloorTileSteelMini
+
+- type: entity
+  name: steel tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelMono
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_mono
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorSteelMono
+  - type: Stack
+    stackType: ScpFloorTileSteelMono
+
+- type: entity
+  name: steel tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteeloffset
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_offset
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorSteeloffset
+  - type: Stack
+    stackType: ScpFloorTileSteelOffset
+
+- type: entity
+  name: steel tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelPavement
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_pavement
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorSteelPavement
+  - type: Stack
+    stackType: ScpFloorTileSteelPavement
+
+- type: entity
+  name: steel tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelPavementVertical
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_pavement_vertical
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorSteelPavementVertical
+  - type: Stack
+    stackType: ScpFloorTileSteelPavementVertical
+
+- type: entity
+  name: dark tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemDark
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: dark
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorDark
+  - type: Stack
+    stackType: ScpFloorTileDark
+  - type: Construction
+    graph: ScpTileDark
+    node: scpdarktile
+
+- type: entity
+  name: dark tile
+  parent: ScpFloorTileItemDark
+  id: ScpFloorTileItemDarkDiagonal
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: dark_diagonal
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorDarkDiagonal
+  - type: Stack
+    stackType: ScpFloorTileDarkDiagonal
+
+- type: entity
+  name: dark tile
+  parent: ScpFloorTileItemDark
+  id: ScpFloorTileItemDarkHalfMono
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: dark_half_mono
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorDarkHalfMono
+  - type: Stack
+    stackType: ScpFloorTileDarkHalfMono
+
+- type: entity
+  name: dark tile
+  parent: ScpFloorTileItemDark
+  id: ScpFloorTileItemDarkHalfMonoVertical
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: dark_half_mono_vertical
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorDarkHalfMonoVertical
+  - type: Stack
+    stackType: ScpFloorTileDarkHalfMonoVertical
+
+- type: entity
+  name: dark tile
+  parent: ScpFloorTileItemDark
+  id: ScpFloorTileItemDarkHerringbone
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: dark_herringbone
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorDarkHerringbone
+  - type: Stack
+    stackType: ScpFloorTileDarkHerringbone
+
+- type: entity
+  name: dark tile
+  parent: ScpFloorTileItemDark
+  id: ScpFloorTileItemDarkMini
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: dark_mini
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorDarkMini
+  - type: Stack
+    stackType: ScpFloorTileDarkMini
+
+- type: entity
+  name: dark tile
+  parent: ScpFloorTileItemDark
+  id: ScpFloorTileItemDarkMono
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: dark_mono
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorDarkMono
+  - type: Stack
+    stackType: ScpFloorTileDarkMono
+
+- type: entity
+  name: dark tile
+  parent: ScpFloorTileItemDark
+  id: ScpFloorTileItemDarkoffset
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: dark_offset
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorDarkoffset
+  - type: Stack
+    stackType: ScpFloorTileDarkOffset
+
+- type: entity
+  name: dark tile
+  parent: ScpFloorTileItemDark
+  id: ScpFloorTileItemDarkPavement
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: dark_pavement
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorDarkPavement
+  - type: Stack
+    stackType: ScpFloorTileDarkPavement
+
+- type: entity
+  name: dark tile
+  parent: ScpFloorTileItemDark
+  id: ScpFloorTileItemDarkPavementVertical
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: dark_pavement_vertical
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorDarkPavementVertical
+  - type: Stack
+    stackType: ScpFloorTileDarkPavementVertical
+
+- type: entity
+  name: white tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemWhite
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: white
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorWhite
+  - type: Stack
+    stackType: ScpFloorTileWhite
+  - type: Construction
+    graph: ScpTileWhite
+    node: scpwhitetile
+
+- type: entity
+  name: white tile
+  parent: ScpFloorTileItemWhite
+  id: ScpFloorTileItemWhiteDiagonal
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: white_diagonal
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorWhiteDiagonal
+  - type: Stack
+    stackType: ScpFloorTileWhiteDiagonal
+
+- type: entity
+  name: white tile
+  parent: ScpFloorTileItemWhite
+  id: ScpFloorTileItemWhiteHalfMono
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: white_half_mono
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorWhiteHalfMono
+  - type: Stack
+    stackType: ScpFloorTileWhiteHalfMono
+
+- type: entity
+  name: white tile
+  parent: ScpFloorTileItemWhite
+  id: ScpFloorTileItemWhiteHalfMonoVertical
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: white_half_mono_vertical
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorWhiteHalfMonoVertical
+  - type: Stack
+    stackType: ScpFloorTileWhiteHalfMonoVertical
+
+- type: entity
+  name: white tile
+  parent: ScpFloorTileItemWhite
+  id: ScpFloorTileItemWhiteHerringbone
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: white_herringbone
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorWhiteHerringbone
+  - type: Stack
+    stackType: ScpFloorTileWhiteHerringbone
+
+- type: entity
+  name: white tile
+  parent: ScpFloorTileItemWhite
+  id: ScpFloorTileItemWhiteMini
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: white_mini
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorWhiteMini
+  - type: Stack
+    stackType: ScpFloorTileWhiteMini
+
+- type: entity
+  name: white tile
+  parent: ScpFloorTileItemWhite
+  id: ScpFloorTileItemWhiteMono
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: white_mono
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorWhiteMono
+  - type: Stack
+    stackType: ScpFloorTileWhiteMono
+
+- type: entity
+  name: white tile
+  parent: ScpFloorTileItemWhite
+  id: ScpFloorTileItemWhiteoffset
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: white_offset
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorWhiteoffset
+  - type: Stack
+    stackType: ScpFloorTileWhiteOffset
+
+- type: entity
+  name: white tile
+  parent: ScpFloorTileItemWhite
+  id: ScpFloorTileItemWhitePavement
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: white_pavement
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorWhitePavement
+  - type: Stack
+    stackType: ScpFloorTileWhitePavement
+
+- type: entity
+  name: white tile
+  parent: ScpFloorTileItemWhite
+  id: ScpFloorTileItemWhitePavementVertical
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: white_pavement_vertical
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorWhitePavementVertical
+  - type: Stack
+    stackType: ScpFloorTileWhitePavementVertical
+
+- type: entity
+  name: blue tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemBlue
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: blue
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorBlue
+  - type: Stack
+    stackType: ScpFloorTileBlue
+
+- type: entity
+  name: green tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemGreen
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: green
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorGreen
+  - type: Stack
+    stackType: ScpFloorTileGreen
+
+- type: entity
+  name: checker white tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemCheckerWhite
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: checker_white
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorCheckerWhite
+  - type: Stack
+    stackType: ScpFloorTileCheckerWhite
+
+- type: entity
+  name: checker steel tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemCheckerSteel
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: checker_steel
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorCheckerSteel
+  - type: Stack
+    stackType: ScpFloorTileCheckerSteel
+
+- type: entity
+  name: checker dark tile
+  parent: ScpFloorTileItemCheckerSteel
+  id: ScpFloorTileItemCheckerDark
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: checker_dark
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorCheckerDark
+  - type: Stack
+    stackType: ScpFloorTileCheckerDark
+
+- type: entity
+  name: atmos tile
+  parent: ScpFloorTileItemCheckerSteel
+  id: ScpFloorTileItemDepartmentAtmos
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: department_atmos
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorDepartmentAtmos
+  - type: Stack
+    stackType: ScpFloorTileDepartmentAtmos
+
+- type: entity
+  name: cargo tile
+  parent: ScpFloorTileItemCheckerSteel
+  id: ScpFloorTileItemDepartmentCargo
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: department_cargo
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorDepartmentCargo
+  - type: Stack
+    stackType: ScpFloorTileDepartmentCargo
+
+- type: entity
+  name: command tile
+  parent: ScpFloorTileItemCheckerSteel
+  id: ScpFloorTileItemDepartmentCom
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: department_com
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorDepartmentCom
+  - type: Stack
+    stackType: ScpFloorTileDepartmentCom
+
+- type: entity
+  name: engineering tile
+  parent: ScpFloorTileItemCheckerSteel
+  id: ScpFloorTileItemDepartmentEng
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: department_eng
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorDepartmentEng
+  - type: Stack
+    stackType: ScpFloorTileDepartmentEng
+
+- type: entity
+  name: medical tile
+  parent: ScpFloorTileItemCheckerSteel
+  id: ScpFloorTileItemDepartmentMed
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: department_med
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorDepartmentMed
+  - type: Stack
+    stackType: ScpFloorTileDepartmentMed
+
+- type: entity
+  name: cience tile
+  parent: ScpFloorTileItemCheckerSteel
+  id: ScpFloorTileItemDepartmentRnd
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: department_rnd
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorDepartmentRnd
+  - type: Stack
+    stackType: ScpFloorTileDepartmentRnd
+
+- type: entity
+  name: security tile
+  parent: ScpFloorTileItemCheckerSteel
+  id: ScpFloorTileItemDepartmentSec
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: department_sec
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorDepartmentSec
+  - type: Stack
+    stackType: ScpFloorTileDepartmentSec
+
+- type: entity
+  name: service tile
+  parent: ScpFloorTileItemCheckerSteel
+  id: ScpFloorTileItemDepartmentSer
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: department_ser
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorDepartmentSer
+  - type: Stack
+    stackType: ScpFloorTileDepartmentSer
+
+- type: entity
+  name: steel grille
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrille1
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_1
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrille1
+  - type: Stack
+    stackType: ScpFloorTileSteelGrille1
+
+- type: entity
+  name: steel grille
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrille2
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_2
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrille2
+  - type: Stack
+    stackType: ScpFloorTileSteelGrille2
+
+- type: entity
+  name: steel grille
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrille3
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_3
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrille3
+  - type: Stack
+    stackType: ScpFloorTileSteelGrille3
+
+- type: entity
+  name: steel grille
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrille4
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_4
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrille4
+  - type: Stack
+    stackType: ScpFloorTileSteelGrille4
+
+- type: entity
+  name: steel grille mono
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrilleMono1
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_mono_1
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrilleMono1
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleMono1
+
+- type: entity
+  name: steel grille mono
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrilleMono2
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_mono_2
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrilleMono2
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleMono2
+
+- type: entity
+  name: steel grille mono
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrilleMono3
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_mono_3
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrilleMono3
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleMono3
+
+- type: entity
+  name: steel grille mono
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrilleMono4
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_mono_4
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrilleMono4
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleMono4
+
+- type: entity
+  name: steel grille offset
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrilleOffset1
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_offset_1
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrilleOffset1
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleOffset1
+
+- type: entity
+  name: steel grille offset
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrilleOffset2
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_offset_2
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrilleOffset2
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleOffset2
+
+- type: entity
+  name: steel grille offset
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrilleOffset3
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_offset_3
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrilleOffset3
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleOffset3
+
+- type: entity
+  name: steel grille offset
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemSteelGrilleOffset4
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: steel_offset_4
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorSteelGrilleOffset4
+  - type: Stack
+    stackType: ScpFloorTileSteelGrilleOffset4
+
+- type: entity
+  name: concrete tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemConcrete
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: concrete
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorConcrete
+  - type: Stack
+    stackType: ScpFloorTileConcrete
+
+- type: entity
+  name: concrete mono tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemConcreteMono
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: concrete_mono
+  - type: FloorTile
+    outputs:
+      - ScpPlating
+      - ScpFloorConcreteMono
+  - type: Stack
+    stackType: ScpFloorTileConcreteMono
+  - type: Construction
+    graph: ScpTileConcrete
+    node: scpconcretetile
+
+# Безэховая камера(SCP-096)
+
+- type: entity
+  name: anechoic chamber tile
+  parent: ScpFloorTileItemSteel
+  id: ScpFloorTileItemAnechoic1
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: anechoic_1
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorAnechoic1
+  - type: Stack
+    stackType: ScpFloorTileAnechoic1
+
+- type: entity
+  parent: ScpFloorTileItemAnechoic1
+  id: ScpFloorTileItemAnechoic2
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: anechoic_2
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorAnechoic2
+  - type: Stack
+    stackType: ScpFloorTileAnechoic2
+
+- type: entity
+  parent: ScpFloorTileItemAnechoic1
+  id: ScpFloorTileItemAnechoic3
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/tile.rsi
+    state: anechoic_3
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorAnechoic3
+  - type: Stack
+    stackType: ScpFloorTileAnechoic3
+
+# Wood
+
+- type: entity
+  id: ScpFloorTileItemWood
+  parent: FloorTileItemWood
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/wood.rsi
+  - type: Item
+    sprite: _Scp/Objects/Tiles/wood.rsi
+  - type: FloorTile
+    outputs:
+    - ScpPlating # Scp edit
+    - ScpFloorWood
+  - type: Stack
+    stackType: ScpFloorTileWood
+  - type: Construction
+    graph: ScpTileWood
+    node: scpwoodtile
+
+- type: entity
+  id: ScpFloorTileItemWoodLarge
+  parent: FloorTileItemWoodLarge
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/wood.rsi
+  - type: Item
+    sprite: _Scp/Objects/Tiles/wood.rsi
+  - type: Stack
+    stackType: ScpFloorTileWoodLarge
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorWoodLarge
+  - type: Construction
+    graph: ScpTileWoodLarge
+    node: scpwoodtilelarge
+
+- type: entity
+  id: ScpFloorTileItemWoodPattern
+  parent: FloorTileItemWoodPattern
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Tiles/wood.rsi
+  - type: Item
+    sprite: _Scp/Objects/Tiles/wood.rsi
+  - type: Stack
+    stackType: ScpFloorTileWoodPattern
+  - type: FloorTile
+    outputs:
+    - ScpPlating
+    - ScpFloorWoodPattern

@@ -53,7 +53,7 @@
     state: checker-dark
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelCheckerDark
   - type: Stack
     stackType: FloorTileSteelCheckerDark
@@ -67,7 +67,7 @@
     state: checker-light
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelCheckerLight
   - type: Stack
     stackType: FloorTileSteelCheckerLight
@@ -83,7 +83,7 @@
     heldPrefix: dark
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorDark
   - type: Stack
     stackType: FloorTileDark
@@ -100,7 +100,7 @@
     state: dark-diagonal-mini
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorDarkDiagonalMini
   - type: Stack
     stackType: FloorTileDarkDiagonalMini
@@ -114,7 +114,7 @@
     state: dark-diagonal
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorDarkDiagonal
   - type: Stack
     stackType: FloorTileDarkDiagonal
@@ -128,7 +128,7 @@
     state: dark-herringbone
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorDarkHerringbone
   - type: Stack
     stackType: FloorTileDarkHerringbone
@@ -142,7 +142,7 @@
     state: dark-mini
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorDarkMini
   - type: Stack
     stackType: FloorTileDarkMini
@@ -156,7 +156,7 @@
     state: dark-mono
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorDarkMono
   - type: Stack
     stackType: FloorTileDarkMono
@@ -170,7 +170,7 @@
     state: dark-pavement
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorDarkPavement
   - type: Stack
     stackType: FloorTileDarkPavement
@@ -184,7 +184,7 @@
     state: dark-pavement-vertical
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorDarkPavementVertical
   - type: Stack
     stackType: FloorTileDarkPavementVertical
@@ -240,7 +240,7 @@
     state: dark-offset
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorDarkOffset
   - type: Stack
     stackType: FloorTileDarkOffset
@@ -256,11 +256,11 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteel
   - type: Stack
     stackType: FloorTileSteel
-  - type: Construction
+  - type: Construction # Scp edit - keep vanilla TileSteel graph valid
     graph: TileSteel
     node: steeltile
 
@@ -273,7 +273,7 @@
     state: steel-offset
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelOffset
   - type: Stack
     stackType: FloorTileSteelOffset
@@ -287,7 +287,7 @@
     state: steel-diagonal-mini
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelDiagonalMini
   - type: Stack
     stackType: FloorTileSteelDiagonalMini
@@ -301,7 +301,7 @@
     state: steel-diagonal
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelDiagonal
   - type: Stack
     stackType: FloorTileSteelDiagonal
@@ -357,7 +357,7 @@
     state: steel-herringbone
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelHerringbone
   - type: Stack
     stackType: FloorTileSteelHerringbone
@@ -371,7 +371,7 @@
     state: steel-mini
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelMini
   - type: Stack
     stackType: FloorTileSteelMini
@@ -385,7 +385,7 @@
     state: steel-mono
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelMono
   - type: Stack
     stackType: FloorTileSteelMono
@@ -399,7 +399,7 @@
     state: steel-pavement
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelPavement
   - type: Stack
     stackType: FloorTileSteelPavement
@@ -413,7 +413,7 @@
     state: steel-pavement-vertical
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelPavementVertical
   - type: Stack
     stackType: FloorTileSteelPavementVertical
@@ -429,7 +429,7 @@
     heldPrefix: white
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorWhite
   - type: Stack
     stackType: FloorTileWhite
@@ -446,7 +446,7 @@
     state: white-offset
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorWhiteOffset
   - type: Stack
     stackType: FloorTileWhiteOffset
@@ -460,7 +460,7 @@
     state: white-diagonal-mini
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorWhiteDiagonalMini
   - type: Stack
     stackType: FloorTileWhiteDiagonalMini
@@ -474,7 +474,7 @@
     state: white-diagonal
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorWhiteDiagonal
   - type: Stack
     stackType: FloorTileWhiteDiagonal
@@ -488,7 +488,7 @@
     state: white-herringbone
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorWhiteHerringbone
   - type: Stack
     stackType: FloorTileWhiteHerringbone
@@ -502,7 +502,7 @@
     state: white-mini
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorWhiteMini
   - type: Stack
     stackType: FloorTileWhiteMini
@@ -516,7 +516,7 @@
     state: white-mono
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorWhiteMono
   - type: Stack
     stackType: FloorTileWhiteMono
@@ -530,7 +530,7 @@
     state: white-pavement
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorWhitePavement
   - type: Stack
     stackType: FloorTileWhitePavement
@@ -544,7 +544,7 @@
     state: white-pavement-vertical
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorWhitePavementVertical
   - type: Stack
     stackType: FloorTileWhitePavementVertical
@@ -602,7 +602,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorMetalDiamond
   - type: Stack
     stackType: FloorTileMetalDiamond
@@ -614,6 +614,7 @@
   name: wood floor
   parent: FloorTileItemBase
   id: FloorTileItemWood
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: wood
@@ -640,7 +641,7 @@
     heldPrefix: dark
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorTechMaint
   - type: Stack
     stackType: FloorTileTechmaint
@@ -656,7 +657,7 @@
     heldPrefix: dark
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorTechMaintDark
   - type: Stack
     stackType: FloorTileTechmaintDark
@@ -674,7 +675,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorMono
   - type: Stack
     stackType: FloorTileMono
@@ -690,7 +691,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorLino
   - type: Stack
     stackType: FloorTileLino
@@ -706,7 +707,7 @@
     heldPrefix: brass
   - type: FloorTile
     outputs:
-      - PlatingBrass
+      - ScpPlating # Scp editBrass
       - FloorBrassFilled
   - type: Stack
     stackType: FloorTileBrassFilled
@@ -725,7 +726,7 @@
     heldPrefix: brass
   - type: FloorTile
     outputs:
-      - PlatingBrass
+      - ScpPlating # Scp editBrass
       - FloorBrassReebe
   - type: Stack
     stackType: FloorTileBrassReebe
@@ -744,7 +745,7 @@
     heldPrefix: dirty
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelDirty
   - type: Stack
     stackType: FloorTileDirty
@@ -760,7 +761,7 @@
     heldPrefix: dark
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorElevatorShaft
   - type: Stack
     stackType: FloorTileElevatorShaft
@@ -776,7 +777,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorRockVault
   - type: Stack
     stackType: FloorTileRockVault
@@ -792,7 +793,7 @@
     heldPrefix: carpet-blue
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorBlue
   - type: Stack
     stackType: FloorTileBlue
@@ -808,7 +809,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSteelLime
   - type: Stack
     stackType: FloorTileLime
@@ -824,7 +825,7 @@
     heldPrefix: mining
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorMining
   - type: Stack
     stackType: FloorTileMining
@@ -840,7 +841,7 @@
     heldPrefix: miningdark
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorMiningDark
   - type: Stack
     stackType: FloorTileMiningDark
@@ -856,7 +857,7 @@
     heldPrefix: mininglight
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorMiningLight
   - type: Stack
     stackType: FloorTileMiningLight
@@ -873,7 +874,7 @@
     heldPrefix: showroom
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorFreezer
   - type: Stack
     stackType: FloorTileFreezer
@@ -889,7 +890,7 @@
     heldPrefix: showroom
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorShowroom
   - type: Stack
     stackType: FloorTileShowroom
@@ -905,7 +906,7 @@
     heldPrefix: hydro
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorHydro
   - type: Stack
     stackType: FloorTileHydro
@@ -921,7 +922,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorBar
   - type: Stack
     stackType: FloorTileBar
@@ -937,7 +938,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorClown
   - type: Stack
     stackType: FloorTileClown
@@ -953,7 +954,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorMime
   - type: Stack
     stackType: FloorTileMime
@@ -969,7 +970,7 @@
     heldPrefix: dark
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorKitchen
   - type: Stack
     stackType: FloorTileKitchen
@@ -985,7 +986,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorLaundry
   - type: Stack
     stackType: FloorTileLaundry
@@ -1002,7 +1003,7 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorConcrete
   - type: Stack
     stackType: FloorTileConcrete
@@ -1016,7 +1017,7 @@
     state: concrete-mono
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorConcreteMono
   - type: Stack
     stackType: FloorTileConcreteMono
@@ -1030,7 +1031,7 @@
     state: concrete-smooth
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorConcreteSmooth
   - type: Stack
     stackType: FloorTileConcreteSmooth
@@ -1046,7 +1047,7 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorGrayConcrete
   - type: Stack
     stackType: FloorTileGrayConcrete
@@ -1060,7 +1061,7 @@
     state: grayconcrete-mono
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorGrayConcreteMono
   - type: Stack
     stackType: FloorTileGrayConcreteMono
@@ -1074,7 +1075,7 @@
     state: grayconcrete-smooth
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorGrayConcreteSmooth
   - type: Stack
     stackType: FloorTileGrayConcreteSmooth
@@ -1090,7 +1091,7 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorOldConcrete
   - type: Stack
     stackType: FloorTileOldConcrete
@@ -1104,7 +1105,7 @@
     state: oldconcrete-mono
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorOldConcreteMono
   - type: Stack
     stackType: FloorTileOldConcreteMono
@@ -1118,11 +1119,12 @@
     state: oldconcrete-smooth
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorOldConcreteSmooth
   - type: Stack
     stackType: FloorTileOldConcreteSmooth
 
+# Carpets
 - type: entity
   parent: FloorTileItemBase
   id: FloorTileItemIronsandConcrete
@@ -1179,7 +1181,7 @@
     heldPrefix: arcadeblue
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorArcadeBlue
   - type: Stack
     stackType: FloorTileStackArcadeBlue
@@ -1195,7 +1197,7 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorArcadeBlue2
   - type: Stack
     stackType: FloorTileStackArcadeBlue2
@@ -1211,7 +1213,7 @@
     heldPrefix: arcadered
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorArcadeRed
   - type: Stack
     stackType: FloorTileStackArcadeRed
@@ -1227,7 +1229,7 @@
     heldPrefix: eighties
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorEighties
   - type: Stack
     stackType: FloorTileStackEighties
@@ -1243,7 +1245,7 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorCarpetClown
   - type: Stack
     stackType: FloorTileStackCarpetClown
@@ -1259,7 +1261,7 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorCarpetOffice
   - type: Stack
     stackType: FloorTileStackCarpetOffice
@@ -1275,7 +1277,7 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorBoxing
   - type: Stack
     stackType: FloorTileStackBoxing
@@ -1291,7 +1293,7 @@
     heldPrefix: generic
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorGym
   - type: Stack
     stackType: FloorTileStackGym
@@ -1308,7 +1310,7 @@
     heldPrefix: shuttlewhite
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorShuttleWhite
   - type: Stack
     stackType: FloorTileStackShuttleWhite
@@ -1324,7 +1326,7 @@
     heldPrefix: shuttleblue
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorShuttleBlue
   - type: Stack
     stackType: FloorTileStackShuttleBlue
@@ -1340,7 +1342,7 @@
     heldPrefix: shuttleorange
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorShuttleOrange
   - type: Stack
     stackType: FloorTileStackShuttleOrange
@@ -1356,7 +1358,7 @@
     heldPrefix: shuttlepurple
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorShuttlePurple
   - type: Stack
     stackType: FloorTileStackShuttlePurple
@@ -1372,7 +1374,7 @@
     heldPrefix: shuttlered
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorShuttleRed
   - type: Stack
     stackType: FloorTileStackShuttleRed
@@ -1388,7 +1390,7 @@
     heldPrefix: shuttlegrey
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorShuttleGrey
   - type: Stack
     stackType: FloorTileStackShuttleGrey
@@ -1404,7 +1406,7 @@
     heldPrefix: shuttleblack
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorShuttleBlack
   - type: Stack
     stackType: FloorTileStackShuttleBlack
@@ -1421,7 +1423,7 @@
     heldPrefix: gold
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorGold
   - type: Stack
     stackType: FloorTileGold
@@ -1437,7 +1439,7 @@
     heldPrefix: silver
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSilver
   - type: Stack
     stackType: FloorTileSilver
@@ -1454,7 +1456,7 @@
     heldPrefix: gcircuit
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorGreenCircuit
   - type: Stack
     stackType: FloorTileGCircuit
@@ -1470,7 +1472,7 @@
     heldPrefix: bcircuit
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorBlueCircuit
   - type: Stack
     stackType: FloorTileBCircuit
@@ -1486,7 +1488,7 @@
     heldPrefix: rcircuit
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorRedCircuit
   - type: Stack
     stackType: FloorTileRCircuit
@@ -1503,7 +1505,7 @@
     heldPrefix: grass
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorGrass
   - type: Stack
     stackType: FloorTileGrass
@@ -1519,7 +1521,7 @@
     heldPrefix: grassjungle
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorGrassJungle
   - type: Stack
     stackType: FloorTileGrassJungle
@@ -1535,7 +1537,7 @@
     heldPrefix: snow
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorSnow
   - type: Stack
     stackType: FloorTileSnow
@@ -1544,6 +1546,7 @@
   name: wood pattern floor
   parent: FloorTileItemBase
   id: FloorTileItemWoodPattern
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: woodpatternfloor
@@ -1567,7 +1570,7 @@
     heldPrefix: meat
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorFlesh
   - type: Stack
     stackType: FloorTileFlesh
@@ -1586,7 +1589,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorTechMaint2
   - type: Stack
     stackType: FloorTileSteelMaint
@@ -1602,7 +1605,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorTechMaint3
   - type: Stack
     stackType: FloorTileGratingMaint
@@ -1638,7 +1641,7 @@
     heldPrefix: grass
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorAstroGrass
   - type: Stack
     stackType: FloorTileAstroGrass
@@ -1655,10 +1658,10 @@
     heldPrefix: grass
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorMowedAstroGrass
   - type: Stack
-    stackType: FloorTileMowedAstroGrass
+    stackType: FloorTileAstroGrass
 
 - type: entity
   id: FloorTileItemJungleAstroGrass
@@ -1672,10 +1675,10 @@
     heldPrefix: grass
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorJungleAstroGrass
   - type: Stack
-    stackType: FloorTileJungleAstroGrass
+    stackType: FloorTileAstroGrass
 
 - type: entity
   parent: FloorTileItemBase
@@ -1723,7 +1726,7 @@
     heldPrefix: snow
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorAstroIce
   - type: Stack
     stackType: FloorTileAstroIce
@@ -1740,7 +1743,7 @@
     heldPrefix: snow
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorAstroSnow
   - type: Stack
     stackType: FloorTileAstroSnow
@@ -1757,7 +1760,7 @@
     heldPrefix: asteroid
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorAstroAsteroidSand
   - type: Stack
     stackType: FloorTileAstroAsteroidSand
@@ -1774,7 +1777,7 @@
     heldPrefix: asteroid
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorAstroAsteroidSandBorderless
   - type: Stack
     stackType: FloorTileAstroAsteroidSand
@@ -1834,6 +1837,7 @@
   name: large wood floor
   parent: FloorTileItemBase
   id: FloorTileItemWoodLarge
+  categories: [ HideSpawnMenu ] # Scp edit
   components:
   - type: Sprite
     state: wood-large
@@ -1863,7 +1867,7 @@
     heldPrefix: white-marble
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorWhiteMarble
   - type: Stack
     stackType: FloorTileWhiteMarble
@@ -1880,7 +1884,7 @@
     heldPrefix: dark-marble
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorDarkMarble
   - type: Stack
     stackType: FloorTileDarkMarble
@@ -1897,7 +1901,7 @@
     heldPrefix: plasmarble
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorPlasmaMarble
   - type: Stack
     stackType: FloorTilePlasmaMarble
@@ -1918,7 +1922,7 @@
     heldPrefix: uranium-marble
   - type: FloorTile
     outputs:
-      - Plating
+      - ScpPlating # Scp edit
       - FloorUraniumMarble
   - type: Stack
     stackType: FloorTileUraniumMarble
@@ -1944,7 +1948,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorXeno
   - type: Stack
     stackType: FloorTileXeno
@@ -1960,7 +1964,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorXenoSteel
   - type: Stack
     stackType: FloorTileXenoSteel
@@ -1976,7 +1980,7 @@
     heldPrefix: steel
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorXenoSteelCorner
   - type: Stack
     stackType: FloorTileXenoSteelCorner
@@ -1992,7 +1996,7 @@
     heldPrefix: dark
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorXenoMaint
   - type: Stack
     stackType: FloorTileXenoMaint
@@ -2006,7 +2010,7 @@
     state: xenoborg-floor
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorXenoborg
   - type: Stack
     stackType: FloorTileXenoborg
@@ -2020,7 +2024,7 @@
     state: dark-squiggly
   - type: FloorTile
     outputs:
-    - Plating
+    - ScpPlating # Scp edit
     - FloorDarkSquiggly
   - type: Stack
     stackType: FloorTileDarkSquiggly

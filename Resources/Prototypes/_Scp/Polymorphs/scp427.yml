@@ -1,0 +1,11 @@
+- type: polymorph
+  id: Scp427Polymorph
+  configuration:
+    entity: MobFleshGolem
+    forced: true
+    transferDamage: true
+    inventory: Drop
+    revertOnDeath: false
+    revertOnCrit: false
+    revertOnDelete: false
+    polymorphPopup: polymorph-popup-scp427

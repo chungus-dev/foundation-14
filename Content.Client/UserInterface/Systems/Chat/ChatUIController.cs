@@ -1,6 +1,8 @@
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
+using Content.Client._Scp.Audio.UIAudio;
+using Content.Client._Scp.Stylesheets.Palette;
 using Content.Client.Administration.Managers;
 using Content.Client.Chat;
 using Content.Client.Chat.Managers;
@@ -20,6 +22,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.Decals;
+using Content.Shared.Examine;
 using Content.Shared.Input;
 using Content.Shared.Radio;
 using Content.Shared.Roles.RoleCodeword;
@@ -66,6 +69,8 @@ public sealed partial class ChatUIController : UIController
     [UISystemDependency] private readonly TransformSystem? _transform = default;
     [UISystemDependency] private readonly MindSystem? _mindSystem = default!;
     [UISystemDependency] private readonly RoleCodewordSystem? _roleCodewordSystem = default!;
+
+    private TypingSoundUIController? _typingSound;
 
     private static readonly ProtoId<ColorPalettePrototype> ChatNamePalette = "ChatNames";
     private string[] _chatNameColors = default!;
@@ -267,6 +272,9 @@ public sealed partial class ChatUIController : UIController
     {
         var chatBox = UIManager.ActiveScreen?.GetWidget<ChatBox>() ?? UIManager.ActiveScreen?.GetWidget<ResizableChatBox>();
 
+        var isResizableChat = UIManager.ActiveScreen?.GetWidget<ResizableChatBox>() != null;
+        opacity = isResizableChat ? opacity : 0f;
+
         var panel = chatBox?.ChatWindowPanel;
         if (panel is null)
             return;
@@ -278,7 +286,7 @@ public sealed partial class ChatUIController : UIController
                  && style is StyleBoxFlat propStyleBoxFlat)
             color = propStyleBoxFlat.BackgroundColor;
         else
-            color = Color.FromHex("#25252ADD");
+            color = ScpPalettes.Primary.Background;
 
         panel.PanelOverride = new StyleBoxFlat
         {
@@ -753,9 +761,12 @@ public sealed partial class ChatUIController : UIController
         {
             var locWarning = Loc.GetString("chat-manager-max-message-length",
                 ("maxMessageLength", MaxMessageLength));
-            box.AddLine(locWarning, Color.Orange);
+            box.AddLine(locWarning, Color.FromHex("#e1e1e1"));
             return;
         }
+
+        _typingSound ??= UIManager.GetUIController<TypingSoundUIController>();
+        _typingSound?.PlayGameChatSubmit(box.ChatInput.Input);
 
         if (prefixChannel != ChatSelectChannel.None)
             channel = prefixChannel;
@@ -820,6 +831,9 @@ public sealed partial class ChatUIController : UIController
 
     public void ProcessChatMessage(ChatMessage msg, bool speechBubble = true)
     {
+        if (!CanHear(_player.LocalEntity, _ent.GetEntity(msg.SenderEntity), msg.Channel))
+            return;
+
         // color the name unless it's something like "the old man"
         if ((msg.Channel == ChatChannel.Local || msg.Channel == ChatChannel.Whisper) && _chatNameColorsEnabled)
         {
@@ -895,6 +909,29 @@ public sealed partial class ChatUIController : UIController
                     AddSpeechBubble(msg, SpeechBubble.SpeechType.Looc);
                 break;
         }
+    }
+
+    private bool CanHear(EntityUid? player, EntityUid sender, ChatChannel channel)
+    {
+        if (channel != ChatChannel.Emotes && channel != ChatChannel.Local && channel != ChatChannel.Whisper)
+            return true;
+
+        if (_examine == null || _transform == null)
+            return false;
+
+        if (!_ent.EntityExists(player))
+            return false;
+
+        if (!_ent.EntityExists(sender))
+            return true;
+
+        if (!_examine.IsOccluded(player.Value))
+            return true;
+
+        if (_examine.InRangeUnOccluded(player.Value, sender))
+            return true;
+
+        return _transform.InRange(player.Value, sender, 2.5f);
     }
 
     public void OnDeleteChatMessagesBy(MsgDeleteChatMessagesBy msg)

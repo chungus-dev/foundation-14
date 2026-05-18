@@ -37,10 +37,11 @@
       - state: inhand-right-mag
 
 - type: entity
-  parent: BaseMagazineMagnum
   id: MagazineMagnum
+  categories: [ HideSpawnMenu ] # Scp edit
   name: pistol magazine (.45 magnum)
-  description: 7-round single stack magazine for large-caliber pistols. Intended to hold general-purpose kinetic ammunition.
+  parent: BaseMagazineMagnum
+  description: 7-round single stack pistol magazine. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnum

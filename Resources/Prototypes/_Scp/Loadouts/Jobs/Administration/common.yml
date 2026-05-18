@@ -1,0 +1,25 @@
+# Уши
+- type: loadout
+  id: ScpLoadoutClothingHeadsetAltAdministration
+  equipment:
+    ears: ClothingHeadsetAltAdministration
+
+# В сумке
+- type: loadout
+  id: ScpLoadoutFlash
+  storage:
+    back:
+    - Flash
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupBackStorageFlashTelebaton
+  name: loadout-group-storage
+  minLimit: 1
+  loadouts:
+  - ScpLoadoutFlash
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupBackStorageFlash
+  name: loadout-group-storage
+  loadouts:
+  - ScpLoadoutFlash

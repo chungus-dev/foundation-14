@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._Scp.Misc;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
 using Content.Shared.Audio;
@@ -50,7 +51,7 @@ public sealed class ContentAudioSystem : SharedContentAudioSystem
             },
             true);
 
-        SubscribeLocalEvent<RoundEndMessageEvent>(OnRoundEnd);
+        SubscribeLocalEvent<RealRoundEndedMessage>(OnRoundEnd);
         SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundCleanup);
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
@@ -84,7 +85,7 @@ public sealed class ContentAudioSystem : SharedContentAudioSystem
         }
     }
 
-    private void OnRoundEnd(RoundEndMessageEvent ev)
+    private void OnRoundEnd(RealRoundEndedMessage ev)
     {
         // The lobby song is set here instead of in RestartRound,
         // because ShowRoundEndScoreboard triggers the start of the music playing

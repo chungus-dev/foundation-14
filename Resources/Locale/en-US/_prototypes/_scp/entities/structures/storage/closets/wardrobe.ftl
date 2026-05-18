@@ -1,0 +1,10 @@
+ent-ScpClosetGastronomicSpecialist = gastronomic specialist closet
+    .desc = A closet for storing food-service staff uniforms and mousetraps.
+ent-ScpClosetJanitor = janitor closet
+    .desc = A closet for storing janitor uniforms and equipment.
+ent-ScpClosetLegal = legal closet
+    .desc = A closet for storing judicial apparel and associated equipment.
+ent-ScpClosetScience = scientific closet
+    .desc = You've read a few science-magazine articles; now it's time for some real work.
+ent-ScpClosetPrison = prison closet
+    .desc = Contains a selection of tidy orange clothing for people who enjoy spending time in the brig.

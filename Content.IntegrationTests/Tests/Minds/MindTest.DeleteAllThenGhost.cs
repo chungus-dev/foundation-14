@@ -1,4 +1,5 @@
 ﻿#nullable enable
+using Robust.Shared.Audio.Components;
 using Robust.Shared.Console;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
@@ -29,7 +30,18 @@ public sealed partial class MindTests
             Console.WriteLine(pair.Client.EntMan.ToPrettyString(ent));
         }
 
-        Assert.That(pair.Client.EntMan.EntityCount, Is.EqualTo(0));
+        // Scp edit start - fix clientside sounds being alive after executing command
+        var validEntitiesCount = 0;
+        foreach (var ent in pair.Client.EntMan.GetEntities())
+        {
+            if (pair.Client.EntMan.HasComponent<AudioComponent>(ent))
+                continue;
+
+            validEntitiesCount++;
+        }
+
+        Assert.That(validEntitiesCount, Is.EqualTo(0));
+        // Scp edit end
 
         // Create a new map.
         MapId mapId = default;

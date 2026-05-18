@@ -1,0 +1,53 @@
+- type: job
+  id: InternalSecurityOperative
+  name: job-name-internal-security-operative
+  description: job-description-internal-security-operative
+  playTimeTracker: JobInternalSecurityOperative
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 90000 # 25 часов
+  icon: JobInternalSecurityOperative
+  supervisors: job-supervisors-director
+  weight: 865
+  canBeAntag: false
+  access:
+  - Command
+  - Bar
+  - Service
+  - Maintenance
+  - Janitor
+  - Theatre
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - External
+  - Chemistry
+  - Engineering
+  - Research
+  - Detective
+  - Salvage
+  - Security
+  - Brig
+  - Cargo
+  - Atmospherics
+  - Cargo
+  - Medical
+  - Lawyer
+  - Bunker
+  special:
+  - !type:AddImplantSpecial
+    implants: [MindShieldImplant]
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: B
+    - type: AccessLevel
+      level: Four
+    - type: Fear
+      timeToDecreaseFearLevel: 120
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+      fearBasedSpreadAngleModifier:
+        Anxiety: 2
+        Fear: 5
+        Terror: 10

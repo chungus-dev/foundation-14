@@ -25,6 +25,11 @@ namespace Content.Server.Speech.Muting
             if (args.Handled)
                 return;
 
+            // Scp edit start
+            if (component.Allowed.Contains(args.Emote.ID))
+                return;
+            // Scp edit end
+
             //still leaves the text so it looks like they are pantomiming a laugh
             if (args.Emote.Category.HasFlag(EmoteCategory.Vocal))
                 args.Handled = true;

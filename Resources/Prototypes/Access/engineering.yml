@@ -12,7 +12,9 @@
 
 - type: accessGroup
   id: Engineering
+  # Scp edit start
   tags:
-  - ChiefEngineer
-  - Engineering
-  - Atmospherics
+  - ChiefTechnicalSpecialist
+  groups:
+  - EngineeringHeadless
+  # Scp edit end

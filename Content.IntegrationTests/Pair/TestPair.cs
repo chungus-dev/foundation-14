@@ -5,6 +5,7 @@ using Content.Client.Parallax.Managers;
 using Content.IntegrationTests.Tests.Destructible;
 using Content.IntegrationTests.Tests.DeviceNetwork;
 using Content.Server.GameTicking;
+using Content.Shared._Scp.ScpCCVars;
 using Content.Shared.CCVar;
 using Content.Shared.Players;
 using Robust.Shared.ContentPack;
@@ -78,6 +79,17 @@ public sealed partial class TestPair : RobustIntegrationTest.TestPair
 
             if (cfg.IsCVarRegistered(CCVars.AdminLogsEnabled.Name))
                 cfg.SetCVar(CCVars.AdminLogsEnabled, next.AdminLogsEnabled);
+
+            // Scp added start - keep client-side audio effects disabled in tests unless explicitly requested.
+            if (instance.NetMan.IsClient)
+            {
+                if (cfg.IsCVarRegistered(ScpCCVars.EchoEnabled.Name))
+                    cfg.SetCVar(ScpCCVars.EchoEnabled, next.AudioEffectsEnabled);
+
+                if (cfg.IsCVarRegistered(ScpCCVars.AudioMufflingEnabled.Name))
+                    cfg.SetCVar(ScpCCVars.AudioMufflingEnabled, next.AudioEffectsEnabled);
+            }
+            // Scp added end
         });
     }
 
@@ -92,6 +104,10 @@ public sealed partial class TestPair : RobustIntegrationTest.TestPair
         {
             LoadConfigAndUserData = false,
         };
+        // Scp added start - default integration clients should not create local audio effect entities.
+        opts.CVarOverrides[ScpCCVars.EchoEnabled.Name] = "false";
+        opts.CVarOverrides[ScpCCVars.AudioMufflingEnabled.Name] = "false";
+        // Scp added end
 
         opts.BeforeStart += () =>
         {

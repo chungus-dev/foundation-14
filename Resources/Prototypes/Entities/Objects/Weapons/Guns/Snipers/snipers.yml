@@ -5,6 +5,13 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  # Scp added start
+  - type: BloodSplatterer
+    amount: 3, 7
+    probability: 1
+    bloodLineProbability: 0.7
+    pierceLevel: Metal
+  # Scp added end
   - type: Sprite
     layers:
     - state: base

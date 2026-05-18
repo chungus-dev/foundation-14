@@ -1,0 +1,45 @@
+- type: job
+  id: ClassDBotanist
+  name: job-name-class-d-botanist
+  description: job-description-class-d-botanist
+  playTimeTracker: JobClassDBotanist
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 3600 # 1 час
+  icon: JobClassDBotanist
+  supervisors: job-supervisors-security-and-research
+  access:
+  - ClassDCanteen
+  weight: 715
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: ClassDAppearance
+    - type: EmployeeClass
+      class: D
+    - type: ScpAnnounceOnSpawn
+      text: class-d-announce-on-spawn
+      channels:
+      - ExternalAdministrativeZoneSecurityService
+      includeJobName: true
+      requiredGameRunLevel: InRound
+    - type: ScpHolder
+      holdableWhitelist:
+        components:
+        - Scp096
+      holdableBlacklist:
+        components:
+        - ActiveScp096Rage
+        - ActiveScp096HeatingUp
+        - ActiveScp096WithoutFace
+
+- type: startingGear
+  id: ClassDBotanistGear
+  equipment:
+    head: ClothingHeadBandBotany
+    jumpsuit: ClothingUniformClassD
+    outerClothing: ClothingOuterApronBotanist
+    belt: ClothingBeltPlantFilled
+    gloves: ClothingHandsGlovesLeather
+    shoes: ClothingShoesClassD
+    id: KeyCardClassDBotanist

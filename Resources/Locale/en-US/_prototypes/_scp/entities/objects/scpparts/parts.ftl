@@ -1,0 +1,16 @@
+ent-BaseScpMaterial = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-BaseScpResearchMaterial = { ent-BaseScpMaterial }
+    .desc = { ent-BaseScpMaterial.desc }
+ent-Scp999Jelly = anomalous slime chunk
+    .desc = A coagulated, sticky blob of adhesive slime, warm and vibrating in the hands.
+ent-Scp173Shard = stone fragment
+    .desc = A small light-orange stone shard
+ent-Scp173PaintChips = paint chips
+    .desc = Multiple pieces of paint, torn away by a rough object
+ent-Scp173PaintBall = painted ball
+    .desc = Multiple pieces of paint clumped together into a ball. Why did I make this?
+ent-Scp096PhotoDeveloped = strange photograph
+    .desc = A small photograph in 4:3 format. Its edges look crumpled, as if someone used to carry it with them before... You try to make out the image...
+ent-Scp096Photo = strange photograph
+    .desc = A small photograph, on which the contents are barely visible.

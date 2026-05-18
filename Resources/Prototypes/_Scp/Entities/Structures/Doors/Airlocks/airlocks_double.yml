@@ -1,0 +1,228 @@
+# == Basic == #
+
+- type: entity
+  id: ScpDoubleGlassAirlock
+  parent: ScpAirlockGlass
+  name: double glass airlock
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass_double/double_glass_airlock.rsi
+    offset: 0.5,0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.46,-0.46,1.46,0.46" # don't want this colliding with walls or they won't close
+        density: 100
+        mask:
+        - FullTileMask
+        layer:     #removed opaque from the layer, allowing lasers to pass through glass airlocks
+        - GlassAirlockLayer
+  - type: Door
+    crushDamage:
+      types:
+        Blunt: 15
+    openSound:
+      collection: AirlockLargeOpen
+    closeSound:
+      collection: AirlockLargeClose
+    denySound:
+      path: /Audio/_Scp/Objects/Machines/Airlocks/deny.ogg
+  - type: Paintable
+    group: null
+
+- type: entity
+  id: ScpDoubleAirlock
+  parent: ScpAirlock
+  name: double airlock
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard_double/double_basic.rsi
+    offset: 0.5,0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.46,-0.46,1.46,0.46" # don't want this colliding with walls or they won't close
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
+  - type: Occluder
+    boundingBox: "-0.5, -0.5, 1.5, 0.5"
+  - type: Door
+    crushDamage:
+      types:
+        Blunt: 15
+    openSound:
+      collection: AirlockLargeOpen
+    closeSound:
+      collection: AirlockLargeClose
+    denySound:
+      path: /Audio/_Scp/Objects/Machines/Airlocks/deny.ogg
+  - type: Paintable
+    group: null
+
+# ДВОЙНЫЕ ОБЫЧНЫЕ ШЛЮЗЫ
+
+# Администрация
+
+- type: entity
+  id: ScpDoubleAirlockAdministration
+  parent: [ ScpDoubleAirlock, ScpAirlockAdministration ]
+  suffix: SCP Administration
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard_double/double_command.rsi
+
+# Региональная администрация
+
+- type: entity
+  id: ScpDoubleAirlockRegionalAdministration
+  parent: [ ScpDoubleAirlock, ScpAirlockRegionalAdministration ]
+  suffix: SCP Regional Administration
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard_double/double_centcomm.rsi
+
+# Служба безопасности
+
+- type: entity
+  id: ScpDoubleAirlockSecurity
+  parent: [ ScpDoubleAirlock, ScpAirlockSecurity ]
+  suffix: SCP Security
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard_double/double_security.rsi
+
+# Научная служба
+
+- type: entity
+  id: ScpDoubleAirlockScience
+  parent: [ ScpDoubleAirlock, ScpAirlockScience ]
+  suffix: SCP Science
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard_double/double_science.rsi
+
+# Медицинская служба
+
+- type: entity
+  id: ScpDoubleAirlockMedical
+  parent: [ ScpDoubleAirlock, ScpAirlockMedical ]
+  suffix: SCP Medical
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard_double/double_medical.rsi
+
+# Инженерно-техническая служба
+
+- type: entity
+  id: ScpDoubleAirlockEngineering
+  parent: [ ScpDoubleAirlock, ScpAirlockEngineering ]
+  suffix: SCP Engineering
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard_double/double_engineering.rsi
+
+- type: entity
+  id: ScpDoubleAirlockLifeSupport
+  parent: [ ScpDoubleAirlock, ScpAirlockLifeSupport ]
+  suffix: SCP Life support
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard_double/double_atmospherics.rsi
+
+# Отдел логистики
+
+- type: entity
+  id: ScpDoubleAirlockLogistics
+  parent: [ ScpDoubleAirlock, ScpAirlockLogistics ]
+  suffix: SCP Logistics
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Standard_double/double_cargo.rsi
+
+
+# ДВОЙНЫЕ СТЕКЛЯННЫЕ ШЛЮЗЫ
+
+# Администрация
+
+- type: entity
+  id: ScpDoubleGlassAirlockAdministration
+  parent: [ ScpDoubleGlassAirlock, ScpAirlockAdministrationGlass ]
+  suffix: SCP Administration
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass_double/double_command.rsi
+
+# Региональная администрация
+
+- type: entity
+  id: ScpDoubleGlassAirlockRegionalAdministration
+  parent: [ ScpDoubleGlassAirlock, ScpAirlockAdministrationGlass ]
+  suffix: SCP Regional Administration
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass_double/double_centcomm.rsi
+
+# Служба безопасности
+
+- type: entity
+  id: ScpDoubleGlassAirlockSecurity
+  parent: [ ScpDoubleGlassAirlock, ScpAirlockSecurityGlass ]
+  suffix: SCP Security
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass_double/double_security.rsi
+
+# Научная служба
+
+- type: entity
+  id: ScpDoubleGlassAirlockScience
+  parent: [ ScpDoubleGlassAirlock, ScpAirlockScienceGlass ]
+  suffix: SCP Science
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass_double/double_science.rsi
+
+# Медицинская служба
+
+- type: entity
+  id: ScpDoubleGlassAirlockMedical
+  parent: [ ScpDoubleGlassAirlock, ScpAirlockMedicalGlass ]
+  suffix: SCP Medical
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass_double/double_medical.rsi
+
+# Инженерно-техническая служба
+
+- type: entity
+  id: ScpDoubleGlassAirlockEngineering
+  parent: [ ScpDoubleGlassAirlock, ScpAirlockEngineeringGlass ]
+  suffix: SCP Engineering
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass_double/double_engineering.rsi
+
+- type: entity
+  id: ScpDoubleGlassAirlockLifeSupport
+  parent: [ ScpDoubleGlassAirlock, ScpAirlockLifeSupport ]
+  suffix: SCP LifeSupport
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass_double/double_atmospherics.rsi
+
+# Отдел логистики
+
+- type: entity
+  id: ScpDoubleGlassAirlockLogistics
+  parent: [ ScpDoubleGlassAirlock, ScpAirlockLogisticsGlass ]
+  suffix: SCP Logistics
+  components:
+  - type: Sprite
+    sprite: _Scp/Structures/Doors/Airlocks/Glass_double/double_cargo.rsi

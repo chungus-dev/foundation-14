@@ -1,0 +1,197 @@
+﻿# Основные сцп имеющие работку
+
+- type: entity
+  name: SCP-173 spawner
+  id: SpawnScp173
+  parent: SpawnPointJobBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-173.rsi
+      state: scp-173
+  - type: SpawnPoint
+    spawn_type: Job
+    job_id: Scp173
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
+  - type: Scp173BlockStructureDamage
+
+- type: entity # Для особых случаев
+  name: SCP-173 structure damage blocker
+  id: Scp173StructureDamageBlocker
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-173.rsi
+      state: scp-173
+  - type: Scp173BlockStructureDamage
+
+- type: entity
+  name: SCP-096 spawner
+  id: SpawnScp096
+  parent: SpawnPointJobBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-096.rsi
+      state: idle
+  - type: SpawnPoint
+    spawn_type: Job
+    job_id: Scp096
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
+  - type: Scp096ContainmentChamberMarker
+
+- type: entity
+  name: SCP-939 spawner
+  id: SpawnScp939
+  parent: SpawnPointJobBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-939.rsi
+      state: alive
+  - type: SpawnPoint
+    spawn_type: Job
+    job_id: Scp939
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
+
+- type: entity
+  name: SCP-049 spawner
+  id: SpawnScp049
+  parent: SpawnPointJobBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-049.rsi
+      state: SCP-049
+  - type: SpawnPoint
+    spawn_type: Job
+    job_id: Scp049
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
+
+- type: entity
+  name: SCP-106 spawner
+  id: SpawnScp106
+  parent: SpawnPointJobBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-106.rsi
+      state: base
+  - type: SpawnPoint
+    spawn_type: Job
+    job_id: Scp106
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
+
+- type: entity
+  name: SCP-999 spawner
+  id: SpawnScp999
+  parent: SpawnPointJobBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-999.rsi
+      state: default
+  - type: SpawnPoint
+    spawn_type: Job
+    job_id: Scp999
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
+
+- type: entity
+  name: SCP-082 spawner
+  id: SpawnScp082
+  parent: SpawnPointJobBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: SpawnPoint
+    spawn_type: Job
+    job_id: Scp082
+  # - type: PreferredSpawn # SCP port: component unavailable in Foundation14
+    # preferredSpawnTypes: [ Job ]
+
+# Второстепенные сцп
+
+- type: entity
+  name: SCP-131A spawner
+  id: SpawnScp131A
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-131/scp-131-a.rsi
+      state: scp-131-a
+  - type: ConditionalSpawner
+    prototypes:
+    - Scp131A
+
+- type: entity
+  name: SCP-131-B spawner
+  id: SpawnScp131B
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-131/scp-131-b.rsi
+      state: scp-131-b
+  - type: ConditionalSpawner
+    prototypes:
+    - Scp131B
+
+- type: entity
+  name: SCP-2295 spawner
+  id: SpawnScp2295
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-2295.rsi
+      state: SCP-2295
+  - type: ConditionalSpawner
+    prototypes:
+    - Scp2295
+
+- type: entity
+  name: SCP-457 spawner
+  id: SpawnScp457
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-457.rsi
+      state: fireguy
+  - type: ConditionalSpawner
+    prototypes:
+    - Scp457
+
+- type: entity
+  name: SCP-247 spawner
+  id: SpawnScp247
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Scp/Mobs/Scp/scp-247.rsi
+      state: scp-247
+  - type: ConditionalSpawner
+    prototypes:
+    - Scp247

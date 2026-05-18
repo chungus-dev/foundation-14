@@ -5,8 +5,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobResearchDirector
-      time: 20h
+      role: JobScientificServiceDirector # Scp edit
+      time: 72000 #20 hrs
 
 # Head
 - type: loadout

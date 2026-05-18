@@ -1,0 +1,61 @@
+- type: job
+  id: FieldMedicalSpecialist
+  name: job-name-field-medical-specialist
+  description: job-description-field-medical-specialist
+  playTimeTracker: JobFieldMedicalSpecialist
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: ExternalAdministrativeZoneSecurityService
+    time: 10800
+  - !type:DepartmentTimeRequirement
+    department: MedicalService
+    time: 10800
+  - !type:AgeRequirement
+    requiredAge: 29
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  icon: JobAmnesthesiologist
+  supervisors: job-supervisors-heavy-containment-zone-commandant
+  canBeAntag: false
+  displayWeight: 15
+  weight: 805
+  accessGroups:
+  - FieldMedic
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: ScpHolder
+      holdableWhitelist:
+        components: [] # Scp edit - broken ported entries disabled.
+      holdableBlacklist:
+        components:
+        - Scp
+    - type: Fear
+      phobias:
+      - Exoremophobia
+      # Врачи не пугаются трупов, у них не будет некрофобии
+
+- type: startingGear
+  id: FieldMedicalSpecialistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBrigmedic
+    shoes: ClothingShoesColorRed
+    back: ClothingBackpackBrigmedic
+    gloves: ClothingHandsGlovesLatex
+    eyes: ClothingEyesHudMedSec
+    id: KeyCardFieldMedicalSpecialist
+    ears: ClothingHeadsetFieldMedicalSpecialist
+    belt: ClothingBeltMedicalFilled
+    pocket1: AmnesiacSpray
+    pocket2: ScpMedicalPDA
+  storage:
+    back:
+    - Flash
+    - ScpRadioHandheldSecurityEnabled

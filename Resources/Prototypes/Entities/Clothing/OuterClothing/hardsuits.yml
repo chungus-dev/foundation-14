@@ -223,6 +223,7 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitSecurity
+  categories: [ HideSpawnMenu ] # Scp edit
   name: security hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
   components:
@@ -235,6 +236,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.4
+  # - type: Pierceable # SCP port: component unavailable in Foundation14
+    # level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -251,6 +254,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
   - type: Tag
     tags:
+    - CorgiWearable
     - Hardsuit
     - WhitelistChameleon
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import Counter
+from collections.abc import Callable
 from dataclasses import dataclass
 import re
 
@@ -10,8 +11,25 @@ from .constants import ZERO_WIDTH_SPACE
 MESSAGE_START_RE = re.compile(r"^(?P<id>-?[A-Za-z][A-Za-z0-9_-]*)\s*=")
 VARIABLE_RE = re.compile(r"\{\s*\$([A-Za-z][A-Za-z0-9_-]*)")
 ATTRIBUTE_RE = re.compile(r"^\s+\.([A-Za-z][A-Za-z0-9_-]*)\s*=", re.MULTILINE)
-FUNCTION_RE = re.compile(r"\b([A-Z][A-Z0-9_-]*)\s*\(")
-RICH_TAG_RE = re.compile(r"\[(\/?)([A-Za-z][A-Za-z0-9_-]*)(?:[^\]]*)\]")
+FUNCTION_RE = re.compile(r"\{\s*([A-Z][A-Z0-9_-]*)\s*\(")
+RICH_TAG_RE = re.compile(r"(?<!\\)\[(\/?)([A-Za-z][A-Za-z0-9_-]*)(?:[^\]]*)\]")
+RICH_TAG_NAMES = {
+    "bold",
+    "bolditalic",
+    "bullet",
+    "center",
+    "cmdlink",
+    "color",
+    "emoji",
+    "font",
+    "head",
+    "italic",
+    "keybind",
+    "mono",
+    "protodata",
+    "scramble",
+    "textlink",
+}
 
 
 @dataclass(frozen=True)
@@ -57,29 +75,47 @@ def message_map(text: str) -> dict[str, FluentMessage]:
 
 
 def normalize_fluent_text(text: str) -> str:
-    stripped = text.replace("\r\n", "\n").strip("\n")
-    if not stripped.strip():
+    normalized = text.replace("\r\n", "\n")
+    lines = normalized.split("\n")
+    if normalized.endswith("\n"):
+        lines = lines[:-1]
+
+    lines = _trim_outer_blank_lines(lines)
+    if not any(line.strip() for line in lines):
         return ""
 
-    return "\n".join(escape_leading_multiline_markup_lines(stripped.split("\n"))) + "\n"
+    return "\n".join(escape_leading_multiline_markup_lines(lines)) + "\n"
+
+
+def _trim_outer_blank_lines(lines: list[str]) -> list[str]:
+    start = 0
+    while start < len(lines) and not lines[start].strip():
+        start += 1
+
+    end = len(lines)
+    while end > start and not lines[end - 1].strip():
+        end -= 1
+
+    leading = [""] if start > 0 else []
+    trailing = [""] if end < len(lines) else []
+    return leading + lines[start:end] + trailing
 
 
 def escape_leading_multiline_markup_lines(lines: list[str]) -> list[str]:
     output = list(lines)
-    waiting_for_pattern_start = False
+    in_multiline_pattern = False
 
     for index, line in enumerate(output):
         if _is_pattern_assignment(line):
-            waiting_for_pattern_start = not line.split("=", 1)[1].strip()
+            in_multiline_pattern = True
             continue
 
-        if not waiting_for_pattern_start:
+        if not in_multiline_pattern:
             continue
 
         if not line.strip():
             continue
 
-        waiting_for_pattern_start = False
         output[index] = escape_leading_markup_line(line)
 
     return output
@@ -87,7 +123,11 @@ def escape_leading_multiline_markup_lines(lines: list[str]) -> list[str]:
 
 def escape_leading_markup_line(line: str) -> str:
     stripped = line.lstrip()
-    if not stripped.startswith("[") or stripped.startswith(ZERO_WIDTH_SPACE):
+    if stripped.startswith(ZERO_WIDTH_SPACE):
+        return line
+
+    match = RICH_TAG_RE.match(stripped)
+    if match is None or match.group(2).lower() not in RICH_TAG_NAMES:
         return line
 
     leading_len = len(line) - len(stripped)
@@ -117,6 +157,10 @@ def rich_tags(text: str) -> Counter[str]:
     return tags
 
 
+def strip_rich_tags(text: str) -> str:
+    return RICH_TAG_RE.sub(" ", text)
+
+
 def same_message_payload(left: FluentMessage, right: FluentMessage) -> bool:
     return _canonical_message(left.text) == _canonical_message(right.text)
 
@@ -136,13 +180,13 @@ def render_pattern(prefix: str, value: str) -> list[str]:
 
 def render_entity_message(message_id: str, name: str | None, description: str | None, suffix: str | None) -> str:
     lines: list[str] = []
-    lines.extend(render_pattern(f"{message_id} =", name or ""))
+    lines.extend(render_pattern(f"{message_id} =", _entity_name(name or "")))
 
     if description:
-        lines.extend(render_pattern("  .desc =", description))
+        lines.extend(render_pattern("  .desc =", _capitalize_value(description)))
 
     if suffix:
-        lines.extend(render_pattern("  .suffix =", suffix))
+        lines.extend(render_pattern("  .suffix =", _capitalize_value(suffix)))
 
     return "\n".join(lines)
 
@@ -151,9 +195,52 @@ def escape_leading_multiline_markup(value: str) -> str:
     if "\n" not in value:
         return value
 
-    stripped = value.lstrip()
-    if not stripped.startswith("[") or stripped.startswith(ZERO_WIDTH_SPACE):
+    return "\n".join(escape_leading_markup_line(line) for line in value.split("\n"))
+
+
+def normalize_entity_message_style(text: str) -> str:
+    parsed = parse_messages(text)
+    if len(parsed) != 1 or not parsed[0].id.startswith("ent-"):
+        return text
+
+    lines = list(parsed[0].lines)
+    if lines:
+        lines[0] = _replace_assignment_value(lines[0], _entity_name)
+
+    for index, line in enumerate(lines):
+        if re.match(r"^\s+\.(?:desc|suffix)\s*=", line):
+            lines[index] = _replace_assignment_value(line, _capitalize_value)
+
+    return "\n".join(lines)
+
+
+def _replace_assignment_value(line: str, transform: Callable[[str], str]) -> str:
+    if "=" not in line:
+        return line
+
+    prefix, value = line.split("=", 1)
+    separator = " " if value.startswith(" ") else ""
+    stripped = value[1:] if value.startswith(" ") else value
+    return f"{prefix}={separator}{transform(stripped)}".rstrip()
+
+
+def _entity_name(value: str) -> str:
+    if _starts_with_fluent_syntax(value):
         return value
 
-    leading_len = len(value) - len(stripped)
-    return value[:leading_len] + ZERO_WIDTH_SPACE + stripped
+    return value.lower()
+
+
+def _capitalize_value(value: str) -> str:
+    if _starts_with_fluent_syntax(value):
+        return value
+
+    for index, char in enumerate(value):
+        if char.isalpha():
+            return value[:index] + char.upper() + value[index + 1:]
+
+    return value
+
+
+def _starts_with_fluent_syntax(value: str) -> bool:
+    return value.lstrip().startswith(("{", "["))

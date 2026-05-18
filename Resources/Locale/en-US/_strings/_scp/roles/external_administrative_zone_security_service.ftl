@@ -1,0 +1,12 @@
+job-name-external-administrative-zone-commandant = Chief Commandant
+job-description-external-administrative-zone-commandant = Leader of the command squad. He coordinates security forces to maintain order.
+job-name-senior-external-administrative-zone-officer = Senior Commandant
+job-description-senior-external-administrative-zone-officer = Senior member of the command squad. A proven operative who knows their job inside and out.
+job-name-external-administrative-zone-officer = Commandant
+job-description-external-administrative-zone-officer = Command squad operative. He is responsible for maintaining order among staff in the complex.
+job-name-junior-external-administrative-zone-officer = Junior Commandant
+job-description-junior-external-administrative-zone-officer = A newly recruited junior member of the command squad. He assists senior officers in keeping order in the complex.
+job-name-field-medical-specialist = Anesthesiologist
+job-description-field-medical-specialist = Security service medical specialist. Provides medical assistance and performs amnesticization on personnel.
+job-supervisors-security-commander = the security commander
+job-supervisors-external-administrative-zone-commandant = the chief commandant

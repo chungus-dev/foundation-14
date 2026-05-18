@@ -1,0 +1,43 @@
+﻿- type: entity
+  parent: Pill
+  id: PillScp500
+  suffix: SCP-500
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Scp/scp-500.rsi
+    state: pill
+  - type: Pill
+    useStandardVisuals: false
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 2
+        reagents:
+        - ReagentId: Scp500Reagent
+          Quantity: 1
+
+- type: entity
+  parent:
+  - PillCanister
+  - BaseItemScp
+  id: PillCanisterScp500
+  suffix: SCP-500
+  components:
+  - type: Sprite
+    sprite: _Scp/Objects/Scp/scp-500.rsi
+    state: canister
+  - type: Storage
+    grid:
+    - 0,0,4,9
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: PillScp500
+          amount: 47
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: GuideHelp
+    guides:
+    - ScpResearch

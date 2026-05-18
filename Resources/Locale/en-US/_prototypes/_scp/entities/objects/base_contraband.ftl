@@ -1,0 +1,10 @@
+ent-BaseChaosContraband = { "" }
+    .desc = { "" }
+ent-BaseFoundationEnemyContraband = { "" }
+    .desc = { "" }
+ent-BaseScpSecurityContraband = { ent-BaseRestrictedContraband }
+    .desc = { ent-BaseRestrictedContraband.desc }
+ent-BaseSpecialPurposeSquadContraband = { ent-BaseRestrictedContraband }
+    .desc = { ent-BaseRestrictedContraband.desc }
+ent-BaseCommandantSquadContraband = { ent-BaseRestrictedContraband }
+    .desc = { ent-BaseRestrictedContraband.desc }

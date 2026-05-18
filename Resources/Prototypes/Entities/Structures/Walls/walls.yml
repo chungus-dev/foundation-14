@@ -87,10 +87,10 @@
       fix1:
         shape:
           !type:PolygonShape
-            vertices:
-            - "-0.5,-0.5"
-            - "0.5,0.5"
-            - "0.5,-0.5"
+          vertices:
+          - "-0.5,-0.5"
+          - "0.5,0.5"
+          - "0.5,-0.5"
         mask:
         - FullTileMask
         layer:
@@ -100,7 +100,15 @@
   parent: BaseWall
   id: WallBrick
   name: brick wall
+  categories: [ HideSpawnMenu ] # Scp added
   components:
+  # - type: Pierceable # SCP port: component unavailable in Foundation14
+    # level: Metal
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 0.2
+  - type: Tag
+    tags:
+    - Wall
   - type: Sprite
     sprite: Structures/Walls/brick.rsi
   - type: Icon
@@ -130,6 +138,7 @@
   parent: BaseWall
   id: WallClock
   name: clock wall
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/clock.rsi
@@ -159,6 +168,7 @@
   parent: BaseWall
   id: WallClown
   name: bananium wall
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/clown.rsi
@@ -204,11 +214,12 @@
   id: WallMeat
   name: meat wall
   description: Sticky.
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Tag
     tags:
-      - Wall
-      - Structure
+    - Wall
+    - Structure
   - type: Sprite
     sprite: Structures/Walls/meat.rsi
   - type: Icon
@@ -237,6 +248,7 @@
   parent: BaseWall
   id: WallCult
   name: cult wall
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/cult.rsi
@@ -519,26 +531,28 @@
   id: WallPlastitanium
   name: plastitanium wall
   suffix: ""
+  categories: [ HideSpawnMenu ] # Scp added
   components:
-    - type: Destructible
-      thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 1000
-          behaviors:
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                Girder:
-                  min: 1
-                  max: 1
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Girder:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: WallDiagonalBase
   id: WallPlastitaniumDiagonalIndestructible
   name: plastitanium wall
   suffix: diagonal, indestructible
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: Walls
@@ -558,6 +572,7 @@
   id: WallPlastitaniumDiagonal
   name: plastitanium wall
   suffix: diagonal
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: Walls
@@ -572,22 +587,27 @@
         !type:DamageTrigger
         damage: 1000
       behaviors:
-        - !type:SpawnEntitiesBehavior
-          spawn:
-            Girder:
-              min: 1
-              max: 1
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-        - !type:PlaySoundBehavior
-          sound:
-            collection: MetalSlam
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Girder:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
 
 - type: entity
   parent: BaseWall
   id: WallReinforced
   name: reinforced wall
+  categories: [ HideSpawnMenu ] # Scp added
   components:
+  # - type: Pierceable # SCP port: component unavailable in Foundation14
+    # level: HardenedMetal
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 0.75
   - type: Sprite
     sprite: Structures/Walls/solid.rsi
   - type: Icon
@@ -657,6 +677,7 @@
   parent: WallReinforced
   id: WallReinforcedRust
   suffix: rusted
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/solid_rust.rsi
@@ -696,6 +717,7 @@
   parent: WallDiagonalBase
   id: WallReinforcedDiagonal
   name: reinforced wall
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: Walls
@@ -713,11 +735,11 @@
         !type:DamageTrigger
         damage: 600
       behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-        - !type:PlaySoundBehavior
-          sound:
-            collection: MetalSlam
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -737,6 +759,7 @@
   parent: BaseWall
   id: WallRiveted
   name: riveted wall
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/riveted.rsi
@@ -841,6 +864,7 @@
   parent: WallDiagonalBase
   id: WallShuttleDiagonal
   name: shuttle wall
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: Walls
@@ -849,8 +873,10 @@
   - type: Icon
     sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
-  - type: Reflect
-    reflectProb: 1
+  - type: Physics
+    bodyType: Static
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 1
   - type: Pullable
   - type: Airtight
     noAirWhenFullyAirBlocked: false
@@ -880,11 +906,11 @@
         !type:DamageTrigger
         damage: 600
       behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-        - !type:PlaySoundBehavior
-          sound:
-            collection: MetalSlam
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
     - trigger:
         !type:DamageTrigger
         damage: 300
@@ -908,6 +934,7 @@
   parent: BaseWall
   id: WallShuttle
   name: shuttle wall
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -962,7 +989,10 @@
           4: { state: shuttle_construct-4, visible: true}
           5: { state: shuttle_construct-5, visible: true}
   - type: Reflect
+    reflects: Energy
     reflectProb: 1
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -976,9 +1006,10 @@
         density: 2000
 
 - type: entity
-  parent: BaseWall
+  parent: [BaseWall, BaseDeltaPressurePlasma]
   id: WallSolid
   name: solid wall
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/solid.rsi
@@ -1022,6 +1053,7 @@
   parent: WallDiagonalBase
   id: WallSolidDiagonal
   name: solid wall
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: Walls
@@ -1030,6 +1062,8 @@
   - type: Icon
     sprite: Structures/Walls/solid_diagonal.rsi
     state: state0
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 0.4
   - type: Destructible
     thresholds:
     - trigger:
@@ -1057,6 +1091,7 @@
   parent: WallSolid
   id: WallSolidRust
   suffix: rusted
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     sprite: Structures/Walls/solid_rust.rsi
@@ -1276,9 +1311,12 @@
 - type: entity
   parent: BaseWall
   id: WallWood
+  categories: [ HideSpawnMenu ] # Scp edit
   name: wood wall
-  description: The traditional greytide defense.
+  description: The traditional assistant defense.
   components:
+  # - type: Ricochetable # SCP port: component unavailable in Foundation14
+    # chance: 0
   - type: Sprite
     sprite: Structures/Walls/wood.rsi
   - type: Icon
@@ -1388,6 +1426,7 @@
 - type: entity
   parent: BaseWall
   id: WallMining
+  categories: [ HideSpawnMenu ] # Scp edit
   name: mining wall
   components:
   - type: Sprite
@@ -1414,6 +1453,7 @@
 - type: entity
   parent: WallDiagonalBase
   id: WallMiningDiagonal
+  categories: [ HideSpawnMenu ] # Scp edit
   name: mining wall
   components:
   - type: Sprite

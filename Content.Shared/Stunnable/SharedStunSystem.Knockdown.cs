@@ -14,6 +14,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Standing;
+using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Input.Binding;
@@ -40,6 +41,12 @@ public abstract partial class SharedStunSystem
     [Dependency] private readonly EntityQuery<FixturesComponent> _fixtureQuery = default!;
 
     public static readonly ProtoId<AlertPrototype> KnockdownAlert = "Knockdown";
+
+    // Scp added start
+    [Dependency] private readonly TagSystem _tag = default!; // Scp added
+
+    private static readonly ProtoId<TagPrototype> CanStandUpWithoutAbilityToMoveTag = "CanStandUpWithoutAbilityToMove";
+    // Scp added end
 
     private void InitializeKnockdown()
     {
@@ -92,6 +99,12 @@ public abstract partial class SharedStunSystem
             if (!knockedDown.AutoStand || knockedDown.DoAfterId.HasValue || knockedDown.NextUpdate > GameTiming.CurTime)
                 continue;
 
+            // Scp added start - фикс этой штуки ради скромника
+            // Если NextUpdate не задан - хули мы встаем
+            if (knockedDown.NextUpdate == TimeSpan.Zero)
+                continue;
+            // Scp added end
+
             TryStanding(uid);
         }
     }
@@ -115,6 +128,11 @@ public abstract partial class SharedStunSystem
 
     private void OnKnockShutdown(Entity<KnockedDownComponent> entity, ref ComponentShutdown args)
     {
+        // Scp added start - фикс визуальных(и не очень) багов со скромником
+        if (GameTiming.ApplyingState)
+            return;
+        // Scp added end
+
         // This is jank but if we don't do this it'll still use the knockedDownComponent modifiers for friction because it hasn't been deleted quite yet.
         entity.Comp.FrictionModifier = 1f;
         entity.Comp.SpeedModifier = 1f;
@@ -322,7 +340,8 @@ public abstract partial class SharedStunSystem
         if (entity.Comp.NextUpdate > GameTiming.CurTime)
             return false;
 
-        return Blocker.CanMove(entity);
+        // Scp edit - для скромника, который должен автоматически вставать не имея возможности двигаться ДО этого момента.
+        return Blocker.CanMove(entity) || _tag.HasTag(entity, CanStandUpWithoutAbilityToMoveTag);
     }
 
     /// <summary>

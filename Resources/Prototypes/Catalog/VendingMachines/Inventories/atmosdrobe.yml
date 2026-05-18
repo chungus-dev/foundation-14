@@ -8,7 +8,9 @@
     ClothingUniformJumpskirtAtmos: 3
     ClothingUniformJumpsuitAtmosCasual: 3
     ClothingShoesColorWhite: 3
-    ClothingHeadsetEngineering: 2
+    # Scp edit start
+    ClothingHeadsetEngineeringTechnicalService: 2
+    # Scp edit end
     ClothingHeadHelmetFire: 2
     ClothingOuterSuitFire: 2
     ClothingOuterWinterAtmos: 2

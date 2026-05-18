@@ -27,11 +27,13 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
+      # - type: ArtifactFunnyTarget
       - type: CommandStaff
 
 - type: startingGear

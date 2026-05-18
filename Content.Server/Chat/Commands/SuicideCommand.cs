@@ -11,7 +11,7 @@ namespace Content.Server.Chat.Commands
     [AnyCommand]
     internal sealed class SuicideCommand : IConsoleCommand
     {
-        [Dependency] private readonly IEntityManager _e = default!;
+        // [Dependency] private readonly IEntityManager _e = default!; Scp edit
 
         public string Command => "suicide";
 
@@ -30,6 +30,12 @@ namespace Content.Server.Chat.Commands
             if (player.Status != SessionStatus.InGame || player.AttachedEntity == null)
                 return;
 
+            // Scp edit start
+            shell.WriteLine(Loc.GetString("suicide-command-life-is-good"));
+            return;
+            // Scp edit end
+
+            /*
             var minds = _e.System<SharedMindSystem>();
 
             // This check also proves mind not-null for at the end when the mob is ghosted.
@@ -55,6 +61,7 @@ namespace Content.Server.Chat.Commands
                 return;
 
             shell.WriteLine(Loc.GetString("ghost-command-denied"));
+            */
         }
     }
 }

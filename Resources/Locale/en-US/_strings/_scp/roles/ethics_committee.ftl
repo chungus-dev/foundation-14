@@ -1,0 +1,3 @@
+job-name-ethics-committee-representative = Ethics Committee Representative
+job-description-ethics-committee-representative = Local representative of the Ethics Committee. Despite the Foundation's utilitarian approach to moral dilemmas, they, as a committee member, determine what is ethical and proper. They ensure that only the necessary sacrifices are made and that the most ethical option is always selected. Through their presence they ensure compliance with standards, and also review OUS and audit experiments for excessive or misdirected spending of resources. Everyone should remember that the Ethics Committee is vigilant, assesses situations, and renders verdicts.
+job-supervisors-ethics-committee = Ethics Committee

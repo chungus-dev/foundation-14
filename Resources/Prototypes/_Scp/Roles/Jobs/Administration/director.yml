@@ -1,0 +1,49 @@
+- type: job
+  id: Director
+  name: job-name-director
+  description: job-description-director
+  playTimeTracker: JobDirector
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Administration
+    time: 54000
+  - !type:AgeRequirement
+    requiredAge: 35
+  weight: 965
+  icon: JobDirector
+  joinNotifyCrew: true
+  supervisors: job-supervisors-O5-command
+  canBeAntag: false
+  displayWeight: 100
+  accessGroups:
+  - Director
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+    - type: EmployeeClass
+      class: B
+    - type: AccessLevel
+      level: Four
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - Administration
+      includeJobName: true
+
+- type: startingGear
+  id: DirectorGear
+  equipment:
+    head: ClothingHeadHatDirector
+    eyes: ClothingEyesGlassesSunglasses
+    neck: ClothingNeckTieDet
+    jumpsuit: ClothingUniformJumpsuitDirector
+    outerClothing: ClothingOuterCoatDirectorTrench
+    gloves: ClothingHandsGlovesDirectorSpecial
+    shoes: ClothingShoesBootsLaceup
+    back: ClothingBackpackSatchelLeatherDirectorFilled
+    id: KeyCardDirector
+    ears: ClothingHeadsetAltAdministration
+    pocket2: DirectorPDA

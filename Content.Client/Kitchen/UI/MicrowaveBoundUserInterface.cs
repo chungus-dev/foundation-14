@@ -1,3 +1,4 @@
+using Content.Client.Stylesheets;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Kitchen.Components;
 using JetBrains.Annotations;
@@ -107,7 +108,9 @@ namespace Content.Client.Kitchen.UI
             }
             else
             {
-                _menu.IngredientsPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#1B1B1E") };
+                // Scp edit start
+                _menu.IngredientsPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = StyleNano.PanelDark };
+                // Scp edit end
             }
         }
 

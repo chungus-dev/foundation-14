@@ -460,7 +460,7 @@
           tags:
           - Write
   - type: CargoOrderConsole
-    removeLimitAccess: [ "Quartermaster" ]
+    removeLimitAccess: [ "SeniorLogisticsOfficer" ] # Scp edit
   - type: ActivatableUI
     verbText: qm-clipboard-computer-verb-text
     key: enum.CargoConsoleUiKey.Orders

@@ -1,0 +1,11 @@
+job-name-senior-medical-specialist = Senior Physician
+job-description-senior-medical-specialist = Trains medical assistants and performs the duties of the chief physician in their absence.
+job-name-pharmaceutical-specialist = Pharmacist
+job-description-pharmaceutical-specialist = Responsible for supplying the facility with medicines and pharmaceuticals.
+job-name-psychotherapist = Parapsychologist
+job-description-psychotherapist = Expert conducting routine psychological examinations of Foundation personnel and sane anomalies.
+job-name-medical-specialist = Physician
+job-description-medical-specialist = The staff physician provides qualified medical care and serves as a specialist in working with amnestics and other anomalous compounds.
+job-name-hospital-intern = Medical Assistant
+job-description-hospital-intern = The medical assistant is responsible for providing first aid for injuries and assisting staff physicians.
+job-supervisors-head-of-medical-sector = chief physician

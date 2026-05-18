@@ -12,6 +12,11 @@ namespace Content.Client.Input
         public static void SetupContexts(IInputContextContainer contexts)
         {
             var common = contexts.GetContext("common");
+
+            // Scp added start
+            common.AddFunction(ContentKeyFunctions.HoldToFace);
+            // Scp added end
+
             common.AddFunction(ContentKeyFunctions.FocusChat);
             common.AddFunction(ContentKeyFunctions.FocusLocalChat);
             common.AddFunction(ContentKeyFunctions.FocusEmote);
@@ -117,6 +122,11 @@ namespace Content.Client.Input
             aghost.AddFunction(ContentKeyFunctions.TryPullObject);
             aghost.AddFunction(ContentKeyFunctions.MovePulledObject);
             aghost.AddFunction(ContentKeyFunctions.ReleasePulledObject);
+            // Scp added start
+            aghost.AddFunction(ContentKeyFunctions.RotateObjectClockwise);
+            aghost.AddFunction(ContentKeyFunctions.RotateObjectCounterclockwise);
+            aghost.AddFunction(ContentKeyFunctions.FlipObject);
+            // Scp added end
 
             var ghost = contexts.New("ghost", "human");
             ghost.AddFunction(EngineKeyFunctions.MoveUp);

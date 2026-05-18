@@ -1,0 +1,52 @@
+- type: job
+  id: SeniorLogisticsOfficer
+  name: job-name-senior-logistics-officer
+  description: job-description-senior-logistics-officer
+  playTimeTracker: JobSeniorLogisticsOfficer
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobLogisticsOfficer
+    time: 36000
+  - !type:AgeRequirement
+    requiredAge: 29
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  weight: 935
+  icon: JobSeniorLogisticsOfficer
+  supervisors: job-supervisors-director
+  canBeAntag: true
+  displayWeight: 40
+  accessGroups:
+  - SeniorLogisticsOfficer
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - LogisticsService
+      includeJobName: true
+
+- type: startingGear
+  id: SeniorLogisticsOfficerGear
+  equipment:
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskGasExplorer
+    outerClothing: ClothingOuterWinterMiner
+    jumpsuit: ClothingUniformJumpsuitQM
+    gloves: ClothingHandsGlovesColorLightBrown
+    shoes: ClothingShoesColorBrown
+    back: ClothingBackpackCargo
+    id: KeyCardSeniorLogisticsOfficer
+    ears: ClothingHeadsetAltLogistics
+    pocket1: AppraisalTool
+    pocket2: SeniorLogisticsOfficerPDA
+  storage:
+    back:
+    - Flash

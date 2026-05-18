@@ -4,8 +4,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobJanitor
-      time: 52h # 1 hour per week for 1 year
+      role: JobServicePersonnel # Scp edit
+      time: 187200 #52 hrs (1 hour per week for 1 year)
 
 # Head
 - type: loadout

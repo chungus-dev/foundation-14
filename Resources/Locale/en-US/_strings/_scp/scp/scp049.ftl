@@ -1,0 +1,10 @@
+scp049-kill-action-already-dead = The creature is already dead.
+scp049-kill-action-cant-kill = The creature cannot die.
+scp049-touch-action-success = { $performer } touches { $target }.
+scp049-self-heal = { $performer } heals its own wounds.
+scp049-heal-minion = Heals { $target }'s wounds.
+scp049-ghost-role-name = Zombified SCP-049 patient
+scp049-ghost-role-description = You are a revived victim of SCP-049, known as the "Plague Doctor." You are now its loyal servant, driven by an irresistible urge to assist your master in his "treatment."
+scp049-ghost-role-rules = Follow the instructions of SCP-049. Do not attack other thralls or SCP-049. Your primary goal is to help the "Plague Doctor" in his mission. You do not remember your former life.
+scp049-missing-surgery-tool = I require { $instrument } for the operation.
+scp049-cannot-zombify-entity = { $name }'s organism resists and cannot be treated.

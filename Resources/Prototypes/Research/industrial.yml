@@ -9,6 +9,7 @@
   discipline: Industrial
   tier: 1
   cost: 7500
+  defaultToScpScale: 0.1 # Scp edit
   recipeUnlocks:
   - MiningDrill
   - MineralScannerEmpty
@@ -25,6 +26,7 @@
   discipline: Industrial
   tier: 1
   cost: 5000
+  defaultToScpScale: 0.1 # Scp edit
   recipeUnlocks:
   - RadarConsoleCircuitboard
   - HandHeldMassScanner
@@ -52,6 +54,7 @@
   discipline: Industrial
   tier: 1
   cost: 10000
+  defaultToScpScale: 0.1 # Scp edit
   recipeUnlocks:
   - FlatpackerMachineCircuitboard
 
@@ -96,6 +99,7 @@
   discipline: Industrial
   tier: 1
   cost: 7500
+  defaultToScpScale: 0.0 # Scp edit
   recipeUnlocks:
   - ThermomachineFreezerMachineCircuitBoard
   - GasRecyclerMachineCircuitboard
@@ -104,11 +108,12 @@
   id: RipleyAPLU
   name: research-technology-ripley-aplu
   icon:
-    sprite: Objects/Specific/Mech/mecha.rsi
+    sprite: Objects/Specific/Mech/mecha.rsi # Scp edit - Ripley sprites live in the merged mecha RSI.
     state: ripley
   discipline: Industrial
   tier: 1
   cost: 7500
+  defaultToScpScale: 0.1 # Scp edit
   recipeUnlocks:
   - RipleyHarness
   - RipleyLArm

@@ -1,0 +1,133 @@
+# Командир
+- type: job
+  id: MHLeader
+  name: ghost-role-information-mtf-leader-MH-name
+  description: ghost-role-information-mtf-leader-description
+  playTimeTracker: JobMHLeader
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 #5 hrs
+  setPreference: false
+  startingGear: MHLeaderGear
+  icon: JobIconMHleader
+  supervisors: ghost-role-information-mtf-leader-supervisors
+  canBeAntag: false
+  weight: 905
+  overrideConsoleVisibility: false
+  alwaysShowInBanPanel: true
+  accessGroups:
+  - AllComplex
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: MHLeaderGear
+  equipment:
+    jumpsuit: ClothingUniformMH
+    back: MtfTacticalBackpack
+    shoes: ClothingShoesBootsNTFFilled
+    mask: ClothingMaskGasMobileTaskForceMH
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHelmetMobileTaskForceMH
+    gloves: ClothingHandsGlovesMobileTaskForceMH
+    outerClothing: ClothingOuterArmorMtfBiohazard
+    id: KeyCardMtfMHLeader
+    ears: ClothingHeadsetAltMTF
+    belt: ClothingBeltMtfSparePouch
+    pocket1: BaseUplinkMTFLeaderBeta7
+    pocket2: MobileTaskForcePDA
+  storage:
+    back:
+    - BoxMtfLeaderKit
+    - Crowbar
+    - HandheldCrewMonitor
+    - DoorRemoteCustom
+
+# Специалист
+- type: job
+  id: MHSpecialist
+  name: ghost-role-information-mtf-specialist-MH-name
+  description: ghost-role-information-mtf-specialist-description
+  playTimeTracker: JobMHSpecialist
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 #5 hrs
+  setPreference: false
+  startingGear: MHSpecialistGear
+  icon: JobIconMH
+  supervisors: ghost-role-information-mtf-specialist-supervisors
+  canBeAntag: false
+  weight: 900
+  overrideConsoleVisibility: false
+  alwaysShowInBanPanel: true
+  accessGroups:
+  - AllComplex
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: MHSpecialistGear
+  equipment:
+    jumpsuit: ClothingUniformMH
+    back: MtfTacticalBackpack
+    shoes: ClothingShoesBootsNTFFilled
+    mask: ClothingMaskGasMobileTaskForceMH
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHelmetMobileTaskForceMH
+    gloves: ClothingHandsGlovesMobileTaskForceMH
+    outerClothing: ClothingOuterArmorMtfBiohazard
+    id: KeyCardMtfMHSpecialist
+    ears: ClothingHeadsetAltMTF
+    belt: ClothingBeltMtfSparePouch
+    pocket1: BaseUplinkMTFSpecialistBeta7
+    pocket2: MobileTaskForcePDA
+  storage:
+    back:
+    - Crowbar
+    - BoxMtfBaseKit
+
+# Кадет
+- type: job
+  id: MHCadet
+  name: ghost-role-information-mtf-cadet-MH-name
+  description: ghost-role-information-mtf-cadet-description
+  playTimeTracker: JobMHCadet
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 3600 #1 hr
+  setPreference: false
+  startingGear: MHCadetGear
+  icon: JobIconMH
+  supervisors: ghost-role-information-mtf-cadet-supervisors
+  canBeAntag: false
+  weight: 895
+  overrideConsoleVisibility: false
+  alwaysShowInBanPanel: true
+  accessGroups:
+  - AllComplex
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: MHCadetGear
+  equipment:
+    jumpsuit: ClothingUniformMH
+    back: MtfTacticalBackpack
+    shoes: ClothingShoesBootsNTFFilled
+    mask: ClothingMaskGasMobileTaskForceMH
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHelmetMobileTaskForceMH
+    gloves: ClothingHandsGlovesMobileTaskForceMH
+    outerClothing: ClothingOuterArmorMtfBiohazard
+    id: KeyCardMtfMHCadet
+    ears: ClothingHeadsetAltMTF
+    belt: ClothingBeltMtfSparePouch
+    pocket1: BaseUplinkMTFCadetBeta7
+    pocket2: MobileTaskForcePDA
+  storage:
+    back:
+    - Crowbar
+    - BoxMtfBaseKit

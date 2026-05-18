@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared._Scp.Watching.FOV;
 using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
 using Content.Shared.Friction;
@@ -47,6 +48,7 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] private   readonly SharedGravitySystem _gravity = default!;
     [Dependency] private   readonly SharedTransformSystem _transform = default!;
     [Dependency] private   readonly TagSystem _tags = default!;
+    [Dependency] private   readonly FieldOfViewSystem _fov = default!;
 
     [Dependency] protected readonly EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery = default!;
     [Dependency] protected readonly EntityQuery<FootstepModifierComponent> FootstepModifierQuery = default!;
@@ -66,6 +68,7 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] protected readonly EntityQuery<TransformComponent> XformQuery = default!;
 
     private static readonly ProtoId<TagPrototype> FootstepSoundTag = "FootstepSound";
+    private static readonly EntProtoId FootstepViewconeEffect = "ScpViewconeEffectFootstep";
 
     private bool _relativeMovement;
     private float _minDamping;
@@ -362,6 +365,9 @@ public abstract partial class SharedMoverController : VirtualController
                 {
                     _audio.PlayPredicted(sound, uid, uid, audioParams);
                 }
+
+                var worldRot = _transform.GetWorldRotation(xform);
+                _fov.SpawnEffect(uid, FootstepViewconeEffect, xform.LocalRotation + wishDir.ToWorldAngle() - worldRot);
             }
         }
     }

@@ -19,7 +19,7 @@
   - BorgModuleArtifact
   - BorgModuleAnomaly
   radioChannels:
-  - Science
+  - ScientificService # Scp edit
 
   # Visual
   inventoryTemplateId: borgShort
@@ -55,8 +55,8 @@
   - BorgModuleCable
 
   radioChannels:
-  - Engineering
-  - Science
+  - EngineeringTechnicalService # Scp edit
+  - ScientificService # Scp edit
 
   # Visual
   inventoryTemplateId: borgShort
@@ -70,43 +70,44 @@
   petFailureString: petting-failure-engineer-cyborg
 
 
+# Scp edit start - we don't need this
 # Salvage borg
-- type: borgType
-  id: mining
-
-  # Description
-  dummyPrototype: BorgChassisMining
-
-  # Functional
-  extraModuleCount: 3
-  moduleWhitelist:
-    tags:
-    - BorgModuleGeneric
-    - BorgModuleCargo
-
-  defaultModules:
-  - BorgModulePrying
-  - BorgModuleTool
-  - BorgModuleMining
-  - BorgModuleTraversal
-  - BorgModuleAppraisal
-
-  radioChannels:
-  - Supply
-  - Science
-
-  # Visual
-  inventoryTemplateId: borgTall
-  spriteBodyState: miner
-  spriteBodyMovementState: miner_moving
-  spriteHasMindState: miner_e
-  spriteNoMindState: miner_e_r
-  spriteToggleLightState: miner_l
-
-  # Pet
-  petSuccessString: petting-success-salvage-cyborg
-  petFailureString: petting-failure-salvage-cyborg
-
+#- type: borgType
+#  id: mining
+#
+#  # Description
+#  dummyPrototype: BorgChassisMining
+#
+#  # Functional
+#  extraModuleCount: 3
+#  moduleWhitelist:
+#    tags:
+#    - BorgModuleGeneric
+#    - BorgModuleCargo
+#
+#  defaultModules:
+#  - BorgModulePrying
+#  - BorgModuleTool
+#  - BorgModuleMining
+#  - BorgModuleTraversal
+#  - BorgModuleAppraisal
+#
+#  radioChannels:
+#  - Supply
+#  - Science
+#
+#  # Visual
+#  inventoryTemplateId: borgTall
+#  spriteBodyState: miner
+#  spriteBodyMovementState: miner_moving
+#  spriteHasMindState: miner_e
+#  spriteNoMindState: miner_e_r
+#  spriteToggleLightState: miner_l
+#
+#  # Pet
+#  petSuccessString: petting-success-salvage-cyborg
+#  petFailureString: petting-failure-salvage-cyborg
+# Scp edit end
 
 # Janitor borg
 - type: borgType
@@ -128,8 +129,8 @@
   - BorgModuleCustodial
 
   radioChannels:
-  - Science
-  - Service
+  - ScientificService # Scp edit
+  - FoodAndSanitationService # Scp edit
 
   # Visual
   inventoryTemplateId: borgShort
@@ -165,8 +166,8 @@
   - BorgModuleRescue
 
   radioChannels:
-  - Science
-  - Medical
+  - ScientificService # Scp edit
+  - MedicalService # Scp edit
 
   addComponents:
   - type: SolutionScanner
@@ -216,8 +217,8 @@
   - BorgModuleGardening
   - BorgModuleHarvesting
   radioChannels:
-  - Science
-  - Service
+  - ScientificService # Scp edit
+  - FoodAndSanitationService # Scp edit
 
   # Visual
   inventoryTemplateId: borgTall

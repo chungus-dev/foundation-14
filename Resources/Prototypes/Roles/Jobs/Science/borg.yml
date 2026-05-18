@@ -6,12 +6,13 @@
   description: job-description-station-ai
   playTimeTracker: JobStationAi
   requirements:
-  - !type:RoleTimeRequirement
-    role: JobBorg
-    time: 5h
+  - !type:DepartmentTimeRequirement
+    department: Administration # Scp edit
+    time: 36000 # 10 hours FireStation Edit
   weight: 10
   canBeAntag: false
   icon: JobIconStationAi
+  overrideConsoleVisibility: false # Scp edit
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
   jobPreviewEntity: PlayerStationAiPreview
@@ -27,6 +28,8 @@
       time: 10h
   canBeAntag: false
   icon: JobIconBorg
+  overrideConsoleVisibility: false # Scp edit
   supervisors: job-supervisors-rd
   jobEntity: PlayerBorgBattery
   applyTraits: false
+  setPreference: false # Scp added

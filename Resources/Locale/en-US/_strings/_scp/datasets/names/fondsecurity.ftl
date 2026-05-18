@@ -1,0 +1,29 @@
+### Missing from datasets/names/fondsecurity.ftl
+
+names-fond-senior-officer-first-dataset-1 = Senior Officer
+names-fond-officer-first-dataset-1 = Officer
+names-fond-officer-last-dataset-1 = Volkov
+names-fond-officer-last-dataset-2 = Orlov
+names-fond-officer-last-dataset-3 = Sokolov
+names-fond-officer-last-dataset-4 = Lebedev
+names-fond-officer-last-dataset-5 = Kozlov
+names-fond-officer-last-dataset-6 = Novikov
+names-fond-officer-last-dataset-7 = Morozov
+names-fond-officer-last-dataset-8 = Petrov
+names-fond-officer-last-dataset-9 = Egorov
+names-fond-officer-last-dataset-10 = Koshcheyev
+names-fond-officer-last-dataset-11 = Zaitsev
+names-fond-officer-last-dataset-12 = Pavlov
+names-fond-officer-last-dataset-13 = Semyonov
+names-fond-officer-last-dataset-14 = Golubev
+names-fond-officer-last-dataset-15 = Vinogradov
+names-fond-officer-last-dataset-16 = Bogdanov
+names-fond-officer-last-dataset-17 = Vorobyev
+names-fond-officer-last-dataset-18 = Fedorov
+names-fond-officer-last-dataset-19 = Mikhailov
+names-fond-officer-last-dataset-20 = Eliseev
+names-fond-officer-last-dataset-21 = Nikitin
+names-fond-officer-last-dataset-22 = Grachev
+names-fond-officer-last-dataset-23 = Kuznetsov
+names-fond-officer-last-dataset-24 = Savelyev
+names-fond-officer-last-dataset-25 = Lobanov

@@ -1,0 +1,107 @@
+﻿- type: entity
+  id: RandomHumanoidSpawnerMHLeader
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertleader
+  - type: RandomHumanoidSpawner
+    settings: MHLeader
+
+- type: randomHumanoidSettings
+  id: MHLeader
+  parent: CommonMTFLeader
+  randomizeName: false
+  components:
+  - type: GhostRole
+    name: ghost-role-information-mtf-leader-MH-name
+    description: ghost-role-information-mtf-leader-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: MHLeader
+  - type: Loadout
+    prototypes: [ MHLeaderGear ]
+
+- type: entity
+  id: RandomHumanoidSpawnerMHSpecialist
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertsecurityeva
+  - type: RandomHumanoidSpawner
+    settings: MHSpecialist
+
+- type: randomHumanoidSettings
+  id: MHSpecialist
+  parent: CommonMTFSpecialist
+  randomizeName: false
+  components:
+  - type: GhostRole
+    name: ghost-role-information-mtf-specialist-MH-name
+    description: ghost-role-information-mtf-specialist-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: MHSpecialist
+  - type: Loadout
+    prototypes: [ MHSpecialistGear ]
+
+- type: entity
+  id: RandomHumanoidSpawnerMHCadet
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: ertsecurityeva
+  - type: RandomHumanoidSpawner
+    settings: MHCadet
+
+- type: randomHumanoidSettings
+  id: MHCadet
+  parent: CommonMTFCadet
+  randomizeName: false
+  components:
+  - type: GhostRole
+    name: ghost-role-information-mtf-cadet-MH-name
+    description: ghost-role-information-mtf-cadet-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: MHCadet
+  - type: Loadout
+    prototypes: [ MHCadetGear ]
+
+# Спавнер отряда
+- type: entity
+  id: SpawnerMTFSquadMH
+  parent: SpawnPointScpBase
+  suffix: MH
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: MH
+      sprite: /Textures/_Scp/Interface/Misc/mtf_icons.rsi
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: true
+    table: !type:AllSelector
+      children:
+      - id: RandomHumanoidSpawnerMHLeader
+      - id: RandomHumanoidSpawnerMHSpecialist
+        amount: 2
+      - id: RandomHumanoidSpawnerMHCadet
+        amount: 2
+    offset: 1
+
+# Спавнер, но юзается по кнопке
+- type: entity
+  id: SpawnerMTFSquadMHSpawnOnTrigger
+  parent: SpawnerOnTriggerMTFBase
+  suffix: MH | SpawnOnTrigger
+  components:
+  - type: SpawnOnTrigger
+    proto: SpawnerMTFSquadMH
+  - type: Sprite
+    layers:
+    - state: green
+    - state: MH
+      sprite: /Textures/_Scp/Interface/Misc/mtf_icons.rsi

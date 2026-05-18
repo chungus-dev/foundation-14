@@ -5,6 +5,8 @@
   name: arcade
   parent: BaseComputer
   components:
+  - type: ApcPowerReceiver
+    powerLoad: 350
   - type: ExtensionCableReceiver
   - type: PointLight
     radius: 1.8
@@ -43,13 +45,13 @@
     price: 300
   - type: SpamEmitSoundRequirePower
   - type: SpamEmitSound
-    minInterval: 30
+    minInterval: 50
     maxInterval: 90
     sound:
       collection: ArcadeNoise
       params:
-        volume: -8
-        maxDistance: 10
+        volume: -12 # Scp edit
+        maxDistance: 3 # Scp edit
         variation: 0.05
 
 - type: entity
@@ -73,6 +75,9 @@
     rewardMinAmount: 0
     rewardMaxAmount: 0
     possibleRewards:
+    # Scp added start
+    - PlushieScp999
+    # Scp added end
     - Basketball
     - BalloonNT
     - BalloonCorgi

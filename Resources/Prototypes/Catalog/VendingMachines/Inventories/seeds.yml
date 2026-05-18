@@ -35,7 +35,7 @@
     SugarcaneSeeds: 5
     TeaPlantSeeds: 5
     TomatoSeeds: 5
-    TowercapSeeds: 5
+    ScpTowercapSeeds: 5 # Scp edit
     WheatSeeds: 5
     WatermelonSeeds: 5
   contrabandInventory:

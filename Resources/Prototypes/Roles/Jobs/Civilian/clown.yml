@@ -3,9 +3,13 @@
   name: job-name-clown
   description: job-description-clown
   playTimeTracker: JobClown
+  requirements:
+  - !type:OverallPlaytimeRequirement
   startingGear: ClownGear
   icon: "JobIconClown"
   supervisors: job-supervisors-hop
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
   access:
   - Theatre
   - Maintenance

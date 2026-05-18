@@ -3,6 +3,7 @@
   name: clockwork window
   description: Don't smudge up the brass down there.
   parent: Window
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -58,6 +59,7 @@
   parent: WindowDirectional
   name: directional clockwork window
   description: Don't smudge up the brass down there.
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:
@@ -113,6 +115,7 @@
   parent: ClockworkWindow
   id: ClockworkWindowDiagonal
   suffix: diagonal
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:
@@ -142,8 +145,6 @@
             - "-0.5,-0.5"
             - "0.5,0.5"
             - "0.5,-0.5"
-        mask:
-        - FullTileMask
         layer:
         - GlassLayer
   - type: Airtight

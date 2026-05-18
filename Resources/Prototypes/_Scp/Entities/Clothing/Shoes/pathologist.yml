@@ -1,0 +1,11 @@
+﻿- type: entity
+  parent: [ ClothingShoesBase, ClothingShoesBaseButcherable ]
+  id: ClothingShoesPathologist
+  name: pathologist's boots
+  description: Sturdy boots with an emblem on the side.
+  suffix: SCP
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Shoes/shoesPathologist.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Shoes/shoesPathologist.rsi

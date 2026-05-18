@@ -1,0 +1,153 @@
+﻿# Амбиенты
+
+- type: ambientMusic
+  id: Shuttle
+  sound:
+    params:
+      volume: -15
+    collection: FireAmbienceShuttle
+  fadeIn: true
+  interruptable: true
+  rules: NearShuttle
+  priority: 5
+
+- type: ambientMusic
+  id: FearAmbience
+  sound:
+    collection: ScpFearAmbience
+    params:
+      volume: -12
+  rules: FearRule
+  interruptable: true
+  priority: 100
+
+- type: ambientMusic
+  id: ClassDAmbience
+  sound:
+    params:
+      volume: -12
+    collection: FireAmbienceClassD
+  rules: ClassDRule
+  fadeIn: true
+  interruptable: true
+  priority: 99
+
+- type: ambientMusic
+  id: ShiftAdded
+  sound:
+    collection: FireAmbienceShiftAdded
+    params:
+      volume: -12
+      loop: true
+  rules: AlwaysFalse
+
+- type: ambientMusic
+  id: ShiftStarted
+  sound:
+    collection: FireAmbienceShiftStarted
+    params:
+      volume: -6
+      loop: true
+  rules: AlwaysFalse
+
+- type: ambientMusic
+  id: ShiftAverted
+  sound:
+    collection: FireAmbienceShiftAverted
+    params:
+      loop: true
+  rules: AlwaysFalse
+
+- type: ambientMusic
+  id: BeingDead
+  sound:
+    collection: ScpAmbienceDead
+    params:
+      volume: -8
+  rules: IsCriticalDeadRule
+  interruptable: true
+  priority: 101
+
+- type: ambientMusic
+  id: Scp096Target
+  sound:
+    collection: ScpAmbienceScp096Target
+    params:
+      volume: -2
+  rules: IsScp096Target
+  interruptable: true
+  priority: 110
+
+- type: ambientMusic
+  id: Scp096Rage
+  sound:
+    collection: ScpAmbienceScp096Rage
+    params:
+      volume: 20
+  rules: IsScp096InRage
+  interruptable: true
+  priority: 110
+
+# Правила
+
+- type: rules
+  id: AlwaysFalse
+  rules:
+  - !type:AlwaysFalseRule
+
+- type: rules
+  id: NearShuttle
+  rules:
+  - !type:NearbyEntitiesRule
+    count: 2
+    whitelist:
+      tags:
+      - ShuttleChair
+    range: 6
+
+- type: rules
+  id: ClassDRule
+  rules:
+  - !type:IsClassD
+  - !type:NearbyEntitiesRule
+    count: 4
+    whitelist:
+      tags:
+      - ClassDSpawner
+    range: 16
+
+- type: rules
+  id: FearRule
+  rules:
+  - !type:MobStateRule
+    allowedStates:
+    - Alive
+    - Critical
+  - !type:FearStateRule
+    requiredState: Anxiety
+    canBeGreater: true
+
+- type: rules
+  id: IsCriticalDeadRule
+  rules:
+  - !type:MobStateRule
+    allowedStates:
+    - Dead
+    - Critical
+
+- type: rules
+  id: IsScp096Target
+  rules:
+  - !type:OwnerWhitelistRule
+    whitelist:
+      components:
+      - Scp096Target
+
+- type: rules
+  id: IsScp096InRage
+  rules:
+  - !type:OwnerWhitelistRule
+    whitelist:
+      components:
+      - ActiveScp096Rage
+      - ActiveScp096HeatingUp

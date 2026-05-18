@@ -1,8 +1,10 @@
 using Content.Server.Research.Systems;
 using Content.Server.Research.TechnologyDisk.Components;
-using Content.Shared.UserInterface;
+using Content.Shared._Scp.Helpers;
 using Content.Shared.Research;
 using Content.Shared.Research.Components;
+using Content.Shared.UserInterface;
+using Robust.Shared.Prototypes;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
@@ -50,10 +52,10 @@ public sealed class DiskConsoleSystem : EntitySystem
         if (!_research.TryGetClientServer(uid, out var server, out var serverComp))
             return;
 
-        if (serverComp.Points < component.PricePerDisk)
+        if (!ResearchPointsHelper.IsEnoughPoints(serverComp.Points, component.PricePerDisk))
             return;
 
-        _research.ModifyServerPoints(server.Value, -component.PricePerDisk, serverComp);
+        _research.ModifyServerPoints(server.Value, component.PricePerDisk, true, serverComp);
         _audio.PlayPvs(component.PrintSound, uid);
 
         var printing = EnsureComp<DiskConsolePrintingComponent>(uid);
@@ -81,14 +83,14 @@ public sealed class DiskConsoleSystem : EntitySystem
         if (!Resolve(uid, ref component, false))
             return;
 
-        var totalPoints = 0;
+        var totalPoints = new Dictionary<ProtoId<ResearchPointPrototype>, int>();
         if (_research.TryGetClientServer(uid, out _, out var server))
         {
             totalPoints = server.Points;
         }
 
         var canPrint = !(TryComp<DiskConsolePrintingComponent>(uid, out var printing) && printing.FinishTime >= _timing.CurTime) &&
-                       totalPoints >= component.PricePerDisk;
+                       ResearchPointsHelper.IsEnoughPoints(totalPoints, component.PricePerDisk);
 
         var state = new DiskConsoleBoundUserInterfaceState(totalPoints, component.PricePerDisk, canPrint);
         _ui.SetUiState(uid, DiskConsoleUiKey.Key, state);

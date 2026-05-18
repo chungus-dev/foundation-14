@@ -234,6 +234,8 @@
     priority: -100
   - type: InstantAction
     event: !type:ToggleCombatActionEvent
+  - type: ScpHoldRestricted # Scp edit - block combat mode while held
+    stage: Soft
 
 - type: entity
   parent: ActionCombatModeToggle
@@ -367,7 +369,7 @@
   - type: Action
     icon: Interface/Actions/eyeopen.png
     iconOn: Interface/Actions/eyeclose.png
-    useDelay: 1 # so u cant give yourself and observers eyestrain by rapidly spamming the action
+    useDelay: 2 # Scp edit
   - type: InstantAction
     event: !type:ToggleEyesActionEvent
 

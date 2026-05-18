@@ -1,0 +1,43 @@
+﻿- type: job
+  id: TechnicalTrainee
+  name: job-name-technical-trainee
+  description: job-description-technical-trainee
+  playTimeTracker: JobTechnicalTrainee
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 25
+  - !type:AgeRequirement
+    requiredAge: 45
+    inverted: true
+  icon: JobTechnicalTrainee
+  supervisors: job-supervisors-chief-technical-specialist
+  canBeAntag: true
+  displayWeight: 0
+  weight: 740
+  accessGroups:
+  - CommonEngineeringJob
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Two
+    - type: ScpRepairableCanSeeExamineHints
+
+- type: startingGear
+  id: TechnicalTraineeGear
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+    mask: ClothingMaskBandRed
+    neck: ClothingNeckScarfStripedRed
+    outerClothing: ClothingOuterWinterColorRed
+    jumpsuit: ClothingUniformJumpsuitColorYellow
+    gloves: ClothingHandsGlovesFingerlessInsulated
+    shoes: ClothingShoesColorRed
+    back: ClothingBackpackEngineering
+    id: KeyCardTechnicalTrainee
+    ears: ClothingHeadsetEngineeringTechnicalService
+    belt: ClothingBeltUtilityEngineering
+    pocket1: BookEngineersHandbook
+    pocket2: ScpEngineeringPDA

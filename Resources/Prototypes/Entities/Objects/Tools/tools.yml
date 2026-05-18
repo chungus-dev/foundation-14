@@ -50,6 +50,11 @@
   id: Screwdriver
   description: Industrial grade torque in a small screwdriving package.
   components:
+  # Scp added start
+  - type: BloodSplatterer
+    probability: 0.2
+    bloodLineProbability: 0.05
+  # Scp added end
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/screwdriver_drop.ogg
@@ -299,17 +304,17 @@
   components:
   - type: RCD
     availablePrototypes:
-    - WallSolid
-    - FloorSteel
-    - Plating
+    - ScpWallSolid # Scp edit
+    - ScpFloorSteel # Scp edit
+    - ScpPlating # Scp edit
     - Catwalk
     - Grille
-    - Window
-    - WindowDirectional
-    - WindowReinforcedDirectional
-    - ReinforcedWindow
-    - Airlock
-    - AirlockGlass
+    - ScpWindow # Scp edit
+    - ScpWindowDirectional # Scp edit
+    - ScpWindowReinforcedDirectional # Scp edit
+    - ScpReinforcedWindow # Scp edit
+    - ScpAirlock # Scp edit
+    - ScpAirlockGlass # Scp edit
     - Firelock
     - TubeLight
     - BulbLight
@@ -318,6 +323,12 @@
     - HVCable
     - CableTerminal
     - Deconstruct
+    # Scp edit start
+    #- TripleGlassAirlockBasic
+    #- TripleGlassAirlock
+    - ScpDoubleGlassAirlock
+    - ScpDoubleGlassAirlockBasic
+    # Scp edit end
   - type: LimitedCharges
     maxCharges: 30
   - type: Sprite

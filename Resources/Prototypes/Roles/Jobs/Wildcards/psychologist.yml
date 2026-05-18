@@ -6,6 +6,13 @@
   startingGear: PsychologistGear
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
+  overrideConsoleVisibility: false # Scp added
+  setPreference: false # Scp added
+  # special:
+  #   - !type:AddComponentSpecial
+  #     components:
+  #     - type: PsychologistBlockAlcohol
+  # Scp edit end
   access:
   - Medical
   - Maintenance

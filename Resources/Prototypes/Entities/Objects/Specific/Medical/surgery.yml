@@ -90,6 +90,27 @@
         Slash: 8
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  # - type: Scalpel # SCP port: component unavailable in Foundation14
+  # - type: SurgeryTool # SCP port: component unavailable in Foundation14
+    # startSound:
+      # path: /Audio/_Scp/Medical/Surgery/scalpel1.ogg
+    # endSound:
+      # path: /Audio/_Scp/Medical/Surgery/scalpel2.ogg
+  # Scp edit start - исследования сцп
+  - type: ScpInteractTool
+    delay: 30
+    cooldown: 600 # 5 минут
+    cooldownMessage: scp-interact-time-left
+    event: !type:ScpSpawnInteractDoAfterEvent
+      toSpawn: Scp999Jelly
+    sound: /Audio/Effects/break_stone.ogg # TODO: Звук
+    whitelist:
+      components:
+      - Scp999
+  - type: GuideHelp
+    guides:
+    - ScpResearchAdvanced
+  # Scp edit end
 
 - type: entity
   name: shiv

@@ -4,6 +4,7 @@ using Content.Server.GameTicking;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Log;
 
 namespace Content.IntegrationTests.Tests.GameRules;
 

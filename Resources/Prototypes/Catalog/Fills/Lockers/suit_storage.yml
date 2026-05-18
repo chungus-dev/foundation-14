@@ -156,6 +156,7 @@
   id: SuitStorageAtmos
   parent: SuitStorageBase
   suffix: Atmospheric Technician
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -190,6 +191,7 @@
   id: SuitStorageCE
   parent: SuitStorageBase
   suffix: Chief Engineer
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -203,6 +205,7 @@
   id: SuitStorageCMO
   parent: SuitStorageBase
   suffix: Chief Medical Officer
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -216,6 +219,7 @@
   id: SuitStorageRD
   parent: SuitStorageBase
   suffix: Research Director
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -229,6 +233,7 @@
   id: SuitStorageHOS
   parent: SuitStorageBase
   suffix: Head of Security
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -255,6 +260,7 @@
   id: SuitStorageCaptain
   parent: SuitStorageBase
   suffix: Captain
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -268,6 +274,7 @@
   id: SuitStorageSalv
   parent: SuitStorageBase
   suffix: Salvage
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -281,6 +288,7 @@
   id: SuitStorageSyndie
   parent: SuitStorageBase
   suffix: Syndicate Hardsuit
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -301,6 +309,7 @@
   id: SuitStoragePirateCap
   parent: SuitStorageBase
   suffix: Pirate Captain
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:
@@ -320,6 +329,7 @@
   id: SuitStorageWizard
   parent: SuitStorageBase
   suffix: Wizard
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: EntityTableContainerFill
     containers:

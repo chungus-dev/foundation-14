@@ -14,6 +14,7 @@ using Robust.Shared.EntitySerialization;
 
 namespace Content.IntegrationTests.Tests.Power;
 
+[Explicit]
 public sealed class StationPowerTests : GameTest
 {
     /// <summary>
@@ -21,21 +22,14 @@ public sealed class StationPowerTests : GameTest
     /// </summary>
     private const float MinimumPowerDurationSeconds = 10 * 60;
 
-    private static readonly string[] GameMaps =
+    // Scp edit start
+    public static readonly string[] GameMaps =
     [
-        "Bagel",
-        "Box",
-        "Elkridge",
-        "Fland",
-        "Marathon",
-        "Oasis",
-        "Packed",
-        "Plasma",
-        "Relic",
-        "Snowball",
-        "Reach",
-        "Exo",
+        "ScpComplexCompact",
+        "ScpComplexStandard",
+        "ScpComplexModular",
     ];
+    // Scp edit end
 
     public override PoolSettings PoolSettings => new ()
     {

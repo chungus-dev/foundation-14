@@ -2,6 +2,7 @@
   id: ReinforcedWindow
   name: reinforced window
   parent: [BaseDeltaPressureReinforcedGlass, Window]
+  categories: [ HideSpawnMenu ] # Scp added
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -61,6 +62,7 @@
   parent: [BaseDeltaPressureReinforcedGlassQuarter, WindowDirectional]
   name: directional reinforced window
   description: Don't smudge up the glass down there.
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:
@@ -120,6 +122,7 @@
   parent: ReinforcedWindow
   id: ReinforcedWindowDiagonal
   suffix: diagonal
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
     snap:
@@ -135,7 +138,7 @@
     - Window
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls
     base: state
   - type: Icon
     sprite: Structures/Windows/reinforced_window_diagonal.rsi

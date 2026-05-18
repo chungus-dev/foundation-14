@@ -137,3 +137,23 @@
   id: SterileMask
   equipment:
     mask: ClothingMaskSterile
+
+- type: loadoutEffectGroup
+  id: MedicalHeadMirrorTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMedicalSpecialist # Scp edit
+      time: 108000 #30 hrs
+
+# Head
+
+#- type: loadout
+#  id: SeniorPhysicianBeret
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: SeniorPhysician
+#  equipment:
+#    head: ClothingHeadHatBeretSeniorPhysician
+

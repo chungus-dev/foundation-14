@@ -1,0 +1,45 @@
+- type: job
+  id: MentalControlOfficer
+  name: job-name-mental-control-officer
+  description: job-description-mental-control-officer
+  playTimeTracker: JobMentalControlOfficer
+  startingGear: MentalControlOfficerGear
+  icon: JobMentalControlOfficer
+  supervisors: job-supervisors-director
+  canBeAntag: false
+  weight: 860
+  displayWeight: 40
+  setPreference: false # TODO: После добавления вайт-листа убрать
+  access:
+  - Command
+  - Service
+  - Brig
+  - Maintenance
+  - External
+  - Lawyer
+  - Bunker
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: B
+    - type: AccessLevel
+      level: Four
+    - type: Fear
+      timeToDecreaseFearLevel: 120
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+      fearBasedSpreadAngleModifier:
+        Anxiety: 2
+        Fear: 5
+        Terror: 10
+
+- type: startingGear
+  id: MentalControlOfficerGear
+  equipment:
+    shoes: ClothingShoesColorBlack
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetAltInternalSecurity
+  inhand: [] # Scp edit - disabled broken ported inhand item.

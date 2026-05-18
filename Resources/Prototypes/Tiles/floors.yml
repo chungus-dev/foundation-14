@@ -36,7 +36,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemSteel
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelCheckerLight
@@ -49,7 +55,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemSteelCheckerLight
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelCheckerDark
@@ -62,7 +74,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemSteelCheckerDark
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelMini
@@ -75,7 +93,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemSteelMini
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelPavement
@@ -88,7 +112,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemSteelPavement
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelDiagonal
@@ -101,14 +131,26 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemSteelDiagonal
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelOffset
   parent: BaseStationTile
   name: tiles-steel-floor-offset
   sprite: /Textures/Tiles/steel_offset.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemSteelOffset
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelMono
@@ -121,7 +163,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
   itemDrop: FloorTileItemSteelMono
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelPavementVertical
@@ -134,7 +182,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
   itemDrop: FloorTileItemSteelPavementVertical
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelHerringbone
@@ -147,7 +201,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
   itemDrop: FloorTileItemSteelHerringbone
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelDiagonalMini
@@ -160,7 +220,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
   itemDrop: FloorTileItemSteelDiagonalMini
+  heatCapacity: 10000
 
 - type: tile
   parent: BaseStationTile
@@ -207,18 +273,26 @@
   parent: BaseStationTile
   name: tiles-brass-floor-filled
   sprite: /Textures/Tiles/Misc/clockwork/clockwork_floor_filled.png
+  baseTurf: ScpPlating # Scp editBrass
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemBrassFilled
+  heatCapacity: 10000
 
 - type: tile
   id: FloorBrassReebe
   parent: BaseStationTile
   name: tiles-brass-floor-reebe
   sprite: /Textures/Tiles/Misc/clockwork/reebe.png
+  baseTurf: ScpPlating # Scp editBrass
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemBrassReebe
+  heatCapacity: 10000
 
 - type: tile
   id: FloorPlastic
@@ -231,7 +305,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemSteel
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWood
@@ -244,11 +324,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
     collection: BarestepWood
   itemDrop: FloorTileItemWood
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWhite
@@ -261,9 +345,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhite
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWhiteMini
@@ -276,9 +364,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteMini
+  heatCapacity: 10000
 
 - type: tile
   parent: BaseStationTile
@@ -331,9 +423,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhitePavement
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWhiteDiagonal
@@ -346,18 +442,26 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteDiagonal
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWhiteOffset
   parent: BaseStationTile
   name: tiles-white-floor-offset
   sprite: /Textures/Tiles/white_offset.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteOffset
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWhiteMono
@@ -370,9 +474,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteMono
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWhitePavementVertical
@@ -385,9 +493,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhitePavementVertical
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWhiteHerringbone
@@ -400,9 +512,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteHerringbone
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWhiteDiagonalMini
@@ -415,9 +531,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteDiagonalMini
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWhitePlastic
@@ -430,9 +550,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhite
+  heatCapacity: 10000
 
 - type: tile
   id: FloorDark
@@ -445,9 +569,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDark
+  heatCapacity: 10000
 
 - type: tile
   id: FloorDarkMini
@@ -460,9 +588,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkMini
+  heatCapacity: 10000
 
 - type: tile
   parent: BaseStationTile
@@ -515,9 +647,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkPavement
+  heatCapacity: 10000
 
 - type: tile
   id: FloorDarkDiagonal
@@ -530,18 +666,26 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkDiagonal
+  heatCapacity: 10000
 
 - type: tile
   id: FloorDarkOffset
   parent: BaseStationTile
   name: tiles-dark-floor-offset
   sprite: /Textures/Tiles/dark_offset.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkOffset
+  heatCapacity: 10000
 
 - type: tile
   id: FloorDarkMono
@@ -554,9 +698,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkMono
+  heatCapacity: 10000
 
 - type: tile
   id: FloorDarkPavementVertical
@@ -569,9 +717,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkPavementVertical
+  heatCapacity: 10000
 
 - type: tile
   id: FloorDarkHerringbone
@@ -584,9 +736,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkHerringbone
+  heatCapacity: 10000
 
 - type: tile
   id: FloorDarkDiagonalMini
@@ -599,9 +755,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkDiagonalMini
+  heatCapacity: 10000
 
 - type: tile
   id: FloorDarkPlastic
@@ -614,18 +774,26 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDark
+  heatCapacity: 10000
 
 - type: tile
   id: FloorTechMaint
   parent: BaseStationTile
   name: tiles-techmaint-floor
   sprite: /Textures/Tiles/tech_maint.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemTechmaint
+  heatCapacity: 10000
 
 - type: tile
   id: FloorTechMaintDark
@@ -641,27 +809,39 @@
   parent: BaseStationTile
   name: tiles-reinforced-floor
   sprite: /Textures/Tiles/reinforced.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: PartRodMetal1
+  heatCapacity: 10000
 
 - type: tile
   id: FloorMono
   parent: BaseStationTile
   name: tiles-mono-floor
   sprite: /Textures/Tiles/mono.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemMono
+  heatCapacity: 10000
 
 - type: tile
   id: FloorLino
   parent: BaseStationTile
   name: tiles-linoleum-floor
   sprite: /Textures/Tiles/lino.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemLino
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelDirty
@@ -674,45 +854,65 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepPlating
   itemDrop: FloorTileItemDirty
+  heatCapacity: 10000
 
 - type: tile
   id: FloorElevatorShaft
   parent: BaseStationTile
   name: tiles-elevator-shaft
   sprite: /Textures/Tiles/elevator_shaft.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemElevatorShaft
+  heatCapacity: 10000
 
 - type: tile
   id: FloorMetalDiamond
   parent: BaseStationTile
   name: tiles-diamond-plate-floor
   sprite: /Textures/Tiles/metaldiamond.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemMetalDiamond
+  heatCapacity: 10000
 
 - type: tile
   id: FloorRockVault
   parent: BaseStationTile
   name: tiles-rock-floor
   sprite: /Textures/Tiles/rock_vault.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepAsteroid
   itemDrop: FloorTileItemRockVault
+  heatCapacity: 10000
 
 - type: tile
   id: FloorBlue
   parent: BaseStationTile
   name: tiles-blue-tile
   sprite: /Textures/Tiles/blue.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemBlue
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelLime
@@ -725,34 +925,52 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemLime
+  heatCapacity: 10000
 
 - type: tile
   id: FloorMining
   parent: BaseStationTile
   name: tiles-mining-tile
   sprite: /Textures/Tiles/mining_floor.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemMining
+  heatCapacity: 10000
 
 - type: tile
   id: FloorMiningDark
   parent: BaseStationTile
   name: tiles-mining-dark-tile
   sprite: /Textures/Tiles/mining_floor_dark.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemMiningDark
+  heatCapacity: 10000
 
 - type: tile
   id: FloorMiningLight
   parent: BaseStationTile
   name: tiles-mining-light-tile
   sprite: /Textures/Tiles/mining_floor_light.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemMiningLight
+  heatCapacity: 10000
 
 # Departmental
 - type: tile
@@ -760,23 +978,39 @@
   parent: BaseStationTile
   name: tiles-freezer
   sprite: /Textures/Tiles/freezer.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemFreezer
+  heatCapacity: 10000
 
 - type: tile
   id: FloorShowroom
   parent: BaseStationTile
   name: tiles-showroom-floor
   sprite: /Textures/Tiles/showroom.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemShowroom
+  heatCapacity: 10000
 
 - type: tile
   id: FloorHydro
   parent: BaseStationTile
   name: tiles-hydro-floor
   sprite: /Textures/Tiles/hydro.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemHydro
+  heatCapacity: 10000
 
 - type: tile
   id: FloorBar
@@ -789,39 +1023,65 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemBar
+  heatCapacity: 10000
 
 - type: tile
   id: FloorClown
   parent: BaseStationTile
   name: tiles-clown-floor
   sprite: /Textures/Tiles/clown.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemClown
+  heatCapacity: 10000
 
 - type: tile
   id: FloorMime
   parent: BaseStationTile
   name: tiles-mime-floor
   sprite: /Textures/Tiles/mime.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemMime
+  heatCapacity: 10000
 
 - type: tile
   id: FloorKitchen
   parent: BaseStationTile
   name: tiles-kitchen-floor
   sprite: /Textures/Tiles/kitchen.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemKitchen
+  heatCapacity: 10000
 
 - type: tile
   id: FloorLaundry
   parent: BaseStationTile
   name: tiles-laundry-floor
   sprite: /Textures/Tiles/laundry.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemLaundry
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSteelDamaged
@@ -835,7 +1095,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemSteel #This should probably be made null when it becomes possible to make it such, in SS13 prying destroyed tiles wouldn't give you anything.
+  heatCapacity: 10000
 
 # Concrete
 - type: tile
@@ -849,9 +1115,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
-    collection: FootstepTile
+    collection: FootstepScpStone # Fire
+    params:
+      volume: -10
   itemDrop: FloorTileItemConcrete
+  heatCapacity: 10000
 
 - type: tile
   id: FloorConcreteMono
@@ -864,9 +1136,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
-    collection: FootstepTile
+    collection: FootstepScpStone # Fire
+    params:
+      volume: -10
   itemDrop: FloorTileItemConcreteMono
+  heatCapacity: 10000
 
 - type: tile
   id: FloorConcreteSmooth
@@ -879,9 +1157,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
-    collection: FootstepTile
+    collection: FootstepScpStone # Fire
+    params:
+      volume: -10
   itemDrop: FloorTileItemConcreteSmooth
+  heatCapacity: 10000
 
 - type: tile
   id: FloorGrayConcrete
@@ -894,9 +1178,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
-    collection: FootstepTile
+    collection: FootstepScpStone # Fire
+    params:
+      volume: -10
   itemDrop: FloorTileItemGrayConcrete
+  heatCapacity: 10000
 
 - type: tile
   id: FloorGrayConcreteMono
@@ -909,9 +1199,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
-    collection: FootstepTile
+    collection: FootstepScpStone # Fire
+    params:
+      volume: -10
   itemDrop: FloorTileItemGrayConcreteMono
+  heatCapacity: 10000
 
 - type: tile
   id: FloorGrayConcreteSmooth
@@ -924,9 +1220,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
-    collection: FootstepTile
+    collection: FootstepScpStone # Fire
+    params:
+      volume: -10
   itemDrop: FloorTileItemGrayConcreteSmooth
+  heatCapacity: 10000
 
 - type: tile
   id: FloorOldConcrete
@@ -939,9 +1241,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
-    collection: FootstepTile
+    collection: FootstepScpStone # Fire
+    params:
+      volume: -10
   itemDrop: FloorTileItemOldConcrete
+  heatCapacity: 10000
 
 - type: tile
   id: FloorOldConcreteMono
@@ -954,9 +1262,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
-    collection: FootstepTile
+    collection: FootstepScpStone # Fire
+    params:
+      volume: -10
   itemDrop: FloorTileItemOldConcreteMono
+  heatCapacity: 10000
 
 - type: tile
   id: FloorOldConcreteSmooth
@@ -969,9 +1283,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
-    collection: FootstepTile
+    collection: FootstepScpStone # Fire
+    params:
+      volume: -10
   itemDrop: FloorTileItemOldConcreteSmooth
+  heatCapacity: 10000
 
 # Carpets (non smoothing)
 - type: tile
@@ -979,72 +1299,96 @@
   parent: BaseStationTile
   name: tiles-blue-arcade-floor
   sprite: /Textures/Tiles/arcadeblue.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepCarpet
   barestepSounds:
     collection: BarestepCarpet
   friction: 1.25
   itemDrop: FloorTileItemArcadeBlue
+  heatCapacity: 10000
 
 - type: tile
   id: FloorArcadeBlue2
   parent: BaseStationTile
   name: tiles-blue-arcade-floor
   sprite: /Textures/Tiles/arcadeblue2.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepCarpet
   barestepSounds:
     collection: BarestepCarpet
   friction: 1.25
   itemDrop: FloorTileItemArcadeBlue2
+  heatCapacity: 10000
 
 - type: tile
   id: FloorArcadeRed
   parent: BaseStationTile
   name: tiles-red-arcade-floor
   sprite: /Textures/Tiles/arcadered.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepCarpet
   barestepSounds:
     collection: BarestepCarpet
   friction: 1.25
   itemDrop: FloorTileItemArcadeRed
+  heatCapacity: 10000
 
 - type: tile
   id: FloorEighties
   parent: BaseStationTile
   name: tiles-eighties-floor
   sprite: /Textures/Tiles/eighties.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepCarpet
   barestepSounds:
     collection: BarestepCarpet
   friction: 1.25
   itemDrop: FloorTileItemEighties
+  heatCapacity: 10000
 
 - type: tile
   id: FloorCarpetClown
   parent: BaseStationTile
   name: tiles-clown-carpet-floor
   sprite: /Textures/Tiles/carpetclown.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepCarpet
   barestepSounds:
     collection: BarestepCarpet
   friction: 1.25
   itemDrop: FloorTileItemCarpetClown
+  heatCapacity: 10000
 
 - type: tile
   id: FloorCarpetOffice
   parent: BaseStationTile
   name: tiles-office-carpet-floor
   sprite: /Textures/Tiles/carpetoffice.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepCarpet
   barestepSounds:
     collection: BarestepCarpet
   friction: 1.25
   itemDrop: FloorTileItemCarpetOffice
+  heatCapacity: 10000
 
 - type: tile
   id: FloorBoxing
@@ -1057,8 +1401,14 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   friction: 1.25
   itemDrop: FloorTileItemBoxing
+  heatCapacity: 10000
 
 - type: tile
   id: FloorGym
@@ -1071,8 +1421,14 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   friction: 1.25
   itemDrop: FloorTileItemGym
+  heatCapacity: 10000
 
 # Shuttle
 - type: tile
@@ -1086,7 +1442,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemShuttleWhite
+  heatCapacity: 10000
 
 - type: tile
   id: FloorShuttleGrey
@@ -1099,7 +1461,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemShuttleGrey
+  heatCapacity: 10000
 
 - type: tile
   id: FloorShuttleBlack
@@ -1112,7 +1480,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemShuttleBlack
+  heatCapacity: 10000
 
 - type: tile
   id: FloorShuttleBlue
@@ -1125,7 +1499,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemShuttleBlue
+  heatCapacity: 10000
 
 - type: tile
   id: FloorShuttleOrange
@@ -1138,7 +1518,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemShuttleOrange
+  heatCapacity: 10000
 
 - type: tile
   id: FloorShuttlePurple
@@ -1151,7 +1537,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemShuttlePurple
+  heatCapacity: 10000
 
 - type: tile
   id: FloorShuttleRed
@@ -1164,7 +1556,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
   itemDrop: FloorTileItemShuttleRed
+  heatCapacity: 10000
 
 
 # Materials
@@ -1173,18 +1571,26 @@
   parent: BaseStationTile
   name: tiles-gold-tile
   sprite: /Textures/Tiles/gold.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemGold
+  heatCapacity: 10000
 
 - type: tile
   id: FloorSilver
   parent: BaseStationTile
   name: tiles-silver-tile
   sprite: /Textures/Tiles/silver.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemSilver
+  heatCapacity: 10000
 
 - type: tile
   id: FloorGlass
@@ -1197,9 +1603,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: SheetGlass1
+  heatCapacity: 10000
 
 - type: tile
   id: FloorRGlass
@@ -1212,9 +1622,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepTile
   itemDrop: SheetRGlass1
+  heatCapacity: 10000
 
 - type: tile
   id: FloorMetalFoam
@@ -1224,9 +1638,13 @@
   variants: 1
   placementVariants:
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: SheetSteel1
+  heatCapacity: 10000
 
 # Circuits
 - type: tile
@@ -1234,27 +1652,39 @@
   parent: BaseStationTile
   name: tiles-green-circuit-floor
   sprite: /Textures/Tiles/green_circuit.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemGCircuit
+  heatCapacity: 10000
 
 - type: tile
   id: FloorBlueCircuit
   parent: BaseStationTile
   name: tiles-blue-circuit-floor
   sprite: /Textures/Tiles/blue_circuit.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemBCircuit
+  heatCapacity: 10000
 
 - type: tile
   id: FloorRedCircuit
   parent: BaseStationTile
   name: tiles-red-circuit-floor
   sprite: /Textures/Tiles/red_circuit.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemRCircuit
+  heatCapacity: 10000
 
 # Terrain
 - type: tile
@@ -1348,12 +1778,11 @@
   - 1.0
   - 1.0
   - 1.0
-  baseTurf: Plating
+  baseTurf: ScpPlating # Scp edit
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
-  weather: true
 
 # Asteroid
 
@@ -1469,13 +1898,12 @@
   id: FloorAsteroidTile
   name: tiles-asteroid-tile
   sprite: /Textures/Tiles/Asteroid/asteroid_tile.png
-  baseTurf: Plating
+  baseTurf: ScpPlating # Scp edit
   isSubfloor: false
   deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
-  weather: true
 
 - type: tile
   id: FloorAsteroidIronsandBorderless
@@ -1623,19 +2051,27 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepBlood
   itemDrop: FloorTileItemFlesh
   friction: 0.25 #slippy
+  heatCapacity: 10000
 
 - type: tile
   id: FloorTechMaint2
   parent: BaseStationTile
   name: tiles-techmaint2-floor
   sprite: /Textures/Tiles/steel_maint.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemSteelMaint
+  heatCapacity: 10000
 
 - type: tile
   id: FloorTechMaint3
@@ -1648,9 +2084,13 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemGratingMaint
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWoodTile
@@ -1663,11 +2103,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
     collection: BarestepWood
   itemDrop: FloorTileItemWoodPattern
+  heatCapacity: 10000
 
 - type: tile
   id: FloorBrokenWood
@@ -1683,22 +2127,30 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
     collection: BarestepWood
   itemDrop: MaterialWoodPlank1
+  heatCapacity: 10000
 
 - type: tile
   id: FloorWebTile
   parent: BaseStationTile
   name: tiles-web
   sprite: /Textures/Tiles/Misc/Web/web_tile.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepCarpet
   barestepSounds:
     collection: BarestepCarpet
   itemDrop: FloorTileItemWeb
+  heatCapacity: 10000
 
 - type: tile
   id: FloorChromite
@@ -1725,15 +2177,20 @@
   parent: BaseStationTile
   name: tiles-hull
   sprite: /Textures/Tiles/hull.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemSteel #probably should not be normally obtainable, but the game shits itself and dies when you try to put null here
+  heatCapacity: 10000
 
 - type: tile
   id: FloorReinforcedHardened
   parent: BaseStationTile
   name: tiles-super-reinforced-floor
   sprite: /Textures/Tiles/super_reinforced.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
   footstepSounds:
     collection: FootstepHull
   itemDrop: PartRodMetal1 #same case as FloorHull
@@ -1762,23 +2219,35 @@
     East: /Textures/Tiles/Planet/Grass/double_edge.png
     North: /Textures/Tiles/Planet/Grass/double_edge.png
     West: /Textures/Tiles/Planet/Grass/double_edge.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
   deconstructTools: [ Cutting ]
   footstepSounds:
     collection: FootstepGrass
   itemDrop: FloorTileItemAstroGrass
+  heatCapacity: 10000
 
 - type: tile
   id: FloorMowedAstroGrass
-  parent: [ BaseStationTile, FloorGrass ]
   name: tiles-mowed-astro-grass
+  parent: FloorGrass
+  sprite: /Textures/Tiles/Planet/Grass/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: ScpPlating # Scp edit
   isSubfloor: false
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemMowedAstroGrass
 
 - type: tile
   id: FloorJungleAstroGrass
-  parent: [ BaseStationTile, FloorGrassJungle ]
   name: tiles-jungle-astro-grass
+  parent: FloorGrassJungle
+  baseTurf: ScpPlating # Scp edit
   isSubfloor: false
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemJungleAstroGrass
@@ -1807,15 +2276,20 @@
   parent: BaseStationTile
   name: tiles-astro-ice
   sprite: /Textures/Tiles/Planet/Snow/ice.png
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   friction: 0.05
+  heatCapacity: 10000
   mobFriction: 0.05
   mobAcceleration: 0.1
   itemDrop: FloorTileItemAstroIce
 
 - type: tile
   id: FloorAstroSnow
-  parent: [ BaseStationTile, FloorSnow ]
   name: tiles-astro-snow
+  parent: FloorSnow
+  baseTurf: ScpPlating # Scp edit
   isSubfloor: false
   deconstructTools: [ Prying ]
   itemDrop: FloorTileItemAstroSnow
@@ -1823,12 +2297,12 @@
 # Asteroid Sand
 - type: tile
   id: FloorAstroAsteroidSand
-  parent: [ BaseStationTile, FloorAsteroidSand ]
   name: tiles-astro-asteroid-sand
+  parent: FloorAsteroidSand
+  baseTurf: ScpPlating # Scp edit
   isSubfloor: false
   deconstructTools: [ Prying ]
   itemDrop: FloorTileItemAstroAsteroidSand
-  weather: false
 
 - type: tile
   id: FloorAstroAsteroidSandBorderless
@@ -1880,11 +2354,15 @@
   - 1.0
   - 1.0
   - 1.0
+  baseTurf: ScpPlating # Scp edit
+  isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
     collection: BarestepWood
   itemDrop: FloorTileItemWoodLarge
+  heatCapacity: 10000
 
 - type: tile
   id: FloorXenoborg

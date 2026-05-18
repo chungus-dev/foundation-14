@@ -5,6 +5,11 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  # Scp added start
+  - type: BloodSplatterer
+    amount: 1, 3
+    probability: 0.5
+  # Scp added end
   - type: Sprite
   - type: Item
     size: Huge
@@ -18,6 +23,9 @@
     - suitStorage
   - type: AmmoCounter
   - type: Gun
+    minAngle: 23
+    maxAngle: 90
+    angleIncrease: 1.25
     fireRate: 5
     selectedMode: FullAuto
     availableModes:
@@ -32,7 +40,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineLightRifle
+        startingItem: MagazineLightRifleSP
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
@@ -42,6 +50,7 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
+        startingItem: CartridgeLightRifleSP
         priority: 1
         whitelist:
           tags:

@@ -3,6 +3,7 @@
   parent: BaseStructure
   name: high security door
   description: Keeps the bad out and keeps the good in.
+  categories: [ HideSpawnMenu ] # Scp added
   placement:
     mode: SnapgridCenter
   components:
@@ -13,7 +14,6 @@
   - type: StationAiWhitelist
   - type: InteractionOutline
   - type: Sprite
-    snapCardinals: true
     sprite: Structures/Doors/Airlocks/highsec/highsec.rsi
     layers:
     - state: closed
@@ -70,11 +70,11 @@
       types:
         Blunt: 50
     openSound:
-      path: /Audio/Machines/airlock_open.ogg
+      collection: AirlockDefaultOpen # Fire
     closeSound:
-      path: /Audio/Machines/airlock_close.ogg
+      collection: AirlockDefaultClose # Fire
     denySound:
-      path: /Audio/Machines/airlock_deny.ogg
+      path: /Audio/_Scp/Objects/Machines/Airlocks/deny.ogg # Fire
   - type: Weldable
     fuel: 10
     time: 10

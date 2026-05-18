@@ -10,6 +10,33 @@
   id: BaseSpeciesMob
   save: false
   components:
+  # Scp added start
+  - type: ScpHoldable
+  - type: FieldOfView
+  - type: HoldToFace
+  - type: Blinkable
+  - type: SpeakOnEyeStateChange
+    # Обычные персонажи проговаривают фразы только при ручном переключении глаз через акшен.
+    phraseOnClose:
+    - close-eye-phrase-1
+    - close-eye-phrase-3
+    - close-eye-phrase-4
+    phraseOnOpen:
+    - open-eye-phrase-1
+    - open-eye-phrase-3
+    speakOnlyInScp173Chamber: false
+  - type: Fear
+    phobias:
+    - Exoremophobia
+    - Necrophobia
+  - type: ProximityTarget
+  - type: ComponentToggler
+    components:
+    - type: FearSource
+      phobiaType: Necrophobia
+      uponComeCloser: None
+    - type: WatchingTarget
+  # Scp added end
   - type: DamageVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
     targetLayers:
@@ -25,6 +52,10 @@
         color: "#FF0000"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
+      # Scp added start - генетический урон
+      Genetic:
+        sprite: _Scp/Mobs/Effects/genetic_damage.rsi
+      # Scp added end
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,0.5
   - type: JobStatus

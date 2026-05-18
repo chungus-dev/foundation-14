@@ -1,0 +1,146 @@
+#дефиб ПХ медика
+- type: entity
+  parent: [DefibrillatorSyndicate, BaseChaosContraband]
+  id: DefibrillatorChaos
+  components:
+  - type: Contraband
+    severity: Chaos
+  - type: Sprite
+    sprite: _Scp/Objects/Specific/Medical/defibchaos.rsi
+    layers:
+    - state: icon
+    - state: screen
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      visible: false
+      shader: unshaded
+    - state: ready
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+      shader: unshaded
+
+#рюкзак ПХ
+- type: entity
+  parent: [ClothingBackpackMerc, BaseChaosContraband]
+  id: ClothingBackpackChaos
+#рюкзак ПХ (заполн)
+- type: entity
+  parent: ClothingBackpackChaos
+  id: ClothingBackpackChaosFilled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Crowbar
+        - id: FlashlightLantern
+        - id: DrinkWaterBottleFull
+        - id: FoodSnackNutribrick
+          amount: 2
+        - id: Screwdriver
+
+#ремень ПХ (заполн)
+- type: entity
+  parent: ClothingBeltChaos
+  id: ClothingBeltChaosFilled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Handcuffs
+        - id: GrenadeFlashBang
+        - id: Zipties
+          amount: 2
+        - id: GrenadeStinger
+        - id: RadioHandheld
+
+#очки ПХ
+- type: entity
+  parent: [ClothingEyesGlassesMercenary, BaseChaosContraband]
+  id: ChaosBalisticGlasses
+  suffix: ""
+  components:
+  - type: Contraband
+    severity: Chaos
+    #TODO! доперенести перевод
+
+#очки медика ПХ
+- type: entity
+  parent: [ClothingEyesHudMedical, BaseChaosContraband]
+  id: EyesHudChaosMedic
+  components:
+  - type: Contraband
+    severity: Chaos
+
+#берет медика ПХ
+- type: entity
+  parent: [ClothingHeadHatBeretCmo, BaseChaosContraband]
+  id: HeadHatCapChaosMedic
+
+#оптический термальный сканер ПХ
+- type: entity
+  parent: [ClothingEyesGlassesThermal, BaseChaosContraband]
+  id: ClothingEyesGlassesThermalChaos
+  components:
+  - type: Contraband
+    severity: Chaos
+
+
+
+### ------=========[Starting gears]=========------ ###
+# Командир
+- type: startingGear
+  id: ChaosLeaderGear
+  equipment:
+    jumpsuit: ClothingUniformChaosIns
+    back: ClothingBackpackChaosFilled
+    mask: ClothingMaskGasChaos
+    head: ClothingHeadHelmetChaos
+    eyes: ClothingEyesGlassesThermalChaos #ChaosBalisticGlasses
+    gloves: ClothingHandsGlovesChaos
+    outerClothing: ClothingOuterArmorChaosVest
+    shoes: ClothingShoesBootsChaosFilled
+    id: ChaosAccessBreakerUnlimited
+    ears: ClothingHeadsetAltChaos
+    belt: ClothingBeltChaosFilled
+    pocket1: ChaosAccessBreaker
+  inhand:
+  - MedkitCombatFilled
+
+# Медик
+- type: startingGear
+  id: ChaosMedicGear
+  equipment:
+    jumpsuit: ClothingUniformChaosIns
+    back: ClothingBackpackChaosFilled
+    mask: ClothingMaskGasChaosIns
+    head: HeadHatCapChaosMedic
+    eyes: EyesHudChaosMedic
+    gloves: ClothingHandsGlovesChaos
+    outerClothing: ClothingOuterArmorChaosVest
+    shoes: ClothingShoesBootsChaosFilled
+    id: ChaosAccessBreakerUnlimited
+    ears: ClothingHeadsetAltChaos
+    belt: ClothingBeltChaosFilled
+    pocket1: CombatMedipen
+    pocket2: DefibrillatorChaos
+  inhand:
+  - MedkitCombatFilled
+
+# Боец (обычный ПХ)
+- type: startingGear
+  id: ChaosGear
+  equipment:
+    jumpsuit: ClothingUniformChaosIns
+    back: ClothingBackpackChaosFilled
+    mask: ClothingMaskGasChaosIns
+    head: ClothingHeadHelmetChaos
+    eyes: ChaosBalisticGlasses
+    gloves: ClothingHandsGlovesChaos
+    outerClothing: ClothingOuterArmorChaosVest
+    shoes: ClothingShoesBootsChaosFilled
+    id: ChaosAccessBreakerUnlimited
+    ears: ClothingHeadsetAltChaos
+    belt: ClothingBeltChaosFilled
+    pocket1: C4
+  inhand:
+  - MedkitCombatFilled

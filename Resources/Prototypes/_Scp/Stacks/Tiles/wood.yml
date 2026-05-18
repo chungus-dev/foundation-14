@@ -1,0 +1,17 @@
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWood
+  name: stack-scp-floor-tile-wood
+  spawn: ScpFloorTileItemWood
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWoodPattern
+  name: stack-scp-floor-tile-wood-pattern
+  spawn: ScpFloorTileItemWoodPattern
+
+- type: stack
+  parent: BaseTileStack
+  id: ScpFloorTileWoodLarge
+  name: stack-scp-floor-tile-wood-large
+  spawn: ScpFloorTileItemWoodLarge

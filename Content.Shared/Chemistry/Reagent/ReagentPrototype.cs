@@ -24,6 +24,14 @@ namespace Content.Shared.Chemistry.Reagent
     [DataDefinition]
     public sealed partial class ReagentPrototype : IPrototype, IInheritingPrototype
     {
+        // Scp added start - синтезатор реагентов и усложнение чистки
+        [DataField]
+        public bool Synthesisable;
+
+        [DataField]
+        public double AbsorbCooldownPerUnit = 0.1d;
+        // Scp added end
+
         [ViewVariables]
         [IdDataField]
         public string ID { get; private set; } = default!;

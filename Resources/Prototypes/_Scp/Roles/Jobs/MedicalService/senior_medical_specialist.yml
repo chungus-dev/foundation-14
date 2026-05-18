@@ -1,0 +1,51 @@
+- type: job
+  id: SeniorMedicalSpecialist
+  name: job-name-senior-medical-specialist
+  description: job-description-senior-medical-specialist
+  playTimeTracker: JobSeniorMedicalSpecialist
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: MedicalService
+    time: 36000
+  - !type:AgeRequirement
+    requiredAge: 30
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  icon: JobSeniorMedicalSpecialist
+  supervisors: job-supervisors-head-of-medical-sector
+  displayWeight: 35
+  weight: 780
+  accessGroups:
+  - SeniorMedicalSpecialist
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: Fear
+      phobias:
+      - Exoremophobia
+      # Врачи не пугаются трупов, у них не будет некрофобии
+    - type: ShowScp096FaceDamageHud
+
+- type: startingGear
+  id: SeniorMedicalSpecialistGear
+  equipment:
+    eyes: ClothingEyesHudMedical
+    neck: ClothingNeckScarfStripedBlack
+    outerClothing: ClothingOuterCoatLab
+    jumpsuit: ClothingUniformJumpsuitSeniorPhysician
+    gloves: ClothingHandsGlovesLatex
+    shoes: ClothingShoesColorBrown
+    back: ClothingBackpackMedical
+    id: KeyCardSeniorMedicalSpecialist
+    ears: ClothingHeadsetMedicalService
+    belt: ClothingBeltMedicalFilled
+    pocket2: ScpMedicalPDA
+  storage:
+    back:
+    - MedicatedSuture
+    - RegenerativeMesh

@@ -1,0 +1,9 @@
+ent-CrateAdministrationScpGygaxBundle = "Gygax" package
+    .desc = Contains a set of Foundation SCP light armored mech suits.
+    .suffix = Filled
+ent-CrateAdministrationMarauderBundle = "Marauder" package
+    .desc = Contains a set of Foundation SCP heavily armored mech suits.
+    .suffix = Filled
+ent-CrateAdministrationSeraphBundle = "Seraph" package
+    .desc = Contains a set of Foundation SCP elite heavily armored mech suits.
+    .suffix = Filled

@@ -1,0 +1,90 @@
+# Командир
+- type: job
+  id: RRHLeader
+  name: ghost-role-information-mtf-leader-RRH-name
+  description: ghost-role-information-mtf-leader-description
+  playTimeTracker: JobRRHLeader
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 #5 hrs
+  setPreference: false
+  startingGear: RRHLeaderGear
+  icon: JobIconRRHleader
+  supervisors: ghost-role-information-mtf-leader-supervisors
+  canBeAntag: false
+  weight: 930
+  overrideConsoleVisibility: false
+  alwaysShowInBanPanel: true
+  accessGroups:
+  - AllComplex
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: RRHLeaderGear
+  equipment:
+    jumpsuit: ClothingUniformRRH
+    back: MtfTacticalBackpack
+    shoes: ClothingShoesRRHFilled
+    head: ClothingHelmetMtfTacticalNVG
+    mask: ClothingMaskMtfTacticalRed
+    eyes: ClothingEyesNVDHighMtf
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorTacticalAlpha
+    id: KeyCardMtfRRHLeader
+    ears: ClothingHeadsetAltMTFRRH
+    belt: ClothingBeltMtfSparePouch
+    pocket1: BaseUplinkHightLeader
+    pocket2: MobileTaskForcePDA
+  storage:
+    back:
+    - BoxMtfLeaderKit
+    - Crowbar
+    - HandheldCrewMonitor
+    - DoorRemoteCustom
+
+# Специалист
+- type: job
+  id: RRHSpecialist
+  name: ghost-role-information-mtf-specialist-RRH-name
+  description: ghost-role-information-mtf-specialist-description
+  playTimeTracker: JobRRHSpecialist
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 #5 hrs
+  setPreference: false
+  startingGear: RRHSpecialistGear
+  icon: JobIconRRH
+  supervisors: ghost-role-information-mtf-specialist-supervisors
+  canBeAntag: false
+  weight: 925
+  overrideConsoleVisibility: false
+  alwaysShowInBanPanel: true
+  accessGroups:
+  - AllComplex
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: RRHSpecialistGear
+  equipment:
+    jumpsuit: ClothingUniformRRH
+    back: MtfTacticalBackpack
+    shoes: ClothingShoesRRHFilled
+    head: ClothingHelmetMtfTacticalNVG
+    mask: ClothingMaskMtfTacticalRed
+    eyes: ClothingEyesNVDHighMtf
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorTacticalAlpha
+    id: KeyCardMtfRRHSpecialist
+    ears: ClothingHeadsetAltMTFRRH
+    belt: ClothingBeltMtfSparePouch
+    pocket1: BaseUplinkHightSpecialist
+    pocket2: MobileTaskForcePDA
+  storage:
+    back:
+    - BoxMtfBaseKit
+    - Crowbar
+    - DoorRemoteCustom

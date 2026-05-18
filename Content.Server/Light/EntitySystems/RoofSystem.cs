@@ -15,10 +15,10 @@ public sealed class RoofSystem : SharedRoofSystem
     {
         base.Initialize();
         _gridQuery = GetEntityQuery<MapGridComponent>();
-        SubscribeLocalEvent<SetRoofComponent, ComponentStartup>(OnFlagStartup);
+        SubscribeLocalEvent<SetRoofComponent, MapInitEvent>(OnFlagStartup);
     }
 
-    private void OnFlagStartup(Entity<SetRoofComponent> ent, ref ComponentStartup args)
+    private void OnFlagStartup(Entity<SetRoofComponent> ent, ref MapInitEvent args)
     {
         var xform = Transform(ent.Owner);
 

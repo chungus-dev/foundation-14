@@ -35,6 +35,7 @@
       lacunarity: 1.5
     allowedTiles:
     - Plating
+    - ScpPlating # Scp added
     - Lattice
     entities:
     - Grille

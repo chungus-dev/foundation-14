@@ -1,0 +1,11 @@
+research-discipline-scp = SCP
+research-technology-silent-step-module = Silent-step module "Noktis-2"
+research-technology-counter-space-barrier = Counter-space barrier "Gaia-11"
+research-technology-second-order-neurovisual-filter = Second-order neurovisual filter "Arret-96"
+research-technology-shielding-composite = Shielding composite "Lignus-S"
+research-technology-rapid-deployment-fiber-synthesis = Rapid deployment fiber synthesis "GAZELVIV-9"
+research-technology-cognitive-screen-protocol = Cognitive screen protocol "Kovcheg-11"
+research-technology-conscious-inversion-filter = Conscious inversion filter "Eon-8"
+research-technology-agent-type-solution = Agent-type solution "Vigiliy"
+research-technology-anomalous-resonance-laser = Anomalous resonance laser
+research-technology-anomalous-optical-destructor = Anomalous optical destructor

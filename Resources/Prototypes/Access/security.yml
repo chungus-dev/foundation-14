@@ -28,13 +28,12 @@
 
 - type: accessGroup
   id: Security
+  # Scp edit start
   tags:
-  - HeadOfSecurity
-  - Security
-  - Armory
-  - Brig
-  - Detective
-  - Cryogenics
+  - SecurityCommander
+  groups:
+  - SecurityHeadless
+  # Scp edit end
 
 - type: accessGroup
   id: Armory
