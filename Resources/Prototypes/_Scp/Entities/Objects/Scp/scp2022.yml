@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   parent: Pill
   id: PillScp2022
   suffix: SCP-2022
@@ -45,6 +45,9 @@
         children:
         - id: PillScp2022
           amount: 10
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
   - type: GuideHelp
     guides:
     - ScpResearch

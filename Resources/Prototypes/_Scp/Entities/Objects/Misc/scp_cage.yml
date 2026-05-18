@@ -40,6 +40,9 @@
     node: wall
     containers:
     - entity_storage
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
 
 - type: entity
   parent: BaseCrateScpCage

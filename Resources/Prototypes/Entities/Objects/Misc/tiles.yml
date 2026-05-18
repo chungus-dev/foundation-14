@@ -260,9 +260,9 @@
       - FloorSteel
   - type: Stack
     stackType: FloorTileSteel
-  # - type: Construction # Scp edit
-  #   graph: TileSteel
-  #   node: steeltile
+  - type: Construction # Scp edit - keep vanilla TileSteel graph valid
+    graph: TileSteel
+    node: steeltile
 
 - type: entity
   name: offset steel tile

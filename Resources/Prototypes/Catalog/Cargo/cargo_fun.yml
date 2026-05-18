@@ -117,7 +117,7 @@
     sprite: Objects/Fun/Plushies/human.rsi
     state: icon
   product: CrateFunPlushie
-  cost: 1000
+  cost: 2550
   category: cargoproduct-category-name-fun
   group: market
 

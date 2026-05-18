@@ -39,7 +39,6 @@
     keysIn: [ ReleaseProduct ]
     container: [ storagebase ]
   - type: Storage
-#   quickInsertCooldown: 3.0
     openOnActivate: false
     showVerb: false
     maxItemSize: Small
@@ -69,9 +68,6 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Damageable
-  # - type: DamageOverlay # SCP port: component unavailable in Foundation14
-    # damagePopupType: SmallFloating
-    # isStructure: true
   - type: PointLight
     radius: 1.5
   - type: Scp

@@ -12,16 +12,20 @@
     class: Safe
   - type: Item
     size: Normal
-  # - type: Soil # SCP port: component unavailable in Foundation14
-  #   spawnPrototype: Scp124Soil
+  - type: SpawnAfterInteract
+    prototype: Scp124Soil
+    doAfter: 0.5
+    removeOnInteract: true
 
 - type: entity
   id: Scp124Soil
-  parent: 
+  parent:
   - hydroponicsSoil
   - BaseItemScp
   suffix: SCP-124
   components:
+  - type: Physics
+    canCollide: false
   - type: SolutionRegeneration
     solution: soil
     generated:

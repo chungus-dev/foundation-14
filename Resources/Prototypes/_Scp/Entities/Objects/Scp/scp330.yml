@@ -106,6 +106,9 @@
           range: 10, 18
   - type: XenoArtifact
     triggerWeights: Scp330Triggers
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
 
 - type: entityTable
   id: Scp330BowlTable

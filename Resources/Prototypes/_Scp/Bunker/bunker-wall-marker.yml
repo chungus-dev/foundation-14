@@ -7,7 +7,7 @@
   - type: BunkerMarker
   - type: Physics
     bodyType: Static
-    canCollide: true
+    canCollide: false
   - type: Fixtures
     fixtures: {}
   - type: Sprite

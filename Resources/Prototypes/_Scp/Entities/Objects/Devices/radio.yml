@@ -29,6 +29,7 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
+      key_slots: !type:Container
   - type: PowerCellSlot
     cellSlotId: cell_slot
   - type: ItemSlots
