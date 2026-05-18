@@ -27,11 +27,11 @@
     jumpsuit: ClothingUniformNTF
     back: MtfTacticalBackpack
     shoes: ClothingShoesBootsJackFilled
-    head: ClothingHelmetMtfTactical
+    head: ClothingHelmetMtfNTF
     mask: ClothingMaskMtf
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterArmorTactical
+    outerClothing: ClothingOuterArmorNTF
     belt: ClothingBeltMtfSparePouch
     id: KeyCardMtfNTFLeader
     ears: ClothingHeadsetAltMTF
@@ -72,10 +72,11 @@
   equipment:
     jumpsuit: ClothingUniformNTF
     shoes: ClothingShoesBootsJackFilled
-    head: ClothingHelmetMtfTactical
+    head: ClothingHelmetMtfNTF
     mask: ClothingMaskMtf
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorNTF
     id: KeyCardMtfNTFSpecialist
     ears: ClothingHeadsetAltMTF
     pocket1: BaseUplinkMTFSpecialistNtf
@@ -109,10 +110,11 @@
   equipment:
     jumpsuit: ClothingUniformNTF
     shoes: ClothingShoesBootsJackFilled
-    head: ClothingHelmetMtfTactical
+    head: ClothingHelmetMtfNTF
     mask: ClothingMaskMtf
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorNTF
     id: KeyCardMtfNTFCadet
     ears: ClothingHeadsetAltMTF
     pocket1: BaseUplinkMTFCadetNtf

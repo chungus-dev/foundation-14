@@ -33,6 +33,18 @@
     damageCoefficient: 0.75
 
 - type: entity
+  parent: ClothingHelmetMtfTactical
+  id: ClothingHelmetMtfNTF
+  name: tactical helmet
+  description: A reinforced protective headgear set issued to Epsilon-11 operatives.
+  suffix: MTF | Epsilon-11
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Head/Helmets/MTF/ntf.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Head/Helmets/MTF/ntf.rsi
+
+- type: entity
   parent: [ClothingHeadHelmetBasic, BaseFoldable]
   id: ClothingHelmetMtfTacticalNVG
   name: tactical helmet with nvg
