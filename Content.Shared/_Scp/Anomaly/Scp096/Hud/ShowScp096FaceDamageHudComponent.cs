@@ -1,0 +1,20 @@
+﻿using Content.Shared.StatusIcon;
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
+
+namespace Content.Shared._Scp.Anomaly.Scp096.Hud;
+
+[RegisterComponent, NetworkedComponent]
+public sealed partial class ShowScp096FaceDamageHudComponent : Component
+{
+    [ViewVariables]
+    public static readonly List<ProtoId<FactionIconPrototype>> Icons = new ()
+    {
+        "Scp096FaceDamage0",
+        "Scp096FaceDamage1",
+        "Scp096FaceDamage2",
+        "Scp096FaceDamage3",
+        "Scp096FaceDamage4",
+        "Scp096FaceDamage5",
+    };
+}

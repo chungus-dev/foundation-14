@@ -1,6 +1,6 @@
 ﻿using Content.Client._Scp.Shaders.Common.Grain;
 using Content.Client._Scp.Shaders.Common.Vignette;
-using Content.Shared._Scp.Scp106;
+using Content.Shared._Scp.Anomaly.Scp106;
 using Content.Shared.GameTicking;
 using Robust.Client.Graphics;
 using Robust.Shared.Timing;

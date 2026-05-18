@@ -1,4 +1,4 @@
-﻿using Content.Shared._Scp.Scp173;
+﻿using Content.Shared._Scp.Anomaly.Scp173;
 using Content.Shared.Trigger;
 
 namespace Content.Shared._Scp.Trigger.BlindOnTrigger;

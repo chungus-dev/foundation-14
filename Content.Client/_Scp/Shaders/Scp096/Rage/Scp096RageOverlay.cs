@@ -1,5 +1,5 @@
 ﻿using System.Numerics;
-using Content.Shared._Scp.Scp096.Main.Components;
+using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;

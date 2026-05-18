@@ -3,7 +3,6 @@ using Content.Server.Mind;
 using Content.Server.Station.Systems;
 using Content.Shared._Scp.AutoGhostRole;
 using Content.Shared._Scp.ScpCCVars;
-using Content.Shared._Scp.Scp106.Components;
 using Content.Shared.SSDIndicator;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;

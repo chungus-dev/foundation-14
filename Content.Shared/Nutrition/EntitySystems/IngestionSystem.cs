@@ -1,5 +1,5 @@
 ﻿using Content.Shared.Administration.Logs;
-using Content.Shared._Scp.Scp999;
+using Content.Shared._Scp.Anomaly.Scp999;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;

@@ -1,4 +1,4 @@
-﻿using Content.Server._Scp.Scp173;
+﻿using Content.Server._Scp.Anomaly.Scp173;
 using Content.Shared.Xenoarchaeology.Artifact;
 using Content.Shared.Xenoarchaeology.Artifact.XAE;
 

@@ -1,6 +1,6 @@
 using System.Linq;
 using Content.Shared._Scp.Other.Events;
-using Content.Shared._Scp.Scp330;
+using Content.Shared._Scp.Anomaly.Scp330;
 using Robust.Shared.Containers;
 using Content.Shared.Chemistry;
 using Content.Shared.Damage;

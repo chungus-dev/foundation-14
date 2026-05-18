@@ -1,6 +1,6 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Popups;
-using Content.Shared._Scp.Scp106.Components;
+using Content.Shared._Scp.Anomaly.Scp106.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Database;
 using Content.Shared.Interaction.Events;

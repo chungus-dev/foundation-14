@@ -1,4 +1,4 @@
-﻿using Content.Shared._Scp.Scp330;
+﻿using Content.Shared._Scp.Anomaly.Scp330;
 using Content.Shared.Xenoarchaeology.Artifact.Components;
 using Content.Shared.Xenoarchaeology.Artifact.XAT;
 

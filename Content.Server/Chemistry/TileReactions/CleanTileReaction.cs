@@ -8,7 +8,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using System.Linq;
 using Content.Server.Fluids.EntitySystems;
-using Content.Shared._Scp.Scp173;
+using Content.Shared._Scp.Anomaly.Scp173;
 
 namespace Content.Server.Chemistry.TileReactions;
 

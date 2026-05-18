@@ -1,5 +1,5 @@
 ﻿using Content.Client._Scp.Shaders.Common;
-using Content.Shared._Scp.Scp096.Main.Components;
+using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
 
 namespace Content.Client._Scp.Shaders.Scp096.WithoutFace;
 

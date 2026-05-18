@@ -1,4 +1,4 @@
-﻿using Content.Server._Scp.Scp106.Systems;
+﻿using Content.Server._Scp.Anomaly.Scp106.Systems;
 using Content.Shared.Xenoarchaeology.Artifact;
 using Content.Shared.Xenoarchaeology.Artifact.XAE;
 using Robust.Shared.Random;

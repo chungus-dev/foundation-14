@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using Content.Shared._Scp.Scp096.Main.Components;
-using Content.Shared._Scp.Scp106.Components;
+using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
+using Content.Shared._Scp.Anomaly.Scp106.Components;
 using Content.Shared.Doors;
 using Content.Shared.Doors.Components;
 using Content.Shared.Physics;
