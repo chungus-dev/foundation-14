@@ -21,6 +21,11 @@
     job: NTFLeader
   - type: Loadout
     prototypes: [ NTFLeaderGear ]
+  - type: ScpAnnounceOnSpawn
+    stationAnnouncementSound:
+      path: /Audio/_Scp/MTF/E-11/entering_facility.ogg
+      params:
+        volume: -5
 
 - type: entity
   id: RandomHumanoidSpawnerNTFSpecialist
