@@ -2,7 +2,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Scp.Other.WorldAlert;
+namespace Content.Shared._Scp.Graphics.Sprite.WorldAlert;
 
 [DataDefinition, Serializable, NetSerializable]
 public partial record struct WorldAlertSettings

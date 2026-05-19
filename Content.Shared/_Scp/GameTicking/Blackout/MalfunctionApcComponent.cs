@@ -3,7 +3,4 @@
 namespace Content.Shared._Scp.Other.Blackout;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class MalfunctionApcComponent : Component
-{
-
-}
+public sealed partial class MalfunctionApcComponent : Component;

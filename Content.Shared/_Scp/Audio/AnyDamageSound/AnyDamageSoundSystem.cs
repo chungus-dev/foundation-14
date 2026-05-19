@@ -3,7 +3,7 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._Scp.Other.AnyDamageSound;
+namespace Content.Shared._Scp.Audio.AnyDamageSound;
 
 public sealed class AnyDamageSoundSystem : EntitySystem
 {

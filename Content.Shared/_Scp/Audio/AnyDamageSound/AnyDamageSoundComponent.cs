@@ -1,7 +1,7 @@
 ﻿using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Scp.Other.AnyDamageSound;
+namespace Content.Shared._Scp.Audio.AnyDamageSound;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class AnyDamageSoundComponent : Component

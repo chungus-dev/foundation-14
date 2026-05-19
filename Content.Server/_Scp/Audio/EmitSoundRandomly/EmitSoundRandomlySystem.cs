@@ -2,7 +2,7 @@
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Server._Scp.Other.EmitSoundRandomly;
+namespace Content.Server._Scp.Audio.EmitSoundRandomly;
 
 public sealed class EmitSoundRandomlySystem : EntitySystem
 {

@@ -3,7 +3,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Spawners;
 
-namespace Content.Shared._Scp.Other.WorldAlert;
+namespace Content.Shared._Scp.Graphics.Sprite.WorldAlert;
 
 public sealed class WorldAlertSystem : EntitySystem
 {

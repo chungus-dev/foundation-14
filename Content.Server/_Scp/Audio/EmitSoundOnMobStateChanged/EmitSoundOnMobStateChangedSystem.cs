@@ -1,11 +1,11 @@
 ﻿using Content.Shared.Mobs;
-using Robust.Shared.Audio.Systems;
+using Robust.Server.Audio;
 
-namespace Content.Shared._Scp.Other.EmitSoundOnMobStateChanged;
+namespace Content.Server._Scp.Audio.EmitSoundOnMobStateChanged;
 
 public sealed class EmitSoundOnMobStateChangedSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
 
     public override void Initialize()
     {

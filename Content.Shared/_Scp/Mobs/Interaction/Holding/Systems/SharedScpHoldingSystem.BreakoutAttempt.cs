@@ -1,5 +1,5 @@
+using Content.Shared._Scp.Graphics.Sprite.WorldAlert;
 using Content.Shared._Scp.Mobs.Interaction.Holding.Components;
-using Content.Shared._Scp.Other.WorldAlert;
 using Content.Shared.DoAfter;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;

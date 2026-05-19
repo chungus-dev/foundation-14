@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Audio;
 
-namespace Content.Server._Scp.Other.EmitSoundRandomly;
+namespace Content.Server._Scp.Audio.EmitSoundRandomly;
 
 [RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class EmitSoundRandomlyComponent : Component

@@ -1,5 +1,5 @@
+using Content.Shared._Scp.Graphics.Sprite.WorldAlert;
 using Content.Shared._Scp.Mobs.Interaction.Holding.Systems;
-using Content.Shared._Scp.Other.WorldAlert;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;

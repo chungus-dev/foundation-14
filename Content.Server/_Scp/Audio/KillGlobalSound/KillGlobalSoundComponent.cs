@@ -1,16 +1,16 @@
 ﻿using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 
-namespace Content.Server._Scp.Other.KillGlobalSound;
+namespace Content.Server._Scp.Audio.KillGlobalSound;
 
 [RegisterComponent]
 public sealed partial class KillGlobalSoundComponent : Component
 {
     [DataField(required: true)]
-    public SoundSpecifier Sound = default!;
+    public SoundSpecifier Sound;
 
     [DataField(required: true)]
-    public EntityWhitelist OriginWhitelist = default!;
+    public EntityWhitelist OriginWhitelist;
 
     [DataField]
     public float Chance = 1f;

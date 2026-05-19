@@ -1,14 +1,14 @@
 ﻿using Content.Shared.Mobs;
 using Robust.Shared.Audio;
 
-namespace Content.Shared._Scp.Other.EmitSoundOnMobStateChanged;
+namespace Content.Server._Scp.Audio.EmitSoundOnMobStateChanged;
 
 [RegisterComponent]
 public sealed partial class EmitSoundOnMobStateChangedComponent : Component
 {
-    [DataField(required: true), ViewVariables]
+    [DataField(required: true)]
     public SoundSpecifier Sound;
 
-    [DataField, ViewVariables]
+    [DataField]
     public MobState State = MobState.Dead;
 }
