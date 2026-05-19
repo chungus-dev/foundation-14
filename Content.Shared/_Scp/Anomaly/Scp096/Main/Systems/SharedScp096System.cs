@@ -1,11 +1,11 @@
 ﻿using System.Linq;
 using Content.Shared._Scp.Anomaly.Restriction;
 using Content.Shared._Scp.Other.Events;
-using Content.Shared._Scp.Proximity;
+using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
 using Content.Shared._Scp.Containment.ScpMask;
 using Content.Shared._Scp.Utility.Random;
-using Content.Shared._Scp.Watching;
+using Content.Shared._Scp.Vision.Watching;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.Bed.Sleep;

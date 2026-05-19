@@ -1,5 +1,5 @@
 using Content.Client._Scp.Graphics.Shaders.FieldOfView.ComponentTree;
-using Content.Shared._Scp.Watching.FOV;
+using Content.Shared._Scp.Vision.FOV;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;

@@ -2,7 +2,7 @@ using Robust.Shared.ComponentTrees;
 using Robust.Shared.GameStates;
 using Robust.Shared.Physics;
 
-namespace Content.Shared._Scp.Watching.FOV;
+namespace Content.Shared._Scp.Vision.FOV;
 
 /// <summary>
 ///     Marks an entity as one which should fade away clientside if you have a viewcone and it's out of view

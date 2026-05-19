@@ -1,4 +1,4 @@
-﻿using Content.Shared._Scp.Proximity;
+﻿using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.ScpCCVars;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;

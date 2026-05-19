@@ -3,7 +3,7 @@ using Content.Shared.Damage;
 using Content.Shared.Popups;
 using Content.Server.Hands.Systems;
 using Content.Server.Popups;
-using Content.Shared._Scp.Proximity;
+using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.Anomaly.Scp330;
 using Content.Shared.Body;
 using Content.Shared.Containers;

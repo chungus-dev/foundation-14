@@ -1,7 +1,7 @@
 ﻿using Robust.Shared;
 using Robust.Shared.Configuration;
 
-namespace Content.Shared._Scp.Watching;
+namespace Content.Shared._Scp.Vision.Watching;
 
 public sealed partial class EyeWatchingSystem
 {

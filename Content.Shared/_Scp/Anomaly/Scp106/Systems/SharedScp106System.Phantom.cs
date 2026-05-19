@@ -1,5 +1,5 @@
 ﻿using Content.Shared._Scp.Anomaly.Scp106.Components;
-using Content.Shared._Scp.Watching;
+using Content.Shared._Scp.Vision.Watching;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Mobs;

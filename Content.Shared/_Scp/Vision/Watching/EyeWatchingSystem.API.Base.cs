@@ -1,15 +1,15 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Scp.Blinking;
 using Content.Shared._Scp.Helpers;
-using Content.Shared._Scp.Proximity;
-using Content.Shared._Scp.Watching.FOV;
+using Content.Shared._Scp.Vision.Proximity;
+using Content.Shared._Scp.Vision.FOV;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Storage.Components;
 
-namespace Content.Shared._Scp.Watching;
+namespace Content.Shared._Scp.Vision.Watching;
 
 public sealed partial class EyeWatchingSystem
 {

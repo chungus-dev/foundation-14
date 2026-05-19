@@ -2,7 +2,7 @@ using Content.Client._Scp.Graphics.Shaders.Common;
 using Content.Client._Scp.Graphics.Shaders.FieldOfView.Overlays;
 using Content.Client.Eye;
 using Content.Shared._Scp.ScpCCVars;
-using Content.Shared._Scp.Watching.FOV;
+using Content.Shared._Scp.Vision.FOV;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;

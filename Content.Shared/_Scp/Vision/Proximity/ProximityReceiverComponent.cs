@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Shared._Scp.Proximity;
+namespace Content.Shared._Scp.Vision.Proximity;
 
 /// <summary>
 /// Компонент-маркер, обозначающий что-то, к чему будут приближаться.

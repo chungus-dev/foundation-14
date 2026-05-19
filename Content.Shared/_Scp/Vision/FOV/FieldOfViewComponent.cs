@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Shared._Scp.Watching.FOV;
+namespace Content.Shared._Scp.Vision.FOV;
 
 /// <summary>
 /// Компонент, отвечающий за поле зрения

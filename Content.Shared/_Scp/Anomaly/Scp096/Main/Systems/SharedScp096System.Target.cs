@@ -1,11 +1,11 @@
-﻿using Content.Shared._Scp.Proximity;
+﻿using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
 using Content.Shared._Scp.Anomaly.Scp096.Protection;
 using Content.Shared._Scp.Anomaly.Scp106.Components;
 using Content.Shared._Scp.Mobs.Fear;
 using Content.Shared._Scp.Mobs.Fear.Systems;
-using Content.Shared._Scp.Watching;
-using Content.Shared._Scp.Watching.FOV;
+using Content.Shared._Scp.Vision.Watching;
+using Content.Shared._Scp.Vision.FOV;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;

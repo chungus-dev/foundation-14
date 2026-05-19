@@ -1,4 +1,4 @@
-namespace Content.Shared._Scp.Proximity;
+namespace Content.Shared._Scp.Vision.Proximity;
 
 /// <summary>
 /// Runtime-компонент, который существует только пока цель находится рядом

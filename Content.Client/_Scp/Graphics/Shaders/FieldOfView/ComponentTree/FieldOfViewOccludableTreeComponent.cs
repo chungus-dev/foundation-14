@@ -1,4 +1,4 @@
-using Content.Shared._Scp.Watching.FOV;
+using Content.Shared._Scp.Vision.FOV;
 using Robust.Shared.ComponentTrees;
 using Robust.Shared.Physics;
 

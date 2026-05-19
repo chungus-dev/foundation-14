@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Shared._Scp.Proximity;
+namespace Content.Shared._Scp.Vision.Proximity;
 
 /// <summary>
 /// Компонент-маркер цели, которая будет вызывать ивент при приближении к <see cref="ProximityReceiverComponent"/>

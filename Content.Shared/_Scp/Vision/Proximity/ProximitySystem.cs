@@ -7,7 +7,7 @@ using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._Scp.Proximity;
+namespace Content.Shared._Scp.Vision.Proximity;
 
 /// <summary>
 /// Единая монолитная система, которая будет вызывать ивенты

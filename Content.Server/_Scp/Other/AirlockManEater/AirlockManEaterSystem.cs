@@ -4,7 +4,7 @@ using Content.Shared._Scp.Mobs.Fear;
 using Content.Shared._Scp.Mobs.Fear.Components;
 using Content.Shared._Scp.Other.AirlockManEater;
 using Content.Shared._Scp.Other.Events;
-using Content.Shared._Scp.Proximity;
+using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared.Doors.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.Mobs.Components;

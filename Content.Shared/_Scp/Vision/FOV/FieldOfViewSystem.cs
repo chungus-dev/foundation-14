@@ -2,7 +2,7 @@
 using Content.Shared.CombatMode;
 using Content.Shared.MouseRotator;
 
-namespace Content.Shared._Scp.Watching.FOV;
+namespace Content.Shared._Scp.Vision.FOV;
 
 public sealed partial class FieldOfViewSystem : EntitySystem
 {

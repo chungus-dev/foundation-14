@@ -2,7 +2,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Spawners;
 
-namespace Content.Shared._Scp.Watching.FOV;
+namespace Content.Shared._Scp.Vision.FOV;
 
 public sealed partial class FieldOfViewSystem
 {

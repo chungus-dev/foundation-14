@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Shared._Scp.Watching.FOV;
+using Content.Shared._Scp.Vision.FOV;
 using Robust.Client.GameObjects;
 using Robust.Shared.ComponentTrees;
 using Robust.Shared.Physics;

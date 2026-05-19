@@ -1,9 +1,9 @@
 ﻿using Content.Shared._Scp.Blinking;
 using Content.Shared._Scp.Helpers;
-using Content.Shared._Scp.Proximity;
+using Content.Shared._Scp.Vision.Proximity;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._Scp.Watching;
+namespace Content.Shared._Scp.Vision.Watching;
 
 /// <summary>
 /// Единая система, обрабатывающая смотрение игроков друг на друга.

@@ -4,7 +4,7 @@ using Content.Server._Scp.Utility.Helpers;
 using Content.Shared._Scp.Mobs.Fear;
 using Content.Shared._Scp.Mobs.Fear.Components;
 using Content.Shared._Scp.Mobs.Fear.Components.Fears;
-using Content.Shared._Scp.Watching;
+using Content.Shared._Scp.Vision.Watching;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Item.ItemToggle.Components;

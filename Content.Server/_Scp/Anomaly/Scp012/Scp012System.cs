@@ -5,7 +5,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
-using Content.Shared._Scp.Proximity;
+using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.Anomaly.Scp012;
 using Content.Shared.Hands.Components;
 using Robust.Server.Audio;

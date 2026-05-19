@@ -5,7 +5,7 @@ using Content.Server.NPC.HTN;
 using Content.Server.Popups;
 using Content.Server.Zombies;
 using Content.Shared._Scp.Anomaly;
-using Content.Shared._Scp.Proximity;
+using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.Anomaly.Scp049;
 using Content.Shared._Scp.Anomaly.Scp049.Scp049Protection;
 using Content.Shared._Scp.Mobs.Fear.Components;

@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Shared._Scp.Watching;
+namespace Content.Shared._Scp.Vision.Watching;
 
 /// <summary>
 /// Компонент-маркер, который позволяет системе смотрения включить владельца в обработку

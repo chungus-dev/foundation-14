@@ -12,7 +12,7 @@ using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._Scp.Other.BunkerMarker;
 using Content.Shared._Scp.Other.DamageOnCollide;
-using Content.Shared._Scp.Proximity;
+using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.Anomaly.Scp173;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Coordinates.Helpers;

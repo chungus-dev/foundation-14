@@ -1,6 +1,6 @@
 ﻿using Content.Shared._Scp.Helpers;
-using Content.Shared._Scp.Proximity;
-using Content.Shared._Scp.Watching;
+using Content.Shared._Scp.Vision.Proximity;
+using Content.Shared._Scp.Vision.Watching;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
