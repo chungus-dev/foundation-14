@@ -1,12 +1,12 @@
 ﻿using System.Linq;
-using Content.Server._Scp.BodyTakeover;
+using Content.Server._Scp.Role.Transfer.BodyTakeover;
 using Content.Server.Fax;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
 using Content.Server.Station.Systems;
 using Content.Shared._Scp.Anomaly;
-using Content.Shared._Scp.FreeScp;
 using Content.Shared._Scp.GameTicking.Rules;
+using Content.Shared._Scp.Role.Transfer.FreeScp;
 using Content.Shared.Fax.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind.Components;
