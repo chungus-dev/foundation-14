@@ -2,7 +2,7 @@
 using JetBrains.Annotations;
 using Timer = Robust.Shared.Timing.Timer;
 
-namespace Content.Server._Scp.Shaders.Highlighting;
+namespace Content.Server._Scp.Graphics.Shaders.Highlighting;
 
 public sealed class HighlightSystem : SharedHighlightSystem
 {

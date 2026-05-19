@@ -1,6 +1,6 @@
-﻿using Content.Shared._Scp.Mobs.Fear.Components;
+﻿using Content.Shared._Scp.Combat.Weapons.Ranged;
+using Content.Shared._Scp.Mobs.Fear.Components;
 using Content.Shared._Scp.Utility.Random;
-using Content.Shared._Scp.Weapons.Ranged;
 using Content.Shared.Drunk;
 using Content.Shared.Jittering;
 using Content.Shared.Standing;

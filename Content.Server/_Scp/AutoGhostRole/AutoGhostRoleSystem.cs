@@ -3,7 +3,6 @@ using Content.Server.Mind;
 using Content.Server.Station.Systems;
 using Content.Shared._Scp.AutoGhostRole;
 using Content.Shared._Scp.ScpCCVars;
-using Content.Shared.SSDIndicator;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -22,15 +21,11 @@ public sealed class AutoGhostRoleSystem : EntitySystem
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly StationSystem _station = default!;
 
-    private EntityQuery<SSDIndicatorComponent> _ssdQuery;
-
     private bool _enabled;
 
     public override void Initialize()
     {
         base.Initialize();
-
-        _ssdQuery = GetEntityQuery<SSDIndicatorComponent>();
 
         SubscribeLocalEvent<AutoGhostRoleComponent, PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<AutoGhostRoleComponent, PlayerDetachedEvent>(OnPlayerDetached);

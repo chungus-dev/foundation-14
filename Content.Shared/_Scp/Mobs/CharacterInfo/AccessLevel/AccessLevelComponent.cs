@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Shared._Scp.CharacterInfo.AccessLevel;
+namespace Content.Shared._Scp.Mobs.CharacterInfo.AccessLevel;
 
 /// <summary>
 /// Компонент, отвечающий за информацию об уровне доступа сотрудника.

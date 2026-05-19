@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Shared._Scp.CharacterInfo.EmployeeClass;
+namespace Content.Shared._Scp.Mobs.CharacterInfo.EmployeeClass;
 
 /// <summary>
 /// Компонент, отвечающий за информацию о классе персонажа.

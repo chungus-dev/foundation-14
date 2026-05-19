@@ -4,7 +4,7 @@ using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 
-namespace Content.Shared._Scp.Weapons.Ranged;
+namespace Content.Shared._Scp.Combat.Weapons.Ranged;
 
 /// <summary>
 /// Система, позволяющая задавать параметры стрельбы.

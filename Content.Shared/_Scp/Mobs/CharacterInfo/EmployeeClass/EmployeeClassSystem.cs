@@ -1,4 +1,4 @@
-﻿namespace Content.Shared._Scp.CharacterInfo.EmployeeClass;
+﻿namespace Content.Shared._Scp.Mobs.CharacterInfo.EmployeeClass;
 
 public sealed class EmployeeClassSystem : EntitySystem
 {

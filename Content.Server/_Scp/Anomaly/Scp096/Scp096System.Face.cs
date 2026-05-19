@@ -1,8 +1,8 @@
 ﻿using System.Numerics;
-using Content.Server._Scp.Blood;
+using Content.Server._Scp.Combat.Blood;
 using Content.Server._Scp.Other.LiquidParticlesGenerator;
-using Content.Shared._Scp.Blood;
 using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
+using Content.Shared._Scp.Combat.Blood;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;

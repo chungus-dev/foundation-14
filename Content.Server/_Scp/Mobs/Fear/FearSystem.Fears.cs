@@ -1,5 +1,5 @@
 ﻿using System.Runtime.InteropServices;
-using Content.Server._Scp.Shaders.Highlighting;
+using Content.Server._Scp.Graphics.Shaders.Highlighting;
 using Content.Server._Scp.Utility.Helpers;
 using Content.Shared._Scp.Mobs.Fear;
 using Content.Shared._Scp.Mobs.Fear.Components;

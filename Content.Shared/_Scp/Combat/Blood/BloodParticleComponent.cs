@@ -3,7 +3,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Scp.Blood;
+namespace Content.Shared._Scp.Combat.Blood;
 
 /// <summary>
 /// Компонент частички крови, который разлетается от удара по персонажу.

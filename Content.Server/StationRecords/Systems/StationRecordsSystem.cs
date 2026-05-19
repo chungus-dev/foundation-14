@@ -1,5 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Access.Systems;
+using Content.Shared._Scp.Mobs.CharacterInfo.AccessLevel;
+using Content.Shared._Scp.Mobs.CharacterInfo.EmployeeClass;
 using Content.Shared.Access.Components;
 using Content.Shared.Forensics.Components;
 using Content.Shared.GameTicking;
@@ -11,8 +13,6 @@ using Content.Shared.StationRecords;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Shared._Scp.CharacterInfo.AccessLevel;
-using Content.Shared._Scp.CharacterInfo.EmployeeClass;
 
 
 namespace Content.Server.StationRecords.Systems;

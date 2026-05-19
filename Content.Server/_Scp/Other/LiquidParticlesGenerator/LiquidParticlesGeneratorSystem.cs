@@ -1,5 +1,5 @@
-﻿using Content.Server._Scp.Blood;
-using Content.Shared._Scp.Blood;
+﻿using Content.Server._Scp.Combat.Blood;
+using Content.Shared._Scp.Combat.Blood;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;

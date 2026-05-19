@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Shared._Scp.Weapons.Ranged;
+namespace Content.Shared._Scp.Combat.Weapons.Ranged;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class DispersingShotSourceComponent : Component

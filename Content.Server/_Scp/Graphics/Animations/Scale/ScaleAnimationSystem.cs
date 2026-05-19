@@ -1,7 +1,7 @@
 ﻿using Content.Shared._Scp.Graphics.Animations.Scale;
 using Robust.Shared.Player;
 
-namespace Content.Server._Scp.Animations.Scale;
+namespace Content.Server._Scp.Graphics.Animations.Scale;
 
 public sealed class ScaleAnimationSystem : SharedScaleAnimationSystem
 {

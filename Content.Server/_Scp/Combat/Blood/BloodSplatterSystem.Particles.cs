@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Numerics;
-using Content.Shared._Scp.Blood;
+using Content.Shared._Scp.Combat.Blood;
 using Content.Shared._Scp.Graphics.Animations.Offset;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics;
@@ -8,7 +8,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Server._Scp.Blood;
+namespace Content.Server._Scp.Combat.Blood;
 
 // TODO: Рефактор и создание LiquidParticle с целью унификации в сторону партиклов с любыми жидкостями,
 // любыми источниками жидкости, настройками и прочим.

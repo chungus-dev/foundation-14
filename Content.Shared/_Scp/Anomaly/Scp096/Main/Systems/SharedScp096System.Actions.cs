@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using Content.Shared._Scp.Blood;
 using Content.Shared._Scp.Proximity;
 using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
+using Content.Shared._Scp.Combat.Blood;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;

@@ -1,7 +1,7 @@
-﻿using Content.Shared._Scp.Blood;
+﻿using Content.Shared._Scp.Combat.Blood;
 using Robust.Shared.Map;
 
-namespace Content.Server._Scp.Blood;
+namespace Content.Server._Scp.Combat.Blood;
 
 public sealed partial class BloodSplatterSystem
 {

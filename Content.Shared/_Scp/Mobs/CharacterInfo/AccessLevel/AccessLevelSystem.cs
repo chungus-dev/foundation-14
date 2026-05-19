@@ -1,4 +1,4 @@
-﻿namespace Content.Shared._Scp.CharacterInfo.AccessLevel;
+﻿namespace Content.Shared._Scp.Mobs.CharacterInfo.AccessLevel;
 
 public sealed class AccessLevelSystem : EntitySystem
 {
