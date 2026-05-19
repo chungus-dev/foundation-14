@@ -1,5 +1,4 @@
 ﻿using Content.Shared._Scp.Fear;
-using Content.Shared._Scp.Mobs.Components;
 using Content.Shared.Alert;
 using Content.Shared.FixedPoint;
 using Content.Shared.Store;

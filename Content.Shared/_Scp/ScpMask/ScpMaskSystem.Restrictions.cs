@@ -1,4 +1,4 @@
-﻿using Content.Shared._Scp.Mobs.Components;
+﻿using Content.Shared._Scp.Anomaly;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
 using Content.Shared.Pulling.Events;

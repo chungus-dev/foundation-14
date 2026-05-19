@@ -4,9 +4,9 @@ using Content.Server.Fax;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
 using Content.Server.Station.Systems;
+using Content.Shared._Scp.Anomaly;
 using Content.Shared._Scp.FreeScp;
 using Content.Shared._Scp.GameTicking.Rules;
-using Content.Shared._Scp.Mobs.Components;
 using Content.Shared.Fax.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind.Components;
@@ -77,7 +77,7 @@ public sealed class FreeScpRuleSystem : GameRuleSystem<FreeScpRuleComponent>
     private void CacheScpJobs()
     {
         _cachedScpJobs.Clear();
-        var scpCompName = _componentFactory.GetComponentName(typeof(ScpComponent));
+        var scpCompName = _componentFactory.GetComponentName<ScpComponent>();
 
         foreach (var job in _prototype.EnumeratePrototypes<JobPrototype>())
         {
@@ -94,7 +94,7 @@ public sealed class FreeScpRuleSystem : GameRuleSystem<FreeScpRuleComponent>
         }
     }
 
-    private void HandleInitialCheck(EntityUid uid, FreeScpRuleComponent comp)
+    private void HandleInitialCheck(EntityUid _, FreeScpRuleComponent comp)
     {
         if (AnyScpInRound())
         {

@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Content.Shared._Scp.Mobs.Components;
+using Content.Shared._Scp.Anomaly;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
@@ -204,7 +204,7 @@ public sealed partial class ScpMaskSystem
 [Serializable, NetSerializable]
 public sealed partial class ScpMaskEquipmentDoAfterEvent : SimpleDoAfterEvent;
 
-public sealed partial class ScpMaskEquipAttempt : CancellableEntityEventArgs;
-public sealed partial class ScpMaskTargetEquipAttempt : CancellableEntityEventArgs;
+public sealed class ScpMaskEquipAttempt : CancellableEntityEventArgs;
+public sealed class ScpMaskTargetEquipAttempt : CancellableEntityEventArgs;
 
 #endregion

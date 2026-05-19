@@ -1,8 +1,8 @@
 using System.Numerics;
-using Content.Shared._Scp.Holding;
-using Content.Shared._Scp.Holding.Components;
-using Content.Shared._Scp.Holding.Systems;
 using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
+using Content.Shared._Scp.Mobs.Interaction.Holding;
+using Content.Shared._Scp.Mobs.Interaction.Holding.Components;
+using Content.Shared._Scp.Mobs.Interaction.Holding.Systems;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 
@@ -61,11 +61,6 @@ public abstract partial class SharedScp096System
         return HasComp<ActiveScp096HeatingUpComponent>(uid)
             || HasComp<ActiveScp096RageComponent>(uid)
             || HasComp<ActiveScp096WithoutFaceComponent>(uid);
-    }
-
-    protected void TryBreakOutOfHold(EntityUid uid)
-    {
-        _holding.TryForceBreakOut((uid, (ActiveScpHoldableComponent?) null));
     }
 
     private void ApplyHoldBreakoutEffects(

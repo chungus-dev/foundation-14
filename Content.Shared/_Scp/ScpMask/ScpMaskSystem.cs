@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Content.Shared._Scp.Mobs.Components;
+using Content.Shared._Scp.Anomaly;
 using Content.Shared._Scp.SafeTime;
 using Content.Shared._Scp.Utility.Random;
 using Content.Shared.Actions;

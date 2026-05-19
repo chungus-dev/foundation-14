@@ -1,6 +1,6 @@
+using Content.Shared._Scp.Mobs.Interaction.Holding.Components;
+using Content.Shared._Scp.Mobs.Interaction.Holding.Systems;
 using Content.Shared.Hands;
-using Content.Shared._Scp.Holding.Components;
-using Content.Shared._Scp.Holding.Systems;
 
 namespace Content.Server._Scp.Holding;
 

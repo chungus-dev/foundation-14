@@ -1,7 +1,7 @@
 ﻿using Content.Client._Scp.Shaders.Common;
 using Content.Client._Scp.Shaders.Common.Grain;
 using Content.Client._Scp.Shaders.Common.Vignette;
-using Content.Shared._Scp.RetroMonitor;
+using Content.Shared._Scp.Shaders.RetroMonitor;
 using Robust.Shared.Player;
 
 namespace Content.Client._Scp.Shaders.RetroMonitor;

@@ -1,7 +1,7 @@
 using Content.Client.Hands.Systems;
 using Content.Client.Inventory;
-using Content.Shared._Scp.Holding.Components;
-using Content.Shared._Scp.Holding.Systems;
+using Content.Shared._Scp.Mobs.Interaction.Holding.Components;
+using Content.Shared._Scp.Mobs.Interaction.Holding.Systems;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Input;
