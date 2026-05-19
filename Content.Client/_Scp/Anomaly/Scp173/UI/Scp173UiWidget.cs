@@ -1,4 +1,4 @@
-﻿using Content.Client._Scp.SafeTime;
+﻿using Content.Client._Scp.Containment.SafeTime;
 using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client._Scp.Anomaly.Scp173.UI;

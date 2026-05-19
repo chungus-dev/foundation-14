@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Scp.Anomaly;
-using Content.Shared._Scp.SafeTime;
+using Content.Shared._Scp.Containment.SafeTime;
 using Content.Shared._Scp.Utility.Random;
 using Content.Shared.Actions;
 using Content.Shared.Damage.Systems;

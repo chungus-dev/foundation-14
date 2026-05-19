@@ -1,13 +1,13 @@
 ﻿using Content.Client.UserInterface.Screens;
 using Content.Client.UserInterface.Systems.Gameplay;
-using Content.Shared._Scp.SafeTime;
+using Content.Shared._Scp.Containment.SafeTime;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
-namespace Content.Client._Scp.SafeTime;
+namespace Content.Client._Scp.Containment.SafeTime;
 
 // TODO: Единая система для управления виджетами вместе с Scp173System
 public sealed class SafeTimeSystem : SharedSafeTimeSystem

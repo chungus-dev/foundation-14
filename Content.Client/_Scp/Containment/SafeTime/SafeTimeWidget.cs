@@ -1,6 +1,6 @@
 ﻿using Robust.Client.UserInterface.Controls;
 
-namespace Content.Client._Scp.SafeTime;
+namespace Content.Client._Scp.Containment.SafeTime;
 
 public sealed class SafeTimeWidget : UIWidget
 {

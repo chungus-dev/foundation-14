@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.GameStates;
 
-namespace Content.Shared._Scp.SafeTime;
+namespace Content.Shared._Scp.Containment.SafeTime;
 
 /// <summary>
 /// Компонент, отвечающий за наличие у сущности "безопасного времени".

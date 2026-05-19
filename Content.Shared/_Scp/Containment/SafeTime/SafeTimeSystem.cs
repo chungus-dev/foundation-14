@@ -6,7 +6,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._Scp.SafeTime;
+namespace Content.Shared._Scp.Containment.SafeTime;
 
 public abstract class SharedSafeTimeSystem : EntitySystem
 {
