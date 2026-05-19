@@ -28,6 +28,3 @@ ent-EncryptionKeyFoodAndSanitationService = { ent-EncryptionKey } сервисн
     .desc = { ent-EncryptionKey.desc }
 ent-EncryptionKeyChaos = тёмно-зелёный ключ шифрования
     .desc = Полезнее и практичнее, чем ключ шифрования фонда.
-ent-EncryptionKeyGRU = кроваво-красный ключ шифрования
-    .desc = { ent-EncryptionKeyChaos.desc }
-

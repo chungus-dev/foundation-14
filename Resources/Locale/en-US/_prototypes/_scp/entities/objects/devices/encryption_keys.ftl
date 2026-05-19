@@ -28,5 +28,3 @@ ent-EncryptionKeyFoodAndSanitationService = { ent-EncryptionKey } Food and Sanit
     .desc = { ent-EncryptionKey.desc }
 ent-EncryptionKeyChaos = dark green encryption key
     .desc = More useful and practical than the Foundation's encryption key.
-ent-EncryptionKeyGRU = blood-red encryption key
-    .desc = { ent-EncryptionKeyChaos.desc }

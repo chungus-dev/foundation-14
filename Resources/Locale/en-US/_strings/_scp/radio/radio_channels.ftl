@@ -11,4 +11,3 @@ chat-radio-engineering-technical-service = Technical
 chat-radio-logistics-service = Logistics
 chat-radio-food-and-sanitation-service = Service
 chat-radio-chaos = Insurgents
-chat-radio-gru = GRU-P
