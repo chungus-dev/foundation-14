@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Numerics;
-using Content.Shared._Scp.Animations.Offset;
 using Content.Shared._Scp.Blood;
+using Content.Shared._Scp.Graphics.Animations.Offset;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;

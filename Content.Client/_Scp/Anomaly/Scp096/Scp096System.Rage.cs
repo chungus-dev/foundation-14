@@ -1,5 +1,5 @@
-﻿using Content.Client._Scp.Shaders.Common;
-using Content.Client._Scp.Shaders.Scp096.Rage;
+﻿using Content.Client._Scp.Graphics.Shaders.Common;
+using Content.Client._Scp.Graphics.Shaders.Scp096.Rage;
 using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
 using Robust.Shared.Player;
 
@@ -27,7 +27,7 @@ public sealed partial class Scp096System
 
     #region Update
 
-    private void FrameUpdateRage(float frameTime)
+    private void FrameUpdateRage()
     {
         InterpolateIntensity();
     }

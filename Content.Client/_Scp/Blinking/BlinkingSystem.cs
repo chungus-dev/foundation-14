@@ -1,7 +1,6 @@
-﻿using Content.Client._Scp.Shaders.Common;
+﻿using Content.Client._Scp.Graphics.Shaders.Common;
 using Content.Shared._Scp.Blinking;
 using Content.Shared.Alert;
-using Content.Shared.Eye.Blinding.Systems;
 using Robust.Client.Audio;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -24,7 +23,7 @@ public sealed class BlinkingSystem : SharedBlinkingSystem
     private static readonly SoundSpecifier EyeOpenSound = new SoundCollectionSpecifier("EyeOpen");
     private static readonly SoundSpecifier EyeCloseSound = new SoundCollectionSpecifier("EyeClose");
 
-    private static readonly SoundSpecifier BlinkSound = new SoundPathSpecifier("/Audio/_Scp/Effects/Blinking/blink.ogg");
+    // private static readonly SoundSpecifier BlinkSound = new SoundPathSpecifier("/Audio/_Scp/Effects/Blinking/blink.ogg");
     private static readonly SoundSpecifier SpawnBlindSound = new SoundCollectionSpecifier("BlinkingSpawnSound", AudioParams.Default.WithVolume(-5));
 
     private BlinkingOverlay _overlay = default!;

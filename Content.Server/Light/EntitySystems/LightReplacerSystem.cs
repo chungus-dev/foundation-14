@@ -1,6 +1,6 @@
 using System.Linq;
 using Content.Server.Light.Components;
-using Content.Shared._Scp.LightFlicking.MalfunctionLight;
+using Content.Shared._Scp.Graphics.LightFlicking.MalfunctionLight;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Light.EntitySystems;
@@ -131,7 +131,7 @@ public sealed class LightReplacerSystem : SharedLightReplacerSystem
         {
             if (!TryComp<LightBulbComponent>(fixtureBulbUid.Value, out var fixtureBulb))
                 return false;
-            // Scp edit
+            // Scp edit - added check to MalfunctionLightComponent
             if (fixtureBulb.State == LightBulbState.Normal && !HasComp<MalfunctionLightComponent>(fixtureBulbUid))
                 return false;
         }

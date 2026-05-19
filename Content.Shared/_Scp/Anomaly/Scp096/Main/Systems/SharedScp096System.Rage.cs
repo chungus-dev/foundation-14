@@ -1,6 +1,6 @@
 ﻿using Content.Shared._Scp.Audio;
 using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
-using Content.Shared._Scp.Shaders.SinCity;
+using Content.Shared._Scp.Graphics.Shaders.SinCity;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Jittering;

@@ -1,4 +1,5 @@
-﻿using Content.Shared._Scp.Shaders.Highlighting;
+﻿using Content.Shared._Scp.Graphics.Shaders.Highlighting;
+using JetBrains.Annotations;
 using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Server._Scp.Shaders.Highlighting;
@@ -8,6 +9,7 @@ public sealed class HighlightSystem : SharedHighlightSystem
     /// <summary>
     /// <inheritdoc cref="SharedHighlightSystem.Highlight"/>
     /// </summary>
+    [PublicAPI]
     public void NetHighlight(EntityUid target, EntityUid recipient, int highlightTimes = 3)
     {
         var comp = EnsureComp<HighlightedComponent>(target);
@@ -42,6 +44,7 @@ public sealed class HighlightSystem : SharedHighlightSystem
     /// <summary>
     /// <inheritdoc cref="SharedHighlightSystem.HighLightAll"/>
     /// </summary>
+    [PublicAPI]
     public void NetHighlightAll(IEnumerable<EntityUid> list, EntityUid recipient)
     {
         foreach (var uid in list)
@@ -53,6 +56,7 @@ public sealed class HighlightSystem : SharedHighlightSystem
     /// <summary>
     /// <inheritdoc cref="SharedHighlightSystem.HighLightAll"/>
     /// </summary>
+    [PublicAPI]
     public void NetHighlightAll(ReadOnlySpan<EntityUid> list, EntityUid recipient)
     {
         foreach (var uid in list)

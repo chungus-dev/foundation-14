@@ -1,9 +1,9 @@
 ﻿using Content.Shared._Scp.Fear.Components;
+using Content.Shared._Scp.Graphics.Shaders;
+using Content.Shared._Scp.Graphics.Shaders.Grain;
+using Content.Shared._Scp.Graphics.Shaders.Highlighting;
+using Content.Shared._Scp.Graphics.Shaders.Vignette;
 using Content.Shared._Scp.Proximity;
-using Content.Shared._Scp.Shaders;
-using Content.Shared._Scp.Shaders.Grain;
-using Content.Shared._Scp.Shaders.Highlighting;
-using Content.Shared._Scp.Shaders.Vignette;
 using Content.Shared._Scp.Utility.Extensions;
 using Content.Shared._Scp.Watching;
 using Content.Shared.Examine;

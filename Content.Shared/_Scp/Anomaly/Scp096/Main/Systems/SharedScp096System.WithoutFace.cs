@@ -1,5 +1,5 @@
 ﻿using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
-using Content.Shared._Scp.Shaders.SinCity;
+using Content.Shared._Scp.Graphics.Shaders.SinCity;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Prying.Components;

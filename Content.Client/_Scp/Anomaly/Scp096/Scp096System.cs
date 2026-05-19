@@ -42,7 +42,7 @@ public sealed partial class Scp096System : SharedScp096System
     {
         base.FrameUpdate(frameTime);
 
-        FrameUpdateRage(frameTime);
+        FrameUpdateRage();
     }
 
     private void OnPlayerAttached(Entity<Scp096Component> ent, ref LocalPlayerAttachedEvent args)

@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Server._Scp.Holding;
+using Content.Server._Scp.Mobs.Interaction.Holding;
 using Content.Server.Movement.Components;
 using Content.Server.Physics.Controllers;
 using Content.Shared.ActionBlocker;

@@ -1,7 +1,7 @@
 using Content.Shared._Scp.Fear.Components;
+using Content.Shared._Scp.Graphics.Shaders.Grain;
+using Content.Shared._Scp.Graphics.Shaders.Vignette;
 using Content.Shared._Scp.Proximity;
-using Content.Shared._Scp.Shaders.Grain;
-using Content.Shared._Scp.Shaders.Vignette;
 
 namespace Content.Shared._Scp.Fear.Systems;
 
