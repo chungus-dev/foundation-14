@@ -1,4 +1,4 @@
-﻿namespace Content.Server._Scp.Backrooms.AddDrunkClothing;
+﻿namespace Content.Server._Scp.Other.AddDrunkClothing;
 
 [RegisterComponent]
 public sealed partial class AddDrunkClothingComponent : Component

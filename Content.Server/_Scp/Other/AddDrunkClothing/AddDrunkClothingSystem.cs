@@ -1,13 +1,13 @@
-﻿using Content.Shared.Clothing;
-using Content.Shared.Drunk;
+﻿using Content.Server.Drunk;
+using Content.Shared.Clothing;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Scp.Backrooms.AddDrunkClothing;
+namespace Content.Server._Scp.Other.AddDrunkClothing;
 
 public sealed class AddDrunkClothingSystem : EntitySystem
 {
-    [Dependency] private readonly SharedDrunkSystem _drunkSystem = default!;
+    [Dependency] private readonly DrunkSystem _drunkSystem = default!;
     [Dependency] private readonly StatusEffectsSystem _effects = default!;
 
     private static readonly EntProtoId DrunkEffect = "StatusEffectDrunk";

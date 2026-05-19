@@ -1,4 +1,3 @@
-using Content.Server._Scp.Backrooms.ChokeOnRead;
 using Content.Server.Body.Systems;
 using Content.Shared.Atmos;
 using Content.Shared.Chat.Prototypes;
@@ -8,8 +7,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Body.Components
 {
-    // Scp edit - добавил typeof(ChokeOnReadSystem)
-    [RegisterComponent, AutoGenerateComponentPause, Access(typeof(RespiratorSystem), typeof(ChokeOnReadSystem))]
+    [RegisterComponent, AutoGenerateComponentPause, Access(typeof(RespiratorSystem))]
     public sealed partial class RespiratorComponent : Component
     {
         /// <summary>

@@ -2690,4 +2690,25 @@ AtmosDeviceFanTinyDev: null
 ThrusterSyndicate: null
 Girder: ScpGirder
 ReinforcedGirder: ScpReinforcedGirder
+ScpAnomalyPainting: null
+ScpAnomalyRock: null
+ScpAnomalyCowboyHat: null
+ScpAnomalyDiamond: null
+ScpAnomalyInvitation: null
+ScpAnomalySwatter: null
+ScpAnomalyDollar: null
+ScpAnomalyCoffee: null
+ScpAnomalyKey: null
+ScpAnomalyBook: null
+ScpAnomalySpawnWand: null
+ScpBackroomsRedCrystal: null
+ScpBackroomsGoldPendant: null
+ScpBackroomsScull: null
+ScpBackroomsCrown: null
+ScpBackroomsRing: null
+ScpBackroomsSpeedBoots: null
+ScpBackroomsBlueCore: null
+ScpAnomalyRedCore: null
+ScpAnomalyRifle: null
+LootSpawnerRandomAnomalyItem: null
 # Scp added end
