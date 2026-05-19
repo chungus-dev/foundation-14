@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Client._Scp.Stylesheets.Palette;
+using Content.Client._Scp.UI.Stylesheets.Palette;
 using Content.Client.Administration.Systems;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Administration;

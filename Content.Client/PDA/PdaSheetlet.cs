@@ -1,4 +1,4 @@
-using Content.Client._Scp.Stylesheets.Palette;
+using Content.Client._Scp.UI.Stylesheets.Palette;
 using Content.Client.PDA;
 using Content.Client.Stylesheets;
 using Content.Client.Stylesheets.Sheetlets;

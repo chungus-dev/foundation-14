@@ -1,4 +1,4 @@
-using Content.Client._Scp.Stylesheets.Palette;
+using Content.Client._Scp.UI.Stylesheets.Palette;
 using Content.Client.Message;
 using Content.Client.Resources;
 using Content.Client.UserInterface.Systems.EscapeMenu;

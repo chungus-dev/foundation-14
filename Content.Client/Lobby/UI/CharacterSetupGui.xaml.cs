@@ -1,4 +1,4 @@
-using Content.Client._Scp.Stylesheets.Palette;
+using Content.Client._Scp.UI.Stylesheets.Palette;
 using Content.Client.Info;
 using Content.Client.Info.PlaytimeStats;
 using Content.Client.Resources;

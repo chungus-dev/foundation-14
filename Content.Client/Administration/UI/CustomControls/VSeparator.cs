@@ -1,5 +1,5 @@
 ﻿using System.Numerics;
-using Content.Client._Scp.Stylesheets.Palette;
+using Content.Client._Scp.UI.Stylesheets.Palette;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Maths;

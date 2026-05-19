@@ -1,7 +1,7 @@
 ﻿using Content.Client.Stylesheets.Colorspace;
 using Content.Client.Stylesheets.Palette;
 
-namespace Content.Client._Scp.Stylesheets.Palette;
+namespace Content.Client._Scp.UI.Stylesheets.Palette;
 
 /// <summary>
 /// Палитра цветов для SCP/Grimdark тематики.

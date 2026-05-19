@@ -1,7 +1,7 @@
 <BoxContainer Name="Container" xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-         xmlns:palette="clr-namespace:Content.Client._Scp.Stylesheets.Palette"
+         xmlns:palette="clr-namespace:Content.Client._Scp.UI.Stylesheets.Palette"
          Orientation="Horizontal"
          HorizontalExpand="True"
          MouseFilter="Ignore"

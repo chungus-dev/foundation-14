@@ -1,7 +1,7 @@
 <Control xmlns="https://spacestation14.io"
          xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
          xmlns:xNamespace="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:palette="clr-namespace:Content.Client._Scp.Stylesheets.Palette"
+         xmlns:palette="clr-namespace:Content.Client._Scp.UI.Stylesheets.Palette"
          MaxWidth="400">
     <PanelContainer>
         <!-- Scp edit start - fix color hardcode -->

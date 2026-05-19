@@ -1,4 +1,4 @@
-﻿using Content.Client._Scp.Stylesheets.Palette;
+﻿using Content.Client._Scp.UI.Stylesheets.Palette;
 using Content.Client.ContextMenu.UI;
 using Content.Client.Examine;
 using Content.Client.Resources;
@@ -14,7 +14,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using static Robust.Client.UserInterface.StylesheetHelpers;
 
-namespace Content.Client._Scp.Stylesheets.Stylesheets.Sheetlets;
+namespace Content.Client._Scp.UI.Stylesheets.Stylesheets.Sheetlets;
 
 /// <summary>
 /// Переносит специфичные визуальные изменения SCP темы (Flat StyleBoxes, borders) из старого StyleNano.
