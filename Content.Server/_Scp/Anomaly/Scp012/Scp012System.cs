@@ -1,4 +1,4 @@
-﻿using Content.Server._Scp.Fear;
+﻿using Content.Server._Scp.Mobs.Fear;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Hands;
 using Content.Shared.Movement.Systems;

@@ -1,6 +1,6 @@
 ﻿using Content.Shared._Scp.Audio;
-using Content.Shared._Scp.Fear;
 using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
+using Content.Shared._Scp.Mobs.Fear;
 using Content.Shared.Audio;
 using Robust.Server.Audio;
 using Robust.Server.GameStates;

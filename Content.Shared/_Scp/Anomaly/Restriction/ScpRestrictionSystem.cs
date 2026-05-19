@@ -1,5 +1,5 @@
-﻿using Content.Shared._Scp.Mobs.Interaction.Holding.Systems;
-using Content.Shared._Scp.ScpMask;
+﻿using Content.Shared._Scp.Containment.ScpMask;
+using Content.Shared._Scp.Mobs.Interaction.Holding.Systems;
 using Content.Shared.Actions.Events;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Buckle.Components;

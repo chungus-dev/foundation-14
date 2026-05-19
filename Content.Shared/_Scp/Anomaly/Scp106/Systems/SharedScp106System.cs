@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using Content.Shared._Scp.Fear.Components;
 using Content.Shared._Scp.Anomaly.Scp106.Components;
 using Content.Shared._Scp.Anomaly.Scp106.Protection;
+using Content.Shared._Scp.Mobs.Fear.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mind;

@@ -1,4 +1,4 @@
-﻿using Content.Shared._Scp.Fear;
+﻿using Content.Shared._Scp.Mobs.Fear;
 using Content.Shared.Damage;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;

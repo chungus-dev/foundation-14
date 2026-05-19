@@ -1,6 +1,6 @@
 ﻿using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
 using Content.Shared._Scp.Anomaly.Scp096.Main.Systems;
-using Content.Shared._Scp.ScpMask;
+using Content.Shared._Scp.Containment.ScpMask;
 using Content.Shared.Examine;
 
 namespace Content.Shared._Scp.Anomaly.Scp096.Photo;

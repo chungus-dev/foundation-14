@@ -2,7 +2,7 @@
 using Content.Server.Examine;
 using Content.Shared._Scp.Helpers;
 using Content.Shared._Scp.Anomaly.Scp939;
-using Content.Shared._Scp.ScpMask;
+using Content.Shared._Scp.Containment.ScpMask;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Chat;
 using Content.Shared.Coordinates.Helpers;

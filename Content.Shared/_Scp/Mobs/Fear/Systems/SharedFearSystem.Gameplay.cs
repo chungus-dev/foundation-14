@@ -1,0 +1,162 @@
+﻿using Content.Shared._Scp.Mobs.Fear.Components;
+using Content.Shared._Scp.Utility.Random;
+using Content.Shared._Scp.Weapons.Ranged;
+using Content.Shared.Drunk;
+using Content.Shared.Jittering;
+using Content.Shared.Standing;
+using Content.Shared.StatusEffectNew;
+using Content.Shared.Stunnable;
+using Robust.Shared.Prototypes;
+
+namespace Content.Shared._Scp.Mobs.Fear.Systems;
+
+public abstract partial class SharedFearSystem
+{
+    [Dependency] private readonly StatusEffectsSystem _effects = default!;
+    [Dependency] private readonly SharedJitteringSystem _jittering = default!;
+    [Dependency] private readonly StandingStateSystem _standing = default!;
+    [Dependency] private readonly SharedStunSystem _stun = default!;
+    [Dependency] private readonly RandomPredictedSystem _random = default!;
+
+    private const float BaseJitteringAmplitude = 1f;
+    private const float BaseJitteringFrequency = 4f;
+
+    private const float MinimumAlcoholModifier = 1f;
+    private const float MaximumAlcoholModifier = 4f;
+
+    private static readonly EntProtoId AdrenalineStatusEffect = "StatusEffectFearAdrenaline";
+
+    private void InitializeGameplay()
+    {
+        SubscribeLocalEvent<ActiveFearFallOffComponent, MapInitEvent>(OnFallOffMapInit);
+        SubscribeLocalEvent<ActiveFearFallOffComponent, MoveEvent>(OnFallOffMove);
+    }
+
+    private void OnFallOffMapInit(Entity<ActiveFearFallOffComponent> ent, ref MapInitEvent args)
+    {
+        SetNextFallOffTime(ent);
+    }
+
+    private void OnFallOffMove(Entity<ActiveFearFallOffComponent> ent, ref MoveEvent args)
+    {
+        if (_timing.CurTime < ent.Comp.FallOffNextCheckTime)
+            return;
+
+        SetNextFallOffTime(ent); // Даже если не прокнет, то время все равно должно устанавливаться
+
+        if (!_random.ProbForEntity(ent, ent.Comp.FallOffChance))
+            return;
+
+        if (_standing.IsDown(ent.Owner))
+            return;
+
+        _stun.TryAddParalyzeDuration(ent.Owner, ent.Comp.FallOffTime);
+    }
+
+    /// <summary>
+    /// Регулирует проблемы со стрельбой при увеличении страха
+    /// </summary>
+    private void ManageShootingProblems(Entity<FearComponent> ent)
+    {
+        if (ent.Comp.State == FearState.None)
+        {
+            SetSpreadParameters(ent, 1f, 1f); // Убирает модификаторы, скручивая их до 1
+            return;
+        }
+
+        var modifier = ent.Comp.FearBasedSpreadAngleModifier[ent.Comp.State];
+        SetSpreadParameters(ent, modifier, modifier);
+    }
+
+    private void SetSpreadParameters(EntityUid uid, float angleIncrease, float maxAngle)
+    {
+        var component = EnsureComp<DispersingShotSourceComponent>(uid);
+        component.AngleIncreaseMultiplier = angleIncrease;
+        component.MaxAngleMultiplier = maxAngle;
+
+        Dirty(uid, component);
+    }
+
+    /// <summary>
+    /// Заставляет сущность трястись от страха.
+    /// Параметры тряски зависят от уровня страха
+    /// </summary>
+    private void ManageJitter(Entity<FearComponent> ent)
+    {
+        // При ступоре и обмороке персонаж не должен трястись
+        if (_fearFaintingQuery.HasComp(ent) || _fearStuporQuery.HasComp(ent))
+            return;
+
+        if (MathHelper.CloseTo(ent.Comp.BaseJitterTime, 0f))
+            return;
+
+        // Значения будут коррелировать с текущем уровнем страха
+        var genericModifier = GetGenericFearBasedModifier(ent.Comp.State);
+        var alcoholModifier = GetDrunkModifier(ent);
+
+        var time = ent.Comp.BaseJitterTime * genericModifier / alcoholModifier;
+        var amplitude = BaseJitteringAmplitude * genericModifier / alcoholModifier;
+        var frequency = BaseJitteringFrequency * genericModifier / alcoholModifier;
+
+        _jittering.DoJitter(ent, TimeSpan.FromSeconds(time), false, amplitude, frequency);
+    }
+
+    /// <summary>
+    /// Вводит адреналин в кровь сущности, количество зависит от уровня страха.
+    /// </summary>
+    private void ManageAdrenaline(Entity<FearComponent> ent)
+    {
+        if (MathHelper.CloseTo(ent.Comp.AdrenalineBaseTime, 0f))
+            return;
+
+        var modifier = GetGenericFearBasedModifier(ent.Comp.State);
+        var time = TimeSpan.FromSeconds(ent.Comp.AdrenalineBaseTime * modifier);
+
+        _effects.TryAddStatusEffectDuration(ent, AdrenalineStatusEffect, time);
+    }
+
+    /// <summary>
+    /// Получает модификатор, зависящий от силы алкоголя в крови сущности
+    /// </summary>
+    private float GetDrunkModifier(EntityUid uid)
+    {
+        if (!_effects.TryGetEffectsEndTimeWithComp<DrunkStatusEffectComponent>(uid, out var endTime))
+            return 1f;
+
+        if (endTime == null)
+            return MaximumAlcoholModifier;
+
+        var remainingSeconds = Math.Max(0f, (float) (endTime.Value - _timing.CurTime).TotalSeconds);
+        var normalized = Math.Clamp(remainingSeconds / 50f, MinimumAlcoholModifier, MaximumAlcoholModifier);
+
+        return normalized;
+    }
+
+    protected virtual void TryScream(Entity<FearComponent> ent) {}
+
+    private void ManageFallOff(Entity<FearComponent> ent)
+    {
+        if (ent.Comp.State >= ent.Comp.FallOffRequiredState)
+        {
+            if (HasComp<ActiveFearFallOffComponent>(ent))
+                return;
+
+            var comp = EnsureComp<ActiveFearFallOffComponent>(ent);
+            comp.FallOffChance = ent.Comp.FallOffChance;
+            Dirty(ent, comp);
+        }
+        else
+        {
+            RemComp<ActiveFearFallOffComponent>(ent);
+        }
+    }
+
+    /// <summary>
+    /// Устанавливает следующее время возможности запнуться.
+    /// </summary>
+    private void SetNextFallOffTime(Entity<ActiveFearFallOffComponent> ent)
+    {
+        ent.Comp.FallOffNextCheckTime = _timing.CurTime + ent.Comp.FallOffCheckInterval;
+        Dirty(ent);
+    }
+}

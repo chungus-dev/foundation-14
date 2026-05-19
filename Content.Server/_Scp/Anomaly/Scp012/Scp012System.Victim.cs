@@ -1,9 +1,9 @@
 ﻿using System.Numerics;
 using Content.Server.Chat.Systems;
 using Content.Server.Hands.Systems;
-using Content.Shared._Scp.Fear;
 using Content.Shared._Scp.Proximity;
 using Content.Shared._Scp.Anomaly.Scp012;
+using Content.Shared._Scp.Mobs.Fear;
 using Content.Shared.Chat;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs;

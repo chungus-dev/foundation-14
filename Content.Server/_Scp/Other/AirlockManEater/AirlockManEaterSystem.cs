@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using Content.Server.Doors.Systems;
-using Content.Shared._Scp.Fear;
-using Content.Shared._Scp.Fear.Components;
+using Content.Shared._Scp.Mobs.Fear;
+using Content.Shared._Scp.Mobs.Fear.Components;
 using Content.Shared._Scp.Other.AirlockManEater;
 using Content.Shared._Scp.Other.Events;
 using Content.Shared._Scp.Proximity;

@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Content.Shared._Scp.Fear.Components;
+using Content.Shared._Scp.Mobs.Fear.Components;
 using Content.Shared.Actions;
 using Content.Shared.Clothing;
 using Content.Shared.Damage.Components;
@@ -10,7 +10,6 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Rejuvenate;

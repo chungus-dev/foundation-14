@@ -1,5 +1,5 @@
-﻿using Content.Shared._Scp.Fear;
-using Content.Shared._Scp.Fear.Components;
+﻿using Content.Shared._Scp.Mobs.Fear;
+using Content.Shared._Scp.Mobs.Fear.Components;
 using Content.Shared.Random.Rules;
 using JetBrains.Annotations;
 

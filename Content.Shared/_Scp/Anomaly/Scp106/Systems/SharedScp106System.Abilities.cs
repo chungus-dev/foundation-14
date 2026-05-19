@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using Content.Shared._Scp.Fear.Components;
-using Content.Shared._Scp.Fear.Systems;
 using Content.Shared._Scp.Anomaly.Scp106.Components;
+using Content.Shared._Scp.Mobs.Fear.Components;
+using Content.Shared._Scp.Mobs.Fear.Systems;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 
@@ -115,7 +115,6 @@ public abstract partial class SharedScp106System
 
         ent.Comp.AbsorbedFears.Remove(state);
         Dirty(ent);
-        StartScreech(ent.Owner, false);
 
         args.Handled = true;
     }
@@ -145,10 +144,6 @@ public abstract partial class SharedScp106System
 
         ToggleBlade(ent, proto);
         return true;
-    }
-
-    private void StartScreech(EntityUid ent, bool playSound = true)
-    {
     }
 
     protected virtual void ToggleBlade(Entity<Scp106Component> ent, EntProtoId blade) { }
