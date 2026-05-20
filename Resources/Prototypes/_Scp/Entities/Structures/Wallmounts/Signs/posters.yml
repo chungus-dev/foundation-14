@@ -764,15 +764,6 @@
 
 - type: entity
   parent: PosterScpContainmentRoomBase
-  id: PosterSCP247
-  name: SCP-247 poster
-  description: Information poster for SCP-247.
-  components:
-  - type: Sprite
-    state: scp247
-
-- type: entity
-  parent: PosterScpContainmentRoomBase
   id: PosterSCP268
   name: SCP-268 poster
   description: Information poster for SCP-268.
@@ -788,15 +779,6 @@
   components:
   - type: Sprite
     state: scp330
-
-- type: entity
-  parent: PosterScpContainmentRoomBase
-  id: PosterSCP427
-  name: SCP-427 poster
-  description: Information poster for SCP-427.
-  components:
-  - type: Sprite
-    state: scp427
 
 - type: entity
   parent: PosterScpContainmentRoomBase

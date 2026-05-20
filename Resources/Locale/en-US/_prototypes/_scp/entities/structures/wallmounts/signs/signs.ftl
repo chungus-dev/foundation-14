@@ -32,7 +32,6 @@ ent-SignDirectionalScp268 = "SCP-268" directional sign
     .desc = { ent-BaseSignDirectionalScp.desc }
 ent-SignDirectionalScp330 = "SCP-330" directional sign
     .desc = { ent-BaseSignDirectionalScp.desc }
-ent-SignDirectionalScp427 = "SCP-427" directional sign
     .desc = { ent-BaseSignDirectionalScp.desc }
 ent-SignDirectionalScp500 = "SCP-500" directional sign
     .desc = { ent-BaseSignDirectionalScp.desc }

@@ -20,5 +20,3 @@ ent-SpawnScp131B = спавнер SCP-131-B
     .desc = { ent-MarkerBase.desc }
 ent-SpawnScp457 = спавнер SCP-457
     .desc = { ent-MarkerBase.desc }
-ent-SpawnScp247 = спавнер SCP-247
-    .desc = { ent-MarkerBase.desc }
