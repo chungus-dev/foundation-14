@@ -67,24 +67,6 @@
     spawn_type: Job
     job_id: SeniorLogisticsOfficer
 
-# Внутренняя безопасность
-
-- type: entity
-  id: SpawnPointMentalControlOfficer
-  parent: SpawnPointScpBase
-  components:
-  - type: SpawnPoint
-    spawn_type: Job
-    job_id: MentalControlOfficer
-
-- type: entity
-  id: SpawnPointInternalSecurityOperative
-  parent: SpawnPointScpBase
-  components:
-  - type: SpawnPoint
-    spawn_type: Job
-    job_id: InternalSecurityOperative
-
 # Комитет по этике
 
 - type: entity

@@ -54,19 +54,6 @@
   alwaysShowInBanPanel: true
   weight: 97
 
-# Гады следящие за буквой закона
-
-- type: department
-  id: InternalSecurity
-  name: department-InternalSecurity
-  description: department-InternalSecurity-description
-  editorHidden: true # выводим ОВБ до лучших времен
-  color: "#980000"
-  weight: 95
-  roles:
-  - MentalControlOfficer
-  - InternalSecurityOperative
-
 - type: department
   id: EthicsCommittee
   name: department-EthicsCommittee

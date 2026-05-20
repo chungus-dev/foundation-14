@@ -33,9 +33,6 @@
             PersonnelOfficer: [ 1, 1 ]
             HeadOfMedicalSector: [ 1, 1 ]
             SeniorLogisticsOfficer: [ 1, 1 ]
-            # Отдел внутренней безопасности
-            # MentalControlOfficer: [ 1, 1 ]
-            #InternalSecurityOperative: [ 1, 1 ] # выводим до лучших времен
             # Комитет по этике
             EthicsCommitteeRepresentative: [ 1, 1 ]
             # Служба внутреннего трибунала

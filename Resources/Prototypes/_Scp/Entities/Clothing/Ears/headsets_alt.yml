@@ -29,22 +29,6 @@
   - type: Clothing
     sprite: Clothing/Ears/Headsets/command.rsi
 
-# Департамент внутренней безопасности
-
-- type: entity
-  parent: [BaseScpHeadsetAlt, BaseCommandContraband]
-  id: ClothingHeadsetAltInternalSecurity
-  components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyAdministration
-      - EncryptionKeyInternalSecurity
-  - type: Sprite
-    sprite: Clothing/Ears/Headsets/command.rsi
-  - type: Clothing
-    sprite: Clothing/Ears/Headsets/command.rsi
-
 # Комитет по этике
 
 - type: entity

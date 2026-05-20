@@ -139517,13 +139517,6 @@ entities:
     - type: Transform
       pos: -6.5,-35.5
       parent: 2
-- proto: SpawnPointMentalControlOfficer
-  entities:
-  - uid: 21912
-    components:
-    - type: Transform
-      pos: -41.5,-51.5
-      parent: 2
 - proto: SpawnPointObserver
   entities:
   - uid: 21913

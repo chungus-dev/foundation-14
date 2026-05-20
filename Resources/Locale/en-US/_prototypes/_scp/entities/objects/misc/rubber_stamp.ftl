@@ -1,7 +1,5 @@
 ent-RubberStampDirector = Facility Director's stamp
     .desc = { ent-RubberStampBase.desc }
-ent-RubberStampMentalControlOfficer = Mental Control Officer's stamp
-    .desc = { ent-RubberStampBase.desc }
 ent-RubberStampChiefTechnicalSpecialist = Chief Technical Specialist's stamp
     .desc = { ent-RubberStampBase.desc }
 ent-RubberStampHeadOfMedicalSector = Head of Medical Sector's stamp

@@ -26,14 +26,6 @@
 - type: playTimeTracker
   id: JobEthicsCommitteeRepresentative
 
-# Департамент внутренней безопасности
-
-- type: playTimeTracker
-  id: JobMentalControlOfficer
-
-- type: playTimeTracker
-  id: JobInternalSecurityOperative
-
 # Департамент внутреннего трибунала
 
 - type: playTimeTracker

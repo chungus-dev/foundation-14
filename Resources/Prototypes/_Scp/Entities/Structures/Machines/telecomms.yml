@@ -23,18 +23,6 @@
       key_slots:
       - EncryptionKeyAdministration
 
-# Служба внутренней безопасности
-
-- type: entity
-  parent: TelecomServer
-  id: TelecomServerFilledInternalSecurity
-  suffix: Command
-  components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyInternalSecurity
-
 # Комитет по этике
 
 - type: entity

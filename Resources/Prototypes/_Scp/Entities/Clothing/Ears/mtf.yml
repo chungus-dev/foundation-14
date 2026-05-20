@@ -21,7 +21,6 @@
     containers:
       key_slots:
       - EncryptionKeyMTFMaster
-      - EncryptionKeyInternalSecurity
       - EncryptionKeyInternalTribunalService
 
 - type: entity

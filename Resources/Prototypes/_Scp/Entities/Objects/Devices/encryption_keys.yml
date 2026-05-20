@@ -83,25 +83,6 @@
     - state: crypt_blue
     - state: hq_label
 
-# Служба внутренней безопасности
-
-- type: entity
-  parent: [ EncryptionKey, BaseCommandContraband ]
-  id: EncryptionKeyInternalSecurity
-  components:
-  - type: EncryptionKey
-    channels:
-    - InternalSecurity
-    defaultChannel: InternalSecurity
-  - type: Sprite
-    sprite: _Scp/Objects/Devices/encryption_keys.rsi
-    layers:
-    - state: crypt_silver
-    - state: is_label
-  - type: Tag
-    tags:
-    - EncryptionCommand
-
 # Комитет по этике
 
 - type: entity

@@ -10,17 +10,6 @@
     state: stamp-cap
 
 - type: entity
-  parent: RubberStampBase
-  id: RubberStampMentalControlOfficer
-  components:
-  - type: Stamp
-    stampedName: stamp-component-stamped-name-mental-control-officer
-    stampedColor: "#dbb2c7"
-    stampState: "paper_stamp-lawyer"
-  - type: Sprite
-    state: stamp-lawyer
-
-- type: entity
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampChiefTechnicalSpecialist
   components:

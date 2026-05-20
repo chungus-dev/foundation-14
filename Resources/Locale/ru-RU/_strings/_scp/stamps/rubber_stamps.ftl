@@ -1,5 +1,4 @@
 stamp-component-stamped-name-director = { job-name-director }
-stamp-component-stamped-name-mental-control-officer = { job-name-mental-control-officer }
 stamp-component-stamped-name-chief-technical-specialist = { job-name-chief-technical-specialist }
 stamp-component-stamped-name-head-of-medical-sector = { job-name-head-of-medical-sector }
 stamp-component-stamped-name-personnel-officer = { job-name-personnel-officer }

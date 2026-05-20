@@ -1,7 +1,6 @@
 chat-radio-regional-administration = Regional Administration
 chat-radio-administration = Administration
 chat-radio-ethics-committee = Ethics Committee
-chat-radio-internal-security = Internal Security
 chat-radio-internal-tribunal-service = Internal Tribunal
 chat-radio-heavy-containment-security-service = SPS
 chat-radio-external-administrative-zone-security-service = Commandants

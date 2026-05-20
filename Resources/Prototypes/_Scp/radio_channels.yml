@@ -84,10 +84,3 @@
   keycode: 'б'
   frequency: 2333
   color: "#c27ba0"
-
-- type: radioChannel
-  id: InternalSecurity
-  name: chat-radio-internal-security
-  keycode: 'ю'
-  frequency: 2334
-  color: "#8e4747"

@@ -49,22 +49,6 @@
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
     state: SeniorLogisticsOfficer
 
-# Департамент внутренней безопасности
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobMentalControlOfficer
-  icon:
-    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: MentalControlOfficer
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobInternalSecurityOperative
-  icon:
-    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: InternalSecurityOperative
-
 # Комитет по этике
 
 - type: jobIcon
