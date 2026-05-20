@@ -158,15 +158,6 @@
     containers:
       board: [ DoorElectronicsEthicsCommittee ]
 
-- type: entity
-  parent: ScpWindoorSecureAdministrationLocked
-  id: ScpWindoorSecureInternalTribunalServiceLocked
-  suffix: SCP Internal tribunal service, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsInternalTribunalService ]
-
 # Региональная администрация
 
 - type: entity

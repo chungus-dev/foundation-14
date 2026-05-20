@@ -1,9 +1,0 @@
-ent-TribunalOfficerPDA = Tribunal Officer PDA
-    .desc = The best friend of SCP Foundation documentation.
-ent-TribunalOfficerIDCard = Tribunal Officer ID Card
-    .desc = { ent-IDCardStandard.desc }
-ent-RubberStampTribunalOfficer = Tribunal Officer stamp
-    .desc = { ent-RubberStampBase.desc }
-ent-BriefcaseTribunalOfficerFilled = { ent-BriefcaseBrown }
-    .suffix = { job-name-tribunal-officer }
-    .desc = { ent-BriefcaseBrown.desc }

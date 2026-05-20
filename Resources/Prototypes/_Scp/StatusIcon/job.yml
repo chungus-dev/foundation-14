@@ -58,22 +58,6 @@
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
     state: EthicsCommitteeRepresentative
 
-# Департамент внутреннего трибунала
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobJudicialInspector
-  icon:
-    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: JudicialInspector
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobTribunalOfficer
-  icon:
-    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: TribunalOfficer
-
 # Служба безопасности тяжелой зоны
 
 - type: jobIcon

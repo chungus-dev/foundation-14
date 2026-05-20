@@ -35,18 +35,6 @@
       key_slots:
       - EncryptionKeyEthicsCommittee
 
-# Служба внутреннего трибунала
-
-- type: entity
-  parent: TelecomServer
-  id: TelecomServerFilledInternalTribunalService
-  suffix: Command
-  components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyInternalTribunalService
-
 # Служба безопасности тяжелой зоны
 
 - type: entity

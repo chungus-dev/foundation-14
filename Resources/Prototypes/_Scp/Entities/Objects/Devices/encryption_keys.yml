@@ -102,25 +102,6 @@
     tags:
     - EncryptionCommand
 
-# Служба внутреннего трибунала
-
-- type: entity
-  parent: [ EncryptionKey, BaseCommandContraband ]
-  id: EncryptionKeyInternalTribunalService
-  components:
-  - type: EncryptionKey
-    channels:
-    - InternalTribunalService
-    defaultChannel: InternalTribunalService
-  - type: Sprite
-    sprite: _Scp/Objects/Devices/encryption_keys.rsi
-    layers:
-    - state: crypt_silver
-    - state: tribunal_label
-  - type: Tag
-    tags:
-    - EncryptionCommand
-
 # Служба безопасности тяжелой зоны
 
 - type: entity

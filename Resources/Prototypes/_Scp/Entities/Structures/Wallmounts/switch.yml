@@ -72,14 +72,6 @@
   - type: AccessReader
     access: [["EthicsCommittee"]]
 
-- type: entity
-  parent: LockableButton
-  id: LockableButtonInternalTribunalService
-  suffix: Internal tribunal service
-  components:
-  - type: AccessReader
-    access: [["InternalTribunalService"]]
-
 # Региональная администрация
 
 - type: entity

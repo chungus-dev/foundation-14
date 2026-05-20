@@ -36,9 +36,6 @@
             SeniorLogisticsOfficer: [ 1, 1 ]
             # Комитет по этике
             EthicsCommitteeRepresentative: [ 1, 1 ]
-            # Служба внутреннего трибунала
-            # JudicialInspector: [ 1, 1 ]
-            # TribunalOfficer: [ 1, 1 ]
             # Служба безопасности тяжелой зоны
             HeavyContainmentZoneCommandant: [ 1, 1 ]
             SeniorHeavyContainmentZoneOfficer: [ 1, 1 ]

@@ -2013,7 +2013,7 @@ LockerSecurityCommanderFilled: ScpLockerSecurityCommanderFilled
 LockerScientificServiceDirector: ScpLockerScientificServiceDirector
 LockerScientificServiceDirectorFilled: ScpLockerScientificServiceDirectorFilled
 LockerEthicsCommittee: ScpLockerEthicsCommittee
-LockerInternalTribunalService: ScpLockerInternalTribunalService
+LockerInternalTribunalService: null
 LockerMTF: ScpLockerMtf
 LockerO5: ScpLockerO5
 LockerScpSafe: ScpLockerScpSafe

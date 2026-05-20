@@ -36,10 +36,6 @@
   id: EthicsCommittee
   name: access-name-ethics-committee
 
-- type: accessLevel
-  id: InternalTribunalService
-  name: access-name-internal-tribunal-service
-
 # СБ
 
 # Охранный уже представлен в ваниле

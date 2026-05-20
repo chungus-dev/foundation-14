@@ -83,15 +83,6 @@
     containers:
       board: [ DoorElectronicsEthicsCommittee ]
 
-- type: entity
-  parent: ScpAirlockAdministration
-  id: ScpAirlockInternalTribunalServiceLocked
-  suffix: Internal tribunal service, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsInternalTribunalService ]
-
 # Региональная администрация
 
 - type: entity
@@ -479,15 +470,6 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsEthicsCommittee ]
-
-- type: entity
-  parent: ScpAirlockAdministrationGlass
-  id: ScpAirlockInternalTribunalServiceGlassLocked
-  suffix: Internal tribunal service, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsInternalTribunalService ]
 
 # Региональная администрация
 

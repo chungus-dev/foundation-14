@@ -85,14 +85,6 @@
     access: [["EthicsCommittee"]]
 
 - type: entity
-  id: ScpLockerInternalTribunalService
-  parent: BaseAdministrationLockerPlasteel
-  name: internal tribunal service locker
-  components:
-  - type: AccessReader
-    access: [["InternalTribunalService"]]
-
-- type: entity
   id: ScpLockerAdministration
   parent: BaseAdministrationLocker
   name: administration locker

@@ -91,22 +91,6 @@
   - EthicsCommittee
 
 - type: accessGroup
-  id: InternalTribunalService
-  groups:
-  - AdministrationHeadless
-  - ScientificServiceHeadless
-  - MedicalHeadless
-  - EngineeringHeadless
-  - LogisticsHeadless
-  - ServiceHeadless
-  - ClassD
-  - ScpCommon
-  tags:
-  - Security
-  - Checkpoint
-  - InternalTribunalService
-
-- type: accessGroup
   id: AdministrationJobCommon
   groups:
   - AdministrationHeadless

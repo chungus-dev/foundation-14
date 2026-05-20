@@ -63,17 +63,6 @@
   roles:
   - EthicsCommitteeRepresentative
 
-- type: department
-  id: InternalTribunalService
-  name: department-InternalTribunalService
-  description: department-InternalTribunalService-description
-  editorHidden: true # выводим СВТ до лучших времен
-  color: "#c27ba0"
-  weight: 85
-  roles:
-  - JudicialInspector
-  - TribunalOfficer
-
 # Служба безопасности
 
 - type: department

@@ -26,14 +26,6 @@
 - type: playTimeTracker
   id: JobEthicsCommitteeRepresentative
 
-# Департамент внутреннего трибунала
-
-- type: playTimeTracker
-  id: JobJudicialInspector
-
-- type: playTimeTracker
-  id: JobTribunalOfficer
-
 # Служба безопасности тяжелой зоны
 
 - type: playTimeTracker

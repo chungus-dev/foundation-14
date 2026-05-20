@@ -21,7 +21,6 @@
     containers:
       key_slots:
       - EncryptionKeyMTFMaster
-      - EncryptionKeyInternalTribunalService
 
 - type: entity
   parent: ClothingHeadsetAltMTF

@@ -7,7 +7,6 @@ access-name-personnel-officer = { job-name-personnel-officer }
 access-name-head-of-medical-sector = { job-name-head-of-medical-sector }
 access-name-senior-logistics-officer = { job-name-senior-logistics-officer }
 access-name-ethics-committee = Комитет по этике
-access-name-internal-tribunal-service = Служба внутреннего трибунала
 access-name-life-support = Жизнеобеспечение
 access-name-laboratory = Лаборатория
 access-name-checkpoint = КПП

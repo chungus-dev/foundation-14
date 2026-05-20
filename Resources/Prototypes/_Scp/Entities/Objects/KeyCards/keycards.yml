@@ -100,28 +100,6 @@
   - type: PresetIdCard
     job: EthicsCommitteeRepresentative
 
-# Служба внутреннего трибунала
-
-- type: entity
-  parent: KeyCardBase
-  id: KeyCardJudicialInspector
-  name: internal tribunal service representative pass
-  components:
-  - type: Sprite
-    state: ethics_committee
-  - type: PresetIdCard
-    job: JudicialInspector
-
-- type: entity
-  parent: KeyCardBase
-  id: KeyCardTribunalOfficer
-  name: internal tribunal service representative pass
-  components:
-  - type: Sprite
-    state: ethics_committee
-  - type: PresetIdCard
-    job: TribunalOfficer
-
 # Служба безопасности легкой зоны содержания
 
 - type: entity

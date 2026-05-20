@@ -71,14 +71,6 @@
   - type: AccessReader
     access: [["EthicsCommittee"]]
 
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsInternalTribunalService
-  suffix: Internal tribunal service, Locked
-  components:
-  - type: AccessReader
-    access: [["InternalTribunalService"]]
-
 # СБ
 
 #СБ и Арсенал есть в ванильных платах

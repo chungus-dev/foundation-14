@@ -77,24 +77,6 @@
     spawn_type: Job
     job_id: EthicsCommitteeRepresentative
 
-# Служба внутреннего трибунала
-
-- type: entity
-  id: SpawnPointJudicialInspector
-  parent: SpawnPointScpBase
-  components:
-  - type: SpawnPoint
-    spawn_type: Job
-    job_id: JudicialInspector
-
-- type: entity
-  id: SpawnPointTribunalOfficer
-  parent: SpawnPointScpBase
-  components:
-  - type: SpawnPoint
-    spawn_type: Job
-    job_id: TribunalOfficer
-
 # Служба безопасности - Отряд специального назначения
 
 - type: entity

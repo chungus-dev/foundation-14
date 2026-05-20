@@ -7,7 +7,6 @@ stamp-component-stamped-name-commandant-squad-leader = { job-name-external-admin
 stamp-component-stamped-name-special-purpose-squad-leader = { job-name-heavy-containment-zone-commandant }
 stamp-component-stamped-name-senior-logistics-officer = { job-name-senior-logistics-officer }
 stamp-component-stamped-name-scientific-service-director = { job-name-scientific-service-director }
-stamp-component-stamped-name-tribunal-officer = { job-name-tribunal-officer }
 stamp-component-stamped-name-administrator = Administrator
 stamp-component-stamped-name-overseer-council = Overseer Council
 stamp-component-stamped-name-ethics-committee = Ethics Committee
