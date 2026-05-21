@@ -77,6 +77,11 @@ public abstract partial class SharedXenoArtifactSystem
         if (!force && _timing.CurTime < ent.Comp.NextUnlockTime)
             return;
 
+        // Scp added start - prevents from triggering effects when artifact deletes itself
+        if (TerminatingOrDeleted(ent))
+            return;
+        // Scp added end
+
         if (!_unlockingQuery.TryGetComponent(ent, out var unlockingComp))
         {
             unlockingComp = EnsureComp<XenoArtifactUnlockingComponent>(ent);
