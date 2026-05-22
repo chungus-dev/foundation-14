@@ -3,7 +3,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 
-namespace Content.Server._Scp.ComplexElevator;
+namespace Content.Server._Scp.Facility.ComplexElevator;
 
 [RegisterComponent]
 public sealed partial class ComplexElevatorComponent : Component

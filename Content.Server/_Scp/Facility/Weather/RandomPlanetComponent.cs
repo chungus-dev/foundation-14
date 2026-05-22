@@ -1,7 +1,7 @@
 ﻿using Content.Shared.Parallax.Biomes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Scp.Other.RandomPlanet;
+namespace Content.Server._Scp.Facility.Weather;
 
 /// <summary>
 /// Компонент, создающий на станции случайный биом из списка.

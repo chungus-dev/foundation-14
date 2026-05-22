@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Server._Scp.ComplexElevator;
+using Content.Server._Scp.Facility.ComplexElevator;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 using Robust.Shared.GameObjects;

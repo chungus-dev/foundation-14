@@ -1,6 +1,6 @@
 using Content.Shared.Power.Components;
 
-namespace Content.Server._Scp.Transfers.EnergyTransfer;
+namespace Content.Server._Scp.Facility.Transfers.EnergyTransfer;
 
 [RegisterComponent]
 public sealed partial class EnergyTransferComponent : Component

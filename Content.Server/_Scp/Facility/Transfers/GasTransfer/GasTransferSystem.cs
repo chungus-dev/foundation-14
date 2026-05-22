@@ -6,7 +6,7 @@ using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Robust.Shared.Map;
 
-namespace Content.Server._Scp.Transfers.GasTransfer;
+namespace Content.Server._Scp.Facility.Transfers.GasTransfer;
 
 public sealed class GasTransferSystem : EntitySystem
 {

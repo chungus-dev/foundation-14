@@ -2,18 +2,19 @@
 using Content.Server.Parallax;
 using Content.Server.Station.Events;
 using Content.Server.Weather;
+using Content.Shared._Scp.Facility.Weather;
 using Content.Shared.Light.Components;
 using Content.Shared.Station.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server._Scp.Other.RandomPlanet;
+namespace Content.Server._Scp.Facility.Weather;
 
 /// <summary>
 /// Система, позволяющая создавать случайные биомы для комплексов.
 /// </summary>
-public sealed class RandomPlanetSystem : EntitySystem
+public sealed class ScpWeatherSystem : SharedScpWeatherSystem
 {
     [Dependency] private readonly BiomeSystem _biome = default!;
     [Dependency] private readonly WeatherSystem _weather = default!;
@@ -26,7 +27,6 @@ public sealed class RandomPlanetSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<RandomPlanetComponent, StationPostInitEvent>(OnStationPostInit);
-        Log.Level = LogLevel.Info;
     }
 
     private void OnStationPostInit(Entity<RandomPlanetComponent> ent, ref StationPostInitEvent args)

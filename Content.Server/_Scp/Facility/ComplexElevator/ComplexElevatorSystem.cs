@@ -14,7 +14,7 @@ using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 using Content.Server.Doors.Systems;
 
-namespace Content.Server._Scp.ComplexElevator;
+namespace Content.Server._Scp.Facility.ComplexElevator;
 
 public sealed class ComplexElevatorSystem : EntitySystem
 {

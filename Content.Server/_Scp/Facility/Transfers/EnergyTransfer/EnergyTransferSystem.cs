@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Power.Components;
 
-namespace Content.Server._Scp.Transfers.EnergyTransfer;
+namespace Content.Server._Scp.Facility.Transfers.EnergyTransfer;
 
 public sealed class EnergyTransferSystem : EntitySystem
 {
