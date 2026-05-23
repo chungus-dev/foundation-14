@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   abstract: true
   parent: WeaponEnergyTurretStationControlPanelBase
   id: ScpWeaponEnergyTurretStationControlPanelBase
@@ -19,15 +19,14 @@
     accessLevels:
     - MTF
     - Administration
-    - ComplexDirector
-    - ScientificServiceDirector
+    - FacilityDirector
+    - ScpResearchDirector
     - SecurityCommander
-    - ChiefTechnicalSpecialist
-    - PersonnelOfficer
-    - HeadOfMedicalSector
-    - SeniorLogisticsOfficer
+    - ScpChiefEngineer
+    - PersonnelManager
+    - ScpChiefMedicalOfficer
+    - ScpQuartermaster
     - EthicsCommittee
-    - InternalTribunalService
     - LifeSupport
     - Laboratory
     - Checkpoint
@@ -58,7 +57,7 @@
   suffix: AI
   components:
   - type: AccessReader
-    access: [["AI"], ["ScientificServiceDirector"]]
+    access: [["AI"], ["ScpResearchDirector"]]
   - type: DeviceNetwork
     receiveFrequencyId: TurretAI
     transmitFrequencyId: TurretControlAI

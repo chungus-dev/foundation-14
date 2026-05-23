@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ScpLockerMedicalService
   id: ScpLockerMedicalServiceFilledMedicine
   suffix: Filled, Medicine
@@ -9,8 +9,8 @@
         tableId: LockerFillMedicine
 
 - type: entity
-  parent: ScpLockerMedicalSpecialist
-  id: ScpLockerMedicalSpecialistFilled
+  parent: ScpLockerPhysician
+  id: ScpLockerPhysicianFilled
   suffix: Filled, Medical specialist
   components:
   - type: EntityTableContainerFill

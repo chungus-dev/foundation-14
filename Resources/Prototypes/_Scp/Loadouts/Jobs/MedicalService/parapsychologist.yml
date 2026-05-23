@@ -1,0 +1,64 @@
+- type: loadout
+  id: ScpLoadoutKeyCardParapsychologist
+  equipment:
+    id: KeyCardParapsychologist
+
+- type: loadout
+  id: ScpLoadoutRubberStampPsychologist
+  storage:
+    back:
+    - RubberStampPsychologist
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardParapsychologist
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardParapsychologist
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupBackStorageRubberStampPsychologist
+  name: loadout-group-storage
+  loadouts:
+  - ScpLoadoutRubberStampPsychologist
+
+- type: loadoutGroup
+  parent: [ScpLoadoutGroupParapsychologistShoes]
+  id: ScpLoadoutGroupParapsychologistShoesAlt
+  minLimit: 1
+  loadouts:
+  - ScpLoadoutClothingShoesLeather
+
+- type: loadout
+  id: ScpLoadoutParapsychologistHeadMirror
+  equipment:
+    head: ClothingHeadMirror
+
+- type: loadout
+  id: ScpLoadoutParapsychologistWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterMed
+
+- type: loadout
+  id: ScpLoadoutParapsychologistSterileMask
+  equipment:
+    mask: ClothingMaskSterile
+
+- type: loadout
+  id: ScpLoadoutParapsychologistNitrileGloves
+  equipment:
+    gloves: ClothingHandsGlovesNitrile
+
+- type: loadout
+  id: ScpLoadoutParapsychologistWinterBoots
+  equipment:
+    shoes: ClothingShoesBootsWinterMed
+
+- type: loadout
+  id: ScpLoadoutParapsychologistJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPsychologist
+
+- type: loadout
+  id: ScpLoadoutParapsychologistJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtPsychologist

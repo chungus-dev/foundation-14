@@ -1,6 +1,6 @@
 copy-machine-component-RegionalAdministration = Regional Administration
-copy-machine-component-CommandantSquad = { department-ExternalAdministrativeZoneSecurityService }
-copy-machine-component-SpecialPurposeSquad = { department-HeavyContainmentSecurityService }
+copy-machine-component-CommandantSquad = { department-CommandantSquad }
+copy-machine-component-SpecialPurposeSquad = { department-SpecialPurposeSquad }
 copy-machine-component-Logistics = { department-LogisticsService }
 copy-machine-component-ScientificService = { department-ScientificService }
 copy-machine-component-ClassD = { department-LowAccessPersonnel }

@@ -1,13 +1,13 @@
 fax-name-regional-administration = Региональное управление
 fax-name-o4-headquarters = Штаб О4
 fax-name-ethics-committee-office = Комитет по этике
-fax-name-complex-director-office = Офис директора комплекса
+fax-name-facility-director-office = Офис директора учреждения
 fax-name-encrypted = ОШ&Б*?*%!
-fax-name-chief-researcher-office = Кабинет главного научного сотрудника
+fax-name-research-director-office = Кабинет главного научного сотрудника
 fax-name-security-commander-office = Кабинет начальника службы безопасности
 fax-name-commandant-department = Отдел комендатуры
 fax-name-sps-department = Отдел ОСН
-fax-name-chief-engineer-office = Кабинет ведущего инженера
+fax-name-chief-engineer-office = Кабинет главного инженера
 fax-name-personnel-manager-office = Кабинет менеджера по персоналу
 fax-name-chief-medical-officer-office = Кабинет главного врача
 fax-name-quartermaster-office = Кабинет квартирмейстера

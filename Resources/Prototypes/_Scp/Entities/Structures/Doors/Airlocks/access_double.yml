@@ -13,30 +13,30 @@
 
 - type: entity
   parent: [ ScpDoubleAirlockAdministration ]
-  id: ScpDoubleAirlockDirectorLocked
-  suffix: Director, Locked
+  id: ScpDoubleAirlockFacilityDirectorLocked
+  suffix: FacilityDirector, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsComplexDirector ]
+      board: [ DoorElectronicsFacilityDirector ]
 
 - type: entity
   parent: [ ScpDoubleAirlockAdministration ]
-  id: ScpDoubleAirlockHeadOfMedicalSectorLocked
+  id: ScpDoubleAirlockChiefMedicalOfficerLocked
   suffix: Head of medical sector, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsHeadOfMedicalSector ]
+      board: [ DoorElectronicsScpChiefMedicalOfficer ]
 
 - type: entity
   parent: [ ScpDoubleAirlockAdministration ]
-  id: ScpDoubleAirlockChiefTechnicalSpecialistLocked
+  id: ScpDoubleAirlockChiefEngineerLocked
   suffix: Chief technical specialist, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsChiefTechnicalSpecialist ]
+      board: [ DoorElectronicsScpChiefEngineer ]
 
 - type: entity
   parent: [ ScpDoubleAirlockAdministration ]
@@ -49,30 +49,30 @@
 
 - type: entity
   parent: [ ScpDoubleAirlockAdministration ]
-  id: ScpDoubleAirlockScientificServiceDirectorLocked
+  id: ScpDoubleAirlockResearchDirectorLocked
   suffix: Scientific service director, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsScientificServiceDirector ]
+      board: [ DoorElectronicsScpResearchDirector ]
 
 - type: entity
   parent: [ ScpDoubleAirlockAdministration ]
-  id: ScpDoubleAirlockPersonnelOfficerLocked
+  id: ScpDoubleAirlockPersonnelManagerLocked
   suffix: Personnel officer, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsPersonnelOfficer ]
+      board: [ DoorElectronicsPersonnelManager ]
 
 - type: entity
   parent: [ ScpDoubleAirlockAdministration ]
-  id: ScpDoubleAirlockSeniorLogisticsOfficerLocked
+  id: ScpDoubleAirlockQuartermasterLocked
   suffix: Senior logistics officer, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSeniorLogisticsOfficer ]
+      board: [ DoorElectronicsScpQuartermaster ]
 
 - type: entity
   parent: ScpDoubleAirlockAdministration
@@ -82,15 +82,6 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsEthicsCommittee ]
-
-- type: entity
-  parent: ScpDoubleAirlockAdministration
-  id: ScpDoubleAirlockInternalTribunalServiceLocked
-  suffix: Internal tribunal service, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsInternalTribunalService ]
 
 # Региональная администрация
 
@@ -338,30 +329,30 @@
 
 - type: entity
   parent: [ ScpDoubleGlassAirlockAdministration ]
-  id: ScpDoubleGlassAirlockDirectorLocked
-  suffix: Director, Locked
+  id: ScpDoubleGlassAirlockFacilityDirectorLocked
+  suffix: FacilityDirector, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsComplexDirector ]
+      board: [ DoorElectronicsFacilityDirector ]
 
 - type: entity
   parent: [ ScpDoubleGlassAirlockAdministration ]
-  id: ScpDoubleGlassAirlockHeadOfMedicalSectorLocked
+  id: ScpDoubleGlassAirlockChiefMedicalOfficerLocked
   suffix: Head of medical sector, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsHeadOfMedicalSector ]
+      board: [ DoorElectronicsScpChiefMedicalOfficer ]
 
 - type: entity
   parent: [ ScpDoubleGlassAirlockAdministration ]
-  id: ScpDoubleGlassAirlockChiefTechnicalSpecialistLocked
+  id: ScpDoubleGlassAirlockChiefEngineerLocked
   suffix: Chief technical specialist, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsChiefTechnicalSpecialist ]
+      board: [ DoorElectronicsScpChiefEngineer ]
 
 - type: entity
   parent: [ ScpDoubleGlassAirlockAdministration ]
@@ -374,30 +365,30 @@
 
 - type: entity
   parent: [ ScpDoubleGlassAirlockAdministration ]
-  id: ScpDoubleGlassAirlockScientificServiceDirectorLocked
+  id: ScpDoubleGlassAirlockResearchDirectorLocked
   suffix: Scientific service director, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsScientificServiceDirector ]
+      board: [ DoorElectronicsScpResearchDirector ]
 
 - type: entity
   parent: [ ScpDoubleGlassAirlockAdministration ]
-  id: ScpDoubleGlassAirlockPersonnelOfficerLocked
+  id: ScpDoubleGlassAirlockPersonnelManagerLocked
   suffix: Personnel officer, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsPersonnelOfficer ]
+      board: [ DoorElectronicsPersonnelManager ]
 
 - type: entity
   parent: [ ScpDoubleGlassAirlockAdministration ]
-  id: ScpDoubleGlassAirlockSeniorLogisticsOfficerLocked
+  id: ScpDoubleGlassAirlockQuartermasterLocked
   suffix: Senior logistics officer, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSeniorLogisticsOfficer ]
+      board: [ DoorElectronicsScpQuartermaster ]
 
 - type: entity
   parent: ScpDoubleGlassAirlockAdministration
@@ -407,15 +398,6 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsEthicsCommittee ]
-
-- type: entity
-  parent: ScpDoubleGlassAirlockAdministration
-  id: ScpDoubleAirlockInternalTribunalServiceGlassLocked
-  suffix: Internal tribunal service, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsInternalTribunalService ]
 
 # Региональная администрация
 

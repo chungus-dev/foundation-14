@@ -29,9 +29,9 @@
 
 # Уши
 - type: loadout
-  id: ScpLoadoutClothingHeadsetExternalAdministrativeZoneSecurityService
+  id: ScpLoadoutClothingHeadsetCommandantSquad
   equipment:
-    ears: ClothingHeadsetExternalAdministrativeZoneSecurityService
+    ears: ClothingHeadsetCommandantSquad
 
 # Шея
 - type: loadout
@@ -119,10 +119,10 @@
 
 # Остальное
 - type: loadout
-  id: ScpLoadoutRadioHandheldExternalAdministrativeZoneSecurityService
+  id: ScpLoadoutRadioHandheldCommandantSquad
   storage:
     back:
-    - RadioHandheldExternalAdministrativeZoneSecurityServiceEnabled
+    - RadioHandheldCommandantSquadEnabled
 
 # Пистолет-пулемет
 - type: loadout

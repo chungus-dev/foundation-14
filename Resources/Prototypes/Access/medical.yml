@@ -18,7 +18,7 @@
   id: Medical
   # Scp edit start
   tags:
-  - HeadOfMedicalSector
+  - ScpChiefMedicalOfficer
   groups:
   - MedicalHeadless
   # Scp edit end

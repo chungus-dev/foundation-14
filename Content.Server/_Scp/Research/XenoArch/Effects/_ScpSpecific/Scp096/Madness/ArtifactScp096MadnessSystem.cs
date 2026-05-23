@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using Content.Server._Scp.Scp096;
+using Content.Server._Scp.Anomaly.Scp096;
 using Content.Server._Scp.Utility.Helpers;
 using Content.Shared._Scp.Blinking;
-using Content.Shared._Scp.Scp096.Main.Components;
-using Content.Shared._Scp.ScpMask;
+using Content.Shared._Scp.Anomaly.Scp096.Main.Components;
+using Content.Shared._Scp.Containment.ScpMask;
 using Content.Shared._Scp.Utility.Extensions;
 using Content.Shared.Xenoarchaeology.Artifact;
 using Content.Shared.Xenoarchaeology.Artifact.XAE;

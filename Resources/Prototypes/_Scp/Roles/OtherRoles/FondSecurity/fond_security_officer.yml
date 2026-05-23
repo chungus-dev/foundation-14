@@ -5,7 +5,7 @@
   playTimeTracker: JobFondSecurityOfficer
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: FondSecurityOfficerGear
   icon: JobFondSecurityOfficer

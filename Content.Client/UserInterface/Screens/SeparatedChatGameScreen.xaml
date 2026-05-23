@@ -10,7 +10,7 @@
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:inventory="clr-namespace:Content.Client.UserInterface.Systems.Inventory.Widgets"
-    xmlns:palette="clr-namespace:Content.Client._Scp.Stylesheets.Palette"
+    xmlns:palette="clr-namespace:Content.Client._Scp.UI.Stylesheets.Palette"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Name="SeparatedChatHud"
     VerticalExpand="False"

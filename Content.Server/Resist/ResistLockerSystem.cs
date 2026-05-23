@@ -1,7 +1,7 @@
-using Content.Server._Scp.Scp173;
+using Content.Server._Scp.Anomaly.Scp173;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
-using Content.Shared._Scp.Scp173;
+using Content.Shared._Scp.Anomaly.Scp173;
 using Content.Shared.DoAfter;
 using Content.Shared.Lock;
 using Content.Shared.Movement.Events;
@@ -22,7 +22,7 @@ public sealed class ResistLockerSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly WeldableSystem _weldable = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-    [Dependency] private readonly Scp173System _scp173 = default!; // Fire
+    [Dependency] private readonly Scp173System _scp173 = default!; // Scp added
 
     public override void Initialize()
     {
@@ -54,9 +54,9 @@ public sealed class ResistLockerSystem : EntitySystem
 
         // Scp edit start - чтобы 173 не запирали внутри камеры в контейнере
         var delayTime = resistLockerComponent.ResistTime;
-        var isScp173Conainment = HasComp<Scp173Component>(user) && _scp173.IsContained(user);
+        var isScp173Containment = HasComp<Scp173Component>(user) && _scp173.IsContained(user);
 
-        if (isScp173Conainment)
+        if (isScp173Containment)
             delayTime = 5f;
         else if (resistLockerComponent.IsResisting)
             return;

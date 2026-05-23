@@ -5,21 +5,20 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPharmaceuticalSpecialist # Scp edit
-      time: 21600 #6 hrs
+      role: JobChemist
+      time: 6h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobMedicalSpecialist # Scp edit
-      time: 21600 #6 hrs
+      role: JobMedicalDoctor
+      time: 6h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: MedicalService # Scp edit
-      time: 216000 # 60 hrs
+      department: Medical
+      time: 60h
 
-# Other Timers
-
+# Mid-level timer for players who have a solid amount of experience
 - type: loadoutEffectGroup
   id: MedicalJourneymanTimer
   effects:
@@ -36,7 +35,5 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobHeadOfMedicalSector # Scp edit
-      time: 72000 #20 hrs
-
-# Jumpsuit
+      role: JobChiefMedicalOfficer
+      time: 20h

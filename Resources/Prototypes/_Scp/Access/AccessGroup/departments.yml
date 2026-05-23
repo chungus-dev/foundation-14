@@ -3,13 +3,13 @@
   groups:
   - AdministrationHeadless
   tags:
-  - ComplexDirector
-  - ScientificServiceDirector
+  - FacilityDirector
+  - ScpResearchDirector
   - SecurityCommander
-  - HeadOfMedicalSector
-  - PersonnelOfficer
-  - ChiefTechnicalSpecialist
-  - SeniorLogisticsOfficer
+  - ScpChiefMedicalOfficer
+  - PersonnelManager
+  - ScpChiefEngineer
+  - ScpQuartermaster
 
 - type: accessGroup
   id: RegionalAdministration
@@ -20,14 +20,14 @@
 - type: accessGroup
   id: ScientificService
   tags:
-  - ScientificServiceDirector
+  - ScpResearchDirector
   groups:
   - ScientificServiceHeadless
 
 - type: accessGroup
   id: Logistics
   tags:
-  - SeniorLogisticsOfficer
+  - ScpQuartermaster
   groups:
   - LogisticsHeadless
 
@@ -136,5 +136,4 @@
   - NuclearWarhead
   - Exit
   - EthicsCommittee
-  - InternalTribunalService
   - Bunker

@@ -9,12 +9,10 @@ public sealed partial class SwapReagentOnSpawnComponent : Component
     /// <summary>
     /// Шанс замены реагента с заменяемого на заменяющий
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float Chance
     {
-        get => _chance;
-        set => _chance = Math.Clamp(value, 0f, 1f);
+        get;
+        set => field = Math.Clamp(value, 0f, 1f);
     }
-
-    private float _chance = 1f;
 }

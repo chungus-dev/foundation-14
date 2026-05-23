@@ -5,7 +5,7 @@ using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
-using Content.Shared._Scp.Mobs.Components;
+using Content.Shared._Scp.Anomaly;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Item;

@@ -1,14 +1,11 @@
 chat-radio-regional-administration = Региональное управление
 chat-radio-administration = Руководство
 chat-radio-ethics-committee = Комитет по этике
-chat-radio-internal-security = Внутренняя безопасность
-chat-radio-internal-tribunal-service = Трибунал
-chat-radio-heavy-containment-security-service = ОСН
-chat-radio-external-administrative-zone-security-service = Коменданты
+chat-radio-special-purpose-squad = ОСН
+chat-radio-commandant-squad = Коменданты
 chat-radio-scientific-service = Научная служба
 chat-radio-medical-service = Медицинский
 chat-radio-engineering-technical-service = Инженерно-технический
 chat-radio-logistics-service = Логистика
 chat-radio-food-and-sanitation-service = Сервис
 chat-radio-chaos = Повстанцы
-chat-radio-gru = ГРУ-П

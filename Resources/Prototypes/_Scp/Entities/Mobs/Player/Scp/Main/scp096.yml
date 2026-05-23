@@ -82,7 +82,7 @@
     text: scp096-announce-on-spawn
     channels:
     - ScientificService
-    - HeavyContainmentSecurityService
+    - SpecialPurposeSquad
   - type: BloodSplatterer
     amount: 5, 10
     distance: 5, 40
@@ -179,7 +179,7 @@
     departmentMessages:
       ScientificService: ScpScp096FaceScienceMessages
     jobMessages:
-      ScientificServiceDirector: ScpScp096FaceScienceMessages
+      ScpResearchDirector: ScpScp096FaceScienceMessages
   - type: Fixtures
     fixtures:
       fix1:

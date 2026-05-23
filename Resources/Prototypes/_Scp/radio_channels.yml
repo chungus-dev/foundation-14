@@ -1,4 +1,4 @@
-﻿- type: radioChannel
+- type: radioChannel
   id: RegionalAdministration
   name: chat-radio-regional-administration
   keycode: 'р'
@@ -21,15 +21,15 @@
   color: "#8c4669"
 
 - type: radioChannel
-  id: HeavyContainmentSecurityService
-  name: chat-radio-heavy-containment-security-service
+  id: SpecialPurposeSquad
+  name: chat-radio-special-purpose-squad
   keycode: 'о'
   frequency: 2360
   color: "#B54E4E"
 
 - type: radioChannel
-  id: ExternalAdministrativeZoneSecurityService
-  name: chat-radio-external-administrative-zone-security-service
+  id: CommandantSquad
+  name: chat-radio-commandant-squad
   keycode: 'к'
   frequency: 2361
   color: "#acb5b8"
@@ -76,26 +76,3 @@
   frequency: 0251
   color: "#40826d"
   longRange: true
-
-- type: radioChannel
-  id: GRU
-  name: chat-radio-gru
-  keycode: 'г'
-  frequency: 0418
-  color: "#2e4b5c"
-  longRange: true
-
-# Ниже под удаление на будущее.
-- type: radioChannel
-  id: InternalTribunalService
-  name: chat-radio-internal-tribunal-service
-  keycode: 'б'
-  frequency: 2333
-  color: "#c27ba0"
-
-- type: radioChannel
-  id: InternalSecurity
-  name: chat-radio-internal-security
-  keycode: 'ю'
-  frequency: 2334
-  color: "#8e4747"

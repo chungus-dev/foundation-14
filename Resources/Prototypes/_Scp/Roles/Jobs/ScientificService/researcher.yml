@@ -1,0 +1,45 @@
+- type: job
+  id: Researcher
+  name: job-name-researcher
+  description: job-description-researcher
+  playTimeTracker: JobResearcher
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: ScientificService
+    time: 4h
+  - !type:AgeRequirement
+    requiredAge: 27
+  icon: JobResearcher
+  supervisors: job-supervisors-research-director
+  displayWeight: 10
+  weight: 795
+  accessGroups:
+  - Researcher
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Two
+    - type: Fear
+      phobias:
+      - Exoremophobia
+      - Necrophobia
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+    - type: ShowScp096FaceDamageHud
+
+- type: startingGear
+  id: ResearcherGear
+  equipment:
+    eyes: ClothingEyesGlasses
+    neck: ClothingNeckTieSci
+    jumpsuit: ClothingUniformJumpsuitScientist
+    outerClothing: ClothingOuterCoatLab
+    gloves: ClothingHandsGlovesLatex
+    shoes: ClothingShoesColorWhite
+    back: ClothingBackpackScience
+    id: KeyCardResearcher
+    ears: ClothingHeadsetScientificService
+    pocket2: ScpResearchPDA

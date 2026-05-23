@@ -5,7 +5,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - Syringe
@@ -17,7 +17,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - ChemistryBottleEpinephrine
@@ -29,7 +29,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - HandheldHealthAnalyzer
@@ -41,7 +41,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - ClothingEyesHudMedical
@@ -53,7 +53,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - ClothingEyesEyepatchHudMedical
@@ -65,7 +65,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - BoxMouthSwab
@@ -76,8 +76,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPharmaceuticalSpecialist
-      time: 72000 # 20 hour
+      role: JobPharmacist
+      time: 20h
   storage:
     back:
     - ToyFigurineChemist
@@ -88,8 +88,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobHeadOfMedicalSector
-      time: 72000 # 20 hour
+      role: JobScpChiefMedicalOfficer
+      time: 20h
   storage:
     back:
     - ToyFigurineChiefMedicalOfficer
@@ -100,8 +100,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobMedicalSpecialist
-      time: 72000 # 20 hour
+      role: JobPhysician
+      time: 20h
   storage:
     back:
     - ToyFigurineParamedic
@@ -112,22 +112,12 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobMedicalSpecialist
-      time: 72000 # 20 hour
+      role: JobPhysician
+      time: 20h
   storage:
     back:
     - ToyFigurineMedicalDoctor
 
-- type: loadout
-  id: ScpLoadoutClothingNeckStethoscopeGold
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: MedicalService
-      time: 1080000 # 300hr
-  storage:
-    back:
 - type: loadout
   id: ScpLoadoutClothingNeckStethoscope
   equipment:

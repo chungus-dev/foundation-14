@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: random facility encryption key spawner
   id: LootSpawnerFacilityEncryptionKey
   parent: MarkerBase
@@ -13,9 +13,8 @@
   - type: RandomSpawner
     rarePrototypes:
       - EncryptionKeyAdministration
-      - EncryptionKeyHeavyContainmentSecurityService
-      - EncryptionKeyExternalAdministrativeZoneSecurityService
-      - EncryptionKeyInternalSecurity
+      - EncryptionKeySpecialPurposeSquad
+      - EncryptionKeyCommandantSquad
     rareChance: 0.1
     prototypes:
       - EncryptionKeyCommon

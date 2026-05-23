@@ -7,13 +7,13 @@
   color: "#065290"
   weight: 100
   roles:
-  - Director
-  - ScientificServiceDirector
+  - FacilityDirector
+  - ScpResearchDirector
   - SecurityCommander
-  - ChiefTechnicalSpecialist
-  - PersonnelOfficer
-  - HeadOfMedicalSector
-  - SeniorLogisticsOfficer
+  - ScpChiefEngineer
+  - PersonnelManager
+  - ScpChiefMedicalOfficer
+  - ScpQuartermaster
 
 # Мобильные Оперативные Группы
 
@@ -54,19 +54,6 @@
   alwaysShowInBanPanel: true
   weight: 97
 
-# Гады следящие за буквой закона
-
-- type: department
-  id: InternalSecurity
-  name: department-InternalSecurity
-  description: department-InternalSecurity-description
-  editorHidden: true # выводим ОВБ до лучших времен
-  color: "#980000"
-  weight: 95
-  roles:
-  - MentalControlOfficer
-  - InternalSecurityOperative
-
 - type: department
   id: EthicsCommittee
   name: department-EthicsCommittee
@@ -76,43 +63,32 @@
   roles:
   - EthicsCommitteeRepresentative
 
-- type: department
-  id: InternalTribunalService
-  name: department-InternalTribunalService
-  description: department-InternalTribunalService-description
-  editorHidden: true # выводим СВТ до лучших времен
-  color: "#c27ba0"
-  weight: 85
-  roles:
-  - JudicialInspector
-  - TribunalOfficer
-
 # Служба безопасности
 
 - type: department
-  id: HeavyContainmentSecurityService
-  name: department-HeavyContainmentSecurityService
-  description: department-HeavyContainmentSecurityService-description
+  id: SpecialPurposeSquad
+  name: department-SpecialPurposeSquad
+  description: department-SpecialPurposeSquad-description
   color: "#770101"
   weight: 80
   roles:
-  - HeavyContainmentZoneCommandant
-  - SeniorHeavyContainmentZoneOfficer
-  - HeavyContainmentZoneOfficer
-  - JuniorHeavyContainmentZoneOfficer
+  - SpecialPurposeUnitCommander
+  - SeniorSpecialPurposeSquadOfficer
+  - SpecialPurposeSquadOfficer
+  - JuniorSpecialPurposeSquadOfficer
 
 - type: department
-  id: ExternalAdministrativeZoneSecurityService
-  name: department-ExternalAdministrativeZoneSecurityService
-  description: department-ExternalAdministrativeZoneSecurityService-description
+  id: CommandantSquad
+  name: department-CommandantSquad
+  description: department-CommandantSquad-description
   color: "#999999"
   weight: 75
   roles:
-  - ExternalAdministrativeZoneCommandant
-  - SeniorExternalAdministrativeZoneOfficer
-  - ExternalAdministrativeZoneOfficer
-  - JuniorExternalAdministrativeZoneOfficer
-  - FieldMedicalSpecialist
+  - CommandantLeader
+  - SeniorCommandant
+  - Commandant
+  - JuniorCommandant
+  - Amnesticologist
 
 # Научный отдел
 
@@ -123,11 +99,11 @@
   color: "#43356d"
   weight: 70
   roles:
-  - ScientificServiceDirector
-  - LeadResearcher
-  - AnomarchologyResearcher
-  - ProductionSpecialist
-  - JuniorResearcher
+  - ScpResearchDirector
+  - SeniorResearcher
+  - Researcher
+  - ManufacturingSpecialist
+  - LaboratoryPractitioner
 
 # Медицинский отдел
 
@@ -138,12 +114,12 @@
   color: "#3b627a"
   weight: 65
   roles:
-  - HeadOfMedicalSector
-  - SeniorMedicalSpecialist
-  - PharmaceuticalSpecialist
-  - MedicalSpecialist
-  - Psychotherapist
-  - HospitalIntern
+  - ScpChiefMedicalOfficer
+  - SeniorPhysician
+  - Pharmacist
+  - Physician
+  - Parapsychologist
+  - AssistantPhysician
 
 # Инженерный отдел
 
@@ -154,11 +130,11 @@
   color: "#c07d1e"
   weight: 60
   roles:
-  - ChiefTechnicalSpecialist
-  - LeadTechnicalSpecialist
-  - GeneralTechnicalSpecialist
-  - ElectricalTechnicalSpecialist
-  - TechnicalTrainee
+  - ScpChiefEngineer
+  - SeniorEngineer
+  - Technician
+  - ElectricalEngineer
+  - TraineeTechnician
 
 # Отдел логистики
 
@@ -169,8 +145,8 @@
   color: "#9E6A34"
   weight: 55
   roles:
-  - SeniorLogisticsOfficer
-  - LogisticsOfficer
+  - ScpQuartermaster
+  - Logistician
 
 # Департамент продовольственного и санитарного обслуживания
 
@@ -181,9 +157,9 @@
   color: "#4e7c22"
   weight: 50
   roles:
-  - GastronomicSpecialist
+  - Gastronomist
   - BotanistPhytogeneticist
-  - ServicePersonnel
+  - ServiceStaff
 
 # Класс Д
 

@@ -257,14 +257,6 @@ entities:
     - type: NavMap
     - type: TileHistory
       chunkHistory: {}
-- proto: ActionToggleLight
-  entities:
-  - uid: 4
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 3
 - proto: APCBasic
   entities:
   - uid: 5
@@ -2612,18 +2604,12 @@ entities:
       pos: 12.655048,-11.23699
       parent: 2
     - type: HandheldLight
-      toggleActionEntity: 4
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 4
     - type: Physics
       canCollide: True
     - type: ActionsContainer
@@ -2960,7 +2946,7 @@ entities:
     - type: Transform
       pos: 1.5157478,-9.920592
       parent: 2
-- proto: PenDirector
+- proto: PenFacilityDirector
   entities:
   - uid: 519
     components:

@@ -20,8 +20,8 @@ namespace Content.IntegrationTests.Tests.Round;
 public sealed class JobTest : GameTest
 {
     private static readonly ProtoId<JobPrototype> Passenger = "ClassD"; // Scp edit
-    private static readonly ProtoId<JobPrototype> Engineer = "GeneralTechnicalSpecialist"; // Scp edit
-    private static readonly ProtoId<JobPrototype> Captain = "Director"; // Scp edit
+    private static readonly ProtoId<JobPrototype> Engineer = "Technician"; // Scp edit
+    private static readonly ProtoId<JobPrototype> Captain = "FacilityDirector"; // Scp edit
 
     private static string _map = "JobTestMap";
 

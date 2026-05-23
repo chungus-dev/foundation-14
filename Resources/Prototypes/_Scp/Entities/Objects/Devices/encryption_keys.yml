@@ -1,4 +1,4 @@
-﻿# TODO: Свои спрайты для id: TelecomServer и свои теги ключей соответственно
+# TODO: Свои спрайты для id: TelecomServer и свои теги ключей соответственно
 
 # Региональная администрация
 
@@ -26,8 +26,8 @@
     channels:
     - Administration
     - EthicsCommittee
-    - HeavyContainmentSecurityService
-    - ExternalAdministrativeZoneSecurityService
+    - SpecialPurposeSquad
+    - CommandantSquad
     - ScientificService
     - MedicalService
     - EngineeringTechnicalService
@@ -69,8 +69,8 @@
     channels:
     - RegionalAdministration
     - Administration
-    - HeavyContainmentSecurityService
-    - ExternalAdministrativeZoneSecurityService
+    - SpecialPurposeSquad
+    - CommandantSquad
     - ScientificService
     - MedicalService
     - EngineeringTechnicalService
@@ -82,25 +82,6 @@
     layers:
     - state: crypt_blue
     - state: hq_label
-
-# Служба внутренней безопасности
-
-- type: entity
-  parent: [ EncryptionKey, BaseCommandContraband ]
-  id: EncryptionKeyInternalSecurity
-  components:
-  - type: EncryptionKey
-    channels:
-    - InternalSecurity
-    defaultChannel: InternalSecurity
-  - type: Sprite
-    sprite: _Scp/Objects/Devices/encryption_keys.rsi
-    layers:
-    - state: crypt_silver
-    - state: is_label
-  - type: Tag
-    tags:
-    - EncryptionCommand
 
 # Комитет по этике
 
@@ -121,25 +102,6 @@
     tags:
     - EncryptionCommand
 
-# Служба внутреннего трибунала
-
-- type: entity
-  parent: [ EncryptionKey, BaseCommandContraband ]
-  id: EncryptionKeyInternalTribunalService
-  components:
-  - type: EncryptionKey
-    channels:
-    - InternalTribunalService
-    defaultChannel: InternalTribunalService
-  - type: Sprite
-    sprite: _Scp/Objects/Devices/encryption_keys.rsi
-    layers:
-    - state: crypt_silver
-    - state: tribunal_label
-  - type: Tag
-    tags:
-    - EncryptionCommand
-
 # Служба безопасности тяжелой зоны
 
 - type: entity
@@ -154,12 +116,12 @@
 
 - type: entity
   parent: [ EncryptionKey, BaseSecurityContraband ]
-  id: EncryptionKeyHeavyContainmentSecurityService
+  id: EncryptionKeySpecialPurposeSquad
   components:
   - type: EncryptionKey
     channels:
-    - HeavyContainmentSecurityService
-    defaultChannel: HeavyContainmentSecurityService
+    - SpecialPurposeSquad
+    defaultChannel: SpecialPurposeSquad
   - type: Sprite
     sprite: _Scp/Objects/Devices/encryption_keys.rsi
     layers:
@@ -169,16 +131,16 @@
     tags:
     - EncryptionSecurity
 
-# Служба безопасности внешней административной зоны
+# Комендантский отряд
 
 - type: entity
   parent: [ EncryptionKey, BaseSecurityContraband ]
-  id: EncryptionKeyExternalAdministrativeZoneSecurityService
+  id: EncryptionKeyCommandantSquad
   components:
   - type: EncryptionKey
     channels:
-    - ExternalAdministrativeZoneSecurityService
-    defaultChannel: ExternalAdministrativeZoneSecurityService
+    - CommandantSquad
+    defaultChannel: CommandantSquad
   - type: Sprite
     sprite: _Scp/Objects/Devices/encryption_keys.rsi
     layers:
@@ -291,17 +253,3 @@
     layers:
     - state: crypt_chaos
     - state: chaos_label
-
-- type: entity
-  parent: [ EncryptionKey, BaseFoundationEnemyContraband ]
-  id: EncryptionKeyGRU
-  components:
-  - type: EncryptionKey
-    channels:
-    - GRU
-    defaultChannel: GRU
-  - type: Sprite
-    sprite: _Scp/Objects/Devices/encryption_keys.rsi
-    layers:
-    - state: crypt_gru
-    - state: gru_label

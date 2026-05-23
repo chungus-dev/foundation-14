@@ -1,4 +1,4 @@
-job-name-logistics-officer = Логист
-job-description-logistics-officer = Занимается обслуживанием складских помещений и распределением поступающих ресурсов и оборудования по учреждению.
+job-name-logistician = Логист
+job-description-logistician = Занимается обслуживанием складских помещений и распределением поступающих ресурсов и оборудования по учреждению.
 
-job-supervisors-senior-logistics-officer = квартирмейстеру
+job-supervisors-quartermaster = квартирмейстеру

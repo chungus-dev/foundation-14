@@ -1,0 +1,51 @@
+- type: job
+  id: SeniorPhysician
+  name: job-name-senior-physician
+  description: job-description-senior-physician
+  playTimeTracker: JobSeniorPhysician
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: MedicalService
+    time: 10h
+  - !type:AgeRequirement
+    requiredAge: 30
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  icon: JobSeniorPhysician
+  supervisors: job-supervisors-chief-medical-officer
+  displayWeight: 35
+  weight: 780
+  accessGroups:
+  - SeniorPhysician
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: Fear
+      phobias:
+      - Exoremophobia
+      # Врачи не пугаются трупов, у них не будет некрофобии
+    - type: ShowScp096FaceDamageHud
+
+- type: startingGear
+  id: SeniorPhysicianGear
+  equipment:
+    eyes: ClothingEyesHudMedical
+    neck: ClothingNeckScarfStripedBlack
+    outerClothing: ClothingOuterCoatLab
+    jumpsuit: ClothingUniformJumpsuitSeniorPhysician
+    gloves: ClothingHandsGlovesLatex
+    shoes: ClothingShoesColorBrown
+    back: ClothingBackpackMedical
+    id: KeyCardSeniorPhysician
+    ears: ClothingHeadsetMedicalService
+    belt: ClothingBeltMedicalFilled
+    pocket2: ScpMedicalPDA
+  storage:
+    back:
+    - MedicatedSuture
+    - RegenerativeMesh

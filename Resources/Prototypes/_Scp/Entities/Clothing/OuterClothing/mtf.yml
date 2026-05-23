@@ -73,6 +73,18 @@
     node: start
 
 - type: entity
+  parent: ClothingOuterArmorTactical
+  id: ClothingOuterArmorNTF
+  name: tactical armor vest
+  description: A reinforced tactical vest issued to Epsilon-11 operatives.
+  suffix: MTF | Epsilon-11
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/OuterClothing/Armor/MTF/ntf.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/OuterClothing/Armor/MTF/ntf.rsi
+
+- type: entity
   parent: MtfVest
   id: ClothingOuterArmorScout
   name: scout armor vest

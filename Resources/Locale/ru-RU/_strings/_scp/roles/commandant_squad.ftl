@@ -1,0 +1,12 @@
+job-name-commandant-leader = Главный комендант
+job-description-commandant-leader = Лидер комендантского отряда. Он координирует силы охраны для поддержания порядка.
+job-name-senior-commandant = Старший комендант
+job-description-senior-commandant = Старший боец комендантского отряда. Проверенный временем сотрудник, который знает свою работу от А до Я.
+job-name-commandant = Комендант
+job-description-commandant = Боец комендантского отряда. Он отвечает за поддержание порядка среди персонала в учреждении.
+job-name-junior-commandant = Младший комендант
+job-description-junior-commandant = Только заступивший на службу младший боец комендантского отряда. Он помогает старшим офицерам следить за порядком в комплексе.
+job-name-amnesticologist = Амнестезиолог
+job-description-amnesticologist = Медицинский специалист службы безопасности. Оказывает медицинскую помощь и проводит амнезирование персонала.
+job-supervisors-security-commander = начальнику службы безопасности
+job-supervisors-commandant-leader = главному коменданту

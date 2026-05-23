@@ -6,7 +6,7 @@
   id: ScpLoadoutGroupCommandantSquadLeaderEars
   name: loadout-group-ears
   loadouts:
-  - ScpLoadoutClothingHeadsetAltExternalAdministrativeZoneSecurityService
+  - ScpLoadoutClothingHeadsetAltCommandantSquad
 
 - type: loadoutGroup
   id: ScpLoadoutGroupCommandantSquadWeaponPrimary
@@ -22,16 +22,16 @@
   - ScpLoadoutWeaponTaser
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupRadioHandheldExternalAdministrativeZoneSecurityService
+  id: ScpLoadoutGroupRadioHandheldCommandantSquad
   name: loadout-group-radio
   loadouts:
-  - ScpLoadoutRadioHandheldExternalAdministrativeZoneSecurityService
+  - ScpLoadoutRadioHandheldCommandantSquad
 
 - type: loadoutGroup
   id: ScpLoadoutGroupCommandantSquadLeaderKeyCard
   name: loadout-group-key-card
   loadouts:
-  - ScpLoadoutKeyCardLightContainmentZoneSecurityCommandant
+  - ScpLoadoutKeyCardCommandantLeader
 
 # Senior Commandant Squad Officer
 
@@ -39,21 +39,21 @@
   id: ScpLoadoutGroupCommandantSquadEars
   name: loadout-group-ears
   loadouts:
-  - ScpLoadoutClothingHeadsetExternalAdministrativeZoneSecurityService
+  - ScpLoadoutClothingHeadsetCommandantSquad
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupCommandantSquadSeniorLightContainmentZoneSecurityOfficerKeyCard
+  id: ScpLoadoutGroupCommandantSquadSeniorCommandantKeyCard
   name: loadout-group-key-card
   loadouts:
-  - ScpLoadoutKeyCardSeniorLightContainmentZoneSecurityOfficer
+  - ScpLoadoutKeyCardSeniorCommandant
 
 # Commandant Squad Officer
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupCommandantSquadLightContainmentZoneSecurityOfficerKeyCard
+  id: ScpLoadoutGroupCommandantSquadCommandantKeyCard
   name: loadout-group-key-card
   loadouts:
-  - ScpLoadoutKeyCardLightContainmentZoneSecurityOfficer
+  - ScpLoadoutKeyCardCommandant
 
 # Junior Commandant Squad Officer
 
@@ -65,24 +65,24 @@
   - ScpLoadoutClothingOuterArmorSecurityBulletproof
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupCommandantSquadJuniorLightContainmentZoneSecurityOfficerKeyCard
+  id: ScpLoadoutGroupCommandantSquadJuniorCommandantKeyCard
   name: loadout-group-key-card
   loadouts:
-  - ScpLoadoutKeyCardJuniorLightContainmentZoneSecurityOfficer
+  - ScpLoadoutKeyCardJuniorCommandant
 
 # Field Medical Specialist
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupFieldMedicalSpecialistJumpsuit
+  id: ScpLoadoutGroupAmnesticologistJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutFieldMedicalSpecialistJumpsuit
-  - ScpLoadoutFieldMedicalSpecialistJumpskirt
+  - ScpLoadoutAmnesticologistJumpsuit
+  - ScpLoadoutAmnesticologistJumpskirt
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupFieldMedicalSpecialistBackpack
+  id: ScpLoadoutGroupAmnesticologistBackpack
   name: loadout-group-backpack
   loadouts:
-  - ScpLoadoutFieldMedicalSpecialistBackpack
-  - ScpLoadoutFieldMedicalSpecialistSatchel
-  - ScpLoadoutFieldMedicalSpecialistDuffelbag
+  - ScpLoadoutAmnesticologistBackpack
+  - ScpLoadoutAmnesticologistSatchel
+  - ScpLoadoutAmnesticologistDuffelbag

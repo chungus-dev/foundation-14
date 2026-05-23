@@ -1,0 +1,53 @@
+- type: job
+  id: ScpResearchDirector
+  name: job-name-research-director
+  description: job-description-research-director
+  playTimeTracker: JobScpResearchDirector
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: ScientificService
+    time: 15h
+  - !type:AgeRequirement
+    requiredAge: 35
+  weight: 960
+  icon: JobScpResearchDirector
+  supervisors: job-supervisors-facility-director
+  canBeAntag: true
+  displayWeight: 50
+  accessGroups:
+  - ScpResearchDirector
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Four
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - ScientificService
+      includeJobName: true
+    - type: Fear
+      phobias:
+      - Exoremophobia
+      - Necrophobia
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+    - type: ShowScp096FaceDamageHud
+
+- type: startingGear
+  id: ScpResearchDirectorGear
+  equipment:
+    eyes: ClothingEyesGlasses
+    jumpsuit: ClothingUniformJumpsuitResearchDirector
+    gloves: ClothingHandsGlovesLatex
+    shoes: ClothingShoesColorBrown
+    back: ClothingBackpackScience
+    id: KeyCardResearchDirector
+    ears: ClothingHeadsetAltScientificService
+    pocket2: ResearchDirectorPDA
+  storage:
+    back:
+    - Flash

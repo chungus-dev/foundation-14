@@ -3,7 +3,7 @@
             xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
             xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
             xmlns:xNamespace="http://schemas.microsoft.com/winfx/2006/xaml"
-            xmlns:palette="clr-namespace:Content.Client._Scp.Stylesheets.Palette"
+            xmlns:palette="clr-namespace:Content.Client._Scp.UI.Stylesheets.Palette"
             MinSize="500 500" Resizable="True" Title="{Loc air-alarm-ui-title}">
     <BoxContainer Orientation="Vertical" Margin="5 5 5 5">
         <!-- Status (pressure, temperature, alarm state, device total, address, etc) -->

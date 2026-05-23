@@ -1,0 +1,44 @@
+- type: loadout
+  id: ScpLoadoutKeyCardAssistantPhysician
+  equipment:
+    id: KeyCardAssistantPhysician
+
+- type: loadout
+  id: ScpLoadoutClothingHeadsetMedicalService
+  equipment:
+    ears: ClothingHeadsetMedicalService
+
+- type: loadout
+  id: ScpLoadoutClothingEyesHudMedicalEyes
+  equipment:
+    eyes: ClothingEyesHudMedical
+
+- type: loadout
+  id: ScpLoadoutBookMedicalReferenceBook
+  equipment:
+    pocket1: BookMedicalReferenceBook
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardAssistantPhysician
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardAssistantPhysician
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupEarsClothingHeadsetMedicalService
+  name: loadout-group-ears
+  loadouts:
+  - ScpLoadoutClothingHeadsetMedicalService
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupPocket1BookMedicalReferenceBook
+  name: loadout-group-storage
+  loadouts:
+  - ScpLoadoutBookMedicalReferenceBook
+
+- type: loadoutGroup
+  parent: ScpLoadoutGroupGlasses
+  id: ScpLoadoutGroupAssistantPhysicianEyes
+  minLimit: 1
+  loadouts:
+  - ScpLoadoutClothingEyesHudMedicalEyes

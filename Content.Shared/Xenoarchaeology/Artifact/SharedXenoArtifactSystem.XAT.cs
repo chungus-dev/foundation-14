@@ -1,6 +1,6 @@
 using System.Linq;
 using Content.Shared._Scp.Other.Events;
-using Content.Shared._Scp.Scp330;
+using Content.Shared._Scp.Anomaly.Scp330;
 using Robust.Shared.Containers;
 using Content.Shared.Chemistry;
 using Content.Shared.Damage;
@@ -76,6 +76,11 @@ public abstract partial class SharedXenoArtifactSystem
         // without real knowledge about triggers
         if (!force && _timing.CurTime < ent.Comp.NextUnlockTime)
             return;
+
+        // Scp added start - prevents from triggering effects when artifact deletes itself
+        if (TerminatingOrDeleted(ent))
+            return;
+        // Scp added end
 
         if (!_unlockingQuery.TryGetComponent(ent, out var unlockingComp))
         {

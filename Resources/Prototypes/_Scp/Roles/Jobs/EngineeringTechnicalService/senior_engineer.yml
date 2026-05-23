@@ -1,0 +1,45 @@
+- type: job
+  id: SeniorEngineer
+  name: job-name-senior-engineer
+  description: job-description-senior-engineer
+  playTimeTracker: JobSeniorEngineer
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: EngineeringTechnicalService
+    time: 10h
+  - !type:AgeRequirement
+    requiredAge: 30
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  icon: JobSeniorEngineer
+  supervisors: job-supervisors-chief-engineer
+  displayWeight: 30
+  weight: 755
+  accessGroups:
+  - SeniorEngineer
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: ScpRepairableCanSeeExamineHints
+
+- type: startingGear
+  id: SeniorEngineerGear
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+    eyes: ClothingEyesGlassesMeson
+    mask: ClothingMaskGas
+    neck: ClothingNeckScarfStripedRed
+    outerClothing: ClothingOuterWinterColorRed
+    jumpsuit: ClothingUniformJumpsuitSeniorEngineer
+    gloves: ClothingHandsGlovesFingerlessInsulated
+    shoes: ClothingShoesColorBrown
+    back: ClothingBackpackEngineering
+    id: KeyCardSeniorEngineer
+    ears: ClothingHeadsetEngineeringTechnicalService
+    belt: ClothingBeltUtilityEngineering
+    pocket2: ScpEngineeringPDA

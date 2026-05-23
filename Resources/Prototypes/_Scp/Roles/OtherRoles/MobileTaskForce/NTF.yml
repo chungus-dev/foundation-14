@@ -6,7 +6,7 @@
   playTimeTracker: JobNTFLeader
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: NTFLeaderGear
   icon: JobIconNTFleader
@@ -27,11 +27,11 @@
     jumpsuit: ClothingUniformNTF
     back: MtfTacticalBackpack
     shoes: ClothingShoesBootsJackFilled
-    head: ClothingHelmetMtfTactical
+    head: ClothingHelmetMtfNTF
     mask: ClothingMaskMtf
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterArmorTactical
+    outerClothing: ClothingOuterArmorNTF
     belt: ClothingBeltMtfSparePouch
     id: KeyCardMtfNTFLeader
     ears: ClothingHeadsetAltMTF
@@ -52,7 +52,7 @@
   playTimeTracker: JobNTFSpecialist
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: NTFSpecialistGear
   icon: JobIconNTF
@@ -72,10 +72,11 @@
   equipment:
     jumpsuit: ClothingUniformNTF
     shoes: ClothingShoesBootsJackFilled
-    head: ClothingHelmetMtfTactical
+    head: ClothingHelmetMtfNTF
     mask: ClothingMaskMtf
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorNTF
     id: KeyCardMtfNTFSpecialist
     ears: ClothingHeadsetAltMTF
     pocket1: BaseUplinkMTFSpecialistNtf
@@ -89,7 +90,7 @@
   playTimeTracker: JobNTFCadet
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 #1 hrs
+    time: 1h
   setPreference: false
   startingGear: NTFCadetGear
   icon: JobIconNTF
@@ -109,10 +110,11 @@
   equipment:
     jumpsuit: ClothingUniformNTF
     shoes: ClothingShoesBootsJackFilled
-    head: ClothingHelmetMtfTactical
+    head: ClothingHelmetMtfNTF
     mask: ClothingMaskMtf
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorNTF
     id: KeyCardMtfNTFCadet
     ears: ClothingHeadsetAltMTF
     pocket1: BaseUplinkMTFCadetNtf

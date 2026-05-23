@@ -2,17 +2,17 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobDirector
+  id: JobFacilityDirector
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: Director
+    state: FacilityDirector
 
 - type: jobIcon
   parent: JobIcon
-  id: JobScientificServiceDirector
+  id: JobScpResearchDirector
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: ScientificServiceDirector
+    state: ResearchDirector
 
 - type: jobIcon
   parent: JobIcon
@@ -23,47 +23,31 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobChiefTechnicalSpecialist
+  id: JobScpChiefEngineer
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: ChiefTechnicalSpecialist
+    state: ChiefEngineer
 
 - type: jobIcon
   parent: JobIcon
-  id: JobPersonnelOfficer
+  id: JobPersonnelManager
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: PersonnelOfficer
+    state: PersonnelManager
 
 - type: jobIcon
   parent: JobIcon
-  id: JobHeadOfMedicalSector
+  id: JobScpChiefMedicalOfficer
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: HeadOfMedicalSector
+    state: ChiefMedicalOfficer
 
 - type: jobIcon
   parent: JobIcon
-  id: JobSeniorLogisticsOfficer
+  id: JobScpQuartermaster
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: SeniorLogisticsOfficer
-
-# Департамент внутренней безопасности
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobMentalControlOfficer
-  icon:
-    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: MentalControlOfficer
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobInternalSecurityOperative
-  icon:
-    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: InternalSecurityOperative
+    state: Quartermaster
 
 # Комитет по этике
 
@@ -74,210 +58,187 @@
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
     state: EthicsCommitteeRepresentative
 
-# Департамент внутреннего трибунала
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobJudicialInspector
-  icon:
-    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: JudicialInspector
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobTribunalOfficer
-  icon:
-    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: TribunalOfficer
-
 # Служба безопасности тяжелой зоны
 
 - type: jobIcon
   parent: JobIcon
-  id: JobHeavyContainmentZoneCommandant
+  id: JobSpecialPurposeUnitCommander
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: HeavyContainmentZoneCommandant
+    state: SpecialPurposeUnitCommander
 
 - type: jobIcon
   parent: JobIcon
-  id: JobSeniorHeavyContainmentZoneOfficer
+  id: JobSeniorSpecialPurposeSquadOfficer
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: SeniorHeavyContainmentZoneOfficer
+    state: SeniorSpecialPurposeSquadOfficer
 
 - type: jobIcon
   parent: JobIcon
-  id: JobHeavyContainmentZoneOfficer
+  id: JobSpecialPurposeSquadOfficer
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: HeavyContainmentZoneOfficer
+    state: SpecialPurposeSquadOfficer
 
 - type: jobIcon
   parent: JobIcon
-  id: JobJuniorHeavyContainmentZoneOfficer
+  id: JobJuniorSpecialPurposeSquadOfficer
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: JuniorHeavyContainmentZoneOfficer
+    state: JuniorSpecialPurposeSquadOfficer
+
+# Комендантский отряд
 
 - type: jobIcon
   parent: JobIcon
-  id: JobFieldMedicalSpecialist
+  id: JobCommandantLeader
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: FieldMedicalSpecialist
-
-# Служба безопасности внешней административной зоны
+    state: CommandantLeader
 
 - type: jobIcon
   parent: JobIcon
-  id: JobExternalAdministrativeZoneCommandant
+  id: JobSeniorCommandant
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: ExternalAdministrativeZoneCommandant
+    state: SeniorCommandant
 
 - type: jobIcon
   parent: JobIcon
-  id: JobSeniorExternalAdministrativeZoneOfficer
+  id: JobCommandant
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: SeniorExternalAdministrativeZoneOfficer
+    state: Commandant
 
 - type: jobIcon
   parent: JobIcon
-  id: JobExternalAdministrativeZoneOfficer
+  id: JobJuniorCommandant
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: ExternalAdministrativeZoneOfficer
+    state: JuniorCommandant
 
 - type: jobIcon
   parent: JobIcon
-  id: JobJuniorExternalAdministrativeZoneOfficer
+  id: JobAmnesticologist
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: JuniorExternalAdministrativeZoneOfficer
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobAmnesthesiologist
-  icon:
-    sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: Amnesthesiologist
+    state: Amnesticologist
 
 # Научный отдел
 
 - type: jobIcon
   parent: JobIcon
-  id: JobLeadResearcher
+  id: JobSeniorResearcher
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: LeadResearcher
+    state: SeniorResearcher
 
 - type: jobIcon
   parent: JobIcon
-  id: JobAnomarchologyResearcher
+  id: JobResearcher
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: AnomarchologyResearcher
+    state: Researcher
 
 - type: jobIcon
   parent: JobIcon
-  id: JobProductionSpecialist
+  id: JobManufacturingSpecialist
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: ProductionSpecialist
+    state: ManufacturingSpecialist
 
 - type: jobIcon
   parent: JobIcon
-  id: JobJuniorResearcher
+  id: JobLaboratoryPractitioner
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: JuniorResearcher
+    state: LaboratoryPractitioner
 
 # Медицинский отдел
 
 - type: jobIcon
   parent: JobIcon
-  id: JobSeniorMedicalSpecialist
+  id: JobSeniorPhysician
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: SeniorMedicalSpecialist
+    state: SeniorPhysician
 
 - type: jobIcon
   parent: JobIcon
-  id: JobPharmaceuticalSpecialist
+  id: JobPharmacist
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: PharmaceuticalSpecialist
+    state: Pharmacist
 
 - type: jobIcon
   parent: JobIcon
-  id: JobMedicalSpecialist
+  id: JobPhysician
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: MedicalSpecialist
+    state: Physician
 
 - type: jobIcon
   parent: JobIcon
-  id: JobPsychotherapist
+  id: JobParapsychologist
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: Psychotherapist
+    state: Parapsychologist
 
 - type: jobIcon
   parent: JobIcon
-  id: JobHospitalIntern
+  id: JobAssistantPhysician
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: HospitalIntern
+    state: AssistantPhysician
 
 # Инженерный отдел
 
 - type: jobIcon
   parent: JobIcon
-  id: JobLeadTechnicalSpecialist
+  id: JobSeniorEngineer
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: LeadTechnicalSpecialist
+    state: SeniorEngineer
 
 - type: jobIcon
   parent: JobIcon
-  id: JobGeneralTechnicalSpecialist
+  id: JobTechnician
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: GeneralTechnicalSpecialist
+    state: Technician
 
 - type: jobIcon
   parent: JobIcon
-  id: JobElectricalTechnicalSpecialist
+  id: JobElectricalEngineer
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: ElectricalTechnicalSpecialist
+    state: ElectricalEngineer
 
 - type: jobIcon
   parent: JobIcon
-  id: JobTechnicalTrainee
+  id: JobTraineeTechnician
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: TechnicalTrainee
+    state: TraineeTechnician
 
 # Отдел логистики
 
 - type: jobIcon
   parent: JobIcon
-  id: JobLogisticsOfficer
+  id: JobLogistician
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: LogisticsOfficer
+    state: Logistician
 
 # Департамент продовольственного и санитарного обслуживания
 
 - type: jobIcon
   parent: JobIcon
-  id: JobGastronomicSpecialist
+  id: JobGastronomist
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: GastronomicSpecialist
+    state: Gastronomist
 
 - type: jobIcon
   parent: JobIcon
@@ -288,10 +249,10 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobServicePersonnel
+  id: JobServiceStaff
   icon:
     sprite: /Textures/_Scp/Interface/Misc/job_icons.rsi
-    state: ServicePersonnel
+    state: ServiceStaff
 
 # Класс Д
 

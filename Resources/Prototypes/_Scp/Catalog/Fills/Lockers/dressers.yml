@@ -1,5 +1,5 @@
 - type: entity
-  id: ScpDresserDirectorFilled
+  id: ScpDresserFacilityDirectorFilled
   parent:
   - ScpBaseDresserComponents
   - DresserCaptainFilled
@@ -8,14 +8,14 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingHeadHatDirector
-        - id: ClothingOuterCoatDirectorTrench
-        - id: ClothingUniformJumpsuitDirector
+        - id: ClothingHeadHatFacilityDirector
+        - id: ClothingOuterCoatFacilityDirectorTrench
+        - id: ClothingUniformJumpsuitFacilityDirector
         - id: ClothingHandsGlovesColorWhite
         - id: ClothingShoesBootsLaceup
 
 - type: entity
-  id: ScpDresserChiefTechnicalSpecialistFilled
+  id: ScpDresserChiefEngineerFilled
   parent:
   - ScpBaseDresserComponents
   - DresserChiefEngineerFilled
@@ -30,7 +30,7 @@
         - id: ClothingOuterWinterCE
 
 - type: entity
-  id: ScpDresserHeadOfMedicalSectorFilled
+  id: ScpDresserChiefMedicalOfficerFilled
   parent:
   - ScpBaseDresserComponents
   - DresserChiefMedicalOfficerFilled
@@ -48,7 +48,7 @@
         - id: ClothingOuterWinterCMO
 
 - type: entity
-  id: ScpDresserPersonnelOfficerFilled
+  id: ScpDresserPersonnelManagerFilled
   parent:
   - ScpBaseDresserComponents
   - DresserHeadOfPersonnelFilled
@@ -98,7 +98,7 @@
         - id: ClothingOuterWinterQM
 
 - type: entity
-  id: ScpDresserScientificServiceDirectorFilled
+  id: ScpDresserResearchDirectorFilled
   parent:
   - ScpBaseDresserComponents
   - DresserResearchDirectorFilled

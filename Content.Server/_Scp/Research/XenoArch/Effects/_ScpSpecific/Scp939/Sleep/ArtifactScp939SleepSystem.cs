@@ -1,5 +1,5 @@
-﻿using Content.Server._Scp.Scp939;
-using Content.Shared._Scp.Scp939;
+﻿using Content.Server._Scp.Anomaly.Scp939;
+using Content.Shared._Scp.Anomaly.Scp939;
 using Content.Shared.Xenoarchaeology.Artifact;
 using Content.Shared.Xenoarchaeology.Artifact.XAE;
 using Robust.Shared.Random;

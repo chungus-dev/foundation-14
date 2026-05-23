@@ -1,6 +1,6 @@
 # Scientific Service
 
-# Scientific Service Director
+# Research Director
 
 - type: loadoutGroup
   id: ScpLoadoutGroupScientistGloves
@@ -28,14 +28,14 @@
   - ScpLoadoutBoxFolderPlasticClipboardThreePapers
   - ScpLoadoutBoxFolderClipboardThreePapers
 
-# Lead Researcher
+# Senior Researcher
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupLeadResearcherJumpsuit
+  id: ScpLoadoutGroupSeniorResearcherJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutLeadResearcherSeniorResearcher
-  - ScpLoadoutLeadResearcherSeniorResearcherSeniorResearcher
+  - ScpLoadoutSeniorResearcherSeniorResearcher
+  - ScpLoadoutSeniorResearcherSeniorResearcherSeniorResearcher
 
 - type: loadoutGroup
   id: ScpLoadoutGroupScientistShoes
@@ -45,7 +45,7 @@
   - ScpLoadoutClothingShoesColorBlack
   - ScpLoadoutClothingShoesBootsWinterSci
 
-# Anomarchology Researcher
+# Researcher
 
 - type: loadoutGroup
   id: ScpLoadoutGroupScientistNeck
@@ -70,10 +70,10 @@
   - ScpLoadoutClothingUniformJumpsuitScientist
   - ScpLoadoutClothingUniformJumpskirtScientist
 
-# Production Specialist
+# Manufacturing Specialist
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupProductionSpecialistHead
+  id: ScpLoadoutGroupManufacturingSpecialistHead
   name: loadout-group-head
   minLimit: 0
   loadouts:
@@ -81,7 +81,7 @@
   - ScpLoadoutClothingHeadBandSkull
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupProductionSpecialistOuterClothing
+  id: ScpLoadoutGroupManufacturingSpecialistOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   loadouts:
@@ -89,16 +89,16 @@
   - ScpLoadoutClothingOuterWinterRobo
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupProductionSpecialistJumpsuit
+  id: ScpLoadoutGroupManufacturingSpecialistJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
   - ScpLoadoutClothingUniformJumpsuitRoboticist
   - ScpLoadoutClothingUniformJumpskirtRoboticist
 
-# Junior Researcher
+# Laboratory Practitioner
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupJuniorResearcherJumpsuit
+  id: ScpLoadoutGroupLaboratoryPractitionerJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
   - ScpLoadoutClothingUniformJumpsuitColorWhite

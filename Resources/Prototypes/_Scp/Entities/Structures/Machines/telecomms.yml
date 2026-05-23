@@ -1,4 +1,4 @@
-﻿# Общий
+# Общий
 
 - type: entity
   parent: TelecomServer
@@ -23,18 +23,6 @@
       key_slots:
       - EncryptionKeyAdministration
 
-# Служба внутренней безопасности
-
-- type: entity
-  parent: TelecomServer
-  id: TelecomServerFilledInternalSecurity
-  suffix: Command
-  components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyInternalSecurity
-
 # Комитет по этике
 
 - type: entity
@@ -47,31 +35,19 @@
       key_slots:
       - EncryptionKeyEthicsCommittee
 
-# Служба внутреннего трибунала
-
-- type: entity
-  parent: TelecomServer
-  id: TelecomServerFilledInternalTribunalService
-  suffix: Command
-  components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyInternalTribunalService
-
 # Служба безопасности тяжелой зоны
 
 - type: entity
   parent: TelecomServer
-  id: TelecomServerFilledHeavyContainmentSecurityService
+  id: TelecomServerFilledSpecialPurposeSquad
   suffix: Security
   components:
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyHeavyContainmentSecurityService
+      - EncryptionKeySpecialPurposeSquad
 
-# Служба безопасности внешней административной зоны
+# Комендантский отряд
 
 - type: entity
   parent: TelecomServer
@@ -81,7 +57,7 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyExternalAdministrativeZoneSecurityService
+      - EncryptionKeyCommandantSquad
 
 # Научный отдел
 

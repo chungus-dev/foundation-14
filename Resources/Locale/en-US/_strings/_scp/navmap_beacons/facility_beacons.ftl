@@ -1,13 +1,13 @@
 scp-facility-beacon-general = General
 scp-facility-beacon-facility-director-office = Facility Director
-scp-facility-beacon-chief-researcher-office = Chief Researcher
+scp-facility-beacon-research-director-office = Research Director
 scp-facility-beacon-security-commander-office = Head of Security
 scp-facility-beacon-chief-engineer-office = Chief Engineer
 scp-facility-beacon-personnel-manager-office = Personnel Manager
 scp-facility-beacon-chief-medical-officer-office = Chief Medical Officer
 scp-facility-beacon-quartermaster-office = Quartermaster
 scp-facility-beacon-ethics-committee-representative-office = Ethics Committee Representative
-scp-facility-beacon-head-commandant-office = Head Commandant
+scp-facility-beacon-commandant-leader-office = Head Commandant
 scp-facility-beacon-special-purpose-unit-commander-office = Special Purpose Unit Commander
 scp-facility-beacon-amnesticologist-office = Amnesticologist
 scp-facility-beacon-parapsychologist-office = Parapsychologist

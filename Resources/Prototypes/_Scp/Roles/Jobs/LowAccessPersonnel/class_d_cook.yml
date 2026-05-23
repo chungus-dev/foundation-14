@@ -5,7 +5,7 @@
   playTimeTracker: JobClassDCook
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 # 1 час
+    time: 1h
   icon: JobClassDCook
   supervisors: job-supervisors-security-and-research
   access:
@@ -20,7 +20,7 @@
     - type: ScpAnnounceOnSpawn
       text: class-d-announce-on-spawn
       channels:
-      - ExternalAdministrativeZoneSecurityService
+      - CommandantSquad
       includeJobName: true
       requiredGameRunLevel: InRound
     - type: ScpHolder

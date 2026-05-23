@@ -282,13 +282,13 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
     - type: AccessReader
-      access: [ [ "Security" ], [ "PersonnelOfficer" ] ]
+      access: [ [ "Security" ], [ "PersonnelManager" ] ]
     - type: GeneralStationRecordConsole
   # Scp edit - раскоммитить после портирования
   #  - announcementChannels:
   #     - Administration
-  #     - HeavyContainmentSecurityService
-  #     - ExternalAdministrativeZoneSecurityService
+  #     - SpecialPurposeSquad
+  #     - CommandantSquad
 
 - type: entity
   id: ScpComputerPersonnelMonitoring

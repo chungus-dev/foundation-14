@@ -1,0 +1,67 @@
+﻿using Content.Shared._Scp.Graphics.Shaders.Highlighting;
+using JetBrains.Annotations;
+using Timer = Robust.Shared.Timing.Timer;
+
+namespace Content.Server._Scp.Graphics.Shaders.Highlighting;
+
+public sealed class HighlightSystem : SharedHighlightSystem
+{
+    /// <summary>
+    /// <inheritdoc cref="SharedHighlightSystem.Highlight"/>
+    /// </summary>
+    [PublicAPI]
+    public void NetHighlight(EntityUid target, EntityUid recipient, int highlightTimes = 3)
+    {
+        var comp = EnsureComp<HighlightedComponent>(target);
+
+        comp.Recipient = recipient;
+        Dirty(target, comp);
+
+        var entity = GetNetEntity(target);
+
+        var ev = new HighLightStartEvent(entity);
+        RaiseNetworkEvent(ev, recipient);
+
+        if (highlightTimes == -1)
+            return;
+
+        var time = OneHighlightTime * highlightTimes;
+
+        Timer.Spawn(time,
+            () =>
+            {
+                if (!Exists(target))
+                    return;
+
+                var endEvent = new HighLightEndEvent(entity);
+                RaiseNetworkEvent(endEvent, recipient);
+
+                RemCompDeferred<HighlightedComponent>(target);
+            },
+            Token.Token);
+    }
+
+    /// <summary>
+    /// <inheritdoc cref="SharedHighlightSystem.HighLightAll"/>
+    /// </summary>
+    [PublicAPI]
+    public void NetHighlightAll(IEnumerable<EntityUid> list, EntityUid recipient)
+    {
+        foreach (var uid in list)
+        {
+            NetHighlight(uid, recipient);
+        }
+    }
+
+    /// <summary>
+    /// <inheritdoc cref="SharedHighlightSystem.HighLightAll"/>
+    /// </summary>
+    [PublicAPI]
+    public void NetHighlightAll(ReadOnlySpan<EntityUid> list, EntityUid recipient)
+    {
+        foreach (var uid in list)
+        {
+            NetHighlight(uid, recipient);
+        }
+    }
+}

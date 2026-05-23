@@ -1,4 +1,4 @@
-﻿# Администрация
+# Администрация
 
 - type: entity
   parent: LockableButton
@@ -10,19 +10,19 @@
 
 - type: entity
   parent: LockableButton
-  id: LockableButtonDirector
-  suffix: Director
+  id: LockableButtonFacilityDirector
+  suffix: FacilityDirector
   components:
   - type: AccessReader
-    access: [["ComplexDirector"]]
+    access: [["FacilityDirector"]]
 
 - type: entity
   parent: LockableButton
-  id: LockableButtonPersonnelOfficer
+  id: LockableButtonPersonnelManager
   suffix: Personnel officer
   components:
   - type: AccessReader
-    access: [["PersonnelOfficer"]]
+    access: [["PersonnelManager"]]
 
 - type: entity
   parent: LockableButton
@@ -34,35 +34,35 @@
 
 - type: entity
   parent: LockableButton
-  id: LockableButtonScientificServiceDirector
+  id: LockableButtonScpResearchDirector
   suffix: Scientific service director
   components:
   - type: AccessReader
-    access: [["ScientificServiceDirector"]]
+    access: [["ScpResearchDirector"]]
 
 - type: entity
   parent: LockableButton
-  id: LockableButtonHeadOfMedicalSector
+  id: LockableButtonScpChiefMedicalOfficer
   suffix: Head of medical sector
   components:
   - type: AccessReader
-    access: [["HeadOfMedicalSector"]]
+    access: [["ScpChiefMedicalOfficer"]]
 
 - type: entity
   parent: LockableButton
-  id: LockableButtonChiefTechnicalSpecialist
+  id: LockableButtonScpChiefEngineer
   suffix: Chief technical specialist
   components:
   - type: AccessReader
-    access: [["ChiefTechnicalSpecialist"]]
+    access: [["ScpChiefEngineer"]]
 
 - type: entity
   parent: LockableButton
-  id: LockableButtonSeniorLogisticsOfficer
+  id: LockableButtonScpQuartermaster
   suffix: Senior logistics officer
   components:
   - type: AccessReader
-    access: [["SeniorLogisticsOfficer"]]
+    access: [["ScpQuartermaster"]]
 
 - type: entity
   parent: LockableButton
@@ -71,14 +71,6 @@
   components:
   - type: AccessReader
     access: [["EthicsCommittee"]]
-
-- type: entity
-  parent: LockableButton
-  id: LockableButtonInternalTribunalService
-  suffix: Internal tribunal service
-  components:
-  - type: AccessReader
-    access: [["InternalTribunalService"]]
 
 # Региональная администрация
 

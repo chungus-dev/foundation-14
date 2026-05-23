@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Content.Shared._Scp.Proximity;
+using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.Utility.Helpers;
 using Content.Shared.Popups;
 using Content.Shared.Storage.Components;

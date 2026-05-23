@@ -1,0 +1,50 @@
+- type: job
+  id: ManufacturingSpecialist
+  name: job-name-manufacturing-specialist
+  description: job-description-manufacturing-specialist
+  playTimeTracker: JobManufacturingSpecialist
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: ScientificService
+    time: 3h
+  - !type:DepartmentTimeRequirement
+    department: EngineeringTechnicalService
+    time: 3h
+  - !type:AgeRequirement
+    requiredAge: 25
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  icon: JobManufacturingSpecialist
+  supervisors: job-supervisors-research-director
+  displayWeight: 10
+  weight: 790
+  accessGroups:
+  - ManufacturingSpecialist
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Two
+    - type: Fear
+      phobias:
+      - Exoremophobia
+      - Necrophobia
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+    - type: ShowScp096FaceDamageHud
+
+- type: startingGear
+  id: ManufacturingSpecialistGear
+  equipment:
+    head: ClothingHeadHatCorpsoft
+    neck: ClothingNeckTieSci
+    jumpsuit: ClothingUniformJumpsuitRoboticist
+    outerClothing: ClothingOuterCoatRobo
+    shoes: ClothingShoesColorWhite
+    back: ClothingBackpackScience
+    id: KeyCardManufacturingSpecialist
+    ears: ClothingHeadsetScientificService
+    pocket2: ScpResearchPDA

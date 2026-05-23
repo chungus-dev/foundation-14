@@ -15,8 +15,8 @@
     - Common
     #- Administration    я думаю для 079 они не нужны как минимум пока что
     #- EthicsCommittee
-    - HeavyContainmentSecurityService
-    - ExternalAdministrativeZoneSecurityService
+    - SpecialPurposeSquad
+    - CommandantSquad
     - ScientificService
     - MedicalService
     - EngineeringTechnicalService
@@ -26,8 +26,8 @@
     channels:
     - Binary
     - Common
-    - HeavyContainmentSecurityService
-    - ExternalAdministrativeZoneSecurityService
+    - SpecialPurposeSquad
+    - CommandantSquad
     - ScientificService
     - MedicalService
     - EngineeringTechnicalService

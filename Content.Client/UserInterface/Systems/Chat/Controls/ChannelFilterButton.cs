@@ -1,5 +1,5 @@
 ﻿using System.Numerics;
-using Content.Client._Scp.Stylesheets.Palette;
+using Content.Client._Scp.UI.Stylesheets.Palette;
 using Content.Client.Resources;
 using Content.Client.Stylesheets.Colorspace;
 using Robust.Client.ResourceManagement;

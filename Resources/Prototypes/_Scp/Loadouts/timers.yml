@@ -4,8 +4,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: ExternalAdministrativeZoneSecurityService
-      time: 36000 # 10 часов
+      department: CommandantSquad
+      time: 10h
 
 - type: loadoutEffectGroup
   id: CommandantSquadWhiteUniformTimer
@@ -13,8 +13,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: ExternalAdministrativeZoneSecurityService
-      time: 90000 # 25 часов
+      department: CommandantSquad
+      time: 25h
 
 - type: loadoutEffectGroup
   id: CommandantSquadFancyUniformTimer
@@ -22,8 +22,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: HeavyContainmentSecurityService
-      time: 90000 # 25 часов
+      department: SpecialPurposeSquad
+      time: 25h
 
 - type: loadoutEffectGroup
   id: CommandantSquadLeaderFancyUniformTimer
@@ -31,8 +31,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: ExternalAdministrativeZoneSecurityService
-      time: 90000 # 30 часов
+      department: CommandantSquad
+      time: 25h
 
 - type: loadoutEffectGroup
   id: SpecialPurposeSquadLeaderFancyUniformTimer
@@ -40,8 +40,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: HeavyContainmentSecurityService
-      time: 90000 # 30 часов
+      department: SpecialPurposeSquad
+      time: 25h
 
 - type: loadoutEffectGroup
   id: TowelColorBlackAndDinkystar
@@ -49,13 +49,13 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: HeavyContainmentSecurityService
-      time: 180000 # 50 часов
+      department: SpecialPurposeSquad
+      time: 50h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: ExternalAdministrativeZoneSecurityService
-      time: 180000 # 50 часов
+      department: CommandantSquad
+      time: 50h
 
 - type: loadoutEffectGroup
   id: Administration
@@ -64,7 +64,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Administration
-      time: 3600 # 1 час
+      time: 1h
 
 # Shared timers copied into _Scp
 
@@ -74,8 +74,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobServicePersonnel
-      time: 36000 # 10 hrs
+      role: JobServiceStaff
+      time: 10h
 
 - type: loadoutEffectGroup
   id: ScpJamjarTimer
@@ -83,8 +83,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobServicePersonnel
-      time: 3600 # 1 hr
+      role: JobServiceStaff
+      time: 1h
 
 - type: loadoutEffectGroup
   id: ScpJensenTimer
@@ -93,52 +93,52 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 36000 # 10 hrs
+      time: 10h
 
 - type: loadoutEffectGroup
-  id: ScpMaidServicePersonnel
+  id: ScpMaidServiceStaff
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobServicePersonnel
-      time: 72000 # 20 hrs
+      role: JobServiceStaff
+      time: 20h
 
 - type: loadoutEffectGroup
-  id: ScpMasterSeniorLogisticsOfficer
+  id: ScpMasterQuartermaster
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobSeniorLogisticsOfficer
-      time: 72000 # 20 hrs
+      role: JobScpQuartermaster
+      time: 20h
 
 - type: loadoutEffectGroup
-  id: ScpMasterHeadOfMedicalSector
+  id: ScpMasterChiefMedicalOfficer
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobHeadOfMedicalSector
-      time: 72000 # 20 hrs
+      role: JobScpChiefMedicalOfficer
+      time: 20h
 
 - type: loadoutEffectGroup
-  id: ScpMasterPersonnelOfficer
+  id: ScpMasterPersonnelManager
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPersonnelOfficer
-      time: 72000 # 20 hrs
+      role: JobPersonnelManager
+      time: 20h
 
 - type: loadoutEffectGroup
-  id: ScpProfessionalPersonnelOfficer
+  id: ScpProfessionalPersonnelManager
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPersonnelOfficer
-      time: 54000 # 15 hrs
+      role: JobPersonnelManager
+      time: 15h
 
 - type: loadoutEffectGroup
   id: ScpMasterSecurityCommander
@@ -147,31 +147,31 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobSecurityCommander
-      time: 72000 # 20 hrs
+      time: 20h
 
 - type: loadoutEffectGroup
-  id: ScpMasterChiefTechnicalSpecialist
+  id: ScpMasterChiefEngineer
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobChiefTechnicalSpecialist
-      time: 72000 # 20 hrs
+      role: JobScpChiefEngineer
+      time: 20h
 
 - type: loadoutEffectGroup
-  id: ScpBigMasterChiefTechnicalSpecialist
+  id: ScpBigMasterChiefEngineer
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobChiefTechnicalSpecialist
-      time: 360000 # 100 hrs
+      role: JobScpChiefEngineer
+      time: 100h
 
 - type: loadoutEffectGroup
-  id: ScpMasterScientificServiceDirector
+  id: ScpMasterResearchDirector
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobScientificServiceDirector
-      time: 72000 # 20 hrs
+      role: JobScpResearchDirector
+      time: 20h

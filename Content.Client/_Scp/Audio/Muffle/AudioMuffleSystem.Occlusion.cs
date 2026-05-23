@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 using System.Collections.Concurrent;
-using Content.Shared._Scp.Proximity;
+using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.ScpCCVars;
 using Content.Shared.Physics;
 using Content.Shared.Tag;

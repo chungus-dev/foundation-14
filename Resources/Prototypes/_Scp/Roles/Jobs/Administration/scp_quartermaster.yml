@@ -1,0 +1,52 @@
+- type: job
+  id: ScpQuartermaster
+  name: job-name-quartermaster
+  description: job-description-quartermaster
+  playTimeTracker: JobScpQuartermaster
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobLogistician
+    time: 10h
+  - !type:AgeRequirement
+    requiredAge: 29
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  weight: 935
+  icon: JobScpQuartermaster
+  supervisors: job-supervisors-facility-director
+  canBeAntag: true
+  displayWeight: 40
+  accessGroups:
+  - ScpQuartermaster
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - LogisticsService
+      includeJobName: true
+
+- type: startingGear
+  id: ScpQuartermasterGear
+  equipment:
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskGasExplorer
+    outerClothing: ClothingOuterWinterMiner
+    jumpsuit: ClothingUniformJumpsuitQM
+    gloves: ClothingHandsGlovesColorLightBrown
+    shoes: ClothingShoesColorBrown
+    back: ClothingBackpackCargo
+    id: KeyCardQuartermaster
+    ears: ClothingHeadsetAltLogistics
+    pocket1: AppraisalTool
+    pocket2: ScpQuartermasterPDA
+  storage:
+    back:
+    - Flash

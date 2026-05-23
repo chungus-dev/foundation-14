@@ -160,7 +160,7 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
   - type: AccessReader
-    access: [["PersonnelOfficer"]]
+    access: [["PersonnelManager"]]
 
 - type: entity
   parent: VendingMachineDinnerware

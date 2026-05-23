@@ -6,7 +6,7 @@
   playTimeTracker: JobScp999
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 90000 # 25h
+    time: 25h
   weight: 970
   icon: JobIconScp999
   joinNotifyCrew: false
@@ -23,7 +23,7 @@
   playTimeTracker: JobScp173
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 360000 # 100h
+    time: 100h
   weight: 975
   icon: JobIconScp173
   joinNotifyCrew: false
@@ -39,7 +39,7 @@
   playTimeTracker: JobScp096
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 360000 # 100h
+    time: 100h
   weight: 980
   icon: JobIconScp096
   joinNotifyCrew: false
@@ -55,7 +55,7 @@
   playTimeTracker: JobScp049
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 432000 # 120h
+    time: 120h
   weight: 985
   icon: JobIconScp049
   joinNotifyCrew: false
@@ -71,7 +71,7 @@
   playTimeTracker: JobScp082
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 99999999999 # Временно 120h 432000
+    time: 99999999999s # Временно 120h 432000
   weight: 990
   icon: JobIconScp082
   joinNotifyCrew: false
@@ -89,7 +89,7 @@
   playTimeTracker: JobScp939
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 720000 # 200h
+    time: 200h
   weight: 995
   icon: JobIconScp939
   joinNotifyCrew: false
@@ -105,7 +105,7 @@
   playTimeTracker: JobScp106
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 756000 # 210h
+    time: 210h
   weight: 1000
   icon: JobIconScp106
   joinNotifyCrew: false

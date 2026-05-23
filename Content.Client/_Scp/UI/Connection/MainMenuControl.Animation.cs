@@ -30,9 +30,9 @@ public sealed partial class MainMenuControl
 
         SetAnimation();
 
-        var logoTexture = _resource.GetTexture("/Textures/_Scp/Logo/logo-hollow.png");
+        var logoTexture = _resource.GetTexture("/Textures/_Scp/Logo/logo_hollow.png");
         Logo.Texture = logoTexture;
-        Logo.TextureScale = new Vector2(0.125f, 0.125f);
+        Logo.TextureScale = new Vector2(0.3f, 0.3f);
     }
 
     protected override void ExitedTree()

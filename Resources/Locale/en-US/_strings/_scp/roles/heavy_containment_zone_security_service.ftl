@@ -1,9 +1,0 @@
-job-name-heavy-containment-zone-commandant = Heavy Containment Zone Commandant
-job-description-heavy-containment-zone-commandant = Commander of a special operations unit. Responsible for the security of objects and coordinating counter-operations against objects during a NOUS scenario.
-job-name-senior-heavy-containment-zone-officer = Senior Heavy Containment Zone Officer
-job-description-senior-heavy-containment-zone-officer = Senior officer of a special operations unit. Not new to the unit, understands how to operate in critical situations in both routine conditions and emergencies.
-job-name-heavy-containment-zone-officer = Heavy Containment Zone Officer
-job-description-heavy-containment-zone-officer = Officer of a special operations unit. They ensure the security of objects and counter them during a NOUS scenario.
-job-name-junior-heavy-containment-zone-officer = Junior Heavy Containment Zone Officer
-job-description-junior-heavy-containment-zone-officer = A junior officer in a special operations unit who has just entered service. Assists senior officers in monitoring objects in the facility.
-job-supervisors-heavy-containment-zone-commandant = heavy containment zone commandant

@@ -14,7 +14,7 @@ free-scp-no-volunteers-fax-content =
     CLASSIFICATION: LEVEL 4 / OBJECT DIRECTOR EYES ONLY
     ██████████████████████████████████████████
 
-    TO:       Object Director, Foundation Complex \[REDACTED]
+    TO:       Object Facility Director, Foundation Complex \[REDACTED]
     FROM:     O5 Oversight — Containment Division
     SUBJECT:  Status of Anomalous Entities Containment — URGENT
 
@@ -50,7 +50,7 @@ free-scp-no-volunteers-fax-content =
 
     DIRECTIVE:
 
-    The Object Director is instructed to immediately review all access logs,
+    The Object Facility Director is instructed to immediately review all access logs,
     containment camera recordings, and personnel activity reports from the last 24
     hours. A full incident report must be forwarded to O5 Oversight within 6
     hours.

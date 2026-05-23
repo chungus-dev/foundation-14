@@ -1,0 +1,12 @@
+job-name-commandant-leader = Commandant Leader
+job-description-commandant-leader = Leader of the command squad. He coordinates security forces to maintain order.
+job-name-senior-commandant = Senior Commandant
+job-description-senior-commandant = Senior member of the command squad. A proven operative who knows their job inside and out.
+job-name-commandant = Commandant
+job-description-commandant = Command squad operative. He is responsible for maintaining order among staff in the complex.
+job-name-junior-commandant = Junior Commandant
+job-description-junior-commandant = A newly recruited junior member of the command squad. He assists senior officers in keeping order in the complex.
+job-name-amnesticologist = Amnesticologist
+job-description-amnesticologist = Security service medical specialist. Provides medical assistance and performs amnesticization on personnel.
+job-supervisors-security-commander = the security commander
+job-supervisors-commandant-leader = the commandant leader

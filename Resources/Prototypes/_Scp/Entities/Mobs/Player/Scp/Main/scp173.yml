@@ -36,7 +36,7 @@
     text: scp173-announce-on-spawn
     channels:
     - ScientificService
-    - HeavyContainmentSecurityService
+    - SpecialPurposeSquad
   - type: ScpDamageOnCollide
     params:
     - whitelist:

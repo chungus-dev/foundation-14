@@ -1,0 +1,48 @@
+- type: job
+  id: Physician
+  name: job-name-physician
+  description: job-description-physician
+  playTimeTracker: JobPhysician
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: MedicalService
+    time: 2h
+  - !type:AgeRequirement
+    requiredAge: 29
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  icon: JobPhysician
+  supervisors: job-supervisors-chief-medical-officer
+  displayWeight: 20
+  weight: 770
+  accessGroups:
+  - CommonMedicalJob
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Two
+    - type: Fear
+      phobias:
+      - Exoremophobia
+      # Врачи не пугаются трупов, у них не будет некрофобии
+    - type: ShowScp096FaceDamageHud
+
+- type: startingGear
+  id: PhysicianGear
+  equipment:
+    head: ClothingHeadHatRedsoft
+    eyes: ClothingEyesHudMedical
+    neck: ClothingNeckScarfStripedRed
+    outerClothing: ClothingOuterCoatLab
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    gloves: ClothingHandsGlovesLatex
+    shoes: ClothingShoesColorWhite
+    back: ClothingBackpackMedical
+    id: KeyCardPhysician
+    ears: ClothingHeadsetMedicalService
+    belt: ClothingBeltMedicalFilled
+    pocket2: ScpMedicalPDA

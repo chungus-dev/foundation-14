@@ -1,5 +1,5 @@
 - type: accessGroup
-  id: Director
+  id: FacilityDirector
   groups:
   - AdministrationJobCommon
   - Administration
@@ -14,7 +14,7 @@
   - AI
 
 - type: accessGroup
-  id: ScientificServiceDirector
+  id: ScpResearchDirector
   groups:
   - AdministrationJobCommon
   - ScientificService
@@ -33,7 +33,7 @@
   - Armory
 
 - type: accessGroup
-  id: ChiefTechnicalSpecialist
+  id: ScpChiefEngineer
   groups:
   - AdministrationJobCommon
   - Engineering
@@ -45,7 +45,7 @@
   - AI
 
 - type: accessGroup
-  id: PersonnelOfficer
+  id: PersonnelManager
   groups:
   - AdministrationJobCommon
   - EngineeringHeadless
@@ -59,7 +59,7 @@
   - AI
 
 - type: accessGroup
-  id: HeadOfMedicalSector
+  id: ScpChiefMedicalOfficer
   groups:
   - AdministrationJobCommon
   - Medical
@@ -67,7 +67,7 @@
   - ClassD
 
 - type: accessGroup
-  id: SeniorLogisticsOfficer
+  id: ScpQuartermaster
   groups:
   - AdministrationJobCommon
   - Logistics
@@ -91,22 +91,6 @@
   - EthicsCommittee
 
 - type: accessGroup
-  id: InternalTribunalService
-  groups:
-  - AdministrationHeadless
-  - ScientificServiceHeadless
-  - MedicalHeadless
-  - EngineeringHeadless
-  - LogisticsHeadless
-  - ServiceHeadless
-  - ClassD
-  - ScpCommon
-  tags:
-  - Security
-  - Checkpoint
-  - InternalTribunalService
-
-- type: accessGroup
   id: AdministrationJobCommon
   groups:
   - AdministrationHeadless
@@ -126,7 +110,7 @@
   - Armory
 
 - type: accessGroup
-  id: FieldMedic
+  id: Amnesticologist
   groups:
   - SecurityJobCommon
   tags:
@@ -150,7 +134,7 @@
 # Научная служба
 
 - type: accessGroup
-  id: LeadResearcher
+  id: SeniorResearcher
   groups:
   - ScientificServiceHeadless
   tags:
@@ -158,14 +142,14 @@
   - Checkpoint
 
 - type: accessGroup
-  id: Scientist
+  id: Researcher
   groups:
   - ScientificServiceHeadless
   tags:
   - Checkpoint
 
 - type: accessGroup
-  id: ProductionSpecialist
+  id: ManufacturingSpecialist
   tags:
   - Safe
   - Research
@@ -173,7 +157,7 @@
   - Bunker
 
 - type: accessGroup
-  id: JuniorResearcher
+  id: LaboratoryPractitioner
   tags:
   - Research
   - Bunker
@@ -181,7 +165,7 @@
 # Медицинская служба
 
 - type: accessGroup
-  id: SeniorMedicalSpecialist
+  id: SeniorPhysician
   groups:
   - CommonMedicalJob
   tags:
@@ -189,7 +173,7 @@
   - Checkpoint
 
 - type: accessGroup
-  id: PharmaceuticalSpecialist
+  id: Pharmacist
   groups:
   - CommonMedicalJob
   tags:
@@ -204,7 +188,7 @@
 # Инженерно-техническая служба
 
 - type: accessGroup
-  id: LeadTechnicalSpecialist
+  id: SeniorEngineer
   groups:
   - EngineeringHeadless
   - ServiceHeadless
@@ -212,7 +196,7 @@
   - Checkpoint
 
 - type: accessGroup
-  id: ElectricalSpecialist
+  id: ElectricalEngineer
   groups:
   - CommonEngineeringJob
   tags:
@@ -228,7 +212,7 @@
 # Логистическая служба
 
 - type: accessGroup
-  id: LogisticsOfficer
+  id: Logistician
   groups:
   - LogisticsHeadless
   - ServiceHeadless

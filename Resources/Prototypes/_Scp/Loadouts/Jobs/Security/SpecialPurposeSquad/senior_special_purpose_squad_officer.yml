@@ -1,0 +1,5 @@
+# Ключ-карта
+- type: loadout
+  id: ScpLoadoutKeyCardSeniorSpecialPurposeSquadOfficer
+  equipment:
+    id: KeyCardSeniorSpecialPurposeSquadOfficer

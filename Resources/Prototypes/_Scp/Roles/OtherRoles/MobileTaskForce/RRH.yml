@@ -6,7 +6,7 @@
   playTimeTracker: JobRRHLeader
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: RRHLeaderGear
   icon: JobIconRRHleader
@@ -52,7 +52,7 @@
   playTimeTracker: JobRRHSpecialist
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: RRHSpecialistGear
   icon: JobIconRRH

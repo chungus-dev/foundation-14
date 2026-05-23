@@ -1,0 +1,116 @@
+- type: loadout
+  id: ScpLoadoutKeyCardPharmacist
+  equipment:
+    id: KeyCardPharmacist
+
+- type: loadout
+  id: ScpLoadoutClothingEyesGlassesChemical
+  equipment:
+    eyes: ClothingEyesGlassesChemical
+
+- type: loadout
+  id: ScpLoadoutChemBag
+  equipment:
+    belt: ChemBag
+
+- type: loadout
+  id: ScpLoadoutHandLabelerPocket1
+  equipment:
+    pocket1: HandLabeler
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardPharmacist
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardPharmacist
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupBeltChemBag
+  name: loadout-group-belt
+  loadouts:
+  - ScpLoadoutChemBag
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupEyesClothingEyesGlassesChemical
+  name: loadout-group-eyes
+  loadouts:
+  - ScpLoadoutClothingEyesGlassesChemical
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupPocket1HandLabeler
+  name: loadout-group-storage
+  loadouts:
+  - ScpLoadoutHandLabelerPocket1
+
+- type: loadout
+  id: ScpLoadoutPharmacistBeret
+  equipment:
+    head: ClothingHeadHatBeretMedic
+
+- type: loadout
+  id: ScpLoadoutPharmacistChemistryBeret
+  equipment: {} # Scp edit - broken ported entries disabled.
+- type: loadout
+  id: ScpLoadoutPharmacistNurseHat
+  equipment:
+    head: ClothingHeadNurseHat
+
+- type: loadout
+  id: ScpLoadoutPharmacistBlueSurgicalCap
+  equipment:
+    head: ClothingHeadHatSurgcapBlue
+
+- type: loadout
+  id: ScpLoadoutPharmacistGreenSurgicalCap
+  equipment:
+    head: ClothingHeadHatSurgcapGreen
+
+- type: loadout
+  id: ScpLoadoutPharmacistPurpleSurgicalCap
+  equipment:
+    head: ClothingHeadHatSurgcapPurple
+
+- type: loadout
+  id: ScpLoadoutPharmacistHeadMirror
+  equipment:
+    head: ClothingHeadMirror
+
+- type: loadout
+  id: ScpLoadoutPharmacistSterileMask
+  equipment:
+    mask: ClothingMaskSterile
+
+- type: loadout
+  id: ScpLoadoutPharmacistNitrileGloves
+  equipment:
+    gloves: ClothingHandsGlovesNitrile
+
+- type: loadout
+  id: ScpLoadoutPharmacistWinterBoots
+  equipment:
+    shoes: ClothingShoesBootsWinterMed
+
+- type: loadout
+  id: ScpLoadoutPharmacistJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChemistry
+
+- type: loadout
+  id: ScpLoadoutPharmacistJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtChemistry
+
+- type: loadout
+  id: ScpLoadoutPharmacistBackpack
+  equipment:
+    back: ClothingBackpackChemistry
+
+- type: loadout
+  id: ScpLoadoutPharmacistSatchel
+  equipment:
+    back: ClothingBackpackSatchelChemistry
+
+- type: loadout
+  id: ScpLoadoutPharmacistDuffelbag
+  equipment:
+    back: ClothingBackpackDuffelChemistry

@@ -1,0 +1,45 @@
+- type: job
+  id: ElectricalEngineer
+  name: job-name-electrical-engineer
+  description: job-description-electrical-engineer
+  playTimeTracker: JobElectricalEngineer
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: EngineeringTechnicalService
+    time: 5h
+  - !type:AgeRequirement
+    requiredAge: 29
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  icon: JobElectricalEngineer
+  supervisors: job-supervisors-chief-engineer
+  displayWeight: 10
+  weight: 745
+  accessGroups:
+  - ElectricalEngineer
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Two
+    - type: ScpRepairableCanSeeExamineHints
+
+- type: startingGear
+  id: ElectricalEngineerGear
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+    eyes: ClothingEyesGlassesMeson
+    mask: ClothingMaskGas
+    neck: ClothingNeckScarfStripedRed
+    outerClothing: ClothingOuterWinterColorRed
+    jumpsuit: ClothingUniformJumpsuitAtmos
+    gloves: ClothingHandsGlovesFingerlessInsulated
+    shoes: ClothingShoesColorWhite
+    back: ClothingBackpackAtmospherics
+    id: KeyCardElectricalEngineer
+    ears: ClothingHeadsetEngineeringTechnicalService
+    belt: ClothingBeltUtilityEngineering
+    pocket2: ScpEngineeringPDA

@@ -22,8 +22,8 @@
     EncryptionKeyEngineeringTechnicalService: 2
     EncryptionKeyMedicalService: 2
     EncryptionKeyScientificService: 2
-    EncryptionKeyExternalAdministrativeZoneSecurityService: 1
-    EncryptionKeyHeavyContainmentSecurityService: 1
+    EncryptionKeyCommandantSquad: 1
+    EncryptionKeySpecialPurposeSquad: 1
     EncryptionKeyFoodAndSanitationService: 3
   contrabandInventory:
     LuxuryPen: 1

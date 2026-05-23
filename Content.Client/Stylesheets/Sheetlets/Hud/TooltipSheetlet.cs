@@ -1,4 +1,4 @@
-﻿using Content.Client._Scp.Stylesheets.Palette;
+﻿using Content.Client._Scp.UI.Stylesheets.Palette;
 using Content.Client.Examine;
 using Content.Client.Stylesheets.Fonts;
 using Content.Client.Stylesheets.SheetletConfigs;

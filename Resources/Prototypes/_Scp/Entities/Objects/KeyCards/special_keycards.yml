@@ -16,6 +16,6 @@
   name: fond senior security keycard
   components:
   - type: Sprite
-    state: head_security_red
+    state: special_purpose_unit_commander
   - type: PresetIdCard
     job: FondSeniorSecurityOfficer

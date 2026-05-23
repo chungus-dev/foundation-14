@@ -1,0 +1,58 @@
+- type: job
+  id: PersonnelManager
+  name: job-name-personnel-manager
+  description: job-description-personnel-manager
+  playTimeTracker: JobPersonnelManager
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: CommandantSquad
+    time: 5h
+  - !type:DepartmentTimeRequirement
+    department: MedicalService
+    time: 5h
+  - !type:DepartmentTimeRequirement
+    department: EngineeringTechnicalService
+    time: 5h
+  - !type:DepartmentTimeRequirement
+    department: Administration
+    time: 5h
+  - !type:AgeRequirement
+    requiredAge: 31
+  weight: 950
+  icon: JobPersonnelManager
+  supervisors: job-supervisors-facility-director
+  canBeAntag: false
+  displayWeight: 90
+  accessGroups:
+  - PersonnelManager
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - FoodAndSanitationService
+      includeJobName: true
+
+- type: startingGear
+  id: PersonnelManagerGear
+  equipment:
+    eyes: ClothingEyesGlasses
+    jumpsuit: ClothingUniformJumpsuitHoP
+    gloves: ClothingHandsGlovesHop
+    shoes: ClothingShoesColorBrown
+    back: ClothingBackpack
+    id: KeyCardPersonnelManager
+    ears: ClothingHeadsetAltAdministration
+    belt: BoxFolderClipboard
+    pocket2: PersonnelManagerPDA
+  storage:
+    back:
+    - Flash

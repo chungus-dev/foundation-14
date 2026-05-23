@@ -1,0 +1,59 @@
+- type: job
+  id: ScpChiefMedicalOfficer
+  name: job-name-chief-medical-officer
+  description: job-description-chief-medical-officer
+  playTimeTracker: JobScpChiefMedicalOfficer
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobPhysician
+    time: 2h
+  - !type:RoleTimeRequirement
+    role: JobPharmacist
+    time: 3h
+  - !type:DepartmentTimeRequirement
+    department: MedicalService
+    time: 10h
+  - !type:AgeRequirement
+    requiredAge: 35
+  weight: 945
+  icon: JobScpChiefMedicalOfficer
+  supervisors: job-supervisors-facility-director
+  canBeAntag: true
+  displayWeight: 60
+  accessGroups:
+  - ScpChiefMedicalOfficer
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - MedicalService
+      includeJobName: true
+    - type: Fear
+      phobias:
+      - Exoremophobia
+      # Врачи не пугаются трупов, у них не будет некрофобии
+    - type: ShowScp096FaceDamageHud
+
+- type: startingGear
+  id: ScpChiefMedicalOfficerGear
+  equipment:
+    eyes: ClothingEyesGlasses
+    outerClothing: ClothingOuterCoatLab
+    jumpsuit: ClothingUniformJumpsuitCMO
+    gloves: ClothingHandsGlovesLatex
+    shoes: ClothingShoesColorBrown
+    back: ClothingBackpackMedical
+    id: KeyCardChiefMedicalOfficer
+    ears: ClothingHeadsetAltMedicalService
+    belt: ClothingBeltMedicalFilled
+    pocket2: ChiefMedicalOfficerPDA
+  storage:
+    back:
+    - Flash

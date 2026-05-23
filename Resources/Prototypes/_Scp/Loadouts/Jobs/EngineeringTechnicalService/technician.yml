@@ -1,0 +1,55 @@
+- type: loadout
+  id: ScpLoadoutKeyCardTechnician
+  equipment:
+    id: KeyCardTechnician
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardTechnician
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardTechnician
+
+- type: loadout
+  id: ScpLoadoutTechnicianJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitEngineering
+
+- type: loadout
+  id: ScpLoadoutTechnicianJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtEngineering
+
+- type: loadout
+  id: ScpLoadoutTechnicianHazardJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitEngineeringHazard
+
+- type: loadout
+  id: ScpLoadoutTechnicianRedHardHat
+  equipment:
+    head: ClothingHeadHatHardhatRed
+
+- type: loadout
+  id: ScpLoadoutTechnicianOrangeHardHat
+  equipment:
+    head: ClothingHeadHatHardhatOrange
+
+- type: loadout
+  id: ScpLoadoutTechnicianYellowHardHat
+  equipment:
+    head: ClothingHeadHatHardhatYellow
+
+- type: loadout
+  id: ScpLoadoutTechnicianDarkYellowHardHat
+  equipment:
+    head: ClothingHeadHatHardhatYellowDark
+
+- type: loadout
+  id: ScpLoadoutTechnicianEngineeringBeret
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+
+- type: loadout
+  id: ScpLoadoutTechnicianGasMask
+  equipment:
+    mask: ClothingMaskGas

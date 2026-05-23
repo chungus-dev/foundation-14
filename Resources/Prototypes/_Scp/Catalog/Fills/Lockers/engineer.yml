@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ScpClosetToolFilled
   parent: ScpClosetTool
   suffix: Filled
@@ -57,9 +57,9 @@
         tableId: FillLockerEvacRepair
 
 - type: entity
-  id: ScpLockerGeneralTechnicalSpecialistFilled
+  id: ScpLockerTechnicianFilled
   suffix: Filled
-  parent: ScpLockerGeneralTechnicalSpecialist
+  parent: ScpLockerTechnician
   components:
   - type: EntityTableContainerFill
     containers:

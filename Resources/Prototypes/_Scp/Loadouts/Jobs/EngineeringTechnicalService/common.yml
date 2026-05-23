@@ -45,7 +45,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: EngineeringTechnicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - FlashlightLantern
@@ -57,7 +57,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: EngineeringTechnicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - GasAnalyzer
@@ -69,43 +69,43 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: EngineeringTechnicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - GeigerCounter
 
 - type: loadout
-  id: ScpLoadoutChiefTechnicalSpecialistFigurine
+  id: ScpLoadoutChiefEngineerFigurine
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobChiefTechnicalSpecialist
-      time: 72000 # 20 hour
+      role: JobScpChiefEngineer
+      time: 20h
   storage:
     back:
     - ToyFigurineChiefEngineer
 
 - type: loadout
-  id: ScpLoadoutElectricalTechnicalSpecialistFigurine
+  id: ScpLoadoutElectricalEngineerFigurine
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobElectricalTechnicalSpecialist
-      time: 72000 # 20 hour
+      role: JobElectricalEngineer
+      time: 20h
   storage:
     back:
     - ToyFigurineAtmosTech
 
 - type: loadout
-  id: ScpLoadoutGeneralTechnicalSpecialistFigurine
+  id: ScpLoadoutTechnicianFigurine
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobGeneralTechnicalSpecialist
-      time: 72000 # 20 hour
+      role: JobTechnician
+      time: 20h
   storage:
     back:
     - ToyFigurineEngineer
@@ -117,7 +117,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: EngineeringTechnicalService
-      time: 1080000 # 300hr
+      time: 300h
   storage:
     back:
     - SingularityToy

@@ -31,7 +31,13 @@ public sealed partial class ScpCCVars
     /// Сила шейдера SinCity
     /// </summary>
     public static readonly CVarDef<int> SinCityStrength =
-        CVarDef.Create("shader.sin_city_strength", 100, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("shader.sin_city_strength", 150, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Whether the blur effect outside the field of view is enabled
+    /// </summary>
+    public static readonly CVarDef<bool> FieldOfViewBlurEnabled =
+        CVarDef.Create("shader.field_of_view_blur_enabled", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// Размер текстуры размытия у шейдера поля зрения
@@ -43,13 +49,7 @@ public sealed partial class ScpCCVars
     /// Прозрачность наложения поля зрения
     /// </summary>
     public static readonly CVarDef<float> FieldOfViewOpacity =
-        CVarDef.Create("shader.field_of_view_opacity", 0.55f, CVar.CLIENTONLY | CVar.ARCHIVE);
-
-    /// <summary>
-    /// Whether the blur effect outside the field of view is enabled
-    /// </summary>
-    public static readonly CVarDef<bool> FieldOfViewBlurEnabled =
-        CVarDef.Create("shader.field_of_view_blur_enabled", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("shader.field_of_view_opacity", 0.6f, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /*
      * Режим совместимости

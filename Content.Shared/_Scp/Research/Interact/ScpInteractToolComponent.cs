@@ -7,7 +7,7 @@ namespace Content.Shared._Scp.Research.Interact;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class ScpInteractToolComponent : Component
 {
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float Delay = 1f;
 
     [DataField, ViewVariables]

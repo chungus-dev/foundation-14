@@ -21,15 +21,14 @@
       accessLevels:
       # Scp added start - новые доступы
       - Administration
-      - ComplexDirector
-      - ScientificServiceDirector
+      - FacilityDirector
+      - ResearchDirector
       - SecurityCommander
-      - ChiefTechnicalSpecialist
-      - PersonnelOfficer
-      - HeadOfMedicalSector
-      - SeniorLogisticsOfficer
+      - ChiefEngineer
+      - PersonnelManager
+      - ChiefMedicalOfficer
+      - Quartermaster
       - EthicsCommittee
-      - InternalTribunalService
       - LifeSupport
       - Laboratory
       - Checkpoint
@@ -92,15 +91,14 @@
     accessLevels:
     # Scp added start - новые доступы
     - Administration
-    - ComplexDirector
-    - ScientificServiceDirector
+    - FacilityDirector
+    - ResearchDirector
     - SecurityCommander
-    - ChiefTechnicalSpecialist
-    - PersonnelOfficer
-    - HeadOfMedicalSector
-    - SeniorLogisticsOfficer
+    - ChiefEngineer
+    - PersonnelManager
+    - ChiefMedicalOfficer
+    - Quartermaster
     - EthicsCommittee
-    - InternalTribunalService
     - LifeSupport
     - Laboratory
     - Checkpoint

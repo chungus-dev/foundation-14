@@ -1,11 +1,9 @@
-﻿using Robust.Shared.Network;
-
-namespace Content.Shared._Scp.GameTicking.Rules;
+﻿namespace Content.Shared._Scp.GameTicking.Rules;
 
 public enum FreeScpRulePhase
 {
     WaitingForCheck,
-    Finished
+    Finished,
 }
 
 [RegisterComponent, AutoGenerateComponentPause]

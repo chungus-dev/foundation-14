@@ -3,34 +3,34 @@
 # Gastronomic Specialist
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGastronomicSpecialistHead
+  id: ScpLoadoutGroupGastronomistHead
   name: loadout-group-head
   minLimit: 0
   loadouts:
   - ScpLoadoutClothingHeadHatChef
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGastronomicSpecialistMask
+  id: ScpLoadoutGroupGastronomistMask
   name: loadout-group-mask
   minLimit: 0
   loadouts:
-  - ScpLoadoutGastronomicSpecialistItalianMoustache
+  - ScpLoadoutGastronomistItalianMoustache
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGastronomicSpecialistOuterClothing
+  id: ScpLoadoutGroupGastronomistOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   loadouts:
   - ScpLoadoutClothingOuterApronChef
-  - ScpLoadoutGastronomicSpecialistJacket
-  - ScpLoadoutGastronomicSpecialistWinterCoat
+  - ScpLoadoutGastronomistJacket
+  - ScpLoadoutGastronomistWinterCoat
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGastronomicSpecialistJumpsuit
+  id: ScpLoadoutGroupGastronomistJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutGastronomicSpecialistJumpsuit
-  - ScpLoadoutGastronomicSpecialistJumpskirt
+  - ScpLoadoutGastronomistJumpsuit
+  - ScpLoadoutGastronomistJumpskirt
 
 # Botanist-Phytogeneticist
 
@@ -69,31 +69,31 @@
 # Service Personnel
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupServicePersonnelHead
+  id: ScpLoadoutGroupServiceStaffHead
   name: loadout-group-head
   minLimit: 0
   loadouts:
   - ScpLoadoutClothingHeadHatPurplesoft
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupServicePersonnelOuterClothing
+  id: ScpLoadoutGroupServiceStaffOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   loadouts:
-  - ScpLoadoutServicePersonnelWinterCoat
+  - ScpLoadoutServiceStaffWinterCoat
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupServicePersonnelJumpsuit
+  id: ScpLoadoutGroupServiceStaffJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutServicePersonnelJumpsuit
-  - ScpLoadoutServicePersonnelJumpskirt
+  - ScpLoadoutServiceStaffJumpsuit
+  - ScpLoadoutServiceStaffJumpskirt
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupServicePersonnelGloves
+  id: ScpLoadoutGroupServiceStaffGloves
   name: loadout-group-gloves
   minLimit: 0
   loadouts:
   - ScpLoadoutClothingHandsGlovesJanitor
-  - ScpLoadoutServicePersonnelOrangeGloves
-  - ScpLoadoutServicePersonnelPurpleGloves
+  - ScpLoadoutServiceStaffOrangeGloves
+  - ScpLoadoutServiceStaffPurpleGloves

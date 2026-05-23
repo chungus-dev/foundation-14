@@ -1,9 +1,9 @@
 # Директор
 - type: entityTable
-  id: LockerFillDirector
+  id: LockerFillFacilityDirector
   table: !type:AllSelector
     children:
-    - id: KeyCardDirector
+    - id: KeyCardFacilityDirector
     - id: CigarGoldCase
       prob: 0.25
     - id: ClothingHeadsetAltAdministration
@@ -12,23 +12,23 @@
     - id: MedalCase
     # - id: NukeDisk
     # - id: PinpointerNuclear
-    - id: RubberStampDirector
+    - id: RubberStampFacilityDirector
     - id: SpaceCash1000
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
 - type: entity
-  id: ScpLockerDirectorFilled
+  id: ScpLockerFacilityDirectorFilled
   suffix: Filled
-  parent: ScpLockerDirector
+  parent: ScpLockerFacilityDirector
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: LockerFillDirector
+        tableId: LockerFillFacilityDirector
 
 # Старший логистический офицер
 - type: entityTable
-  id: LockerFillSeniorLogisticsOfficer
+  id: LockerFillQuartermaster
   table: !type:AllSelector
     children:
     - id: BoxFolderQmClipboard
@@ -43,21 +43,21 @@
     - id: DoorRemoteLogistics
     - id: RubberStampApproved
     - id: RubberStampDenied
-    - id: RubberStampSeniorLogisticsOfficer
+    - id: RubberStampQuartermaster
     - id: AstroNavCartridge
 - type: entity
-  id: ScpLockerSeniorLogisticsOfficerFilled
+  id: ScpLockerQuartermasterFilled
   suffix: Filled
-  parent: ScpLockerSeniorLogisticsOfficer
+  parent: ScpLockerQuartermaster
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: LockerFillSeniorLogisticsOfficer
+        tableId: LockerFillQuartermaster
 
 # Кадровый офицер
 - type: entityTable
-  id: LockerFillPersonnelOfficer
+  id: LockerFillPersonnelManager
   table: !type:AllSelector
     children:
     - id: AccessConfigurator
@@ -70,25 +70,25 @@
     - id: ClothingHeadsetAltAdministration
     - id: ClothingNeckGoldmedal
     - id: DoorRemoteService
-    - id: KeyCardPersonnelOfficer
+    - id: KeyCardPersonnelManager
     - id: IDComputerCircuitboard
     - id: RubberStampApproved
     - id: RubberStampDenied
-    - id: RubberStampPersonnelOfficer
+    - id: RubberStampPersonnelManager
     - id: ClothingEyesHudCommand
 - type: entity
-  id: ScpLockerPersonnelOfficerFilled
+  id: ScpLockerPersonnelManagerFilled
   suffix: Filled
-  parent: ScpLockerPersonnelOfficer
+  parent: ScpLockerPersonnelManager
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: LockerFillPersonnelOfficer
+        tableId: LockerFillPersonnelManager
 
 # Главный технический специалист
 - type: entityTable
-  id: LockerFillChiefTechnicalSpecialist
+  id: LockerFillChiefEngineer
   table: !type:AllSelector
     children:
     - id: AccessConfigurator
@@ -101,20 +101,20 @@
     - id: DoorRemoteEngineering
     - id: RCD
     - id: RCDAmmo
-    - id: RubberStampChiefTechnicalSpecialist
+    - id: RubberStampChiefEngineer
 - type: entity
-  id: ScpLockerChiefTechnicalSpecialistFilled
+  id: ScpLockerChiefEngineerFilled
   suffix: Filled
-  parent: ScpLockerChiefTechnicalSpecialist
+  parent: ScpLockerChiefEngineer
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: LockerFillChiefTechnicalSpecialist
+        tableId: LockerFillChiefEngineer
 
 # Глава медицинского сектора
 - type: entityTable
-  id: LockerFillHeadOfMedicalSector
+  id: LockerFillChiefMedicalOfficer
   table: !type:AllSelector
     children:
     - id: ClothingBackpackDuffelSurgeryFilled
@@ -128,21 +128,21 @@
     - id: Hypospray
     - id: MedicalTechFabCircuitboard
     - id: MedkitFilled
-    - id: RubberStampHeadOfMedicalSector
+    - id: RubberStampChiefMedicalOfficer
     - id: MedTekCartridge
 - type: entity
-  id: ScpLockerHeadOfMedicalSectorFilled
+  id: ScpLockerChiefMedicalOfficerFilled
   suffix: Filled
-  parent: ScpLockerHeadOfMedicalSector
+  parent: ScpLockerChiefMedicalOfficer
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: LockerFillHeadOfMedicalSector
+        tableId: LockerFillChiefMedicalOfficer
 
 # Директор научной службы
 - type: entityTable
-  id: LockerFillScientificServiceDirector
+  id: LockerFillResearchDirector
   table: !type:AllSelector
     children:
     - id: Intellicard
@@ -153,16 +153,16 @@
     - id: DoorRemoteScpChambers
     - id: ProtolatheMachineCircuitboard
     - id: ResearchComputerCircuitboard
-    - id: RubberStampScientificServiceDirector
+    - id: RubberStampResearchDirector
 - type: entity
-  id: ScpLockerScientificServiceDirectorFilled
+  id: ScpLockerResearchDirectorFilled
   suffix: Filled
-  parent: ScpLockerScientificServiceDirector
+  parent: ScpLockerResearchDirector
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: LockerFillScientificServiceDirector
+        tableId: LockerFillResearchDirector
 
 # Начальник охраны
 - type: entityTable

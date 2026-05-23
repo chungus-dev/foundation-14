@@ -1,7 +1,6 @@
 using System.Linq;
 using System.Numerics;
-using Content.Client._Scp.Stylesheets.Palette;
-using Content.Client._Scp.Stylesheets.Stylesheets.Sheetlets;
+using Content.Client._Scp.UI.Stylesheets.Palette;
 using Content.Client.Lobby.UI.Loadouts;
 using Content.Client.Lobby.UI.Roles;
 using Content.Shared.Clothing;

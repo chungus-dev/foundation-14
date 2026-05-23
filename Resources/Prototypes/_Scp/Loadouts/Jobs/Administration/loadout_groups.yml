@@ -1,13 +1,13 @@
 # Administration
 
-# Complex Director
+# Facility Director
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupDirectorHead
+  id: ScpLoadoutGroupFacilityDirectorHead
   name: loadout-group-head
   minLimit: 0
   loadouts:
-  - ScpLoadoutClothingHeadHatDirector
+  - ScpLoadoutClothingHeadHatFacilityDirector
 
 - type: loadoutGroup
   id: ScpLoadoutGroupAdministrationGlasses
@@ -24,82 +24,82 @@
   - ScpLoadoutClothingHeadsetAltAdministration
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupDirectorNeck
+  id: ScpLoadoutGroupFacilityDirectorNeck
   name: loadout-group-neck
   minLimit: 0
   loadouts:
   - ScpLoadoutClothingNeckTieDet
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupDirectorOuterClothing
+  id: ScpLoadoutGroupFacilityDirectorOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   loadouts:
-  - ScpLoadoutClothingOuterCoatDirectorTrench
+  - ScpLoadoutClothingOuterCoatFacilityDirectorTrench
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupDirectorJumpsuit
+  id: ScpLoadoutGroupFacilityDirectorJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutClothingUniformJumpsuitDirector
+  - ScpLoadoutClothingUniformJumpsuitFacilityDirector
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupDirectorGloves
+  id: ScpLoadoutGroupFacilityDirectorGloves
   name: loadout-group-gloves
   minLimit: 0
   loadouts:
-  - ScpLoadoutClothingHandsGlovesDirectorSpecial
+  - ScpLoadoutClothingHandsGlovesFacilityDirectorSpecial
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupDirectorShoes
+  id: ScpLoadoutGroupFacilityDirectorShoes
   name: loadout-group-shoes
   loadouts:
   - ScpLoadoutClothingShoesBootsLaceup
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupDirectorBack
+  id: ScpLoadoutGroupFacilityDirectorBack
   name: loadout-group-backpack
   loadouts:
-  - ScpLoadoutClothingBackpackSatchelLeatherDirectorFilled
+  - ScpLoadoutClothingBackpackSatchelLeatherFacilityDirectorFilled
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupDirectorPDA
+  id: ScpLoadoutGroupFacilityDirectorPDA
   name: loadout-group-pda
   loadouts:
-  - ScpLoadoutDirectorPDA
+  - ScpLoadoutFacilityDirectorPDA
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupDirectorKeyCard
+  id: ScpLoadoutGroupFacilityDirectorKeyCard
   name: loadout-group-id
   loadouts:
-  - ScpLoadoutKeyCardDirector
+  - ScpLoadoutKeyCardFacilityDirector
 
-# Scientific Service Director
+# Research Director
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupScientificServiceDirectorNeck
+  id: ScpLoadoutGroupResearchDirectorNeck
   name: loadout-group-neck
   minLimit: 0
   loadouts:
-  - ScpLoadoutScientificServiceDirectorMantle
+  - ScpLoadoutResearchDirectorMantle
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupScientificServiceDirectorOuterClothing
+  id: ScpLoadoutGroupResearchDirectorOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   loadouts:
-  - ScpLoadoutScientificServiceDirectorLabCoat
-  - ScpLoadoutScientificServiceDirectorWinterCoat
+  - ScpLoadoutResearchDirectorLabCoat
+  - ScpLoadoutResearchDirectorWinterCoat
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupScientificServiceDirectorJumpsuit
+  id: ScpLoadoutGroupResearchDirectorJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutScientificServiceDirectorJumpsuit
-  - ScpLoadoutScientificServiceDirectorJumpskirt
+  - ScpLoadoutResearchDirectorJumpsuit
+  - ScpLoadoutResearchDirectorJumpskirt
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupScientificServiceDirectorShoes
+  id: ScpLoadoutGroupResearchDirectorShoes
   name: loadout-group-shoes
   loadouts:
   - ScpLoadoutClothingShoesColorBrown
@@ -143,70 +143,70 @@
 # Chief Technical Specialist
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupChiefTechnicalSpecialistHead
+  id: ScpLoadoutGroupChiefEngineerHead
   name: loadout-group-head
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutChiefTechnicalSpecialistWhiteHardHat
-  - ScpLoadoutChiefTechnicalSpecialistEngineeringBeret
+  - ScpLoadoutChiefEngineerWhiteHardHat
+  - ScpLoadoutChiefEngineerEngineeringBeret
   - ScpLoadoutClothingHeadBandRed
-  - ScpLoadoutChiefTechnicalSpecialistRedHardHat
-  - ScpLoadoutChiefTechnicalSpecialistOrangeHardHat
-  - ScpLoadoutChiefTechnicalSpecialistYellowHardHat
-  - ScpLoadoutChiefTechnicalSpecialistDarkYellowHardHat
-  - ScpLoadoutChiefTechnicalSpecialistBlueHardHat
+  - ScpLoadoutChiefEngineerRedHardHat
+  - ScpLoadoutChiefEngineerOrangeHardHat
+  - ScpLoadoutChiefEngineerYellowHardHat
+  - ScpLoadoutChiefEngineerDarkYellowHardHat
+  - ScpLoadoutChiefEngineerBlueHardHat
   - ScpLoadoutClothingHeadHatRedsoft
   - ScpLoadoutClothingHeadHatOrangesoft
   - ScpLoadoutClothingHeadHatYellowsoft
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupChiefTechnicalSpecialistMask
+  id: ScpLoadoutGroupChiefEngineerMask
   name: loadout-group-mask
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutChiefTechnicalSpecialistGasMask
-  - ScpLoadoutChiefTechnicalSpecialistAtmosGasMask
+  - ScpLoadoutChiefEngineerGasMask
+  - ScpLoadoutChiefEngineerAtmosGasMask
   - ScpLoadoutClothingMaskBandRed
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupChiefTechnicalSpecialistNeck
+  id: ScpLoadoutGroupChiefEngineerNeck
   name: loadout-group-neck
   minLimit: 0
   loadouts:
-  - ScpLoadoutChiefTechnicalSpecialistMantle
-  - ScpLoadoutChiefTechnicalSpecialistScarf
+  - ScpLoadoutChiefEngineerMantle
+  - ScpLoadoutChiefEngineerScarf
   - ScpLoadoutClothingNeckScarfStripedRed
   - ScpLoadoutClothingNeckScarfStripedOrange
   - ScpLoadoutClothingNeckScarfStripedLightBlue
   - ScpLoadoutClothingNeckTieRed
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupChiefTechnicalSpecialistOuterClothing
+  id: ScpLoadoutGroupChiefEngineerOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   loadouts:
-  - ScpLoadoutChiefTechnicalSpecialistChiefWinterCoat
+  - ScpLoadoutChiefEngineerChiefWinterCoat
   - ScpLoadoutClothingOuterWinterColorWhite
-  - ScpLoadoutChiefTechnicalSpecialistHazardVest
-  - ScpLoadoutChiefTechnicalSpecialistEngineeringWinterCoat
-  - ScpLoadoutChiefTechnicalSpecialistAtmosWinterCoat
+  - ScpLoadoutChiefEngineerHazardVest
+  - ScpLoadoutChiefEngineerEngineeringWinterCoat
+  - ScpLoadoutChiefEngineerAtmosWinterCoat
   - ScpLoadoutClothingOuterWinterColorRed
   - ScpLoadoutClothingOuterWinterColorOrange
   - ScpLoadoutClothingOuterWinterColorYellow
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupChiefTechnicalSpecialistJumpsuit
+  id: ScpLoadoutGroupChiefEngineerJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutChiefTechnicalSpecialistJumpsuit
-  - ScpLoadoutChiefTechnicalSpecialistJumpskirt
-  - ScpLoadoutChiefTechnicalSpecialistTurtleneckJumpsuit
-  - ScpLoadoutChiefTechnicalSpecialistTurtleneckJumpskirt
+  - ScpLoadoutChiefEngineerJumpsuit
+  - ScpLoadoutChiefEngineerJumpskirt
+  - ScpLoadoutChiefEngineerTurtleneckJumpsuit
+  - ScpLoadoutChiefEngineerTurtleneckJumpskirt
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupChiefTechnicalSpecialistGloves
+  id: ScpLoadoutGroupChiefEngineerGloves
   name: loadout-group-gloves
   minLimit: 0
   maxLimit: 1
@@ -214,23 +214,23 @@
   - ScpLoadoutClothingHandsGlovesFingerlessInsulated
   - ScpLoadoutClothingHandsGlovesColorYellowBudget
   - ScpLoadoutClothingHandsGlovesColorRed
-  - ScpLoadoutChiefTechnicalSpecialistOrangeGloves
+  - ScpLoadoutChiefEngineerOrangeGloves
   - ScpLoadoutClothingHandsGlovesColorTeal
   - ScpLoadoutClothingHandsGlovesColorWhite
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupChiefTechnicalSpecialistShoes
+  id: ScpLoadoutGroupChiefEngineerShoes
   name: loadout-group-shoes
   loadouts:
   - ScpLoadoutClothingShoesColorBrown
-  - ScpLoadoutChiefTechnicalSpecialistWinterBoots
+  - ScpLoadoutChiefEngineerWinterBoots
   - ScpLoadoutClothingShoesColorWhite
   - ScpLoadoutClothingShoesColorRed
   - ScpLoadoutClothingShoesColorOrange
   - ScpLoadoutClothingShoesColorYellow
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupChiefTechnicalSpecialistBackpack
+  id: ScpLoadoutGroupChiefEngineerBackpack
   name: loadout-group-backpack
   loadouts:
   - ScpLoadoutEngineeringTechnicalServiceEngineeringBackpack
@@ -240,35 +240,35 @@
 # Personnel Officer
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupPersonnelOfficerHead
+  id: ScpLoadoutGroupPersonnelManagerHead
   name: loadout-group-head
   minLimit: 0
   loadouts:
-  - ScpLoadoutPersonnelOfficerCap
+  - ScpLoadoutPersonnelManagerCap
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupPersonnelOfficerNeck
+  id: ScpLoadoutGroupPersonnelManagerNeck
   name: loadout-group-neck
   minLimit: 0
   loadouts:
-  - ScpLoadoutPersonnelOfficerMantle
+  - ScpLoadoutPersonnelManagerMantle
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupPersonnelOfficerOuterClothing
+  id: ScpLoadoutGroupPersonnelManagerOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   loadouts:
-  - ScpLoadoutPersonnelOfficerWinterCoat
+  - ScpLoadoutPersonnelManagerWinterCoat
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupPersonnelOfficerJumpsuit
+  id: ScpLoadoutGroupPersonnelManagerJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutPersonnelOfficerJumpsuit
-  - ScpLoadoutPersonnelOfficerJumpskirt
+  - ScpLoadoutPersonnelManagerJumpsuit
+  - ScpLoadoutPersonnelManagerJumpskirt
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupPersonnelOfficerBackpack
+  id: ScpLoadoutGroupPersonnelManagerBackpack
   name: loadout-group-backpack
   loadouts:
   - ScpLoadoutClothingBackpack
@@ -278,11 +278,11 @@
 # Head of Medical Sector
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupHeadOfMedicalSectorHead
+  id: ScpLoadoutGroupChiefMedicalOfficerHead
   name: loadout-group-head
   minLimit: 0
   loadouts:
-  - ScpLoadoutHeadOfMedicalSectorBeret
+  - ScpLoadoutChiefMedicalOfficerBeret
   - ScpLoadoutMedicalServiceSeniorBeret
   - ScpLoadoutMedicalServiceBeret
   - ScpLoadoutMedicalServiceNurseHat
@@ -297,20 +297,20 @@
   - ScpLoadoutMedicalServiceHeadMirror
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupHeadOfMedicalSectorMask
+  id: ScpLoadoutGroupChiefMedicalOfficerMask
   name: loadout-group-mask
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutHeadOfMedicalSectorSterileMask
+  - ScpLoadoutChiefMedicalOfficerSterileMask
   - ScpLoadoutClothingMaskBreathMedical
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupHeadOfMedicalSectorNeck
+  id: ScpLoadoutGroupChiefMedicalOfficerNeck
   name: loadout-group-neck
   minLimit: 0
   loadouts:
-  - ScpLoadoutHeadOfMedicalSectorMantle
+  - ScpLoadoutChiefMedicalOfficerMantle
   - ScpLoadoutClothingNeckScarfStripedRed
   - ScpLoadoutClothingNeckScarfStripedOrange
   - ScpLoadoutClothingNeckScarfStripedGreen
@@ -319,12 +319,12 @@
   - ScpLoadoutClothingNeckStethoscope
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupHeadOfMedicalSectorOuterClothing
+  id: ScpLoadoutGroupChiefMedicalOfficerOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   loadouts:
-  - ScpLoadoutHeadOfMedicalSectorLabCoat
-  - ScpLoadoutHeadOfMedicalSectorWinterCoat
+  - ScpLoadoutChiefMedicalOfficerLabCoat
+  - ScpLoadoutChiefMedicalOfficerWinterCoat
   - ScpLoadoutClothingOuterCoatLab
   - ScpLoadoutClothingOuterCoatLabViro
   - ScpLoadoutMedicalServiceChemistryLabCoat
@@ -344,16 +344,16 @@
   - ScpLoadoutClothingOuterCoatParamedicWB
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupHeadOfMedicalSectorJumpsuit
+  id: ScpLoadoutGroupChiefMedicalOfficerJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutHeadOfMedicalSectorJumpsuit
-  - ScpLoadoutHeadOfMedicalSectorJumpskirt
-  - ScpLoadoutHeadOfMedicalSectorTurtleneckJumpsuit
-  - ScpLoadoutHeadOfMedicalSectorTurtleneckJumpskirt
+  - ScpLoadoutChiefMedicalOfficerJumpsuit
+  - ScpLoadoutChiefMedicalOfficerJumpskirt
+  - ScpLoadoutChiefMedicalOfficerTurtleneckJumpsuit
+  - ScpLoadoutChiefMedicalOfficerTurtleneckJumpskirt
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupHeadOfMedicalSectorGloves
+  id: ScpLoadoutGroupChiefMedicalOfficerGloves
   name: loadout-group-gloves
   minLimit: 0
   maxLimit: 1
@@ -365,10 +365,10 @@
   - ScpLoadoutClothingHandsGlovesColorGreen
   - ScpLoadoutClothingHandsGlovesColorTeal
   - ScpLoadoutClothingHandsGlovesColorBlue
-  - ScpLoadoutHeadOfMedicalSectorNitrileGloves
+  - ScpLoadoutChiefMedicalOfficerNitrileGloves
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupHeadOfMedicalSectorShoes
+  id: ScpLoadoutGroupChiefMedicalOfficerShoes
   name: loadout-group-shoes
   loadouts:
   - ScpLoadoutClothingShoesColorBrown
@@ -380,19 +380,19 @@
   - ScpLoadoutClothingShoesColorBlue
   - ScpLoadoutMedicalServiceWinterBoots
 
-# Senior Logistics Officer
+# Quartermaster
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupSeniorLogisticsOfficerHead
+  id: ScpLoadoutGroupQuartermasterHead
   name: loadout-group-head
   minLimit: 0
   loadouts:
-  - ScpLoadoutSeniorLogisticsOfficerSoftCap
-  - ScpLoadoutSeniorLogisticsOfficerBeret
+  - ScpLoadoutQuartermasterSoftCap
+  - ScpLoadoutQuartermasterBeret
   - ScpLoadoutClothingHeadBandBrown
-  - ScpLoadoutSeniorLogisticsOfficerOrangeHardHat
-  - ScpLoadoutSeniorLogisticsOfficerYellowHardHat
-  - ScpLoadoutSeniorLogisticsOfficerDarkYellowHardHat
+  - ScpLoadoutQuartermasterOrangeHardHat
+  - ScpLoadoutQuartermasterYellowHardHat
+  - ScpLoadoutQuartermasterDarkYellowHardHat
   - ScpLoadoutClothingHeadHatOrangesoft
   - ScpLoadoutClothingHeadHatYellowsoft
   - ScpLoadoutClothingHeadHatBrownFlatcap
@@ -402,7 +402,7 @@
   - ScpLoadoutMaterialHideBear
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupSeniorLogisticsOfficerMask
+  id: ScpLoadoutGroupQuartermasterMask
   name: loadout-group-mask
   minLimit: 0
   maxLimit: 1
@@ -411,21 +411,21 @@
   - ScpLoadoutClothingMaskBandBrown
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupSeniorLogisticsOfficerNeck
+  id: ScpLoadoutGroupQuartermasterNeck
   name: loadout-group-neck
   minLimit: 0
   loadouts:
-  - ScpLoadoutSeniorLogisticsOfficerMantle
+  - ScpLoadoutQuartermasterMantle
   - ScpLoadoutClothingNeckScarfStripedOrange
   - ScpLoadoutClothingNeckScarfStripedBrown
   - ScpLoadoutClothingNeckScarfStripedPurple
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupSeniorLogisticsOfficerOuterClothing
+  id: ScpLoadoutGroupQuartermasterOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   loadouts:
-  - ScpLoadoutSeniorLogisticsOfficerWinterCoat
+  - ScpLoadoutQuartermasterWinterCoat
   - ScpLoadoutClothingOuterWinterMiner
   - ScpLoadoutClothingOuterWinterColorOrange
   - ScpLoadoutClothingOuterWinterColorYellow
@@ -437,32 +437,32 @@
   - ScpLoadoutClothingOuterCoatTrench
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupSeniorLogisticsOfficerJumpsuit
+  id: ScpLoadoutGroupQuartermasterJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutSeniorLogisticsOfficerJumpsuit
-  - ScpLoadoutSeniorLogisticsOfficerJumpskirt
-  - ScpLoadoutSeniorLogisticsOfficerTurtleneckJumpsuit
-  - ScpLoadoutSeniorLogisticsOfficerTurtleneckJumpskirt
-  - ScpLoadoutSeniorLogisticsOfficerFormalSuit
+  - ScpLoadoutQuartermasterJumpsuit
+  - ScpLoadoutQuartermasterJumpskirt
+  - ScpLoadoutQuartermasterTurtleneckJumpsuit
+  - ScpLoadoutQuartermasterTurtleneckJumpskirt
+  - ScpLoadoutQuartermasterFormalSuit
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupSeniorLogisticsOfficerGloves
+  id: ScpLoadoutGroupQuartermasterGloves
   name: loadout-group-gloves
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutSeniorLogisticsOfficerOrangeGloves
+  - ScpLoadoutQuartermasterOrangeGloves
   - ScpLoadoutClothingHandsGlovesColorLightBrown
   - ScpLoadoutClothingHandsGlovesColorBrown
-  - ScpLoadoutSeniorLogisticsOfficerPurpleGloves
+  - ScpLoadoutQuartermasterPurpleGloves
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupSeniorLogisticsOfficerShoes
+  id: ScpLoadoutGroupQuartermasterShoes
   name: loadout-group-shoes
   loadouts:
   - ScpLoadoutClothingShoesColorBrown
-  - ScpLoadoutSeniorLogisticsOfficerWinterBoots
+  - ScpLoadoutQuartermasterWinterBoots
   - ScpLoadoutClothingShoesColorBlack
   - ScpLoadoutClothingShoesColorOrange
   - ScpLoadoutClothingShoesColorYellow

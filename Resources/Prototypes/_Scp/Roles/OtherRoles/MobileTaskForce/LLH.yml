@@ -6,7 +6,7 @@
   playTimeTracker: JobLLHLeader
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: LLHLeaderGear
   icon: JobIconLLHleader
@@ -53,7 +53,7 @@
   playTimeTracker: JobLLHSpecialist
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: LLHSpecialistGear
   icon: JobIconLLH

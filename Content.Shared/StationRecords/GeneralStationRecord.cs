@@ -1,5 +1,5 @@
-using Content.Shared._Scp.CharacterInfo.AccessLevel;
-using Content.Shared._Scp.CharacterInfo.EmployeeClass;
+using Content.Shared._Scp.Role.CharacterInfo.AccessLevel;
+using Content.Shared._Scp.Role.CharacterInfo.EmployeeClass;
 using Robust.Shared.Enums;
 using Robust.Shared.Serialization;
 

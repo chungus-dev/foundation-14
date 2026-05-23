@@ -16,11 +16,7 @@
 	{"name": "eazss_label"},
 	{"name": "ec_label"},
 	{"name": "hcss_label"},
-	{"name": "is_label"},
-	{"name": "tribunal_label"},
 	{"name": "raf_label"},
-	{"name": "hq_label"},
-	{"name": "crypt_gru"},
-	{"name": "gru_label"}
+	{"name": "hq_label"}
   ]
 }

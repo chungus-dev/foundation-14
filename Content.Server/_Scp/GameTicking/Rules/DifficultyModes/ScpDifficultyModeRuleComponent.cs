@@ -1,4 +1,4 @@
-﻿using Content.Shared._Scp.Mobs.Components;
+﻿using Content.Shared._Scp.Anomaly;
 using Content.Shared._Scp.Utility.Extensions;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;

@@ -1,0 +1,124 @@
+# ID
+- type: loadout
+  id: ScpLoadoutKeyCardQuartermaster
+  equipment:
+    id: KeyCardQuartermaster
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardQuartermaster
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardQuartermaster
+
+# Ears
+- type: loadout
+  id: ScpLoadoutClothingHeadsetAltLogistics
+  equipment:
+    ears: ClothingHeadsetAltLogistics
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupEarsClothingHeadsetAltLogistics
+  name: loadout-group-ears
+  loadouts:
+  - ScpLoadoutClothingHeadsetAltLogistics
+
+# Head
+- type: loadout
+  id: ScpLoadoutQuartermasterSoftCap
+  equipment:
+    head: ClothingHeadHatQMsoft
+
+- type: loadout
+  id: ScpLoadoutQuartermasterBeret
+  equipment:
+    head: ClothingHeadHatBeretQM
+
+- type: loadout
+  id: ScpLoadoutQuartermasterOrangeHardHat
+  equipment:
+    head: ClothingHeadHatHardhatOrange
+
+- type: loadout
+  id: ScpLoadoutQuartermasterYellowHardHat
+  equipment:
+    head: ClothingHeadHatHardhatYellow
+
+- type: loadout
+  id: ScpLoadoutQuartermasterDarkYellowHardHat
+  equipment:
+    head: ClothingHeadHatHardhatYellowDark
+
+# Jumpsuit
+- type: loadout
+  id: ScpLoadoutQuartermasterJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitQM
+
+- type: loadout
+  id: ScpLoadoutQuartermasterJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtQM
+
+- type: loadout
+  id: ScpLoadoutQuartermasterTurtleneckJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitQMTurtleneck
+
+- type: loadout
+  id: ScpLoadoutQuartermasterTurtleneckJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtQMTurtleneck
+
+- type: loadout
+  id: ScpLoadoutQuartermasterFormalSuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitQMFormal
+
+# Neck
+- type: loadout
+  id: ScpLoadoutQuartermasterMantle
+  equipment:
+    neck: ClothingNeckMantleQM
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ScpMasterQuartermaster
+
+# Gloves
+- type: loadout
+  id: ScpLoadoutQuartermasterOrangeGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorOrange
+
+- type: loadout
+  id: ScpLoadoutQuartermasterPurpleGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorPurple
+
+# Outer Clothing
+- type: loadout
+  id: ScpLoadoutQuartermasterWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterQM
+
+- type: loadout
+  id: ScpLoadoutClothingOuterWinterMiner
+  equipment:
+    outerClothing: ClothingOuterWinterMiner
+
+# Shoes
+- type: loadout
+  id: ScpLoadoutQuartermasterWinterBoots
+  equipment:
+    shoes: ClothingShoesBootsWinterCargo
+
+# Pocket 2
+- type: loadout
+  id: ScpLoadoutQuartermasterPDA
+  equipment:
+    pocket2: ScpQuartermasterPDA
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupPocket2QuartermasterPDA
+  name: loadout-group-pda
+  loadouts:
+  - ScpLoadoutQuartermasterPDA

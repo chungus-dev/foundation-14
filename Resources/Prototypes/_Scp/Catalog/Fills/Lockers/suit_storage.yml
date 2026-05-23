@@ -1,12 +1,12 @@
-﻿# Администрация
+# Администрация
 
 - type: entity
-  id: SuitStorageDirector
+  id: SuitStorageFacilityDirector
   parent: SuitStorageCaptain
   suffix: Complex director
   components:
   - type: AccessReader
-    access: [["ComplexDirector"]]
+    access: [["FacilityDirector"]]
 
 - type: entity
   id: SuitStorageSecurityCommander
@@ -17,28 +17,28 @@
     access: [["SecurityCommander"]]
 
 - type: entity
-  id: SuitStorageScientificServiceDirector
+  id: SuitStorageResearchDirector
   parent: SuitStorageRD
   suffix: Scientific service director
   components:
   - type: AccessReader
-    access: [["ScientificServiceDirector"]]
+    access: [["ScpResearchDirector"]]
 
 - type: entity
-  id: SuitStorageHeadOfMedicalSector
+  id: SuitStorageChiefMedicalOfficer
   parent: SuitStorageCMO
   suffix: Head of medical sector
   components:
   - type: AccessReader
-    access: [["HeadOfMedicalSector"]]
+    access: [["ScpChiefMedicalOfficer"]]
 
 - type: entity
-  id: SuitStorageChiefTechnicalSpecialist
+  id: SuitStorageChiefEngineer
   parent: SuitStorageCE
   suffix: Chief technical specialist
   components:
   - type: AccessReader
-    access: [["ChiefTechnicalSpecialist"]]
+    access: [["ScpChiefEngineer"]]
 
 # Инженерно-технический отдел
 

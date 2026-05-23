@@ -1,0 +1,42 @@
+- type: loadout
+  id: ScpLoadoutKeyCardPhysician
+  equipment:
+    id: KeyCardPhysician
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardPhysician
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardPhysician
+
+- type: loadoutGroup
+  parent: [ScpLoadoutGroupGlasses]
+  id: ScpLoadoutGroupPhysicianEyes
+  minLimit: 1
+  loadouts:
+  - ScpLoadoutClothingEyesHudMedicalEyes
+
+- type: loadout
+  id: ScpLoadoutPhysicianJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+
+- type: loadout
+  id: ScpLoadoutPhysicianJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtMedicalDoctor
+
+- type: loadout
+  id: ScpLoadoutPhysicianBlueScrubs
+  equipment:
+    jumpsuit: UniformScrubsColorBlue
+
+- type: loadout
+  id: ScpLoadoutPhysicianGreenScrubs
+  equipment:
+    jumpsuit: UniformScrubsColorGreen
+
+- type: loadout
+  id: ScpLoadoutPhysicianPurpleScrubs
+  equipment:
+    jumpsuit: UniformScrubsColorPurple

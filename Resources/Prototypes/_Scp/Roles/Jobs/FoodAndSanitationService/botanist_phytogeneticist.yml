@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: BotanistPhytogeneticist
   name: job-name-botanist-phytogeneticist
   description: job-description-botanist-phytogeneticist
@@ -7,7 +7,7 @@
   - !type:AgeRequirement
     requiredAge: 22
   icon: JobBotanistPhytogeneticist
-  supervisors: job-supervisors-personnel-officer
+  supervisors: job-supervisors-personnel-manager
   weight: 730
   access:
   - Service

@@ -21,8 +21,8 @@
     RiotLaserShield: 2
     RiotBulletShield: 2
     # Scp edit start
-    RadioHandheldExternalAdministrativeZoneSecurityService: 5
-    RadioHandheldHeavyContainmentSecurityService: 5
+    RadioHandheldCommandantSquad: 5
+    RadioHandheldSpecialPurposeSquad: 5
     # Scp edit end
   contrabandInventory:
     WeaponMeleeNeedle: 2

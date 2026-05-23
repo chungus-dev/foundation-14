@@ -5,7 +5,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - HandheldGPSBasic
@@ -17,7 +17,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - FlashlightLantern
@@ -29,7 +29,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - Flare
@@ -41,7 +41,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - HandLabeler
@@ -53,7 +53,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 36000 # 10hr
+      time: 10h
   storage:
     back:
     - ScpRadioHandheldCommon
@@ -64,8 +64,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobLogisticsOfficer
-      time: 72000 # 20hr
+      role: JobLogistician
+      time: 20h
   storage:
     back:
     - ToyFigurineCargoTech
@@ -76,8 +76,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobLogisticsOfficer
-      time: 72000 # 20hr
+      role: JobLogistician
+      time: 20h
   storage:
     back:
     - ToyFigurineSalvage
@@ -88,8 +88,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobSeniorLogisticsOfficer
-      time: 72000 # 20hr
+      role: JobScpQuartermaster
+      time: 20h
   storage:
     back:
     - ToyFigurineQuartermaster
@@ -100,8 +100,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobLogisticsOfficer
-      time: 108000 # 30hr
+      role: JobLogistician
+      time: 30h
   storage:
     back:
     - ToyFigurineSpaceDragon
@@ -112,8 +112,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobLogisticsOfficer
-      time: 180000 # 50hr
+      role: JobLogistician
+      time: 50h
   storage:
     back:
     - ToyFigurineQueen

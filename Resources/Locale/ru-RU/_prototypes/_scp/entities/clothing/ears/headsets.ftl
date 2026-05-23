@@ -1,8 +1,8 @@
-ent-ClothingHeadsetHeavyContainmentSecurityService = { ent-ClothingHeadset } службы безопасности
+ent-ClothingHeadsetSpecialPurposeSquad = { ent-ClothingHeadset } службы безопасности
     .desc = { ent-ClothingHeadset.desc }
-ent-ClothingHeadsetFieldMedicalSpecialist = { ent-ClothingHeadset } амнестезиолога
+ent-ClothingHeadsetAmnesticologist = { ent-ClothingHeadset } амнестезиолога
     .desc = { ent-ClothingHeadset.desc }
-ent-ClothingHeadsetExternalAdministrativeZoneSecurityService = { ent-ClothingHeadsetHeavyContainmentSecurityService }
+ent-ClothingHeadsetCommandantSquad = { ent-ClothingHeadsetSpecialPurposeSquad }
     .desc = { ent-ClothingHeadset.desc }
 ent-ClothingHeadsetScientificService = { ent-ClothingHeadset } научной службы
     .desc = { ent-ClothingHeadset.desc }

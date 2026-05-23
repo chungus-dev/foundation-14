@@ -3,7 +3,7 @@ using System.Numerics;
 using Content.Client.Examine;
 using Content.Client.Gameplay;
 using Content.Client.Popups;
-using Content.Shared._Scp.Watching.FOV;
+using Content.Shared._Scp.Vision.FOV;
 using Content.Shared.CCVar;
 using Content.Shared.Examine;
 using Content.Shared.Tag;

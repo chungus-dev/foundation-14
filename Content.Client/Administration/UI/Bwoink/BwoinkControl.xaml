@@ -3,12 +3,12 @@
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-    xmlns:palette="clr-namespace:Content.Client._Scp.Stylesheets.Palette"
-    xmlns:xNamespace="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:xNamespace="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:palette1="clr-namespace:Content.Client._Scp.UI.Stylesheets.Palette">
     <PanelContainer StyleClasses="BackgroundDark">
         <!-- Scp added start - keep ahelp body on the SCP dark panel color -->
         <PanelContainer.PanelOverride>
-            <graphics:StyleBoxFlat BackgroundColor="{xNamespace:Static palette:ScpPalettes.PanelDarker}" />
+            <graphics:StyleBoxFlat BackgroundColor="{xNamespace:Static palette1:ScpPalettes.PanelDarker}" />
         </PanelContainer.PanelOverride>
         <!-- Scp added end -->
         <SplitContainer Orientation="Vertical" ResizeMode="NotResizable">

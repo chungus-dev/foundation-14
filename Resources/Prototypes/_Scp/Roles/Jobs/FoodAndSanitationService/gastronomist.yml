@@ -1,0 +1,35 @@
+- type: job
+  id: Gastronomist
+  name: job-name-gastronomist
+  description: job-description-gastronomist
+  playTimeTracker: JobGastronomist
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 22
+  icon: JobGastronomist
+  supervisors: job-supervisors-personnel-manager
+  weight: 735
+  access:
+  - Service
+  - Bunker
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: One
+
+- type: startingGear
+  id: GastronomistGear
+  equipment:
+    head: ClothingHeadHatChef
+    eyes: ClothingEyesGlasses
+    outerClothing: ClothingOuterApronChef
+    jumpsuit: ClothingUniformJumpsuitChef
+    shoes: ClothingShoesColorBlack
+    back: ClothingBackpack
+    id: KeyCardGastronomist
+    ears: ClothingHeadsetFoodAndSanitation
+    belt: ClothingBeltChefFilled
+    pocket2: ScpServicePDA

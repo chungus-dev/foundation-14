@@ -59,7 +59,7 @@
     text: scp939-announce-on-spawn
     channels:
     - ScientificService
-    - HeavyContainmentSecurityService
+    - SpecialPurposeSquad
   - type: Puller
     needsHands: false
   - type: Pullable
@@ -71,6 +71,7 @@
   - type: Stripping
   - type: ScpPossibilities
     canEjectPilotFromMech: false
+    openContainer: false
   - type: UserInterface
     interfaces:
       enum.StrippingUiKey.Key:
@@ -98,8 +99,8 @@
     mode: MobToCritical
     generalMessages: ScpScp939Messages
     departmentMessages:
-      HeavyContainmentSecurityService: ScpScp939SecurityMessages
-      ExternalAdministrativeZoneSecurityService: ScpScp939SecurityMessages
+      SpecialPurposeSquad: ScpScp939SecurityMessages
+      CommandantSquad: ScpScp939SecurityMessages
     jobMessages:
       SecurityCommander: ScpScp939SecurityMessages
   - type: GuideHelp

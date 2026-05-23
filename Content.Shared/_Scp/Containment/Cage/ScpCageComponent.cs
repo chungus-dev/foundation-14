@@ -1,4 +1,4 @@
-﻿using Content.Shared._Scp.Proximity;
+﻿using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Whitelist;

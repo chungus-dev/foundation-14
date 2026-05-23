@@ -1,9 +1,9 @@
-ent-LockerExternalAdministrativeZoneCommandantFilled = { ent-LockerExternalAdministrativeZoneCommandant }
+ent-LockerCommandantLeaderFilled = { ent-LockerCommandantLeader }
     .suffix = Filled
-    .desc = { ent-LockerExternalAdministrativeZoneCommandant.desc }
-ent-LockerExternalAdministrativeZoneOfficerFilled = { ent-LockerExternalAdministrativeZoneOfficer }
+    .desc = { ent-LockerCommandantLeader.desc }
+ent-LockerCommandantFilled = { ent-LockerCommandant }
     .suffix = Filled
-    .desc = { ent-LockerExternalAdministrativeZoneOfficer.desc }
+    .desc = { ent-LockerCommandant.desc }
 ent-ScpLockerAmnesticologistFilled = { ent-ScpLockerAmnesticologist }
     .suffix = Field medic, Filled
     .desc = { ent-ScpLockerAmnesticologist.desc }

@@ -1,14 +1,14 @@
 scp-facility-beacon-general = Общий
 
 scp-facility-beacon-facility-director-office = Директор Учреждения
-scp-facility-beacon-chief-researcher-office = Главный Научный сотрудник
+scp-facility-beacon-research-director-office = Главный Научный сотрудник
 scp-facility-beacon-security-commander-office = Начальник Службы Безопасности
 scp-facility-beacon-chief-engineer-office = Ведущий Инженера
 scp-facility-beacon-personnel-manager-office = Менеджер по Персоналу
 scp-facility-beacon-chief-medical-officer-office = Главный Врач
 scp-facility-beacon-quartermaster-office = Квартирмейстер
 scp-facility-beacon-ethics-committee-representative-office = Представитель Комитета по Этике
-scp-facility-beacon-head-commandant-office = Главный Комендант
+scp-facility-beacon-commandant-leader-office = Главный Комендант
 scp-facility-beacon-special-purpose-unit-commander-office = Командир ОСН
 scp-facility-beacon-amnesticologist-office = Амнестезиолог
 scp-facility-beacon-parapsychologist-office = Парапсихолог

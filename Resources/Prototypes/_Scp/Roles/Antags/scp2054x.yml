@@ -6,4 +6,4 @@
   setPreference: false
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 # 5 часов
+    time: 5h

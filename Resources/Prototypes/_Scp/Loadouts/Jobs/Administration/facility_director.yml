@@ -1,0 +1,42 @@
+# Голова
+- type: loadout
+  id: ScpLoadoutClothingHeadHatFacilityDirector
+  equipment:
+    head: ClothingHeadHatFacilityDirector
+
+# Униформа
+- type: loadout
+  id: ScpLoadoutClothingUniformJumpsuitFacilityDirector
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitFacilityDirector
+
+# Верхняя одежда
+- type: loadout
+  id: ScpLoadoutClothingOuterCoatFacilityDirectorTrench
+  equipment:
+    outerClothing: ClothingOuterCoatFacilityDirectorTrench
+
+# Перчатки
+
+- type: loadout
+  id: ScpLoadoutClothingHandsGlovesFacilityDirectorSpecial
+  equipment:
+    gloves: ClothingHandsGlovesFacilityDirectorSpecial
+
+# Ключ карта
+- type: loadout
+  id: ScpLoadoutKeyCardFacilityDirector
+  equipment:
+    id: KeyCardFacilityDirector
+
+# КПК
+- type: loadout
+  id: ScpLoadoutFacilityDirectorPDA
+  equipment:
+    pocket2: FacilityDirectorPDA
+
+# Сумка
+- type: loadout
+  id: ScpLoadoutClothingBackpackSatchelLeatherFacilityDirectorFilled
+  equipment:
+    back: ClothingBackpackSatchelLeatherFacilityDirectorFilled

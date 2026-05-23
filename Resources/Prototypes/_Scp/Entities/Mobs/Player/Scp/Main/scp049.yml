@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Scp049
   suffix: SCP-049
   parent:
@@ -28,6 +28,7 @@
   - type: ScpShow049Hud
   - type: ScpPossibilities
     canEjectPilotFromMech: false
+    openContainer: false
   - type: FearSource
     uponSeenState: Anxiety
     uponComeCloser: Anxiety
@@ -41,7 +42,7 @@
     text: scp049-announce-on-spawn
     channels:
     - ScientificService
-    - HeavyContainmentSecurityService
+    - SpecialPurposeSquad
   - type: Inventory
     templateId: scp049
   - type: FieldOfView
