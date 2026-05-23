@@ -1,0 +1,48 @@
+- type: job
+  id: Pharmacist
+  name: job-name-pharmacist
+  description: job-description-pharmacist
+  playTimeTracker: JobPharmacist
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: MedicalService
+    time: 10800
+  - !type:AgeRequirement
+    requiredAge: 29
+  - !type:AgeRequirement
+    requiredAge: 75
+    inverted: true
+  icon: JobPharmacist
+  supervisors: job-supervisors-chief-medical-officer
+  displayWeight: 30
+  weight: 775
+  accessGroups:
+  - Pharmacist
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Two
+    - type: Fear
+      phobias:
+      - Exoremophobia
+      # Врачи не пугаются трупов, у них не будет некрофобии
+
+- type: startingGear
+  id: PharmacistGear
+  equipment:
+    head: ClothingHeadHatRedsoft
+    eyes: ClothingEyesGlassesChemical
+    neck: ClothingNeckScarfStripedRed
+    outerClothing: ClothingOuterCoatLab
+    jumpsuit: ClothingUniformJumpsuitChemistry
+    gloves: ClothingHandsGlovesLatex
+    shoes: ClothingShoesColorWhite
+    back: ClothingBackpackChemistry
+    id: KeyCardPharmacist
+    ears: ClothingHeadsetMedicalService
+    belt: ChemBag
+    pocket1: HandLabeler
+    pocket2: ScpMedicalPDA

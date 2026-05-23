@@ -56218,7 +56218,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadHatDirector
+- proto: ClothingHeadHatFacilityDirector
   entities:
   - uid: 34236
     components:
@@ -68259,7 +68259,7 @@ entities:
     - type: Transform
       pos: -44.5,57.5
       parent: 2
-- proto: FaxMachineDirector
+- proto: FaxMachineFacilityDirector
   entities:
   - uid: 11215
     components:
@@ -119283,7 +119283,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -14.5,123.5
       parent: 2
-- proto: HighSecScientificServiceDirectorLocked
+- proto: HighSecResearchDirectorLocked
   entities:
   - uid: 86
     components:
@@ -119891,7 +119891,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: IntercomHeavyContainmentSecurityService
+- proto: IntercomSpecialPurposeSquad
   entities:
   - uid: 17817
     components:
@@ -119980,14 +119980,14 @@ entities:
     - type: Transform
       pos: -50.5,76.5
       parent: 2
-- proto: KeyCardElectricalTechnicalSpecialist
+- proto: KeyCardElectricalEngineer
   entities:
   - uid: 17825
     components:
     - type: Transform
       pos: -7.4110184,7.391594
       parent: 2
-- proto: KeyCardLeadResearcher
+- proto: KeyCardSeniorResearcher
   entities:
   - uid: 17827
     components:
@@ -119995,7 +119995,7 @@ entities:
       parent: 17826
     - type: Physics
       canCollide: False
-- proto: KeyCardLogisticsOfficer
+- proto: KeyCardLogistician
   entities:
   - uid: 17828
     components:
@@ -120893,7 +120893,7 @@ entities:
           - Toggle
     - type: Fixtures
       fixtures: {}
-- proto: LockableButtonChiefTechnicalSpecialist
+- proto: LockableButtonScpChiefEngineer
   entities:
   - uid: 17894
     components:
@@ -120942,7 +120942,7 @@ entities:
           - Toggle
     - type: Fixtures
       fixtures: {}
-- proto: LockableButtonDirector
+- proto: LockableButtonFacilityDirector
   entities:
   - uid: 17896
     components:
@@ -121582,7 +121582,7 @@ entities:
           - Toggle
     - type: Fixtures
       fixtures: {}
-- proto: LockableButtonHeadOfMedicalSector
+- proto: LockableButtonScpChiefMedicalOfficer
   entities:
   - uid: 17923
     components:
@@ -122102,7 +122102,7 @@ entities:
           - DoorBolt
     - type: Fixtures
       fixtures: {}
-- proto: LockableButtonPersonnelOfficer
+- proto: LockableButtonPersonnelManager
   entities:
   - uid: 17946
     components:
@@ -123168,7 +123168,7 @@ entities:
       currentLabel: Ставни
     - type: NameModifier
       baseName: кнопка с замком
-- proto: LockableButtonSeniorLogisticsOfficer
+- proto: LockableButtonScpQuartermaster
   entities:
   - uid: 18000
     components:
@@ -123183,14 +123183,14 @@ entities:
           - DoorBolt
     - type: Fixtures
       fixtures: {}
-- proto: LockerExternalAdministrativeZoneCommandantFilled
+- proto: LockerCommandantLeaderFilled
   entities:
   - uid: 18001
     components:
     - type: Transform
       pos: -58.5,61.5
       parent: 2
-- proto: LockerExternalAdministrativeZoneOfficerFilled
+- proto: LockerCommandantFilled
   entities:
   - uid: 18002
     components:
@@ -123320,14 +123320,14 @@ entities:
       parent: 2
     - type: Physics
       bodyType: Static
-- proto: LockerHeavyContainmentZoneCommandantFilled
+- proto: LockerSpecialPurposeUnitCommanderFilled
   entities:
   - uid: 18018
     components:
     - type: Transform
       pos: 45.5,94.5
       parent: 2
-- proto: LockerHeavyContainmentZoneOfficerFilled
+- proto: LockerSpecialPurposeSquadOfficerFilled
   entities:
   - uid: 18019
     components:
@@ -139858,7 +139858,7 @@ entities:
       parent: 2
     - type: Physics
       bodyType: Dynamic
-- proto: RadioHandheldExternalAdministrativeZoneSecurityService
+- proto: RadioHandheldCommandantSquad
   entities:
   - uid: 20435
     components:
@@ -139876,7 +139876,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 11.576508,82.775635
       parent: 2
-- proto: RadioHandheldHeavyContainmentSecurityService
+- proto: RadioHandheldSpecialPurposeSquad
   entities:
   - uid: 20443
     components:
@@ -144039,7 +144039,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -21.5,121.5
       parent: 2
-- proto: ScpAirlockChiefTechnicalSpecialistGlassLocked
+- proto: ScpAirlockChiefEngineerGlassLocked
   entities:
   - uid: 21121
     components:
@@ -144077,7 +144077,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -49.5,78.5
       parent: 2
-- proto: ScpAirlockDirectorLocked
+- proto: ScpAirlockFacilityDirectorLocked
   entities:
   - uid: 21126
     components:
@@ -144511,7 +144511,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 64.5,4.5
       parent: 2
-- proto: ScpAirlockHeadOfMedicalSectorGlassLocked
+- proto: ScpAirlockChiefMedicalOfficerGlassLocked
   entities:
   - uid: 21178
     components:
@@ -145479,7 +145479,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 9.5,100.5
       parent: 2
-- proto: ScpAirlockPersonnelOfficerLocked
+- proto: ScpAirlockPersonnelManagerLocked
   entities:
   - uid: 21331
     components:
@@ -145674,7 +145674,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 45.5,79.5
       parent: 2
-- proto: ScpAirlockScientificServiceDirectorLocked
+- proto: ScpAirlockResearchDirectorLocked
   entities:
   - uid: 21362
     components:
@@ -146010,7 +146010,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 45.5,104.5
       parent: 2
-- proto: ScpAirlockSeniorLogisticsOfficerLocked
+- proto: ScpAirlockQuartermasterLocked
   entities:
   - uid: 21418
     components:
@@ -153968,7 +153968,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -26.5,59.5
       parent: 2
-- proto: ScpClosetGastronomicSpecialistFilled
+- proto: ScpClosetGastronomistFilled
   entities:
   - uid: 22261
     components:
@@ -156311,14 +156311,14 @@ entities:
     - type: Transform
       pos: -2.5,128.5
       parent: 2
-- proto: ScpDresserChiefTechnicalSpecialistFilled
+- proto: ScpDresserChiefEngineerFilled
   entities:
   - uid: 10961
     components:
     - type: Transform
       pos: -41.5,14.5
       parent: 2
-- proto: ScpDresserDirectorFilled
+- proto: ScpDresserFacilityDirectorFilled
   entities:
   - uid: 10960
     components:
@@ -156332,14 +156332,14 @@ entities:
     - type: Transform
       pos: -40.5,102.5
       parent: 2
-- proto: ScpDresserHeadOfMedicalSectorFilled
+- proto: ScpDresserChiefMedicalOfficerFilled
   entities:
   - uid: 10962
     components:
     - type: Transform
       pos: 7.5,69.5
       parent: 2
-- proto: ScpDresserPersonnelOfficerFilled
+- proto: ScpDresserPersonnelManagerFilled
   entities:
   - uid: 10964
     components:
@@ -156353,7 +156353,7 @@ entities:
     - type: Transform
       pos: 47.5,29.5
       parent: 2
-- proto: ScpDresserScientificServiceDirectorFilled
+- proto: ScpDresserResearchDirectorFilled
   entities:
   - uid: 10967
     components:
@@ -156450,7 +156450,7 @@ entities:
     - type: Transform
       pos: 8.5,68.5
       parent: 2
-- proto: ScpFacilityBeaconChiefResearcherOffice
+- proto: ScpFacilityBeaconResearchDirectorOffice
   entities:
   - uid: 22534
     components:
@@ -156539,7 +156539,7 @@ entities:
     - type: Transform
       pos: 9.5,34.5
       parent: 2
-- proto: ScpFacilityBeaconHeadCommandantOffice
+- proto: ScpFacilityBeaconCommandantLeaderOffice
   entities:
   - uid: 22546
     components:
@@ -157121,7 +157121,7 @@ entities:
       parent: 2
     - type: Physics
       bodyType: Static
-- proto: ScpLockerChiefTechnicalSpecialistFilled
+- proto: ScpLockerChiefEngineerFilled
   entities:
   - uid: 22628
     components:
@@ -157200,7 +157200,7 @@ entities:
       rot: -4.71238898038469 rad
       pos: -28.5,150.5
       parent: 2
-- proto: ScpLockerDirectorFilled
+- proto: ScpLockerFacilityDirectorFilled
   entities:
   - uid: 22640
     components:
@@ -157397,7 +157397,7 @@ entities:
       rot: -3.141592653589793 rad
       pos: -41.5,82.5
       parent: 2
-- proto: ScpLockerGeneralTechnicalSpecialistFilled
+- proto: ScpLockerTechnicianFilled
   entities:
   - uid: 22667
     components:
@@ -157441,7 +157441,7 @@ entities:
       parent: 2
     - type: Physics
       bodyType: Static
-- proto: ScpLockerHeadOfMedicalSectorFilled
+- proto: ScpLockerChiefMedicalOfficerFilled
   entities:
   - uid: 22672
     components:
@@ -157726,7 +157726,7 @@ entities:
       parent: 2
     - type: Physics
       bodyType: Static
-- proto: ScpLockerMedicalSpecialistFilled
+- proto: ScpLockerPhysicianFilled
   entities:
   - uid: 22703
     components:
@@ -157752,7 +157752,7 @@ entities:
       parent: 2
     - type: Physics
       bodyType: Static
-- proto: ScpLockerPersonnelOfficerFilled
+- proto: ScpLockerPersonnelManagerFilled
   entities:
   - uid: 22706
     components:
@@ -157896,7 +157896,7 @@ entities:
       rot: -4.71238898038469 rad
       pos: 44.5,87.5
       parent: 2
-- proto: ScpLockerScientificServiceDirectorFilled
+- proto: ScpLockerResearchDirectorFilled
   entities:
   - uid: 22724
     components:
@@ -157934,7 +157934,7 @@ entities:
         moles:
           Oxygen: 1.7459903
           Nitrogen: 6.568249
-- proto: ScpLockerSeniorLogisticsOfficerFilled
+- proto: ScpLockerQuartermasterFilled
   entities:
   - uid: 22728
     components:
@@ -210757,7 +210757,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 1.5,58.5
       parent: 2
-- proto: ScpWindoorSecurePersonnelOfficerLocked
+- proto: ScpWindoorSecurePersonnelManagerLocked
   entities:
   - uid: 32242
     components:
@@ -210797,7 +210797,7 @@ entities:
     - type: Transform
       pos: 12.5,143.5
       parent: 2
-- proto: ScpWindoorSecureScientificServiceDirectorLocked
+- proto: ScpWindoorSecureResearchDirectorLocked
   entities:
   - uid: 32249
     components:
@@ -212719,7 +212719,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: SignDirectionalScpPersonnelOfficer
+- proto: SignDirectionalScpPersonnelManager
   entities:
   - uid: 32476
     components:
@@ -214556,7 +214556,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 16.5,142.5
       parent: 2
-- proto: SpawnPointAnomarchologyResearcher
+- proto: SpawnPointResearcher
   entities:
   - uid: 32733
     components:
@@ -214666,7 +214666,7 @@ entities:
     - type: Transform
       pos: 8.5,34.5
       parent: 2
-- proto: SpawnPointChiefTechnicalSpecialist
+- proto: SpawnPointScpChiefEngineer
   entities:
   - uid: 32746
     components:
@@ -214674,7 +214674,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -41.5,20.5
       parent: 2
-- proto: SpawnPointDirector
+- proto: SpawnPointFacilityDirector
   entities:
   - uid: 32747
     components:
@@ -214691,7 +214691,7 @@ entities:
     - type: Transform
       pos: 39.5,31.5
       parent: 2
-- proto: SpawnPointElectricalTechnicalSpecialist
+- proto: SpawnPointElectricalEngineer
   entities:
   - uid: 32750
     components:
@@ -214719,14 +214719,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 22.5,31.5
       parent: 2
-- proto: SpawnPointExternalAdministrativeZoneCommandant
+- proto: SpawnPointCommandantLeader
   entities:
   - uid: 32754
     components:
     - type: Transform
       pos: -51.5,61.5
       parent: 2
-- proto: SpawnPointExternalAdministrativeZoneOfficer
+- proto: SpawnPointCommandant
   entities:
   - uid: 32755
     components:
@@ -214814,14 +214814,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: -50.5,52.5
       parent: 2
-- proto: SpawnPointFieldMedicalSpecialist
+- proto: SpawnPointAmnesticologist
   entities:
   - uid: 32771
     components:
     - type: Transform
       pos: -32.5,65.5
       parent: 2
-- proto: SpawnPointGastronomicSpecialist
+- proto: SpawnPointGastronomist
   entities:
   - uid: 32772
     components:
@@ -214833,7 +214833,7 @@ entities:
     - type: Transform
       pos: 9.5,31.5
       parent: 2
-- proto: SpawnPointGeneralTechnicalSpecialist
+- proto: SpawnPointTechnician
   entities:
   - uid: 32774
     components:
@@ -214853,7 +214853,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -40.5,21.5
       parent: 2
-- proto: SpawnPointHeavyContainmentZoneCommandant
+- proto: SpawnPointSpecialPurposeUnitCommander
   entities:
   - uid: 32777
     components:
@@ -214861,7 +214861,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 43.5,93.5
       parent: 2
-- proto: SpawnPointHeavyContainmentZoneOfficer
+- proto: SpawnPointSpecialPurposeSquadOfficer
   entities:
   - uid: 32778
     components:
@@ -214929,7 +214929,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 29.5,99.5
       parent: 2
-- proto: SpawnPointHospitalIntern
+- proto: SpawnPointAssistantPhysician
   entities:
   - uid: 32789
     components:
@@ -214973,7 +214973,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,59.5
       parent: 2
-- proto: SpawnPointJuniorExternalAdministrativeZoneOfficer
+- proto: SpawnPointJuniorCommandant
   entities:
   - uid: 32796
     components:
@@ -215061,7 +215061,7 @@ entities:
     - type: Transform
       pos: -31.5,72.5
       parent: 2
-- proto: SpawnPointJuniorHeavyContainmentZoneOfficer
+- proto: SpawnPointJuniorSpecialPurposeSquadOfficer
   entities:
   - uid: 32812
     components:
@@ -215117,7 +215117,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 28.5,99.5
       parent: 2
-- proto: SpawnPointJuniorResearcher
+- proto: SpawnPointLaboratoryPractitioner
   entities:
   - uid: 32821
     components:
@@ -215336,7 +215336,7 @@ entities:
     - type: Transform
       pos: 8.5,6.5
       parent: 2
-- proto: SpawnPointLeadResearcher
+- proto: SpawnPointSeniorResearcher
   entities:
   - uid: 32866
     components:
@@ -215368,7 +215368,7 @@ entities:
     - type: Transform
       pos: 34.5,65.5
       parent: 2
-- proto: SpawnPointLeadTechnicalSpecialist
+- proto: SpawnPointSeniorEngineer
   entities:
   - uid: 32870
     components:
@@ -215382,7 +215382,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -41.5,19.5
       parent: 2
-- proto: SpawnPointLogisticsOfficer
+- proto: SpawnPointLogistician
   entities:
   - uid: 32872
     components:
@@ -215444,7 +215444,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 64.5,27.5
       parent: 2
-- proto: SpawnPointMedicalSpecialist
+- proto: SpawnPointPhysician
   entities:
   - uid: 32882
     components:
@@ -215495,7 +215495,7 @@ entities:
     - type: Transform
       pos: -44.5,74.5
       parent: 2
-- proto: SpawnPointPersonnelOfficer
+- proto: SpawnPointPersonnelManager
   entities:
   - uid: 32890
     components:
@@ -215503,7 +215503,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 29.5,24.5
       parent: 2
-- proto: SpawnPointPharmaceuticalSpecialist
+- proto: SpawnPointPharmacist
   entities:
   - uid: 32891
     components:
@@ -215541,7 +215541,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,66.5
       parent: 2
-- proto: SpawnPointProductionSpecialist
+- proto: SpawnPointManufacturingSpecialist
   entities:
   - uid: 32897
     components:
@@ -215563,14 +215563,14 @@ entities:
     - type: Transform
       pos: 23.5,78.5
       parent: 2
-- proto: SpawnPointPsychotherapist
+- proto: SpawnPointParapsychologist
   entities:
   - uid: 32901
     components:
     - type: Transform
       pos: 45.5,31.5
       parent: 2
-- proto: SpawnPointScientificServiceDirector
+- proto: SpawnPointScpResearchDirector
   entities:
   - uid: 32902
     components:
@@ -215594,7 +215594,7 @@ entities:
     - type: Transform
       pos: -50.5,61.5
       parent: 2
-- proto: SpawnPointSeniorExternalAdministrativeZoneOfficer
+- proto: SpawnPointSeniorCommandant
   entities:
   - uid: 32906
     components:
@@ -215626,7 +215626,7 @@ entities:
     - type: Transform
       pos: -52.5,54.5
       parent: 2
-- proto: SpawnPointSeniorHeavyContainmentZoneOfficer
+- proto: SpawnPointSeniorSpecialPurposeSquadOfficer
   entities:
   - uid: 32912
     components:
@@ -215658,7 +215658,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 29.5,94.5
       parent: 2
-- proto: SpawnPointSeniorLogisticsOfficer
+- proto: SpawnPointScpQuartermaster
   entities:
   - uid: 32917
     components:
@@ -215666,7 +215666,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 47.5,28.5
       parent: 2
-- proto: SpawnPointSeniorMedicalSpecialist
+- proto: SpawnPointSeniorPhysician
   entities:
   - uid: 32918
     components:
@@ -215709,7 +215709,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,68.5
       parent: 2
-- proto: SpawnPointServicePersonnel
+- proto: SpawnPointServiceStaff
   entities:
   - uid: 32925
     components:
@@ -215721,7 +215721,7 @@ entities:
     - type: Transform
       pos: 11.5,19.5
       parent: 2
-- proto: SpawnPointTechnicalTrainee
+- proto: SpawnPointTraineeTechnician
   entities:
   - uid: 32927
     components:
@@ -219878,7 +219878,7 @@ entities:
     - type: Transform
       pos: -6.5,15.5
       parent: 2
-- proto: TelecomServerFilledHeavyContainmentSecurityService
+- proto: TelecomServerFilledSpecialPurposeSquad
   entities:
   - uid: 33683
     components:

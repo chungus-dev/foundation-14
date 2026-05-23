@@ -1,0 +1,49 @@
+- type: job
+  id: FacilityDirector
+  name: job-name-facility-director
+  description: job-description-facility-director
+  playTimeTracker: JobFacilityDirector
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Administration
+    time: 54000
+  - !type:AgeRequirement
+    requiredAge: 35
+  weight: 965
+  icon: JobFacilityDirector
+  joinNotifyCrew: true
+  supervisors: job-supervisors-O5-command
+  canBeAntag: false
+  displayWeight: 100
+  accessGroups:
+  - FacilityDirector
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+    - type: EmployeeClass
+      class: B
+    - type: AccessLevel
+      level: Four
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - Administration
+      includeJobName: true
+
+- type: startingGear
+  id: FacilityDirectorGear
+  equipment:
+    head: ClothingHeadHatFacilityDirector
+    eyes: ClothingEyesGlassesSunglasses
+    neck: ClothingNeckTieDet
+    jumpsuit: ClothingUniformJumpsuitFacilityDirector
+    outerClothing: ClothingOuterCoatFacilityDirectorTrench
+    gloves: ClothingHandsGlovesFacilityDirectorSpecial
+    shoes: ClothingShoesBootsLaceup
+    back: ClothingBackpackSatchelLeatherFacilityDirectorFilled
+    id: KeyCardFacilityDirector
+    ears: ClothingHeadsetAltAdministration
+    pocket2: FacilityDirectorPDA

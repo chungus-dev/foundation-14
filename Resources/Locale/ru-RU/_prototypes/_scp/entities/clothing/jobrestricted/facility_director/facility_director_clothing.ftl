@@ -1,0 +1,11 @@
+ent-ClothingHeadHatFacilityDirector = шляпа директора учреждения
+    .desc = Шляпа в чёрно-белом стиле. Сделана светом для тьмы
+ent-ClothingUniformJumpsuitFacilityDirector = костюм директора
+    .desc = Костюм для особых случаев
+ent-ClothingOuterCoatFacilityDirectorTrench = треч директора учреждения
+    .desc = Плащ из специального сплава, обеспечивающий дополнительную защиту и стиль для людей, обладающих властью
+ent-ClothingHandsGlovesFacilityDirectorSpecial = жесткие перчатки директора учреждения
+    .desc = Идеально подходят для работы с бумагами и решения бюрократических вопросов.
+ent-ClothingBackpackSatchelLeatherFacilityDirectorFilled = кожаная сумка директора
+    .desc = Это особая сумка, изготовленная исключительно для работы
+    .suffix = Заполненная

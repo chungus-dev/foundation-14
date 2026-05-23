@@ -1,8 +1,8 @@
 chat-radio-regional-administration = Regional Administration
 chat-radio-administration = Administration
 chat-radio-ethics-committee = Ethics Committee
-chat-radio-heavy-containment-security-service = SPS
-chat-radio-external-administrative-zone-security-service = Commandants
+chat-radio-special-purpose-squad = SPS
+chat-radio-commandant-squad = Commandants
 chat-radio-scientific-service = Scientific Service
 chat-radio-medical-service = Medical
 chat-radio-engineering-technical-service = Technical

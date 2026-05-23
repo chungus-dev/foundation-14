@@ -34,7 +34,7 @@
   id: Service
   # Scp edit start
   tags:
-  - PersonnelOfficer
+  - PersonnelManager
   groups:
   - ServiceHeadless
   # Scp edit end

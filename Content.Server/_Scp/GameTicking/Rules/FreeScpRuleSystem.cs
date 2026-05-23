@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Server._Scp.Role.Transfer.BodyTakeover;
 using Content.Server.Fax;
 using Content.Server.GameTicking.Rules;
@@ -106,7 +106,7 @@ public sealed class FreeScpRuleSystem : GameRuleSystem<FreeScpRuleComponent>
         if (availableJobs.Count == 0)
         {
             comp.Phase = FreeScpRulePhase.Finished;
-            SendDirectorFax();
+            SendFacilityDirectorFax();
             return;
         }
 
@@ -134,7 +134,7 @@ public sealed class FreeScpRuleSystem : GameRuleSystem<FreeScpRuleComponent>
             onFailed: () =>
             {
                 QueueDel(scpEntity);
-                SendDirectorFax();
+                SendFacilityDirectorFax();
             });
     }
 
@@ -149,13 +149,13 @@ public sealed class FreeScpRuleSystem : GameRuleSystem<FreeScpRuleComponent>
         return false;
     }
 
-    private void SendDirectorFax()
+    private void SendFacilityDirectorFax()
     {
         var content = Loc.GetString("free-scp-no-volunteers-fax-content");
         var name = Loc.GetString("free-scp-no-volunteers-fax-name");
         var printout = new FaxPrintout(content, name);
 
-        var query = EntityQueryEnumerator<ScpDirectorFaxComponent, FaxMachineComponent>();
+        var query = EntityQueryEnumerator<ScpFacilityDirectorFaxComponent, FaxMachineComponent>();
         while (query.MoveNext(out var faxUid, out _, out var faxComp))
         {
             _fax.Receive(faxUid, printout, component: faxComp);

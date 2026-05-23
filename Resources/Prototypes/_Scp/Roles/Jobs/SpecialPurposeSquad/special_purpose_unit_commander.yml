@@ -1,0 +1,101 @@
+- type: job
+  id: SpecialPurposeUnitCommander
+  name: job-name-special-purpose-unit-commander
+  description: job-description-special-purpose-unit-commander
+  playTimeTracker: JobSpecialPurposeUnitCommander
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: SpecialPurposeSquad
+    time: 46800
+  - !type:AgeRequirement
+    requiredAge: 29
+  - !type:AgeRequirement
+    requiredAge: 65
+    inverted: true
+  icon: JobSpecialPurposeUnitCommander
+  supervisors: job-supervisors-security-commander
+  canBeAntag: false
+  displayWeight: 70
+  weight: 845
+  accessGroups:
+  - SecurityCommandant
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: ScpHolder
+      holdableWhitelist:
+        components:
+        - Scp096
+        - ClassDAppearance
+      holdableBlacklist:
+        components:
+        - ActiveScp096Rage
+        - ActiveScp096HeatingUp
+        - ActiveScp096WithoutFace
+    - type: ScpAnnounceOnSpawn
+      text: squad-commander-announce-on-spawn
+      channels:
+      - SpecialPurposeSquad
+      includeJobName: true
+    - type: SpeakOnEyeStateChange
+      phraseOnClose:
+      - close-eye-phrase-1
+      - close-eye-phrase-2
+      - close-eye-phrase-3
+      - close-eye-phrase-4
+      phraseOnOpen:
+      - open-eye-phrase-1
+      - open-eye-phrase-2
+      - open-eye-phrase-3
+      - open-eye-phrase-4
+      speakOnAutomaticBlinking: true
+    - type: Fear # переопределение компонента страха для СБ
+      phobias:
+      - Exoremophobia
+      - Necrophobia
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+      fearBasedSpreadAngleModifier:
+        Anxiety: 1.2
+        Fear: 2
+        Terror: 5
+      fearBasedGrainStrength:
+        None: 0
+        Anxiety: 70
+        Fear: 230
+        Terror: 550
+      fearBasedVignetteStrength:
+        None: 0
+        Anxiety: 30
+        Fear: 60
+        Terror: 350
+      baseJitterTime: 2
+      fallOffChance: 0.01
+
+- type: startingGear
+  id: SpecialPurposeUnitCommanderGear
+  equipment:
+    head: ClothingHeadHatCapLeatherSquadLeader
+    eyes: ClothingEyesGlassesSecurity
+    mask: ClothingMaskSecurityBandBlack
+    neck: ClothingNeckMantleSecurity
+    jumpsuit: ClothingUniformJumpsuitSquadLeader
+    outerClothing: ClothingOuterArmorSecurity
+    gloves: ClothingHandsGlovesColorBlackAlt
+    shoes: ClothingShoesBootsSecurityGuard
+    back: ClothingBackpackSecurity
+# Scp edit - disabled broken ported content.     suitstorage: WeaponSubMachineGunMP5
+    id: KeyCardSpecialPurposeUnitCommander
+    ears: ClothingHeadsetAltSpecialPurposeSquad
+    belt: ScpClothingBeltSecurityWebbingFilled
+# Scp edit - disabled broken ported content.     pocket1: WeaponPistolG22
+    pocket2: ScpSecurityPDA
+  storage:
+    back:
+    - ScpRadioHandheldSecurityEnabled

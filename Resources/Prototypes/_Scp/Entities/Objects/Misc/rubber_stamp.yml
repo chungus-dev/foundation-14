@@ -1,9 +1,9 @@
-﻿- type: entity
+- type: entity
   parent: [RubberStampBase, BaseCommandContraband]
-  id: RubberStampDirector
+  id: RubberStampFacilityDirector
   components:
   - type: Stamp
-    stampedName: stamp-component-stamped-name-director
+    stampedName: stamp-component-stamped-name-facility-director
     stampedColor: "#333333"
     stampState: "paper_stamp-cap"
   - type: Sprite
@@ -11,10 +11,10 @@
 
 - type: entity
   parent: [RubberStampBase, BaseCommandContraband]
-  id: RubberStampChiefTechnicalSpecialist
+  id: RubberStampChiefEngineer
   components:
   - type: Stamp
-    stampedName: stamp-component-stamped-name-chief-technical-specialist
+    stampedName: stamp-component-stamped-name-chief-engineer
     stampedColor: "#c69b17"
     stampState: "paper_stamp-ce"
   - type: Sprite
@@ -22,10 +22,10 @@
 
 - type: entity
   parent: [RubberStampBase, BaseCommandContraband]
-  id: RubberStampHeadOfMedicalSector
+  id: RubberStampChiefMedicalOfficer
   components:
   - type: Stamp
-    stampedName: stamp-component-stamped-name-head-of-medical-sector
+    stampedName: stamp-component-stamped-name-chief-medical-officer
     stampedColor: "#33ccff"
     stampState: "paper_stamp-cmo"
   - type: Sprite
@@ -33,10 +33,10 @@
 
 - type: entity
   parent: [RubberStampBase, BaseCommandContraband]
-  id: RubberStampPersonnelOfficer
+  id: RubberStampPersonnelManager
   components:
   - type: Stamp
-    stampedName: stamp-component-stamped-name-personnel-officer
+    stampedName: stamp-component-stamped-name-personnel-manager
     stampedColor: "#6ec0ea"
     stampState: "paper_stamp-hop"
   - type: Sprite
@@ -56,10 +56,10 @@
 - type: entity
   name: quartermaster's rubber stamp
   parent: [RubberStampBase, BaseCommandContraband]
-  id: RubberStampSeniorLogisticsOfficer
+  id: RubberStampQuartermaster
   components:
   - type: Stamp
-    stampedName: stamp-component-stamped-name-senior-logistics-officer
+    stampedName: stamp-component-stamped-name-quartermaster
     stampedColor: "#a23e3e"
     stampState: "paper_stamp-qm"
   - type: Sprite
@@ -67,10 +67,10 @@
 
 - type: entity
   parent: [RubberStampBase, BaseCommandContraband]
-  id: RubberStampScientificServiceDirector
+  id: RubberStampResearchDirector
   components:
   - type: Stamp
-    stampedName: stamp-component-stamped-name-scientific-service-director
+    stampedName: stamp-component-stamped-name-research-director
     stampedColor: "#1f66a0"
     stampState: "paper_stamp-rd"
   - type: Sprite

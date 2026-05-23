@@ -3,13 +3,13 @@
   tags:
   # Scp added start - новые доступы
   - Administration
-  - ComplexDirector
-  - ScientificServiceDirector
+  - FacilityDirector
+  - ScpResearchDirector
   - SecurityCommander
-  - ChiefTechnicalSpecialist
-  - PersonnelOfficer
-  - HeadOfMedicalSector
-  - SeniorLogisticsOfficer
+  - ScpChiefEngineer
+  - PersonnelManager
+  - ScpChiefMedicalOfficer
+  - ScpQuartermaster
   - EthicsCommittee
   - LifeSupport
   - Laboratory

@@ -1,7 +1,7 @@
-﻿- type: entity
-  id: IntercomHeavyContainmentSecurityService
+- type: entity
+  id: IntercomSpecialPurposeSquad
   parent: IntercomSecurity
-  suffix: HeavyContainmentSecurityService
+  suffix: SpecialPurposeSquad
   components:
   - type: ContainerFill
     containers:
@@ -9,12 +9,12 @@
       - IntercomElectronics
       key_slots:
       - EncryptionKeyCommon
-      - EncryptionKeyHeavyContainmentSecurityService
+      - EncryptionKeySpecialPurposeSquad
 
 - type: entity
-  id: IntercomExternalAdministrativeZoneSecurityService
-  parent: IntercomHeavyContainmentSecurityService
-  suffix: ExternalAdministrativeZoneSecurityService
+  id: IntercomCommandantSquad
+  parent: IntercomSpecialPurposeSquad
+  suffix: CommandantSquad
   components:
   - type: ContainerFill
     containers:
@@ -22,11 +22,11 @@
       - IntercomElectronics
       key_slots:
       - EncryptionKeyCommon
-      - EncryptionKeyExternalAdministrativeZoneSecurityService
+      - EncryptionKeyCommandantSquad
 
 - type: entity
   id: IntercomMasterZoneSecurityService
-  parent: IntercomHeavyContainmentSecurityService
+  parent: IntercomSpecialPurposeSquad
   suffix: MasterZoneSecurityService
   components:
   - type: ContainerFill
@@ -35,5 +35,5 @@
       - IntercomElectronics
       key_slots:
       - EncryptionKeyCommon
-      - EncryptionKeyExternalAdministrativeZoneSecurityService
-      - EncryptionKeyHeavyContainmentSecurityService
+      - EncryptionKeyCommandantSquad
+      - EncryptionKeySpecialPurposeSquad

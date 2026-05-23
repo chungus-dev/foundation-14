@@ -1,9 +1,9 @@
-ent-LockerHeavyContainmentZoneCommandantFilled = { ent-LockerHeavyContainmentZoneCommandant }
+ent-LockerSpecialPurposeUnitCommanderFilled = { ent-LockerSpecialPurposeUnitCommander }
     .suffix = Заполненный
-    .desc = { ent-LockerHeavyContainmentZoneCommandant.desc }
-ent-LockerHeavyContainmentZoneOfficerFilled = { ent-LockerHeavyContainmentZoneOfficer }
+    .desc = { ent-LockerSpecialPurposeUnitCommander.desc }
+ent-LockerSpecialPurposeSquadOfficerFilled = { ent-LockerSpecialPurposeSquadOfficer }
     .suffix = Заполненный
-    .desc = { ent-LockerHeavyContainmentZoneOfficer.desc }
+    .desc = { ent-LockerSpecialPurposeSquadOfficer.desc }
 ent-ScpLockerSpecialPurposeSquadFilledWardrobe = { ent-ScpLockerSpecialPurposeSquad }
     .suffix = Заполненный, Гардероб
     .desc = { ent-ScpLockerSpecialPurposeSquad.desc }

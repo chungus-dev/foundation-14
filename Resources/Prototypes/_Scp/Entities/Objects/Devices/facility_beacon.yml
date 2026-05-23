@@ -1,4 +1,4 @@
-﻿#====================================================================
+#====================================================================
 # SCP Facility Beacons
 #====================================================================
 
@@ -195,11 +195,11 @@
 
 - type: entity
   parent: ScpFacilityBeaconScientificService
-  id: ScpFacilityBeaconChiefResearcherOffice
-  suffix: Chief Researcher Office
+  id: ScpFacilityBeaconResearchDirectorOffice
+  suffix: Research Director Office
   components:
   - type: NavMapBeacon
-    defaultText: scp-facility-beacon-chief-researcher-office
+    defaultText: scp-facility-beacon-research-director-office
 
 - type: entity
   parent: ScpFacilityBeaconSecurity
@@ -252,11 +252,11 @@
 
 - type: entity
   parent: ScpFacilityBeaconSecurity
-  id: ScpFacilityBeaconHeadCommandantOffice
-  suffix: Head Commandant Office
+  id: ScpFacilityBeaconCommandantLeaderOffice
+  suffix: Commandant Leader Office
   components:
   - type: NavMapBeacon
-    defaultText: scp-facility-beacon-head-commandant-office
+    defaultText: scp-facility-beacon-commandant-leader-office
 
 - type: entity
   parent: ScpFacilityBeaconSecurity

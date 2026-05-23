@@ -1,3 +1,3 @@
-ent-ScpLockerLogisticsOfficerFilled = { ent-ScpLockerLogisticsOfficer }
+ent-ScpLockerLogisticianFilled = { ent-ScpLockerLogistician }
     .suffix = Filled
-    .desc = { ent-ScpLockerLogisticsOfficer.desc }
+    .desc = { ent-ScpLockerLogistician.desc }

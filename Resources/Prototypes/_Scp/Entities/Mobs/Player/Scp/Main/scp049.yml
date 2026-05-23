@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Scp049
   suffix: SCP-049
   parent:
@@ -42,7 +42,7 @@
     text: scp049-announce-on-spawn
     channels:
     - ScientificService
-    - HeavyContainmentSecurityService
+    - SpecialPurposeSquad
   - type: Inventory
     templateId: scp049
   - type: FieldOfView

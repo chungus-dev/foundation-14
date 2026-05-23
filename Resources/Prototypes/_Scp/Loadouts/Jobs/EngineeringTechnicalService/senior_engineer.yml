@@ -1,0 +1,120 @@
+- type: loadout
+  id: ScpLoadoutKeyCardSeniorEngineer
+  equipment:
+    id: KeyCardSeniorEngineer
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardSeniorEngineer
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardSeniorEngineer
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSeniorEngineer
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSeniorEngineer
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerRedHardHat
+  equipment:
+    head: ClothingHeadHatHardhatRed
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerOrangeHardHat
+  equipment:
+    head: ClothingHeadHatHardhatOrange
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerYellowHardHat
+  equipment:
+    head: ClothingHeadHatHardhatYellow
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerWorkBoots
+  equipment:
+    shoes: ClothingShoesBootsWork
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerDarkYellowHardHat
+  equipment:
+    head: ClothingHeadHatHardhatYellowDark
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerBlueHardHat
+  equipment:
+    head: ClothingHeadHatHardhatBlue
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerEngineeringBeret
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerGasMask
+  equipment:
+    mask: ClothingMaskGas
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerAtmosGasMask
+  equipment:
+    mask: ClothingMaskGasAtmos
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerWinterBoots
+  equipment:
+    shoes: ClothingShoesBootsWinterEngi
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerHazardVest
+  equipment:
+    outerClothing: ClothingOuterVestHazard
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerEngineeringWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterEngi
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerAtmosWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterAtmos
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerEngineeringBackpack
+  equipment:
+    back: ClothingBackpackEngineering
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerEngineeringSatchel
+  equipment:
+    back: ClothingBackpackSatchelEngineering
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerEngineeringDuffelbag
+  equipment:
+    back: ClothingBackpackDuffelEngineering
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerAtmosBackpack
+  equipment:
+    back: ClothingBackpackAtmospherics
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerAtmosSatchel
+  equipment:
+    back: ClothingBackpackSatchelAtmospherics
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerAtmosDuffelbag
+  equipment:
+    back: ClothingBackpackDuffelAtmospherics
+
+- type: loadout
+  id: ScpLoadoutSeniorEngineerOrangeGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorOrange

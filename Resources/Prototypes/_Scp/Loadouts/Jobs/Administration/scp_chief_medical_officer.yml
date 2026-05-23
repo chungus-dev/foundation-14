@@ -1,0 +1,94 @@
+# ID
+- type: loadout
+  id: ScpLoadoutKeyCardChiefMedicalOfficer
+  equipment:
+    id: KeyCardChiefMedicalOfficer
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardChiefMedicalOfficer
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardChiefMedicalOfficer
+
+# Ears
+- type: loadout
+  id: ScpLoadoutClothingHeadsetAltMedicalService
+  equipment:
+    ears: ClothingHeadsetAltMedicalService
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupEarsClothingHeadsetAltMedicalService
+  name: loadout-group-ears
+  loadouts:
+  - ScpLoadoutClothingHeadsetAltMedicalService
+
+# Head
+- type: loadout
+  id: ScpLoadoutChiefMedicalOfficerBeret
+  equipment:
+    head: ClothingHeadHatBeretCmo
+
+# Mask
+- type: loadout
+  id: ScpLoadoutChiefMedicalOfficerSterileMask
+  equipment:
+    mask: ClothingMaskSterile
+
+# Gloves
+- type: loadout
+  id: ScpLoadoutChiefMedicalOfficerNitrileGloves
+  equipment:
+    gloves: ClothingHandsGlovesNitrile
+
+# Jumpsuit
+- type: loadout
+  id: ScpLoadoutChiefMedicalOfficerJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCMO
+
+- type: loadout
+  id: ScpLoadoutChiefMedicalOfficerJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCMO
+
+- type: loadout
+  id: ScpLoadoutChiefMedicalOfficerTurtleneckJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCMOTurtle
+
+- type: loadout
+  id: ScpLoadoutChiefMedicalOfficerTurtleneckJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCMOTurtle
+
+# Neck
+- type: loadout
+  id: ScpLoadoutChiefMedicalOfficerMantle
+  equipment:
+    neck: ClothingNeckMantleCMO
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ScpMasterChiefMedicalOfficer
+
+# Outer Clothing
+- type: loadout
+  id: ScpLoadoutChiefMedicalOfficerLabCoat
+  equipment:
+    outerClothing: ClothingOuterCoatLabCmo
+
+- type: loadout
+  id: ScpLoadoutChiefMedicalOfficerWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterCMO
+
+# Pocket 2
+- type: loadout
+  id: ScpLoadoutChiefMedicalOfficerPDA
+  equipment:
+    pocket2: ChiefMedicalOfficerPDA
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupPocket2ChiefMedicalOfficerPDA
+  name: loadout-group-pda
+  loadouts:
+  - ScpLoadoutChiefMedicalOfficerPDA

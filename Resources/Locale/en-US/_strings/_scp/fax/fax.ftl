@@ -1,9 +1,9 @@
 fax-name-regional-administration = Regional Administration
 fax-name-o4-headquarters = O4 Headquarters
 fax-name-ethics-committee-office = Ethics Committee
-fax-name-complex-director-office = Complex Director's Office
+fax-name-facility-director-office = Facility Director's Office
 fax-name-encrypted = OSH&B*?*%!
-fax-name-chief-researcher-office = Chief Researcher's Office
+fax-name-research-director-office = Research Director's Office
 fax-name-security-commander-office = Chief of Security's Office
 fax-name-commandant-department = Commandant's Department
 fax-name-sps-department = SPS Department

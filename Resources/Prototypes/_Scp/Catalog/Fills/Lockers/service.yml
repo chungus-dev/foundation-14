@@ -1,6 +1,6 @@
 - type: entity
-  id: ScpClosetGastronomicSpecialistFilled
-  parent: ScpClosetGastronomicSpecialist
+  id: ScpClosetGastronomistFilled
+  parent: ScpClosetGastronomist
   suffix: Filled
   components:
   - type: EntityTableContainerFill

@@ -75,36 +75,36 @@
     - GeigerCounter
 
 - type: loadout
-  id: ScpLoadoutChiefTechnicalSpecialistFigurine
+  id: ScpLoadoutChiefEngineerFigurine
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobChiefTechnicalSpecialist
+      role: JobScpChiefEngineer
       time: 72000 # 20 hour
   storage:
     back:
     - ToyFigurineChiefEngineer
 
 - type: loadout
-  id: ScpLoadoutElectricalTechnicalSpecialistFigurine
+  id: ScpLoadoutElectricalEngineerFigurine
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobElectricalTechnicalSpecialist
+      role: JobElectricalEngineer
       time: 72000 # 20 hour
   storage:
     back:
     - ToyFigurineAtmosTech
 
 - type: loadout
-  id: ScpLoadoutGeneralTechnicalSpecialistFigurine
+  id: ScpLoadoutTechnicianFigurine
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobGeneralTechnicalSpecialist
+      role: JobTechnician
       time: 72000 # 20 hour
   storage:
     back:

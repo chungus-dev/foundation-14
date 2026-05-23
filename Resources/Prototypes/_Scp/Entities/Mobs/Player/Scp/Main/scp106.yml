@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent:
   - BaseScp
   - MobCombat
@@ -44,7 +44,7 @@
     text: scp106-announce-on-spawn
     channels:
     - ScientificService
-    - HeavyContainmentSecurityService
+    - SpecialPurposeSquad
   # - type: XenoScreech # SCP port: component unavailable in Foundation14
   - type: Muted
     allowed:

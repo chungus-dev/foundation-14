@@ -2946,7 +2946,7 @@ entities:
     - type: Transform
       pos: 1.5157478,-9.920592
       parent: 2
-- proto: PenDirector
+- proto: PenFacilityDirector
   entities:
   - uid: 519
     components:

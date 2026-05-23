@@ -1,0 +1,172 @@
+# ID
+- type: loadout
+  id: ScpLoadoutKeyCardChiefEngineer
+  equipment:
+    id: KeyCardChiefEngineer
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardChiefEngineer
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardChiefEngineer
+
+# Eyes
+- type: loadout
+  id: ScpLoadoutClothingEyesGlassesMeson
+  equipment:
+    eyes: ClothingEyesGlassesMeson
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupEyesClothingEyesGlassesMeson
+  name: loadout-group-eyes
+  loadouts:
+  - ScpLoadoutClothingEyesGlassesMeson
+
+# Ears
+- type: loadout
+  id: ScpLoadoutClothingHeadsetAltEngineeringTechnicalService
+  equipment:
+    ears: ClothingHeadsetAltEngineeringTechnicalService
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupEarsClothingHeadsetAltEngineeringTechnicalService
+  name: loadout-group-ears
+  loadouts:
+  - ScpLoadoutClothingHeadsetAltEngineeringTechnicalService
+
+# Belt
+- type: loadout
+  id: ScpLoadoutClothingBeltUtilityEngineering
+  equipment:
+    belt: ClothingBeltUtilityEngineering
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupBeltClothingBeltUtilityEngineering
+  name: loadout-group-belt
+  loadouts:
+  - ScpLoadoutClothingBeltUtilityEngineering
+
+# Jumpsuit
+- type: loadout
+  id: ScpLoadoutChiefEngineerJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChiefEngineer
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtChiefEngineer
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerTurtleneckJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChiefEngineerTurtle
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerTurtleneckJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtChiefEngineerTurtle
+
+# Neck
+- type: loadout
+  id: ScpLoadoutChiefEngineerScarf
+  equipment: {} # Scp edit - broken ported entries disabled.
+- type: loadout
+  id: ScpLoadoutChiefEngineerMantle
+  equipment:
+    neck: ClothingNeckMantleCE
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ScpMasterChiefEngineer
+
+# Outer Clothing
+- type: loadout
+  id: ScpLoadoutChiefEngineerChiefWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterCE
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerHazardVest
+  equipment:
+    outerClothing: ClothingOuterVestHazard
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerEngineeringWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterEngi
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerAtmosWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterAtmos
+
+# Shoes
+- type: loadout
+  id: ScpLoadoutChiefEngineerWinterBoots
+  equipment:
+    shoes: ClothingShoesBootsWinterEngi
+
+# Gloves
+- type: loadout
+  id: ScpLoadoutChiefEngineerOrangeGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorOrange
+
+# Head
+- type: loadout
+  id: ScpLoadoutChiefEngineerEngineeringBeret
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerWhiteHardHat
+  equipment:
+    head: ClothingHeadHatHardhatWhite
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerRedHardHat
+  equipment:
+    head: ClothingHeadHatHardhatRed
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerOrangeHardHat
+  equipment:
+    head: ClothingHeadHatHardhatOrange
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerYellowHardHat
+  equipment:
+    head: ClothingHeadHatHardhatYellow
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerDarkYellowHardHat
+  equipment:
+    head: ClothingHeadHatHardhatYellowDark
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerBlueHardHat
+  equipment:
+    head: ClothingHeadHatHardhatBlue
+
+# Mask
+- type: loadout
+  id: ScpLoadoutChiefEngineerGasMask
+  equipment:
+    mask: ClothingMaskGas
+
+- type: loadout
+  id: ScpLoadoutChiefEngineerAtmosGasMask
+  equipment:
+    mask: ClothingMaskGasAtmos
+
+# Pocket 2
+- type: loadout
+  id: ScpLoadoutChiefEngineerPDA
+  equipment:
+    pocket2: ChiefEngineerPDA
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupPocket2ChiefEngineerPDA
+  name: loadout-group-pda
+  loadouts:
+  - ScpLoadoutChiefEngineerPDA

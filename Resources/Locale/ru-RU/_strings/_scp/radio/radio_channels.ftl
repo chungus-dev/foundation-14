@@ -1,8 +1,8 @@
 chat-radio-regional-administration = Региональное управление
 chat-radio-administration = Руководство
 chat-radio-ethics-committee = Комитет по этике
-chat-radio-heavy-containment-security-service = ОСН
-chat-radio-external-administrative-zone-security-service = Коменданты
+chat-radio-special-purpose-squad = ОСН
+chat-radio-commandant-squad = Коменданты
 chat-radio-scientific-service = Научная служба
 chat-radio-medical-service = Медицинский
 chat-radio-engineering-technical-service = Инженерно-технический

@@ -88,19 +88,11 @@
   groupBy: towels
 
 - type: loadout
-  id: ScpLoadoutClothingWraps
-  storage:
-    back:
-- type: loadout
   id: ScpLoadoutClothingHeadHatFlowerWreath
   storage:
     back:
     - ClothingHeadHatFlowerWreath
 
-- type: loadout
-  id: ScpLoadoutClothingWrapsHigh
-  storage:
-    back:
 - type: loadout
   id: ScpLoadoutClothingHeadHatHairflower
   storage:

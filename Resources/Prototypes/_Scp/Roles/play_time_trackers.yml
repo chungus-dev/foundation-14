@@ -1,25 +1,25 @@
 # Руководство
 
 - type: playTimeTracker
-  id: JobDirector
+  id: JobFacilityDirector
 
 - type: playTimeTracker
-  id: JobScientificServiceDirector
+  id: JobScpResearchDirector
 
 - type: playTimeTracker
   id: JobSecurityCommander
 
 - type: playTimeTracker
-  id: JobChiefTechnicalSpecialist
+  id: JobScpChiefEngineer
 
 - type: playTimeTracker
-  id: JobPersonnelOfficer
+  id: JobPersonnelManager
 
 - type: playTimeTracker
-  id: JobHeadOfMedicalSector
+  id: JobScpChiefMedicalOfficer
 
 - type: playTimeTracker
-  id: JobSeniorLogisticsOfficer
+  id: JobScpQuartermaster
 
 # Комитет по этике
 
@@ -29,94 +29,94 @@
 # Служба безопасности тяжелой зоны
 
 - type: playTimeTracker
-  id: JobHeavyContainmentZoneCommandant
+  id: JobSpecialPurposeUnitCommander
 
 - type: playTimeTracker
-  id: JobSeniorHeavyContainmentZoneOfficer
+  id: JobSeniorSpecialPurposeSquadOfficer
 
 - type: playTimeTracker
-  id: JobHeavyContainmentZoneOfficer
+  id: JobSpecialPurposeSquadOfficer
 
 - type: playTimeTracker
-  id: JobJuniorHeavyContainmentZoneOfficer
+  id: JobJuniorSpecialPurposeSquadOfficer
 
 - type: playTimeTracker
-  id: JobFieldMedicalSpecialist
+  id: JobAmnesticologist
 
-# Служба безопасности внешней административной зоны
-
-- type: playTimeTracker
-  id: JobExternalAdministrativeZoneCommandant
+# Комендантский отряд
 
 - type: playTimeTracker
-  id: JobSeniorExternalAdministrativeZoneOfficer
+  id: JobCommandantLeader
 
 - type: playTimeTracker
-  id: JobExternalAdministrativeZoneOfficer
+  id: JobSeniorCommandant
 
 - type: playTimeTracker
-  id: JobJuniorExternalAdministrativeZoneOfficer
+  id: JobCommandant
+
+- type: playTimeTracker
+  id: JobJuniorCommandant
 
 # Научный отдел
 
 - type: playTimeTracker
-  id: JobLeadResearcher
+  id: JobSeniorResearcher
 
 - type: playTimeTracker
-  id: JobAnomarchologyResearcher
+  id: JobResearcher
 
 - type: playTimeTracker
-  id: JobProductionSpecialist
+  id: JobManufacturingSpecialist
 
 - type: playTimeTracker
-  id: JobJuniorResearcher
+  id: JobLaboratoryPractitioner
 
 # Медицинский отдел
 
 - type: playTimeTracker
-  id: JobSeniorMedicalSpecialist
+  id: JobSeniorPhysician
 
 - type: playTimeTracker
-  id: JobPharmaceuticalSpecialist
+  id: JobPharmacist
 
 - type: playTimeTracker
-  id: JobMedicalSpecialist
+  id: JobPhysician
 
 - type: playTimeTracker
-  id: JobPsychotherapist
+  id: JobParapsychologist
 
 - type: playTimeTracker
-  id: JobHospitalIntern
+  id: JobAssistantPhysician
 
 # Инженерный отдел
 
 - type: playTimeTracker
-  id: JobLeadTechnicalSpecialist
+  id: JobSeniorEngineer
 
 - type: playTimeTracker
-  id: JobGeneralTechnicalSpecialist
+  id: JobTechnician
 
 - type: playTimeTracker
-  id: JobElectricalTechnicalSpecialist
+  id: JobElectricalEngineer
 
 - type: playTimeTracker
-  id: JobTechnicalTrainee
+  id: JobTraineeTechnician
 
 # Отдел логистики
 
 - type: playTimeTracker
-  id: JobLogisticsOfficer
+  id: JobLogistician
 
 # Департамент продовольственного и санитарного обслуживания
 
 - type: playTimeTracker
-  id: JobGastronomicSpecialist
+  id: JobGastronomist
 
 - type: playTimeTracker
   id: JobBotanistPhytogeneticist
 
 - type: playTimeTracker
-  id: JobServicePersonnel
+  id: JobServiceStaff
 
 # Класс Д
 

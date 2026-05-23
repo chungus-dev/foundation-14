@@ -1,11 +1,11 @@
 access-name-administration = Administration
-access-name-complex-director = { job-name-complex-director }
-access-name-scientific-service-director = { job-name-scientific-service-director }
+access-name-facility-director = { job-name-facility-director }
+access-name-research-director = { job-name-research-director }
 access-name-security-commander = { job-name-security-commander }
-access-name-chief-technical-specialist = { job-name-chief-technical-specialist }
-access-name-personnel-officer = { job-name-personnel-officer }
-access-name-head-of-medical-sector = { job-name-head-of-medical-sector }
-access-name-senior-logistics-officer = { job-name-senior-logistics-officer }
+access-name-chief-engineer = { job-name-chief-engineer }
+access-name-personnel-manager = { job-name-personnel-manager }
+access-name-chief-medical-officer = { job-name-chief-medical-officer }
+access-name-quartermaster = { job-name-quartermaster }
 access-name-ethics-committee = Ethics Committee
 access-name-life-support = Life Support
 access-name-laboratory = Laboratory

@@ -18383,7 +18383,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 41.5,15.5
       parent: 2
-- proto: RadioHandheldExternalAdministrativeZoneSecurityService
+- proto: RadioHandheldCommandantSquad
   entities:
   - uid: 4944
     components:
@@ -18718,7 +18718,7 @@ entities:
     - type: Transform
       pos: -31.5,12.5
       parent: 2
-- proto: ScpAirlockChiefTechnicalSpecialistLocked
+- proto: ScpAirlockChiefEngineerLocked
   entities:
   - uid: 3125
     components:
@@ -19715,7 +19715,7 @@ entities:
     - type: Transform
       pos: 29.5,13.5
       parent: 2
-- proto: ScpLockerGeneralTechnicalSpecialistFilled
+- proto: ScpLockerTechnicianFilled
   entities:
   - uid: 3974
     components:

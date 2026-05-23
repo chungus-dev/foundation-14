@@ -1,8 +1,8 @@
-ent-ClothingHeadsetHeavyContainmentSecurityService = { ent-ClothingHeadset } Security Service
+ent-ClothingHeadsetSpecialPurposeSquad = { ent-ClothingHeadset } Security Service
     .desc = { ent-ClothingHeadset.desc }
-ent-ClothingHeadsetFieldMedicalSpecialist = { ent-ClothingHeadset } an anesthesiologist
+ent-ClothingHeadsetAmnesticologist = { ent-ClothingHeadset } an amnesticologist
     .desc = { ent-ClothingHeadset.desc }
-ent-ClothingHeadsetExternalAdministrativeZoneSecurityService = { ent-ClothingHeadsetHeavyContainmentSecurityService }
+ent-ClothingHeadsetCommandantSquad = { ent-ClothingHeadsetSpecialPurposeSquad }
     .desc = { ent-ClothingHeadset.desc }
 ent-ClothingHeadsetScientificService = { ent-ClothingHeadset } Scientific Service
     .desc = { ent-ClothingHeadset.desc }

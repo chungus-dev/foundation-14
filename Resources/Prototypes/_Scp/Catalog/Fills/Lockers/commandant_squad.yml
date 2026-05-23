@@ -1,7 +1,7 @@
 - type: entity
-  id: LockerExternalAdministrativeZoneCommandantFilled
+  id: LockerCommandantLeaderFilled
   suffix: Filled
-  parent: LockerExternalAdministrativeZoneCommandant
+  parent: LockerCommandantLeader
   components:
   - type: EntityTableContainerFill
     containers:
@@ -10,7 +10,7 @@
         - id: FlashlightSeclite
         - id: ClothingBeltSecurityFilled
         - id: Flash
-        - id: ClothingHeadsetAltExternalAdministrativeZoneSecurityService
+        - id: ClothingHeadsetAltCommandantSquad
         - id: ClothingEyesGlassesSecurityGuard
         - id: ClothingHandsGlovesCombat
         - id: ClothingShoesBootsSecurityGuard
@@ -25,9 +25,9 @@
         - id: HandLabeler
 
 - type: entity
-  id: LockerExternalAdministrativeZoneOfficerFilled
+  id: LockerCommandantFilled
   suffix: Filled
-  parent: LockerExternalAdministrativeZoneOfficer
+  parent: LockerCommandant
   components:
   - type: EntityTableContainerFill
     containers:
@@ -48,7 +48,7 @@
           prob: 0.5
         - id: ClothingEyesGlassesSecurityGuard
         - id: ClothingMaskSecurityBandBlack
-        - id: ClothingHeadsetExternalAdministrativeZoneSecurityService
+        - id: ClothingHeadsetCommandantSquad
         - id: ClothingHandsGlovesSecurity
         - id: ClothingShoesBootsSecurityGuard
         - id: WeaponMeleeNeedle

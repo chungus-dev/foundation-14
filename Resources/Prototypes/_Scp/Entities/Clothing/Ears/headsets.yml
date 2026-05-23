@@ -2,28 +2,28 @@
 
 - type: entity
   parent: [BaseScpHeadset, BaseSecurityLawyerContraband]
-  id: ClothingHeadsetHeavyContainmentSecurityService
+  id: ClothingHeadsetSpecialPurposeSquad
   components:
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyHeavyContainmentSecurityService
+      - EncryptionKeySpecialPurposeSquad
   - type: Sprite
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/security.rsi
 
-# Служба безопасности внешней административной зоны
+# Комендантский отряд
 
 - type: entity
   parent: [BaseScpHeadset, BaseSecurityContraband]
-  id: ClothingHeadsetFieldMedicalSpecialist
+  id: ClothingHeadsetAmnesticologist
   components:
   - type: ContainerFill
     containers:
       key_slots:
       - EncryptionKeyMedicalService
-      - EncryptionKeyExternalAdministrativeZoneSecurityService
+      - EncryptionKeyCommandantSquad
   - type: Sprite
     sprite: Clothing/Ears/Headsets/brigmedic.rsi
   - type: Clothing
@@ -31,12 +31,12 @@
 
 - type: entity
   parent: [BaseScpHeadset, BaseSecurityLawyerContraband]
-  id: ClothingHeadsetExternalAdministrativeZoneSecurityService
+  id: ClothingHeadsetCommandantSquad
   components:
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyExternalAdministrativeZoneSecurityService
+      - EncryptionKeyCommandantSquad
   - type: Sprite
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing

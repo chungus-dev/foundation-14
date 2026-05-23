@@ -1,0 +1,9 @@
+job-name-special-purpose-unit-commander = Командир ОСН
+job-description-special-purpose-unit-commander = Командир отряда специального назначения. Он отвечает за безопасность объектов и координирует операции по противодействию объектам в сценарии НОУС.
+job-name-senior-special-purpose-squad-officer = Старший офицер ОСН
+job-description-senior-special-purpose-squad-officer = Старший офицер отряда специального назначения. Уже не первый день на службе в отряда, разбирается как работать в критических ситуациях как в штатных.
+job-name-special-purpose-squad-officer = Офицер ОСН
+job-description-special-purpose-squad-officer = Офицер отряда специального назначения. Он обеспечивает безопасность объектов, а также противодействует им в сценарии НОУС.
+job-name-junior-special-purpose-squad-officer = Младший офицер ОСН
+job-description-junior-special-purpose-squad-officer = Только заступивший на службу младший офицер отряда специального назначения. Он помогает старшим офицерам следить за объектами в комплексе.
+job-supervisors-special-purpose-unit-commander = командиру ОСН

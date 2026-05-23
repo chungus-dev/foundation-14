@@ -63,24 +63,24 @@
 
 - type: entity
   parent: FaxMachineBase
-  id: FaxMachineDirector
-  name: director fax machine
+  id: FaxMachineFacilityDirector
+  name: facility director fax machine
   suffix: NukeCodes
   components:
   - type: FaxMachine
-    name: fax-name-complex-director-office
+    name: fax-name-facility-director-office
     receiveNukeCodes: true
   - type: StealTarget
     stealGroup: FaxMachineCaptain
-  - type: ScpDirectorFax
+  - type: ScpFacilityDirectorFax
 
 - type: entity
   parent: FaxMachineBase
-  id: FaxMachineChiefResearcher
-  name: chief researcher fax machine
+  id: FaxMachineResearchDirector
+  name: research director fax machine
   components:
   - type: FaxMachine
-    name: fax-name-chief-researcher-office
+    name: fax-name-research-director-office
 
 - type: entity
   parent: FaxMachineBase

@@ -1,6 +1,6 @@
-ent-ScpClosetGastronomicSpecialistFilled = { ent-ScpClosetGastronomicSpecialist }
+ent-ScpClosetGastronomistFilled = { ent-ScpClosetGastronomist }
     .suffix = Filled
-    .desc = { ent-ScpClosetGastronomicSpecialist.desc }
+    .desc = { ent-ScpClosetGastronomist.desc }
 ent-ScpClosetJanitorFilled = { ent-ScpClosetJanitor }
     .suffix = Filled
     .desc = { ent-ScpClosetJanitor.desc }

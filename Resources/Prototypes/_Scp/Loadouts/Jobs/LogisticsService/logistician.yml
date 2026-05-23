@@ -1,0 +1,73 @@
+- type: loadout
+  id: ScpLoadoutKeyCardLogistician
+  equipment:
+    id: KeyCardLogistician
+
+- type: loadout
+  id: ScpLoadoutClothingHeadsetLogistics
+  equipment:
+    ears: ClothingHeadsetLogistics
+
+- type: loadout
+  id: ScpLoadoutAppraisalTool
+  equipment:
+    pocket1: AppraisalTool
+
+- type: loadout
+  id: ScpLoadoutScpLogisticsPDA
+  equipment:
+    pocket2: ScpLogisticsPDA
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardLogistician
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardLogistician
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupEarsClothingHeadsetLogistics
+  name: loadout-group-ears
+  loadouts:
+  - ScpLoadoutClothingHeadsetLogistics
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupPocket1AppraisalTool
+  name: loadout-group-storage
+  loadouts:
+  - ScpLoadoutAppraisalTool
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupPocket2ScpLogisticsPDA
+  name: loadout-group-pda
+  loadouts:
+  - ScpLoadoutScpLogisticsPDA
+
+- type: loadout
+  id: ScpLoadoutLogisticianSoftCap
+  equipment:
+    head: ClothingHeadHatCargosoft
+
+- type: loadout
+  id: ScpLoadoutLogisticianJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCargo
+
+- type: loadout
+  id: ScpLoadoutLogisticianJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCargo
+
+- type: loadout
+  id: ScpLoadoutLogisticianWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterCargo
+
+- type: loadout
+  id: ScpLoadoutLogisticianWinterBoots
+  equipment:
+    shoes: ClothingShoesBootsWinterCargo
+
+- type: loadout
+  id: ScpLoadoutLogisticianOrangeGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorOrange

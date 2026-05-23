@@ -584,13 +584,13 @@
     # Scp added start - новые доступы
     accessLevels:
     - Administration
-    - ComplexDirector
-    - ScientificServiceDirector
+    - FacilityDirector
+    - ResearchDirector
     - SecurityCommander
-    - ChiefTechnicalSpecialist
-    - PersonnelOfficer
-    - HeadOfMedicalSector
-    - SeniorLogisticsOfficer
+    - ChiefEngineer
+    - PersonnelManager
+    - ChiefMedicalOfficer
+    - Quartermaster
     - EthicsCommittee
     - LifeSupport
     - Laboratory
@@ -980,7 +980,7 @@
   - type: CargoOrderConsole
     account: Engineering
     announcementChannel: Engineering
-    removeLimitAccess: [ "ChiefTechnicalSpecialist" ] # Scp edit
+    removeLimitAccess: [ "ChiefEngineer" ] # Scp edit
     mode: SendToPrimary
   - type: ActiveRadio
     channels:
@@ -1014,7 +1014,7 @@
   - type: CargoOrderConsole
     account: Medical
     announcementChannel: Medical
-    removeLimitAccess: [ "HeadOfMedicalSector" ] # Scp edit
+    removeLimitAccess: [ "ChiefMedicalOfficer" ] # Scp edit
     mode: SendToPrimary
   - type: ActiveRadio
     channels:
@@ -1048,7 +1048,7 @@
   - type: CargoOrderConsole
     account: Science
     announcementChannel: Science
-    removeLimitAccess: [ "ScientificServiceDirector" ] # Scp edit
+    removeLimitAccess: [ "ResearchDirector" ] # Scp edit
     mode: SendToPrimary
   - type: ActiveRadio
     channels:
@@ -1116,7 +1116,7 @@
   - type: CargoOrderConsole
     account: Service
     announcementChannel: Service
-    removeLimitAccess: [ "PersonnelOfficer" ] # Scp edit
+    removeLimitAccess: [ "PersonnelManager" ] # Scp edit
     mode: SendToPrimary
   - type: ActiveRadio
     channels:
@@ -1193,7 +1193,7 @@
     key: enum.FundingAllocationConsoleUiKey.Key
   - type: ActivatableUIRequiresAccess
   - type: AccessReader
-    access: [["PersonnelOfficer"]] # Scp edit
+    access: [["PersonnelManager"]] # Scp edit
   - type: UserInterface
     interfaces:
       enum.FundingAllocationConsoleUiKey.Key:
@@ -1617,7 +1617,7 @@
   - type: Computer
     board: RoboticsConsoleCircuitboard
   - type: AccessReader # only used for dangerous things
-    access: [["ScientificServiceDirector"]] # Scp edit
+    access: [["ResearchDirector"]] # Scp edit
   - type: Lock
     unlockOnClick: false
 
@@ -1689,7 +1689,7 @@
   - type: Computer
     board: StationAiUploadCircuitboard
   - type: AccessReader
-    access: [ [ "ScientificServiceDirector" ] ] # Scp edit
+    access: [ [ "ResearchDirector" ] ] # Scp edit
   - type: Lock
     unlockOnClick: false
   - type: SiliconLawUpdater

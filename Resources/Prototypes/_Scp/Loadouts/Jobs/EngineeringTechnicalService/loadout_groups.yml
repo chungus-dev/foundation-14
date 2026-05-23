@@ -11,42 +11,42 @@
   - ScpLoadoutEngineeringTechnicalServiceFlashlightLantern
   - ScpLoadoutEngineeringTechnicalServiceGasAnalyzer
   - ScpLoadoutEngineeringTechnicalServiceGeigerCounter
-  - ScpLoadoutGeneralTechnicalSpecialistFigurine
-  - ScpLoadoutElectricalTechnicalSpecialistFigurine
-  - ScpLoadoutChiefTechnicalSpecialistFigurine
+  - ScpLoadoutTechnicianFigurine
+  - ScpLoadoutElectricalEngineerFigurine
+  - ScpLoadoutChiefEngineerFigurine
   - ScpLoadoutEngineeringTechnicalServiceSingularityToy
 
 # Lead Technical Specialist
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupLeadTechnicalSpecialistHead
+  id: ScpLoadoutGroupSeniorEngineerHead
   name: loadout-group-head
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutLeadTechnicalSpecialistEngineeringBeret
+  - ScpLoadoutSeniorEngineerEngineeringBeret
   - ScpLoadoutClothingHeadBandRed
-  - ScpLoadoutLeadTechnicalSpecialistRedHardHat
-  - ScpLoadoutLeadTechnicalSpecialistOrangeHardHat
-  - ScpLoadoutLeadTechnicalSpecialistYellowHardHat
-  - ScpLoadoutLeadTechnicalSpecialistDarkYellowHardHat
-  - ScpLoadoutLeadTechnicalSpecialistBlueHardHat
+  - ScpLoadoutSeniorEngineerRedHardHat
+  - ScpLoadoutSeniorEngineerOrangeHardHat
+  - ScpLoadoutSeniorEngineerYellowHardHat
+  - ScpLoadoutSeniorEngineerDarkYellowHardHat
+  - ScpLoadoutSeniorEngineerBlueHardHat
   - ScpLoadoutClothingHeadHatRedsoft
   - ScpLoadoutClothingHeadHatOrangesoft
   - ScpLoadoutClothingHeadHatYellowsoft
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupLeadTechnicalSpecialistMask
+  id: ScpLoadoutGroupSeniorEngineerMask
   name: loadout-group-mask
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutLeadTechnicalSpecialistGasMask
-  - ScpLoadoutLeadTechnicalSpecialistAtmosGasMask
+  - ScpLoadoutSeniorEngineerGasMask
+  - ScpLoadoutSeniorEngineerAtmosGasMask
   - ScpLoadoutClothingMaskBandRed
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupLeadTechnicalSpecialistNeck
+  id: ScpLoadoutGroupSeniorEngineerNeck
   name: loadout-group-neck
   minLimit: 0
   maxLimit: 1
@@ -57,27 +57,27 @@
   - ScpLoadoutClothingNeckTieRed
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupLeadTechnicalSpecialistOuterClothing
+  id: ScpLoadoutGroupSeniorEngineerOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutLeadTechnicalSpecialistHazardVest
-  - ScpLoadoutLeadTechnicalSpecialistEngineeringWinterCoat
-  - ScpLoadoutLeadTechnicalSpecialistAtmosWinterCoat
+  - ScpLoadoutSeniorEngineerHazardVest
+  - ScpLoadoutSeniorEngineerEngineeringWinterCoat
+  - ScpLoadoutSeniorEngineerAtmosWinterCoat
   - ScpLoadoutClothingOuterWinterColorRed
   - ScpLoadoutClothingOuterWinterColorOrange
   - ScpLoadoutClothingOuterWinterColorYellow
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupLeadTechnicalSpecialistJumpsuit
+  id: ScpLoadoutGroupSeniorEngineerJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutLeadTechnicalSpecialistJumpsuit
-  - ScpLoadoutLeadTechnicalSpecialistJumpskirt
+  - ScpLoadoutSeniorEngineerJumpsuit
+  - ScpLoadoutSeniorEngineerJumpskirt
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupLeadTechnicalSpecialistGloves
+  id: ScpLoadoutGroupSeniorEngineerGloves
   name: loadout-group-gloves
   minLimit: 0
   maxLimit: 1
@@ -85,65 +85,65 @@
   - ScpLoadoutClothingHandsGlovesFingerlessInsulated
   - ScpLoadoutClothingHandsGlovesColorYellowBudget
   - ScpLoadoutClothingHandsGlovesColorRed
-  - ScpLoadoutLeadTechnicalSpecialistOrangeGloves
+  - ScpLoadoutSeniorEngineerOrangeGloves
   - ScpLoadoutClothingHandsGlovesColorTeal
   - ScpLoadoutClothingHandsGlovesColorWhite
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupLeadTechnicalSpecialistShoes
+  id: ScpLoadoutGroupSeniorEngineerShoes
   name: loadout-group-shoes
   minLimit: 1
   maxLimit: 1
   loadouts:
   - ScpLoadoutClothingShoesColorBrown
-  - ScpLoadoutLeadTechnicalSpecialistWorkBoots
-  - ScpLoadoutLeadTechnicalSpecialistWinterBoots
+  - ScpLoadoutSeniorEngineerWorkBoots
+  - ScpLoadoutSeniorEngineerWinterBoots
   - ScpLoadoutClothingShoesColorRed
   - ScpLoadoutClothingShoesColorOrange
   - ScpLoadoutClothingShoesColorYellow
   - ScpLoadoutClothingShoesColorWhite
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupLeadTechnicalSpecialistBackpack
+  id: ScpLoadoutGroupSeniorEngineerBackpack
   name: loadout-group-backpack
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - ScpLoadoutLeadTechnicalSpecialistEngineeringBackpack
-  - ScpLoadoutLeadTechnicalSpecialistEngineeringSatchel
-  - ScpLoadoutLeadTechnicalSpecialistEngineeringDuffelbag
-  - ScpLoadoutLeadTechnicalSpecialistAtmosBackpack
-  - ScpLoadoutLeadTechnicalSpecialistAtmosSatchel
-  - ScpLoadoutLeadTechnicalSpecialistAtmosDuffelbag
+  - ScpLoadoutSeniorEngineerEngineeringBackpack
+  - ScpLoadoutSeniorEngineerEngineeringSatchel
+  - ScpLoadoutSeniorEngineerEngineeringDuffelbag
+  - ScpLoadoutSeniorEngineerAtmosBackpack
+  - ScpLoadoutSeniorEngineerAtmosSatchel
+  - ScpLoadoutSeniorEngineerAtmosDuffelbag
 
 # General Technical Specialist
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGeneralTechnicalSpecialistHead
+  id: ScpLoadoutGroupTechnicianHead
   name: loadout-group-head
   minLimit: 0
   loadouts:
-  - ScpLoadoutGeneralTechnicalSpecialistEngineeringBeret
+  - ScpLoadoutTechnicianEngineeringBeret
   - ScpLoadoutClothingHeadBandRed
-  - ScpLoadoutGeneralTechnicalSpecialistDarkYellowHardHat
-  - ScpLoadoutGeneralTechnicalSpecialistYellowHardHat
-  - ScpLoadoutGeneralTechnicalSpecialistOrangeHardHat
-  - ScpLoadoutGeneralTechnicalSpecialistRedHardHat
+  - ScpLoadoutTechnicianDarkYellowHardHat
+  - ScpLoadoutTechnicianYellowHardHat
+  - ScpLoadoutTechnicianOrangeHardHat
+  - ScpLoadoutTechnicianRedHardHat
   - ScpLoadoutClothingHeadHatRedsoft
   - ScpLoadoutClothingHeadHatOrangesoft
   - ScpLoadoutClothingHeadHatYellowsoft
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGeneralTechnicalSpecialistMask
+  id: ScpLoadoutGroupTechnicianMask
   name: loadout-group-mask
   minLimit: 0
   maxLimit: 1
   loadouts:
   - ScpLoadoutClothingMaskBandRed
-  - ScpLoadoutGeneralTechnicalSpecialistGasMask
+  - ScpLoadoutTechnicianGasMask
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGeneralTechnicalSpecialistNeck
+  id: ScpLoadoutGroupTechnicianNeck
   name: loadout-group-neck
   minLimit: 0
   maxLimit: 1
@@ -153,7 +153,7 @@
   - ScpLoadoutClothingNeckTieRed
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGeneralTechnicalSpecialistOuterClothing
+  id: ScpLoadoutGroupTechnicianOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   loadouts:
@@ -164,15 +164,15 @@
   - ScpLoadoutClothingOuterWinterColorYellow
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGeneralTechnicalSpecialistJumpsuit
+  id: ScpLoadoutGroupTechnicianJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutGeneralTechnicalSpecialistJumpsuit
-  - ScpLoadoutGeneralTechnicalSpecialistJumpskirt
-  - ScpLoadoutGeneralTechnicalSpecialistHazardJumpsuit
+  - ScpLoadoutTechnicianJumpsuit
+  - ScpLoadoutTechnicianJumpskirt
+  - ScpLoadoutTechnicianHazardJumpsuit
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGeneralTechnicalSpecialistGloves
+  id: ScpLoadoutGroupTechnicianGloves
   name: loadout-group-gloves
   minLimit: 0
   maxLimit: 1
@@ -183,7 +183,7 @@
   - ScpLoadoutEngineeringTechnicalServiceOrangeGloves
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGeneralTechnicalSpecialistShoes
+  id: ScpLoadoutGroupTechnicianShoes
   name: loadout-group-shoes
   loadouts:
   - ScpLoadoutEngineeringTechnicalServiceWorkBoots
@@ -193,7 +193,7 @@
   - ScpLoadoutClothingShoesColorYellow
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupGeneralTechnicalSpecialistBackpack
+  id: ScpLoadoutGroupTechnicianBackpack
   name: loadout-group-backpack
   loadouts:
   - ScpLoadoutEngineeringTechnicalServiceEngineeringBackpack
@@ -203,34 +203,34 @@
 # Electrical Technical Specialist
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupElectricalTechnicalSpecialistHead
+  id: ScpLoadoutGroupElectricalEngineerHead
   name: loadout-group-head
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutElectricalTechnicalSpecialistEngineeringBeret
+  - ScpLoadoutElectricalEngineerEngineeringBeret
   - ScpLoadoutClothingHeadBandRed
-  - ScpLoadoutElectricalTechnicalSpecialistRedHardHat
-  - ScpLoadoutElectricalTechnicalSpecialistOrangeHardHat
-  - ScpLoadoutElectricalTechnicalSpecialistYellowHardHat
-  - ScpLoadoutElectricalTechnicalSpecialistDarkYellowHardHat
-  - ScpLoadoutElectricalTechnicalSpecialistBlueHardHat
+  - ScpLoadoutElectricalEngineerRedHardHat
+  - ScpLoadoutElectricalEngineerOrangeHardHat
+  - ScpLoadoutElectricalEngineerYellowHardHat
+  - ScpLoadoutElectricalEngineerDarkYellowHardHat
+  - ScpLoadoutElectricalEngineerBlueHardHat
   - ScpLoadoutClothingHeadHatRedsoft
   - ScpLoadoutClothingHeadHatOrangesoft
   - ScpLoadoutClothingHeadHatYellowsoft
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupElectricalTechnicalSpecialistMask
+  id: ScpLoadoutGroupElectricalEngineerMask
   name: loadout-group-mask
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ScpLoadoutElectricalTechnicalSpecialistGasMask
-  - ScpLoadoutElectricalTechnicalSpecialistAtmosGasMask
+  - ScpLoadoutElectricalEngineerGasMask
+  - ScpLoadoutElectricalEngineerAtmosGasMask
   - ScpLoadoutClothingMaskBandRed
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupElectricalTechnicalSpecialistNeck
+  id: ScpLoadoutGroupElectricalEngineerNeck
   name: loadout-group-neck
   minLimit: 0
   maxLimit: 1
@@ -241,26 +241,26 @@
   - ScpLoadoutClothingNeckTieRed
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupElectricalTechnicalSpecialistOuterClothing
+  id: ScpLoadoutGroupElectricalEngineerOuterClothing
   name: loadout-group-outer-clothing
   minLimit: 0
   loadouts:
-  - ScpLoadoutElectricalTechnicalSpecialistAtmosWinterCoat
+  - ScpLoadoutElectricalEngineerAtmosWinterCoat
   - ScpLoadoutEngineeringTechnicalServiceHazardVest
   - ScpLoadoutClothingOuterWinterColorRed
   - ScpLoadoutClothingOuterWinterColorOrange
   - ScpLoadoutClothingOuterWinterColorYellow
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupElectricalTechnicalSpecialistJumpsuit
+  id: ScpLoadoutGroupElectricalEngineerJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutElectricalTechnicalSpecialistJumpsuit
-  - ScpLoadoutElectricalTechnicalSpecialistJumpskirt
-  - ScpLoadoutElectricalTechnicalSpecialistCasualJumpsuit
+  - ScpLoadoutElectricalEngineerJumpsuit
+  - ScpLoadoutElectricalEngineerJumpskirt
+  - ScpLoadoutElectricalEngineerCasualJumpsuit
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupElectricalTechnicalSpecialistGloves
+  id: ScpLoadoutGroupElectricalEngineerGloves
   name: loadout-group-gloves
   minLimit: 0
   maxLimit: 1
@@ -268,33 +268,33 @@
   - ScpLoadoutClothingHandsGlovesFingerlessInsulated
   - ScpLoadoutClothingHandsGlovesColorYellowBudget
   - ScpLoadoutClothingHandsGlovesColorRed
-  - ScpLoadoutElectricalTechnicalSpecialistOrangeGloves
+  - ScpLoadoutElectricalEngineerOrangeGloves
   - ScpLoadoutClothingHandsGlovesColorTeal
   - ScpLoadoutClothingHandsGlovesColorWhite
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupElectricalTechnicalSpecialistShoes
+  id: ScpLoadoutGroupElectricalEngineerShoes
   name: loadout-group-shoes
   loadouts:
   - ScpLoadoutClothingShoesColorWhite
-  - ScpLoadoutElectricalTechnicalSpecialistWinterBoots
+  - ScpLoadoutElectricalEngineerWinterBoots
   - ScpLoadoutClothingShoesColorRed
   - ScpLoadoutClothingShoesColorOrange
   - ScpLoadoutClothingShoesColorYellow
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupElectricalTechnicalSpecialistBackpack
+  id: ScpLoadoutGroupElectricalEngineerBackpack
   name: loadout-group-backpack
   loadouts:
-  - ScpLoadoutElectricalTechnicalSpecialistAtmosBackpack
-  - ScpLoadoutElectricalTechnicalSpecialistAtmosSatchel
-  - ScpLoadoutElectricalTechnicalSpecialistAtmosDuffelbag
+  - ScpLoadoutElectricalEngineerAtmosBackpack
+  - ScpLoadoutElectricalEngineerAtmosSatchel
+  - ScpLoadoutElectricalEngineerAtmosDuffelbag
 
 # Technical Trainee
 
 - type: loadoutGroup
-  id: ScpLoadoutGroupTechnicalTraineeJumpsuit
+  id: ScpLoadoutGroupTraineeTechnicianJumpsuit
   name: loadout-group-jumpsuit
   loadouts:
-  - ScpLoadoutTechnicalTraineeJumpsuit
-  - ScpLoadoutTechnicalTraineeJumpskirt
+  - ScpLoadoutTraineeTechnicianJumpsuit
+  - ScpLoadoutTraineeTechnicianJumpskirt

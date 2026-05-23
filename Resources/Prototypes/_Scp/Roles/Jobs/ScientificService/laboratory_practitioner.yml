@@ -1,0 +1,46 @@
+- type: job
+  id: LaboratoryPractitioner
+  name: job-name-laboratory-practitioner
+  description: job-description-laboratory-practitioner
+  playTimeTracker: JobLaboratoryPractitioner
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 3600
+  - !type:AgeRequirement
+    requiredAge: 22
+  - !type:AgeRequirement
+    requiredAge: 45
+    inverted: true
+  icon: JobLaboratoryPractitioner
+  supervisors: job-supervisors-research-director
+  canBeAntag: true
+  displayWeight: 0
+  weight: 785
+  accessGroups:
+  - LaboratoryPractitioner
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Two
+    - type: Fear
+      phobias:
+      - Exoremophobia
+      - Necrophobia
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+    - type: ShowScp096FaceDamageHud
+
+- type: startingGear
+  id: LaboratoryPractitionerGear
+  equipment:
+    eyes: ClothingEyesGlasses
+    jumpsuit: ClothingUniformJumpsuitColorWhite
+    shoes: ClothingShoesColorWhite
+    back: ClothingBackpackScience
+    id: KeyCardLaboratoryPractitioner
+    ears: ClothingHeadsetScientificService
+    pocket1: BookScientistsGuidebook
+    pocket2: ScpResearchPDA

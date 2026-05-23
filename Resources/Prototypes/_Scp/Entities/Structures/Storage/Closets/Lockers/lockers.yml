@@ -21,44 +21,44 @@
     stateDoorClosed: com_door_plasteel
 
 - type: entity
-  id: ScpLockerDirector
+  id: ScpLockerFacilityDirector
   parent: BaseAdministrationLockerPlasteel
-  name: director's locker
+  name: facility director's locker
   components:
   - type: AccessReader
-    access: [["ComplexDirector"]]
+    access: [["FacilityDirector"]]
 
 - type: entity
-  id: ScpLockerPersonnelOfficer
+  id: ScpLockerPersonnelManager
   parent: BaseAdministrationLockerPlasteel
-  name: personnel officer's locker
+  name: personnel manager's locker
   components:
   - type: AccessReader
-    access: [["PersonnelOfficer"]]
+    access: [["PersonnelManager"]]
 
 - type: entity
-  id: ScpLockerChiefTechnicalSpecialist
+  id: ScpLockerChiefEngineer
   parent: BaseAdministrationLockerPlasteel
-  name: chief technical specialist's locker
+  name: chief engineer's locker
   components:
   - type: AccessReader
-    access: [ [ "ChiefTechnicalSpecialist" ] ]
+    access: [ [ "ScpChiefEngineer" ] ]
 
 - type: entity
-  id: ScpLockerSeniorLogisticsOfficer
+  id: ScpLockerQuartermaster
   parent: BaseAdministrationLockerPlasteel
-  name: senior logistics officer's locker
+  name: quartermaster's locker
   components:
   - type: AccessReader
-    access: [["SeniorLogisticsOfficer"]]
+    access: [["ScpQuartermaster"]]
 
 - type: entity
-  id: ScpLockerHeadOfMedicalSector
+  id: ScpLockerChiefMedicalOfficer
   parent: BaseAdministrationLockerPlasteel
-  name: head of medical sector locker
+  name: chief medical officer's locker
   components:
   - type: AccessReader
-    access: [ [ "HeadOfMedicalSector" ] ]
+    access: [ [ "ScpChiefMedicalOfficer" ] ]
 
 - type: entity
   id: ScpLockerSecurityCommander
@@ -69,12 +69,12 @@
     access: [["SecurityCommander"]]
 
 - type: entity
-  id: ScpLockerScientificServiceDirector
+  id: ScpLockerResearchDirector
   parent: BaseAdministrationLockerPlasteel
-  name: scientific director's locker
+  name: research director's locker
   components:
   - type: AccessReader
-    access: [ [ "ScientificServiceDirector" ] ]
+    access: [ [ "ScpResearchDirector" ] ]
 
 - type: entity
   id: ScpLockerEthicsCommittee
@@ -133,7 +133,7 @@
     stateDoorClosed: sec_2_door_plasteel
 
 - type: entity
-  id: LockerHeavyContainmentZoneCommandant
+  id: LockerSpecialPurposeUnitCommander
   parent: BaseSpecialPurposeSquadLockerPlasteel
   name: heavy containment zone commandant's locker
   components:
@@ -141,7 +141,7 @@
     access: [["Armory"]]
 
 - type: entity
-  id: LockerHeavyContainmentZoneOfficer
+  id: LockerSpecialPurposeSquadOfficer
   parent: BaseSpecialPurposeSquadLockerPlasteel
   name: heavy containment zone officer's locker
   components:
@@ -179,7 +179,7 @@
     stateDoorClosed: sec_door_plasteel
 
 - type: entity
-  id: LockerExternalAdministrativeZoneCommandant
+  id: LockerCommandantLeader
   parent: BaseCommandantSquadLockerPlasteel
   name: light containment zone commandant's locker
   components:
@@ -187,7 +187,7 @@
     access: [["Armory"]]
 
 - type: entity
-  id: LockerExternalAdministrativeZoneOfficer
+  id: LockerCommandant
   parent: BaseCommandantSquadLockerPlasteel
   name: light containment zone officer's locker
   components:
@@ -303,7 +303,7 @@
     access: [["Laboratory"]]
 
 - type: entity
-  id: ScpLockerMedicalSpecialist
+  id: ScpLockerPhysician
   parent: BaseMedicalServiceLockerPlasteel
   name: medical specialist's locker
   components:
@@ -349,7 +349,7 @@
     access: [["LifeSupport"]]
 
 - type: entity
-  id: ScpLockerGeneralTechnicalSpecialist
+  id: ScpLockerTechnician
   parent: BaseEngineeringTechnicalServiceLockerPlasteel
   name: engineer's locker
   components:
@@ -421,7 +421,7 @@
     stateDoorClosed: cargo_door_plasteel
 
 - type: entity
-  id: ScpLockerLogisticsOfficer
+  id: ScpLockerLogistician
   parent: BaseLogisticsServiceLockerPlasteel
   name: logistics officer's locker
   components:

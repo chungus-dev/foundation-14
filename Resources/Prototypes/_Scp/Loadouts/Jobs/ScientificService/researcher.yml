@@ -1,0 +1,32 @@
+- type: loadout
+  id: ScpLoadoutClothingHeadsetScientificService
+  equipment:
+    ears: ClothingHeadsetScientificService
+
+- type: loadout
+  id: ScpLoadoutKeyCardResearcher
+  equipment:
+    id: KeyCardResearcher
+
+- type: loadout
+  id: ScpLoadoutScpResearchPDA
+  equipment:
+    pocket2: ScpResearchPDA
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupEarsClothingHeadsetScientificService
+  name: loadout-group-ears
+  loadouts:
+  - ScpLoadoutClothingHeadsetScientificService
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardResearcher
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardResearcher
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupPocket2ScpResearchPDA
+  name: loadout-group-pda
+  loadouts:
+  - ScpLoadoutScpResearchPDA

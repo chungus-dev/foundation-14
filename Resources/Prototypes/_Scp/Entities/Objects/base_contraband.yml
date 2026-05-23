@@ -1,4 +1,4 @@
-﻿# non-stealth Chaos stuff
+# non-stealth Chaos stuff
 - type: entity
   id: BaseChaosContraband
   abstract: true
@@ -21,7 +21,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ HeavyContainmentSecurityService, ExternalAdministrativeZoneSecurityService ]
+    allowedDepartments: [ SpecialPurposeSquad, CommandantSquad ]
 
 # SCP security uniform and equipment restricted to the Special Purpose Squad.
 - type: entity
@@ -30,7 +30,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ HeavyContainmentSecurityService ]
+    allowedDepartments: [ SpecialPurposeSquad ]
 
 # SCP security uniform and equipment restricted to the Commandant Squad.
 - type: entity
@@ -39,4 +39,4 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ ExternalAdministrativeZoneSecurityService ]
+    allowedDepartments: [ CommandantSquad ]

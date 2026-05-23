@@ -1,4 +1,4 @@
-﻿# Общий
+# Общий
 
 - type: entity
   parent: TelecomServer
@@ -39,15 +39,15 @@
 
 - type: entity
   parent: TelecomServer
-  id: TelecomServerFilledHeavyContainmentSecurityService
+  id: TelecomServerFilledSpecialPurposeSquad
   suffix: Security
   components:
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyHeavyContainmentSecurityService
+      - EncryptionKeySpecialPurposeSquad
 
-# Служба безопасности внешней административной зоны
+# Комендантский отряд
 
 - type: entity
   parent: TelecomServer
@@ -57,7 +57,7 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyExternalAdministrativeZoneSecurityService
+      - EncryptionKeyCommandantSquad
 
 # Научный отдел
 

@@ -1,4 +1,4 @@
-﻿- type: radioChannel
+- type: radioChannel
   id: RegionalAdministration
   name: chat-radio-regional-administration
   keycode: 'р'
@@ -21,15 +21,15 @@
   color: "#8c4669"
 
 - type: radioChannel
-  id: HeavyContainmentSecurityService
-  name: chat-radio-heavy-containment-security-service
+  id: SpecialPurposeSquad
+  name: chat-radio-special-purpose-squad
   keycode: 'о'
   frequency: 2360
   color: "#B54E4E"
 
 - type: radioChannel
-  id: ExternalAdministrativeZoneSecurityService
-  name: chat-radio-external-administrative-zone-security-service
+  id: CommandantSquad
+  name: chat-radio-commandant-squad
   keycode: 'к'
   frequency: 2361
   color: "#acb5b8"

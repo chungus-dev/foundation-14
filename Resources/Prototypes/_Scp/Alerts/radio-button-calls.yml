@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: SignalButton
   id: BaseRadioButtonCall
   abstract: true
@@ -95,7 +95,7 @@
   description: A button for calling special purpose squad assistance.
   components:
   - type: RadioCallButton
-    radioChannel: [ HeavyContainmentSecurityService ]
+    radioChannel: [ SpecialPurposeSquad ]
     messageKey: scp-special-purpose-squad-call
 
 - type: entity
@@ -125,7 +125,7 @@
   description: A button for calling commandant squad assistance.
   components:
   - type: RadioCallButton
-    radioChannel: [ ExternalAdministrativeZoneSecurityService ]
+    radioChannel: [ CommandantSquad ]
     messageKey: scp-commandant-squad-call
 
 - type: entity
@@ -145,7 +145,7 @@
   description: A button for requesting d-class personnel.
   components:
   - type: RadioCallButton
-    radioChannel: [ ExternalAdministrativeZoneSecurityService ]
+    radioChannel: [ CommandantSquad ]
     messageKey: scp-d-class-request
 
 ## EMERGENCY BUTTONS
@@ -166,7 +166,7 @@
   description: A button for calling emergency special purpose squad assistance.
   components:
   - type: RadioCallButton
-    radioChannel: [ HeavyContainmentSecurityService ]
+    radioChannel: [ SpecialPurposeSquad ]
     messageKey: scp-emergency-special-purpose-squad-call
 
 - type: entity
@@ -186,5 +186,5 @@
   description: A button for calling emergency commandant squad assistance.
   components:
   - type: RadioCallButton
-    radioChannel: [ ExternalAdministrativeZoneSecurityService ]
+    radioChannel: [ CommandantSquad ]
     messageKey: scp-emergency-commandant-squad-call

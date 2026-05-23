@@ -6,9 +6,9 @@
 
 # Уши
 - type: loadout
-  id: ScpLoadoutClothingHeadsetHeavyContainmentSecurityService
+  id: ScpLoadoutClothingHeadsetSpecialPurposeSquad
   equipment:
-    ears: ClothingHeadsetHeavyContainmentSecurityService
+    ears: ClothingHeadsetSpecialPurposeSquad
 
 # Глаза
 - type: loadout
@@ -36,10 +36,10 @@
 
 # Рация
 - type: loadout
-  id: ScpLoadoutRadioHandheldHeavyContainmentSecurityService
+  id: ScpLoadoutRadioHandheldSpecialPurposeSquad
   storage:
     back:
-    - RadioHandheldHeavyContainmentSecurityServiceEnabled
+    - RadioHandheldSpecialPurposeSquadEnabled
 
 # Пистолет-пулемет
 - type: loadout

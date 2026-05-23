@@ -64,7 +64,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobLogisticsOfficer
+      role: JobLogistician
       time: 72000 # 20hr
   storage:
     back:
@@ -76,7 +76,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobLogisticsOfficer
+      role: JobLogistician
       time: 72000 # 20hr
   storage:
     back:
@@ -88,7 +88,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobSeniorLogisticsOfficer
+      role: JobScpQuartermaster
       time: 72000 # 20hr
   storage:
     back:
@@ -100,7 +100,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobLogisticsOfficer
+      role: JobLogistician
       time: 108000 # 30hr
   storage:
     back:
@@ -112,7 +112,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobLogisticsOfficer
+      role: JobLogistician
       time: 180000 # 50hr
   storage:
     back:

@@ -55,8 +55,8 @@
     containers:
       key_slots:
       - EncryptionKeyAdministration
-      - EncryptionKeyHeavyContainmentSecurityService
-      - EncryptionKeyExternalAdministrativeZoneSecurityService
+      - EncryptionKeySpecialPurposeSquad
+      - EncryptionKeyCommandantSquad
   - type: Sprite
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing
@@ -66,29 +66,29 @@
 
 - type: entity
   parent: [BaseScpHeadsetAlt, BaseCommandContraband]
-  id: ClothingHeadsetAltHeavyContainmentSecurityService
+  id: ClothingHeadsetAltSpecialPurposeSquad
   components:
   - type: ContainerFill
     containers:
       key_slots:
       - EncryptionKeyAdministration
-      - EncryptionKeyHeavyContainmentSecurityService
+      - EncryptionKeySpecialPurposeSquad
   - type: Sprite
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/security.rsi
 
-# Служба безопасности внешней административной зоны
+# Комендантский отряд
 
 - type: entity
   parent: [BaseScpHeadsetAlt, BaseCommandContraband]
-  id: ClothingHeadsetAltExternalAdministrativeZoneSecurityService
+  id: ClothingHeadsetAltCommandantSquad
   components:
   - type: ContainerFill
     containers:
       key_slots:
       - EncryptionKeyAdministration
-      - EncryptionKeyExternalAdministrativeZoneSecurityService
+      - EncryptionKeyCommandantSquad
   - type: Sprite
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing

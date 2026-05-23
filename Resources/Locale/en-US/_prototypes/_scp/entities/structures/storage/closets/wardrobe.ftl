@@ -1,4 +1,4 @@
-ent-ScpClosetGastronomicSpecialist = gastronomic specialist closet
+ent-ScpClosetGastronomist = gastronomic specialist closet
     .desc = A closet for storing food-service staff uniforms and mousetraps.
 ent-ScpClosetJanitor = janitor closet
     .desc = A closet for storing janitor uniforms and equipment.

@@ -26,7 +26,7 @@
           mapNameTemplate: "Dev"
         - type: StationJobs
           availableJobs:
-            Director: [ -1, -1 ] # Scp edit
+            FacilityDirector: [ -1, -1 ] # Scp edit
 
 - type: gameMap
   id: TestTeg

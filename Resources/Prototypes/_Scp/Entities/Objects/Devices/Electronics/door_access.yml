@@ -1,4 +1,4 @@
-﻿# Администрация комплекса
+# Администрация комплекса
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsAdministration
@@ -9,19 +9,19 @@
 
 - type: entity
   parent: DoorElectronics
-  id: DoorElectronicsComplexDirector
-  suffix: Director, Locked
+  id: DoorElectronicsFacilityDirector
+  suffix: FacilityDirector, Locked
   components:
   - type: AccessReader
-    access: [["ComplexDirector"]]
+    access: [["FacilityDirector"]]
 
 - type: entity
   parent: DoorElectronics
-  id: DoorElectronicsScientificServiceDirector
+  id: DoorElectronicsScpResearchDirector
   suffix: Scientific director, Locked
   components:
   - type: AccessReader
-    access: [["ScientificServiceDirector"]]
+    access: [["ScpResearchDirector"]]
 
 - type: entity
   parent: DoorElectronics
@@ -33,35 +33,35 @@
 
 - type: entity
   parent: DoorElectronics
-  id: DoorElectronicsChiefTechnicalSpecialist
+  id: DoorElectronicsScpChiefEngineer
   suffix: Chief technical specialist, Locked
   components:
   - type: AccessReader
-    access: [["ChiefTechnicalSpecialist"]]
+    access: [["ScpChiefEngineer"]]
 
 - type: entity
   parent: DoorElectronics
-  id: DoorElectronicsPersonnelOfficer
+  id: DoorElectronicsPersonnelManager
   suffix: Personnel officer, Locked
   components:
   - type: AccessReader
-    access: [["PersonnelOfficer"]]
+    access: [["PersonnelManager"]]
 
 - type: entity
   parent: DoorElectronics
-  id: DoorElectronicsHeadOfMedicalSector
+  id: DoorElectronicsScpChiefMedicalOfficer
   suffix: Head of medical sector, Locked
   components:
   - type: AccessReader
-    access: [["HeadOfMedicalSector"]]
+    access: [["ScpChiefMedicalOfficer"]]
 
 - type: entity
   parent: DoorElectronics
-  id: DoorElectronicsSeniorLogisticsOfficer
+  id: DoorElectronicsScpQuartermaster
   suffix: Senior logistics officer, Locked
   components:
   - type: AccessReader
-    access: [["SeniorLogisticsOfficer"]]
+    access: [["ScpQuartermaster"]]
 
 - type: entity
   parent: DoorElectronics

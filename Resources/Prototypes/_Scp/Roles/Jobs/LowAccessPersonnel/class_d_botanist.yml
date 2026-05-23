@@ -20,7 +20,7 @@
     - type: ScpAnnounceOnSpawn
       text: class-d-announce-on-spawn
       channels:
-      - ExternalAdministrativeZoneSecurityService
+      - CommandantSquad
       includeJobName: true
       requiredGameRunLevel: InRound
     - type: ScpHolder

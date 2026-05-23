@@ -1,0 +1,9 @@
+job-name-special-purpose-unit-commander = Special Purpose Unit Commander
+job-description-special-purpose-unit-commander = Commander of a special operations unit. Responsible for the security of objects and coordinating counter-operations against objects during a NOUS scenario.
+job-name-senior-special-purpose-squad-officer = Senior Special Purpose Squad Officer
+job-description-senior-special-purpose-squad-officer = Senior officer of a special operations unit. Not new to the unit, understands how to operate in critical situations in both routine conditions and emergencies.
+job-name-special-purpose-squad-officer = Special Purpose Squad Officer
+job-description-special-purpose-squad-officer = Officer of a special operations unit. They ensure the security of objects and counter them during a NOUS scenario.
+job-name-junior-special-purpose-squad-officer = Junior Special Purpose Squad Officer
+job-description-junior-special-purpose-squad-officer = A junior officer in a special operations unit who has just entered service. Assists senior officers in monitoring objects in the facility.
+job-supervisors-special-purpose-unit-commander = special purpose unit commander

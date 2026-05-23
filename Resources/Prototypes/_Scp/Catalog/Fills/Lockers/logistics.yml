@@ -1,15 +1,15 @@
-﻿- type: entity
-  parent: ScpLockerLogisticsOfficer
-  id: ScpLockerLogisticsOfficerFilled
+- type: entity
+  parent: ScpLockerLogistician
+  id: ScpLockerLogisticianFilled
   suffix: Filled
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: LockerFillLogisticsOfficer
+        tableId: LockerFillLogistician
 
 - type: entityTable
-  id: LockerFillLogisticsOfficer
+  id: LockerFillLogistician
   table: !type:AllSelector
     children:
     - id: ClothingHeadsetLogistics

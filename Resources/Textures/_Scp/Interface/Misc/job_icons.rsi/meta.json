@@ -1,161 +1,155 @@
 {
-    "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Fire Station",
-    "size": {
-        "x": 8,
-        "y": 8
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Fire Station",
+  "size": {
+    "x": 8,
+    "y": 8
+  },
+  "states": [
+    {
+      "name": "FacilityDirector"
     },
-    "states": [
-        {
-            "name": "Director"
-        },
-        {
-            "name": "ScientificServiceDirector"
-        },
-        {
-            "name": "SecurityCommander"
-        },
-        {
-            "name": "ChiefTechnicalSpecialist"
-        },
-        {
-            "name": "PersonnelOfficer"
-        },
-        {
-            "name": "HeadOfMedicalSector"
-        },
-        {
-            "name": "SeniorLogisticsOfficer"
-        },
-        {
-            "name": "EthicsCommitteeRepresentative"
-        },
-        {
-            "name": "HeavyContainmentZoneCommandant"
-        },
-        {
-            "name": "SeniorHeavyContainmentZoneOfficer"
-        },
-        {
-            "name": "HeavyContainmentZoneOfficer"
-        },
-        {
-            "name": "JuniorHeavyContainmentZoneOfficer"
-        },
-        {
-            "name": "FieldMedicalSpecialist"
-        },
-        {
-            "name": "ExternalAdministrativeZoneCommandant"
-        },
-        {
-            "name": "SeniorExternalAdministrativeZoneOfficer"
-        },
-        {
-            "name": "ExternalAdministrativeZoneOfficer"
-        },
-        {
-            "name": "JuniorExternalAdministrativeZoneOfficer"
-        },
-        {
-            "name": "LeadResearcher"
-        },
-        {
-            "name": "AnomabiologyResearcher"
-        },
-        {
-            "name": "AnomarchologyResearcher"
-        },
-        {
-            "name": "ProductionSpecialist"
-        },
-        {
-            "name": "JuniorResearcher"
-        },
-        {
-            "name": "SeniorMedicalSpecialist"
-        },
-        {
-            "name": "PharmaceuticalSpecialist"
-        },
-        {
-            "name": "MedicalSpecialist"
-        },
-        {
-            "name": "Psychotherapist"
-        },
-        {
-            "name": "HospitalIntern"
-        },
-        {
-            "name": "LeadTechnicalSpecialist"
-        },
-        {
-            "name": "GeneralTechnicalSpecialist"
-        },
-        {
-            "name": "ElectricalTechnicalSpecialist"
-        },
-        {
-            "name": "TechnicalTrainee"
-        },
-        {
-            "name": "LogisticsOfficer"
-        },
-        {
-            "name": "GastronomicSpecialist"
-        },
-        {
-            "name": "BotanistPhytogeneticist"
-        },
-        {
-            "name": "ServicePersonnel"
-        },
-        {
-            "name": "ClassDCook"
-        },
-        {
-            "name": "ClassDBotanist"
-        },
-        {
-            "name": "ClassDJanitor"
-        },
-        {
-            "name": "ClassD"
-        },
-        {
-            "name": "Amnesthesiologist"
-        },
-        {
-            "name": "FondSecurityOfficer"
-        },
-        {
-            "name": "FondSeniorSecurityOfficer"
-        },
-        {
-            "name": "MindShield",
-            "delays": [
-                [
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    3.0
-                ]
-            ]
-        }
-    ]
+    {
+      "name": "ResearchDirector"
+    },
+    {
+      "name": "SecurityCommander"
+    },
+    {
+      "name": "ChiefEngineer"
+    },
+    {
+      "name": "PersonnelManager"
+    },
+    {
+      "name": "ChiefMedicalOfficer"
+    },
+    {
+      "name": "Quartermaster"
+    },
+    {
+      "name": "EthicsCommitteeRepresentative"
+    },
+    {
+      "name": "SpecialPurposeUnitCommander"
+    },
+    {
+      "name": "SeniorSpecialPurposeSquadOfficer"
+    },
+    {
+      "name": "SpecialPurposeSquadOfficer"
+    },
+    {
+      "name": "JuniorSpecialPurposeSquadOfficer"
+    },
+    {
+      "name": "Amnesticologist"
+    },
+    {
+      "name": "CommandantLeader"
+    },
+    {
+      "name": "SeniorCommandant"
+    },
+    {
+      "name": "Commandant"
+    },
+    {
+      "name": "JuniorCommandant"
+    },
+    {
+      "name": "SeniorResearcher"
+    },
+    {
+      "name": "Researcher"
+    },
+    {
+      "name": "ManufacturingSpecialist"
+    },
+    {
+      "name": "LaboratoryPractitioner"
+    },
+    {
+      "name": "SeniorPhysician"
+    },
+    {
+      "name": "Pharmacist"
+    },
+    {
+      "name": "Physician"
+    },
+    {
+      "name": "Parapsychologist"
+    },
+    {
+      "name": "AssistantPhysician"
+    },
+    {
+      "name": "SeniorEngineer"
+    },
+    {
+      "name": "Technician"
+    },
+    {
+      "name": "ElectricalEngineer"
+    },
+    {
+      "name": "TraineeTechnician"
+    },
+    {
+      "name": "Logistician"
+    },
+    {
+      "name": "Gastronomist"
+    },
+    {
+      "name": "BotanistPhytogeneticist"
+    },
+    {
+      "name": "ServiceStaff"
+    },
+    {
+      "name": "ClassDCook"
+    },
+    {
+      "name": "ClassDBotanist"
+    },
+    {
+      "name": "ClassDJanitor"
+    },
+    {
+      "name": "ClassD"
+    },
+    {
+      "name": "FondSecurityOfficer"
+    },
+    {
+      "name": "FondSeniorSecurityOfficer"
+    },
+    {
+      "name": "MindShield",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          3.0
+        ]
+      ]
+    }
+  ]
 }

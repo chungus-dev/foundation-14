@@ -5,10 +5,10 @@
   playTimeTracker: JobSecurityCommander
   requirements:
   - !type:DepartmentTimeRequirement
-    department: HeavyContainmentSecurityService
+    department: SpecialPurposeSquad
     time: 46800
   - !type:DepartmentTimeRequirement
-    department: ExternalAdministrativeZoneSecurityService
+    department: CommandantSquad
     time: 46800
   - !type:AgeRequirement
     requiredAge: 31
@@ -17,7 +17,7 @@
     inverted: true
   weight: 955
   icon: JobSecurityCommander
-  supervisors: job-supervisors-director
+  supervisors: job-supervisors-facility-director
   canBeAntag: false
   displayWeight: 80
   accessGroups:
@@ -39,8 +39,8 @@
     - type: ScpAnnounceOnSpawn
       text: head-announce-on-spawn
       channels:
-      - ExternalAdministrativeZoneSecurityService
-      - HeavyContainmentSecurityService
+      - CommandantSquad
+      - SpecialPurposeSquad
       includeJobName: true
     - type: SpeakOnEyeStateChange # переопределение моргания с другими параметрами для охраны и МОГа
       # Часть фраз уходит, так как более разговорная. А эти парни натренированы.

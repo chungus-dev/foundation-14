@@ -2,14 +2,16 @@
   "version": 1,
   "license": "CC-BY-SA-3.0",
   "copyright": "Сreated by odlieerr(Discord) | Odleer(Space Station 14)",
-  "size": {"x": 32, "y": 32},
-  "states":
-  [
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
     {
       "name": "chief_medical_officer"
     },
     {
-      "name": "chief_scientific_officer"
+      "name": "research_director"
     },
     {
       "name": "class_d"
@@ -21,7 +23,7 @@
       "name": "class_d_service"
     },
     {
-      "name": "director"
+      "name": "facility_director"
     },
     {
       "name": "empty"
@@ -33,16 +35,16 @@
       "name": "ethics_committee"
     },
     {
-      "name": "head_of_security"
+      "name": "security_commander"
     },
     {
-      "name": "head_security_gray"
+      "name": "commandant_leader"
     },
     {
-      "name": "head_security_red"
+      "name": "special_purpose_unit_commander"
     },
     {
-      "name": "lead_engineer"
+      "name": "chief_engineer"
     },
     {
       "name": "logistics"
@@ -51,7 +53,7 @@
       "name": "medical"
     },
     {
-      "name": "medical_gray"
+      "name": "amnesticologist"
     },
     {
       "name": "mtf_commander"
@@ -87,7 +89,7 @@
       "name": "equipped-IDCARD",
       "directions": 4
     },
-        {
+    {
       "name": "equipped-NECK",
       "directions": 4
     },

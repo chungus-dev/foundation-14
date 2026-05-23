@@ -23,7 +23,7 @@
     departmentMessages:
       EngineeringTechnicalService: ScpWallMetalEngineeringMessages
     jobMessages:
-      ChiefTechnicalSpecialist: ScpWallMetalEngineeringMessages
+      ScpChiefEngineer: ScpWallMetalEngineeringMessages
 
 - type: entity
   parent: ScpBaseWallDamageableVisuals
@@ -40,7 +40,7 @@
     departmentMessages:
       EngineeringTechnicalService: ScpWallConcreteEngineeringMessages
     jobMessages:
-      ChiefTechnicalSpecialist: ScpWallConcreteEngineeringMessages
+      ScpChiefEngineer: ScpWallConcreteEngineeringMessages
 
 - type: entity
   parent: ScpBaseWallDamageableVisuals
@@ -57,7 +57,7 @@
     departmentMessages:
       EngineeringTechnicalService: ScpWallHardContainmentEngineeringMessages
     jobMessages:
-      ChiefTechnicalSpecialist: ScpWallHardContainmentEngineeringMessages
+      ScpChiefEngineer: ScpWallHardContainmentEngineeringMessages
 
 - type: entity
   parent: ScpBaseWallDamageableVisuals
@@ -74,7 +74,7 @@
     departmentMessages:
       EngineeringTechnicalService: ScpWallBrickEngineeringMessages
     jobMessages:
-      ChiefTechnicalSpecialist: ScpWallBrickEngineeringMessages
+      ScpChiefEngineer: ScpWallBrickEngineeringMessages
 
 - type: entity
   parent: ScpBaseWallDamageableVisuals
@@ -91,7 +91,7 @@
     departmentMessages:
       EngineeringTechnicalService: ScpWallWoodEngineeringMessages
     jobMessages:
-      ChiefTechnicalSpecialist: ScpWallWoodEngineeringMessages
+      ScpChiefEngineer: ScpWallWoodEngineeringMessages
 
 - type: entity
   id: ScpBaseWallRepairable
@@ -876,7 +876,7 @@
     departmentMessages:
       EngineeringTechnicalService: ScpWallScp096ContainmentEngineeringMessages
     jobMessages:
-      ChiefTechnicalSpecialist: ScpWallScp096ContainmentEngineeringMessages
+      ScpChiefEngineer: ScpWallScp096ContainmentEngineeringMessages
   - type: Destructible
     thresholds:
     - trigger:

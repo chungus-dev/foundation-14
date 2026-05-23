@@ -298,13 +298,13 @@
 
 - type: entity
   parent: ScpBasePDA
-  id: DirectorPDA
-  name: director's PDA
-  description: Personal PDA for the director with extended access rights, encrypted mail, and secret archives. Used for decision-making and managing key facility resources.
+  id: FacilityDirectorPDA
+  name: facility director's PDA
+  description: Personal PDA for the facility director with elevated access rights, encrypted mail, and classified archives. Used for decision-making and managing key facility resources.
   components:
   - type: Pda
     penSlot:
-      startingItem: PenDirector
+      startingItem: PenFacilityDirector
       priority: -1
       whitelist:
         tags:
@@ -343,9 +343,9 @@
 
 - type: entity
   parent: ScpBasePDA
-  id: PersonnelOfficerPDA
-  name: personnel officer PDA
-  description: The personnel officer's PDA contains employee personal files, shift schedules, hiring and termination protocols, and personnel evaluation tools. Ensures compliance with HR procedures and data confidentiality.
+  id: PersonnelManagerPDA
+  name: personnel manager PDA
+  description: The personnel manager PDA contains employee files, shift schedules, hiring and termination protocols, and personnel evaluation tools. Ensures compliance with HR procedures and data confidentiality.
   components:
   - type: Pda
     penSlot:
@@ -388,9 +388,9 @@
 
 - type: entity
   parent: ScpBaseEngineerPDA
-  id: ChiefTechnicalSpecialistPDA
-  name: chief technician specialist PDA
-  description: The Chief Technician's PDA with an infrastructure system map, repair log, and preventive maintenance plan. Designed for strategic control of technical condition and coordination of technician teams.
+  id: ChiefEngineerPDA
+  name: chief engineer PDA
+  description: The chief engineer PDA contains an infrastructure system map, repair log, and preventive maintenance plan. Designed for strategic control of technical condition and coordination of technician teams.
   components:
   - type: Pda
     penSlot:
@@ -423,9 +423,9 @@
 
 - type: entity
   parent: ScpBasePDA
-  id: SeniorLogisticsOfficerPDA
-  name: senior logistics officer PDA
-  description: Senior Logistics Officer's PDA for managing warehouse flows, resource allocation, and supply coordination between departments. Includes inventory reports.
+  id: ScpQuartermasterPDA
+  name: quartermaster PDA
+  description: Quartermaster PDA for managing warehouse flows, resource allocation, and supply coordination between departments. Includes inventory reports.
   components:
   - type: Pda
     penSlot:
@@ -458,9 +458,9 @@
 
 - type: entity
   parent: ScpBaseMedicalPDA
-  id: HeadOfMedicalSectorPDA
-  name: head of medical sector PDA
-  description: Head Physician's PDA with extended clinical references, prioritized patient lists, medical staff schedules, and department operating protocols. Serves for operational management of the treatment process.
+  id: ChiefMedicalOfficerPDA
+  name: chief medical officer PDA
+  description: Chief medical officer PDA with expanded clinical references, prioritized patient lists, medical staff schedules, and department operating protocols. Serves for operational management of the treatment process.
   components:
   - type: Pda
     penSlot:
@@ -493,9 +493,9 @@
 
 - type: entity
   parent: ScpBasePDA
-  id: ScientificServiceDirectorPDA
-  name: scientific service director PDA
-  description: The Scientific Director's PDA integrates strategic research plans, access to restricted publications, project budgets, and results reports. A tool for managing scientific activities and distributing research tasks.
+  id: ResearchDirectorPDA
+  name: research director PDA
+  description: Research director PDA with strategic research plans, access to restricted publications, project budgets, and result reports. Used for managing scientific activity and distributing research tasks.
   components:
   - type: Pda
     penSlot:

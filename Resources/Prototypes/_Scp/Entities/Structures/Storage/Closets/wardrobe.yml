@@ -1,5 +1,5 @@
-﻿- type: entity
-  id: ScpClosetGastronomicSpecialist
+- type: entity
+  id: ScpClosetGastronomist
   parent: ScpClosetSteelBase
   name: gastronomic specialist's closet
   description: It's a storage unit for foodservice garments and mouse traps.

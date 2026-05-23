@@ -1,0 +1,41 @@
+- type: loadout
+  id: ScpLoadoutKeyCardGastronomist
+  equipment:
+    id: KeyCardGastronomist
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupShoesClothingShoesColorBlack
+  name: loadout-group-shoes
+  loadouts:
+  - ScpLoadoutClothingShoesColorBlack
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardGastronomist
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardGastronomist
+
+- type: loadout
+  id: ScpLoadoutGastronomistItalianMoustache
+  equipment:
+    mask: ClothingMaskItalianMoustache
+
+- type: loadout
+  id: ScpLoadoutGastronomistJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChef
+
+- type: loadout
+  id: ScpLoadoutGastronomistJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtChef
+
+- type: loadout
+  id: ScpLoadoutGastronomistJacket
+  equipment:
+    outerClothing: ClothingOuterJacketChef
+
+- type: loadout
+  id: ScpLoadoutGastronomistWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterChef

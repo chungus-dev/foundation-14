@@ -1,4 +1,4 @@
-﻿# TODO: Стандартизация стейтов спрайтос с направленными указателями
+# TODO: Стандартизация стейтов спрайтос с направленными указателями
 
 - type: entity
   parent: BaseSign
@@ -271,7 +271,7 @@
 
 - type: entity
   parent: BaseSignDirectionalScp
-  id: SignDirectionalScpPersonnelOfficer
+  id: SignDirectionalScpPersonnelManager
   name: Personnel Officer sign
   description: Points in a direction you shouldn't go without a clear understanding of where it leads.
   components:

@@ -1,36 +1,36 @@
-﻿# Администрация комплекса
+# Администрация комплекса
 
 - type: accessLevel
   id: Administration
   name: access-name-administration
 
 - type: accessLevel
-  id: ComplexDirector
-  name: access-name-complex-director
+  id: FacilityDirector
+  name: access-name-facility-director
 
 - type: accessLevel
-  id: ScientificServiceDirector
-  name: access-name-scientific-service-director
+  id: ScpResearchDirector
+  name: access-name-research-director
 
 - type: accessLevel
   id: SecurityCommander
   name: access-name-security-commander
 
 - type: accessLevel
-  id: ChiefTechnicalSpecialist
-  name: access-name-chief-technical-specialist
+  id: ScpChiefEngineer
+  name: access-name-chief-engineer
 
 - type: accessLevel
-  id: PersonnelOfficer
-  name: access-name-personnel-officer
+  id: PersonnelManager
+  name: access-name-personnel-manager
 
 - type: accessLevel
-  id: HeadOfMedicalSector
-  name: access-name-head-of-medical-sector
+  id: ScpChiefMedicalOfficer
+  name: access-name-chief-medical-officer
 
 - type: accessLevel
-  id: SeniorLogisticsOfficer
-  name: access-name-senior-logistics-officer
+  id: ScpQuartermaster
+  name: access-name-quartermaster
 
 - type: accessLevel
   id: EthicsCommittee

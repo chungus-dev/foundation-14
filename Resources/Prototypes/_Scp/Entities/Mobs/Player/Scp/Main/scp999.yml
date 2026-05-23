@@ -93,7 +93,7 @@
     text: scp999-announce-on-spawn
     channels:
     - ScientificService
-    - HeavyContainmentSecurityService
+    - SpecialPurposeSquad
   - type: SleepEmitSound
     snore: /Audio/Voice/Misc/silly_snore.ogg
     interval: 10

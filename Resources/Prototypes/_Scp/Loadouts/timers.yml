@@ -4,7 +4,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: ExternalAdministrativeZoneSecurityService
+      department: CommandantSquad
       time: 36000 # 10 часов
 
 - type: loadoutEffectGroup
@@ -13,7 +13,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: ExternalAdministrativeZoneSecurityService
+      department: CommandantSquad
       time: 90000 # 25 часов
 
 - type: loadoutEffectGroup
@@ -22,7 +22,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: HeavyContainmentSecurityService
+      department: SpecialPurposeSquad
       time: 90000 # 25 часов
 
 - type: loadoutEffectGroup
@@ -31,7 +31,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: ExternalAdministrativeZoneSecurityService
+      department: CommandantSquad
       time: 90000 # 30 часов
 
 - type: loadoutEffectGroup
@@ -40,7 +40,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: HeavyContainmentSecurityService
+      department: SpecialPurposeSquad
       time: 90000 # 30 часов
 
 - type: loadoutEffectGroup
@@ -49,12 +49,12 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: HeavyContainmentSecurityService
+      department: SpecialPurposeSquad
       time: 180000 # 50 часов
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: ExternalAdministrativeZoneSecurityService
+      department: CommandantSquad
       time: 180000 # 50 часов
 
 - type: loadoutEffectGroup
@@ -74,7 +74,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobServicePersonnel
+      role: JobServiceStaff
       time: 36000 # 10 hrs
 
 - type: loadoutEffectGroup
@@ -83,7 +83,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobServicePersonnel
+      role: JobServiceStaff
       time: 3600 # 1 hr
 
 - type: loadoutEffectGroup
@@ -96,48 +96,48 @@
       time: 36000 # 10 hrs
 
 - type: loadoutEffectGroup
-  id: ScpMaidServicePersonnel
+  id: ScpMaidServiceStaff
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobServicePersonnel
+      role: JobServiceStaff
       time: 72000 # 20 hrs
 
 - type: loadoutEffectGroup
-  id: ScpMasterSeniorLogisticsOfficer
+  id: ScpMasterQuartermaster
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobSeniorLogisticsOfficer
+      role: JobScpQuartermaster
       time: 72000 # 20 hrs
 
 - type: loadoutEffectGroup
-  id: ScpMasterHeadOfMedicalSector
+  id: ScpMasterChiefMedicalOfficer
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobHeadOfMedicalSector
+      role: JobScpChiefMedicalOfficer
       time: 72000 # 20 hrs
 
 - type: loadoutEffectGroup
-  id: ScpMasterPersonnelOfficer
+  id: ScpMasterPersonnelManager
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPersonnelOfficer
+      role: JobPersonnelManager
       time: 72000 # 20 hrs
 
 - type: loadoutEffectGroup
-  id: ScpProfessionalPersonnelOfficer
+  id: ScpProfessionalPersonnelManager
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPersonnelOfficer
+      role: JobPersonnelManager
       time: 54000 # 15 hrs
 
 - type: loadoutEffectGroup
@@ -150,28 +150,28 @@
       time: 72000 # 20 hrs
 
 - type: loadoutEffectGroup
-  id: ScpMasterChiefTechnicalSpecialist
+  id: ScpMasterChiefEngineer
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobChiefTechnicalSpecialist
+      role: JobScpChiefEngineer
       time: 72000 # 20 hrs
 
 - type: loadoutEffectGroup
-  id: ScpBigMasterChiefTechnicalSpecialist
+  id: ScpBigMasterChiefEngineer
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobChiefTechnicalSpecialist
+      role: JobScpChiefEngineer
       time: 360000 # 100 hrs
 
 - type: loadoutEffectGroup
-  id: ScpMasterScientificServiceDirector
+  id: ScpMasterResearchDirector
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobScientificServiceDirector
+      role: JobScpResearchDirector
       time: 72000 # 20 hrs

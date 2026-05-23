@@ -1,4 +1,4 @@
-﻿# TODO: Охранный спрайт, унификация спрайтов
+# TODO: Охранный спрайт, унификация спрайтов
 
 - type: entity
   parent: BaseItem
@@ -83,18 +83,18 @@
 
 - type: entity
   parent: ScpRadioHandheldSecurity
-  id: RadioHandheldHeavyContainmentSecurityService
+  id: RadioHandheldSpecialPurposeSquad
   name: security handheld radio
   components:
   - type: ContainerFill
     containers:
       key_slots:
       - ScpEncryptionKeySecurity
-      - EncryptionKeyHeavyContainmentSecurityService
+      - EncryptionKeySpecialPurposeSquad
 
 - type: entity
-  parent: RadioHandheldHeavyContainmentSecurityService
-  id: RadioHandheldHeavyContainmentSecurityServiceEnabled
+  parent: RadioHandheldSpecialPurposeSquad
+  id: RadioHandheldSpecialPurposeSquadEnabled
   suffix: Enabled
   components:
   - type: ScpRadio
@@ -102,18 +102,18 @@
 
 - type: entity
   parent: ScpRadioHandheldSecurity
-  id: RadioHandheldExternalAdministrativeZoneSecurityService
+  id: RadioHandheldCommandantSquad
   name: security handheld radio
   components:
   - type: ContainerFill
     containers:
       key_slots:
       - ScpEncryptionKeySecurity
-      - EncryptionKeyExternalAdministrativeZoneSecurityService
+      - EncryptionKeyCommandantSquad
 
 - type: entity
-  parent: RadioHandheldExternalAdministrativeZoneSecurityService
-  id: RadioHandheldExternalAdministrativeZoneSecurityServiceEnabled
+  parent: RadioHandheldCommandantSquad
+  id: RadioHandheldCommandantSquadEnabled
   suffix: Enabled
   components:
   - type: ScpRadio

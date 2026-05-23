@@ -1,0 +1,66 @@
+# ID
+- type: loadout
+  id: ScpLoadoutKeyCardResearchDirector
+  equipment:
+    id: KeyCardResearchDirector
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupIdKeyCardResearchDirector
+  name: loadout-group-id
+  loadouts:
+  - ScpLoadoutKeyCardResearchDirector
+
+# Ears
+- type: loadout
+  id: ScpLoadoutClothingHeadsetAltScientificService
+  equipment:
+    ears: ClothingHeadsetAltScientificService
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupEarsClothingHeadsetAltScientificService
+  name: loadout-group-ears
+  loadouts:
+  - ScpLoadoutClothingHeadsetAltScientificService
+
+# Jumpsuit
+- type: loadout
+  id: ScpLoadoutResearchDirectorJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitResearchDirector
+
+- type: loadout
+  id: ScpLoadoutResearchDirectorJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtResearchDirector
+
+# Neck
+- type: loadout
+  id: ScpLoadoutResearchDirectorMantle
+  equipment:
+    neck: ClothingNeckMantleRD
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ScpMasterResearchDirector
+
+# Outer Clothing
+- type: loadout
+  id: ScpLoadoutResearchDirectorLabCoat
+  equipment:
+    outerClothing: ClothingOuterCoatRD
+
+- type: loadout
+  id: ScpLoadoutResearchDirectorWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterRD
+
+# Pocket 2
+- type: loadout
+  id: ScpLoadoutResearchDirectorPDA
+  equipment:
+    pocket2: ResearchDirectorPDA
+
+- type: loadoutGroup
+  id: ScpLoadoutGroupPocket2ResearchDirectorPDA
+  name: loadout-group-pda
+  loadouts:
+  - ScpLoadoutResearchDirectorPDA
