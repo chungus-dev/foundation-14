@@ -6,7 +6,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: MedicalService
-    time: 7200
+    time: 2h
   - !type:AgeRequirement
     requiredAge: 29
   - !type:AgeRequirement

@@ -5,7 +5,7 @@
   playTimeTracker: JobClassDBotanist
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 # 1 час
+    time: 1h
   icon: JobClassDBotanist
   supervisors: job-supervisors-security-and-research
   access:

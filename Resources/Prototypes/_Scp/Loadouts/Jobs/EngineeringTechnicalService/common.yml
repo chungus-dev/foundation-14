@@ -45,7 +45,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: EngineeringTechnicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - FlashlightLantern
@@ -57,7 +57,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: EngineeringTechnicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - GasAnalyzer
@@ -69,7 +69,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: EngineeringTechnicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - GeigerCounter
@@ -81,7 +81,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobScpChiefEngineer
-      time: 72000 # 20 hour
+      time: 20h
   storage:
     back:
     - ToyFigurineChiefEngineer
@@ -93,7 +93,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobElectricalEngineer
-      time: 72000 # 20 hour
+      time: 20h
   storage:
     back:
     - ToyFigurineAtmosTech
@@ -105,7 +105,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobTechnician
-      time: 72000 # 20 hour
+      time: 20h
   storage:
     back:
     - ToyFigurineEngineer
@@ -117,7 +117,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: EngineeringTechnicalService
-      time: 1080000 # 300hr
+      time: 300h
   storage:
     back:
     - SingularityToy

@@ -5,7 +5,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - Syringe
@@ -17,7 +17,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - ChemistryBottleEpinephrine
@@ -29,7 +29,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - HandheldHealthAnalyzer
@@ -41,7 +41,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - ClothingEyesHudMedical
@@ -53,7 +53,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - ClothingEyesEyepatchHudMedical
@@ -65,7 +65,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: MedicalService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - BoxMouthSwab
@@ -77,7 +77,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPharmacist
-      time: 72000 # 20 hour
+      time: 20h
   storage:
     back:
     - ToyFigurineChemist
@@ -89,7 +89,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobScpChiefMedicalOfficer
-      time: 72000 # 20 hour
+      time: 20h
   storage:
     back:
     - ToyFigurineChiefMedicalOfficer
@@ -101,7 +101,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPhysician
-      time: 72000 # 20 hour
+      time: 20h
   storage:
     back:
     - ToyFigurineParamedic
@@ -113,7 +113,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPhysician
-      time: 72000 # 20 hour
+      time: 20h
   storage:
     back:
     - ToyFigurineMedicalDoctor

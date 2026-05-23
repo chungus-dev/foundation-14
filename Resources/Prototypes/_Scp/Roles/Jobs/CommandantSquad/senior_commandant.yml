@@ -6,7 +6,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: CommandantSquad
-    time: 43200
+    time: 12h
   - !type:AgeRequirement
     requiredAge: 29
   - !type:AgeRequirement

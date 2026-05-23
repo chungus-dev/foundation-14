@@ -5,7 +5,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - HandheldGPSBasic
@@ -17,7 +17,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - FlashlightLantern
@@ -29,7 +29,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - Flare
@@ -41,7 +41,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 7200 # 2hr
+      time: 2h
   storage:
     back:
     - HandLabeler
@@ -53,7 +53,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 36000 # 10hr
+      time: 10h
   storage:
     back:
     - ScpRadioHandheldCommon
@@ -65,7 +65,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobLogistician
-      time: 72000 # 20hr
+      time: 20h
   storage:
     back:
     - ToyFigurineCargoTech
@@ -77,7 +77,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobLogistician
-      time: 72000 # 20hr
+      time: 20h
   storage:
     back:
     - ToyFigurineSalvage
@@ -89,7 +89,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobScpQuartermaster
-      time: 72000 # 20hr
+      time: 20h
   storage:
     back:
     - ToyFigurineQuartermaster
@@ -101,7 +101,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobLogistician
-      time: 108000 # 30hr
+      time: 30h
   storage:
     back:
     - ToyFigurineSpaceDragon
@@ -113,7 +113,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobLogistician
-      time: 180000 # 50hr
+      time: 50h
   storage:
     back:
     - ToyFigurineQueen

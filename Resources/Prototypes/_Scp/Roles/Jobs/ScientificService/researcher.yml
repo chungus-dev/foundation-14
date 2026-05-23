@@ -6,7 +6,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: ScientificService
-    time: 14400
+    time: 4h
   - !type:AgeRequirement
     requiredAge: 27
   icon: JobResearcher

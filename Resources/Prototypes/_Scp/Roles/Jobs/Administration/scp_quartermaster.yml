@@ -6,7 +6,7 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobLogistician
-    time: 36000
+    time: 10h
   - !type:AgeRequirement
     requiredAge: 29
   - !type:AgeRequirement

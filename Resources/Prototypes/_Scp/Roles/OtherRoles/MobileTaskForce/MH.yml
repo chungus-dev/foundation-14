@@ -6,7 +6,7 @@
   playTimeTracker: JobMHLeader
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: MHLeaderGear
   icon: JobIconMHleader
@@ -52,7 +52,7 @@
   playTimeTracker: JobMHSpecialist
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: MHSpecialistGear
   icon: JobIconMH
@@ -96,7 +96,7 @@
   playTimeTracker: JobMHCadet
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 #1 hr
+    time: 1h
   setPreference: false
   startingGear: MHCadetGear
   icon: JobIconMH

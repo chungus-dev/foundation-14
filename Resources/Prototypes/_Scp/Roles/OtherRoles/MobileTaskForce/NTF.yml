@@ -6,7 +6,7 @@
   playTimeTracker: JobNTFLeader
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: NTFLeaderGear
   icon: JobIconNTFleader
@@ -52,7 +52,7 @@
   playTimeTracker: JobNTFSpecialist
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: NTFSpecialistGear
   icon: JobIconNTF
@@ -90,7 +90,7 @@
   playTimeTracker: JobNTFCadet
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 #1 hrs
+    time: 1h
   setPreference: false
   startingGear: NTFCadetGear
   icon: JobIconNTF

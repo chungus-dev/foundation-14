@@ -6,16 +6,16 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: CommandantSquad
-    time: 18000
+    time: 5h
   - !type:DepartmentTimeRequirement
     department: MedicalService
-    time: 18000
+    time: 5h
   - !type:DepartmentTimeRequirement
     department: EngineeringTechnicalService
-    time: 18000
+    time: 5h
   - !type:DepartmentTimeRequirement
     department: Administration
-    time: 18000
+    time: 5h
   - !type:AgeRequirement
     requiredAge: 31
   weight: 950

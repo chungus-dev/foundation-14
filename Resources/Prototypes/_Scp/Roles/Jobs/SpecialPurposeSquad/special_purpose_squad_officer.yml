@@ -6,7 +6,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: SpecialPurposeSquad
-    time: 21600
+    time: 6h
   - !type:AgeRequirement
     requiredAge: 27
   - !type:AgeRequirement

@@ -6,10 +6,10 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: ScientificService
-    time: 10800
+    time: 3h
   - !type:DepartmentTimeRequirement
     department: EngineeringTechnicalService
-    time: 10800
+    time: 3h
   - !type:AgeRequirement
     requiredAge: 25
   - !type:AgeRequirement

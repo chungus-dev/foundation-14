@@ -73,7 +73,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobEthicsCommitteeRepresentative
-      time: 18000 # 5hr
+      time: 5h
   storage:
     back:
     - Cane

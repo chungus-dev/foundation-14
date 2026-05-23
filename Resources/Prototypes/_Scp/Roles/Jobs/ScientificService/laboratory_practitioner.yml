@@ -5,7 +5,7 @@
   playTimeTracker: JobLaboratoryPractitioner
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600
+    time: 1h
   - !type:AgeRequirement
     requiredAge: 22
   - !type:AgeRequirement

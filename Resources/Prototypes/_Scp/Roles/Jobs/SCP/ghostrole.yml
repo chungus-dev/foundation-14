@@ -1,4 +1,4 @@
-﻿# Безопасный
+# Безопасный
 
 - type: job
   id: Scp131A
@@ -7,7 +7,7 @@
   playTimeTracker: JobScp131A
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 # 5h
+    time: 5h
   weight: 969
   #icon: TODO
   joinNotifyCrew: false
@@ -25,7 +25,7 @@
   playTimeTracker: JobScp131B
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 # 5h
+    time: 5h
   weight: 968
   #icon: TODO
   joinNotifyCrew: false
@@ -43,7 +43,7 @@
   playTimeTracker: JobScp2295
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 # 5h
+    time: 5h
   weight: 967
   #icon: TODO
   joinNotifyCrew: false

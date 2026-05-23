@@ -5,7 +5,7 @@
   playTimeTracker: JobJuniorSpecialPurposeSquadOfficer
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 10800
+    time: 3h
   - !type:AgeRequirement
     requiredAge: 23
   - !type:AgeRequirement

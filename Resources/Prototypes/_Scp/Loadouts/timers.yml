@@ -5,7 +5,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: CommandantSquad
-      time: 36000 # 10 часов
+      time: 10h
 
 - type: loadoutEffectGroup
   id: CommandantSquadWhiteUniformTimer
@@ -14,7 +14,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: CommandantSquad
-      time: 90000 # 25 часов
+      time: 25h
 
 - type: loadoutEffectGroup
   id: CommandantSquadFancyUniformTimer
@@ -23,7 +23,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: SpecialPurposeSquad
-      time: 90000 # 25 часов
+      time: 25h
 
 - type: loadoutEffectGroup
   id: CommandantSquadLeaderFancyUniformTimer
@@ -32,7 +32,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: CommandantSquad
-      time: 90000 # 30 часов
+      time: 25h
 
 - type: loadoutEffectGroup
   id: SpecialPurposeSquadLeaderFancyUniformTimer
@@ -41,7 +41,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: SpecialPurposeSquad
-      time: 90000 # 30 часов
+      time: 25h
 
 - type: loadoutEffectGroup
   id: TowelColorBlackAndDinkystar
@@ -50,12 +50,12 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: SpecialPurposeSquad
-      time: 180000 # 50 часов
+      time: 50h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: CommandantSquad
-      time: 180000 # 50 часов
+      time: 50h
 
 - type: loadoutEffectGroup
   id: Administration
@@ -64,7 +64,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Administration
-      time: 3600 # 1 час
+      time: 1h
 
 # Shared timers copied into _Scp
 
@@ -75,7 +75,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobServiceStaff
-      time: 36000 # 10 hrs
+      time: 10h
 
 - type: loadoutEffectGroup
   id: ScpJamjarTimer
@@ -84,7 +84,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobServiceStaff
-      time: 3600 # 1 hr
+      time: 1h
 
 - type: loadoutEffectGroup
   id: ScpJensenTimer
@@ -93,7 +93,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: LogisticsService
-      time: 36000 # 10 hrs
+      time: 10h
 
 - type: loadoutEffectGroup
   id: ScpMaidServiceStaff
@@ -102,7 +102,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobServiceStaff
-      time: 72000 # 20 hrs
+      time: 20h
 
 - type: loadoutEffectGroup
   id: ScpMasterQuartermaster
@@ -111,7 +111,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobScpQuartermaster
-      time: 72000 # 20 hrs
+      time: 20h
 
 - type: loadoutEffectGroup
   id: ScpMasterChiefMedicalOfficer
@@ -120,7 +120,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobScpChiefMedicalOfficer
-      time: 72000 # 20 hrs
+      time: 20h
 
 - type: loadoutEffectGroup
   id: ScpMasterPersonnelManager
@@ -129,7 +129,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPersonnelManager
-      time: 72000 # 20 hrs
+      time: 20h
 
 - type: loadoutEffectGroup
   id: ScpProfessionalPersonnelManager
@@ -138,7 +138,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPersonnelManager
-      time: 54000 # 15 hrs
+      time: 15h
 
 - type: loadoutEffectGroup
   id: ScpMasterSecurityCommander
@@ -147,7 +147,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobSecurityCommander
-      time: 72000 # 20 hrs
+      time: 20h
 
 - type: loadoutEffectGroup
   id: ScpMasterChiefEngineer
@@ -156,7 +156,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobScpChiefEngineer
-      time: 72000 # 20 hrs
+      time: 20h
 
 - type: loadoutEffectGroup
   id: ScpBigMasterChiefEngineer
@@ -165,7 +165,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobScpChiefEngineer
-      time: 360000 # 100 hrs
+      time: 100h
 
 - type: loadoutEffectGroup
   id: ScpMasterResearchDirector
@@ -174,4 +174,4 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobScpResearchDirector
-      time: 72000 # 20 hrs
+      time: 20h

@@ -5,7 +5,7 @@
   playTimeTracker: JobParapsychologist
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 7200
+    time: 2h
   - !type:AgeRequirement
     requiredAge: 27
   icon: JobParapsychologist

@@ -6,7 +6,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: ScientificService
-    time: 36000
+    time: 10h
   - !type:AgeRequirement
     requiredAge: 30
   icon: JobSeniorResearcher

@@ -6,7 +6,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: EngineeringTechnicalService
-    time: 18000
+    time: 5h
   - !type:AgeRequirement
     requiredAge: 29
   - !type:AgeRequirement

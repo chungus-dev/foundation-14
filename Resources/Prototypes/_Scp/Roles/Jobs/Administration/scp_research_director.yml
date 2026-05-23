@@ -6,7 +6,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: ScientificService
-    time: 54000
+    time: 15h
   - !type:AgeRequirement
     requiredAge: 35
   weight: 960

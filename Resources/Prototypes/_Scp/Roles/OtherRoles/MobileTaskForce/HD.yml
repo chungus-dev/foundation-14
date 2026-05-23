@@ -6,7 +6,7 @@
   playTimeTracker: JobHDLeader
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: HDLeaderGear
   icon: JobIconHDleader
@@ -52,7 +52,7 @@
   playTimeTracker: JobHDSpecialist
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 18000 #5 hrs
+    time: 5h
   setPreference: false
   startingGear: HDSpecialistGear
   icon: JobIconHD
@@ -88,7 +88,7 @@
   playTimeTracker: JobHDCadet
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 #1 hr
+    time: 1h
   setPreference: false
   startingGear: HDCadetGear
   icon: JobIconHD
