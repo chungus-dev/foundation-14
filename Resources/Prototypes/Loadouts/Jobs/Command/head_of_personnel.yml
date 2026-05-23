@@ -5,8 +5,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPersonnelOfficer # Scp edit
-      time: 72000 #20 hrs
+      role: JobHeadOfPersonnel
+      time: 20h
 
 # Professional HoP Time
 - type: loadoutEffectGroup
@@ -15,8 +15,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPersonnelOfficer # Scp edit
-      time: 54000 #15 hrs, special reward for HoP mains
+      role: JobHeadOfPersonnel
+      time: 15h # special reward for HoP mains
 
 # Jumpsuit
 - type: loadout

@@ -5,8 +5,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: Administration # Scp edit
-      time: 3600 # 1 hour
+      department: Command
+      time: 1h
 
 # Flowers
 - type: loadout

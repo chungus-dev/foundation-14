@@ -5,8 +5,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobChiefTechnicalSpecialist # Scp edit
-      time: 72000 #20 hrs
+      role: JobChiefEngineer
+      time: 20h
 
 # Jumpsuit
 - type: loadout

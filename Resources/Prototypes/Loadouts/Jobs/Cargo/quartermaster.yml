@@ -5,8 +5,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobSeniorLogisticsOfficer # Scp edit
-      time: 72000 #20 hrs
+      role: JobQuartermaster
+      time: 20h
 
 # Jumpsuit
 - type: loadout

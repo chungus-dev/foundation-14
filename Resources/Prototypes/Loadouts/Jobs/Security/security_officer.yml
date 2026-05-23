@@ -2,18 +2,16 @@
 - type: loadoutEffectGroup
   id: SeniorOfficer
   effects:
-    # Scp edit start
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:DepartmentTimeRequirement
-        department: HeavyContainmentSecurityService
-        time: 90000 #25 hrs
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:DepartmentTimeRequirement
-        department: ExternalAdministrativeZoneSecurityService
-        time: 90000 #25 hrs
-    # Scp edit end
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobWarden
+      time: 6h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Security
+      time: 60h
 
 # Head
 - type: loadout

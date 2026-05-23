@@ -102,7 +102,7 @@
 # Command
 - type: loadoutGroup
   id: CaptainHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-captain-head
   minLimit: 0
   loadouts:
   - CaptainHead
@@ -110,7 +110,7 @@
 
 - type: loadoutGroup
   id: CaptainJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-captain-jumpsuit
   loadouts:
   - CaptainJumpsuit
   - CaptainJumpskirt
@@ -119,7 +119,7 @@
 
 - type: loadoutGroup
   id: CaptainNeck
-  name: loadout-group-neck # Scp edit
+  name: loadout-group-captain-neck
   minLimit: 0
   loadouts:
   - CaptainCloak
@@ -128,7 +128,7 @@
 
 - type: loadoutGroup
   id: CaptainBackpack
-  name: loadout-group-backpack # Scp edit
+  name: loadout-group-captain-backpack
   loadouts:
   - CaptainBackpack
   - CaptainSatchel
@@ -136,27 +136,34 @@
 
 - type: loadoutGroup
   id: CaptainOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-captain-outerclothing
   loadouts:
+  - CaptainOuterClothing
   - CaptainWintercoat
+
+#- type: loadoutGroup
+#  id: CaptainJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts: []
 
 - type: loadoutGroup
   id: HoPHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-hop-head
   minLimit: 0
   loadouts:
   - HoPHead
 
 - type: loadoutGroup
   id: HoPJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-hop-jumpsuit
   loadouts:
   - HoPJumpsuit
   - HoPJumpskirt
 
 - type: loadoutGroup
   id: HoPNeck
-  name: loadout-group-neck # Scp edit
+  name: loadout-group-hop-neck
   minLimit: 0
   loadouts:
   - HoPCloak
@@ -164,7 +171,7 @@
 
 - type: loadoutGroup
   id: HoPBackpack
-  name: loadout-group-backpack # Scp edit
+  name: loadout-group-hop-backpack
   loadouts:
   - CommonBackpack
   - CommonSatchel
@@ -173,14 +180,21 @@
 
 - type: loadoutGroup
   id: HoPOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-hop-outerclothing
   minLimit: 0
   loadouts:
   - HoPWintercoat
 
+#- type: loadoutGroup
+#  id: HoPJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts: []
+
+# Civilian
 - type: loadoutGroup
   id: PassengerJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-passenger-jumpsuit
   loadouts:
   - GreyJumpsuit
   - GreyJumpskirt
@@ -190,21 +204,21 @@
 
 - type: loadoutGroup
   id: PassengerFace
-  name: loadout-group-mask # Scp edit
+  name: loadout-group-passenger-mask
   minLimit: 0
   loadouts:
   - PassengerFace
 
 - type: loadoutGroup
   id: PassengerGloves
-  name: loadout-group-gloves # Scp edit
+  name: loadout-group-passenger-gloves
   minLimit: 0
   loadouts:
   - PassengerGloves
 
 - type: loadoutGroup
   id: CommonBackpack
-  name: loadout-group-backpack # Scp edit
+  name: loadout-group-backpack
   loadouts:
   - CommonBackpack
   - CommonSatchel
@@ -212,28 +226,34 @@
 
 - type: loadoutGroup
   id: PassengerNeck
-  name: loadout-group-neck # Scp edit
+  name: loadout-group-passenger-neck
   minLimit: 0
   loadouts:
   - Mantle
 
 - type: loadoutGroup
   id: PassengerOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-passenger-outerclothing
   minLimit: 0
   loadouts:
   - PassengerWintercoat
 
 - type: loadoutGroup
   id: PassengerShoes
-  name: loadout-group-shoes # Scp edit
+  name: loadout-group-passenger-shoes
   loadouts:
   - BlackShoes
   - WinterBoots
 
+#- type: loadoutGroup
+#  id: PassengerJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts: []
+
 - type: loadoutGroup
   id: BartenderHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-bartender-head
   minLimit: 0
   loadouts:
   - BartenderHead
@@ -241,7 +261,7 @@
 
 - type: loadoutGroup
   id: BartenderJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-bartender-jumpsuit
   loadouts:
   - BartenderJumpsuit
   - BartenderJumpskirt
@@ -249,7 +269,7 @@
 
 - type: loadoutGroup
   id: BartenderOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-bartender-outerclothing
   minLimit: 0
   loadouts:
   - BartenderVest
@@ -271,46 +291,58 @@
 
 - type: loadoutGroup
   id: ChefHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-chef-head
   minLimit: 0
   loadouts:
   - ChefHead
 
 - type: loadoutGroup
   id: ChefMask
-  name: loadout-group-mask # Scp edit
+  name: loadout-group-chef-mask
   minLimit: 0
   loadouts:
   - ChefMask
 
 - type: loadoutGroup
   id: ChefJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-chef-jumpsuit
   loadouts:
   - ChefJumpsuit
   - ChefJumpskirt
 
 - type: loadoutGroup
   id: ChefOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-chef-outerclothing
   minLimit: 0
   loadouts:
   - ChefApron
   - ChefJacket
   - ChefWintercoat
 
+#- type: loadoutGroup
+#  id: ChefJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
+
 - type: loadoutGroup
   id: LibrarianJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-librarian-jumpsuit
   loadouts:
   - LibrarianJumpsuit
   - LibrarianJumpskirt
   - CuratorJumpsuit
   - CuratorJumpskirt
 
+#- type: loadoutGroup
+#  id: LibrarianJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
+
 - type: loadoutGroup
   id: LawyerJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-lawyer-jumpsuit
   loadouts:
   - LawyerJumpsuit
   - LawyerJumpskirt
@@ -325,14 +357,20 @@
 
 - type: loadoutGroup
   id: LawyerNeck
-  name: loadout-group-neck # Scp edit
+  name: loadout-group-lawyer-neck
   minLimit: 0
   loadouts:
   - LawyerNeck
 
+#- type: loadoutGroup
+#  id: LawyerJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
+
 - type: loadoutGroup
   id: ChaplainHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-chaplain-head
   minLimit: 0
   loadouts:
   - ChaplainHead
@@ -343,14 +381,14 @@
 
 - type: loadoutGroup
   id: ChaplainMask
-  name: loadout-group-mask # Scp edit
+  name: loadout-group-chaplain-mask
   minLimit: 0
   loadouts:
   - ChaplainMask
 
 - type: loadoutGroup
   id: ChaplainJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-chaplain-jumpsuit
   loadouts:
   - ChaplainJumpsuit
   - ChaplainJumpskirt
@@ -359,7 +397,7 @@
 
 - type: loadoutGroup
   id: ChaplainOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-chaplain-outerclothing
   minLimit: 0
   loadouts:
   - ChaplainPlagueSuit
@@ -369,10 +407,16 @@
 
 - type: loadoutGroup
   id: ChaplainNeck
-  name: loadout-group-neck # Scp edit
+  name: loadout-group-chaplain-neck
   minLimit: 0
   loadouts:
   - ChaplainNeck
+
+#- type: loadoutGroup
+#  id: ChaplainJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
 
 - type: loadoutGroup
   id: ChaplainBible
@@ -388,21 +432,21 @@
 
 - type: loadoutGroup
   id: JanitorHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-janitor-head
   minLimit: 0
   loadouts:
   - JanitorHead
 
 - type: loadoutGroup
   id: JanitorJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-janitor-jumpsuit
   loadouts:
   - JanitorJumpsuit
   - JanitorJumpskirt
 
 - type: loadoutGroup
   id: JanitorGloves
-  name: loadout-group-gloves # Scp edit
+  name: loadout-group-janitor-gloves
   minLimit: 0
   loadouts:
   - JanitorRubberGloves
@@ -411,7 +455,7 @@
 
 - type: loadoutGroup
   id: JanitorOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-janitor-outerclothing
   minLimit: 0
   loadouts:
   - JanitorWintercoat
@@ -425,7 +469,7 @@
 
 - type: loadoutGroup
   id: BotanistHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-botanist-head
   minLimit: 0
   loadouts:
   - BotanistHead
@@ -433,7 +477,7 @@
 
 - type: loadoutGroup
   id: BotanistJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-botanist-jumpsuit
   loadouts:
   - BotanistJumpsuit
   - BotanistJumpskirt
@@ -441,7 +485,7 @@
 
 - type: loadoutGroup
   id: BotanistBackpack
-  name: loadout-group-backpack # Scp edit
+  name: loadout-group-botanist-backpack
   loadouts:
   - BotanistBackpack
   - BotanistSatchel
@@ -449,23 +493,30 @@
 
 - type: loadoutGroup
   id: BotanistOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-botanist-outerclothing
   minLimit: 0
   loadouts:
   - BotanistApron
   - BotanistWintercoat
 
+#- type: loadoutGroup
+#  id: BotanistJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
+
 - type: loadoutGroup
   id: ClownHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-clown-head
   minLimit: 0
   loadouts:
   - JesterHat
   - JesterAltHat
+  - ClownMitre
 
 - type: loadoutGroup
   id: ClownJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-clown-jumpsuit
   loadouts:
   - ClownSuit
   - ClownSkirt
@@ -474,7 +525,7 @@
 
 - type: loadoutGroup
   id: ClownBackpack
-  name: loadout-group-backpack # Scp edit
+  name: loadout-group-clown-backpack
   loadouts:
   - ClownBackpack
   - ClownSatchel
@@ -482,7 +533,7 @@
 
 - type: loadoutGroup
   id: ClownOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-clown-outerclothing
   minLimit: 0
   loadouts:
   - ClownRobes
@@ -490,7 +541,7 @@
 
 - type: loadoutGroup
   id: ClownShoes
-  name: loadout-group-shoes # Scp edit
+  name: loadout-group-clown-shoes
   loadouts:
   - ClownShoes
   - JesterShoes
@@ -514,7 +565,7 @@
 
 - type: loadoutGroup
   id: MimeHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-mime-head
   minLimit: 0
   loadouts:
   - MimeHead
@@ -523,7 +574,7 @@
 
 - type: loadoutGroup
   id: MimeMask
-  name: loadout-group-mask # Scp edit
+  name: loadout-group-mime-mask
   loadouts:
   - MimeMask
   - MimeMaskSad
@@ -531,14 +582,14 @@
 
 - type: loadoutGroup
   id: MimeJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-mime-jumpsuit
   loadouts:
   - MimeJumpsuit
   - MimeJumpskirt
 
 - type: loadoutGroup
   id: MimeBackpack
-  name: loadout-group-backpack # Scp edit
+  name: loadout-group-mime-backpack
   loadouts:
   - MimeBackpack
   - MimeSatchel
@@ -546,14 +597,14 @@
 
 - type: loadoutGroup
   id: MimeOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-mime-outerclothing
   minLimit: 0
   loadouts:
   - MimeWintercoat
 
 - type: loadoutGroup
   id: MimeBelt
-  name: loadout-group-belt # Scp edit
+  name: loadout-group-mime-belt
   loadouts:
   - MimeSuspendersRed
   - MimeSuspendersBlack
@@ -577,14 +628,14 @@
 
 - type: loadoutGroup
   id: MusicianJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-musician-jumpsuit
   loadouts:
   - MusicianJumpsuit
   - MusicianJumpskirt
 
 - type: loadoutGroup
   id: MusicianOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-musician-outerclothing
   minLimit: 0
   loadouts:
   - MusicianWintercoat
@@ -633,7 +684,7 @@
 # Cargo
 - type: loadoutGroup
   id: QuartermasterHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-quartermaster-head
   minLimit: 0
   loadouts:
   - QuartermasterHead
@@ -641,7 +692,7 @@
 
 - type: loadoutGroup
   id: QuartermasterJumpsuit
-  name: loadout-group-jumpsuit  # Scp edit
+  name: loadout-group-quartermaster-jumpsuit
   loadouts:
   - QuartermasterJumpsuit
   - QuartermasterJumpskirt
@@ -651,7 +702,7 @@
 
 - type: loadoutGroup
   id: QuartermasterNeck
-  name: loadout-group-neck # Scp edit
+  name: loadout-group-quartermaster-neck
   minLimit: 0
   loadouts:
   - QuartermasterCloak
@@ -659,35 +710,41 @@
 
 - type: loadoutGroup
   id: QuartermasterOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-quartermaster-outerclothing
   minLimit: 0
   loadouts:
   - QuartermasterWintercoat
 
 - type: loadoutGroup
   id: QuartermasterShoes
-  name: loadout-group-shoes # Scp edit
+  name: loadout-group-quartermaster-shoes
   loadouts:
   - BrownShoes
   - CargoWinterBoots
 
+#- type: loadoutGroup
+#  id: QuartermasterJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
+
 - type: loadoutGroup
   id: CargoTechnicianHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-cargo-technician-head
   minLimit: 0
   loadouts:
   - CargoTechnicianHead
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-cargo-technician-jumpsuit
   loadouts:
   - CargoTechnicianJumpsuit
   - CargoTechnicianJumpskirt
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
-  name: loadout-group-backpack # Scp edit
+  name: loadout-group-cargo-technician-backpack
   loadouts:
   - CargoTechnicianBackpack
   - CargoTechnicianSatchel
@@ -695,14 +752,14 @@
 
 - type: loadoutGroup
   id: CargoTechnicianOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-cargo-technician-outerclothing
   minLimit: 0
   loadouts:
   - CargoTechnicianWintercoat
 
 - type: loadoutGroup
   id: CargoTechnicianShoes
-  name: loadout-group-shoes # Scp edit
+  name: loadout-group-cargo-technician-shoes
   loadouts:
   - BlackShoes
   - CargoWinterBoots
@@ -722,7 +779,7 @@
 
 - type: loadoutGroup
   id: SalvageSpecialistBackpack
-  name: loadout-group-backpack # Scp edit
+  name: loadout-group-salvage-specialist-backpack
   loadouts:
   - SalvageSpecialistBackpack
   - SalvageSpecialistSatchel
@@ -730,18 +787,25 @@
 
 - type: loadoutGroup
   id: SalvageSpecialistOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-salvage-specialist-outerclothing
   minLimit: 0
   loadouts:
   - SalvageSpecialistWintercoat
 
 - type: loadoutGroup
   id: SalvageSpecialistShoes
-  name: loadout-group-shoes # Scp edit
+  name: loadout-group-salvage-specialist-shoes
   loadouts:
   - SalvageBoots
   - CargoWinterBoots
 
+#- type: loadoutGroup
+#  id: SalvageSpecialistJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
+
+# Engineering
 - type: loadoutGroup
   id: ChiefEngineerHead
   name: loadout-group-chief-engineer-head
@@ -752,7 +816,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-chief-engineer-jumpsuit
   loadouts:
   - ChiefEngineerJumpsuit
   - ChiefEngineerJumpskirt
@@ -761,52 +825,68 @@
 
 - type: loadoutGroup
   id: ChiefEngineerNeck
-  name: loadout-group-neck # Scp edit
+  name: loadout-group-chief-engineer-neck
   minLimit: 0
   loadouts:
   - ChiefEngineerCloak
   - ChiefEngineerMantle
+
 - type: loadoutGroup
   id: ChiefEngineerOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-chief-engineer-outerclothing
   minLimit: 0
   loadouts:
   - ChiefEngineerWintercoat
 
 - type: loadoutGroup
   id: ChiefEngineerShoes
-  name: loadout-group-shoes # Scp edit
+  name: loadout-group-chief-engineer-shoes
   loadouts:
   - BrownShoes
   - EngineeringWinterBoots
 
+#- type: loadoutGroup
+#  id: ChiefEngineerJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
+
 - type: loadoutGroup
   id: TechnicalAssistantJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-technical-assistant-jumpsuit
   loadouts:
   - YellowJumpsuit
   - YellowJumpskirt
 
+#- type: loadoutGroup
+#  id: TechnicalAssistantJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
+
 - type: loadoutGroup
   id: StationEngineerHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-station-engineer-head
   minLimit: 0
   loadouts:
   - StationEngineerHardhatYellow
   - StationEngineerHardhatOrange
   - StationEngineerHardhatRed
+  - SeniorEngineerBeret
 
 - type: loadoutGroup
   id: StationEngineerJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-station-engineer-jumpsuit
   loadouts:
   - StationEngineerJumpsuit
   - StationEngineerJumpskirt
   - StationEngineerHazardsuit
+  - SeniorEngineerJumpsuit
+  - SeniorEngineerJumpskirt
 
 - type: loadoutGroup
   id: StationEngineerBackpack
-  name: loadout-group-backpack # Scp edit
+  name: loadout-group-station-engineer-backpack
   loadouts:
   - StationEngineerBackpack
   - StationEngineerSatchel
@@ -814,14 +894,15 @@
 
 - type: loadoutGroup
   id: StationEngineerOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-station-engineer-outerclothing
   minLimit: 0
   loadouts:
   - StationEngineerOuterVest
   - StationEngineerWintercoat
+
 - type: loadoutGroup
   id: StationEngineerShoes
-  name: loadout-group-shoes # Scp edit
+  name: loadout-group-station-engineer-shoes
   loadouts:
   - WorkBoots
   - EngineeringWinterBoots
@@ -841,7 +922,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-atmospheric-technician-jumpsuit
   loadouts:
   - AtmosphericTechnicianJumpsuit
   - AtmosphericTechnicianJumpskirt
@@ -849,14 +930,14 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-atmospheric-technician-outerclothing
   minLimit: 0
   loadouts:
   - AtmosphericTechnicianWintercoat
 
 - type: loadoutGroup
   id: AtmosphericTechnicianBackpack
-  name: loadout-group-backpack # Scp edit
+  name: loadout-group-atmospheric-technician-backpack
   loadouts:
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianSatchel
@@ -864,10 +945,16 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianShoes
-  name: loadout-group-shoes # Scp edit
+  name: loadout-group-atmospheric-technician-shoes
   loadouts:
   - WhiteShoes
   - EngineeringWinterBoots
+
+#- type: loadoutGroup
+#  id: AtmosphericTechnicianJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
 
 - type: loadoutGroup
   id: SurvivalExtended
@@ -889,7 +976,7 @@
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
-  name: loadout-group-neck # Scp edit
+  name: loadout-group-research-director-neck
   minLimit: 0
   loadouts:
   - ResearchDirectorMantle
@@ -897,14 +984,14 @@
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-research-director-jumpsuit
   loadouts:
   - ResearchDirectorJumpsuit
   - ResearchDirectorJumpskirt
 
 - type: loadoutGroup
   id: ResearchDirectorOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-research-director-outerclothing
   minLimit: 0
   loadouts:
   - ResearchDirectorLabCoat
@@ -912,10 +999,16 @@
 
 - type: loadoutGroup
   id: ResearchDirectorShoes
-  name: loadout-group-shoes # Scp edit
+  name: loadout-group-research-director-shoes
   loadouts:
   - BrownShoes
   - ScienceWinterBoots
+
+#- type: loadoutGroup
+#  id: ResearchDirectorJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
 
 - type: loadoutGroup
   id: ScientistHead
@@ -928,21 +1021,25 @@
 
 - type: loadoutGroup
   id: ScientistNeck
-  name: loadout-group-neck # Scp edit
+  name: loadout-group-scientist-neck
   minLimit: 0
   loadouts:
   - ScientistTie
 
 - type: loadoutGroup
   id: ScientistJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-scientist-jumpsuit
   loadouts:
   - ScientistJumpsuit
   - ScientistJumpskirt
+  - RoboticistJumpsuit
+  - RoboticistJumpskirt
+  - SeniorResearcherJumpsuit
+  - SeniorResearcherJumpskirt
 
 - type: loadoutGroup
   id: ScientistBackpack
-  name: loadout-group-backpack # Scp edit
+  name: loadout-group-scientist-backpack
   loadouts:
   - ScientistBackpack
   - ScientistSatchel
@@ -950,16 +1047,19 @@
 
 - type: loadoutGroup
   id: ScientistOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-scientist-outerclothing
   minLimit: 0
   loadouts:
   - RegularLabCoat
   - ScienceLabCoat
   - ScienceWintercoat
+  - RoboticistLabCoat
+  - RoboticistWintercoat
+  - SeniorResearcherLabCoat
 
 - type: loadoutGroup
   id: ScientistShoes
-  name: loadout-group-shoes # Scp edit
+  name: loadout-group-scientist-shoes
   loadouts:
   - WhiteShoes
   - BlackShoes
@@ -967,11 +1067,12 @@
 
 - type: loadoutGroup
   id: ScientistGloves
-  name: loadout-group-gloves # Scp edit
+  name: loadout-group-scientist-gloves
   minLimit: 0
   loadouts:
   - LatexGloves
   - PurpleGloves
+  - RobohandsGloves
 
 - type: loadoutGroup
   id: ScientistPDA
@@ -988,14 +1089,21 @@
 
 - type: loadoutGroup
   id: ResearchAssistantJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-research-assistant-jumpsuit
   loadouts:
   - WhiteJumpsuit
   - WhiteJumpskirt
 
+#- type: loadoutGroup
+#  id: ResearchAssistantJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
+
+# Security
 - type: loadoutGroup
   id: HeadofSecurityHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-head-of-security-head
   minLimit: 0
   loadouts:
   - HeadofSecurityHead
@@ -1003,7 +1111,7 @@
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-head-of-security-jumpsuit
   loadouts:
   - HeadofSecurityJumpsuit
   - HeadofSecurityJumpskirt
@@ -1014,7 +1122,7 @@
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
-  name: loadout-group-neck # Scp edit
+  name: loadout-group-head-of-security-neck
   minLimit: 0
   loadouts:
   - HeadofSecurityCloak
@@ -1022,7 +1130,7 @@
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-head-of-security-outerclothing
   loadouts:
   - HeadofSecurityCoat
   - HeadofSecurityWinterCoat
@@ -1036,7 +1144,7 @@
 
 - type: loadoutGroup
   id: WardenHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-warden-head
   minLimit: 0
   loadouts:
   - WardenHead
@@ -1044,14 +1152,14 @@
 
 - type: loadoutGroup
   id: WardenJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-warden-jumpsuit
   loadouts:
   - WardenJumpsuit
   - WardenJumpskirt
 
 - type: loadoutGroup
   id: WardenOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-warden-outerclothing
   loadouts:
   - WardenCoat
   - WardenArmoredWinterCoat
@@ -1075,12 +1183,14 @@
 
 - type: loadoutGroup
   id: SecurityJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-security-jumpsuit
   loadouts:
   - SecurityJumpsuit
   - SecurityJumpskirt
   - SecurityJumpsuitGrey
   - SecurityJumpskirtGrey
+  - SeniorOfficerJumpsuit
+  - SeniorOfficerJumpskirt
   - TrooperUniform
 
 - type: loadoutGroup
@@ -1108,7 +1218,7 @@
 
 - type: loadoutGroup
   id: SecurityShoes
-  name: loadout-group-shoes # Scp edit
+  name: loadout-group-security-shoes
   loadouts:
   - JackBoots
   - SecurityWinterBoots
@@ -1129,7 +1239,7 @@
 
 - type: loadoutGroup
   id: DetectiveHead
-  name: loadout-group-head # Scp edit
+  name: loadout-group-detective-head
   minLimit: 0
   loadouts:
   - DetectiveFedora
@@ -1137,14 +1247,14 @@
 
 - type: loadoutGroup
   id: DetectiveNeck
-  name: loadout-group-neck # Scp edit
+  name: loadout-group-detective-neck
   minLimit: 0
   loadouts:
   - DetectiveTie
 
 - type: loadoutGroup
   id: DetectiveJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-detective-jumpsuit
   loadouts:
   - DetectiveJumpsuit
   - DetectiveJumpskirt
@@ -1153,7 +1263,7 @@
 
 - type: loadoutGroup
   id: DetectiveOuterClothing
-  name: loadout-group-outer-clothing # Scp edit
+  name: loadout-group-detective-outerclothing
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat
@@ -1168,10 +1278,16 @@
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-security-cadet-jumpsuit
   loadouts:
   - RedJumpsuit
   - RedJumpskirt
+
+#- type: loadoutGroup
+#  id: SecurityCadetJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
 
 - type: loadoutGroup
   id: SurvivalSecurity
@@ -1213,11 +1329,18 @@
 
 - type: loadoutGroup
   id: PsychologistJumpsuit
-  name: loadout-group-jumpsuit # Scp edit
+  name: loadout-group-psychologist-jumpsuit
   loadouts:
   - PsychologistJumpsuit
   - PsychologistJumpskirt
 
+#- type: loadoutGroup
+#  id: PsychologistJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
+
+# Other
 - type: loadoutGroup
   id: SurvivalSyndicate
   name: loadout-group-survival-syndicate
