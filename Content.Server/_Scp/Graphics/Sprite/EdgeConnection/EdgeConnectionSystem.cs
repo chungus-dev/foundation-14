@@ -1,5 +1,6 @@
 using Content.Shared._Scp.Graphics.Sprite.EdgeConnection;
 using Robust.Server.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 
 namespace Content.Server._Scp.Graphics.Sprite.EdgeConnection;
@@ -55,6 +56,9 @@ public sealed class EdgeConnectionSystem : EntitySystem
 
         if (!rotationChanged && !positionChanged)
             return;
+
+        if (positionChanged)
+            UpdateNeighbors(args.OldPosition);
 
         UpdateConnections(ent);
         UpdateNeighbors(ent);
@@ -113,7 +117,7 @@ public sealed class EdgeConnectionSystem : EntitySystem
 
         while (anchored.MoveNext(out var other))
         {
-            if (other == null || other == entity.Owner)
+            if (other == entity.Owner)
                 continue;
 
             if (!_edgeQuery.TryComp(other.Value, out var otherComp) ||
@@ -125,6 +129,12 @@ public sealed class EdgeConnectionSystem : EntitySystem
             var otherXform = Transform(other.Value);
             if (!otherXform.Anchored)
                 continue;
+
+            if (otherXform.GridUid != gridUid ||
+                _map.TileIndicesFor(gridUid, grid, otherXform.Coordinates) != tile)
+            {
+                continue;
+            }
 
             var otherWorldAllowed = RotateDirections(otherComp.AllowedDirections, otherXform.LocalRotation);
             if ((otherWorldAllowed & requiredDirection) == 0)
@@ -152,12 +162,25 @@ public sealed class EdgeConnectionSystem : EntitySystem
         UpdateNeighborsAtTile(xform.GridUid.Value, grid, tile + new Vector2i(0, -1));
     }
 
+    private void UpdateNeighbors(EntityCoordinates coordinates)
+    {
+        if (!TryComp<MapGridComponent>(coordinates.EntityId, out var grid))
+            return;
+
+        var tile = _map.TileIndicesFor(coordinates.EntityId, grid, coordinates);
+
+        UpdateNeighborsAtTile(coordinates.EntityId, grid, tile + new Vector2i(1, 0));
+        UpdateNeighborsAtTile(coordinates.EntityId, grid, tile + new Vector2i(-1, 0));
+        UpdateNeighborsAtTile(coordinates.EntityId, grid, tile + new Vector2i(0, 1));
+        UpdateNeighborsAtTile(coordinates.EntityId, grid, tile + new Vector2i(0, -1));
+    }
+
     private void UpdateNeighborsAtTile(EntityUid gridUid, MapGridComponent grid, Vector2i tile)
     {
         var anchored = _map.GetAnchoredEntitiesEnumerator(gridUid, grid, tile);
         while (anchored.MoveNext(out var other))
         {
-            if (other == null || !_edgeQuery.TryComp(other.Value, out var comp))
+            if (!_edgeQuery.TryComp(other.Value, out var comp))
                 continue;
 
             UpdateConnections((other.Value, comp));
