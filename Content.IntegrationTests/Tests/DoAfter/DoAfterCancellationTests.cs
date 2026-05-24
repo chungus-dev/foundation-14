@@ -2,6 +2,11 @@ using System.Linq;
 using Content.IntegrationTests.Tests.Construction.Interaction;
 using Content.IntegrationTests.Tests.Interaction;
 using Content.IntegrationTests.Tests.Weldable;
+// Scp added start - deterministic wall deconstruction cancellation test
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
+using Content.Shared.FixedPoint;
+// Scp added end
 using Content.Shared.Tools.Components;
 
 namespace Content.IntegrationTests.Tests.DoAfter;
@@ -16,6 +21,7 @@ public sealed class DoAfterCancellationTests : InteractionTest
     public async Task CancelWallDeconstruct()
     {
         await StartDeconstruction(WallConstruction.WallSolid);
+        await ClearTargetDamage(); // Scp added - random wall spawn damage blocks deconstruction do-afters
         await InteractUsing(Weld, awaitDoAfters: false);
 
         // Failed do-after has no effect
@@ -43,6 +49,23 @@ public sealed class DoAfterCancellationTests : InteractionTest
         await InteractUsing(Screw);
         AssertDeleted();
     }
+
+    // Scp added start - keep ScpWallSolid deconstruction cancellation deterministic
+    private async Task ClearTargetDamage()
+    {
+        Assert.That(Target, Is.Not.Null);
+        var target = Target!.Value;
+
+        await Server.WaitPost(() =>
+        {
+            var serverTarget = ToServer(target);
+            var damageable = SEntMan.GetComponent<DamageableComponent>(serverTarget);
+            SEntMan.System<DamageableSystem>().SetAllDamage((serverTarget, damageable), FixedPoint2.Zero);
+        });
+
+        await RunTicks(1);
+    }
+    // Scp added end
 
     [Test]
     public async Task CancelWallConstruct()
