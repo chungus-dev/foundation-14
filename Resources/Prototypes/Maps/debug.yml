@@ -17,6 +17,8 @@
   id: Dev
   mapName: Dev
   mapPath: /Maps/_Scp/Test/dev_map.yml # Scp edit
+  maxRandomOffset: 0 # Scp added - keep map-renderer output deterministic with Scp weather
+  randomRotation: false # Scp added - keep map-renderer output deterministic with Scp weather
   minPlayers: 0
   stations:
     Dev:
