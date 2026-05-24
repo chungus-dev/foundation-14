@@ -167,15 +167,6 @@
   components:
   - type: Sprite
     state: 500
-
-- type: entity
-  parent: BaseSignDirectionalScp
-  id: SignDirectionalScp612
-  name: SCP-612 sign
-  description: Points in a direction you shouldn't go without a clear understanding of where it leads.
-  components:
-  - type: Sprite
-    state: 612
     
 - type: entity
   parent: BaseSignDirectionalScp

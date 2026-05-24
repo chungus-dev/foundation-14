@@ -137,5 +137,3 @@ ent-ScpComputerPlayerConsole = command console computer
     .desc = { ent-BaseComputer.desc }
 ent-ScpComputerCodes = code console
     .desc = Console intended for inputting codes. It beeps ominously.
-ent-ScpComputerIcarus = Icarus terminal
-    .desc = An ominous terminal with several ports and keyboards, with indecipherable gibberish scrolling across the screen. On one side is strange marking: a red ring with a gold circle inside.
