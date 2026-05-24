@@ -4,8 +4,8 @@ meta:
   engineVersion: 275.2.0
   forkId: ""
   forkVersion: ""
-  time: 05/24/2026 04:37:38
-  entityCount: 2051
+  time: 05/24/2026 07:37:20
+  entityCount: 2069
 maps:
 - 23
 grids:
@@ -946,6 +946,11 @@ entities:
       parent: 1
 - proto: BoxFolderScp
   entities:
+  - uid: 1350
+    components:
+    - type: Transform
+      pos: 53.41461,-15.4709
+      parent: 1
   - uid: 1356
     components:
     - type: Transform
@@ -960,11 +965,6 @@ entities:
     components:
     - type: Transform
       pos: 26.487814,-6.430252
-      parent: 1
-  - uid: 1359
-    components:
-    - type: Transform
-      pos: 53.986065,-15.499802
       parent: 1
   - uid: 1360
     components:
@@ -1042,34 +1042,20 @@ entities:
     - type: InsideEntityStorage
 - proto: ButtonCallEmergencyCommandantSquad
   entities:
-  - uid: 1341
+  - uid: 413
     components:
     - type: Transform
-      pos: 37.5,-9.5
+      pos: 38.375046,-9.336454
       parent: 1
     - type: Fixtures
       fixtures: {}
 - proto: ButtonCallEmergencySpecialPurposeSquad
   entities:
-  - uid: 1340
+  - uid: 421
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 47.5,-11.5
-      parent: 1
-    - type: Fixtures
-      fixtures: {}
-  - uid: 1342
-    components:
-    - type: Transform
-      pos: 28.5,-10.5
-      parent: 1
-    - type: Fixtures
-      fixtures: {}
-  - uid: 1343
-    components:
-    - type: Transform
-      pos: 28.5,-4.5
+      pos: 47.22983,-11.401935
       parent: 1
     - type: Fixtures
       fixtures: {}
@@ -1081,19 +1067,10 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-  - uid: 1348
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 53.5,-15.5
-      parent: 1
-    - type: Fixtures
-      fixtures: {}
   - uid: 1349
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 50.5,-15.5
+      pos: 51.510494,-13.147933
       parent: 1
     - type: Fixtures
       fixtures: {}
@@ -1102,6 +1079,29 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 51.5,-1.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 1688
+    components:
+    - type: Transform
+      pos: 53.46362,-13.179205
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 1689
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 26.25664,-11.541655
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 1690
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 26.241014,-5.4621377
       parent: 1
     - type: Fixtures
       fixtures: {}
@@ -5730,22 +5730,16 @@ entities:
       fixtures: {}
 - proto: LuxuryPen
   entities:
-  - uid: 1346
+  - uid: 402
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 54.282143,-15.257751
+      pos: 53.57086,-15.330177
       parent: 1
   - uid: 1347
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 51.516518,-15.242115
-      parent: 1
-  - uid: 1350
-    components:
-    - type: Transform
-      pos: 26.737778,-6.9421673
       parent: 1
   - uid: 1351
     components:
@@ -5761,6 +5755,63 @@ entities:
     components:
     - type: Transform
       pos: 47.326687,-10.291168
+      parent: 1
+  - uid: 1383
+    components:
+    - type: Transform
+      pos: 26.63401,-6.200514
+      parent: 1
+- proto: MachineArtifactAnalyzer
+  entities:
+  - uid: 1341
+    components:
+    - type: Transform
+      pos: 60.5,-14.5
+      parent: 1
+  - uid: 1342
+    components:
+    - type: Transform
+      pos: 49.5,-18.5
+      parent: 1
+  - uid: 1343
+    components:
+    - type: Transform
+      pos: 55.5,-18.5
+      parent: 1
+  - uid: 1346
+    components:
+    - type: Transform
+      pos: 44.5,-13.5
+      parent: 1
+  - uid: 1681
+    components:
+    - type: Transform
+      pos: 23.5,-6.5
+      parent: 1
+    - type: ArtifactAnalyzer
+      currentArtifact: 1268
+    - type: ItemPlacer
+      placedEntities:
+      - 1268
+  - uid: 1682
+    components:
+    - type: Transform
+      pos: 23.5,-12.5
+      parent: 1
+    - type: ArtifactAnalyzer
+      currentArtifact: 361
+    - type: ItemPlacer
+      placedEntities:
+      - 361
+  - uid: 1691
+    components:
+    - type: Transform
+      pos: 58.5,-0.5
+      parent: 1
+  - uid: 1692
+    components:
+    - type: Transform
+      pos: 46.5,3.5
       parent: 1
 - proto: MachineCentrifuge
   entities:
@@ -6594,10 +6645,11 @@ entities:
       fixtures: {}
 - proto: PosterSCP082
   entities:
-  - uid: 888
+  - uid: 1348
     components:
     - type: Transform
-      pos: 54.5,-12.5
+      rot: 3.141592653589793 rad
+      pos: 53.5,-12.5
       parent: 1
     - type: Fixtures
       fixtures: {}
@@ -7431,6 +7483,8 @@ entities:
     - type: Transform
       pos: 23.495022,-12.432209
       parent: 1
+    - type: CollisionWake
+      enabled: False
 - proto: Scp018
   entities:
   - uid: 550
@@ -7542,8 +7596,10 @@ entities:
   - uid: 1268
     components:
     - type: Transform
-      pos: 23.506958,-6.364628
+      pos: 23.584902,-6.3191824
       parent: 1
+    - type: CollisionWake
+      enabled: False
 - proto: Scp714
   entities:
   - uid: 615
@@ -7616,12 +7672,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 55.5,-13.5
       parent: 1
-  - uid: 402
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 53.5,-12.5
-      parent: 1
   - uid: 471
     components:
     - type: Transform
@@ -7673,6 +7723,12 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 50.5,-12.5
+      parent: 1
+  - uid: 1687
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 54.5,-12.5
       parent: 1
 - proto: ScpAirlockMedical
   entities:
@@ -7774,6 +7830,17 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 27.249588,-12.433903
       parent: 1
+  - uid: 1694
+    components:
+    - type: Transform
+      pos: 47.575268,-0.7182894
+      parent: 1
+  - uid: 1709
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 53.704586,-1.2105
+      parent: 1
 - proto: ScpChairOfficeGrey
   entities:
   - uid: 1364
@@ -7794,6 +7861,105 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 27.218338,-6.556843
       parent: 1
+- proto: ScpComputerAnalysisConsole
+  entities:
+  - uid: 1340
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 61.5,-10.5
+      parent: 1
+    - type: AnalysisConsole
+      analyzerEntity: 1341
+    - type: DeviceLinkSource
+      linkedPorts:
+        1341:
+        - - ArtifactAnalyzerSender
+          - ArtifactAnalyzerReceiver
+  - uid: 1374
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 50.5,-15.5
+      parent: 1
+    - type: AnalysisConsole
+      analyzerEntity: 1342
+    - type: DeviceLinkSource
+      linkedPorts:
+        1342:
+        - - ArtifactAnalyzerSender
+          - ArtifactAnalyzerReceiver
+  - uid: 1376
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 54.5,-15.5
+      parent: 1
+    - type: AnalysisConsole
+      analyzerEntity: 1343
+    - type: DeviceLinkSource
+      linkedPorts:
+        1343:
+        - - ArtifactAnalyzerSender
+          - ArtifactAnalyzerReceiver
+  - uid: 1679
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 47.5,-9.5
+      parent: 1
+    - type: AnalysisConsole
+      analyzerEntity: 1346
+    - type: DeviceLinkSource
+      linkedPorts:
+        1346:
+        - - ArtifactAnalyzerSender
+          - ArtifactAnalyzerReceiver
+  - uid: 1683
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 26.5,-14.5
+      parent: 1
+  - uid: 1684
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 26.5,-7.5
+      parent: 1
+    - type: AnalysisConsole
+      analyzerEntity: 1681
+    - type: DeviceLinkSource
+      linkedPorts:
+        1681:
+        - - ArtifactAnalyzerSender
+          - ArtifactAnalyzerReceiver
+  - uid: 1693
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 47.5,-1.5
+      parent: 1
+    - type: AnalysisConsole
+      analyzerEntity: 1692
+    - type: DeviceLinkSource
+      linkedPorts:
+        1692:
+        - - ArtifactAnalyzerSender
+          - ArtifactAnalyzerReceiver
+  - uid: 1708
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 54.5,-0.5
+      parent: 1
+    - type: AnalysisConsole
+      analyzerEntity: 1691
+    - type: DeviceLinkSource
+      linkedPorts:
+        1691:
+        - - ArtifactAnalyzerSender
+          - ArtifactAnalyzerReceiver
 - proto: ScpComputerBodyScanner
   entities:
   - uid: 1221
@@ -7941,11 +8107,6 @@ entities:
       parent: 1
 - proto: ScpFacilityBeaconScp082Containment
   entities:
-  - uid: 421
-    components:
-    - type: Transform
-      pos: 54.5,-15.5
-      parent: 1
   - uid: 1703
     components:
     - type: Transform
@@ -8086,12 +8247,21 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 37.72429,-5.998701
       parent: 1
-- proto: ScpRandomPosterAny
+- proto: ScpRandomPosterLegit
   entities:
-  - uid: 3150
+  - uid: 1710
     components:
     - type: Transform
-      pos: 37.5,19.5
+      rot: 3.141592653589793 rad
+      pos: 27.5,20.5
+      parent: 1
+- proto: ScpRandomPosterScp049
+  entities:
+  - uid: 1359
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 55.5,-16.5
       parent: 1
 - proto: ScpReinforcedWindow
   entities:
@@ -8369,25 +8539,21 @@ entities:
     - type: Transform
       pos: 30.5,19.5
       parent: 1
+  - uid: 888
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 54.5,-1.5
+      parent: 1
   - uid: 1373
     components:
     - type: Transform
       pos: 45.5,0.5
       parent: 1
-  - uid: 1374
-    components:
-    - type: Transform
-      pos: 54.5,-15.5
-      parent: 1
   - uid: 1375
     components:
     - type: Transform
       pos: 53.5,-15.5
-      parent: 1
-  - uid: 1376
-    components:
-    - type: Transform
-      pos: 50.5,-15.5
       parent: 1
   - uid: 1377
     components:
@@ -8419,11 +8585,6 @@ entities:
     - type: Transform
       pos: 26.5,-11.5
       parent: 1
-  - uid: 1383
-    components:
-    - type: Transform
-      pos: 26.5,-7.5
-      parent: 1
   - uid: 1384
     components:
     - type: Transform
@@ -8433,6 +8594,18 @@ entities:
     components:
     - type: Transform
       pos: 26.5,-5.5
+      parent: 1
+  - uid: 1685
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 51.5,-13.5
+      parent: 1
+  - uid: 1686
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 53.5,-13.5
       parent: 1
 - proto: ScpTableGlass
   entities:
@@ -10915,12 +11088,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 55.5,-12.5
       parent: 1
-  - uid: 413
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 54.5,-12.5
-      parent: 1
   - uid: 417
     components:
     - type: Transform
@@ -12325,6 +12492,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 53.5,3.5
+      parent: 1
+  - uid: 1677
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 53.5,-12.5
       parent: 1
 - proto: ScpWindow
   entities:
