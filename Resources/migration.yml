@@ -2481,7 +2481,8 @@ StationAiUploadComputer: ScpComputerFacilityAiUpload
 SyndicateComputerComms: ScpComputerCommunicationChaosInsurgency
 ComputerShuttleCargo: ScpComputerShuttleLogistics
 CodeConsole: ScpComputerCodes
-ComputerIcarus: ScpComputerIcarus
+ComputerIcarus: null
+ScpComputerIcarus: null
 BaseComputer: ScpComputer
 BaseComputerAiAccess: ScpComputer
 
@@ -2713,7 +2714,9 @@ SpawnScp247: null
 Scp427: null
 PosterSCP247: null
 PosterSCP427: null
+PosterSCP612: null
 SignDirectionalScp427: null
+SignDirectionalScp612: null
 # Scp added end
 
 

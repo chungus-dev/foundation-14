@@ -32,7 +32,7 @@ public sealed partial class BloodSplatterSystem : SharedBloodSplatterSystem
 
         SubscribeLocalEvent<BloodstreamComponent, AttackedEvent>(OnAttacked);
         SubscribeLocalEvent<BloodstreamComponent, HitScanAttackedEvent>(OnHitscanAttacked);
-        SubscribeLocalEvent<BloodSplattererComponent, ProjectileHitEvent>(OnProjectileHit);
+        SubscribeLocalEvent<ProjectileComponent, ProjectileHitEvent>(OnProjectileHit);
 
         InitializeParticles();
 
@@ -63,12 +63,15 @@ public sealed partial class BloodSplatterSystem : SharedBloodSplatterSystem
         TrySplat((args.Gun, splatterer), ent);
     }
 
-    private void OnProjectileHit(Entity<BloodSplattererComponent> ent, ref ProjectileHitEvent args)
+    private void OnProjectileHit(Entity<ProjectileComponent> ent, ref ProjectileHitEvent args)
     {
         if (!TryComp<BloodstreamComponent>(args.Target, out var bloodstream))
             return;
 
-        TrySplat(ent, (args.Target, bloodstream));
+        if (!TryGetProjectileSource(ent, out var source))
+            return;
+
+        TrySplat(source.Value, (args.Target, bloodstream));
     }
 
     /// <summary>
@@ -139,6 +142,34 @@ public sealed partial class BloodSplatterSystem : SharedBloodSplatterSystem
         if (Resolve(used, ref used.Comp, false))
         {
             splatterer = (used, used.Comp);
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool TryGetProjectileSource(Entity<ProjectileComponent> projectile,
+        [NotNullWhen(true)] out Entity<BloodSplattererComponent>? splatterer)
+    {
+        splatterer = null;
+
+        if (projectile.Comp.Weapon is { } weapon &&
+            TryComp<BloodSplattererComponent>(weapon, out var weaponSplatterer))
+        {
+            splatterer = (weapon, weaponSplatterer);
+            return true;
+        }
+
+        if (TryComp<BloodSplattererComponent>(projectile, out var projectileSplatterer))
+        {
+            splatterer = (projectile, projectileSplatterer);
+            return true;
+        }
+
+        if (projectile.Comp.Shooter is { } shooter &&
+            TryComp<BloodSplattererComponent>(shooter, out var shooterSplatterer))
+        {
+            splatterer = (shooter, shooterSplatterer);
             return true;
         }
 

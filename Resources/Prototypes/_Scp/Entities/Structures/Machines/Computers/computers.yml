@@ -15,9 +15,9 @@
       params:
         maxDistance: 2
         variation: 0.25
-  # - type: EdgeConnection # SCP port: component unavailable in Foundation14
-    # connectionKey: computers
-    # allowedDirections: East, West
+  - type: EdgeConnection
+    connectionKey: computers
+    allowedDirections: East, West
   - type: GenericVisualizer
     visuals:
       enum.ComputerVisuals.Powered:
@@ -859,9 +859,9 @@
     graph: ScpComputer
   - type: Sprite
     sprite: _Scp/Structures/Machines/computers.rsi
-  # - type: EdgeConnection # SCP port: component unavailable in Foundation14
-    # connectionKey: computers
-    # allowedDirections: East, West
+  - type: EdgeConnection
+    connectionKey: computers
+    allowedDirections: East, West
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -1071,22 +1071,5 @@
       state: generic_keyboard
     - map: ["computerLayerScreen"]
       state: generic
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
-
-- type: entity
-  id: ScpComputerIcarus
-  parent:
-  - ScpBaseComputer
-  - BaseComputer
-  components:
-  - type: Sprite
-    layers:
-    - map: [ "computerLayerBody" ]
-      state: computer
-    - map: [ "computerLayerKeyboard" ]
-      state: generic_keyboard
-    - map: [ "computerLayerScreen" ]
-      state: icarus
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open

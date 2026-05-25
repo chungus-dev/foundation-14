@@ -836,15 +836,6 @@
 
 - type: entity
   parent: PosterScpContainmentRoomBase
-  id: PosterSCP612
-  name: SCP-612 poster
-  description: Information poster for SCP-612.
-  components:
-  - type: Sprite
-    state: scp612
-
-- type: entity
-  parent: PosterScpContainmentRoomBase
   id: PosterSCP2022
   name: SCP-2022 poster
   description: Information poster for SCP-2022.

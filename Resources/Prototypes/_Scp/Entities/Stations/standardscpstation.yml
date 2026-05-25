@@ -40,3 +40,8 @@
   id: ScpComplexModular
   parent: StandardScpStation
   categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: ScpDebug
+  parent: StandardScpStation
+  categories: [ HideSpawnMenu ]
