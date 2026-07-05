@@ -9,9 +9,9 @@ using Robust.Shared.Enums;
 namespace Content.Server.Chat.Commands
 {
     [AnyCommand]
-    internal sealed class SuicideCommand : IConsoleCommand
+    internal sealed partial class SuicideCommand : IConsoleCommand
     {
-        // [Dependency] private readonly IEntityManager _e = default!; Scp edit
+        // [Dependency] private IEntityManager _e = default!; Scp edit
 
         public string Command => "suicide";
 

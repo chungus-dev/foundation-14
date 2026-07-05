@@ -19,7 +19,6 @@
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   overrideConsoleVisibility: false # Scp added
   setPreference: false # Scp added
   access:

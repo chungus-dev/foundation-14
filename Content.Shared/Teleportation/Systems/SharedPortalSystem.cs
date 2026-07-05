@@ -25,17 +25,18 @@ namespace Content.Shared.Teleportation.Systems;
 /// Uses <see cref="LinkedEntitySystem"/> to get linked portals.
 /// </summary>
 /// <seealso cref="PortalComponent"/>
-public abstract class SharedPortalSystem : EntitySystem
+public abstract partial class SharedPortalSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly INetManager _netMan = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly PullingSystem _pulling = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedJointSystem _joints = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private INetManager _netMan = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private PullingSystem _pulling = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedJointSystem _joints = default!;
+
+    [Dependency] private TagSystem _tag = default!; // Scp added
 
     private const string PortalFixture = "portalFixture";
     private const string ProjectileFixture = "projectile";
@@ -89,8 +90,10 @@ public abstract class SharedPortalSystem : EntitySystem
 
     private void OnCollide(Entity<PortalComponent> ent, ref StartCollideEvent args)
     {
+        // Scp added start - fix for the portals in SCP-106 dimension
         if (_tag.HasTag(args.OtherEntity, ent.Comp.IgnorePortalTag))
             return;
+        // Scp added end
 
         if (!ShouldCollide(args.OurFixtureId, args.OtherFixtureId, args.OurFixture, args.OtherFixture))
             return;

@@ -37,16 +37,9 @@
     requireAnchored: false
     joinSystem: true
   - type: DoAfter
-  # - type: MechVulnerableToEMP # SCP port: component unavailable in Foundation14
   - type: Repairable
-    doAfterDelay: 1
-    damage:
-      types:
-        Blunt: -15
-        Slash: -15
-        Piercing: -15
-        Caustic: -15
-        Structural: -15
+    fuelCost: 25
+    doAfterDelay: 10
   - type: UserInterface
     interfaces:
       enum.MechUiKey.Key:
@@ -88,26 +81,6 @@
         - MobMask
         layer:
         - MobLayer
-  - type: MobState
-    allowedStates:
-    - Alive
-    - Critical
-  - type: MobThresholds
-    currentThresholdState : Alive
-    thresholds:
-      0: Alive
-      250: Critical
-    showOverlays: false
-    allowRevives: true
-  - type: ZombieImmune
-  - type: HealthExaminable
-    examinableTypes:
-      - Blunt
-      - Slash
-      - Piercing
-      - Heat
-      - Shock
-    locPrefix: mech
   - type: Appearance
   - type: ContainerContainer
     containers:
@@ -115,6 +88,9 @@
       mech-equipment-container: !type:Container
       mech-battery-slot: !type:ContainerSlot
   - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Mecha/mechmove03.ogg
@@ -134,18 +110,7 @@
         node: start
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: Prying
-    speedModifier: 6
-  - type: StatusIcon
-    bounds: "-0.6,-0.6, 0.6, 0.6"
-  - type: PointLight
-    enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-    netsync: false
-  - type: AccessReader
 
-# Ripley MK-I
 - type: entity
   id: MechRipley
   parent: BaseMech

@@ -6,3 +6,10 @@
   dollPrototype: AppearanceDwarf
   skinColoration: HumanToned
   maxAge: 85 # Scp edit
+  defaultSoundsBySex:
+  - UnisexDwarf
+  - FemaleDwarf
+  - UnisexDwarf
+  voices:
+  - UnisexDwarf
+  - FemaleDwarf

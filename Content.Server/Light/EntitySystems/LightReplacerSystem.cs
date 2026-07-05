@@ -8,19 +8,18 @@ using Content.Shared.Light.Components;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using JetBrains.Annotations;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 
 namespace Content.Server.Light.EntitySystems;
 
 [UsedImplicitly]
-public sealed class LightReplacerSystem : SharedLightReplacerSystem
+public sealed partial class LightReplacerSystem : SharedLightReplacerSystem
 {
-    [Dependency] private readonly PoweredLightSystem _poweredLight = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private PoweredLightSystem _poweredLight = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
 
     public override void Initialize()
     {
@@ -45,10 +44,9 @@ public sealed class LightReplacerSystem : SharedLightReplacerSystem
 
             args.PushMarkup(Loc.GetString("comp-light-replacer-has-lights"));
             var groups = new Dictionary<string, int>();
-            var metaQuery = GetEntityQuery<MetaDataComponent>();
             foreach (var bulb in component.InsertedBulbs.ContainedEntities)
             {
-                var metaData = metaQuery.GetComponent(bulb);
+                var metaData = MetaData(bulb);
                 groups[metaData.EntityName] = groups.GetValueOrDefault(metaData.EntityName) + 1;
             }
 
@@ -182,7 +180,7 @@ public sealed class LightReplacerSystem : SharedLightReplacerSystem
             return false;
 
         // only normal (non-broken) bulbs can be inserted inside light replacer
-        // Scp edit
+        // Scp edit - added MalfunctionLightComponent
         if (bulb.State != LightBulbState.Normal || HasComp<MalfunctionLightComponent>(bulbUid))
         {
             if (showTooltip && userUid != null)

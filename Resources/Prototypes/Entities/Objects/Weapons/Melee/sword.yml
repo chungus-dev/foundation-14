@@ -12,7 +12,6 @@
     probability: 0.5
     bloodLineProbability: 0.15
   # Scp added end
-  - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon

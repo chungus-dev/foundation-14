@@ -15,7 +15,9 @@
     state: icon
   - type: TimedDespawn
     lifetime: 90
+  - type: Clickable
   - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic # Scp edit
   - type: Destructible
     thresholds:

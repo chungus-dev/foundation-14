@@ -11,7 +11,6 @@
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science
-  canBeAntag: false
   overrideConsoleVisibility: false # Scp added
   setPreference: false # Scp added
   access:

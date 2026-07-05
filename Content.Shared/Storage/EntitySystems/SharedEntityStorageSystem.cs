@@ -1,7 +1,6 @@
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Destructible;
-using Content.Shared.DoAfter;
 using Content.Shared.Foldable;
 using Content.Shared.Hands.Components;
 using Content.Shared.Explosion;
@@ -16,6 +15,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Wall;
 using Content.Shared.Whitelist;
 using Content.Shared.ActionBlocker;
+using Content.Shared.DoAfter;
 using Content.Shared.Mobs.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -29,23 +29,24 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Storage.EntitySystems;
 
-public abstract class SharedEntityStorageSystem : EntitySystem
+public abstract partial class SharedEntityStorageSystem : EntitySystem
 {
-    [Dependency] private   readonly IGameTiming _timing = default!;
-    [Dependency] private   readonly INetManager _net = default!;
-    [Dependency] private   readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private   readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private   readonly SharedAudioSystem _audio = default!;
-    [Dependency] private   readonly SharedContainerSystem _container = default!;
-    [Dependency] private   readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private   readonly SharedJointSystem _joints = default!;
-    [Dependency] private   readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] protected readonly SharedPopupSystem Popup = default!;
-    [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
-    [Dependency] private   readonly WeldableSystem _weldable = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private SharedJointSystem _joints = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
+    [Dependency] protected SharedPopupSystem Popup = default!;
+    [Dependency] protected SharedTransformSystem TransformSystem = default!;
+    [Dependency] private WeldableSystem _weldable = default!;
+    [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
+
+    [Dependency] private SharedDoAfterSystem _doAfter = default!; // Scp added
 
     public const string ContainerName = "entity_storage";
 
@@ -118,6 +119,8 @@ public abstract class SharedEntityStorageSystem : EntitySystem
 
     private void OnRelayMovement(EntityUid uid, EntityStorageComponent component, ref ContainerRelayMovementEntityEvent args)
     {
+        // Scp edit - removed requirement for HandsComponent for Scps without hands
+
         if (!_actionBlocker.CanMove(args.Entity))
             return;
 
@@ -128,7 +131,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         Dirty(uid, component);
 
         if (component.OpenOnMove)
-            TryOpenStorage(args.Entity, uid, requireHands: false);
+            TryOpenStorage(args.Entity, uid, requireHands: false); // Scp edit
     }
 
     private void OnFoldAttempt(EntityUid uid, EntityStorageComponent component, ref FoldAttemptEvent args)
@@ -235,6 +238,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         var beforeev = new StorageBeforeOpenEvent();
         RaiseLocalEvent(uid, ref beforeev);
 
+        // Scp edit start
         if (component.DoAfterDelay != 0 && user.HasValue && !force)
         {
             var doAfterEventArgs = new DoAfterArgs(EntityManager, user.Value, component.DoAfterDelay, new OpenStorageDoAfterEvent(), uid, target: uid)
@@ -243,11 +247,12 @@ public abstract class SharedEntityStorageSystem : EntitySystem
                 BreakOnDamage = true,
             };
 
-            _doAfterSystem.TryStartDoAfter(doAfterEventArgs);
+            _doAfter.TryStartDoAfter(doAfterEventArgs);
             return;
         }
 
         DoOpenStorage(uid, component, user);
+        // Scp edit end
     }
 
     protected void DoOpenStorage(EntityUid uid, EntityStorageComponent component, EntityUid? user = null)
@@ -256,12 +261,13 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         Dirty(uid, component);
         EmptyContents(uid, component);
         ModifyComponents(uid, component);
-        _audio.PlayPredicted(component.OpenSound, uid, user);
+        _audio.PlayPredicted(component.OpenSound, uid, user); // Scp edit
         ReleaseGas(uid, component);
         var afterev = new StorageAfterOpenEvent();
         RaiseLocalEvent(uid, ref afterev);
     }
 
+    // Scp edit - added user field to play sounds from server with Predicted method
     public void CloseStorage(EntityUid uid, EntityStorageComponent? component = null, EntityUid? user = null)
     {
         if (!Resolve(uid, ref component))
@@ -304,9 +310,11 @@ public abstract class SharedEntityStorageSystem : EntitySystem
                 break;
         }
 
-        TakeGas(uid, component);
+        if (LifeStage(uid) >= EntityLifeStage.MapInitialized) // stop mappers from serializing air in locker
+            TakeGas(uid, component);
         ModifyComponents(uid, component);
-        _audio.PlayPredicted(component.CloseSound, uid, user);
+
+        _audio.PlayPredicted(component.CloseSound, uid, user); // Scp edit
 
         var afterev = new StorageAfterCloseEvent();
         RaiseLocalEvent(uid, ref afterev);
@@ -415,7 +423,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
             return false;
         }
 
-        CloseStorage(target, user: user);
+        CloseStorage(target, user: user); // Scp edit - added user field
         return true;
     }
 
@@ -427,12 +435,15 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         return component.Open;
     }
 
+    // Scp edit - added requireHands field
     public bool CanOpen(EntityUid user, EntityUid target, bool silent = false, EntityStorageComponent? component = null, bool requireHands = true)
     {
         if (!Resolve(target, ref component))
             return false;
 
-        if (!HasComp<HandsComponent>(user) && requireHands)
+        if (!component.Contents.Contains(user) &&
+            !HasComp<HandsComponent>(user) &&
+            requireHands) // Scp edit - added requireHands
             return false;
 
         if (_weldable.IsWelded(target))
@@ -517,5 +528,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
     public virtual void ReleaseGas(EntityUid uid, EntityStorageComponent component) { }
 }
 
+// Scp added start
 [Serializable, NetSerializable]
 public sealed partial class OpenStorageDoAfterEvent : SimpleDoAfterEvent;
+// Scp added end
