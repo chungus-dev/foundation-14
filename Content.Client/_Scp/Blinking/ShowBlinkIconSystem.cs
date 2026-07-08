@@ -6,13 +6,12 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Scp.Blinking;
 
-public sealed class ShowBlinkIconSystem : EquipmentHudSystem<ShowBlinkableComponent>
+public sealed partial class ShowBlinkIconSystem : EquipmentHudSystem<ShowBlinkableComponent>
 {
-    [Dependency] private readonly BlinkingSystem _blinking = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private BlinkingSystem _blinking = default!;
 
     private static readonly ProtoId<BlinkIconPrototype> ClosedEyeIcon = "ClosedEyeIcon";
-    private static BlinkIconPrototype _icon = default!;
+    private BlinkIconPrototype _icon = default!;
 
     public override void Initialize()
     {
@@ -20,7 +19,7 @@ public sealed class ShowBlinkIconSystem : EquipmentHudSystem<ShowBlinkableCompon
 
         SubscribeLocalEvent<BlinkableComponent, GetStatusIconsEvent>(OnGetIcon);
 
-        _icon = _prototype.Index(ClosedEyeIcon);
+        _icon = ProtoMan.Index(ClosedEyeIcon);
     }
 
     private void OnGetIcon(Entity<BlinkableComponent> ent, ref GetStatusIconsEvent args)

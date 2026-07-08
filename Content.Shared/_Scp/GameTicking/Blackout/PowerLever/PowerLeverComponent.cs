@@ -2,7 +2,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Scp.Other.Blackout.PowerLever;
+namespace Content.Shared._Scp.GameTicking.Blackout.PowerLever;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState()]
 public sealed partial class PowerLeverComponent : Component

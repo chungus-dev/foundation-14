@@ -16,7 +16,6 @@
   icon: JobScpChiefEngineer
   supervisors: job-supervisors-facility-director
   displayWeight: 70
-  canBeAntag: true
   accessGroups:
   - ScpChiefEngineer
   special:

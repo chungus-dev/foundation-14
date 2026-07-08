@@ -2,7 +2,4 @@
 
 namespace Content.Client._Scp.Other.Deployable;
 
-public sealed class DeployableSystem : SharedDeployableSystem
-{
-
-}
+public sealed class DeployableSystem : SharedDeployableSystem;

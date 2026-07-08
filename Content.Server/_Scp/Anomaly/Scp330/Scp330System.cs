@@ -8,6 +8,7 @@ using Content.Shared._Scp.Anomaly.Scp330;
 using Content.Shared.Body;
 using Content.Shared.Containers;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Gibbing;
 using Content.Shared.Hands.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Storage;
@@ -22,25 +23,26 @@ namespace Content.Server._Scp.Anomaly.Scp330;
 // TODO: Добавить, что миску можно будет бросить. При этом конфеты высыпятся и приколиста кастрирует.
 public sealed partial class Scp330System : SharedScp330System
 {
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly ProximitySystem _proximity = default!;
-    [Dependency] private readonly HandsSystem _hands = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private ProximitySystem _proximity = default!;
+    [Dependency] private HandsSystem _hands = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private GibbingSystem _gib = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     private readonly HashSet<Entity<HandsComponent>> _cachedEntities = [];
-    private HashSet<EntityUid> _gibCachedEntities = [];
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<Scp330BowlComponent, MapInitEvent>(OnBowlMapInit, after: [typeof(ContainerFillSystem)]);
+        SubscribeLocalEvent<HandOrganComponent, BodyRelayedEvent<Scp330CutOffHandsEvent>>(OnCutOffHand);
 
         InitializeCandy();
     }
@@ -50,6 +52,11 @@ public sealed partial class Scp330System : SharedScp330System
     private void OnBowlMapInit(Entity<Scp330BowlComponent> ent, ref MapInitEvent args)
     {
         TryAssignEffects(ent);
+    }
+
+    private void OnCutOffHand(Entity<HandOrganComponent> ent, ref BodyRelayedEvent<Scp330CutOffHandsEvent> args)
+    {
+        _gib.Gib(ent, user: args.Args.User);
     }
 
     #endregion
@@ -132,19 +139,8 @@ public sealed partial class Scp330System : SharedScp330System
         if (!TryComp<BodyComponent>(target, out var body))
             return;
 
-        if (!_body.TryGetOrgansWithComponent<HandOrganComponent>((target, body), out var hands))
-            return;
-
-        _gibCachedEntities.Clear();
-
-        foreach (var hand in hands)
-        {
-            _gibCachedEntities.Add(hand.Owner);
-            QueueDel(hand);
-        }
-
-        if (_gibCachedEntities.Count <= 0)
-            return;
+        var ev = new Scp330CutOffHandsEvent(bowl);
+        _body.RelayEvent((target, body), ref ev);
 
         _popup.PopupEntity(Loc.GetString("scp330-removed-hands"), target, target, PopupType.LargeCaution);
 
@@ -175,4 +171,6 @@ public sealed partial class Scp330System : SharedScp330System
     }
 
     #endregion
+
+    private record struct Scp330CutOffHandsEvent(EntityUid? User = null);
 }

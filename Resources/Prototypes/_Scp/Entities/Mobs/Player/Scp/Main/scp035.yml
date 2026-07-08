@@ -35,6 +35,7 @@
     - ScpResearch
     - ScpFear
 
+# TODO: Debloat this from rat king's servant components
 - type: entity
   id: MobServant035
   parent: [ SimpleMobBase, MobCombat ]
@@ -130,12 +131,6 @@
     spawned:
     - id: FoodMeatRat
       amount: 1
-  - type: Vocal
-    sounds:
-      Male: Mouse
-      Female: Mouse
-      Unsexed: Mouse
-    wilhelmProbability: 0.001
   - type: Tag
     tags:
     - CannotSuicide

@@ -16,10 +16,10 @@ namespace Content.Server._Scp.Mobs.Fear;
 
 public sealed partial class FearSystem
 {
-    [Dependency] private readonly HighlightSystem _highlight = default!;
-    [Dependency] private readonly EyeWatchingSystem _watching = default!;
-    [Dependency] private readonly ScpHelpersSystem _helpers = default!;
-    [Dependency] private readonly MobStateSystem _mob = default!;
+    [Dependency] private HighlightSystem _highlight = default!;
+    [Dependency] private EyeWatchingSystem _watching = default!;
+    [Dependency] private ScpHelpersSystem _helpers = default!;
+    [Dependency] private MobStateSystem _mob = default!;
 
     private static readonly TimeSpan HemophobiaCheckCooldown = TimeSpan.FromSeconds(0.5f);
     private TimeSpan _nextHemophobiaCheck = TimeSpan.Zero;

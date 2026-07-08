@@ -6,7 +6,7 @@ namespace Content.Client._Scp.Anomaly.Scp939;
 
 public sealed partial class Scp939HudSystem
 {
-    [Dependency] private readonly IOverlayManager _overlayManager = default!;
+    [Dependency] private IOverlayManager _overlayManager = default!;
 
     private void InitializeOverlay()
     {

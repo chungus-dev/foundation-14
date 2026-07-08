@@ -1,5 +1,6 @@
 ﻿using Content.Shared._Scp.Combat.Weapons.Ranged;
 using Content.Shared._Scp.Mobs.Fear.Components;
+using Content.Shared._Scp.Mobs.Fear.Components.Traits;
 using Content.Shared._Scp.Utility.Random;
 using Content.Shared.Drunk;
 using Content.Shared.Jittering;
@@ -12,11 +13,14 @@ namespace Content.Shared._Scp.Mobs.Fear.Systems;
 
 public abstract partial class SharedFearSystem
 {
-    [Dependency] private readonly StatusEffectsSystem _effects = default!;
-    [Dependency] private readonly SharedJitteringSystem _jittering = default!;
-    [Dependency] private readonly StandingStateSystem _standing = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly RandomPredictedSystem _random = default!;
+    [Dependency] private StatusEffectsSystem _effects = default!;
+    [Dependency] private SharedJitteringSystem _jittering = default!;
+    [Dependency] private StandingStateSystem _standing = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private RandomPredictedSystem _random = default!;
+
+    [Dependency] private EntityQuery<FearFaintingComponent> _fearFaintingQuery;
+    [Dependency] private EntityQuery<FearStuporComponent> _fearStuporQuery;
 
     private const float BaseJitteringAmplitude = 1f;
     private const float BaseJitteringFrequency = 4f;

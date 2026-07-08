@@ -58,8 +58,6 @@ public sealed partial class PullingSystem : EntitySystem
     {
         base.Initialize();
 
-        InitializeScpHolding();
-
         UpdatesAfter.Add(typeof(SharedPhysicsSystem));
         UpdatesOutsidePrediction = true;
 

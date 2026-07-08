@@ -25,14 +25,14 @@ namespace Content.Shared._Scp.Containment.ScpMask;
 
 public sealed partial class ScpMaskSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly RandomPredictedSystem _random = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private RandomPredictedSystem _random = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -41,7 +41,7 @@ public sealed partial class ScpMaskSystem : EntitySystem
         SubscribeLocalEvent<ScpComponent, ScpTearMaskEvent>(OnTear);
         SubscribeLocalEvent<ScpComponent, ScpTearMaskDoAfterEvent>(OnTearSuccess);
 
-        SubscribeLocalEvent<ScpComponent, DamageChangedEvent>(OnDamage);
+        SubscribeLocalEvent<ScpComponent, DamageDealtEvent>(OnDamage);
 
         InitializeEquipment();
         InitializeRestrictions();
@@ -78,9 +78,10 @@ public sealed partial class ScpMaskSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void OnDamage(Entity<ScpComponent> scp, ref DamageChangedEvent args)
+    private void OnDamage(Entity<ScpComponent> scp, ref DamageDealtEvent args)
     {
-        if (!args.DamageIncreased)
+        var damageDelta = args.Damage.GetTotal();
+        if (damageDelta <= 0)
             return;
 
         // Нужен только тот урон, что нанесли игроки

@@ -5,37 +5,38 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Interaction;
 using Content.Shared.Kitchen.Components;
-using Content.Shared.Popups;
 using Robust.Shared.Audio;
-using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Server.Jittering;
+using Content.Server.Popups;
 using Content.Shared._Scp.Research.Misc;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Content.Shared.Jittering;
 using Content.Shared.Power;
+using Robust.Server.Audio;
+using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Random;
 
 namespace Content.Server._Scp.Research.ReagentSynthesizer;
 
-public sealed class ReagentSynthesizerSystem : EntitySystem
+public sealed partial class ReagentSynthesizerSystem : EntitySystem
 {
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainersSystem = default!;
-    [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly JitteringSystem _jitter = default!;
-    [Dependency] private readonly AppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedEntityEffectsSystem _effects = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainersSystem = default!;
+    [Dependency] private ItemSlotsSystem _itemSlotsSystem = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private AudioSystem _audioSystem = default!;
+    [Dependency] private ContainerSystem _containerSystem = default!;
+    [Dependency] private JitteringSystem _jitter = default!;
+    [Dependency] private AppearanceSystem _appearance = default!;
+    [Dependency] private SharedEntityEffectsSystem _effects = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
-    private readonly FixedPoint2 _requiredVolume = 30f;
+    private static readonly FixedPoint2 RequiredVolume = 30f;
 
     public override void Initialize()
     {
@@ -197,7 +198,7 @@ public sealed class ReagentSynthesizerSystem : EntitySystem
         if (!_solutionContainersSystem.TryGetFitsInDispenser(containerUid, out var solutionEntity, out var solution))
             return false;
 
-        if (solutionEntity.Value.Comp.Solution.Volume < _requiredVolume)
+        if (solutionEntity.Value.Comp.Solution.Volume < RequiredVolume)
             return false;
 
         outSolutionEntity = solutionEntity;

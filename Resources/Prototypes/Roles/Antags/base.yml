@@ -11,6 +11,33 @@
   - ERTMedical
   - ERTJanitor
   - CBURN
+  # Scp added start
+  - Scp999
+  - Scp173
+  - Scp096
+  - Scp049
+  - Scp082
+  - Scp939
+  - Scp106
+  - Scp131A
+  - Scp131B
+  - Scp2295
+  - FondSecurityOfficer
+  - FondSeniorSecurityOfficer
+  - HDLeader
+  - HDSpecialist
+  - HDCadet
+  - LLHLeader
+  - LLHSpecialist
+  - MHLeader
+  - MHSpecialist
+  - MHCadet
+  - NTFLeader
+  - NTFSpecialist
+  - NTFCadet
+  - RRHLeader
+  - RRHSpecialist
+  # Scp added end
   blacklist:
     components:
     - AntagImmune
@@ -28,6 +55,16 @@
   - ResearchDirector
   - ChiefEngineer
   - Quartermaster
+  # Scp added start
+  - FacilityDirector
+  - PersonnelManager
+  - ScpChiefEngineer
+  - ScpChiefMedicalOfficer
+  - ScpQuartermaster
+  - ScpResearchDirector
+  - SecurityCommander
+  - EthicsCommitteeRepresentative
+  # Scp added end
 
 # Borgs
 - type: antagSpecifier
@@ -61,6 +98,17 @@
   - Detective
   - SecurityOfficer
   - SecurityCadet
+  # Scp added start
+  - Amnesticologist
+  - Commandant
+  - CommandantLeader
+  - JuniorCommandant
+  - SeniorCommandant
+  - JuniorSpecialPurposeSquadOfficer
+  - SeniorSpecialPurposeSquadOfficer
+  - SpecialPurposeSquadOfficer
+  - SpecialPurposeUnitCommander
+  # Scp added end
 
 - type: antagSpecifier
   abstract: true

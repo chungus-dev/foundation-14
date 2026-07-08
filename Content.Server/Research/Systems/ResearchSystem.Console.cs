@@ -1,6 +1,6 @@
 using Content.Server.Power.EntitySystems;
 using Content.Server.Research.Components;
-using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Utility;
 using Content.Shared.UserInterface;
 using Content.Shared.Access.Components;
 using Content.Shared.Emag.Systems;
@@ -80,6 +80,7 @@ public sealed partial class ResearchSystem
 
         ResearchConsoleBoundInterfaceState state;
 
+        // Scp edit start - multipoint support
         if (TryGetClientServer(uid, out _, out var serverComponent, clientComponent))
         {
             var points = clientComponent.ConnectedToServer ? serverComponent.Points : new ();
@@ -87,8 +88,9 @@ public sealed partial class ResearchSystem
         }
         else
         {
-            state = new ResearchConsoleBoundInterfaceState(default);
+            state = new ResearchConsoleBoundInterfaceState(new());
         }
+        // Scp edit end
 
         _uiSystem.SetUiState(uid, ResearchConsoleUiKey.Key, state);
     }

@@ -27,8 +27,9 @@
     fillBaseName: gun
   - type: Lock
   - type: LockVisuals
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallic
   - type: Transform
     anchored: true

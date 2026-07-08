@@ -2,7 +2,4 @@
 
 namespace Content.Client._Scp.Damage;
 
-public sealed class ScpExaminableDamageSystem : SharedScpExaminableDamageSystem
-{
-
-}
+public sealed class ScpExaminableDamageSystem : SharedScpExaminableDamageSystem;

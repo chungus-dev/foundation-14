@@ -8,7 +8,7 @@
     layers:
     - map: [ "base" ]
       state: icon
-  - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: MobState
     allowedStates:

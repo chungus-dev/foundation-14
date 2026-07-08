@@ -13,7 +13,6 @@
     inverted: true
   icon: JobLaboratoryPractitioner
   supervisors: job-supervisors-research-director
-  canBeAntag: true
   displayWeight: 0
   weight: 785
   accessGroups:

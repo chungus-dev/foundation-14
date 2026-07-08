@@ -6,7 +6,6 @@ using Content.Shared._Scp.Facility.Weather;
 using Content.Shared.Light.Components;
 using Content.Shared.Station.Components;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._Scp.Facility.Weather;
@@ -14,13 +13,12 @@ namespace Content.Server._Scp.Facility.Weather;
 /// <summary>
 /// Система, позволяющая создавать случайные биомы для комплексов.
 /// </summary>
-public sealed class ScpWeatherSystem : SharedScpWeatherSystem
+public sealed partial class ScpWeatherSystem : SharedScpWeatherSystem
 {
-    [Dependency] private readonly BiomeSystem _biome = default!;
-    [Dependency] private readonly WeatherSystem _weather = default!;
-    [Dependency] private readonly AutoRoofSystem _autoRoof = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private BiomeSystem _biome = default!;
+    [Dependency] private WeatherSystem _weather = default!;
+    [Dependency] private AutoRoofSystem _autoRoof = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -33,7 +31,7 @@ public sealed class ScpWeatherSystem : SharedScpWeatherSystem
     {
         var (mapUid, mapId) = GetStationMapUid(args.Station);
         var data = _random.Pick(ent.Comp.Data);
-        var biome = _prototype.Index(data.Biome);
+        var biome = ProtoMan.Index(data.Biome);
         int? seed = data.Seed != null ? _random.Pick(data.Seed) : null;
 
         _biome.EnsurePlanet(mapUid, biome, seed);

@@ -13,7 +13,6 @@
     inverted: true
   icon: JobJuniorCommandant
   supervisors: job-supervisors-commandant-leader
-  canBeAntag: false
   displayWeight: 0
   weight: 810
   accessGroups:

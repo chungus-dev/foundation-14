@@ -6,9 +6,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Scp.EntityEffects;
 
-public sealed class RejuvenateEntityEffectSystem : EntityEffectSystem<MobStateComponent, RejuvenateEffect>
+public sealed partial class RejuvenateEntityEffectSystem : EntityEffectSystem<MobStateComponent, RejuvenateEffect>
 {
-    [Dependency] private readonly RejuvenateSystem _rejuvenate = default!;
+    [Dependency] private RejuvenateSystem _rejuvenate = default!;
 
     protected override void Effect(Entity<MobStateComponent> entity, ref EntityEffectEvent<RejuvenateEffect> args)
     {

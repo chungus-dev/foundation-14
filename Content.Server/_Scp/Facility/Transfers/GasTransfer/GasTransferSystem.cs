@@ -1,20 +1,16 @@
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Atmos.Piping.Components;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
-using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
-using Robust.Shared.Map;
 
 namespace Content.Server._Scp.Facility.Transfers.GasTransfer;
 
-public sealed class GasTransferSystem : EntitySystem
+public sealed partial class GasTransferSystem : EntitySystem
 {
-    private const float BalanceThreshold = 0.001f;
-    private const float SmallTransferThreshold = 0.1f;
+    [Dependency] private AtmosphereSystem _atmosphere = default!;
+    [Dependency] private NodeContainerSystem _nodeContainer = default!;
 
-    [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
-    [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
+    private const float BalanceThreshold = 0.001f;
 
     public override void Initialize()
     {
@@ -63,7 +59,7 @@ public sealed class GasTransferSystem : EntitySystem
 
         if (ent.Comp.PartnerPipe == null)
         {
-            if (!_nodeContainer.TryGetNode<PipeNode>(partnerUid, ent.Comp.Partner.Value.Comp.InletName, out partnerPipe!))
+            if (!_nodeContainer.TryGetNode(partnerUid, ent.Comp.Partner.Value.Comp.InletName, out partnerPipe!))
             {
                 ent.Comp.PartnerPipe = null;
                 return false;
@@ -183,6 +179,6 @@ public sealed class GasTransferSystem : EntitySystem
 
         var removed = fromNode.Air.Remove(moles);
 
-        _atmosphereSystem.Merge(toNode.Air, removed);
+        _atmosphere.Merge(toNode.Air, removed);
     }
 }

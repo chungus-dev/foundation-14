@@ -6,12 +6,7 @@ namespace Content.Shared.Movement.Systems;
 
 public abstract partial class SharedSpriteMovementSystem
 {
-    private EntityQuery<BlockMovementComponent> _blockQuery;
-
-    private void InitializePartial()
-    {
-        _blockQuery = GetEntityQuery<BlockMovementComponent>();
-    }
+    [Dependency] private EntityQuery<BlockMovementComponent> _blockQuery;
 
     private bool ShouldBlockMovement(Entity<SpriteMovementComponent> ent, ref SpriteMoveEvent args)
     {

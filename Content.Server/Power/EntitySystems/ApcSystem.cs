@@ -1,7 +1,7 @@
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.Pow3r;
-using Content.Shared._Scp.Other.Blackout;
+using Content.Shared._Scp.GameTicking.Blackout;
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.APC;

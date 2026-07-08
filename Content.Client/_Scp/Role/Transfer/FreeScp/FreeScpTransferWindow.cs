@@ -2,12 +2,12 @@
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 
-namespace Content.Client._Scp.FreeScp;
+namespace Content.Client._Scp.Role.Transfer.FreeScp;
 
 [GenerateTypedNameReferences]
 public sealed partial class FreeScpTransferWindow : DefaultWindow
 {
-    [Dependency] private readonly ILocalizationManager _loc = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
 
     public FreeScpTransferWindow(string scpName)
     {

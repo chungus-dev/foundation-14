@@ -1,6 +1,6 @@
-﻿using Content.Server.Speech.Components;
-using Content.Shared._Scp.Mobs.Fear;
+﻿using Content.Shared._Scp.Mobs.Fear;
 using Content.Shared._Scp.Mobs.Fear.Components.Traits;
+using Content.Shared.Speech.Components;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Random;
 
@@ -8,8 +8,8 @@ namespace Content.Server._Scp.Mobs.Fear;
 
 public sealed partial class FearSystem
 {
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     private void InitializeTraits()
     {

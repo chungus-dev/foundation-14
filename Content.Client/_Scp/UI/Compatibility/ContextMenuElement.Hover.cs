@@ -15,9 +15,8 @@ public partial class ContextMenuElement
         InitializeHoverHandling();
     }
 
-    protected override void ExitedTree()
+    private void ExitedTree2()
     {
-        base.ExitedTree();
         CleanupHoverHandling();
     }
 

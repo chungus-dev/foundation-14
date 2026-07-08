@@ -2,7 +2,4 @@
 
 namespace Content.Client._Scp.Blinking.ReducedBlinking;
 
-public sealed class ReducedBlinkingSystem : SharedReducedBlinkingSystem
-{
-
-}
+public sealed partial class ReducedBlinkingSystem : SharedReducedBlinkingSystem;

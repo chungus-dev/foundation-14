@@ -3,7 +3,7 @@ using Content.Shared.Interaction;
 using Content.Server.Popups;
 using Content.Shared.Research.Prototypes;
 using Content.Server.Research.Systems;
-using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Utility;
 using Content.Shared.Research;
 using Content.Shared.Research.Components;
 using Robust.Shared.Prototypes;

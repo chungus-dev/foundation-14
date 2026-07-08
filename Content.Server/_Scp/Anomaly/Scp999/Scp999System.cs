@@ -1,9 +1,10 @@
 using Content.Server.Actions;
-using Content.Server.Disposal.Unit;
 using Content.Server.Popups;
 using Content.Shared._Scp.Anomaly.Scp999;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Disposal.Unit;
+using Content.Shared.FixedPoint;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Movement.Components;
@@ -20,17 +21,17 @@ namespace Content.Server._Scp.Anomaly.Scp999;
 
 public sealed partial class Scp999System : SharedScp999System
 {
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly PhysicsSystem _physics = default!;
-    [Dependency] private readonly FixtureSystem _fixture = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly PullingSystem _pulling = default!;
-    [Dependency] private readonly ActionBlockerSystem _action = default!;
-    [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private PhysicsSystem _physics = default!;
+    [Dependency] private FixtureSystem _fixture = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private PullingSystem _pulling = default!;
+    [Dependency] private ActionBlockerSystem _action = default!;
+    [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     private const string WallFixtureId = "fix2";
 
@@ -45,7 +46,7 @@ public sealed partial class Scp999System : SharedScp999System
         SubscribeLocalEvent<Scp999Component, Scp999ChangeStateAttemptEvent>(OnChangeStateAttempt);
         SubscribeLocalEvent<Scp999Component, Scp999ChangedStateEvent>(OnChangedState);
 
-        SubscribeLocalEvent<Scp999Component, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<Scp999Component, DamageDealtEvent>(OnDamageChanged);
 
         SubscribeLocalEvent<Scp999Component, EntityFedEvent>(OnFeed);
     }
@@ -182,18 +183,19 @@ public sealed partial class Scp999System : SharedScp999System
             _pulling.TryStopPull(puller.Pulling.Value, pullable2, ent);
     }
 
-    private void OnDamageChanged(Entity<Scp999Component> ent, ref DamageChangedEvent args)
+    private void OnDamageChanged(Entity<Scp999Component> ent, ref DamageDealtEvent args)
     {
         if (ent.Comp.CurrentState != Scp999States.Wall)
             return;
 
-        if (!args.DamageIncreased || args.DamageDelta == null)
+        var damage = args.Damage.GetTotal();
+        if (damage <= FixedPoint2.Zero)
             return;
 
         if (args.Origin == null)
             return;
 
-        ent.Comp.CurrentTotalDamage += args.DamageDelta.GetTotal();
+        ent.Comp.CurrentTotalDamage += damage;
         if (ent.Comp.CurrentTotalDamage < ent.Comp.TotalDamageToChangeState)
             return;
 

@@ -1,4 +1,4 @@
-using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Utility;
 using Content.Shared.Database;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;

@@ -1,5 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Access.Systems;
+using Content.Shared._Scp.Role.CharacterInfo.AccessLevel;
+using Content.Shared._Scp.Role.CharacterInfo.EmployeeClass;
 using Content.Shared.Access.Components;
 using Content.Shared.Forensics.Components;
 using Content.Shared.GameTicking;

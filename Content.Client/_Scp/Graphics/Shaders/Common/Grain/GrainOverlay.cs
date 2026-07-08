@@ -8,13 +8,13 @@ namespace Content.Client._Scp.Graphics.Shaders.Common.Grain;
 /// <summary>
 /// Шейдер зернистости с заданной силой <see cref="CurrentStrength"/>
 /// </summary>
-public sealed class GrainOverlay : Overlay
+public sealed partial class GrainOverlay : Overlay
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IEntityManager _ent = default!;
 
-    private readonly EntityQuery<EyeComponent> _eyeQuery;
+    private EntityQuery<EyeComponent> _eyeQuery;
 
     private readonly ShaderInstance _shader;
     private static readonly ProtoId<ShaderPrototype> ShaderProtoId = "Grain";
@@ -29,7 +29,7 @@ public sealed class GrainOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
 
-        _eyeQuery = _entManager.GetEntityQuery<EyeComponent>();
+        _eyeQuery = _ent.GetEntityQuery<EyeComponent>();
 
         _shader = _prototype.Index(ShaderProtoId).InstanceUnique();
     }

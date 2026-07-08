@@ -5,6 +5,7 @@ using Content.Server.Construction.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 
@@ -15,6 +16,8 @@ public sealed partial class EntityStorageSystem : SharedEntityStorageSystem
     [Dependency] private ConstructionSystem _construction = default!;
     [Dependency] private AtmosphereSystem _atmos = default!;
     [Dependency] private MapSystem _mapSystem = default!;
+
+    [Dependency] private AudioSystem _audio = default!; // Scp added
 
     public override void Initialize()
     {

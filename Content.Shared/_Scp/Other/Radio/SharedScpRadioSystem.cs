@@ -18,15 +18,14 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._Scp.Other.Radio;
 
-public abstract class SharedScpRadioSystem : EntitySystem
+public abstract partial class SharedScpRadioSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAmbientSoundSystem _ambientSound = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedAmbientSoundSystem _ambientSound = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -88,7 +87,7 @@ public abstract class SharedScpRadioSystem : EntitySystem
         using (args.PushGroup(nameof(ScpRadioComponent)))
         {
             if (ent.Comp.ActiveChannel is { } activeChannel
-                && PrototypeManager.TryIndex(activeChannel, out var proto))
+                && ProtoMan.TryIndex(activeChannel, out var proto))
             {
                 args.PushMarkup(Loc.GetString("handheld-radio-component-chennel-examine",
                     ("channel", proto.LocalizedName)));
@@ -122,7 +121,7 @@ public abstract class SharedScpRadioSystem : EntitySystem
         }
 
         ent.Comp.Channels = keyHolder.Channels
-            .OrderBy(channel => PrototypeManager.Index(channel).Frequency)
+            .OrderBy(channel => ProtoMan.Index(channel).Frequency)
             .ThenBy(channel => channel.ToString())
             .ToList();
         DirtyField(ent!, nameof(ScpRadioComponent.Channels));
@@ -195,7 +194,7 @@ public abstract class SharedScpRadioSystem : EntitySystem
         if (ent.Comp.ActiveChannel == next)
             return;
 
-        if (!PrototypeManager.TryIndex(next, out var nextPrototype))
+        if (!ProtoMan.TryIndex(next, out var nextPrototype))
             return;
 
         ent.Comp.ActiveChannel = next;

@@ -2,7 +2,4 @@
 
 namespace Content.Client._Scp.Other.AirlockManEater;
 
-public sealed class AirlockManEaterSystem : SharedAirlockManEaterSystem
-{
-
-}
+public sealed class AirlockManEaterSystem : SharedAirlockManEaterSystem;

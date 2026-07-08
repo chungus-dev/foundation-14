@@ -18,9 +18,9 @@ namespace Content.Server._Scp.Utility.Helpers;
 /// </summary>
 public sealed partial class ScpHelpersSystem : SharedScpHelpersSystem
 {
-    [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
-    [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private AtmosphereSystem _atmosphere = default!;
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     #region Open Gameticker API
 

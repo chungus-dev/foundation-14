@@ -174,7 +174,6 @@
   - type: Damageable
   - type: Injurable
     damageContainer: Silicon
-    damageModifierSet: Metallic # Scp edit - old Silicon modifier set is unavailable.
   - type: Destructible
     generateOverkillThreshold: false
     thresholds:

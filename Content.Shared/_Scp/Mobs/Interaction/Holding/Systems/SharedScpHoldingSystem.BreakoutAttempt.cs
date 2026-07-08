@@ -14,12 +14,7 @@ public abstract partial class SharedScpHoldingSystem
 
     [Dependency] private readonly WorldAlertSystem _worldAlert = default!;
 
-    private EntityQuery<ScpBreakoutAttemptComponent> _breakoutAttemptQuery;
-
-    private void InitializeBreakoutAttemptQueries()
-    {
-        _breakoutAttemptQuery = GetEntityQuery<ScpBreakoutAttemptComponent>();
-    }
+    [Dependency] private EntityQuery<ScpBreakoutAttemptComponent> _breakoutAttemptQuery;
 
     private void InitializeBreakoutAttemptEvents()
     {

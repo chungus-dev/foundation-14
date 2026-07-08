@@ -12,7 +12,7 @@ namespace Content.Server._Scp.Anomaly.Scp330;
 
 public sealed partial class Scp330System
 {
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
 
     private static readonly ProtoId<ReagentPrototype> FallbackReagent = "Scp330Nothing";
 
@@ -89,11 +89,16 @@ public sealed partial class Scp330System
         if (!ent.Comp.CandyEffects.TryGetValue(proto, out var reagent))
             reagent = GetRandomEffect(ent);
 
-        if (!_solution.EnsureSolution(candy.Owner, candy.Comp.SolutionName, out _, out var solution))
+        if (!_solution.TryGetSolution(candy.Owner, candy.Comp.SolutionName, out var solutionEntity, out _))
             return;
 
-        solution.RemoveAllSolution();
-        solution.AddReagent(reagent, candy.Comp.ReagentQuantity);
+        _solution.RemoveAllSolution(solutionEntity.Value);
+        _solution.TryAddReagent(
+            solutionEntity.Value,
+            new ReagentId(reagent, null),
+            candy.Comp.ReagentQuantity,
+            out _);
+
         ent.Comp.CandyEffects[proto] = reagent;
     }
 

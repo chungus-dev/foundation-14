@@ -13,7 +13,6 @@
     inverted: true
   icon: JobJuniorSpecialPurposeSquadOfficer
   supervisors: job-supervisors-special-purpose-unit-commander
-  canBeAntag: false
   displayWeight: 0
   weight: 830
   accessGroups:

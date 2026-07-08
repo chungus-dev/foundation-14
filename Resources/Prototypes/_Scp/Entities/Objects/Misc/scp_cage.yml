@@ -82,8 +82,9 @@
   - type: RadiationBlockingContainer
     resistance: 5
   - type: ScpCage
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:

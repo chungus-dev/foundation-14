@@ -3,10 +3,11 @@ using Content.Shared.Inventory.Events;
 
 namespace Content.Shared._Scp.Other.ClothingAddActions;
 
-public sealed class ClothingAddActionsSystem : EntitySystem
+public sealed partial class ClothingAddActionsSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private ActionContainerSystem _actionContainer = default!;
+
     public override void Initialize()
     {
         base.Initialize();

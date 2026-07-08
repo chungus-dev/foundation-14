@@ -7,13 +7,11 @@ namespace Content.Shared._Scp.Mobs.Fear.Systems;
 
 public abstract partial class SharedFearSystem
 {
-    private EntityQuery<ActiveCloseFearComponent> _activeCloseFearQuery;
+    [Dependency] private EntityQuery<ActiveCloseFearComponent> _activeCloseFearQuery;
 
     private void InitializeCloseFear()
     {
         SubscribeLocalEvent<ActiveProximityTargetComponent, ComponentShutdown>(OnActiveProximityShutdown);
-
-        _activeCloseFearQuery = GetEntityQuery<ActiveCloseFearComponent>();
     }
 
     public override void Update(float frameTime)

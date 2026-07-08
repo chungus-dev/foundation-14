@@ -14,7 +14,6 @@
     inverted: true
   icon: JobSeniorCommandant
   supervisors: job-supervisors-commandant-leader
-  canBeAntag: false
   displayWeight: 60
   weight: 820
   accessGroups:

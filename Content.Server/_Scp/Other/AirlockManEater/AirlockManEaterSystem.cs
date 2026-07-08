@@ -16,22 +16,22 @@ using Timer = Robust.Shared.Timing.Timer;
 namespace Content.Server._Scp.Other.AirlockManEater;
 
 // TODO: Фикс отстающего от маски спрайта. Или наоборот.
-public sealed class AirlockManEaterSystem : SharedAirlockManEaterSystem
+public sealed partial class AirlockManEaterSystem : SharedAirlockManEaterSystem
 {
-    [Dependency] private readonly DoorSystem _door = default!;
-    [Dependency] private readonly AirlockSystem _airlock = default!;
-    [Dependency] private readonly MobStateSystem _mob = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private DoorSystem _door = default!;
+    [Dependency] private AirlockSystem _airlock = default!;
+    [Dependency] private MobStateSystem _mob = default!;
+    [Dependency] private AudioSystem _audio = default!;
+
+    [Dependency] private EntityQuery<DoorComponent> _doors;
+    [Dependency] private EntityQuery<AirlockComponent> _airlocks;
 
     private static readonly TimeSpan CrushAgainAfter = TimeSpan.FromSeconds(0.5f);
     private static readonly TimeSpan LaughAfter = TimeSpan.FromSeconds(0.3f);
 
     private static readonly SoundSpecifier AirlockLaughSound = new SoundPathSpecifier("/Audio/Machines/airlock_deny.ogg");
 
-    private static EntityQuery<DoorComponent> _doors;
-    private static EntityQuery<AirlockComponent> _airlocks;
-
-    private static CancellationTokenSource _token = new();
+    private CancellationTokenSource _token = new();
 
     public override void Initialize()
     {
@@ -41,9 +41,6 @@ public sealed class AirlockManEaterSystem : SharedAirlockManEaterSystem
         SubscribeLocalEvent<AirlockManEaterComponent, AirlockCrushedEvent>(OnCrush);
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => Clear());
-
-        _doors = GetEntityQuery<DoorComponent>();
-        _airlocks = GetEntityQuery<AirlockComponent>();
     }
 
     private void OnMapInit(Entity<AirlockManEaterComponent> ent, ref MapInitEvent args)
@@ -119,7 +116,7 @@ public sealed class AirlockManEaterSystem : SharedAirlockManEaterSystem
         // TODO: Какой-нибудь звук победы шлюза над человеком
     }
 
-    private static void Clear()
+    private void Clear()
     {
         _token.Cancel();
         _token = new();

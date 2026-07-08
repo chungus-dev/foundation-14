@@ -11,10 +11,10 @@ namespace Content.Client._Scp.Audio;
 /// </summary>
 public sealed class AudioEffectStateSystem : EntitySystem
 {
-    [Dependency] private readonly AudioEffectsManagerSystem _effectsManager = default!;
-    [Dependency] private readonly AudioMuffleSystem _muffle = default!;
+    [Dependency] private AudioEffectsManagerSystem _effectsManager = default!;
+    [Dependency] private AudioMuffleSystem _muffle = default!;
 
-    private EntityQuery<AudioEffectStateComponent> _audioStateQuery;
+    [Dependency] private EntityQuery<AudioEffectStateComponent> _audioStateQuery;
 
     public override void Initialize()
     {
@@ -24,8 +24,6 @@ public sealed class AudioEffectStateSystem : EntitySystem
         UpdatesAfter.Add(typeof(AudioMuffleSystem));
 
         SubscribeLocalEvent<AudioComponent, AudioGotNewEffectEvent>(OnEffectChanged);
-
-        _audioStateQuery = GetEntityQuery<AudioEffectStateComponent>();
     }
 
     public override void FrameUpdate(float frameTime)

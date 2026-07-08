@@ -4,7 +4,7 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._Scp.Anomaly.Scp106;
 
-public sealed class Scp106VisualsSystem : VisualizerSystem<Scp106VisualsComponent>
+public sealed partial class Scp106VisualsSystem : VisualizerSystem<Scp106VisualsComponent>
 {
     protected override void OnAppearanceChange(EntityUid uid, Scp106VisualsComponent component, ref AppearanceChangeEvent args)
     {

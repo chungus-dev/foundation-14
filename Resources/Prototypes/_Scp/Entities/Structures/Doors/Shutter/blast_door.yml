@@ -33,8 +33,9 @@
     sprite: _Scp/Structures/Doors/Shutters/blastdoor.rsi
     state: assembly
   - type: InteractionOutline
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrong
   - type: Destructible
     thresholds:

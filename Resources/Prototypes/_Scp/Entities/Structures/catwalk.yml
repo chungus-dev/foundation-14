@@ -29,8 +29,9 @@
   - type: Construction
     graph: Catwalk
     node: Catwalk
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:

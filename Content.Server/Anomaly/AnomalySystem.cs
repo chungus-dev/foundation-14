@@ -6,7 +6,7 @@ using Content.Server.Materials;
 using Content.Server.Radiation.Systems;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Station.Systems;
-using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Utility;
 using Content.Shared.Anomaly;
 using Content.Shared.Anomaly.Components;
 using Content.Shared.Anomaly.Prototypes;
@@ -282,7 +282,7 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
             msg.AddMarkupOrThrow(Loc.GetString("anomaly-scanner-point-output-unknown"));
         else
         {
-            var points = ResearchPointsHelper.PointsToString(GetAnomalyPointValue(anomaly, anomalyComp), " ", _prototype);
+            var points = ResearchPointsHelper.PointsToString(GetAnomalyPointValue(anomaly, anomalyComp), " ", ProtoMan);
             var text = Loc.GetString("anomaly-scanner-point-output", ("point", points));
             if (secret != null && secret.Secret.Contains(AnomalySecretData.OutputPoint))
                 text += " " + Loc.GetString("anomaly-secret-admin");

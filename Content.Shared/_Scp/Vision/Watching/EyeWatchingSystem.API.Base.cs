@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Scp.Blinking;
-using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Utility;
 using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.Vision.FOV;
 using Content.Shared.Eye.Blinding.Components;
@@ -13,18 +13,18 @@ namespace Content.Shared._Scp.Vision.Watching;
 
 public sealed partial class EyeWatchingSystem
 {
-    [Dependency] private readonly SharedBlinkingSystem _blinking = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly FieldOfViewSystem _fov = default!;
+    [Dependency] private SharedBlinkingSystem _blinking = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private FieldOfViewSystem _fov = default!;
+
+    [Dependency] private EntityQuery<MobStateComponent> _mobStateQuery;
+    [Dependency] private EntityQuery<InsideEntityStorageComponent> _insideStorageQuery;
+    [Dependency] private EntityQuery<BlinkableComponent> _blinkableQuery;
+    [Dependency] private EntityQuery<BlurryVisionComponent> _blurryVisionQuery;
 
     private const float MinVisibilityRange = 2f;
     private const float BlurryVisionRangeMultiplier = 2.5f;
-
-    private EntityQuery<MobStateComponent> _mobStateQuery;
-    private EntityQuery<InsideEntityStorageComponent> _insideStorageQuery;
-    private EntityQuery<BlinkableComponent> _blinkableQuery;
-    private EntityQuery<BlurryVisionComponent> _blurryVisionQuery;
 
     private void InitializeApi()
     {

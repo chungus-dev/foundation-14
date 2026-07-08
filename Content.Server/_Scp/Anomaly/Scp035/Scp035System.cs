@@ -30,34 +30,34 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Whitelist;
+using Robust.Server.GameObjects;
 using Robust.Shared.Utility;
 
 namespace Content.Server._Scp.Anomaly.Scp035;
 
-public sealed class Scp035System : SharedScp035System
+public sealed partial class Scp035System : SharedScp035System
 {
-    [Dependency] private readonly HTNSystem _htn = default!;
-    [Dependency] private readonly NPCSystem _npc = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SharedPuddleSystem _puddle = default!;
-    [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
-    [Dependency] private readonly GhostSystem _ghost = default!;
-    [Dependency] private readonly TileSystem _tile = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private HTNSystem _htn = default!;
+    [Dependency] private NPCSystem _npc = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private ChatSystem _chatSystem = default!;
+    [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedPuddleSystem _puddle = default!;
+    [Dependency] private ThrowingSystem _throwing = default!;
+    [Dependency] private EntityStorageSystem _entityStorage = default!;
+    [Dependency] private GhostSystem _ghost = default!;
+    [Dependency] private TileSystem _tile = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private MindSystem _mind = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -186,7 +186,7 @@ public sealed class Scp035System : SharedScp035System
             if (!_solution.TryGetSolution(puddle.Owner, puddle.Comp.SolutionName, out _, out var solution))
                 continue;
 
-            var allReagents = solution.GetReagentPrototypes(_prototype);
+            var allReagents = solution.GetReagentPrototypes(ProtoMan);
             total = allReagents.Where(reagent => reagent.Key.ID == entity.Comp.ReagentName).Aggregate(total, (current, reagent) => current + reagent.Value);
         }
 
@@ -195,7 +195,10 @@ public sealed class Scp035System : SharedScp035System
             var xform = Transform(entity);
             if (!TryComp<MapGridComponent>(xform.GridUid, out var map))
                 return;
-            var tiles = map.GetTilesIntersecting(Box2.CenteredAround(_transformSystem.GetWorldPosition(xform),
+
+            var tiles = _map.GetTilesIntersecting(xform.GridUid.Value,
+                    map,
+                    Box2.CenteredAround(_transformSystem.GetWorldPosition(xform),
                 entity.Comp.CorrosionBox))
                 .ToArray();
 

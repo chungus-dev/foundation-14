@@ -6,8 +6,6 @@ namespace Content.Server._Scp.MetaGarbage;
 
 public sealed partial class MetaGarbageSystem
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-
     public string GetStatistics()
     {
         StringBuilder result = new();
@@ -73,7 +71,7 @@ public sealed partial class MetaGarbageSystem
 
         foreach (var (item, count) in prototypeCount)
         {
-            var itemName = _prototype.Index(item).Name;
+            var itemName = ProtoMan.Index(item).Name;
 
             result.Append(" - [bold]");
             result.Append(itemName);
@@ -126,7 +124,7 @@ public sealed partial class MetaGarbageSystem
         // Добавляем в результат строку о каждом реагенте и его объеме в красивом формате
         foreach (var (id, volume) in reagentVolume)
         {
-            var name = _prototype.Index(id).LocalizedName;
+            var name = ProtoMan.Index(id).LocalizedName;
 
             result.Append(" - [bold]");
             result.Append(name);

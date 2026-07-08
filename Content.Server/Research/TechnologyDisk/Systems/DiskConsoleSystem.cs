@@ -1,6 +1,6 @@
 using Content.Server.Research.Systems;
 using Content.Server.Research.TechnologyDisk.Components;
-using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Utility;
 using Content.Shared.Research;
 using Content.Shared.Research.Components;
 using Content.Shared.UserInterface;

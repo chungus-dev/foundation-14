@@ -62,6 +62,8 @@ namespace Content.Client.ContextMenu.UI
             _subMenu?.Orphan();
             _subMenu = null;
             ParentMenu = null;
+
+            ExitedTree2(); // Scp added
         }
 
         protected override void Draw(DrawingHandleScreen handle)

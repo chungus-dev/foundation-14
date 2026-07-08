@@ -18,14 +18,18 @@ namespace Content.Shared._Scp.Vision.Proximity;
 /// Система позволяет настраивать требуемый уровень видимости между сущностями, расстояние.
 /// Настройка происходит в <see cref="ProximityTargetComponent"/>.
 /// </remarks>
-public sealed class ProximitySystem : EntitySystem
+public sealed partial class ProximitySystem : EntitySystem
 {
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly ExamineSystemShared _examine = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private ExamineSystemShared _examine = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private IGameTiming _timing = default!;
+
+    [Dependency] private EntityQuery<ActiveProximityTargetComponent> _activeProximityQuery;
+    [Dependency] private EntityQuery<InsideEntityStorageComponent> _insideQuery;
+    [Dependency] private EntityQuery<TransformComponent> _xformQuery;
 
     private static readonly TimeSpan ProximitySearchCooldown = TimeSpan.FromSeconds(0.05f);
     private TimeSpan _nextSearchTime = TimeSpan.Zero;
@@ -54,19 +58,11 @@ public sealed class ProximitySystem : EntitySystem
         "SecureUraniumWindoor",
     ];
 
-    private EntityQuery<ActiveProximityTargetComponent> _activeProximityQuery;
-    private EntityQuery<InsideEntityStorageComponent> _insideQuery;
-    private EntityQuery<TransformComponent> _xformQuery;
-
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
-
-        _activeProximityQuery = GetEntityQuery<ActiveProximityTargetComponent>();
-        _insideQuery = GetEntityQuery<InsideEntityStorageComponent>();
-        _xformQuery = GetEntityQuery<TransformComponent>();
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent args)

@@ -13,28 +13,21 @@ using Robust.Shared.Physics.Systems;
 
 namespace Content.Shared._Scp.Other.BunkerMarker;
 
-public sealed class BunkerMarkerSystem : EntitySystem
+public sealed partial class BunkerMarkerSystem : EntitySystem
 {
-    [Dependency] private readonly FixtureSystem _fixture = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private FixtureSystem _fixture = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
 
-    private EntityQuery<FixturesComponent> _fixturesQuery;
-    private EntityQuery<Scp106PhantomComponent> _phantomQuery;
-    private EntityQuery<Scp106Component> _scp106Query;
-    private EntityQuery<ActiveScp096WithoutFaceComponent> _scp096Query;
-    private EntityQuery<DoorComponent> _doorQuery;
-    private EntityQuery<PhysicsComponent> _physicsQuery;
+    [Dependency] private EntityQuery<FixturesComponent> _fixturesQuery;
+    [Dependency] private EntityQuery<Scp106PhantomComponent> _phantomQuery;
+    [Dependency] private EntityQuery<Scp106Component> _scp106Query;
+    [Dependency] private EntityQuery<ActiveScp096WithoutFaceComponent> _scp096Query;
+    [Dependency] private EntityQuery<DoorComponent> _doorQuery;
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery;
 
     public override void Initialize()
     {
         base.Initialize();
-
-        _fixturesQuery = GetEntityQuery<FixturesComponent>();
-        _phantomQuery = GetEntityQuery<Scp106PhantomComponent>();
-        _scp106Query = GetEntityQuery<Scp106Component>();
-        _scp096Query = GetEntityQuery<ActiveScp096WithoutFaceComponent>();
-        _doorQuery = GetEntityQuery<DoorComponent>();
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
 
         SubscribeLocalEvent<BunkerMarkerComponent, BeforePryEvent>(OnPryingBunkerDoor);
         SubscribeLocalEvent<BunkerMarkerComponent, MapInitEvent>(OnBunkerMarkerInit);

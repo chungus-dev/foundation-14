@@ -7,7 +7,7 @@ namespace Content.Server._Scp.Mobs.Fear;
 
 public sealed partial class FearSystem
 {
-    [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private ChatSystem _chat = default!;
 
     private static readonly ProtoId<EmotePrototype> ScreamProtoId = "Scream";
 

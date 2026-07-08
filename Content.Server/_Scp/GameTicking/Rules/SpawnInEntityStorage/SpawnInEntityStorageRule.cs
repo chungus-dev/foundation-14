@@ -12,13 +12,12 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Scp.GameTicking.Rules.SpawnInEntityStorage;
 
-public sealed class SpawnInEntityStorageRule : StationEventSystem<SpawnInEntityStorageRuleComponent>
+public sealed partial class SpawnInEntityStorageRule : StationEventSystem<SpawnInEntityStorageRuleComponent>
 {
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly EntityStorageSystem _storage = default!;
-    [Dependency] private readonly RulesSystem _rules = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private EntityStorageSystem _storage = default!;
+    [Dependency] private RulesSystem _rules = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private readonly List<PendingClose> _pendingStorageClosing = [];
 
@@ -64,7 +63,7 @@ public sealed class SpawnInEntityStorageRule : StationEventSystem<SpawnInEntityS
         if (!TryGetRandomStation(out var station))
             return;
 
-        if (_prototype.TryIndex(component.StationRules, out var stationRule) &&
+        if (ProtoMan.TryIndex(component.StationRules, out var stationRule) &&
             !_rules.IsTrue(station.Value, stationRule))
         {
             Log.Info($"Skipped {Prototype(uid)} due to {component.StationRules} fails! Event aborted");

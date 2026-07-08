@@ -4,9 +4,9 @@ using Content.Shared._Scp.Blinking.ReducedBlinking;
 
 namespace Content.Server._Scp.Blinking.ReducedBlinking;
 
-public sealed class ReducedBlinkingSystem : SharedReducedBlinkingSystem
+public sealed partial class ReducedBlinkingSystem : SharedReducedBlinkingSystem
 {
-    [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private PopupSystem _popup = default!;
 
     public override void Initialize()
     {

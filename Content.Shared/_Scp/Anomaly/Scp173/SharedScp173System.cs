@@ -2,7 +2,7 @@
 using System.Numerics;
 using Content.Shared._Scp.Blinking;
 using Content.Shared._Scp.Containment.Cage;
-using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Utility;
 using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.Vision.Watching;
 using Content.Shared.ActionBlocker;
@@ -19,21 +19,21 @@ using Robust.Shared.Timing;
 namespace Content.Shared._Scp.Anomaly.Scp173;
 
 // TODO: Выделить логику блокировки движения при смотрении в отдельную систему со своим компонентом.
-public abstract class SharedScp173System : EntitySystem
+public abstract partial class SharedScp173System : EntitySystem
 {
-    [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] private readonly SharedBlinkingSystem _blinking = default!;
-    [Dependency] private readonly ActionBlockerSystem _blocker = default!;
-    [Dependency] protected readonly EyeWatchingSystem Watching = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] protected IGameTiming Timing = default!;
+    [Dependency] private SharedBlinkingSystem _blinking = default!;
+    [Dependency] private ActionBlockerSystem _blocker = default!;
+    [Dependency] protected EyeWatchingSystem Watching = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+
+    [Dependency] private EntityQuery<InsideEntityStorageComponent> _insideQuery;
+    [Dependency] private EntityQuery<ScpCageComponent> _scpCageQuery;
 
     protected static readonly TimeSpan ReagentCheckInterval = TimeSpan.FromSeconds(1f);
 
     public const float ContainmentRoomSearchRadius = 8f;
-
-    private EntityQuery<InsideEntityStorageComponent> _insideQuery;
-    private EntityQuery<ScpCageComponent> _scpCageQuery;
 
     public override void Initialize()
     {
@@ -48,9 +48,6 @@ public abstract class SharedScp173System : EntitySystem
 
         SubscribeLocalEvent<Scp173Component, Scp173BlindAction>(OnStartedBlind);
         SubscribeLocalEvent<Scp173Component, Scp173StartBlind>(OnBlind);
-
-        _insideQuery = GetEntityQuery<InsideEntityStorageComponent>();
-        _scpCageQuery = GetEntityQuery<ScpCageComponent>();
     }
 
     #region Movement

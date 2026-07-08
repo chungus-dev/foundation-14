@@ -4,11 +4,11 @@ using Content.Shared.Power.Components;
 
 namespace Content.Server._Scp.Facility.Transfers.EnergyTransfer;
 
-public sealed class EnergyTransferSystem : EntitySystem
+public sealed partial class EnergyTransferSystem : EntitySystem
 {
-    private const float BalanceThreshold = 0.1f;
+    [Dependency] private BatterySystem _battery = default!;
 
-    [Dependency] private readonly BatterySystem _battery = default!;
+    private const float BalanceThreshold = 0.1f;
 
     public override void Initialize()
     {

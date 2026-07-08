@@ -12,18 +12,17 @@ namespace Content.Client._Scp.Graphics.Shaders.Bloom;
 /// Система, управляющая эффектом свечения.
 /// Высчитывает, какие сущности будут иметь эффект и передает в оверлеи.
 /// </summary>
-public sealed class LightingOverlaySystem : EntitySystem
+public sealed partial class LightingOverlaySystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlayManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly ProximitySystem _proximity = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private IOverlayManager _overlayManager = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private ProximitySystem _proximity = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
-    private EntityQuery<EyeComponent> _eyeQuery;
-    private EntityQuery<TransformComponent> _transformQuery;
+    [Dependency] private EntityQuery<EyeComponent> _eyeQuery;
+    [Dependency] private EntityQuery<TransformComponent> _transformQuery;
 
     private ConeLightingOverlay _cone = default!;
     private PointLightingOverlay _point = default!;
@@ -43,11 +42,8 @@ public sealed class LightingOverlaySystem : EntitySystem
     {
         base.Initialize();
 
-        _cone = new ConeLightingOverlay(_prototypeManager, _sprite, Shader);
-        _point = new PointLightingOverlay(_prototypeManager, _sprite, Shader);
-
-        _transformQuery = GetEntityQuery<TransformComponent>();
-        _eyeQuery = GetEntityQuery<EyeComponent>();
+        _cone = new ConeLightingOverlay(ProtoMan, _sprite, Shader);
+        _point = new PointLightingOverlay(ProtoMan, _sprite, Shader);
 
         _configSub = _cfg.SubscribeMultiple()
             .OnValueChanged(ScpCCVars.LightBloomEnable, OnAllEnabledChanged, true)

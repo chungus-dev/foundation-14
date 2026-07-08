@@ -12,7 +12,7 @@ namespace Content.Client.Launcher;
 
 public sealed partial class LauncherConnectingGui
 {
-    [Dependency] private readonly IResourceCache _resource = default!;
+    [Dependency] private IResourceCache _resource = default!;
 
     private const string AnimationPath = "/Textures/_Scp/Lobby/Animations/deep_facility.rsi";
     private const string AnimationState = "animation";

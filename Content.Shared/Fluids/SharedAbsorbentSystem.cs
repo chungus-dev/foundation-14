@@ -365,7 +365,7 @@ public abstract partial class SharedAbsorbentSystem : EntitySystem
             return;
 
         var prev = ent.Comp.Delay;
-        var newDelay = Math.Max(prev.TotalSeconds, solution.GetAbsorbCooldown(_proto));
+        var newDelay = Math.Max(prev.TotalSeconds, solution.GetAbsorbCooldown(ProtoMan));
 
         _useDelay.SetLength(ent, TimeSpan.FromSeconds(newDelay));
         _useDelay.TryResetDelay(ent.AsType());

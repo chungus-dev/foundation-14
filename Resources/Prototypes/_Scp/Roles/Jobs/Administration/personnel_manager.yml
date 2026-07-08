@@ -21,7 +21,6 @@
   weight: 950
   icon: JobPersonnelManager
   supervisors: job-supervisors-facility-director
-  canBeAntag: false
   displayWeight: 90
   accessGroups:
   - PersonnelManager

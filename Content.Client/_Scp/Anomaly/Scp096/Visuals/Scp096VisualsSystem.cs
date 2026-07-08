@@ -4,7 +4,7 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._Scp.Anomaly.Scp096.Visuals;
 
-public sealed class Scp096VisualsSystem : VisualizerSystem<Scp096Component>
+public sealed partial class Scp096VisualsSystem : VisualizerSystem<Scp096Component>
 {
     public override void Initialize()
     {

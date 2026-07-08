@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Scp.Blinking;
-using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Utility;
 using Content.Shared._Scp.Vision.Proximity;
 
 namespace Content.Shared._Scp.Vision.Watching;

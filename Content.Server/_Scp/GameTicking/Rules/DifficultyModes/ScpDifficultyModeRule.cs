@@ -17,15 +17,14 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._Scp.GameTicking.Rules.DifficultyModes;
 
-public sealed class ScpDifficultyModeRule : GameRuleSystem<ScpDifficultyModeRuleComponent>
+public sealed partial class ScpDifficultyModeRule : GameRuleSystem<ScpDifficultyModeRuleComponent>
 {
-    [Dependency] private readonly StationJobsSystem _stationJobs = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly ScpHelpersSystem _helpers = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly GameTicker _ticker = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private StationJobsSystem _stationJobs = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private ScpHelpersSystem _helpers = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -113,7 +112,7 @@ public sealed class ScpDifficultyModeRule : GameRuleSystem<ScpDifficultyModeRule
                 continue;
 
             // Получаем все работки SCP, которые соответствуют текущему классу содержания
-            var matchingScp = _prototype.EnumeratePrototypes<JobPrototype>()
+            var matchingScp = ProtoMan.EnumeratePrototypes<JobPrototype>()
                 .Where(proto => IsMatchingScpJob(classification, proto, component.PlayableWhitelist, component.PlayableBlacklist));
 
             // Подсчитываем, сколько будет доступно слотов
@@ -187,7 +186,7 @@ public sealed class ScpDifficultyModeRule : GameRuleSystem<ScpDifficultyModeRule
 
     private IEnumerable<JobPrototype> GetMatchingScpJobs(Classification classification, ScpDifficultyModeRuleComponent rule)
     {
-        return _prototype.EnumeratePrototypes<JobPrototype>()
+        return ProtoMan.EnumeratePrototypes<JobPrototype>()
             .Where(proto => IsMatchingScpJob(classification, proto, rule.PlayableWhitelist, rule.PlayableBlacklist));
     }
 
@@ -198,7 +197,7 @@ public sealed class ScpDifficultyModeRule : GameRuleSystem<ScpDifficultyModeRule
     {
         classification = default;
 
-        if (!_prototype.TryIndex(jobId, out var job))
+        if (!ProtoMan.TryIndex(jobId, out var job))
             return false;
 
         return TryGetScpClassification(job, rule.PlayableWhitelist, rule.PlayableBlacklist, out classification);
@@ -215,7 +214,7 @@ public sealed class ScpDifficultyModeRule : GameRuleSystem<ScpDifficultyModeRule
         if (job.JobEntity == null)
             return false;
 
-        if (!_prototype.TryIndex<EntityPrototype>(job.JobEntity, out var entity))
+        if (!ProtoMan.TryIndex(job.JobEntity, out var entity))
             return false;
 
         // Реализация вайтлиста. Так как в вайтлисте будет перечисление компонентов, которые будут представлять сцп.

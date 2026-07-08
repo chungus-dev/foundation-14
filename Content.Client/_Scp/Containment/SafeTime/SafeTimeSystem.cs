@@ -10,15 +10,15 @@ using Robust.Shared.Timing;
 namespace Content.Client._Scp.Containment.SafeTime;
 
 // TODO: Единая система для управления виджетами вместе с Scp173System
-public sealed class SafeTimeSystem : SharedSafeTimeSystem
+public sealed partial class SafeTimeSystem : SharedSafeTimeSystem
 {
-    [Dependency] private readonly IUserInterfaceManager _ui = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IUserInterfaceManager _ui = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IGameTiming _timing = default!;
+
+    [Dependency] private EntityQuery<SafeTimeComponent> _safeTimeQuery;
 
     private SafeTimeWidget? _widget;
-
-    private EntityQuery<SafeTimeComponent> _safeTimeQuery;
 
     private TimeSpan _nextCheck;
     private static readonly TimeSpan CheckInterval = TimeSpan.FromSeconds(2f);
@@ -32,8 +32,6 @@ public sealed class SafeTimeSystem : SharedSafeTimeSystem
 
         SubscribeLocalEvent<SafeTimeComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<SafeTimeComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
-
-        _safeTimeQuery = GetEntityQuery<SafeTimeComponent>();
 
         var gameplayStateLoad = _ui.GetUIController<GameplayStateLoadController>();
         gameplayStateLoad.OnScreenLoad += EnsureWidgetExist;

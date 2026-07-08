@@ -15,13 +15,18 @@ namespace Content.Client._Scp.Graphics.Shaders.FieldOfView;
 /// Система для контроля всеми оверлеями поля зрения.
 /// Контролирует жизненный цикл оверлеев, держит кешированные значения прозрачности сущностей и т.п.
 /// </summary>
-public sealed class FieldOfViewOverlayManagementSystem : EntitySystem
+public sealed partial class FieldOfViewOverlayManagementSystem : EntitySystem
 {
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IOverlayManager _overlay = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly TransformSystem _xform = default!;
-    [Dependency] private readonly CompatibilityModeActiveWarningSystem _compatibilityMode = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IOverlayManager _overlay = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private TransformSystem _xform = default!;
+    [Dependency] private CompatibilityModeActiveWarningSystem _compatibilityMode = default!;
+
+    [Dependency] private EntityQuery<FieldOfViewComponent> _fovQuery;
+    [Dependency] private EntityQuery<LerpingEyeComponent> _lerpingEyeQuery;
+    [Dependency] private EntityQuery<EyeComponent> _eyeQuery;
+    [Dependency] private EntityQuery<TransformComponent> _xformQuery;
 
     private FieldOfViewConeOverlay _coneOverlay = default!;
     private FieldOfViewSetAlphaOverlay _setAlphaOverlay = default!;
@@ -30,11 +35,6 @@ public sealed class FieldOfViewOverlayManagementSystem : EntitySystem
     public bool OverlaysPresented;
 
     private const float LerpHalfLife = 0.05f;
-
-    private EntityQuery<FieldOfViewComponent> _fovQuery;
-    private EntityQuery<LerpingEyeComponent> _lerpingEyeQuery;
-    private EntityQuery<EyeComponent> _eyeQuery;
-    private EntityQuery<TransformComponent> _xformQuery;
 
     public Entity<EyeComponent, FieldOfViewComponent, TransformComponent>? PlayerEntity { get; private set; }
 
@@ -63,11 +63,6 @@ public sealed class FieldOfViewOverlayManagementSystem : EntitySystem
 
         SubscribeLocalEvent<FieldOfViewComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<FieldOfViewComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
-
-        _fovQuery = GetEntityQuery<FieldOfViewComponent>();
-        _lerpingEyeQuery = GetEntityQuery<LerpingEyeComponent>();
-        _eyeQuery = GetEntityQuery<EyeComponent>();
-        _xformQuery = GetEntityQuery<TransformComponent>();
 
         _coneOverlay = new();
         _setAlphaOverlay = new();

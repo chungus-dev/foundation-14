@@ -11,7 +11,6 @@
   startingGear: RRHLeaderGear
   icon: JobIconRRHleader
   supervisors: ghost-role-information-mtf-leader-supervisors
-  canBeAntag: false
   weight: 930
   overrideConsoleVisibility: false
   alwaysShowInBanPanel: true
@@ -57,7 +56,6 @@
   startingGear: RRHSpecialistGear
   icon: JobIconRRH
   supervisors: ghost-role-information-mtf-specialist-supervisors
-  canBeAntag: false
   weight: 925
   overrideConsoleVisibility: false
   alwaysShowInBanPanel: true

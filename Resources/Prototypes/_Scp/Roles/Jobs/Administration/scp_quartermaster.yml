@@ -15,7 +15,6 @@
   weight: 935
   icon: JobScpQuartermaster
   supervisors: job-supervisors-facility-director
-  canBeAntag: true
   displayWeight: 40
   accessGroups:
   - ScpQuartermaster

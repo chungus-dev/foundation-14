@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Utility;
 using Content.Shared.Lathe;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -165,7 +165,7 @@ public abstract partial class SharedResearchSystem : EntitySystem
         if (includeCost)
         {
             description.AddMarkupOrThrow(Loc.GetString("research-console-cost",
-                ("amount", ResearchPointsHelper.PointsToString(ResearchPointsHelper.GetPoints(technology), " ", PrototypeManager))));
+                ("amount", ResearchPointsHelper.PointsToString(ResearchPointsHelper.GetPoints(technology), " ", ProtoMan)))); // Scp edit
             description.PushNewline();
         }
 

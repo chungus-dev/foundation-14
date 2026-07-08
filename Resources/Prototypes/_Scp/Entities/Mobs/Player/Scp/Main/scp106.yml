@@ -76,10 +76,7 @@
     - Scp106BackroomsAction
     - ActionScp106Shop
   - type: Vocal
-    sounds:
-      Male: SCP106
-      Female: SCP106
-      Unsexed: SCP106
+    emoteSounds: Scp106EmoteSounds
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepScp106

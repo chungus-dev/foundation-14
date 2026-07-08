@@ -8,25 +8,21 @@ using Robust.Shared.Physics.Events;
 
 namespace Content.Shared._Scp.Other.DamageOnCollide;
 
-public sealed class ScpDamageOnCollideSystem : EntitySystem
+public sealed partial class ScpDamageOnCollideSystem : EntitySystem
 {
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
-    private EntityQuery<PhysicsComponent> _physicsQuery;
-    private EntityQuery<MobStateComponent> _mobStateQuery;
-    private EntityQuery<ScpDamageOnCollideComponent> _damageCollideQuery;
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery;
+    [Dependency] private EntityQuery<MobStateComponent> _mobStateQuery;
+    [Dependency] private EntityQuery<ScpDamageOnCollideComponent> _damageCollideQuery;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<ScpDamageOnCollideComponent, StartCollideEvent>(OnCollide);
-
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
-        _mobStateQuery = GetEntityQuery<MobStateComponent>();
-        _damageCollideQuery = GetEntityQuery<ScpDamageOnCollideComponent>();
     }
 
     private void OnCollide(Entity<ScpDamageOnCollideComponent> ent, ref StartCollideEvent args)

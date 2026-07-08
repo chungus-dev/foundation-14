@@ -6,7 +6,4 @@ namespace Content.Shared._Scp.Vision.Proximity;
 /// Компонент-маркер цели, которая будет вызывать ивент при приближении к <see cref="ProximityReceiverComponent"/>
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class ProximityTargetComponent : Component
-{
-
-}
+public sealed partial class ProximityTargetComponent : Component;

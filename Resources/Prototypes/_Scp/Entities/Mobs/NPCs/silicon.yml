@@ -25,11 +25,10 @@
       MeleeRange: !type:Single
         0.08
   - type: SolutionRegeneration
-    solution: absorbed
     generated:
       reagents:
       - ReagentId: Water
-        Quantity: 30
+        Quantity: 10
   - type: AmbientSound
     enabled: true
     volume: -7

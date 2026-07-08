@@ -5,9 +5,9 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._Scp.Anomaly.Scp939;
 
-public sealed class Scp939Visualizer : VisualizerSystem<Scp939Component>
+public sealed partial class Scp939Visualizer : VisualizerSystem<Scp939Component>
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
+    [Dependency] private AppearanceSystem _appearanceSystem = default!;
 
     protected override void OnAppearanceChange(EntityUid uid, Scp939Component component, ref AppearanceChangeEvent args)
     {
