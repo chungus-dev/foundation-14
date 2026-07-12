@@ -539,8 +539,4 @@ namespace Content.Client.IconSmoothing
         }
     }
 
-    // Scp added start - чтобы при удалении сущности соседи обновляли свои спрайты
-    [ByRefEvent]
-    public readonly record struct IconSmoothUpdatedEvent;
-    // Scp added end
 }

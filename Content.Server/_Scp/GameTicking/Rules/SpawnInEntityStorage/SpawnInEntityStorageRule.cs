@@ -6,7 +6,6 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Random.Rules;
 using Content.Shared.Storage;
 using Content.Shared.Storage.Components;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -40,7 +39,7 @@ public sealed partial class SpawnInEntityStorageRule : StationEventSystem<SpawnI
 
             var ent = _pendingStorageClosing[i].Entity;
             if (Exists(ent))
-                _storage.CloseStorage(ent, ent.Comp);
+                _storage.CloseStorage(ent.AsNullable());
 
             _pendingStorageClosing.RemoveAt(i);
         }
@@ -90,20 +89,20 @@ public sealed partial class SpawnInEntityStorageRule : StationEventSystem<SpawnI
             }
 
             if (component.DoOpenCloseAnimation)
-                OpenStorage(storage, storageComp, component);
+                OpenStorage((storage, storageComp), component);
         }
     }
 
-    private void OpenStorage(EntityUid storage, EntityStorageComponent component, SpawnInEntityStorageRuleComponent rule)
+    private void OpenStorage(Entity<EntityStorageComponent> ent, SpawnInEntityStorageRuleComponent rule)
     {
-        _storage.OpenStorage(storage, component);
-        if (!_storage.IsOpen(storage, component))
+        _storage.OpenStorage(ent.AsNullable());
+        if (!_storage.IsOpen(ent))
             return;
 
         var variation = RobustRandom.Next(-rule.CloseAfterVariation, rule.CloseAfterVariation);
         var closeAfter = rule.CloseAfter + variation;
 
-        var toAdd = new PendingClose((storage, component), _timing.CurTime + closeAfter);
+        var toAdd = new PendingClose(ent, _timing.CurTime + closeAfter);
         _pendingStorageClosing.Add(toAdd);
     }
 

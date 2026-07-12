@@ -224,8 +224,8 @@ public sealed partial class Scp035System : SharedScp035System
                     _damageable.TryChangeDamage(ent, entity.Comp.DamageSpecif, true);
 
                 // randomly opens some lockers and such.
-                if (entityStorage.TryGetComponent(ent, out var entstorecomp))
-                    _entityStorage.OpenStorage(ent, entstorecomp);
+                if (entityStorage.TryGetComponent(ent, out var storage))
+                    _entityStorage.OpenStorage((ent, storage));
 
                 // chucks items
                 if (items.HasComponent(ent) &&

@@ -38,6 +38,7 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
         base.Initialize();
 
         SubscribeLocalEvent<DamageVisualsComponent, ComponentInit>(InitializeEntity);
+        InitializeIconSmooth(); // Scp added - support corner-based damage overlays.
     }
 
     private void InitializeEntity(EntityUid entity, DamageVisualsComponent comp, ComponentInit args)
@@ -329,6 +330,11 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     /// </summary>
     private void AddDamageLayerToSprite(Entity<SpriteComponent?> spriteEnt, DamageVisualizerSprite sprite, string state, string mapKey, int? index = null)
     {
+        // Scp added start - split icon-smooth overlays into corners
+        if (TryAddIconSmoothDamageLayers(spriteEnt, sprite, state, mapKey, index))
+            return;
+        // Scp added end
+
         if (!Resolve(spriteEnt, ref spriteEnt.Comp))
             return;
 
@@ -447,6 +453,11 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     /// </summary>
     private void CheckOverlayOrdering(Entity<SpriteComponent> spriteEnt, DamageVisualsComponent damageVisComp)
     {
+        // Scp added start - corner layers are already appended together
+        if (damageVisComp.IconSmoothLayerKeys.Count > 0)
+            return;
+        // Scp added end
+
         if (spriteEnt.Comp[damageVisComp.TopMostLayerKey] != spriteEnt.Comp[spriteEnt.Comp.AllLayers.Count() - 1])
         {
             if (!damageVisComp.TrackAllDamage && damageVisComp.DamageOverlayGroups != null)
@@ -733,6 +744,11 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     /// </summary>
     private void UpdateDamageLayerState(Entity<SpriteComponent> spriteEnt, int spriteLayer, string statePrefix, FixedPoint2 threshold, string layerKey, DisplacementData? displacement)
     {
+        // Scp added start - update every icon-smooth corner
+        if (TryUpdateIconSmoothDamageLayers(spriteEnt, statePrefix, threshold, layerKey, displacement))
+            return;
+        // Scp added end
+
         if (threshold == 0)
         {
             SpriteSystem.LayerSetVisible(spriteEnt.AsNullable(), spriteLayer, false);

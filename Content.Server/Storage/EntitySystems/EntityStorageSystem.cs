@@ -43,7 +43,7 @@ public sealed partial class EntityStorageSystem : SharedEntityStorageSystem
         if (!CanOpen(args.User, ent, requireHands: false))
             return;
 
-        DoOpenStorage(ent.Owner, ent.Comp, args.User);
+        DoOpenStorage(ent, args.User);
         _audio.PlayPvs(ent.Comp.OpenSound, ent);
 
         args.Handled = true;
