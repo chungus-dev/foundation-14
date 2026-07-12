@@ -301,7 +301,6 @@ public sealed partial class PlayTimeTrackingSystem : EntitySystem
 
         foreach (var job in ProtoMan.EnumeratePrototypes<JobPrototype>())
         {
-            // Scp edit - added !
             if (!JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, ProtoMan, (HumanoidCharacterProfile?) _preferencesManager.GetPreferences(player.UserId).SelectedCharacter))
                 roles.Add(job.ID);
         }

@@ -227,21 +227,21 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
         }
     }
 
-    public void OpenStorage(EntityUid uid, EntityStorageComponent? component = null, EntityUid? user = null, bool force = false)
+    public void OpenStorage(Entity<EntityStorageComponent?> target, EntityUid? user = null, bool force = false)
     {
-        if (!Resolve(uid, ref component))
+        if (!Resolve(target, ref target.Comp))
             return;
 
-        if (component.Open)
+        if (target.Comp.Open)
             return;
 
         var beforeev = new StorageBeforeOpenEvent();
-        RaiseLocalEvent(uid, ref beforeev);
+        RaiseLocalEvent(target, ref beforeev);
 
         // Scp edit start
-        if (component.DoAfterDelay != 0 && user.HasValue && !force)
+        if (target.Comp.DoAfterDelay != 0 && user.HasValue && !force)
         {
-            var doAfterEventArgs = new DoAfterArgs(EntityManager, user.Value, component.DoAfterDelay, new OpenStorageDoAfterEvent(), uid, target: uid)
+            var doAfterEventArgs = new DoAfterArgs(EntityManager, user.Value, target.Comp.DoAfterDelay, new OpenStorageDoAfterEvent(), target, target: target)
             {
                 BreakOnMove = true,
                 BreakOnDamage = true,
@@ -251,73 +251,72 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
             return;
         }
 
-        DoOpenStorage(uid, component, user);
+        DoOpenStorage(target!, user);
         // Scp edit end
     }
 
-    protected void DoOpenStorage(EntityUid uid, EntityStorageComponent component, EntityUid? user = null)
+    protected void DoOpenStorage(Entity<EntityStorageComponent> target, EntityUid? user = null)
     {
-        component.Open = true;
-        Dirty(uid, component);
-        EmptyContents(uid, component);
-        ModifyComponents(uid, component);
-        _audio.PlayPredicted(component.OpenSound, uid, user); // Scp edit
-        ReleaseGas(uid, component);
-        var afterev = new StorageAfterOpenEvent();
-        RaiseLocalEvent(uid, ref afterev);
+        target.Comp.Open = true;
+        Dirty(target);
+        EmptyContents(target, target.Comp);
+        ModifyComponents(target, target.Comp);
+        _audio.PlayPredicted(target.Comp.OpenSound, target, user); // Scp edit
+        ReleaseGas(target, target.Comp);
+        var afterev = new StorageAfterOpenEvent(user);
+        RaiseLocalEvent(target, ref afterev);
     }
 
-    // Scp edit - added user field to play sounds from server with Predicted method
-    public void CloseStorage(EntityUid uid, EntityStorageComponent? component = null, EntityUid? user = null)
+    public void CloseStorage(Entity<EntityStorageComponent?> target, EntityUid? user = null)
     {
-        if (!Resolve(uid, ref component))
+        if (!Resolve(target, ref target.Comp))
             return;
 
-        if (!component.Open)
+        if (!target.Comp.Open)
             return;
 
         // Prevent the container from closing if it is queued for deletion. This is so that the container-emptying
         // behaviour of DestructionEventArgs is respected. This exists because malicious players were using
         // destructible boxes to delete entities by having two players simultaneously destroy and close the box in
         // the same tick.
-        if (EntityManager.IsQueuedForDeletion(uid))
+        if (EntityManager.IsQueuedForDeletion(target))
             return;
 
-        component.Open = false;
-        Dirty(uid, component);
+        target.Comp.Open = false;
+        Dirty(target);
 
         var entities = _lookup.GetEntitiesInRange(
-            new EntityCoordinates(uid, component.EnteringOffset),
-            component.EnteringRange,
+            new EntityCoordinates(target, target.Comp.EnteringOffset),
+            target.Comp.EnteringRange,
             LookupFlags.Approximate | LookupFlags.Dynamic | LookupFlags.Sundries
         );
 
         // Don't insert the container into itself.
-        entities.Remove(uid);
+        entities.Remove(target);
 
-        var ev = new StorageBeforeCloseEvent(entities, []);
-        RaiseLocalEvent(uid, ref ev);
+        var ev = new StorageBeforeCloseEvent(user, entities, []);
+        RaiseLocalEvent(target, ref ev);
 
         foreach (var entity in ev.Contents)
         {
-            if (!ev.BypassChecks.Contains(entity) && !CanInsert(entity, uid, component))
+            if (!ev.BypassChecks.Contains(entity) && !CanInsert(entity, target, target.Comp))
                 continue;
 
-            if (!AddToContents(entity, uid, component))
+            if (!AddToContents(entity, target, target.Comp))
                 continue;
 
-            if (component.Contents.ContainedEntities.Count >= component.Capacity)
+            if (target.Comp.Contents.ContainedEntities.Count >= target.Comp.Capacity)
                 break;
         }
 
-        if (LifeStage(uid) >= EntityLifeStage.MapInitialized) // stop mappers from serializing air in locker
-            TakeGas(uid, component);
-        ModifyComponents(uid, component);
+        if (LifeStage(target) >= EntityLifeStage.MapInitialized) // stop mappers from serializing air in locker
+            TakeGas(target, target.Comp);
 
-        _audio.PlayPredicted(component.CloseSound, uid, user); // Scp edit
+        ModifyComponents(target, target.Comp);
+        _audio.PlayPredicted(target.Comp.CloseSound, target, user); // Scp edit
 
-        var afterev = new StorageAfterCloseEvent();
-        RaiseLocalEvent(uid, ref afterev);
+        var afterev = new StorageAfterCloseEvent(user);
+        RaiseLocalEvent(target, ref afterev);
     }
 
     public bool Insert(EntityUid toInsert, EntityUid container, EntityStorageComponent? component = null)
@@ -412,7 +411,7 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
         if (!CanOpen(user, target, silent, requireHands: requireHands))
             return false;
 
-        OpenStorage(target, user: user);
+        OpenStorage(target, user);
         return true;
     }
 
@@ -423,7 +422,7 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
             return false;
         }
 
-        CloseStorage(target, user: user); // Scp edit - added user field
+        CloseStorage(target, user);
         return true;
     }
 
