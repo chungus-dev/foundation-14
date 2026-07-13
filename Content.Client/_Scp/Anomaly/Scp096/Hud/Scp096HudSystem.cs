@@ -7,19 +7,17 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Scp.Anomaly.Scp096.Hud;
 
-public sealed class Scp096HudSystem : EquipmentHudSystem<Scp096Component>
+public sealed partial class Scp096HudSystem : EquipmentHudSystem<Scp096Component>
 {
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IPlayerManager _player = default!;
 
-    private EntityQuery<Scp096Component> _scp096Query;
+    [Dependency] private EntityQuery<Scp096Component> _scp096Query;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<Scp096TargetComponent, GetStatusIconsEvent>(OnGetStatusIcon);
-        _scp096Query = GetEntityQuery<Scp096Component>();
     }
 
     private void OnGetStatusIcon(Entity<Scp096TargetComponent> ent, ref GetStatusIconsEvent args)
@@ -29,7 +27,7 @@ public sealed class Scp096HudSystem : EquipmentHudSystem<Scp096Component>
         if (!Validate(playerEntity))
             return;
 
-        if (!_prototypeManager.TryIndex(ent.Comp.KillIconPrototype, out var killIconPrototype))
+        if (!ProtoMan.TryIndex(ent.Comp.KillIconPrototype, out var killIconPrototype))
             return;
 
         args.StatusIcons.Add(killIconPrototype);

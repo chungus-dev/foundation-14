@@ -1,0 +1,121 @@
+﻿- type: antagSpecifier
+  abstract: true
+  id: BaseAntagSpecifier
+  jobBlacklist:
+  - CentralCommandOfficial
+  - DeathSquad
+  - ERTLeader
+  - ERTChaplain
+  - ERTEngineer
+  - ERTSecurity
+  - ERTMedical
+  - ERTJanitor
+  - CBURN
+  # Scp added start
+  - Scp999
+  - Scp173
+  - Scp096
+  - Scp049
+  - Scp082
+  - Scp939
+  - Scp106
+  - Scp131A
+  - Scp131B
+  - Scp2295
+  - FondSecurityOfficer
+  - FondSeniorSecurityOfficer
+  - HDLeader
+  - HDSpecialist
+  - HDCadet
+  - LLHLeader
+  - LLHSpecialist
+  - MHLeader
+  - MHSpecialist
+  - MHCadet
+  - NTFLeader
+  - NTFSpecialist
+  - NTFCadet
+  - RRHLeader
+  - RRHSpecialist
+  # Scp added end
+  blacklist:
+    components:
+    - AntagImmune
+
+# Command
+- type: antagSpecifier
+  abstract: true
+  parent: BaseAntagSpecifier
+  id: CommandBlacklistedAntag
+  jobBlacklist:
+  - Captain
+  - HeadOfPersonnel
+  - HeadOfSecurity
+  - ChiefMedicalOfficer
+  - ResearchDirector
+  - ChiefEngineer
+  - Quartermaster
+  # Scp added start
+  - FacilityDirector
+  - PersonnelManager
+  - ScpChiefEngineer
+  - ScpChiefMedicalOfficer
+  - ScpQuartermaster
+  - ScpResearchDirector
+  - SecurityCommander
+  - EthicsCommitteeRepresentative
+  # Scp added end
+
+# Borgs
+- type: antagSpecifier
+  abstract: true
+  parent: BaseAntagSpecifier
+  id: CyborgBlacklistedAntag
+  jobBlacklist:
+  - StationAi
+  - Borg
+
+# Learner Roles
+- type: antagSpecifier
+  abstract: true
+  parent: BaseAntagSpecifier
+  id: InternBlacklistedAntag
+  jobBlacklist:
+  - SecurityCadet
+  - MedicalIntern
+  - ResearchAssistant
+  - TechnicalAssistant
+  - Visitor
+
+# Security
+- type: antagSpecifier
+  abstract: true
+  parent: BaseAntagSpecifier
+  id: SecurityBlacklistedAntag
+  jobBlacklist:
+  - HeadOfSecurity
+  - Warden
+  - Detective
+  - SecurityOfficer
+  - SecurityCadet
+  # Scp added start
+  - Amnesticologist
+  - Commandant
+  - CommandantLeader
+  - JuniorCommandant
+  - SeniorCommandant
+  - JuniorSpecialPurposeSquadOfficer
+  - SeniorSpecialPurposeSquadOfficer
+  - SpecialPurposeSquadOfficer
+  - SpecialPurposeUnitCommander
+  # Scp added end
+
+- type: antagSpecifier
+  abstract: true
+  parent: [ CommandBlacklistedAntag, SecurityBlacklistedAntag ]
+  id: MindshieldRestrictedAntag
+
+- type: antagSpecifier
+  abstract: true
+  parent: [ MindshieldRestrictedAntag, CyborgBlacklistedAntag, InternBlacklistedAntag ]
+  id: RestrictedAntag

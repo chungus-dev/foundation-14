@@ -1,5 +1,4 @@
-﻿using Content.Shared._Scp.Helpers;
-using Content.Shared._Scp.Vision.Proximity;
+﻿using Content.Shared._Scp.Vision.Proximity;
 using Content.Shared._Scp.Vision.Watching;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
@@ -10,7 +9,7 @@ namespace Content.Shared._Scp.Utility.Helpers;
 
 public abstract partial class SharedScpHelpersSystem
 {
-    [Dependency] private readonly EyeWatchingSystem _watching = default!;
+    [Dependency] private EyeWatchingSystem _watching = default!;
 
     /// <summary>
     /// Получает суммарное количество реагента в зоне видимости сущности.

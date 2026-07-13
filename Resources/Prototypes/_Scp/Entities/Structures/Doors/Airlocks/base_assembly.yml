@@ -26,8 +26,9 @@
   - type: Pullable
   - type: Transform
     anchored: true
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrong
   - type: RCDDeconstructable
     cost: 6

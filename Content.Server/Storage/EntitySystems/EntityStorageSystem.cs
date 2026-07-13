@@ -11,19 +11,22 @@ using Robust.Shared.Map;
 
 namespace Content.Server.Storage.EntitySystems;
 
-public sealed class EntityStorageSystem : SharedEntityStorageSystem
+public sealed partial class EntityStorageSystem : SharedEntityStorageSystem
 {
-    [Dependency] private readonly ConstructionSystem _construction = default!;
-    [Dependency] private readonly AtmosphereSystem _atmos = default!;
-    [Dependency] private readonly IMapManager _map = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private ConstructionSystem _construction = default!;
+    [Dependency] private AtmosphereSystem _atmos = default!;
+    [Dependency] private MapSystem _mapSystem = default!;
+
+    [Dependency] private AudioSystem _audio = default!; // Scp added
 
     public override void Initialize()
     {
         base.Initialize();
 
+        // Scp added start
         SubscribeLocalEvent<EntityStorageComponent, OpenStorageDoAfterEvent>(OnDoAfterSuccess);
+        // Scp added end
+
         SubscribeLocalEvent<EntityStorageComponent, MapInitEvent>(OnMapInit);
 
         SubscribeLocalEvent<InsideEntityStorageComponent, InhaleLocationEvent>(OnInsideInhale);
@@ -31,6 +34,7 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
         SubscribeLocalEvent<InsideEntityStorageComponent, AtmosExposedGetAirEvent>(OnInsideExposed);
     }
 
+    // Scp added start
     private void OnDoAfterSuccess(Entity<EntityStorageComponent> ent, ref OpenStorageDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled)
@@ -39,11 +43,12 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
         if (!CanOpen(args.User, ent, requireHands: false))
             return;
 
-        DoOpenStorage(ent.Owner, ent.Comp, args.User);
+        DoOpenStorage(ent, args.User);
         _audio.PlayPvs(ent.Comp.OpenSound, ent);
 
         args.Handled = true;
     }
+    // Scp added end
 
     private void OnMapInit(EntityUid uid, EntityStorageComponent component, MapInitEvent args)
     {
@@ -94,7 +99,7 @@ public sealed class EntityStorageSystem : SharedEntityStorageSystem
     {
         var targetCoordinates = TransformSystem.ToMapCoordinates(new EntityCoordinates(uid, component.EnteringOffset));
 
-        if (_map.TryFindGridAt(targetCoordinates, out var gridId, out var grid))
+        if (_mapSystem.TryFindGridAt(targetCoordinates, out var gridId, out var grid))
         {
             return _mapSystem.GetTileRef(gridId, grid, targetCoordinates);
         }

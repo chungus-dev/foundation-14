@@ -40,8 +40,9 @@
     loadNode: output
     sprite: Structures/Machines/server.rsi
     state: server
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrongScp
   - type: Anchorable
     flags:

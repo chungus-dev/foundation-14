@@ -3,9 +3,9 @@ using Robust.Server.Audio;
 
 namespace Content.Server._Scp.Audio.EmitSoundOnMobStateChanged;
 
-public sealed class EmitSoundOnMobStateChangedSystem : EntitySystem
+public sealed partial class EmitSoundOnMobStateChangedSystem : EntitySystem
 {
-    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private AudioSystem _audio = default!;
 
     public override void Initialize()
     {

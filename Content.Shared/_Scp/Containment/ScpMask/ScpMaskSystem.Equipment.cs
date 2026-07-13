@@ -14,7 +14,7 @@ namespace Content.Shared._Scp.Containment.ScpMask;
 
 public sealed partial class ScpMaskSystem
 {
-    [Dependency] private readonly MobStateSystem _mob = default!;
+    [Dependency] private MobStateSystem _mob = default!;
 
     private void InitializeEquipment()
     {

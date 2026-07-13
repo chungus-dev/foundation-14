@@ -7,10 +7,9 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._Scp.Anomaly.Scp096.Hud;
 
-public sealed class Scp096FaceDamageHudSystem : EquipmentHudSystem<ShowScp096FaceDamageHudComponent>
+public sealed partial class Scp096FaceDamageHudSystem : EquipmentHudSystem<ShowScp096FaceDamageHudComponent>
 {
-    [Dependency] private readonly Scp096System _scp096 = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private Scp096System _scp096 = default!;
 
     public override void Initialize()
     {
@@ -30,7 +29,7 @@ public sealed class Scp096FaceDamageHudSystem : EquipmentHudSystem<ShowScp096Fac
         if (!ShowScp096FaceDamageHudComponent.Icons.TryGetValue(severity, out var iconProto))
             return;
 
-        if (!_prototype.TryIndex(iconProto, out var icon))
+        if (!ProtoMan.TryIndex(iconProto, out var icon))
             return;
 
         args.StatusIcons.Add(icon);

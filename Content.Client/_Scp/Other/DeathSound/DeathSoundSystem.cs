@@ -6,12 +6,13 @@ using Robust.Shared.Player;
 
 namespace Content.Client._Scp.Other.DeathSound;
 
-public sealed class DeathSoundSystem : EntitySystem
+// TODO: Move data and event to specific component
+public sealed partial class DeathSoundSystem : EntitySystem
 {
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private IPlayerManager _player = default!;
 
-    private readonly SoundSpecifier _sound = new SoundPathSpecifier("/Audio/_Scp/Effects/die.ogg");
+    private static readonly SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_Scp/Effects/die.ogg");
 
     public override void Initialize()
     {
@@ -28,6 +29,6 @@ public sealed class DeathSoundSystem : EntitySystem
         if (args.NewMobState != MobState.Dead)
             return;
 
-        _audio.PlayGlobal(_sound, ent);
+        _audio.PlayGlobal(Sound, ent);
     }
 }

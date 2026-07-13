@@ -3,7 +3,6 @@ using Content.Shared.Popups;
 using Content.Shared.Xenoarchaeology.Artifact.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -14,13 +13,12 @@ namespace Content.Shared.Xenoarchaeology.Artifact;
 /// </summary>
 public abstract partial class SharedXenoArtifactSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
-    [Dependency] protected readonly IRobustRandom RobustRandom = default!;
-    // [Dependency] private readonly SharedActionsSystem _actions = default!; Scp edit
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] protected IRobustRandom RobustRandom = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -45,12 +43,7 @@ public abstract partial class SharedXenoArtifactSystem : EntitySystem
     /// <summary> As all artifacts have to contain nodes - we ensure that they are containers. </summary>
     private void OnStartup(Entity<XenoArtifactComponent> ent, ref ComponentStartup args)
     {
-        // Scp edit - adds funny button to playable scp, we don't need this.
-        // _actions.AddAction(ent, ent.Comp.SelfActivateAction);
-
-        // Scp edit - PLEASE STOP FAILING TESTS SPAWNING CONTAINER WHILE BEING PAUSED
-        // Moved to server
-        // ent.Comp.NodeContainer = _container.EnsureContainer<Container>(ent, XenoArtifactComponent.NodeContainerId);
+        // Scp edit - this added funny button to playable scp, we don't need this.
     }
 
     private void OnSelfActivate(Entity<XenoArtifactComponent> ent, ref ArtifactSelfActivateEvent args)

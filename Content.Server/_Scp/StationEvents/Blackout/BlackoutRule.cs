@@ -1,7 +1,7 @@
 ﻿using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.StationEvents.Events;
-using Content.Shared._Scp.Other.Blackout;
+using Content.Shared._Scp.GameTicking.Blackout;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Station.Components;
 using Robust.Server.Audio;
@@ -10,10 +10,10 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._Scp.StationEvents.Blackout;
 
-public sealed class BlackoutRule : StationEventSystem<BlackoutRuleComponent>
+public sealed partial class BlackoutRule : StationEventSystem<BlackoutRuleComponent>
 {
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly ApcSystem _apc = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private ApcSystem _apc = default!;
 
     private readonly SoundSpecifier _apcShutdownSound = new SoundPathSpecifier("/Audio/_Scp/Effects/Blackout/apc.ogg");
 

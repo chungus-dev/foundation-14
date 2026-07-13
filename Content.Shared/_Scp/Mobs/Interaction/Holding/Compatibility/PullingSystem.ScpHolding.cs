@@ -7,16 +7,10 @@ namespace Content.Shared.Movement.Pulling.Systems;
 
 public sealed partial class PullingSystem
 {
-    [Dependency] private readonly SharedScpHoldingSystem _scpHolding = default!;
+    [Dependency] private SharedScpHoldingSystem _scpHolding = default!;
 
-    private EntityQuery<PullableComponent> _pullableQuery;
-    private EntityQuery<ActiveScpHolderComponent> _scpActiveHolderQuery;
-
-    private void InitializeScpHolding()
-    {
-        _pullableQuery = GetEntityQuery<PullableComponent>();
-        _scpActiveHolderQuery = GetEntityQuery<ActiveScpHolderComponent>();
-    }
+    [Dependency] private EntityQuery<PullableComponent> _pullableQuery;
+    [Dependency] private EntityQuery<ActiveScpHolderComponent> _scpActiveHolderQuery;
 
     /// <summary>
     /// Attempts to consume a pull request by redirecting it into SCP holding.

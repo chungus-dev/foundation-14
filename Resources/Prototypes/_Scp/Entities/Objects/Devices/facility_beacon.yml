@@ -51,8 +51,9 @@
     bodyType: static
   - type: Transform
     anchored: true
-  - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:

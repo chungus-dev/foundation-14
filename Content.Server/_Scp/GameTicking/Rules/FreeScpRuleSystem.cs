@@ -17,17 +17,16 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Scp.GameTicking.Rules;
 
-public sealed class FreeScpRuleSystem : GameRuleSystem<FreeScpRuleComponent>
+public sealed partial class FreeScpRuleSystem : GameRuleSystem<FreeScpRuleComponent>
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly BodyTakeoverPollSystem _bodyTakeover = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly FaxSystem _fax = default!;
-    [Dependency] private readonly StationJobsSystem _stationJobs = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly IComponentFactory _componentFactory = default!;
+    [Dependency] private BodyTakeoverPollSystem _bodyTakeover = default!;
+    [Dependency] private MindSystem _mind = default!;
+    [Dependency] private FaxSystem _fax = default!;
+    [Dependency] private StationJobsSystem _stationJobs = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IComponentFactory _componentFactory = default!;
 
     private readonly List<JobPrototype> _cachedScpJobs = new();
 
@@ -79,12 +78,12 @@ public sealed class FreeScpRuleSystem : GameRuleSystem<FreeScpRuleComponent>
         _cachedScpJobs.Clear();
         var scpCompName = _componentFactory.GetComponentName<ScpComponent>();
 
-        foreach (var job in _prototype.EnumeratePrototypes<JobPrototype>())
+        foreach (var job in ProtoMan.EnumeratePrototypes<JobPrototype>())
         {
             if (job.JobEntity == null)
                 continue;
 
-            if (!_prototype.TryIndex(job.JobEntity, out var entity))
+            if (!ProtoMan.TryIndex(job.JobEntity, out var entity))
                 continue;
 
             if (!entity.Components.ContainsKey(scpCompName))

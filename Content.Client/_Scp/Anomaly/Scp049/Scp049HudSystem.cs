@@ -5,10 +5,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Scp.Anomaly.Scp049;
 
-public sealed class Scp049HudSystem : EquipmentHudSystem<ScpShow049HudComponent>
+public sealed partial class Scp049HudSystem : EquipmentHudSystem<ScpShow049HudComponent>
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -22,7 +20,7 @@ public sealed class Scp049HudSystem : EquipmentHudSystem<ScpShow049HudComponent>
         if (!IsActive)
             return;
 
-        var prototype = _prototype.Index(Scp049Component.Icon);
+        var prototype = ProtoMan.Index(Scp049Component.Icon);
         args.StatusIcons.Add(prototype);
     }
 
@@ -31,7 +29,7 @@ public sealed class Scp049HudSystem : EquipmentHudSystem<ScpShow049HudComponent>
         if (!IsActive)
             return;
 
-        var prototype = _prototype.Index(Scp049MinionComponent.Icon);
+        var prototype = ProtoMan.Index(Scp049MinionComponent.Icon);
         args.StatusIcons.Add(prototype);
     }
 }

@@ -11,8 +11,8 @@ namespace Content.Server._Scp.Anomaly.Scp096;
 
 public sealed partial class Scp096System
 {
-    [Dependency] private readonly BloodSplatterSystem _bloodSplatter = default!;
-    [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
+    [Dependency] private BloodSplatterSystem _bloodSplatter = default!;
+    [Dependency] private SharedBloodstreamSystem _bloodstream = default!;
 
     private static readonly Angle BloodAngle = Angle.FromDegrees(360f);
     private const float BloodRadians = (float)Math.PI * 2f;
@@ -53,13 +53,6 @@ public sealed partial class Scp096System
 
         var blood = new Solution([new(reagent, 1)]);
         _bloodstream.ChangeBloodReagents((ent.Owner, bloodstream), blood);
-
-        if (TryComp<SolutionRegenerationComponent>(ent, out var regeneration))
-        {
-            regeneration.Generated?.RemoveAllSolution();
-            regeneration.Generated?.AddReagent(reagent, 20f);
-            Dirty(ent, regeneration);
-        }
     }
 
     protected override void ModifyTearsSpawnSpeed(Entity<Scp096FaceComponent> ent, bool cryFaster)

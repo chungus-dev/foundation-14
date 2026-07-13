@@ -7,23 +7,16 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._Scp.Mobs.Fear;
 
-public sealed class FearSystem : SharedFearSystem
+public sealed partial class FearSystem : SharedFearSystem
 {
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IGameTiming _timing = default!;
+
+    [Dependency] private EntityQuery<FearActiveSoundEffectsComponent> _activeEffects;
 
     private static readonly SoundSpecifier HeartbeatSound =
         new SoundPathSpecifier("/Audio/_Scp/Effects/heartbeat.ogg");
-
-    private EntityQuery<FearActiveSoundEffectsComponent> _activeEffects;
-
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        _activeEffects = GetEntityQuery<FearActiveSoundEffectsComponent>();
-    }
 
     public override void Update(float frameTime)
     {

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace Content.Shared._Scp.Helpers;
+namespace Content.Shared._Scp.Utility;
 
 /// <summary>
 /// Provides a static object pool for collections to minimize garbage collection allocations.

@@ -16,8 +16,13 @@ namespace Content.Client._Scp.Anomaly.Scp939;
 
 public sealed partial class Scp939HudSystem : EquipmentHudSystem<Scp939Component>
 {
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
+
+    [Dependency] private EntityQuery<EyeComponent> _eyeQuery = default!;
+    [Dependency] private EntityQuery<Scp939ProtectionComponent> _scp939ProtectionQuery = default!;
+    [Dependency] private EntityQuery<MovementSpeedModifierComponent> _movementSpeedQuery = default!;
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!;
 
     internal readonly List<(Entity<SpriteComponent> Ent, float BaseAlpha)> CachedBaseAlphas = new(64);
 
@@ -26,11 +31,6 @@ public sealed partial class Scp939HudSystem : EquipmentHudSystem<Scp939Component
 
     // TODO: Выделить значения плохого зрения в отдельный компонент, не связанный с 939
     private Scp939Component? _scp939Component;
-
-    private EntityQuery<EyeComponent> _eyeQuery;
-    private EntityQuery<Scp939ProtectionComponent> _scp939ProtectionQuery;
-    private EntityQuery<MovementSpeedModifierComponent> _movementSpeedQuery;
-    private EntityQuery<PhysicsComponent> _physicsQuery;
 
     private bool _overlaysPresented;
     private float _lastUpdateTime;
@@ -46,11 +46,6 @@ public sealed partial class Scp939HudSystem : EquipmentHudSystem<Scp939Component
 
         SubscribeLocalEvent<ActiveScp939VisibilityComponent, GetStatusIconsEvent>(OnGetStatusIcons, after: [typeof(SSDIndicatorSystem)] );
         SubscribeLocalEvent<ActiveScp939VisibilityComponent, ExamineAttemptEvent>(OnExamine);
-
-        _eyeQuery = GetEntityQuery<EyeComponent>();
-        _scp939ProtectionQuery = GetEntityQuery<Scp939ProtectionComponent>();
-        _movementSpeedQuery = GetEntityQuery<MovementSpeedModifierComponent>();
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
 
         _setAlphaOverlay = new();
         _resetAlphaOverlay = new();

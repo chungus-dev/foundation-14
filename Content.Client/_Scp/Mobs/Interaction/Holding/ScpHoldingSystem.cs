@@ -18,21 +18,21 @@ namespace Content.Client._Scp.Mobs.Interaction.Holding;
 
 public sealed partial class ScpHoldingSystem : SharedScpHoldingSystem
 {
-    [Dependency] private readonly HandsSystem _hands = default!;
-    [Dependency] private readonly Robust.Client.Physics.PhysicsSystem _physics = default!;
-    [Dependency] private readonly VirtualItemSystem _virtualItem = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private HandsSystem _hands = default!;
+    [Dependency] private Robust.Client.Physics.PhysicsSystem _physics = default!;
+    [Dependency] private VirtualItemSystem _virtualItem = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IGameTiming _timing = default!;
+
+    [Dependency] private EntityQuery<HandsComponent> _handsQuery;
+    [Dependency] private EntityQuery<ScpHoldableComponent> _holdableQuery;
+    [Dependency] private EntityQuery<ScpHoldHandBlockerComponent> _blockerQuery;
+    [Dependency] private EntityQuery<ActiveScpHolderComponent> _activeHolderQuery;
+    [Dependency] private EntityQuery<VirtualItemComponent> _virtualItemQuery;
 
     private EntityUid? _trackedHolderTarget;
     private readonly List<EntityUid> _authoritativeBlockers = [];
     private readonly List<EntityUid> _predictedBlockers = [];
-
-    private EntityQuery<HandsComponent> _handsQuery;
-    private EntityQuery<ScpHoldableComponent> _holdableQuery;
-    private EntityQuery<ScpHoldHandBlockerComponent> _blockerQuery;
-    private EntityQuery<ActiveScpHolderComponent> _activeHolderQuery;
-    private EntityQuery<VirtualItemComponent> _virtualItemQuery;
 
     public override void Initialize()
     {
@@ -41,12 +41,6 @@ public sealed partial class ScpHoldingSystem : SharedScpHoldingSystem
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.MovePulledObject, new PointerInputCmdHandler(OnMoveHeldToCursor))
             .Register<ScpHoldingSystem>();
-
-        _handsQuery = GetEntityQuery<HandsComponent>();
-        _holdableQuery = GetEntityQuery<ScpHoldableComponent>();
-        _blockerQuery = GetEntityQuery<ScpHoldHandBlockerComponent>();
-        _activeHolderQuery = GetEntityQuery<ActiveScpHolderComponent>();
-        _virtualItemQuery = GetEntityQuery<VirtualItemComponent>();
 
         SubscribeLocalEvent<ActiveScpHoldableComponent, AfterAutoHandleStateEvent>(OnHeldAfterState);
         SubscribeLocalEvent<ActiveScpHolderComponent, AfterAutoHandleStateEvent>(OnHolderAfterState);

@@ -4,7 +4,7 @@ using Content.Shared.Xenoarchaeology.Artifact.XAT;
 
 namespace Content.Shared._Scp.Research.Artifact.XAT._ScpSpecific.Scp330;
 
-public sealed partial class XATScp330PunishmentSystem : BaseXATSystem<XATScp330PunishmentComponent>
+public sealed class XATScp330PunishmentSystem : BaseXATSystem<XATScp330PunishmentComponent>
 {
     public override void Initialize()
     {

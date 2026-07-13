@@ -14,16 +14,14 @@ public abstract partial class SharedScp096System
      * Часть системы, отвечающая за руки скромника и взаимодействие с предметами.
      */
 
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private ThrowingSystem _throwing = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
 
     private void InitializeHands()
     {
         SubscribeLocalEvent<Scp096Component, PickupAttemptEvent>(OnPickupAttempt);
         SubscribeLocalEvent<Scp096Component, DidEquipHandEvent>(OnEquipHand);
-
-        Log.Level = LogLevel.Info;
     }
 
     private void OnPickupAttempt(Entity<Scp096Component> ent, ref PickupAttemptEvent args)
@@ -65,7 +63,7 @@ public abstract partial class SharedScp096System
     private void CancelPickup(EntityUid ent, ref PickupAttemptEvent args)
     {
         var message = Loc.GetString("scp096-cant-pickup", ("name", Name(args.Item)));
-        _popup.PopupClient(message, args.Item, ent);
+        _popup.PopupEntity(message, args.Item, ent);
         args.Cancel();
     }
 

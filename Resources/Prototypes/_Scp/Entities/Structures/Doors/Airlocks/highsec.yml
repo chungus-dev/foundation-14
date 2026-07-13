@@ -103,8 +103,9 @@
         type: WiresBoundUserInterface
   - type: Airtight
   - type: Occluder
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StrongMetallicScp
   - type: Destructible
     thresholds:

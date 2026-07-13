@@ -7,9 +7,9 @@ namespace Content.Server._Scp.Other.NoSmallMobsCollision;
 /// <summary>
 /// Система для удаления коллизии у мелких мобов, так как она им не нужна.
 /// </summary>
-public sealed class NoSmallMobsCollisionSystem : EntitySystem
+public sealed partial class NoSmallMobsCollisionSystem : EntitySystem
 {
-    private EntityQuery<PhysicsComponent> _physicsQuery;
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery;
 
     public override void Initialize()
     {

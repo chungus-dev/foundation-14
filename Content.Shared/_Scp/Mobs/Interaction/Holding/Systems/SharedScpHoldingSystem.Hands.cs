@@ -1,5 +1,5 @@
-using Content.Shared._Scp.Helpers;
 using Content.Shared._Scp.Mobs.Interaction.Holding.Components;
+using Content.Shared._Scp.Utility;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -15,25 +15,17 @@ public abstract partial class SharedScpHoldingSystem
      * Hand-local dependencies, caches, placeholders, virtual blockers, and held-status visuals.
      */
 
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedVirtualItemSystem _virtualItem = default!;
+
+    [Dependency] private EntityQuery<HandsComponent> _handsQuery;
+    [Dependency] private EntityQuery<VirtualItemComponent> _virtualItemQuery;
+    [Dependency] private EntityQuery<ScpHeldHandBlockerComponent> _heldHandBlockerQuery;
+    [Dependency] private EntityQuery<ScpHoldHandBlockerComponent> _holdHandBlockerQuery;
+    [Dependency] private EntityQuery<UnremoveableComponent> _unremoveableQuery;
 
     private readonly List<EntityUid> _placeholderIcons = [];
     private readonly HashSet<EntityUid> _holdersSuppressingVirtualItemSync = [];
-    private EntityQuery<HandsComponent> _handsQuery;
-    private EntityQuery<VirtualItemComponent> _virtualItemQuery;
-    private EntityQuery<ScpHeldHandBlockerComponent> _heldHandBlockerQuery;
-    private EntityQuery<ScpHoldHandBlockerComponent> _holdHandBlockerQuery;
-    private EntityQuery<UnremoveableComponent> _unremoveableQuery;
-
-    private void InitializeHandQueries()
-    {
-        _handsQuery = GetEntityQuery<HandsComponent>();
-        _virtualItemQuery = GetEntityQuery<VirtualItemComponent>();
-        _heldHandBlockerQuery = GetEntityQuery<ScpHeldHandBlockerComponent>();
-        _holdHandBlockerQuery = GetEntityQuery<ScpHoldHandBlockerComponent>();
-        _unremoveableQuery = GetEntityQuery<UnremoveableComponent>();
-    }
 
     private void InitializeHandEvents()
     {

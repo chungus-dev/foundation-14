@@ -15,7 +15,6 @@
   - type: Item
     size: Small
   - type: SolutionRegeneration
-    solution: drink
     generated:
       reagents:
       - ReagentId: Water

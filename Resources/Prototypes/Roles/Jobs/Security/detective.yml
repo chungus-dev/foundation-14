@@ -10,7 +10,6 @@
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
-  canBeAntag: false
   overrideConsoleVisibility: false # Scp added
   setPreference: false # Scp added
   access:
@@ -23,6 +22,7 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+
 - type: startingGear
   id: DetectiveGear
   equipment:

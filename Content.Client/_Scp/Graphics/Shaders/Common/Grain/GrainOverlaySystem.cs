@@ -7,12 +7,12 @@ using Robust.Shared.Player;
 
 namespace Content.Client._Scp.Graphics.Shaders.Common.Grain;
 
-public sealed class GrainOverlaySystem : ComponentOverlaySystem<GrainOverlay, GrainOverlayComponent>
+public sealed partial class GrainOverlaySystem : ComponentOverlaySystem<GrainOverlay, GrainOverlayComponent>
 {
-    [Dependency] private readonly SharedShaderStrengthSystem _shaderStrength = default!;
-    [Dependency] private readonly CompatibilityModeActiveWarningSystem _compatibility = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private SharedShaderStrengthSystem _shaderStrength = default!;
+    [Dependency] private CompatibilityModeActiveWarningSystem _compatibility = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IPlayerManager _player = default!;
 
     public override void Initialize()
     {
@@ -22,8 +22,8 @@ public sealed class GrainOverlaySystem : ComponentOverlaySystem<GrainOverlay, Gr
 
         SubscribeLocalEvent<GrainOverlayComponent, AfterAutoHandleStateEvent>(OnAdditionalStrengthChanged);
 
-        _cfg.OnValueChanged(ScpCCVars.GrainToggleOverlay, ToggleGrainOverlay);
-        _cfg.OnValueChanged(ScpCCVars.GrainStrength, SetBaseStrength);
+        Subs.CVar(_cfg, ScpCCVars.GrainToggleOverlay, ToggleGrainOverlay, true);
+        Subs.CVar(_cfg, ScpCCVars.GrainStrength, SetBaseStrength, true);
     }
 
     public override void Shutdown()
@@ -31,9 +31,6 @@ public sealed class GrainOverlaySystem : ComponentOverlaySystem<GrainOverlay, Gr
         base.Shutdown();
 
         Overlay.Dispose();
-
-        _cfg.UnsubValueChanged(ScpCCVars.GrainToggleOverlay, ToggleGrainOverlay);
-        _cfg.UnsubValueChanged(ScpCCVars.GrainStrength, SetBaseStrength);
     }
 
     protected override void OnPlayerAttached(Entity<GrainOverlayComponent> ent, ref LocalPlayerAttachedEvent args)

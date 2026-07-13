@@ -2,4 +2,4 @@
 
 namespace Content.Client._Scp.Anomaly.Scp012;
 
-public sealed class Scp012System : SharedScp012System;
+public sealed partial class Scp012System : SharedScp012System;

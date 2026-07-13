@@ -23,8 +23,9 @@
   - type: Anchorable
   - type: Pullable
   - type: Rotatable
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: RCDDeconstructable
     cost: 6

@@ -28,8 +28,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 7
     baseSprintSpeed: 4
-  - type: Damageable
+  - type: Injurable
     damageContainer: Biological
+  - type: Damageable
     damageModifierSet: Scale
 #  - type: GhostPanelAntagonistMarker # SCP port: component unavailable in Foundation14
 #    name: ghost-panel-antagonist-scp-minor-name

@@ -11,14 +11,8 @@ public abstract partial class SharedScpHoldingSystem
      * Hold-local query caches, hold toggling API, breakout flow, and cooldown helpers.
      */
 
-    private EntityQuery<InputMoverComponent> _moverQuery;
-    private EntityQuery<ScpHoldableComponent> _holdableQuery;
-
-    private void InitializeHoldQueries()
-    {
-        _moverQuery = GetEntityQuery<InputMoverComponent>();
-        _holdableQuery = GetEntityQuery<ScpHoldableComponent>();
-    }
+    [Dependency] private EntityQuery<InputMoverComponent> _moverQuery;
+    [Dependency] private EntityQuery<ScpHoldableComponent> _holdableQuery;
 
     public bool TryToggleHold(Entity<ScpHolderComponent> holder, EntityUid target, bool attemptChecked = false)
     {

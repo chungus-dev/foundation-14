@@ -10,7 +10,6 @@
   startingGear: FondSeniorSecurityOfficerGear
   icon: JobFondSeniorSecurityOfficer
   supervisors: ghost-role-information-fond-senior-security-officer-supervisors
-  canBeAntag: false
   weight: 820
   overrideConsoleVisibility: false
   alwaysShowInBanPanel: true

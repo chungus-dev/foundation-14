@@ -1,6 +1,6 @@
 using System.Linq;
-using Content.Shared._Scp.Helpers;
 using Content.Shared._Scp.Anomaly.Scp173;
+using Content.Shared._Scp.Utility;
 using Content.Shared._Scp.Utility.Random;
 using Content.Shared._Scp.Vision.Watching;
 using Content.Shared.Mobs;
@@ -17,13 +17,13 @@ namespace Content.Shared._Scp.Blinking;
 // Вместо этого разделить систему на апдейт + обработку ивентов | API + хелперы + ивенты
 public abstract partial class SharedBlinkingSystem : EntitySystem
 {
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly EyeWatchingSystem _watching = default!;
-    [Dependency] private readonly RandomPredictedSystem _random = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private EyeWatchingSystem _watching = default!;
+    [Dependency] private RandomPredictedSystem _random = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private INetManager _net = default!;
 
-    protected EntityQuery<BlinkableComponent> BlinkableQuery;
+    [Dependency] protected EntityQuery<BlinkableComponent> BlinkableQuery;
 
     public override void Initialize()
     {
@@ -35,8 +35,6 @@ public abstract partial class SharedBlinkingSystem : EntitySystem
         SubscribeLocalEvent<BlinkableComponent, MobStateChangedEvent>(OnMobStateChanged);
 
         InitializeEyeClosing();
-
-        BlinkableQuery = GetEntityQuery<BlinkableComponent>();
     }
 
     #region Event handlers

@@ -4,7 +4,7 @@ using Content.Shared.Research.Prototypes;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Scp.Helpers;
+namespace Content.Shared._Scp.Utility;
 
 /// <summary>
 /// Calculates and formats research costs that may use multiple research point types.

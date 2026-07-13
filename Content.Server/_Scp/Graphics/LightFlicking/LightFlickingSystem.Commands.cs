@@ -8,15 +8,13 @@ namespace Content.Server._Scp.Graphics.LightFlicking;
 
 public sealed partial class LightFlickingSystem
 {
-    [Dependency] private readonly IConsoleHost _console = default!;
+    [Dependency] private IConsoleHost _console = default!;
 
-    private EntityQuery<ActiveLightFlickingComponent> _active;
+    [Dependency] private EntityQuery<ActiveLightFlickingComponent> _active;
 
     private void InitializeCommands()
     {
         _console.RegisterCommand("flicking.start_all", FlickingStartAll);
-
-        _active = GetEntityQuery<ActiveLightFlickingComponent>();
     }
 
     [AdminCommand(AdminFlags.Debug)]

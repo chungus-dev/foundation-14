@@ -167,11 +167,11 @@
     baseCritThreshold: 400
     animationThreshold: 220
     stunModifierThresholds:
-      1: 1
-      0.8: 0.85
-      0.7: 0.7
-      0.4: 0.55
-      0.2: 0.4
+      0: 1
+      0.2: 0.85
+      0.3: 0.7
+      0.6: 0.55
+      0.8: 0.4
   - type: Damageable
     damageModifierSet: SCP-096
   - type: ScpExaminableDamage
@@ -206,16 +206,11 @@
     - RadiationProtection
     - Drowsiness
   - type: Bloodstream
+    bloodRefreshAmount: 20
     bloodReferenceSolution:
       reagents:
       - ReagentId: Scp096Blood
         Quantity: 300
-  - type: SolutionRegeneration
-    solution: bloodstream
-    generated:
-      reagents:
-      - ReagentId: Scp096Blood
-        Quantity: 5
   - type: Tag
     tags:
     - FootstepSound
@@ -236,8 +231,9 @@
   components:
   # TODO: Спрайты
   - type: Scp096Face
-  - type: Damageable
+  - type: Injurable
     damageContainer: Biological
+  - type: Damageable
     damageModifierSet: Scp096FaceSet
   - type: MobState
     allowedStates:
@@ -256,6 +252,7 @@
       types:
         Blunt: -0.1
   - type: Bloodstream
+    bloodRefreshAmount: 20
     bloodReferenceSolution:
       reagents:
       - ReagentId: Scp096Tears
@@ -268,12 +265,6 @@
       types:
         Bloodloss:
           -0.25
-  - type: SolutionRegeneration
-    solution: bloodstream
-    generated:
-      reagents:
-      - ReagentId: Scp096Tears
-        Quantity: 20
   - type: BloodSplatterer
     amount: 1, 2
     distance: 5, 10

@@ -18,25 +18,23 @@ using Content.Shared.Whitelist;
 using Robust.Server.Containers;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server._Scp.Construction.Repair;
 
 /// <summary>
 /// Система ремонта структур с использованием <see cref="ConstructionGraphPrototype"/>.
 /// </summary>
-public sealed class ScpRepairableSystem : EntitySystem
+public sealed partial class ScpRepairableSystem : EntitySystem
 {
-    [Dependency] private readonly ConstructionSystem _construction = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly RulesSystem _rules = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly StackSystem _stack = default!;
-    [Dependency] private readonly ToolSystem _tool = default!;
-    [Dependency] private readonly InteractionSystem _interaction = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private ConstructionSystem _construction = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private RulesSystem _rules = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private StackSystem _stack = default!;
+    [Dependency] private ToolSystem _tool = default!;
+    [Dependency] private InteractionSystem _interaction = default!;
 
     private const int ExaminePriority = SharedScpExaminableDamageSystem.Priority - 3;
 
@@ -105,7 +103,7 @@ public sealed class ScpRepairableSystem : EntitySystem
     private bool CheckRepairConditions(EntityUid target, EntityUid user, ScpRepairableComponent repairable, bool silent = false)
     {
         // Проверка RulesPrototype для цели
-        if (_prototype.TryIndex(repairable.TargetRules, out var targetRule) && !_rules.IsTrue(target, targetRule))
+        if (ProtoMan.TryIndex(repairable.TargetRules, out var targetRule) && !_rules.IsTrue(target, targetRule))
         {
             if (!silent)
                 _popup.PopupEntity(Loc.GetString("scp-repairable-failed-target"), target, user);
@@ -114,7 +112,7 @@ public sealed class ScpRepairableSystem : EntitySystem
         }
 
         // Проверка RulesPrototype для пользователя
-        if (_prototype.TryIndex(repairable.UserRules, out var userRules) && !_rules.IsTrue(user, userRules))
+        if (ProtoMan.TryIndex(repairable.UserRules, out var userRules) && !_rules.IsTrue(user, userRules))
         {
             if (!silent)
                 _popup.PopupEntity(Loc.GetString("scp-repairable-failed-user"), target, user);
@@ -148,7 +146,7 @@ public sealed class ScpRepairableSystem : EntitySystem
     /// </summary>
     private bool InitializeRepairState(ScpRepairableComponent repairable)
     {
-        if (!_prototype.Resolve(repairable.Graph, out var graph))
+        if (!ProtoMan.Resolve(repairable.Graph, out var graph))
             return false;
 
         if (graph.Start == null)
@@ -279,7 +277,7 @@ public sealed class ScpRepairableSystem : EntitySystem
     /// </summary>
     private bool DoRepairStep(Entity<ScpRepairableComponent> ent, EntityUid used, EntityUid user, EntityCoordinates clickLocation)
     {
-        if (!_prototype.Resolve(ent.Comp.Graph, out var graph))
+        if (!ProtoMan.Resolve(ent.Comp.Graph, out var graph))
             return false;
 
         if (!TryGetNode(ent, out var node))
@@ -328,7 +326,7 @@ public sealed class ScpRepairableSystem : EntitySystem
         // Сбрасываем индекс шага
         ent.Comp.StepIndex = 0;
 
-        if (!_prototype.Resolve(ent.Comp.Graph, out var graph))
+        if (!ProtoMan.Resolve(ent.Comp.Graph, out var graph))
             return false;
 
         // Проверяем все ребра нода
@@ -408,7 +406,7 @@ public sealed class ScpRepairableSystem : EntitySystem
     /// </summary>
     private void CompleteRepairDoAfter(Entity<ScpRepairableComponent> ent, EntityUid user, EntityUid used)
     {
-        if (!_prototype.TryIndex(ent.Comp.Graph, out var graph))
+        if (!ProtoMan.TryIndex(ent.Comp.Graph, out var graph))
             return;
 
         if (!TryGetNode(ent, out var node))
@@ -548,7 +546,7 @@ public sealed class ScpRepairableSystem : EntitySystem
     private bool TryGetNode(Entity<ScpRepairableComponent> ent, [NotNullWhen(true)] out ConstructionGraphNode? node)
     {
         node = null;
-        if (!_prototype.Resolve(ent.Comp.Graph, out var graph))
+        if (!ProtoMan.Resolve(ent.Comp.Graph, out var graph))
             return false;
 
         var currentNode = ent.Comp.CurrentNode ?? ent.Comp.StartNode;

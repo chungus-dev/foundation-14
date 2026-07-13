@@ -36,9 +36,9 @@ namespace Content.Shared._Scp.Facility.Weather;
 /// </remarks>
 public abstract partial class SharedScpWeatherSystem
 {
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
     /// <summary>
     /// Maps that are known to currently or recently have SCP-relevant weather status effects.

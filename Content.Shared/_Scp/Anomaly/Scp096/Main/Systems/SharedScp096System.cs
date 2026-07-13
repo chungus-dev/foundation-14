@@ -41,26 +41,25 @@ public abstract partial class SharedScp096System : EntitySystem
      * Основная часть системы, отвечающая за самые базовые вещи.
      */
 
-    [Dependency] private readonly RandomPredictedSystem _random = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _speedModifier = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly ScpMaskSystem _scpMask = default!;
-    [Dependency] private readonly SharedEntityStorageSystem _entityStorage = default!;
-    [Dependency] private readonly LockSystem _lock = default!;
-    [Dependency] private readonly AlertsSystem _alerts = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private RandomPredictedSystem _random = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private MovementSpeedModifierSystem _speedModifier = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private ScpMaskSystem _scpMask = default!;
+    [Dependency] private SharedEntityStorageSystem _entityStorage = default!;
+    [Dependency] private LockSystem _lock = default!;
+    [Dependency] private AlertsSystem _alerts = default!;
+    [Dependency] private IGameTiming _timing = default!;
+
+    [Dependency] protected EntityQuery<Scp096Component> Scp096Query;
+    [Dependency] protected EntityQuery<ActiveScp096HeatingUpComponent> HeatingUpQuery;
+    [Dependency] protected EntityQuery<ActiveScp096RageComponent> RageQuery;
+    [Dependency] protected EntityQuery<Scp096TargetComponent> TargetQuery;
+    [Dependency] protected EntityQuery<ActiveScp096WithoutFaceComponent> WithoutFaceQuery;
+    [Dependency] protected EntityQuery<Scp096FaceComponent> FaceQuery;
 
     private static readonly EntProtoId StatusEffectSleep = "StatusEffectForcedSleeping";
     private static readonly SoundSpecifier StorageOpenSound = new SoundCollectionSpecifier("MetalBreak");
-
-    // EntityQuery для быстрого доступа к компонентам
-    protected EntityQuery<Scp096Component> Scp096Query;
-    protected EntityQuery<ActiveScp096HeatingUpComponent> HeatingUpQuery;
-    protected EntityQuery<ActiveScp096RageComponent> RageQuery;
-    protected EntityQuery<Scp096TargetComponent> TargetQuery;
-    protected EntityQuery<ActiveScp096WithoutFaceComponent> WithoutFaceQuery;
-    protected EntityQuery<Scp096FaceComponent> FaceQuery;
 
     // ID алертов с лицом скромника
     protected static readonly ProtoId<AlertPrototype> IdleAlert = "Scp096Idle";
@@ -103,13 +102,6 @@ public abstract partial class SharedScp096System : EntitySystem
         InitializeWithoutFace();
         InitializeAppearance();
         InitializeFace();
-
-        Scp096Query = GetEntityQuery<Scp096Component>();
-        HeatingUpQuery = GetEntityQuery<ActiveScp096HeatingUpComponent>();
-        RageQuery = GetEntityQuery<ActiveScp096RageComponent>();
-        TargetQuery = GetEntityQuery<Scp096TargetComponent>();
-        WithoutFaceQuery = GetEntityQuery<ActiveScp096WithoutFaceComponent>();
-        FaceQuery = GetEntityQuery<Scp096FaceComponent>();
 
         Log.Level = LogLevel.Info;
     }
@@ -210,7 +202,7 @@ public abstract partial class SharedScp096System : EntitySystem
         if (TryComp<EntityStorageComponent>(target, out var entityStorageComponent) && !entityStorageComponent.Open)
         {
             _lock.TryUnlock(target, ent);
-            _entityStorage.OpenStorage(target, entityStorageComponent);
+            _entityStorage.OpenStorage((target, entityStorageComponent));
             _audio.PlayLocal(StorageOpenSound, ent, ent);
         }
     }

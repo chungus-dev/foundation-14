@@ -10,7 +10,6 @@ public abstract partial class SharedSpriteMovementSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<SpriteMovementComponent, SpriteMoveEvent>(OnSpriteMoveInput);
-        InitializePartial();
     }
 
     private void OnSpriteMoveInput(Entity<SpriteMovementComponent> ent, ref SpriteMoveEvent args)

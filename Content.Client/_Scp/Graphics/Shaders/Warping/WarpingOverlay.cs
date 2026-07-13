@@ -5,10 +5,10 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._Scp.Graphics.Shaders.Warping;
 
-public sealed class WarpOverlay : Overlay
+public sealed partial class WarpOverlay : Overlay
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
@@ -26,7 +26,7 @@ public sealed class WarpOverlay : Overlay
     public WarpOverlay(TimeSpan startedTime)
     {
         IoCManager.InjectDependencies(this);
-        _shader = _prototypeManager.Index(ShaderProtoId).InstanceUnique();
+        _shader = _prototype.Index(ShaderProtoId).InstanceUnique();
 
         _startTime = startedTime;
     }

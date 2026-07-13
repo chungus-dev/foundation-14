@@ -13,7 +13,6 @@
   icon: JobFacilityDirector
   joinNotifyCrew: true
   supervisors: job-supervisors-O5-command
-  canBeAntag: false
   displayWeight: 100
   accessGroups:
   - FacilityDirector

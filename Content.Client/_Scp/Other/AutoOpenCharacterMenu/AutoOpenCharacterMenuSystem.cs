@@ -6,10 +6,10 @@ using Robust.Client.UserInterface;
 
 namespace Content.Client._Scp.Other.AutoOpenCharacterMenu;
 
-public sealed class AutoOpenCharacterMenuSystem : SharedAutoOpenCharacterMenuSystem
+public sealed partial class AutoOpenCharacterMenuSystem : SharedAutoOpenCharacterMenuSystem
 {
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IUserInterfaceManager _ui = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IUserInterfaceManager _ui = default!;
 
     private bool _enabled;
 
@@ -19,8 +19,7 @@ public sealed class AutoOpenCharacterMenuSystem : SharedAutoOpenCharacterMenuSys
 
         SubscribeNetworkEvent<OpenCharacterMenuRequest>(OnOpenRequest);
 
-        _enabled = Configuration.GetCVar(ScpCCVars.AutoOpenCharacterMenuClientSideEnabled);
-        Configuration.OnValueChanged(ScpCCVars.AutoOpenCharacterMenuClientSideEnabled, b => _enabled = b);
+        Subs.CVar(Cfg, ScpCCVars.AutoOpenCharacterMenuClientSideEnabled, b => _enabled = b, true);
     }
 
     private void OnOpenRequest(OpenCharacterMenuRequest ev)

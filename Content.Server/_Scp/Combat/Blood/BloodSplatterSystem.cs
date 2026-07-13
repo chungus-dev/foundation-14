@@ -19,10 +19,10 @@ namespace Content.Server._Scp.Combat.Blood;
 /// </summary>
 public sealed partial class BloodSplatterSystem : SharedBloodSplatterSystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private TransformSystem _transform = default!;
 
     private const string SolutionName = "blood";
 
@@ -105,9 +105,7 @@ public sealed partial class BloodSplatterSystem : SharedBloodSplatterSystem
         var victimPosition = _transform.GetWorldPosition(target);
         var attackerPosition = _transform.GetWorldPosition(ent);
 
-        // Вычисляем базовое направление от атакующего к жертве
-        var baseDirection = (victimPosition - attackerPosition).Normalized();
-        var baseAngle = MathF.Atan2(baseDirection.Y, baseDirection.X);
+        var baseAngle = new Angle(victimPosition - attackerPosition);
 
         // Вычисляем случайный угол в пределах заданного разброса
         var spreadRadians = MathF.PI * ent.Comp.SpreadAngle / 180f; // Конвертируем градусы в радианы
@@ -116,7 +114,7 @@ public sealed partial class BloodSplatterSystem : SharedBloodSplatterSystem
             CreateBloodLine(ent, target);
 
         if (_random.Prob(ent.Comp.Probability))
-            SpawnBloodParticles(ent, target, Angle.FromDegrees(baseAngle), spreadRadians);
+            SpawnBloodParticles(ent, target, baseAngle, spreadRadians);
     }
 
     /// <summary>

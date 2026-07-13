@@ -1,6 +1,6 @@
 ﻿<DefaultWindow xmlns="https://spacestation14.io"
                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-               x:Class="Content.Client._Scp.FreeScp.FreeScpPollWindow"
+               x:Class="Content.Client._Scp.Role.Transfer.FreeScp.FreeScpPollWindow"
                Title="{Loc free-scp-poll-window-title}">
     <BoxContainer Orientation="Vertical">
         <Label Name="BodyLabel" />

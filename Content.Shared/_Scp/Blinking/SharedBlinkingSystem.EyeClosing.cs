@@ -3,15 +3,16 @@ using Content.Shared.Bed.Sleep;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Flash;
 using Content.Shared.Flash.Components;
-using Content.Shared.Humanoid;
 using Content.Shared.Mobs;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Shared._Scp.Blinking;
 
 public abstract partial class SharedBlinkingSystem
 {
-    [Dependency] private readonly BlindableSystem _blindable = default!;
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private BlindableSystem _blindable = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
     private void InitializeEyeClosing()
     {
@@ -30,10 +31,6 @@ public abstract partial class SharedBlinkingSystem
     private void OnShutdown(Entity<BlinkableComponent> ent, ref ComponentShutdown args)
     {
         _actions.RemoveAction(ent.Owner, ent.Comp.EyeToggleActionEntity);
-
-        if (!Exists(ent))
-            return;
-
     }
 
     private void OnToggleAction(Entity<BlinkableComponent> ent, ref ToggleEyesActionEvent args)
@@ -46,7 +43,7 @@ public abstract partial class SharedBlinkingSystem
 
         // Нельзя закрыть глаза, если нас ослепили.
         // Потому что это приведет к странному багу
-        if (HasComp<FlashedComponent>(ent))
+        if (_statusEffects.HasEffectComp<FlashedStatusEffectComponent>(ent))
             return;
 
         // Нельзя дергать глазами, пока мы спим

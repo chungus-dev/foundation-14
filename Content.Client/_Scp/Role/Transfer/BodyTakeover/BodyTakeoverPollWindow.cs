@@ -7,7 +7,7 @@ namespace Content.Client._Scp.Role.Transfer.BodyTakeover;
 [GenerateTypedNameReferences]
 public sealed partial class BodyTakeoverPollWindow : DefaultWindow
 {
-    [Dependency] private readonly ILocalizationManager _loc = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
 
     public BodyTakeoverPollWindow(string entityName, Action onAccept, Action onDecline)
     {

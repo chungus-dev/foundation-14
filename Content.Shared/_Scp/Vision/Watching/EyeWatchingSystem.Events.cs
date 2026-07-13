@@ -5,18 +5,13 @@ namespace Content.Shared._Scp.Vision.Watching;
 
 public sealed partial class EyeWatchingSystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private void InitializeEvents()
     {
         SubscribeLocalEvent<WatchingTargetComponent, MapInitEvent>(OnMapInit);
 
-        _cfg.OnValueChanged(CVars.NetMaxUpdateRange, OnPvsRageChanged, true);
-    }
-
-    private void ShutdownEvents()
-    {
-        _cfg.UnsubValueChanged(CVars.NetMaxUpdateRange, OnPvsRageChanged);
+        Subs.CVar(_cfg, CVars.NetMaxUpdateRange, OnPvsRageChanged, true);
     }
 
     private void OnMapInit(Entity<WatchingTargetComponent> ent, ref MapInitEvent args)

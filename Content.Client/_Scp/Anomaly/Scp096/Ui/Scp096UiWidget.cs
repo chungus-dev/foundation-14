@@ -6,6 +6,7 @@ public sealed class Scp096UiWidget : UIWidget
 {
     private readonly Label _timeLabel;
     private readonly Label _targetsLabel;
+
     public Scp096UiWidget()
     {
         _timeLabel = new Label();

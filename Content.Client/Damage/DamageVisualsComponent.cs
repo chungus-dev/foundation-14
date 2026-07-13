@@ -1,4 +1,6 @@
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.DisplacementMap;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 
@@ -117,15 +119,12 @@ public sealed partial class DamageVisualsComponent : Component
     /// </summary>
     [DataField("damageOverlay")] public  DamageVisualizerSprite? DamageOverlay;
 
-    // Scp added start - поддержка IconSmooth
-
     /// <summary>
-    ///     Enables icon smooth corner support for damage sprites.
-    ///     When enabled, damage sprites will use corner-based format
-    ///     compatible with icon smoothing: {stateBase}{cornerIndex}_{damageGroup}_{threshold}
+    /// Applies a displacement map to the damage visuals.
+    /// Is set via <see cref="DamageableComponent.Displacement"/>.
     /// </summary>
-    [DataField] public bool SupportIconSmooth;
-    // Scp added end
+    [DataField]
+    public DisplacementData? Displacement;
 
     public readonly List<Enum> TargetLayerMapKeys = new();
     public bool Disabled = false;
@@ -135,23 +134,6 @@ public sealed partial class DamageVisualsComponent : Component
     public readonly Dictionary<object, string> LayerMapKeyStates = new();
     public readonly Dictionary<string, FixedPoint2> LastThresholdPerGroup = new();
     public string TopMostLayerKey = default!;
-}
-
-public enum CornerPosition : byte
-{
-    SE,
-    NE,
-    NW,
-    SW,
-}
-
-[Flags]
-public enum CornerFill : byte
-{
-    None = 0,
-    CounterClockwise = 1,
-    Diagonal = 2,
-    Clockwise = 4,
 }
 
 // deals with the edge case of human damage visuals not

@@ -8,20 +8,18 @@ namespace Content.Server._Scp.Graphics.Sprite.EdgeConnection;
 /// <summary>
 /// Calculates appearance masks for edge-connected sprites.
 /// </summary>
-public sealed class EdgeConnectionSystem : EntitySystem
+public sealed partial class EdgeConnectionSystem : EntitySystem
 {
-    [Dependency] private readonly AppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private AppearanceSystem _appearance = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+
+    [Dependency] private EntityQuery<EdgeConnectionComponent> _edgeQuery;
 
     private const float MinimumMovementDistance = 0.005f;
-
-    private EntityQuery<EdgeConnectionComponent> _edgeQuery;
 
     public override void Initialize()
     {
         base.Initialize();
-
-        _edgeQuery = GetEntityQuery<EdgeConnectionComponent>();
 
         SubscribeLocalEvent<EdgeConnectionComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<EdgeConnectionComponent, ComponentShutdown>(OnShutdown);

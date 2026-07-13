@@ -13,13 +13,13 @@ namespace Content.Server._Scp.Role.Transfer.AutoGhostRole;
 /// Monitors entities with <see cref="AutoGhostRoleComponent"/> for player disconnects
 /// and starts a body takeover poll after the configured delay
 /// </summary>
-public sealed class AutoGhostRoleSystem : EntitySystem
+public sealed partial class AutoGhostRoleSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly BodyTakeoverPollSystem _bodyTakeover = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private BodyTakeoverPollSystem _bodyTakeover = default!;
+    [Dependency] private MindSystem _mind = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private bool _enabled;
 
@@ -36,10 +36,10 @@ public sealed class AutoGhostRoleSystem : EntitySystem
     private void OnPlayerAttached(Entity<AutoGhostRoleComponent> ent, ref PlayerAttachedEvent args)
     {
         ent.Comp.EverHadPlayer = true;
-        RemCompDeferred<ActiveAutoGhostRoleComponent>(ent.Owner);
+        RemCompDeferred<ActiveAutoGhostRoleComponent>(ent);
 
         // Cancel any active poll since a player has returned
-        _bodyTakeover.CancelPoll(ent.Owner);
+        _bodyTakeover.CancelPoll(ent);
     }
 
     private void OnPlayerDetached(Entity<AutoGhostRoleComponent> ent, ref PlayerDetachedEvent args)
@@ -47,7 +47,13 @@ public sealed class AutoGhostRoleSystem : EntitySystem
         if (!ent.Comp.EverHadPlayer)
             return;
 
-        var active = AddComp<ActiveAutoGhostRoleComponent>(ent.Owner);
+        // Closing the game triggers the PlayerDetachedEvent
+        // but all entities start Terminating at this time
+        // and this causes an error while adding a new ActiveAutoGhostRoleComponent
+        if (TerminatingOrDeleted(ent))
+            return;
+
+        var active = EnsureComp<ActiveAutoGhostRoleComponent>(ent);
         active.DisconnectedAt = _timing.CurTime;
     }
 

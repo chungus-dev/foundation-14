@@ -4,7 +4,7 @@ namespace Content.Shared._Scp.ScpCCVars;
 
 public sealed partial class ScpCCVars
 {
-    /**
+    /*
      * Авто-открытие меню персонажа при спавне
      */
 

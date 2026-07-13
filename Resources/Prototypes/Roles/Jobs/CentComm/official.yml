@@ -1,12 +1,12 @@
 - type: job
   id: CentralCommandOfficial
-  name: job-name-centcomoff
-  description: job-description-centcomoff
+  name: job-name-centcommoff
+  description: job-description-centcommoff
   playTimeTracker: JobCentralCommandOfficial
   setPreference: false
+  startingGear: CentcommGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-hos
-  canBeAntag: false
   overrideConsoleVisibility: false # Scp added
   accessGroups:
   - AllAccess

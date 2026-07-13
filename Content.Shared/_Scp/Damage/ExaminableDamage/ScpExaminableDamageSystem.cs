@@ -23,13 +23,12 @@ namespace Content.Shared._Scp.Damage.ExaminableDamage;
 /// Для структуры требуется <see cref="DestructibleComponent"/>
 /// </remarks>
 // TODO: Написать больше описаний для различных объектов, вроде SCP-049, SCP-049-2
-public abstract class SharedScpExaminableDamageSystem : EntitySystem
+public abstract partial class SharedScpExaminableDamageSystem : EntitySystem
 {
-    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
-    [Dependency] private readonly SharedJobSystem _job = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private SharedJobSystem _job = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
 
     public const int Priority = -99;
     public const double FullPercent = 1d;
@@ -90,7 +89,7 @@ public abstract class SharedScpExaminableDamageSystem : EntitySystem
 
     private bool TryAddGeneralMessage(Entity<ScpExaminableDamageComponent> ent, float percent, ref ExaminedEvent args)
     {
-        if (!_prototype.TryIndex(ent.Comp.GeneralMessages, out var messages))
+        if (!ProtoMan.TryIndex(ent.Comp.GeneralMessages, out var messages))
             return false;
 
         if (messages.Values.Count == 0)
@@ -135,7 +134,7 @@ public abstract class SharedScpExaminableDamageSystem : EntitySystem
         if (!ent.Comp.JobMessages.TryGetValue(job.ID, out var messageList))
             return false;
 
-        if (!_prototype.TryIndex(messageList, out var messages))
+        if (!ProtoMan.TryIndex(messageList, out var messages))
             return false;
 
         if (messages.Values.Count == 0)
@@ -168,7 +167,7 @@ public abstract class SharedScpExaminableDamageSystem : EntitySystem
         if (!ent.Comp.DepartmentMessages.TryGetValue(department.ID, out var messageList))
             return false;
 
-        if (!_prototype.TryIndex(messageList, out var messages))
+        if (!ProtoMan.TryIndex(messageList, out var messages))
             return false;
 
         if (messages.Values.Count == 0)

@@ -9,7 +9,6 @@
   weight: 860
   icon: JobEthicsCommitteeRepresentative
   supervisors: job-supervisors-ethics-committee
-  canBeAntag: true
   displayWeight: 50
   accessGroups:
   - EthicsCommittee

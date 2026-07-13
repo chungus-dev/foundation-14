@@ -4,9 +4,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Scp.Graphics.Shaders.RetroMonitor;
 
-public sealed class RetroMonitorOverlay : Overlay
+public sealed partial class RetroMonitorOverlay : Overlay
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
@@ -17,7 +17,7 @@ public sealed class RetroMonitorOverlay : Overlay
     public RetroMonitorOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _shader = _prototypeManager.Index(ShaderProtoId).InstanceUnique();
+        _shader = _prototype.Index(ShaderProtoId).InstanceUnique();
 
         ZIndex = 20;
     }

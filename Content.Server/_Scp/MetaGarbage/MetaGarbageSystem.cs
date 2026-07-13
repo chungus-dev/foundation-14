@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Content.Server._Scp.Other;
 using Content.Server.Light.EntitySystems;
 using Content.Server.Station.Events;
@@ -27,14 +28,14 @@ namespace Content.Server._Scp.MetaGarbage;
 /// </summary>
 public sealed partial class MetaGarbageSystem : EntitySystem
 {
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly LightBulbSystem _bulb = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private LightBulbSystem _bulb = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     private static readonly HashSet<ProtoId<TagPrototype>> AllowedTags = [ "Trash", "MetaGarbageSavable" ];
     private static readonly HashSet<ProtoId<TagPrototype>> ForbiddenTags = [ "MetaGarbagePreventSaving" ];
@@ -213,18 +214,12 @@ public sealed partial class MetaGarbageSystem : EntitySystem
         EntityUid uid,
         out Dictionary<string, MetaGarbageSolutionProxy>? data)
     {
-        data = null;
-
-        if (!TryComp<SolutionContainerManagerComponent>(uid, out var solutionContainer))
-            return true;
-
         data = [];
 
         // Собираем данные о реагента
-        foreach (var container in solutionContainer.Containers)
+        foreach (var (container, ent) in _solution.EnumerateSolutions(uid))
         {
-            if (!_solution.TryGetSolution((uid, solutionContainer), container, out _, out var solution))
-                continue;
+            var solution = ent.Comp.Solution;
 
             // Проверяем наличие специальных реагентов, количество которых мы хотим сократить
             foreach (var (reagentProto, probability) in station.Comp.ReagentSaveModifiers)
@@ -240,7 +235,7 @@ public sealed partial class MetaGarbageSystem : EntitySystem
             }
 
             var liquidData = new MetaGarbageSolutionProxy(ReagentToProxy(solution.Contents));
-            data[container] = liquidData;
+            data[container ?? SolutionManagerComponent.DefaultContainerId] = liquidData;
         }
 
         return true;
@@ -278,26 +273,14 @@ public sealed partial class MetaGarbageSystem : EntitySystem
         if (data == null)
             return false;
 
-        if (!TryComp<SolutionContainerManagerComponent>(uid, out var solutionContainer))
-            return false;
-
         foreach (var (container, liquidData) in data)
         {
-            var solution = new Solution(ProxyToReagent(liquidData.Contents));
-
-            _solution.EnsureAllSolutions((uid, solutionContainer));
-
-            if (!_solution.EnsureSolutionEntity((uid, solutionContainer),
-                    container,
-                    out _,
-                    out var solutionEntity))
+            if (!_solution.TryGetSolution(uid, container, out var solutionEntity))
                 continue;
 
+            var solution = new Solution(ProxyToReagent(liquidData.Contents));
             _solution.RemoveAllSolution(solutionEntity.Value);
-            _solution.AddSolution(solutionEntity.Value, solution);
-
-            var ev = new SolutionChangedEvent(solutionEntity.Value);
-            RaiseLocalEvent(uid, ref ev);
+            _solution.ForceAddSolution(solutionEntity.Value, solution);
         }
 
         return true;

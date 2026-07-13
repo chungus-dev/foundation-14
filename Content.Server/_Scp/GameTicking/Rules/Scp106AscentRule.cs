@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using Content.Server._Scp.GameTicking.Rules.Components;
 using Content.Server._Scp.Anomaly.Scp106.Components;
@@ -12,6 +12,7 @@ using Content.Server.Jittering;
 using Content.Server.Nuke;
 using Content.Server.RoundEnd;
 using Content.Server.Speech.EntitySystems;
+using Content.Server.Station.Systems;
 using Content.Server.Stunnable;
 using Content.Shared._Scp.Audio;
 using Content.Shared._Scp.Anomaly.Scp106;
@@ -32,22 +33,25 @@ using Timer = Robust.Shared.Timing.Timer;
 namespace Content.Server._Scp.GameTicking.Rules;
 
 // TODO: Разбить этот гигакод на партиалы
-public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
+public sealed partial class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
 {
-    [Dependency] private readonly JitteringSystem _jittering = default!;
-    [Dependency] private readonly StutteringSystem _stuttering = default!;
-    [Dependency] private readonly StunSystem _stun = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly AlertLevelSystem _alertLevel = default!;
-    [Dependency] private readonly GhostSystem _ghost = default!;
-    [Dependency] private readonly NukeSystem _nuke = default!;
-    [Dependency] private readonly Scp106System _scp106 = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly AudioEffectsManagerSystem _effectsManager = default!;
-    [Dependency] private readonly RoundEndSystem _roundEnd = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private JitteringSystem _jittering = default!;
+    [Dependency] private StutteringSystem _stuttering = default!;
+    [Dependency] private StunSystem _stun = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private AlertLevelSystem _alertLevel = default!;
+    [Dependency] private GhostSystem _ghost = default!;
+    [Dependency] private NukeSystem _nuke = default!;
+#if !DEBUG && !TOOLS
+    [Dependency] private Scp106System _scp106 = default!;
+#endif
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private AudioEffectsManagerSystem _effectsManager = default!;
+    [Dependency] private RoundEndSystem _roundEnd = default!;
+    [Dependency] private GameTicker _gameTicker = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private static readonly TimeSpan AscentStunTime = TimeSpan.FromSeconds(10f);
     private static readonly TimeSpan AscentJitterTime = TimeSpan.FromSeconds(15f);
@@ -80,7 +84,9 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
     private const string RuleAddedCode = "scpPurple";
     private const string RuleStartedCode = "scpGamma";
 
+#if !DEBUG && !TOOLS
     private static readonly TimeSpan ReturnCachedAlertLevelAfter = TimeSpan.FromSeconds(5f);
+#endif
 
     private bool _noReturnPointReached;
 
@@ -169,10 +175,9 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
 
         _tickEffectEnabled = false;
 
-        var humans = _scp106.CountHumansInBackrooms();
-
         // Если событие было остановлено до начала(людей спасли)
 #if !DEBUG && !TOOLS
+        var humans = _scp106.CountHumansInBackrooms();
         if (humans < Scp106System.HumansInBackroomsRequiredToAscent)
         {
             EarlyAvert((uid, component));
@@ -225,19 +230,19 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
             },
             _timerDespawnToken.Token);
 
-        Timer.Spawn(AscentFailTime, OnTimeEnded, _timerDespawnToken.Token);
+        Timer.Spawn(AscentFailTime, () => OnTimeEnded(station.Value), _timerDespawnToken.Token);
 
         _gameTicker.StartGameRule(component.SpawnPortalsRule, out var ruleEntity);
         _ruleUid = uid;
         _spawnPortalsRuleUid = ruleEntity;
     }
 
-    private void OnTimeEnded()
+    private void OnTimeEnded(EntityUid station)
     {
         if (!_gameTicker.IsGameRuleActive(Scp106System.AscentRule))
             return;
 
-        var timeToExplosion = ToggleNuke();
+        var timeToExplosion = ToggleNuke(station);
         _noReturnPointReached = true;
 
         RaiseNetworkEvent(new NetworkAmbientMusicEventStop());
@@ -249,14 +254,10 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
         Timer.Spawn(timeToExplosion + TimeSpan.FromSeconds(1f), () => _roundEnd.EndRound(), _timerDespawnToken.Token);
     }
 
-    private TimeSpan ToggleNuke()
+    private TimeSpan ToggleNuke(EntityUid station)
     {
-        var nukes = EntityQuery<NukeComponent>();
-        var nuke = nukes.FirstOrDefault();
-
         var endSongLenght = _audio.GetAudioLength(_audio.ResolveSound(ShiftNoReturnPointReachedMusic));
-
-        if (nuke == null) // Fallback для карт без ядерки
+        if (!TryGetNuke(station, out var nuke))
         {
             var endSong =
                 _audio.PlayGlobal(ShiftNoReturnPointReachedMusic, Filter.Broadcast(), true, AudioParams.Default.WithVolume(10f));
@@ -266,11 +267,28 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
                 : TimeSpan.FromSeconds(120f); // Fallback
         }
 
-        var timer = (float) endSongLenght.TotalSeconds + 7; // Чтобы не моментально начинала ебашить
-        _nuke.SetRemainingTime(nuke.Owner, timer, nuke);
-        _nuke.ArmBomb(nuke.Owner, nuke);
+        var timer = (float) endSongLenght.TotalSeconds + 7f; // Чтобы не моментально начинала ебашить
+        _nuke.SetRemainingTime(nuke.Value, timer);
+        _nuke.ArmBomb(nuke.Value);
 
         return TimeSpan.FromSeconds(timer);
+    }
+
+    private bool TryGetNuke(EntityUid station, [NotNullWhen(true)] out EntityUid? nuke)
+    {
+        nuke = null;
+        var query = EntityQueryEnumerator<NukeComponent>();
+        while (query.MoveNext(out var uid, out _))
+        {
+            var ourStation = _station.GetOwningStation(uid);
+            if (ourStation != station)
+                continue;
+
+            nuke = uid;
+            return true;
+        }
+
+        return false;
     }
 
     private void OnSpawnerShutdown(Entity<Scp106PortalSpawnerComponent> ent, ref ComponentShutdown args)
@@ -319,6 +337,7 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
             _gameTicker.EndGameRule(_spawnPortalsRuleUid.Value);
     }
 
+#if !DEBUG && !TOOLS
     private void EarlyAvert(Entity<Scp106AscentRuleComponent> rule)
     {
         var avertedMessage = Loc.GetString("scp106-dimension-shift-averted-announcement");
@@ -335,6 +354,7 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
 
         _gameTicker.EndGameRule(rule);
     }
+#endif
 
     /// <summary>
     /// Обработка новозашедших/перезашедших игроков

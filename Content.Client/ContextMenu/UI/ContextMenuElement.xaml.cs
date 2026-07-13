@@ -56,12 +56,14 @@ namespace Content.Client.ContextMenu.UI
                 Text = text;
         }
 
-        protected override void Dispose(bool disposing)
+        protected override void ExitedTree()
         {
-            base.Dispose(disposing);
-            _subMenu?.Dispose();
+            base.ExitedTree();
+            _subMenu?.Orphan();
             _subMenu = null;
             ParentMenu = null;
+
+            ExitedTree2(); // Scp added
         }
 
         protected override void Draw(DrawingHandleScreen handle)

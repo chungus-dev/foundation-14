@@ -14,15 +14,16 @@ using Content.Shared.ActionBlocker;
 
 namespace Content.Server.Resist;
 
-public sealed class ResistLockerSystem : EntitySystem
+public sealed partial class ResistLockerSystem : EntitySystem
 {
-    [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
-    [Dependency] private readonly LockSystem _lockSystem = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly WeldableSystem _weldable = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-    [Dependency] private readonly Scp173System _scp173 = default!; // Scp added
+    [Dependency] private EntityStorageSystem _entityStorage = default!;
+    [Dependency] private LockSystem _lockSystem = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private WeldableSystem _weldable = default!;
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
+
+    [Dependency] private Scp173System _scp173 = default!; // Scp added
 
     public override void Initialize()
     {
@@ -35,7 +36,7 @@ public sealed class ResistLockerSystem : EntitySystem
     {
         // Scp edit - перенес component.IsResisting чуть пониже, в AttemptResist
 
-        if (!TryComp(uid, out EntityStorageComponent? storageComponent))
+        if (!TryComp(uid, out EntityStorageComponent? storageComponent) || !storageComponent.OpenOnMove)
             return;
 
         if (!_actionBlocker.CanMove(args.Entity))
@@ -78,30 +79,34 @@ public sealed class ResistLockerSystem : EntitySystem
         _popupSystem.PopupEntity(Loc.GetString("resist-locker-component-start-resisting"), user, user, PopupType.Large);
     }
 
+    // TODO: Convert to DoAfterAttemptEvent
     private void OnDoAfter(EntityUid uid, ResistLockerComponent component, DoAfterEvent args)
     {
-        if (args.Cancelled)
-        {
-            component.IsResisting = false;
-            _popupSystem.PopupEntity(Loc.GetString("resist-locker-component-resist-interrupted"), args.Args.User, args.Args.User, PopupType.Medium);
-            return;
-        }
-
-        if (args.Handled || args.Args.Target == null)
+        if (args.Handled)
             return;
 
         component.IsResisting = false;
 
-        if (HasComp<EntityStorageComponent>(uid))
+        if (args.Target != uid)
+            return;
+
+        if (args.Cancelled)
+        {
+            _popupSystem.PopupEntity(Loc.GetString("resist-locker-component-resist-interrupted"), args.User, args.User, PopupType.Medium);
+            return;
+        }
+
+        if (TryComp(uid, out EntityStorageComponent? storageComponent))
         {
             WeldableComponent? weldable = null;
             if (_weldable.IsWelded(uid, weldable))
                 _weldable.SetWeldedState(uid, false, weldable);
 
-            if (TryComp<LockComponent>(args.Args.Target.Value, out var lockComponent))
-                _lockSystem.Unlock(uid, args.Args.User, lockComponent);
+            if (TryComp<LockComponent>(uid, out var lockComponent))
+                _lockSystem.Unlock(uid, args.User, lockComponent);
 
-            _entityStorage.TryOpenStorage(args.Args.User, uid);
+            if (storageComponent.OpenOnMove)
+                _entityStorage.TryOpenStorage(args.User, uid);
         }
 
         args.Handled = true;

@@ -24,15 +24,15 @@ namespace Content.Shared._Scp.Mobs.Fear.Systems;
 // TODO: Attempt-ивенты для страха
 public abstract partial class SharedFearSystem : EntitySystem
 {
-    [Dependency] private readonly SharedHighlightSystem _highlight = default!;
-    [Dependency] private readonly EyeWatchingSystem _watching = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly SharedShaderStrengthSystem _shaderStrength = default!;
-    [Dependency] private readonly ProximitySystem _proximity = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SharedHighlightSystem _highlight = default!;
+    [Dependency] private EyeWatchingSystem _watching = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private SharedShaderStrengthSystem _shaderStrength = default!;
+    [Dependency] private ProximitySystem _proximity = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
-    private EntityQuery<FearSourceComponent> _fearSourceQuery;
-    private EntityQuery<FearComponent> _fearQuery;
+    [Dependency] private EntityQuery<FearSourceComponent> _fearSourceQuery;
+    [Dependency] private EntityQuery<FearComponent> _fearQuery;
 
     public override void Initialize()
     {
@@ -48,11 +48,7 @@ public abstract partial class SharedFearSystem : EntitySystem
 
         InitializeFears();
         InitializeGameplay();
-        InitializeTraits();
         InitializeCloseFear();
-
-        _fearSourceQuery = GetEntityQuery<FearSourceComponent>();
-        _fearQuery = GetEntityQuery<FearComponent>();
     }
 
     /// <summary>

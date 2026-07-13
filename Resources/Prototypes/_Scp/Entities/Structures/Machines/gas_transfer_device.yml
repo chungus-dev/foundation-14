@@ -29,8 +29,9 @@
         nodeGroupID: Pipe
         pipeDirection: Longitudinal
   - type: AtmosDevice
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrongScp
   - type: Destructible
     thresholds:

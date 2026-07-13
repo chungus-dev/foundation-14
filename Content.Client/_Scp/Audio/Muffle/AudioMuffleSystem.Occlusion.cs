@@ -5,6 +5,7 @@ using Content.Shared._Scp.ScpCCVars;
 using Content.Shared.Physics;
 using Content.Shared.Tag;
 using Content.Shared.Wall;
+using Robust.Client.GameObjects;
 using Robust.Shared;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -16,10 +17,14 @@ namespace Content.Client._Scp.Audio.Muffle;
 
 public sealed partial class AudioMuffleSystem
 {
-    [Dependency] private readonly Robust.Client.Physics.PhysicsSystem _physics = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private Robust.Client.Physics.PhysicsSystem _physics = default!;
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private TransformSystem _transform = default!;
+
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery;
+    [Dependency] private EntityQuery<MapGridComponent> _gridQuery;
+    [Dependency] private EntityQuery<WallMountComponent> _wallMountQuery;
 
     /// <summary>
     /// Maximum distance that the custom occlusion ray is allowed to travel.
@@ -71,24 +76,7 @@ public sealed partial class AudioMuffleSystem
         "ScpMuffleCountsThisAsNone",
     ];
 
-    /// <summary>
-    /// Cached query for collision and solidity classification.
-    /// </summary>
-    private EntityQuery<PhysicsComponent> _physicsQuery;
 
-    /// <summary>
-    /// Cached query for resolving the grid that owns a wall-mounted source.
-    /// </summary>
-    private EntityQuery<MapGridComponent> _gridQuery;
-
-    /// <summary>
-    /// Cached query used to detect wall-mounted sources with custom audio-occlusion behavior.
-    /// </summary>
-    private EntityQuery<WallMountComponent> _wallMountQuery;
-
-    /// <summary>
-    /// Initializes the custom occlusion override and binds its tuning cvars.
-    /// </summary>
     private void InitializeOcclusion()
     {
         _audio.GetOcclusionOverride += Override;
@@ -99,10 +87,6 @@ public sealed partial class AudioMuffleSystem
         Subs.CVar(_cfg, ScpCCVars.AudioMufflingSolidOcclusionPerMeter, value => _solidOcclusionPerMeter = value, true);
         Subs.CVar(_cfg, ScpCCVars.AudioMufflingTransparentBaseOcclusion, value => _transparentBaseOcclusion = value, true);
         Subs.CVar(_cfg, ScpCCVars.AudioMufflingTransparentOcclusionPerMeter, value => _transparentOcclusionPerMeter = value, true);
-
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
-        _gridQuery = GetEntityQuery<MapGridComponent>();
-        _wallMountQuery = GetEntityQuery<WallMountComponent>();
     }
 
     /// <summary>

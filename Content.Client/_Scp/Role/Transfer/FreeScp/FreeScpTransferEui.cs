@@ -1,5 +1,4 @@
-﻿using Content.Client._Scp.FreeScp;
-using Content.Client.Eui;
+﻿using Content.Client.Eui;
 using Content.Shared._Scp.Role.Transfer.FreeScp;
 using Content.Shared.Eui;
 using JetBrains.Annotations;
@@ -8,9 +7,9 @@ using Robust.Client.Graphics;
 namespace Content.Client._Scp.Role.Transfer.FreeScp;
 
 [UsedImplicitly]
-public sealed class FreeScpTransferEui : BaseEui
+public sealed partial class FreeScpTransferEui : BaseEui
 {
-    [Dependency] private readonly IClyde _clyde = default!;
+    [Dependency] private IClyde _clyde = default!;
 
     private FreeScpTransferWindow? _window;
     private bool _responded;

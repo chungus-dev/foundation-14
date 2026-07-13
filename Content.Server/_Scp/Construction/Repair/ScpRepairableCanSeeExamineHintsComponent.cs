@@ -5,7 +5,4 @@
 /// Используется в <see cref="ScpRepairableSystem"/> для сущностей с <see cref="ScpRepairableComponent"/>.
 /// </summary>
 [RegisterComponent]
-public sealed partial class ScpRepairableCanSeeExamineHintsComponent : Component
-{
-
-}
+public sealed partial class ScpRepairableCanSeeExamineHintsComponent : Component;

@@ -15,9 +15,9 @@ public abstract partial class SharedScp096System
      * Часть системы, отвечающая за состояние без лица скромника.
      */
 
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
-    [Dependency] private readonly MeleeThrowOnHitSystem _meleeThrowOnHit = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private MeleeThrowOnHitSystem _meleeThrowOnHit = default!;
 
     private void InitializeWithoutFace()
     {

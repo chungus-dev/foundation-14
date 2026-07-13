@@ -15,12 +15,12 @@ namespace Content.Server._Scp.GameTicking.Rules.SendDocument;
 /// Унифицированный легковесный геймрул для создания факсов.
 /// Поддерживает возможность склеивать документы, позволяя собирать их как лего.
 /// </summary>
-public sealed class SendDocumentRule : GameRuleSystem<SendDocumentRuleComponent>
+public sealed partial class SendDocumentRule : GameRuleSystem<SendDocumentRuleComponent>
 {
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly FaxSystem _fax = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private FaxSystem _fax = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private IComponentFactory _factory = default!;
 
     protected override void Started(EntityUid uid, SendDocumentRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -80,13 +80,10 @@ public sealed class SendDocumentRule : GameRuleSystem<SendDocumentRuleComponent>
     {
         stamp = null;
 
-        if (!_prototype.TryIndex(id, out var stampProto))
+        if (!ProtoMan.TryIndex(id, out var stampProto))
             return false;
 
-        if (!stampProto.Components.TryGetComponent("Stamp", out var component))
-            return false;
-
-        if (component is not StampComponent stampComponent)
+        if (!stampProto.TryComp<StampComponent>(out var stampComponent, _factory))
             return false;
 
         stamp = stampComponent;

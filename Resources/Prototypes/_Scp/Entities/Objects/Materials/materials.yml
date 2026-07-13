@@ -28,12 +28,11 @@
     heldPrefix: concrete
   - type: Extractable
     grindableSolutionName: concrete
-  - type: SolutionContainerManager
-    solutions:
-      concrete:
-        reagents:
-        - ReagentId: SodiumHydroxide
-          Quantity: 10
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SodiumHydroxide
+        Quantity: 10
 
 - type: entity
   parent: MaterialConcrete

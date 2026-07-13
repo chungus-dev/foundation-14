@@ -15,25 +15,16 @@ namespace Content.Server._Scp.Role.Transfer.BodyTakeover;
 /// Polls ghosts first, then living players if no ghost accepts.
 /// Used by Free SCP, Auto Ghost Role, and future MTF auto-call systems.
 /// </summary>
-public sealed class BodyTakeoverPollSystem : EntitySystem
+public sealed partial class BodyTakeoverPollSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPlayerManager _players = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly EuiManager _eui = default!;
+    [Dependency] private EuiManager _eui = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPlayerManager _players = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
-    private EntityQuery<BodyTakeoverPollStateComponent> _pollQuery;
-    private EntityQuery<GhostComponent> _ghostQuery;
-    private EntityQuery<MobStateComponent> _mobStateQuery;
-
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        _pollQuery = GetEntityQuery<BodyTakeoverPollStateComponent>();
-        _ghostQuery = GetEntityQuery<GhostComponent>();
-        _mobStateQuery = GetEntityQuery<MobStateComponent>();
-    }
+    [Dependency] private EntityQuery<BodyTakeoverPollStateComponent> _pollQuery;
+    [Dependency] private EntityQuery<GhostComponent> _ghostQuery;
+    [Dependency] private EntityQuery<MobStateComponent> _mobStateQuery;
 
     /// <summary>
     /// Starts a body takeover poll for the given entity.
@@ -118,7 +109,7 @@ public sealed class BodyTakeoverPollSystem : EntitySystem
             if (session.AttachedEntity == null || !_ghostQuery.HasComp(session.AttachedEntity.Value))
                 continue;
 
-            OpenPollEui(uid, session, entityName, state, BodyTakeoverPollPhase.GhostPoll);
+            OpenPollEui(uid, session, entityName, BodyTakeoverPollPhase.GhostPoll);
         }
     }
 
@@ -140,11 +131,11 @@ public sealed class BodyTakeoverPollSystem : EntitySystem
             if (mobState.CurrentState != MobState.Alive)
                 continue;
 
-            OpenPollEui(uid, session, entityName, state, BodyTakeoverPollPhase.LivingPoll);
+            OpenPollEui(uid, session, entityName, BodyTakeoverPollPhase.LivingPoll);
         }
     }
 
-    private void OpenPollEui(EntityUid uid, ICommonSession session, string entityName, BodyTakeoverPollStateComponent state, BodyTakeoverPollPhase expectedPhase)
+    private void OpenPollEui(EntityUid uid, ICommonSession session, string entityName, BodyTakeoverPollPhase expectedPhase)
     {
         var eui = new BodyTakeoverPollEui(session,
             entityName,

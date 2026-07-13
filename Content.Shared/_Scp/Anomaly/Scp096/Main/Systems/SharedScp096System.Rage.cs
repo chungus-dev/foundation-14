@@ -16,11 +16,11 @@ public abstract partial class SharedScp096System
      * Часть системы, отвечающая за состояние ярости и пред-яростное состояние скромника.
      */
 
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
-    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly SharedJitteringSystem _jittering = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private SharedStaminaSystem _stamina = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private SharedJitteringSystem _jittering = default!;
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
 
     private static readonly EntProtoId StunnedEffect = "StatusEffectStunned";
 
@@ -49,11 +49,10 @@ public abstract partial class SharedScp096System
         UpdateAudio(ent.Owner, ent.Comp.TriggerSound);
 
         // Если скромник был застанен или сидит - убираем это
-        var totalDamage = _stamina.GetStaminaDamage(ent);
         _statusEffects.TryRemoveStatusEffect(ent, StatusEffectSleep);
         _statusEffects.TryRemoveStatusEffect(ent, StunnedEffect);
         _stun.TryUnstun(ent.Owner);
-        _stamina.TryTakeStamina(ent, -1f * totalDamage);
+        _stamina.TryHealAllStaminaDamage(ent.Owner);
         _standing.Stand(ent, force: true);
 
         // Заставляем трястись

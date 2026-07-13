@@ -12,7 +12,6 @@
   weight: 960
   icon: JobScpResearchDirector
   supervisors: job-supervisors-facility-director
-  canBeAntag: true
   displayWeight: 50
   accessGroups:
   - ScpResearchDirector

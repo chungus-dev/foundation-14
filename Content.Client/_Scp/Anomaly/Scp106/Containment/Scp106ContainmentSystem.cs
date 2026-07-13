@@ -2,4 +2,4 @@
 
 namespace Content.Client._Scp.Anomaly.Scp106.Containment;
 
-public sealed class Scp106ContainmentSystem : SharedScp106ContainmentSystem;
+public sealed partial class Scp106ContainmentSystem : SharedScp106ContainmentSystem;

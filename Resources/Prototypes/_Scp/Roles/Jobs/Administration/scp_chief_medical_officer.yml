@@ -18,7 +18,6 @@
   weight: 945
   icon: JobScpChiefMedicalOfficer
   supervisors: job-supervisors-facility-director
-  canBeAntag: true
   displayWeight: 60
   accessGroups:
   - ScpChiefMedicalOfficer

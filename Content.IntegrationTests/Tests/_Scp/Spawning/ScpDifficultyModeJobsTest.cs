@@ -117,10 +117,11 @@ public sealed class ScpDifficultyModeJobsTest : GameTest
         var stationJobs = server.System<StationJobsSystem>();
 
         var station = await CreateStationAndStartRule("TestScpDifficultyOneEuclid");
+        var players = (await server.AddDummySessions(2)).Select(session => session.UserId).ToArray();
 
         await server.WaitAssertion(() =>
         {
-            var profiles = CreateTwoScpProfiles();
+            var profiles = CreateTwoScpProfiles(players);
             var assigned = stationJobs.AssignJobs(profiles, [station]);
             var jobs = assigned.Values.Select(x => x.Item1).ToList();
 
@@ -145,10 +146,11 @@ public sealed class ScpDifficultyModeJobsTest : GameTest
         var stationJobs = server.System<StationJobsSystem>();
 
         var station = await CreateStationAndStartRule("TestScpDifficultyTwoEuclid");
+        var players = (await server.AddDummySessions(2)).Select(session => session.UserId).ToArray();
 
         await server.WaitAssertion(() =>
         {
-            var profiles = CreateTwoScpProfiles();
+            var profiles = CreateTwoScpProfiles(players);
             var assigned = stationJobs.AssignJobs(profiles, [station]);
             var jobs = assigned.Values.Select(x => x.Item1).ToList();
 
@@ -243,14 +245,14 @@ public sealed class ScpDifficultyModeJobsTest : GameTest
         return station;
     }
 
-    private static Dictionary<NetUserId, HumanoidCharacterProfile> CreateTwoScpProfiles()
+    private static Dictionary<NetUserId, HumanoidCharacterProfile> CreateTwoScpProfiles(NetUserId[] players)
     {
         return new Dictionary<NetUserId, HumanoidCharacterProfile>
         {
-            [new NetUserId(Guid.NewGuid())] = HumanoidCharacterProfile.Random()
+            [players[0]] = HumanoidCharacterProfile.Random()
                 .WithJobPriority(ScpOne, JobPriority.High)
                 .WithJobPriority(Assistant, JobPriority.Medium),
-            [new NetUserId(Guid.NewGuid())] = HumanoidCharacterProfile.Random()
+            [players[1]] = HumanoidCharacterProfile.Random()
                 .WithJobPriority(ScpTwo, JobPriority.High)
                 .WithJobPriority(Assistant, JobPriority.Medium),
         };

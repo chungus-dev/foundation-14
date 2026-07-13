@@ -6,10 +6,9 @@ namespace Content.Shared._Scp.Vision.FOV;
 
 public sealed partial class FieldOfViewSystem : EntitySystem
 {
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
-    private EntityQuery<FieldOfViewComponent> _fovQuery;
-    private EntityQuery<TransformComponent> _xformQuery;
+    [Dependency] private EntityQuery<TransformComponent> _xformQuery;
 
     private const float DefaultAngleToleranceForOverride = 2f;
 
@@ -19,9 +18,6 @@ public sealed partial class FieldOfViewSystem : EntitySystem
 
         SubscribeLocalEvent<FieldOfViewComponent, BuckledEvent>(OnBuckle);
         SubscribeLocalEvent<FieldOfViewComponent, UnbuckledEvent>(OnUnbuckle);
-
-        _fovQuery = GetEntityQuery<FieldOfViewComponent>();
-        _xformQuery = GetEntityQuery<TransformComponent>();
     }
 
     private void OnBuckle(Entity<FieldOfViewComponent> ent, ref BuckledEvent args)

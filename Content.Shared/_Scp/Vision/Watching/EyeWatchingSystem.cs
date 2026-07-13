@@ -1,5 +1,5 @@
 ﻿using Content.Shared._Scp.Blinking;
-using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Utility;
 using Content.Shared._Scp.Vision.Proximity;
 using Robust.Shared.Timing;
 
@@ -11,8 +11,8 @@ namespace Content.Shared._Scp.Vision.Watching;
 /// </summary>
 public sealed partial class EyeWatchingSystem : EntitySystem
 {
-    [Dependency] private readonly ProximitySystem _proximity = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private ProximitySystem _proximity = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     /// <summary>
     /// Радиус, в котором сущности могут увидеть друг друга.
@@ -24,13 +24,6 @@ public sealed partial class EyeWatchingSystem : EntitySystem
     {
         InitializeApi();
         InitializeEvents();
-    }
-
-    public override void Shutdown()
-    {
-        base.Shutdown();
-
-        ShutdownEvents();
     }
 
     /// <summary>

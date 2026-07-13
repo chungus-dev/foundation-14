@@ -12,10 +12,13 @@ namespace Content.Client._Scp.Audio.Muffle;
 
 public sealed partial class AudioMuffleSystem : EntitySystem
 {
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly AudioEffectStateSystem _effectState = default!;
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private AudioEffectStateSystem _effectState = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+
+    [Dependency] private EntityQuery<StationAiHeldComponent> _aiQuery;
+    [Dependency] private EntityQuery<AudioMuffledComponent> _audioMuffledQuery;
 
     private static readonly ProtoId<AudioPresetPrototype> MufflingEffectPreset = "ScpBehindWalls";
 
@@ -25,9 +28,6 @@ public sealed partial class AudioMuffleSystem : EntitySystem
     private float _minAudibleGainFactor;
     private float _muffleEffectApplyOcclusionThreshold;
     private float _muffleEffectClearOcclusionThreshold;
-
-    private EntityQuery<StationAiHeldComponent> _aiQuery;
-    private EntityQuery<AudioMuffledComponent> _audioMuffledQuery;
 
     #region CCvar events
 
@@ -45,8 +45,6 @@ public sealed partial class AudioMuffleSystem : EntitySystem
         Subs.CVar(_cfg, ScpCCVars.AudioMufflingEffectApplyOcclusionThreshold, value => _muffleEffectApplyOcclusionThreshold = value, true);
         Subs.CVar(_cfg, ScpCCVars.AudioMufflingEffectClearOcclusionThreshold, value => _muffleEffectClearOcclusionThreshold = value, true);
 
-        _aiQuery = GetEntityQuery<StationAiHeldComponent>();
-        _audioMuffledQuery = GetEntityQuery<AudioMuffledComponent>();
         InitializeOcclusion();
     }
 
