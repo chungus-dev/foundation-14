@@ -63,3 +63,8 @@ pg_password = "postgres"
 [net]
 max_rapid_connections = 413
 max_ip_connections = 413
+
+# Scp added start
+[scp]
+server_auto_open_character_menu = false
+# Scp added end
