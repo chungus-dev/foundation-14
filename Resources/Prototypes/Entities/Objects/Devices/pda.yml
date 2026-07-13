@@ -332,13 +332,6 @@
     accentVColor: "#6dcc3d"
   - type: Icon
     state: pda-hydro
-  - type: CartridgeLoader
-    uiKey: enum.PdaUiKey.Key
-    preinstalled:
-      - CrewManifestCartridge
-      - NotekeeperCartridge
-      - NanoTaskCartridge
-      - NewsReaderCartridge
 
 - type: entity
   parent: BasePDA
@@ -1659,11 +1652,6 @@
        pda-pirate
   - type: Icon
     state: pda-pirate
-  - type: CartridgeLoader
-    preinstalled:
-    - NotekeeperCartridge
-    - NanoTaskCartridge
-    - AstroNavCartridge
 
 - type: entity
   parent: [BasePDA, SelectableLock]

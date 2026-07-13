@@ -75,7 +75,7 @@
   - type: Label
     currentLabel: reagent-mnestic-w-name
   - type: Solution
-    solutions:
+    solution:
       maxVol: 10
       reagents:
         - ReagentId: MnesticW
@@ -89,7 +89,7 @@
   - type: Label
     currentLabel: reagent-mnestic-x-name
   - type: Solution
-    solutions:
+    solution:
       maxVol: 10
       reagents:
         - ReagentId: MnesticX
