@@ -25,6 +25,7 @@ public sealed partial class ScpDifficultyModeRule : GameRuleSystem<ScpDifficulty
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
     [Dependency] private GameTicker _ticker = default!;
     [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IComponentFactory _factory = default!;
 
     public override void Initialize()
     {
@@ -227,13 +228,10 @@ public sealed partial class ScpDifficultyModeRule : GameRuleSystem<ScpDifficulty
         if (blacklist != null && entity.Components.Any(blacklist.Contains))
             return false;
 
-        if (!entity.Components.TryGetComponent("Scp", out var component))
+        if (!entity.TryComp<ScpComponent>(out var component, _factory))
             return false;
 
-        if (component is not ScpComponent scpComponent)
-            return false;
-
-        classification = scpComponent.Class;
+        classification = component.Class;
         return true;
     }
 
@@ -252,7 +250,7 @@ public sealed partial class ScpDifficultyModeRule : GameRuleSystem<ScpDifficulty
         }
     }
 
-    private static void DecrementJobSlot(Dictionary<ProtoId<JobPrototype>, int?> jobs, ProtoId<JobPrototype> job)
+    private void DecrementJobSlot(Dictionary<ProtoId<JobPrototype>, int?> jobs, ProtoId<JobPrototype> job)
     {
         if (!jobs.TryGetValue(job, out var currentSlots))
             return;
