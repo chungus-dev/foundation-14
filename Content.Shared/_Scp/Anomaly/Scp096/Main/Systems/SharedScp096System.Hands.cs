@@ -63,7 +63,7 @@ public abstract partial class SharedScp096System
     private void CancelPickup(EntityUid ent, ref PickupAttemptEvent args)
     {
         var message = Loc.GetString("scp096-cant-pickup", ("name", Name(args.Item)));
-        _popup.PopupClient(message, args.Item, ent);
+        _popup.PopupEntity(message, args.Item, ent);
         args.Cancel();
     }
 

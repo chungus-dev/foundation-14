@@ -6,12 +6,16 @@ using Content.Shared._Scp.Mobs.Fear;
 using Content.Shared._Scp.Mobs.Fear.Systems;
 using Content.Shared._Scp.Vision.Watching;
 using Content.Shared._Scp.Vision.FOV;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
 using Content.Shared.Popups;
+using Content.Shared.Weapons.Melee;
 using JetBrains.Annotations;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Scp.Anomaly.Scp096.Main.Systems;
 
@@ -29,9 +33,11 @@ public abstract partial class SharedScp096System
 
     [Dependency] protected EntityQuery<Scp096ProtectionComponent> ProtectionQuery;
 
+    private static readonly ProtoId<DamageTypePrototype> StructuralDamage = "Structural";
+
     private void InitializeTargets()
     {
-        SubscribeLocalEvent<Scp096TargetComponent, DamageChangedEvent>(OnTargetDamageChanged);
+        SubscribeLocalEvent<Scp096TargetComponent, DamageDealtEvent>(OnTargetDamageChanged);
         SubscribeLocalEvent<Scp096TargetComponent, MobStateChangedEvent>(OnTargetMobStateChanged);
         SubscribeLocalEvent<Scp096TargetComponent, MapUidChangedEvent>(OnMapChanged);
 
@@ -39,15 +45,23 @@ public abstract partial class SharedScp096System
         SubscribeLocalEvent<Scp096TargetComponent, ComponentShutdown>(OnTargetShutdown);
     }
 
-    private void OnTargetDamageChanged(Entity<Scp096TargetComponent> ent, ref DamageChangedEvent args)
+    private void OnTargetDamageChanged(Entity<Scp096TargetComponent> ent, ref DamageDealtEvent args)
     {
-        if (!args.DamageIncreased)
+        var damage = args.Damage.GetTotal();
+        if (damage <= FixedPoint2.Zero)
             return;
 
         if (!Scp096Query.HasComp(args.Origin))
             return;
 
-        ent.Comp.AlreadyAppliedDamage += args.DamageDelta?.GetTotal() ?? FixedPoint2.Zero;
+        // Почему-то мне приходит сюда структурный урон, хотя персонаж явно не получает от него урона
+        // Быстрый фикс, но нужно нормальное АПИ и решение, чтобы поддерживать не только структурный.
+        // Из-за бронепробития у скромника modifier set не применяется и структурный урон доходит сюда, пусть и не делая реального урона
+        // TODO: Фикс этого
+        var delta = args.Damage;
+        delta.DamageDict.Remove(StructuralDamage);
+
+        ent.Comp.AlreadyAppliedDamage += delta.GetTotal();
         Dirty(ent);
 
         // Убираем цель только после нанесения суммарно нужного количества урона
@@ -64,7 +78,7 @@ public abstract partial class SharedScp096System
             return;
 
         // Сообщаем игроку, что нужно продолжать разрывать цель.
-        _popup.PopupClient(Loc.GetString("scp096-keep-attacking"), ent, args.Origin, PopupType.Medium);
+        _popup.PopupEntity(Loc.GetString("scp096-keep-attacking"), ent, args.Origin, PopupType.Medium);
     }
 
     private void OnMapChanged(Entity<Scp096TargetComponent> ent, ref MapUidChangedEvent args)
