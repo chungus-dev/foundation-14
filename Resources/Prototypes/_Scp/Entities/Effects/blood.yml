@@ -12,10 +12,10 @@
   - type: Appearance
   - type: Puddle
     solution: blood
-  - type: SolutionContainerManager
-    solutions:
-      blood:
-        maxVol: 5
+  - type: Solution
+    id: blood
+    solution:
+      maxVol: 5
   - type: DrawableSolution
     solution: blood
   - type: ExaminableSolution

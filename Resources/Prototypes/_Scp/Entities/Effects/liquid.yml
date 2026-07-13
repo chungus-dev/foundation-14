@@ -15,10 +15,10 @@
   - type: Puddle
     solution: blood
   - type: Appearance
-  - type: SolutionContainerManager
-    solutions:
-      blood:
-        maxVol: 5
+  - type: Solution
+    id: blood
+    solution:
+      maxVol: 5
   - type: Fixtures
     fixtures:
       fix1:
