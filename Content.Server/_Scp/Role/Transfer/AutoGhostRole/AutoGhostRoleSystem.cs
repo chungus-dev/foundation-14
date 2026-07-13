@@ -36,10 +36,10 @@ public sealed partial class AutoGhostRoleSystem : EntitySystem
     private void OnPlayerAttached(Entity<AutoGhostRoleComponent> ent, ref PlayerAttachedEvent args)
     {
         ent.Comp.EverHadPlayer = true;
-        RemCompDeferred<ActiveAutoGhostRoleComponent>(ent.Owner);
+        RemCompDeferred<ActiveAutoGhostRoleComponent>(ent);
 
         // Cancel any active poll since a player has returned
-        _bodyTakeover.CancelPoll(ent.Owner);
+        _bodyTakeover.CancelPoll(ent);
     }
 
     private void OnPlayerDetached(Entity<AutoGhostRoleComponent> ent, ref PlayerDetachedEvent args)
@@ -47,7 +47,13 @@ public sealed partial class AutoGhostRoleSystem : EntitySystem
         if (!ent.Comp.EverHadPlayer)
             return;
 
-        var active = AddComp<ActiveAutoGhostRoleComponent>(ent.Owner);
+        // Closing the game triggers the PlayerDetachedEvent
+        // but all entities start Terminating at this time
+        // and this causes an error while adding a new ActiveAutoGhostRoleComponent
+        if (TerminatingOrDeleted(ent))
+            return;
+
+        var active = EnsureComp<ActiveAutoGhostRoleComponent>(ent);
         active.DisconnectedAt = _timing.CurTime;
     }
 
