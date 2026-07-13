@@ -137600,31 +137600,26 @@ entities:
   - uid: 20430
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 99.5,93.5
       parent: 2
   - uid: 20431
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 99.5,92.5
       parent: 2
   - uid: 20432
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 25.5,134.5
       parent: 2
   - uid: 20433
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 25.5,136.5
       parent: 2
   - uid: 20434
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -1.5,71.5
       parent: 2
   - uid: 20435
@@ -139200,67 +139195,56 @@ entities:
   - uid: 20749
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -24.5,46.5
       parent: 2
   - uid: 20750
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -26.5,46.5
       parent: 2
   - uid: 20751
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -25.5,46.5
       parent: 2
   - uid: 20752
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -27.5,46.5
       parent: 2
   - uid: 20753
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 25.5,130.5
       parent: 2
   - uid: 20754
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 25.5,132.5
       parent: 2
   - uid: 20755
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -1.5,72.5
       parent: 2
   - uid: 20756
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 85.5,93.5
       parent: 2
   - uid: 20757
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 90.5,93.5
       parent: 2
   - uid: 20758
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 85.5,92.5
       parent: 2
   - uid: 20759
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 90.5,92.5
       parent: 2
   - uid: 33882
@@ -139276,13 +139260,11 @@ entities:
   - uid: 37878
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 23.5,84.5
       parent: 2
   - uid: 40291
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 46.5,88.5
       parent: 2
 - proto: GrilleBroken

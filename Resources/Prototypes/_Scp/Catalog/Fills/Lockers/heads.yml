@@ -16,6 +16,7 @@
     - id: SpaceCash1000
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
+
 - type: entity
   id: ScpLockerFacilityDirectorFilled
   suffix: Filled
