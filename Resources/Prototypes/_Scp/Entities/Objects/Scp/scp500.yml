@@ -8,13 +8,12 @@
     state: pill
   - type: Pill
     useStandardVisuals: false
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 2
-        reagents:
-        - ReagentId: Scp500Reagent
-          Quantity: 1
+  - type: Solution
+    solution:
+      maxVol: 2
+      reagents:
+      - ReagentId: Scp500Reagent
+        Quantity: 1
 
 - type: entity
   parent:

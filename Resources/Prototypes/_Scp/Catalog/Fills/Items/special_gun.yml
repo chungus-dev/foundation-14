@@ -4,12 +4,11 @@
   name: backpack phlogiston
   description: Holds a large amount of phlogiston. Supplies to spray nozzles in your hands, and has a slot on the side for said spray nozzles.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        reagents:
-        - ReagentId: Phlogiston
-          Quantity: 1000
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Phlogiston
+        Quantity: 1000
   - type: ItemSlots
     slots:
       item:

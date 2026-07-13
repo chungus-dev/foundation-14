@@ -30,15 +30,14 @@
       reagents:
       - ReagentId: Fiber
         Quantity: 10
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 10
-        - ReagentId: JuiceThatMakesYouWeh
-          Quantity: 10
+  - type: Solution
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 10
+      - ReagentId: JuiceThatMakesYouWeh
+        Quantity: 10
   - type: Clothing
     quickEquip: false
     sprite: _Scp/Objects/Fun/Plushies/scp999.rsi
@@ -49,7 +48,7 @@
     - Payload
     - ClothMade
     - PlushieScp999
-    
+
 - type: entity
   parent: PlushieHuman
   id: PlushieClassD
