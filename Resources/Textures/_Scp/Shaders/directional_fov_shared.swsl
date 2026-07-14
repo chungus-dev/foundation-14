@@ -3,20 +3,17 @@
 mediump float scpDirectionalFovOcclusionMask(
     highp vec2 pixelSize,
     highp vec2 finalCoords,
-    highp float coneAngle,
-    highp float coneFeather,
-    highp float coneIgnoreRadius,
-    highp float coneIgnoreFeather,
-    highp float viewAngle)
+    highp vec2 viewDirection,
+    highp vec2 radialParameters,
+    highp vec2 coneThresholds)
 {
-    highp float safeConeIgnoreFeather = max(coneIgnoreFeather, 0.0001);
     mediump float mask = 1.0;
     mediump float radial = zCircleGradient(
         pixelSize,
         finalCoords,
         1.0,
-        safeConeIgnoreFeather,
-        (coneIgnoreRadius / safeConeIgnoreFeather),
+        radialParameters.x,
+        radialParameters.y,
         1.0);
     mask -= radial;
 
@@ -24,13 +21,11 @@ mediump float scpDirectionalFovOcclusionMask(
     highp vec2 delta = vec2(0.0, -1.0);
     if (dot(fromCenter, fromCenter) > 0.0000001)
         delta = normalize(fromCenter);
-    highp vec2 viewDir = vec2(sin(viewAngle), -cos(viewAngle));
 
-    mediump float cosDelta = dot(delta, viewDir);
-    mediump float coneLimit = cos(radians(coneAngle * 0.5 + 5.0));
+    mediump float cosDelta = dot(delta, viewDirection);
     mediump float deltaAngle = smoothstep(
-        coneLimit,
-        coneLimit + (radians(coneFeather) * 0.5),
+        coneThresholds.x,
+        coneThresholds.y,
         cosDelta);
 
     mask += clamp(deltaAngle, 0.0, 1.0);

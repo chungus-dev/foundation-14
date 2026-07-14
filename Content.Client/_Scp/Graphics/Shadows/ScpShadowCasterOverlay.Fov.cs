@@ -3,7 +3,6 @@ using Content.Shared._Scp.Vision.FOV;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared;
-using Robust.Shared.Configuration;
 using Robust.Shared.Graphics;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
@@ -13,6 +12,8 @@ namespace Content.Client._Scp.Graphics.Shadows;
 public sealed partial class ScpShadowCasterOverlay
 {
     private const float FovAdditionalMarginMeters = 0.4f;
+    private const float MinimumFovFeatherPixels = 0.0001f;
+    private const float MinimumFovConeThresholdSpan = 0.0001f;
 
     #region FOV frame state
 
@@ -20,21 +21,17 @@ public sealed partial class ScpShadowCasterOverlay
     private EyeComponent? _directionalEye;
     private FieldOfViewComponent? _directionalFov;
     private TransformComponent? _directionalTransform;
-    private Vector2 _eyeWorldPosition;
-    private Vector2 _directionalViewerPosition;
     private Vector2 _directionalFovOffset;
-    private float _directionalIgnoreRadiusPixels;
-    private float _directionalIgnoreFeatherPixels;
+    private Vector2 _directionalViewDirection;
+    private Vector2 _directionalRadialParameters;
+    private Vector2 _directionalConeThresholds;
     private bool _directionalFovActive;
-    private bool _hardFovActive;
     private bool _renderLocalFovException;
     private readonly CompositeFovShaderState _normalCompositeFovState = new();
     private readonly CompositeFovShaderState _localCompositeFovState = new();
 
     private void PrepareFovContext(in OverlayDrawArgs args, IEye eye)
     {
-        _eyeWorldPosition = eye.Position.Position;
-        _hardFovActive = _lightManager.DrawHardFov && eye.DrawFov;
         _directionalFovActive = false;
         _renderLocalFovException = false;
         _localPlayerCaster = null;
@@ -52,7 +49,6 @@ public sealed partial class ScpShadowCasterOverlay
         _directionalEye = player.Comp1;
         _directionalFov = player.Comp2;
         _directionalTransform = player.Comp3;
-        _directionalViewerPosition = _transformSystem.GetWorldPosition(player.Comp3);
         _directionalFovActive = true;
 
         if (!_localPlayerShadowOutsideFov ||
@@ -65,7 +61,7 @@ public sealed partial class ScpShadowCasterOverlay
         _renderLocalFovException = quality != ScpShadowQuality.Disabled;
     }
 
-    private void PrepareFovRenderParameters(IClydeViewport viewport, Vector2 lightScale)
+    private void PrepareFovRenderParameters(Vector2 lightScale)
     {
         if (!_directionalFovActive ||
             _localPlayerCaster is not { } localPlayer ||
@@ -82,16 +78,30 @@ public sealed partial class ScpShadowCasterOverlay
             _directionalEye) * lightScale;
 
         var pixelScale = (lightScale.X + lightScale.Y) * 0.5f;
-        _directionalIgnoreRadiusPixels =
+        var ignoreRadiusPixels =
             (_directionalFov.ConeIgnoreRadius + FovAdditionalMarginMeters) *
             EyeManager.PixelsPerMeter /
             _directionalEye.Zoom.X *
             pixelScale;
-        _directionalIgnoreFeatherPixels =
+        var ignoreFeatherPixels = MathF.Max(
             (_directionalFov.ConeIgnoreFeather + FovAdditionalMarginMeters) *
             EyeManager.PixelsPerMeter /
             _directionalEye.Zoom.X *
-            pixelScale;
+            pixelScale,
+            MinimumFovFeatherPixels);
+
+        var viewAngle = (float) _directionalFov.CurrentAngle.Theta;
+        _directionalViewDirection = new Vector2(MathF.Sin(viewAngle), -MathF.Cos(viewAngle));
+        _directionalRadialParameters = new Vector2(
+            ignoreFeatherPixels,
+            ignoreRadiusPixels / ignoreFeatherPixels);
+
+        var coneLimit = MathF.Cos(MathHelper.DegreesToRadians(_directionalFov.Angle * 0.5f + 5f));
+        _directionalConeThresholds = new Vector2(
+            coneLimit,
+            coneLimit + MathF.Max(
+                MathHelper.DegreesToRadians(_directionalFov.AngleFeather) * 0.5f,
+                MinimumFovConeThresholdSpan));
     }
 
     private Vector2 GetDirectionalFovOffset(
@@ -114,40 +124,7 @@ public sealed partial class ScpShadowCasterOverlay
 
     #endregion
 
-    #region Directional FOV
-
-    private float GetDirectionalSourceVisibility(Vector2 lightPosition)
-    {
-        if (!_directionalFovActive || _directionalFov == null)
-            return 1f;
-
-        var offset = lightPosition - _directionalViewerPosition;
-        var distance = offset.Length();
-        var ignoreRadius = _directionalFov.ConeIgnoreRadius + FovAdditionalMarginMeters;
-        var ignoreFeather = _directionalFov.ConeIgnoreFeather + FovAdditionalMarginMeters;
-        var radialVisibility = ignoreFeather <= GeometryEpsilon
-            ? distance <= ignoreRadius ? 1f : 0f
-            : 1f - Math.Clamp((distance - ignoreRadius) / ignoreFeather, 0f, 1f);
-
-        if (offset.LengthSquared() <= GeometryEpsilon * GeometryEpsilon)
-            return 1f;
-
-        var angleDifference = offset.ToWorldAngle() - _directionalFov.CurrentAngle;
-        var cosine = MathF.Cos((float) angleDifference.Theta);
-        var coneLimit = MathF.Cos(MathHelper.DegreesToRadians(_directionalFov.Angle * 0.5f + 5f));
-        var coneFeather = MathHelper.DegreesToRadians(_directionalFov.AngleFeather) * 0.5f;
-        var angularVisibility = SmoothStep(coneLimit, coneLimit + coneFeather, cosine);
-        return Math.Max(radialVisibility, angularVisibility);
-    }
-
-    private static float SmoothStep(float minimum, float maximum, float value)
-    {
-        if (maximum <= minimum + GeometryEpsilon)
-            return value >= maximum ? 1f : 0f;
-
-        var amount = Math.Clamp((value - minimum) / (maximum - minimum), 0f, 1f);
-        return amount * amount * (3f - 2f * amount);
-    }
+    #region Directional FOV composite
 
     private void SetCompositeFovParameters()
     {
@@ -172,89 +149,16 @@ public sealed partial class ScpShadowCasterOverlay
             shader.SetParameter("directionalFovMode", mode);
         }
 
-        if (mode == 0 || _directionalFov == null)
+        if (mode == 0)
             return;
 
         var parametersDirty = false;
-        state.SetParameter(0, _directionalFov.Angle, ref parametersDirty);
-        state.SetParameter(1, _directionalFov.AngleFeather, ref parametersDirty);
-        state.SetParameter(2, _directionalIgnoreRadiusPixels, ref parametersDirty);
-        state.SetParameter(3, _directionalIgnoreFeatherPixels, ref parametersDirty);
-        state.SetParameter(4, (float) _directionalFov.CurrentAngle.Theta, ref parametersDirty);
+        state.SetParameter(0, _directionalFovOffset, ref parametersDirty);
+        state.SetParameter(1, _directionalViewDirection, ref parametersDirty);
+        state.SetParameter(2, _directionalRadialParameters, ref parametersDirty);
+        state.SetParameter(3, _directionalConeThresholds, ref parametersDirty);
         if (parametersDirty)
             shader.SetParameter("directionalFovParameters", state.Parameters);
-
-        if (state.Offset[0] != _directionalFovOffset)
-        {
-            state.Offset[0] = _directionalFovOffset;
-            shader.SetParameter("directionalFovOffset", state.Offset);
-        }
-    }
-
-    #endregion
-
-    #region Hard FOV
-
-    private bool IsLightHardFovVisible(Vector2 lightPosition)
-    {
-        if (!_hardFovActive)
-            return true;
-
-        var direction = lightPosition - _eyeWorldPosition;
-        var distance = direction.Length();
-        if (distance <= NearLightDistance)
-            return true;
-
-        var rayEnd = lightPosition - direction / distance * NearLightDistance;
-        var minimum = Vector2.Min(_eyeWorldPosition, rayEnd);
-        var maximum = Vector2.Max(_eyeWorldPosition, rayEnd);
-        var queryBounds = new Box2(minimum, maximum).Enlarged(GeometryEpsilon);
-
-        for (var i = 0; i < _frameOccluders.Count; i++)
-        {
-            var occluder = _frameOccluders[i];
-            if (!occluder.Bounds.Intersects(queryBounds))
-                continue;
-
-            var localStart = Vector2.Transform(_eyeWorldPosition, occluder.InverseWorldMatrix);
-            var localEnd = Vector2.Transform(rayEnd, occluder.InverseWorldMatrix);
-            if (SegmentIntersectsBox(localStart, localEnd, occluder.LocalBounds))
-                return false;
-        }
-
-        return true;
-    }
-
-    private static bool SegmentIntersectsBox(Vector2 start, Vector2 end, Box2 box)
-    {
-        var direction = end - start;
-        var minimum = 0f;
-        var maximum = 1f;
-
-        return ClipSegmentAxis(start.X, direction.X, box.Left, box.Right, ref minimum, ref maximum) &&
-            ClipSegmentAxis(start.Y, direction.Y, box.Bottom, box.Top, ref minimum, ref maximum);
-    }
-
-    private static bool ClipSegmentAxis(
-        float start,
-        float direction,
-        float boxMinimum,
-        float boxMaximum,
-        ref float segmentMinimum,
-        ref float segmentMaximum)
-    {
-        if (MathF.Abs(direction) <= GeometryEpsilon)
-            return start >= boxMinimum && start <= boxMaximum;
-
-        var inverse = 1f / direction;
-        var first = (boxMinimum - start) * inverse;
-        var second = (boxMaximum - start) * inverse;
-        if (first > second)
-            (first, second) = (second, first);
-
-        segmentMinimum = Math.Max(segmentMinimum, first);
-        segmentMaximum = Math.Min(segmentMaximum, second);
-        return segmentMinimum <= segmentMaximum;
     }
 
     #endregion
@@ -308,11 +212,10 @@ public sealed partial class ScpShadowCasterOverlay
     private sealed class CompositeFovShaderState
     {
         public int Mode = int.MinValue;
-        public readonly float[] Parameters =
-            [float.NaN, float.NaN, float.NaN, float.NaN, float.NaN];
-        public readonly Vector2[] Offset = [new(float.NaN)];
+        public readonly Vector2[] Parameters =
+            [new(float.NaN), new(float.NaN), new(float.NaN), new(float.NaN)];
 
-        public void SetParameter(int index, float value, ref bool dirty)
+        public void SetParameter(int index, Vector2 value, ref bool dirty)
         {
             if (Parameters[index] == value)
                 return;

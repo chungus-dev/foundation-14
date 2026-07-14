@@ -5,6 +5,7 @@ using System.Numerics;
 using Content.Client.Graphics;
 using Robust.Client.GameObjects;
 using Robust.Shared.Map;
+using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 
 namespace Content.Client._Scp.Graphics.Shaders.FieldOfView.Overlays;
@@ -35,6 +36,8 @@ public sealed partial class FieldOfViewConeOverlay : Overlay
     private static readonly ProtoId<ShaderPrototype> BlurryYShaderProtoId = "BlurryVisionY";
 
     private readonly OverlayResourceCache<CachedResources> _resources = new ();
+    private readonly Vector2[] _directionalFovParameters =
+        [new(float.NaN), new(float.NaN), new(float.NaN), new(float.NaN)];
 
     private TimeSpan _nextUpdate = TimeSpan.Zero;
 
@@ -59,6 +62,8 @@ public sealed partial class FieldOfViewConeOverlay : Overlay
     /// Дополнительный отступ в метрах для радиуса и размытия конуса
     /// </summary>
     private const float AdditionalMarginMeters = 0.4f;
+    private const float MinimumFovFeatherPixels = 0.0001f;
+    private const float MinimumFovConeThresholdSpan = 0.0001f;
 
     public FieldOfViewConeOverlay()
     {
@@ -169,16 +174,44 @@ public sealed partial class FieldOfViewConeOverlay : Overlay
         _shader.SetParameter("BLURRED_TEXTURE", blurredTexture);
         _shader.SetParameter("coneOpacity", Opacity);
 
-        _shader.SetParameter("ViewAngle", (float) fov.CurrentAngle.Theta);
-        _shader.SetParameter("ConeAngle", fov.Angle);
-        _shader.SetParameter("ConeFeather", fov.AngleFeather);
-        _shader.SetParameter("ConeIgnoreRadius", (fov.ConeIgnoreRadius + AdditionalMarginMeters) * EyeManager.PixelsPerMeter / eye.Zoom.X);
-        _shader.SetParameter("ConeIgnoreFeather", (fov.ConeIgnoreFeather + AdditionalMarginMeters) * EyeManager.PixelsPerMeter / eye.Zoom.X);
-        _shader.SetParameter("Offset", offset);
+        var ignoreRadiusPixels =
+            (fov.ConeIgnoreRadius + AdditionalMarginMeters) * EyeManager.PixelsPerMeter / eye.Zoom.X;
+        var ignoreFeatherPixels = MathF.Max(
+            (fov.ConeIgnoreFeather + AdditionalMarginMeters) * EyeManager.PixelsPerMeter / eye.Zoom.X,
+            MinimumFovFeatherPixels);
+        var viewAngle = (float) fov.CurrentAngle.Theta;
+        var coneLimit = MathF.Cos(MathHelper.DegreesToRadians(fov.Angle * 0.5f + 5f));
+
+        var viewDirection = new Vector2(MathF.Sin(viewAngle), -MathF.Cos(viewAngle));
+        var radialParameters = new Vector2(
+            ignoreFeatherPixels,
+            ignoreRadiusPixels / ignoreFeatherPixels);
+        var coneThresholds = new Vector2(
+            coneLimit,
+            coneLimit + MathF.Max(
+                MathHelper.DegreesToRadians(fov.AngleFeather) * 0.5f,
+                MinimumFovConeThresholdSpan));
+
+        var parametersDirty = false;
+        SetDirectionalFovParameter(0, offset, ref parametersDirty);
+        SetDirectionalFovParameter(1, viewDirection, ref parametersDirty);
+        SetDirectionalFovParameter(2, radialParameters, ref parametersDirty);
+        SetDirectionalFovParameter(3, coneThresholds, ref parametersDirty);
+        if (parametersDirty)
+            _shader.SetParameter("directionalFovParameters", _directionalFovParameters);
 
         handle.UseShader(_shader);
         handle.DrawRect(viewport, Color.White);
         handle.UseShader(null);
+    }
+
+    private void SetDirectionalFovParameter(int index, Vector2 value, ref bool dirty)
+    {
+        if (_directionalFovParameters[index] == value)
+            return;
+
+        _directionalFovParameters[index] = value;
+        dirty = true;
     }
 
     private Vector2 GetOffset(EntityUid uid, TransformComponent xform, EyeComponent eye)

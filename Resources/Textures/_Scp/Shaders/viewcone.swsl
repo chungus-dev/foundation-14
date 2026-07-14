@@ -4,26 +4,20 @@ uniform sampler2D BLURRED_TEXTURE;
 uniform mediump float coneOpacity;
 
 uniform sampler2D SCREEN_TEXTURE;
-uniform highp float ConeAngle;
-uniform highp float ConeFeather;
-uniform highp float ConeIgnoreRadius;
-uniform highp float ConeIgnoreFeather;
-uniform highp float ViewAngle;
-uniform highp vec2 Offset;
+// Offset, view direction, radial parameters and cone thresholds.
+uniform highp vec2[4] directionalFovParameters;
 
 void fragment(){
     highp vec2 pixelSize = vec2(1.0 / SCREEN_PIXEL_SIZE.x, 1.0 / SCREEN_PIXEL_SIZE.y);
     mediump vec4 color = texture(SCREEN_TEXTURE, UV);
-    highp vec2 finalCoords = FRAGCOORD.xy - Offset.xy;
+    highp vec2 finalCoords = FRAGCOORD.xy - directionalFovParameters[0];
 
     mediump float mask = scpDirectionalFovOcclusionMask(
         pixelSize,
         finalCoords,
-        ConeAngle,
-        ConeFeather,
-        ConeIgnoreRadius,
-        ConeIgnoreFeather,
-        ViewAngle);
+        directionalFovParameters[1],
+        directionalFovParameters[2],
+        directionalFovParameters[3]);
 
     mediump vec4 blurredColor = texture(BLURRED_TEXTURE, UV);
     mediump vec4 outOfFovColor = mix(blurredColor, vec4(0.0, 0.0, 0.0, 1.0), coneOpacity);

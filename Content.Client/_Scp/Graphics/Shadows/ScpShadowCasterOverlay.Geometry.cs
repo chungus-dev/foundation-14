@@ -7,6 +7,7 @@ using Robust.Shared;
 using Robust.Shared.Graphics.RSI;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
+using Robust.Shared.Physics;
 using static Robust.Client.GameObjects.SpriteComponent;
 
 namespace Content.Client._Scp.Graphics.Shadows;
@@ -15,11 +16,10 @@ public sealed partial class ScpShadowCasterOverlay
 {
     private const float GeometryEpsilon = 0.0001f;
     private const float NearLightDistance = 1f / EyeManager.PixelsPerMeter;
+    private const float SpriteAlphaThreshold = 0.1f;
 
     #region Frame geometry cache
 
-    private readonly List<Entity<SpriteComponent, TransformComponent>> _spriteCandidates = new(256);
-    private readonly List<Entity<OccluderComponent, TransformComponent>> _occluderCandidates = new(256);
     private readonly List<CachedCaster> _frameCasters = new(256);
     private readonly List<CachedContour> _frameContours = new(512);
     private readonly List<Vector2> _frameContourVertices = new(4096);
@@ -29,6 +29,7 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly List<DrawVertexUV2DColor> _casterVertices = new(2048);
     private readonly List<DrawVertexUV2DColor> _localShadowVertices = new(1024);
     private readonly List<DrawVertexUV2DColor> _occluderVertices = new(2048);
+    private readonly Dictionary<EntityUid, Vector2> _foregroundProjectionPositions = new(32);
     private readonly Vector2[] _boxContour = new Vector2[4];
     private Vector2[] _worldContour = new Vector2[32];
 
@@ -56,90 +57,116 @@ public sealed partial class ScpShadowCasterOverlay
         for (var i = 0; i < _lights.Count; i++)
             result = result.ExtendToContain(_lights[i].Position);
 
+        for (var i = 0; i < _nonShadowLightPositions.Count; i++)
+            result = result.ExtendToContain(_nonShadowLightPositions[i]);
+
         return result;
     }
 
     private void BuildFrameOccluderCache(MapId mapId, Box2 queryBounds)
     {
-        _occluderCandidates.Clear();
         _frameOccluders.Clear();
         _frameOccluderVertices.Clear();
 
-        _occluderSystem.QueryAabb(_occluderCandidates, mapId, queryBounds);
-
-        // Clyde applies this limit once while building the viewport's shared
-        // occlusion geometry and never allows fewer than 1024 entries.
-        var maximumOccluders = Math.Max(1024, _configuration.GetCVar(CVars.MaxOccluderCount));
-
-        for (var i = 0; i < _occluderCandidates.Count && _frameOccluders.Count < maximumOccluders; i++)
+        var state = new OccluderQueryState(this);
+        foreach (var (treeUid, tree) in _occluderSystem.GetIntersectingTrees(mapId, queryBounds))
         {
-            var candidate = _occluderCandidates[i];
-            if (!candidate.Comp1.Enabled)
-                continue;
-
-            var worldMatrix = _transformSystem.GetWorldMatrix(candidate.Comp2);
-            TransformBounds(candidate.Comp1.BoundingBox, worldMatrix, _boxContour);
-
-            var vertexStart = _frameOccluderVertices.Count;
-            var minimum = new Vector2(float.PositiveInfinity);
-            var maximum = new Vector2(float.NegativeInfinity);
-            for (var vertex = 0; vertex < _boxContour.Length; vertex++)
-            {
-                var point = _boxContour[vertex];
-                _frameOccluderVertices.Add(point);
-                minimum = Vector2.Min(minimum, point);
-                maximum = Vector2.Max(maximum, point);
-            }
-
-            _frameOccluders.Add(new CachedOccluder(
-                vertexStart,
-                new Box2(minimum, maximum),
-                _transformSystem.GetInvWorldMatrix(candidate.Comp2),
-                candidate.Comp1.BoundingBox,
-                GetWinding(_boxContour)));
+            var localBounds = _transformSystem.GetInvWorldMatrix(treeUid).TransformBox(queryBounds);
+            tree.Tree.QueryAabb(ref state, QueryOccluder, localBounds);
+            if (_frameOccluders.Count >= _maxOccluders)
+                break;
         }
     }
 
-    private void BuildFrameCache(MapId mapId, Box2 queryBounds)
+    private static bool QueryOccluder(
+        ref OccluderQueryState state,
+        in ComponentTreeEntry<OccluderComponent> entry)
     {
-        _spriteCandidates.Clear();
+        var overlay = state.Overlay;
+        if (overlay._frameOccluders.Count >= overlay._maxOccluders)
+            return false;
+
+        var occluder = entry.Component;
+        if (!occluder.Enabled)
+            return true;
+
+        var worldMatrix = overlay._transformSystem.GetWorldMatrix(entry.Transform);
+        TransformBounds(occluder.BoundingBox, worldMatrix, overlay._boxContour);
+
+        var vertexStart = overlay._frameOccluderVertices.Count;
+        var minimum = new Vector2(float.PositiveInfinity);
+        var maximum = new Vector2(float.NegativeInfinity);
+        for (var vertex = 0; vertex < overlay._boxContour.Length; vertex++)
+        {
+            var point = overlay._boxContour[vertex];
+            overlay._frameOccluderVertices.Add(point);
+            minimum = Vector2.Min(minimum, point);
+            maximum = Vector2.Max(maximum, point);
+        }
+
+        overlay._frameOccluders.Add(new CachedOccluder(
+            vertexStart,
+            new Box2(minimum, maximum),
+            GetWinding(overlay._boxContour)));
+        return overlay._frameOccluders.Count < overlay._maxOccluders;
+    }
+
+    private void BuildFrameCache(MapId mapId, Box2 queryBounds, Box2 viewportBounds)
+    {
         _frameCasters.Clear();
         _frameContours.Clear();
         _frameContourVertices.Clear();
         _protectedSpriteLayers.Clear();
+        _foregroundProjectionPositions.Clear();
 
-        _spriteTree.QueryAabb(_spriteCandidates, mapId, queryBounds);
-
-        for (var i = 0; i < _spriteCandidates.Count; i++)
+        var state = new SpriteQueryState(this, viewportBounds);
+        foreach (var (treeUid, tree) in _spriteTree.GetIntersectingTrees(mapId, queryBounds))
         {
-            var candidate = _spriteCandidates[i];
-            var sprite = candidate.Comp1;
-            if (!sprite.Visible || sprite.ContainerOccluded || sprite.Color.A == 0f)
-                continue;
-
-            var isForeground = _foregroundQuery.HasComp(candidate.Owner);
-            var isCaster = _shadowQuery.TryGetComponent(candidate.Owner, out var shadow);
-            var quality = ScpShadowQuality.Disabled;
-
-            if (isCaster)
-            {
-                quality = shadow!.Kind == ScpShadowCasterKind.Mob ? _mobQuality : _objectQuality;
-                isCaster = quality != ScpShadowQuality.Disabled &&
-                    (!_occluderQuery.TryGetComponent(candidate.Owner, out var occluder) || !occluder.Enabled);
-            }
-
-            if (!isCaster && !isForeground)
-                continue;
-
-            CacheSprite(candidate, isCaster ? shadow : null, quality, isForeground || isCaster);
+            var localBounds = _transformSystem.GetInvWorldMatrix(treeUid).TransformBox(queryBounds);
+            tree.Tree.QueryAabb(ref state, QuerySprite, localBounds, true);
         }
+    }
+
+    private static bool QuerySprite(
+        ref SpriteQueryState state,
+        in ComponentTreeEntry<SpriteComponent> entry)
+    {
+        var overlay = state.Overlay;
+        var sprite = entry.Component;
+        if (!sprite.Visible || sprite.ContainerOccluded || sprite.Color.A == 0f)
+            return true;
+
+        var isForeground = overlay._foregroundQuery.HasComp(entry.Uid);
+        var isCaster = overlay._shadowQuery.TryGetComponent(entry.Uid, out var shadow);
+        var quality = ScpShadowQuality.Disabled;
+
+        if (isCaster)
+        {
+            quality = shadow!.Kind == ScpShadowCasterKind.Mob
+                ? overlay._mobQuality
+                : overlay._objectQuality;
+            isCaster = quality != ScpShadowQuality.Disabled &&
+                (!overlay._occluderQuery.TryGetComponent(entry.Uid, out var occluder) || !occluder.Enabled);
+        }
+
+        if (!isCaster && !isForeground)
+            return true;
+
+        overlay.CacheSprite(
+            entry,
+            isCaster ? shadow : null,
+            quality,
+            isForeground,
+            state.ViewportBounds);
+        return true;
     }
 
     private void CacheSprite(
         Entity<SpriteComponent, TransformComponent> candidate,
         ScpShadowCasterVisualsComponent? shadow,
         ScpShadowQuality quality,
-        bool protectSprite)
+        bool isForeground,
+        Box2 viewportBounds)
     {
         var sprite = candidate.Comp1;
         var (position, rotation) = _transformSystem.GetWorldPositionRotation(candidate.Comp2);
@@ -148,12 +175,14 @@ public sealed partial class ScpShadowCasterOverlay
         var contourStart = _frameContours.Count;
         var hasContourBounds = false;
         var contourBounds = default(Box2);
+        var hasOpaqueBounds = false;
+        var opaqueBounds = default(Box2);
 
         if (shadow != null)
         {
-            TransformBounds(shadow.Bounds, matrices.Sprite, _boxContour);
             if (quality == ScpShadowQuality.Bounds)
             {
+                TransformBounds(shadow.Bounds, matrices.Sprite, _boxContour);
                 contourBounds = CacheContour(_boxContour);
                 hasContourBounds = true;
             }
@@ -168,7 +197,7 @@ public sealed partial class ScpShadowCasterOverlay
                 if (layers[layerIndex] is not Layer layer ||
                     !_spriteSystem.IsVisible(layer) ||
                     layer.Blank ||
-                    layer.Color.A == 0f)
+                    sprite.Color.A * layer.Color.A < SpriteAlphaThreshold)
                 {
                     continue;
                 }
@@ -191,18 +220,42 @@ public sealed partial class ScpShadowCasterOverlay
                 var layerBase = GetLayerBaseMatrix(layer.RenderingStrategy, sprite.GranularLayersRendering, matrices);
                 var worldMatrix = Matrix3x2.Multiply(layerMatrix, layerBase);
 
-                if (protectSprite)
+                var texture = state?.GetFrame(drawDirection, layer.AnimationFrame) ??
+                    layer.Texture ??
+                    _spriteSystem.GetFallbackTexture();
+                var textureSize = texture.Size / (float) EyeManager.PixelsPerMeter;
+                var quad = Box2.FromDimensions(textureSize / -2f, textureSize);
+
+                if (worldMatrix.TransformBox(quad).Intersects(viewportBounds))
                 {
-                    var texture = state?.GetFrame(drawDirection, layer.AnimationFrame) ??
-                        layer.Texture ??
-                        _spriteSystem.GetFallbackTexture();
-                    var textureSize = texture.Size / (float) EyeManager.PixelsPerMeter;
-                    var quad = Box2.FromDimensions(textureSize / -2f, textureSize);
                     _protectedSpriteLayers.Add(new ProtectedSpriteLayer(
                         texture,
                         worldMatrix,
                         quad,
                         sprite.Color * layer.Color));
+                }
+
+                if (isForeground)
+                {
+                    var localOpaqueBounds = default(Box2);
+                    var hasLayerBounds = state != null && rsi != null
+                        ? _contourCache.TryGetOpaqueBounds(
+                            rsi,
+                            layer.State,
+                            drawDirection,
+                            layer.AnimationFrame,
+                            out localOpaqueBounds)
+                        : layer.Texture != null &&
+                        _contourCache.TryGetOpaqueBounds(layer.Texture, out localOpaqueBounds);
+
+                    if (hasLayerBounds)
+                    {
+                        var worldOpaqueBounds = worldMatrix.TransformBox(localOpaqueBounds);
+                        opaqueBounds = hasOpaqueBounds
+                            ? opaqueBounds.Union(worldOpaqueBounds)
+                            : worldOpaqueBounds;
+                        hasOpaqueBounds = true;
+                    }
                 }
 
                 if (shadow == null || quality is ScpShadowQuality.Bounds or ScpShadowQuality.Disabled)
@@ -236,6 +289,9 @@ public sealed partial class ScpShadowCasterOverlay
                 }
             }
         }
+
+        if (isForeground && hasOpaqueBounds)
+            _foregroundProjectionPositions[candidate.Owner] = opaqueBounds.Center;
 
         if (shadow == null)
             return;
@@ -291,6 +347,7 @@ public sealed partial class ScpShadowCasterOverlay
     {
         _casterVertices.Clear();
         var lightCircle = new Circle(light.Position, light.Component.Radius);
+        var projectionPosition = light.ProjectionPosition;
 
         for (var i = 0; i < _frameCasters.Count; i++)
         {
@@ -303,6 +360,14 @@ public sealed partial class ScpShadowCasterOverlay
                 continue;
             }
 
+            // A light visually overlapping a silhouette cannot define a stable extrusion
+            // direction. Skip only this light-caster pair; other lights still cast its shadow.
+            if (caster.Bounds.Enlarged(NearLightDistance).Contains(projectionPosition) &&
+                ProjectionTouchesCaster(caster, projectionPosition))
+            {
+                continue;
+            }
+
             for (var contourIndex = 0; contourIndex < caster.ContourCount; contourIndex++)
             {
                 var contour = _frameContours[caster.ContourStart + contourIndex];
@@ -311,15 +376,10 @@ public sealed partial class ScpShadowCasterOverlay
 
                 var vertices = CollectionsMarshal.AsSpan(_frameContourVertices)
                     .Slice(contour.VertexStart, contour.VertexCount);
-                var projectionOrigin = GetSafeProjectionOrigin(
-                    vertices,
-                    contour.Winding,
-                    light.Position,
-                    NearLightDistance);
                 AppendShadowVolume(
                     vertices,
                     contour.Winding,
-                    projectionOrigin,
+                    projectionPosition,
                     light.Position,
                     light.Component.Radius,
                     _casterVertices);
@@ -346,11 +406,13 @@ public sealed partial class ScpShadowCasterOverlay
                 .Slice(occluder.VertexStart, 4);
             AppendFilledContour(vertices, _occluderVertices);
 
-            var projectionOrigin = GetSafeProjectionOrigin(
-                vertices,
-                occluder.Winding,
-                light.Position,
-                NearLightDistance);
+            var projectionOrigin = occluder.Bounds.Enlarged(NearLightDistance).Contains(light.Position)
+                ? GetSafeOccluderProjectionOrigin(
+                    vertices,
+                    occluder.Winding,
+                    light.Position,
+                    NearLightDistance)
+                : light.Position;
             AppendShadowVolume(
                 vertices,
                 occluder.Winding,
@@ -461,6 +523,15 @@ public sealed partial class ScpShadowCasterOverlay
         if (directionLengthSquared <= GeometryEpsilon * GeometryEpsilon)
             return vertex;
 
+        if (projectionOrigin == lightPosition)
+        {
+            var radialAmount = lightRadius / MathF.Sqrt(directionLengthSquared);
+            if (!float.IsFinite(radialAmount) || radialAmount <= 1f)
+                return vertex;
+
+            return lightPosition + direction * radialAmount;
+        }
+
         var originOffset = projectionOrigin - lightPosition;
         var b = 2f * Vector2.Dot(originOffset, direction);
         var c = originOffset.LengthSquared() - lightRadius * lightRadius;
@@ -509,11 +580,63 @@ public sealed partial class ScpShadowCasterOverlay
 
     #region Point and edge checks
 
+    private bool ProjectionTouchesCaster(in CachedCaster caster, Vector2 projectionPosition)
+    {
+        for (var contourIndex = 0; contourIndex < caster.ContourCount; contourIndex++)
+        {
+            var contour = _frameContours[caster.ContourStart + contourIndex];
+            if (!contour.Bounds.Enlarged(NearLightDistance).Contains(projectionPosition))
+                continue;
+
+            var vertices = CollectionsMarshal.AsSpan(_frameContourVertices)
+                .Slice(contour.VertexStart, contour.VertexCount);
+            if (ContainsOrNear(vertices, projectionPosition, NearLightDistance))
+                return true;
+        }
+
+        return false;
+    }
+
+    private static bool ContainsOrNear(ReadOnlySpan<Vector2> contour, Vector2 point, float maximumDistance)
+    {
+        if (contour.Length < 2)
+            return false;
+
+        var inside = false;
+        var maximumDistanceSquared = maximumDistance * maximumDistance;
+        var previous = contour[^1];
+
+        for (var i = 0; i < contour.Length; i++)
+        {
+            var current = contour[i];
+            var edge = current - previous;
+            var edgeLengthSquared = edge.LengthSquared();
+            if (edgeLengthSquared > GeometryEpsilon * GeometryEpsilon)
+            {
+                var amount = Math.Clamp(Vector2.Dot(point - previous, edge) / edgeLengthSquared, 0f, 1f);
+                var nearest = previous + edge * amount;
+                if (Vector2.DistanceSquared(point, nearest) <= maximumDistanceSquared)
+                    return true;
+            }
+
+            if ((current.Y > point.Y) != (previous.Y > point.Y) &&
+                point.X < (previous.X - current.X) * (point.Y - current.Y) /
+                (previous.Y - current.Y) + current.X)
+            {
+                inside = !inside;
+            }
+
+            previous = current;
+        }
+
+        return inside;
+    }
+
     /// <summary>
     /// Moves a virtual projection origin outside a contour when a light touches or enters it.
     /// The real light position remains unchanged for attenuation and range clipping.
     /// </summary>
-    private static Vector2 GetSafeProjectionOrigin(
+    private static Vector2 GetSafeOccluderProjectionOrigin(
         ReadOnlySpan<Vector2> contour,
         float winding,
         Vector2 lightPosition,
@@ -608,8 +731,6 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly record struct CachedOccluder(
         int VertexStart,
         Box2 Bounds,
-        Matrix3x2 InverseWorldMatrix,
-        Box2 LocalBounds,
         float Winding);
 
     private readonly record struct ProtectedSpriteLayer(
@@ -624,6 +745,17 @@ public sealed partial class ScpShadowCasterOverlay
         Matrix3x2 Default,
         Matrix3x2 SnapToCardinals,
         Matrix3x2 NoRotation);
+
+    private readonly struct OccluderQueryState(ScpShadowCasterOverlay overlay)
+    {
+        public readonly ScpShadowCasterOverlay Overlay = overlay;
+    }
+
+    private readonly struct SpriteQueryState(ScpShadowCasterOverlay overlay, Box2 viewportBounds)
+    {
+        public readonly ScpShadowCasterOverlay Overlay = overlay;
+        public readonly Box2 ViewportBounds = viewportBounds;
+    }
 
     #endregion
 }

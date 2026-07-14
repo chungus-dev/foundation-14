@@ -28,13 +28,19 @@ internal sealed class ScpShadowContourCache
 
     public bool TryGetContours(Texture texture, ScpShadowQuality quality, out ScpShadowContours contours)
     {
+        if (_textureCache.TryGetValue(texture, out var entry) &&
+            TryGetCachedContours(entry, quality, out contours))
+        {
+            return contours.Loops.Length != 0;
+        }
+
         if (!_clickMaps.TryGetRegion(texture, out var region))
         {
             contours = ScpShadowContours.Empty;
             return false;
         }
 
-        if (!_textureCache.TryGetValue(texture, out var entry))
+        if (entry == null)
         {
             entry = new CacheEntry();
             _textureCache.Add(texture, entry);
@@ -53,13 +59,19 @@ internal sealed class ScpShadowContourCache
         out ScpShadowContours contours)
     {
         var key = new RsiFrameKey(rsi, state, direction, frame);
+        if (_rsiCache.TryGetValue(key, out var entry) &&
+            TryGetCachedContours(entry, quality, out contours))
+        {
+            return contours.Loops.Length != 0;
+        }
+
         if (!_clickMaps.TryGetRegion(rsi, state, direction, frame, out var region))
         {
             contours = ScpShadowContours.Empty;
             return false;
         }
 
-        if (!_rsiCache.TryGetValue(key, out var entry))
+        if (entry == null)
         {
             entry = new CacheEntry();
             _rsiCache.Add(key, entry);
@@ -67,6 +79,52 @@ internal sealed class ScpShadowContourCache
 
         contours = GetOrBuild(entry, region, quality);
         return contours.Loops.Length != 0;
+    }
+
+    public bool TryGetOpaqueBounds(Texture texture, out Box2 bounds)
+    {
+        if (_textureCache.TryGetValue(texture, out var entry) && entry.OpaqueBoundsCached)
+            return TryGetCachedOpaqueBounds(entry, out bounds);
+
+        if (!_clickMaps.TryGetRegion(texture, out var region))
+        {
+            bounds = default;
+            return false;
+        }
+
+        if (entry == null)
+        {
+            entry = new CacheEntry();
+            _textureCache.Add(texture, entry);
+        }
+
+        return BuildAndCacheOpaqueBounds(entry, region, out bounds);
+    }
+
+    public bool TryGetOpaqueBounds(
+        RSI rsi,
+        RSI.StateId state,
+        RsiDirection direction,
+        int frame,
+        out Box2 bounds)
+    {
+        var key = new RsiFrameKey(rsi, state, direction, frame);
+        if (_rsiCache.TryGetValue(key, out var entry) && entry.OpaqueBoundsCached)
+            return TryGetCachedOpaqueBounds(entry, out bounds);
+
+        if (!_clickMaps.TryGetRegion(rsi, state, direction, frame, out var region))
+        {
+            bounds = default;
+            return false;
+        }
+
+        if (entry == null)
+        {
+            entry = new CacheEntry();
+            _rsiCache.Add(key, entry);
+        }
+
+        return BuildAndCacheOpaqueBounds(entry, region, out bounds);
     }
 
     #endregion
@@ -82,6 +140,73 @@ internal sealed class ScpShadowContourCache
             return entry.Hull ??= BuildHull(region);
 
         return entry.Sprite ??= BuildPixelContours(region);
+    }
+
+    private static bool TryGetCachedContours(
+        CacheEntry entry,
+        ScpShadowQuality quality,
+        out ScpShadowContours contours)
+    {
+        var cached = quality == ScpShadowQuality.Hull ? entry.Hull : entry.Sprite;
+        if (cached == null)
+        {
+            contours = ScpShadowContours.Empty;
+            return false;
+        }
+
+        contours = cached;
+        return true;
+    }
+
+    private static bool TryGetCachedOpaqueBounds(CacheEntry entry, out Box2 bounds)
+    {
+        if (entry.OpaqueBounds is not { } cached)
+        {
+            bounds = default;
+            return false;
+        }
+
+        bounds = cached;
+        return true;
+    }
+
+    private static bool BuildAndCacheOpaqueBounds(
+        CacheEntry entry,
+        ClickMapRegion region,
+        out Box2 bounds)
+    {
+        var minimum = new Vector2(float.PositiveInfinity);
+        var maximum = new Vector2(float.NegativeInfinity);
+        var width = region.Size.X;
+        var height = region.Size.Y;
+
+        for (var y = 0; y < height; y++)
+        {
+            for (var x = 0; x < width; x++)
+            {
+                if (!region.IsOccluded(x, y))
+                    continue;
+
+                var bottom = height - y - 1;
+                minimum = Vector2.Min(minimum, new Vector2(x, bottom));
+                maximum = Vector2.Max(maximum, new Vector2(x + 1, bottom + 1));
+            }
+        }
+
+        entry.OpaqueBoundsCached = true;
+        if (!float.IsFinite(minimum.X))
+        {
+            entry.OpaqueBounds = null;
+            bounds = default;
+            return false;
+        }
+
+        var center = new Vector2(width, height) * 0.5f;
+        bounds = new Box2(
+            (minimum - center) / EyeManager.PixelsPerMeter,
+            (maximum - center) / EyeManager.PixelsPerMeter);
+        entry.OpaqueBounds = bounds;
+        return true;
     }
 
     private static ScpShadowContours BuildHull(ClickMapRegion region)
@@ -362,6 +487,8 @@ internal sealed class ScpShadowContourCache
     {
         public ScpShadowContours? Hull;
         public ScpShadowContours? Sprite;
+        public bool OpaqueBoundsCached;
+        public Box2? OpaqueBounds;
     }
 
     private readonly record struct RsiFrameKey(

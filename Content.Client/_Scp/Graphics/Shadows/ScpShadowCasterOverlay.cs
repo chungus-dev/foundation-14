@@ -2,7 +2,6 @@ using System.Numerics;
 using Content.Client.Clickable;
 using Content.Client._Scp.Graphics.Shaders.FieldOfView;
 using Content.Client.Graphics;
-using Content.Shared._Scp.ScpCCVars;
 using Robust.Client.ComponentTrees;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -31,7 +30,6 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private static readonly ProtoId<ShaderPrototype> StencilShader = "ScpShadowStencil";
     private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
     private static readonly Action EmptyDraw = static () => { };
-    private const float MaskClearMarginPixels = 13f; // Three 4 px softness taps plus linear filtering.
 
     #endregion
 
@@ -39,10 +37,6 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowWorld;
     public const int ContentZIndex = int.MinValue;
-
-    private ScpShadowQuality _mobQuality;
-    private ScpShadowQuality _objectQuality;
-    private bool _localPlayerShadowOutsideFov;
 
     #endregion
 
@@ -97,7 +91,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private ShaderInstance? _currentContributionShader;
     private Texture _currentLightMask;
     private Box2 _currentMaskBounds;
-    private float _maskClearPadding;
+    private float _worldUnitsPerMaskPixel;
     private Matrix3x2 _targetMatrix;
     private Box2Rotated _worldBounds;
     private Angle _eyeRotation;
@@ -133,6 +127,8 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         _unshadedShader = _prototypes.Index(UnshadedShader).Instance();
 
         ConfigureStencilShaders();
+        SubscribeConfiguration();
+        InitializeLightQuad();
 
         _drawCasterMask = DrawCasterMask;
         _drawOccluderMask = DrawOccluderMask;
@@ -147,7 +143,6 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        ReadQualitySettings();
         if (_mobQuality == ScpShadowQuality.Disabled && _objectQuality == ScpShadowQuality.Disabled)
             return;
 
@@ -173,71 +168,38 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         if (lightCount == 0)
             return;
 
-        BuildFrameOccluderCache(args.MapId, GetFrameOccluderQueryBounds(args.WorldAABB));
-        lightCount = FilterVisibleLights();
-        if (lightCount == 0)
-            return;
-
         var frameQueryBounds = GetFrameQueryBounds(args.WorldAABB);
-
-        var resources = _resources.GetForViewport(viewport, static _ => new CachedResources());
-        resources.EnsureSize(_clyde, viewport.LightRenderTarget.Size);
-        resources.BeginFrame();
-
-        _drawHandle = args.WorldHandle;
-        _currentResources = resources;
-        _worldBounds = args.WorldBounds;
         _eyeRotation = eye.Rotation;
 
-        var lightScale = viewport.LightRenderTarget.Size / (Vector2) viewport.Size;
-        var scale = viewport.RenderScale / (Vector2.One / lightScale);
-        var minimumLightScale = MathF.Max(MathF.Min(lightScale.X, lightScale.Y), GeometryEpsilon);
-        _maskClearPadding = MaskClearMarginPixels * MathF.Max(eye.Zoom.X, eye.Zoom.Y) /
-            (EyeManager.PixelsPerMeter * minimumLightScale);
-        _targetMatrix = resources.Contribution!.GetWorldToLocalMatrix(eye, scale);
-        PrepareFovRenderParameters(viewport, lightScale);
-
-        BuildFrameCache(args.MapId, frameQueryBounds);
+        BuildFrameCache(args.MapId, frameQueryBounds, args.WorldAABB);
         if (_frameCasters.Count == 0)
         {
             ClearDrawState();
             return;
         }
 
-        _drawHandle.RenderInRenderTarget(resources.Contribution, EmptyDraw, Color.Black);
+        ApplyProjectionPositions();
+        CachedResources? resources = null;
         _localShadowVertices.Clear();
 
-        var anyShadows = false;
         for (var i = 0; i < lightCount; i++)
         {
             var light = _lights[i];
             if (light.Component.Radius <= 0f || light.Component.Energy <= 0f)
                 continue;
 
-            SetLightQuad(light);
-            _currentLightMask = light.Component.MaskPath == null
-                ? _whiteTexture
-                : _resourceCache.GetResource<TextureResource>(light.Component.MaskPath);
-            var radius = new Vector2(light.Component.Radius);
-            _currentMaskBounds = new Box2(light.Position - radius, light.Position + radius)
-                .Enlarged(_maskClearPadding);
-
+            var softness = GetLightSoftness(light);
             var occluderMaskReady = false;
+            var lightRenderStateReady = false;
             var excludedCaster = _renderLocalFovException ? _localPlayerCaster : null;
 
-            if (light.DirectionalVisibility > 0f)
+            BuildCasterMask(light, excludedCaster, null);
+            if (_casterVertices.Count != 0)
             {
-                BuildCasterMask(light, excludedCaster, null);
-                if (_casterVertices.Count != 0)
-                {
-                    RenderCasterContribution(
-                        light,
-                        resources,
-                        light.DirectionalVisibility,
-                        false,
-                        ref occluderMaskReady);
-                    anyShadows = true;
-                }
+                var activeResources = resources ??= BeginRenderPass(args, eye);
+                PrepareLightRenderState(light, softness);
+                lightRenderStateReady = true;
+                RenderCasterContribution(light, activeResources, softness, false, ref occluderMaskReady);
             }
 
             if (_renderLocalFovException && _localPlayerCaster is { } localPlayer)
@@ -245,43 +207,83 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
                 BuildCasterMask(light, null, localPlayer);
                 if (_casterVertices.Count != 0)
                 {
+                    var activeResources = resources ??= BeginRenderPass(args, eye);
+                    if (!lightRenderStateReady)
+                        PrepareLightRenderState(light, softness);
+
                     _localShadowVertices.AddRange(_casterVertices);
-                    RenderCasterContribution(light, resources, 1f, true, ref occluderMaskReady);
-                    anyShadows = true;
+                    RenderCasterContribution(light, activeResources, softness, true, ref occluderMaskReady);
                 }
             }
         }
 
-
-        if (!anyShadows)
+        if (resources == null)
         {
             ClearDrawState();
             return;
         }
 
-        if (_configuration.GetCVar(CVars.LightBlur))
-            _clyde.BlurRenderTarget(viewport, resources.Contribution, resources.Blur!, eye, 14f);
+        if (_lightBlur)
+            _clyde.BlurRenderTarget(viewport, resources.Contribution!, resources.Blur!, eye, 14f);
 
         SetCompositeFovParameters();
 
         if (_renderLocalFovException && _localShadowVertices.Count != 0)
-            _drawHandle.RenderInRenderTarget(viewport.LightRenderTarget, _drawLocalShadowStencil, null);
+            _drawHandle!.RenderInRenderTarget(viewport.LightRenderTarget, _drawLocalShadowStencil, null);
 
         if (_protectedSpriteLayers.Count != 0)
-            _drawHandle.RenderInRenderTarget(viewport.LightRenderTarget, _drawProtectedSprites, null);
+            _drawHandle!.RenderInRenderTarget(viewport.LightRenderTarget, _drawProtectedSprites, null);
 
-        _drawHandle.RenderInRenderTarget(viewport.LightRenderTarget, _drawComposite, null);
+        _drawHandle!.RenderInRenderTarget(viewport.LightRenderTarget, _drawComposite, null);
 
         if (_renderLocalFovException && _localShadowVertices.Count != 0)
-            _drawHandle.RenderInRenderTarget(viewport.LightRenderTarget, _drawLocalComposite, null);
+            _drawHandle!.RenderInRenderTarget(viewport.LightRenderTarget, _drawLocalComposite, null);
 
         ClearDrawState();
+    }
+
+    private CachedResources BeginRenderPass(in OverlayDrawArgs args, IEye eye)
+    {
+        BuildFrameOccluderCache(args.MapId, GetFrameOccluderQueryBounds(args.WorldAABB));
+
+        var viewport = args.Viewport;
+        var resources = _resources.GetForViewport(viewport, static _ => new CachedResources());
+        resources.EnsureSize(_clyde, viewport.LightRenderTarget.Size);
+        resources.BeginFrame();
+
+        _drawHandle = args.WorldHandle;
+        _currentResources = resources;
+        _worldBounds = args.WorldBounds;
+
+        var lightScale = viewport.LightRenderTarget.Size / (Vector2) viewport.Size;
+        var scale = viewport.RenderScale / (Vector2.One / lightScale);
+        var minimumLightScale = MathF.Max(MathF.Min(lightScale.X, lightScale.Y), GeometryEpsilon);
+        _worldUnitsPerMaskPixel = MathF.Max(eye.Zoom.X, eye.Zoom.Y) /
+            (EyeManager.PixelsPerMeter * minimumLightScale);
+        _targetMatrix = resources.Contribution!.GetWorldToLocalMatrix(eye, scale);
+        PrepareFovRenderParameters(lightScale);
+
+        _drawHandle.RenderInRenderTarget(resources.Contribution, EmptyDraw, Color.Black);
+        return resources;
+    }
+
+    private void PrepareLightRenderState(in LightData light, float softness)
+    {
+        SetLightQuad(light);
+        _currentLightMask = light.Component.MaskPath == null
+            ? _whiteTexture
+            : _resourceCache.GetResource<TextureResource>(light.Component.MaskPath);
+
+        var maskPadding = (1f + 3f * softness) * _worldUnitsPerMaskPixel;
+        var radius = new Vector2(light.Component.Radius);
+        _currentMaskBounds = new Box2(light.Position - radius, light.Position + radius)
+            .Enlarged(maskPadding);
     }
 
     private void RenderCasterContribution(
         in LightData light,
         CachedResources resources,
-        float visibility,
+        float softness,
         bool localContribution,
         ref bool occluderMaskReady)
     {
@@ -297,24 +299,9 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         _currentContributionShader = GetContributionShader(
             light,
             resources,
-            visibility,
+            softness,
             localContribution);
         _drawHandle.RenderInRenderTarget(resources.Contribution!, _drawContribution, null);
-    }
-
-    private void ReadQualitySettings()
-    {
-        _mobQuality = ClampQuality(_configuration.GetCVar(ScpCCVars.MobShadowQuality));
-        _objectQuality = ClampQuality(_configuration.GetCVar(ScpCCVars.ObjectShadowQuality));
-        _localPlayerShadowOutsideFov = _configuration.GetCVar(ScpCCVars.LocalPlayerShadowOutsideFov);
-    }
-
-    private static ScpShadowQuality ClampQuality(int value)
-    {
-        return (ScpShadowQuality) Math.Clamp(
-            value,
-            (int) ScpShadowQuality.Disabled,
-            (int) ScpShadowQuality.Sprite);
     }
 
     #endregion
@@ -333,6 +320,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     protected override void DisposeBehavior()
     {
+        _configurationSubscription.Dispose();
         _resources.Dispose();
         _localStencilShader.Dispose();
         _localSubtractShader.Dispose();

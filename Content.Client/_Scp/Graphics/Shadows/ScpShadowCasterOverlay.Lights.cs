@@ -3,7 +3,6 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared;
 using Robust.Shared.ComponentTrees;
-using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
 using Robust.Shared.Physics;
@@ -14,8 +13,8 @@ public sealed partial class ScpShadowCasterOverlay
 {
     #region Light query state
 
-    private readonly List<Entity<PointLightComponent, TransformComponent>> _lightCandidates = new(128);
     private readonly List<LightData> _lights = new(128);
+    private readonly List<Vector2> _nonShadowLightPositions = new(128);
     private readonly DrawVertexUV2D[] _lightQuad = new DrawVertexUV2D[6];
 
     #endregion
@@ -24,87 +23,82 @@ public sealed partial class ScpShadowCasterOverlay
 
     private int GatherLights(MapId mapId, Box2Rotated worldBounds, Box2 worldAabb)
     {
-        _lightCandidates.Clear();
         _lights.Clear();
+        _nonShadowLightPositions.Clear();
 
-        var maxLights = Math.Max(0, _configuration.GetCVar(CVars.MaxLightCount));
-        var maxShadowLights = Math.Max(0, _configuration.GetCVar(CVars.MaxShadowcastingLights));
-        if (maxLights == 0 || maxShadowLights == 0)
+        if (_maxLights == 0 || _maxShadowLights == 0)
             return 0;
 
-        var maxRadius = _configuration.GetCVar(CVars.MaxLightRadius);
-        var candidates = _lightCandidates;
-        foreach (var (treeUid, tree) in _lightTree.GetIntersectingTrees(mapId, worldAabb.Enlarged(maxRadius)))
+        var state = new LightQueryState(this, worldAabb);
+        foreach (var (treeUid, tree) in _lightTree.GetIntersectingTrees(
+                     mapId,
+                     worldAabb.Enlarged(_maxLightRadius)))
         {
             var localBounds = _transformSystem.GetInvWorldMatrix(treeUid).TransformBox(worldBounds);
-            tree.Tree.QueryAabb(
-                ref candidates,
-                static (ref List<Entity<PointLightComponent, TransformComponent>> state,
-                    in ComponentTreeEntry<PointLightComponent> entry) =>
-                {
-                    state.Add(entry);
-                    return true;
-                },
-                localBounds);
+            tree.Tree.QueryAabb(ref state, QueryLight, localBounds);
+            if (state.AcceptedLights >= _maxLights)
+                break;
         }
 
-        var acceptedLights = 0;
-        for (var i = 0; i < _lightCandidates.Count && acceptedLights < maxLights; i++)
-        {
-            var candidate = _lightCandidates[i];
-            var light = candidate.Comp1;
-            if (!light.Enabled || light.ContainerOccluded)
-                continue;
-
-            var (position, rotation) = _transformSystem.GetWorldPositionRotation(candidate.Comp2);
-            position += rotation.RotateVec(light.Offset);
-
-            if (!new Circle(position, light.Radius).Intersects(worldAabb))
-                continue;
-
-            acceptedLights++;
-            // Keep every shadow-casting light in the capacity selection, even if it currently
-            // has no visible contribution. Clyde applies MaxShadowcastingLights before drawing too.
-            if (!light.CastShadows)
-                continue;
-
-            _lights.Add(new LightData(
-                candidate.Owner,
-                light,
-                position,
-                rotation,
-                Vector2.DistanceSquared(position, worldAabb.Center)));
-        }
-
-        if (_lights.Count > maxShadowLights)
+        if (_lights.Count > _maxShadowLights)
         {
             _lights.Sort(static (left, right) => left.DistanceSquared.CompareTo(right.DistanceSquared));
-            _lights.RemoveRange(maxShadowLights, _lights.Count - maxShadowLights);
+            _lights.RemoveRange(_maxShadowLights, _lights.Count - _maxShadowLights);
         }
 
         return _lights.Count;
     }
 
-    private int FilterVisibleLights()
+    private static bool QueryLight(
+        ref LightQueryState state,
+        in ComponentTreeEntry<PointLightComponent> entry)
     {
-        var visibleCount = 0;
+        var overlay = state.Overlay;
+        if (state.AcceptedLights >= overlay._maxLights)
+            return false;
+
+        var light = entry.Component;
+        if (!light.Enabled || light.ContainerOccluded)
+            return true;
+
+        var (position, rotation) = overlay._transformSystem.GetWorldPositionRotation(entry.Transform);
+        if (light.Offset != Vector2.Zero)
+            position += rotation.RotateVec(light.Offset);
+        if (!new Circle(position, light.Radius).Intersects(state.WorldAabb))
+            return true;
+
+        state.AcceptedLights++;
+        if (light.CastShadows)
+        {
+            overlay._lights.Add(new LightData(
+                entry.Uid,
+                light,
+                position,
+                position,
+                rotation,
+                Vector2.DistanceSquared(position, state.WorldAabb.Center)));
+        }
+        else
+        {
+            overlay._nonShadowLightPositions.Add(position);
+        }
+
+        return state.AcceptedLights < overlay._maxLights;
+    }
+
+    private void ApplyProjectionPositions()
+    {
         for (var i = 0; i < _lights.Count; i++)
         {
             var light = _lights[i];
-            if (!IsLightHardFovVisible(light.Position))
-                continue;
-
-            var directionalVisibility = GetDirectionalSourceVisibility(light.Position);
-            if (directionalVisibility <= 0f && !_renderLocalFovException)
-                continue;
-
-            _lights[visibleCount++] = light with { DirectionalVisibility = directionalVisibility };
+            if (_foregroundProjectionPositions.TryGetValue(light.Owner, out var projectionPosition))
+                _lights[i] = light with { ProjectionPosition = projectionPosition };
         }
+    }
 
-        if (visibleCount < _lights.Count)
-            _lights.RemoveRange(visibleCount, _lights.Count - visibleCount);
-
-        return visibleCount;
+    private float GetLightSoftness(in LightData light)
+    {
+        return _softShadows ? Math.Clamp(light.Component.Softness, 0f, 4f) : 0f;
     }
 
     #endregion
@@ -114,13 +108,9 @@ public sealed partial class ScpShadowCasterOverlay
     private ShaderInstance GetContributionShader(
         in LightData light,
         CachedResources resources,
-        float visibility,
+        float softness,
         bool localContribution)
     {
-        var softness = _configuration.GetCVar(CVars.LightSoftShadows)
-            ? Math.Clamp(light.Component.Softness, 0f, 4f)
-            : 0f;
-
         var casterMask = resources.CasterMask!;
         var occluderMask = resources.OccluderMask!;
         var localCenter = Vector2.Transform(light.Position, _targetMatrix);
@@ -136,7 +126,7 @@ public sealed partial class ScpShadowCasterOverlay
             occluderMask.Texture,
             light.Component.Color,
             light.Component.Radius,
-            light.Component.Energy * visibility,
+            light.Component.Energy,
             light.Component.Falloff,
             light.Component.CurveFactor,
             softness,
@@ -145,22 +135,37 @@ public sealed partial class ScpShadowCasterOverlay
 
     private void SetLightQuad(in LightData light)
     {
-        var rotation = light.Component.MaskPath == null
-            ? Angle.Zero
-            : light.Component.Rotation + (light.Component.MaskAutoRotate ? light.Rotation : Angle.Zero);
         var radius = light.Component.Radius;
+        var right = new Vector2(radius, 0f);
+        if (light.Component.MaskPath != null)
+        {
+            var rotation = light.Component.Rotation +
+                (light.Component.MaskAutoRotate ? light.Rotation : Angle.Zero);
+            right = rotation.RotateVec(right);
+        }
 
-        var bottomLeft = light.Position + rotation.RotateVec(new Vector2(-radius, -radius));
-        var bottomRight = light.Position + rotation.RotateVec(new Vector2(radius, -radius));
-        var topRight = light.Position + rotation.RotateVec(new Vector2(radius, radius));
-        var topLeft = light.Position + rotation.RotateVec(new Vector2(-radius, radius));
+        var up = new Vector2(-right.Y, right.X);
+        var bottomLeft = light.Position - right - up;
+        var bottomRight = light.Position + right - up;
+        var topRight = light.Position + right + up;
+        var topLeft = light.Position - right + up;
 
-        _lightQuad[0] = new DrawVertexUV2D(bottomLeft, new Vector2(0f, 1f));
-        _lightQuad[1] = new DrawVertexUV2D(bottomRight, new Vector2(1f, 1f));
-        _lightQuad[2] = new DrawVertexUV2D(topRight, new Vector2(1f, 0f));
-        _lightQuad[3] = new DrawVertexUV2D(bottomLeft, new Vector2(0f, 1f));
-        _lightQuad[4] = new DrawVertexUV2D(topRight, new Vector2(1f, 0f));
-        _lightQuad[5] = new DrawVertexUV2D(topLeft, new Vector2(0f, 0f));
+        _lightQuad[0].Position = bottomLeft;
+        _lightQuad[1].Position = bottomRight;
+        _lightQuad[2].Position = topRight;
+        _lightQuad[3].Position = bottomLeft;
+        _lightQuad[4].Position = topRight;
+        _lightQuad[5].Position = topLeft;
+    }
+
+    private void InitializeLightQuad()
+    {
+        _lightQuad[0].UV = new Vector2(0f, 1f);
+        _lightQuad[1].UV = new Vector2(1f, 1f);
+        _lightQuad[2].UV = new Vector2(1f, 0f);
+        _lightQuad[3].UV = new Vector2(0f, 1f);
+        _lightQuad[4].UV = new Vector2(1f, 0f);
+        _lightQuad[5].UV = new Vector2(0f, 0f);
     }
 
     #endregion
@@ -171,9 +176,16 @@ public sealed partial class ScpShadowCasterOverlay
         EntityUid Owner,
         PointLightComponent Component,
         Vector2 Position,
+        Vector2 ProjectionPosition,
         Angle Rotation,
-        float DistanceSquared,
-        float DirectionalVisibility = 1f);
+        float DistanceSquared);
+
+    private struct LightQueryState(ScpShadowCasterOverlay overlay, Box2 worldAabb)
+    {
+        public readonly ScpShadowCasterOverlay Overlay = overlay;
+        public readonly Box2 WorldAabb = worldAabb;
+        public int AcceptedLights;
+    }
 
     #endregion
 }

@@ -4,9 +4,8 @@ blend_mode subtract;
 #include "/Textures/_Scp/Shaders/directional_fov_shared.swsl"
 
 uniform highp int directionalFovMode;
-// Angle, angle feather, ignore radius, ignore feather and view angle.
-uniform highp float[5] directionalFovParameters;
-uniform highp vec2[1] directionalFovOffset;
+// Offset, view direction, radial parameters and cone thresholds.
+uniform highp vec2[4] directionalFovParameters;
 
 void fragment()
 {
@@ -14,15 +13,13 @@ void fragment()
     if (directionalFovMode != 0)
     {
         highp vec2 targetSize = vec2(1.0 / SCREEN_PIXEL_SIZE.x, 1.0 / SCREEN_PIXEL_SIZE.y);
-        highp vec2 finalCoords = FRAGCOORD.xy - directionalFovOffset[0];
+        highp vec2 finalCoords = FRAGCOORD.xy - directionalFovParameters[0];
         mediump float occlusion = scpDirectionalFovOcclusionMask(
             targetSize,
             finalCoords,
-            directionalFovParameters[0],
             directionalFovParameters[1],
             directionalFovParameters[2],
-            directionalFovParameters[3],
-            directionalFovParameters[4]);
+            directionalFovParameters[3]);
         visibility = directionalFovMode == 2 ? occlusion : 1.0 - occlusion;
     }
 

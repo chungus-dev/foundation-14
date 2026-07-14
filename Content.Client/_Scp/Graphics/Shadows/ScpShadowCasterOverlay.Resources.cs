@@ -28,8 +28,6 @@ public sealed partial class ScpShadowCasterOverlay
         var handle = _drawHandle!;
         handle.SetTransform(_targetMatrix);
         handle.UseShader(_unshadedShader);
-
-        // ponytail: DrawingHandleWorld has no scissor API; an opaque light-AABB quad clears the same useful pixels.
         handle.DrawRect(_currentMaskBounds, Color.Black);
 
         if (vertices.Count == 0)
