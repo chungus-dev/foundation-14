@@ -7,13 +7,11 @@ using Robust.Client.ComponentTrees;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
-using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Graphics;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Maths;
 using Robust.Shared.Profiling;
 using Robust.Shared.Prototypes;
 
@@ -144,27 +142,35 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     #region Main render pass
 
-    protected override void Draw(in OverlayDrawArgs args)
+    protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
         if (_mobQuality == ScpShadowQuality.Disabled && _objectQuality == ScpShadowQuality.Disabled)
-            return;
+            return false;
 
+        var eye = args.Viewport.Eye;
+        if (eye == null || args.MapId == MapId.Nullspace)
+            return false;
+
+        if (!eye.DrawLight)
+            return false;
+
+        if (!_lightManager.Enabled || !_lightManager.DrawLighting || !_lightManager.DrawShadows)
+            return false;
+
+        if (!_mapQuery.TryGetComponent(args.MapUid, out var map) || !map.LightingEnabled)
+            return false;
+
+        return true;
+    }
+
+    protected override void Draw(in OverlayDrawArgs args)
+    {
         var viewport = args.Viewport;
-        var eye = viewport.Eye;
+        var eye = viewport.Eye!;
 
-        if (eye == null ||
-            args.MapId == MapId.Nullspace ||
-            !_lightManager.Enabled ||
-            !_lightManager.DrawLighting ||
-            !_lightManager.DrawShadows ||
-            !eye.DrawLight ||
-            !_mapQuery.TryGetComponent(args.MapUid, out var map) ||
-            !map.LightingEnabled)
-        {
-            return;
-        }
-
+#if !RELEASE
         using var profile = _prof.Group("ScpVisualShadows");
+#endif
 
         PrepareFovContext(args, eye);
         var lightCount = GatherLights(args.MapId, args.WorldBounds, args.WorldAABB);
@@ -220,10 +226,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
                 {
                     var activeResources = resources ??= BeginRenderPass(args, eye);
                     if (!lightRenderStateReady)
-                    {
                         PrepareLightRenderState(light, softness);
-                        lightRenderStateReady = true;
-                    }
 
                     if (!outsidePassInitialized)
                     {
