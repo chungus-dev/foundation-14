@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Client.Clickable;
 using Content.Client._Scp.Graphics.Shaders.FieldOfView;
 using Content.Client.Graphics;
+using Content.Shared._Scp.Vision.FOV;
 using Robust.Client.ComponentTrees;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -53,6 +54,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     [Dependency] private ProfManager _prof = default!;
 
     private readonly FieldOfViewOverlayManagementSystem _fieldOfViewManagement;
+    private readonly FieldOfViewSystem _fieldOfViewSystem;
     private readonly LightTreeSystem _lightTree;
     private readonly OccluderSystem _occluderSystem;
     private readonly SpriteSystem _spriteSystem;
@@ -61,6 +63,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     private readonly EntityQuery<MapComponent> _mapQuery;
     private readonly EntityQuery<OccluderComponent> _occluderQuery;
+    private readonly EntityQuery<FieldOfViewOccludableComponent> _fovOccludableQuery;
     private readonly EntityQuery<ScpShadowForegroundVisualsComponent> _foregroundQuery;
     private readonly EntityQuery<ScpShadowCasterVisualsComponent> _shadowQuery;
 
@@ -69,8 +72,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     #region Render state
 
     private readonly ShaderPrototype _contributionPrototype;
-    private readonly ShaderInstance _localStencilShader;
-    private readonly ShaderInstance _localSubtractShader;
+    private readonly ShaderInstance _outsideSubtractShader;
     private readonly ShaderInstance _stencilShader;
     private readonly ShaderInstance _subtractShader;
     private readonly ShaderInstance _unshadedShader;
@@ -79,16 +81,16 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private readonly ScpShadowContourCache _contourCache;
 
     private readonly Action _drawCasterMask;
+    private readonly Action _drawOutsideCasterMask;
     private readonly Action _drawOccluderMask;
     private readonly Action _drawContribution;
     private readonly Action _drawComposite;
-    private readonly Action _drawLocalComposite;
-    private readonly Action _drawLocalShadowStencil;
+    private readonly Action _drawOutsideComposite;
     private readonly Action _drawProtectedSprites;
 
     private DrawingHandleWorld? _drawHandle;
-    private CachedResources? _currentResources;
     private ShaderInstance? _currentContributionShader;
+    private Texture? _currentCompositeTexture;
     private Texture _currentLightMask;
     private Box2 _currentMaskBounds;
     private float _worldUnitsPerMaskPixel;
@@ -104,6 +106,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         IoCManager.InjectDependencies(this);
 
         _fieldOfViewManagement = _entityManager.System<FieldOfViewOverlayManagementSystem>();
+        _fieldOfViewSystem = _entityManager.System<FieldOfViewSystem>();
         _lightTree = _entityManager.System<LightTreeSystem>();
         _occluderSystem = _entityManager.System<OccluderSystem>();
         _spriteSystem = _entityManager.System<SpriteSystem>();
@@ -112,6 +115,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
         _mapQuery = _entityManager.GetEntityQuery<MapComponent>();
         _occluderQuery = _entityManager.GetEntityQuery<OccluderComponent>();
+        _fovOccludableQuery = _entityManager.GetEntityQuery<FieldOfViewOccludableComponent>();
         _foregroundQuery = _entityManager.GetEntityQuery<ScpShadowForegroundVisualsComponent>();
         _shadowQuery = _entityManager.GetEntityQuery<ScpShadowCasterVisualsComponent>();
 
@@ -121,9 +125,8 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
         _contributionPrototype = _prototypes.Index(ContributionShader);
         _subtractShader = _prototypes.Index(SubtractShader).InstanceUnique();
-        _localSubtractShader = _prototypes.Index(SubtractShader).InstanceUnique();
+        _outsideSubtractShader = _prototypes.Index(SubtractShader).InstanceUnique();
         _stencilShader = _prototypes.Index(StencilShader).InstanceUnique();
-        _localStencilShader = _prototypes.Index(StencilShader).InstanceUnique();
         _unshadedShader = _prototypes.Index(UnshadedShader).Instance();
 
         ConfigureStencilShaders();
@@ -131,11 +134,11 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         InitializeLightQuad();
 
         _drawCasterMask = DrawCasterMask;
+        _drawOutsideCasterMask = DrawOutsideCasterMask;
         _drawOccluderMask = DrawOccluderMask;
         _drawContribution = DrawContribution;
         _drawComposite = DrawComposite;
-        _drawLocalComposite = DrawLocalComposite;
-        _drawLocalShadowStencil = DrawLocalShadowStencil;
+        _drawOutsideComposite = DrawOutsideComposite;
         _drawProtectedSprites = DrawProtectedSprites;
     }
 
@@ -179,8 +182,11 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         }
 
         ApplyProjectionPositions();
+        var needsOutsideContribution = _directionalFovActive && _hasOutsideFovCasters;
         CachedResources? resources = null;
-        _localShadowVertices.Clear();
+        var hasNormalShadows = false;
+        var hasOutsideShadows = false;
+        var outsidePassInitialized = false;
 
         for (var i = 0; i < lightCount; i++)
         {
@@ -191,28 +197,52 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
             var softness = GetLightSoftness(light);
             var occluderMaskReady = false;
             var lightRenderStateReady = false;
-            var excludedCaster = _renderLocalFovException ? _localPlayerCaster : null;
 
-            BuildCasterMask(light, excludedCaster, null);
+            BuildCasterMasks(light, needsOutsideContribution);
             if (_casterVertices.Count != 0)
             {
                 var activeResources = resources ??= BeginRenderPass(args, eye);
                 PrepareLightRenderState(light, softness);
                 lightRenderStateReady = true;
-                RenderCasterContribution(light, activeResources, softness, false, ref occluderMaskReady);
+                RenderCasterContribution(
+                    light,
+                    activeResources,
+                    activeResources.Contribution!,
+                    softness,
+                    false,
+                    ref occluderMaskReady);
+                hasNormalShadows = true;
             }
 
-            if (_renderLocalFovException && _localPlayerCaster is { } localPlayer)
+            if (needsOutsideContribution)
             {
-                BuildCasterMask(light, null, localPlayer);
-                if (_casterVertices.Count != 0)
+                if (_outsideCasterVertices.Count != 0)
                 {
                     var activeResources = resources ??= BeginRenderPass(args, eye);
                     if (!lightRenderStateReady)
+                    {
                         PrepareLightRenderState(light, softness);
+                        lightRenderStateReady = true;
+                    }
 
-                    _localShadowVertices.AddRange(_casterVertices);
-                    RenderCasterContribution(light, activeResources, softness, true, ref occluderMaskReady);
+                    if (!outsidePassInitialized)
+                    {
+                        activeResources.EnsureOutsideSize(_clyde, viewport.LightRenderTarget.Size);
+                        _drawHandle!.RenderInRenderTarget(
+                            activeResources.OutsideContribution!,
+                            EmptyDraw,
+                            Color.Black);
+                        outsidePassInitialized = true;
+                    }
+
+                    RenderCasterContribution(
+                        light,
+                        activeResources,
+                        activeResources.OutsideContribution!,
+                        softness,
+                        true,
+                        ref occluderMaskReady);
+                    hasOutsideShadows = true;
                 }
             }
         }
@@ -224,20 +254,30 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         }
 
         if (_lightBlur)
-            _clyde.BlurRenderTarget(viewport, resources.Contribution!, resources.Blur!, eye, 14f);
+        {
+            if (hasNormalShadows)
+                _clyde.BlurRenderTarget(viewport, resources.Contribution!, resources.Blur!, eye, 14f);
+
+            if (hasOutsideShadows)
+                _clyde.BlurRenderTarget(viewport, resources.OutsideContribution!, resources.Blur!, eye, 14f);
+        }
 
         SetCompositeFovParameters();
 
-        if (_renderLocalFovException && _localShadowVertices.Count != 0)
-            _drawHandle!.RenderInRenderTarget(viewport.LightRenderTarget, _drawLocalShadowStencil, null);
-
-        if (_protectedSpriteLayers.Count != 0)
+        if ((hasNormalShadows || hasOutsideShadows) && _protectedSpriteLayers.Count != 0)
             _drawHandle!.RenderInRenderTarget(viewport.LightRenderTarget, _drawProtectedSprites, null);
 
-        _drawHandle!.RenderInRenderTarget(viewport.LightRenderTarget, _drawComposite, null);
+        if (hasNormalShadows)
+        {
+            _currentCompositeTexture = resources.Contribution!.Texture;
+            _drawHandle!.RenderInRenderTarget(viewport.LightRenderTarget, _drawComposite, null);
+        }
 
-        if (_renderLocalFovException && _localShadowVertices.Count != 0)
-            _drawHandle!.RenderInRenderTarget(viewport.LightRenderTarget, _drawLocalComposite, null);
+        if (hasOutsideShadows)
+        {
+            _currentCompositeTexture = resources.OutsideContribution!.Texture;
+            _drawHandle!.RenderInRenderTarget(viewport.LightRenderTarget, _drawOutsideComposite, null);
+        }
 
         ClearDrawState();
     }
@@ -252,7 +292,6 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         resources.BeginFrame();
 
         _drawHandle = args.WorldHandle;
-        _currentResources = resources;
         _worldBounds = args.WorldBounds;
 
         var lightScale = viewport.LightRenderTarget.Size / (Vector2) viewport.Size;
@@ -283,11 +322,13 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private void RenderCasterContribution(
         in LightData light,
         CachedResources resources,
+        IRenderTexture contributionTarget,
         float softness,
-        bool localContribution,
+        bool outsideFovContribution,
         ref bool occluderMaskReady)
     {
-        _drawHandle!.RenderInRenderTarget(resources.CasterMask!, _drawCasterMask, null);
+        var drawMask = outsideFovContribution ? _drawOutsideCasterMask : _drawCasterMask;
+        _drawHandle!.RenderInRenderTarget(resources.CasterMask!, drawMask, null);
 
         if (!occluderMaskReady)
         {
@@ -299,9 +340,8 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         _currentContributionShader = GetContributionShader(
             light,
             resources,
-            softness,
-            localContribution);
-        _drawHandle.RenderInRenderTarget(resources.Contribution!, _drawContribution, null);
+            softness);
+        _drawHandle.RenderInRenderTarget(contributionTarget, _drawContribution, null);
     }
 
     #endregion
@@ -311,8 +351,8 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private void ClearDrawState()
     {
         _drawHandle = null;
-        _currentResources = null;
         _currentContributionShader = null;
+        _currentCompositeTexture = null;
         _currentLightMask = _whiteTexture;
         _localPlayerCaster = null;
         _renderLocalFovException = false;
@@ -322,8 +362,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     {
         _configurationSubscription.Dispose();
         _resources.Dispose();
-        _localStencilShader.Dispose();
-        _localSubtractShader.Dispose();
+        _outsideSubtractShader.Dispose();
         _stencilShader.Dispose();
         _subtractShader.Dispose();
 

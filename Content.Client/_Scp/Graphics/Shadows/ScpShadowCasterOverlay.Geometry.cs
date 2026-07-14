@@ -27,11 +27,12 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly List<Vector2> _frameOccluderVertices = new(1024);
     private readonly List<ProtectedSpriteLayer> _protectedSpriteLayers = new(512);
     private readonly List<DrawVertexUV2DColor> _casterVertices = new(2048);
-    private readonly List<DrawVertexUV2DColor> _localShadowVertices = new(1024);
+    private readonly List<DrawVertexUV2DColor> _outsideCasterVertices = new(1024);
     private readonly List<DrawVertexUV2DColor> _occluderVertices = new(2048);
     private readonly Dictionary<EntityUid, Vector2> _foregroundProjectionPositions = new(32);
     private readonly Vector2[] _boxContour = new Vector2[4];
     private Vector2[] _worldContour = new Vector2[32];
+    private bool _hasOutsideFovCasters;
 
     private Box2 GetFrameQueryBounds(Box2 worldAabb)
     {
@@ -118,6 +119,7 @@ public sealed partial class ScpShadowCasterOverlay
         _frameContourVertices.Clear();
         _protectedSpriteLayers.Clear();
         _foregroundProjectionPositions.Clear();
+        _hasOutsideFovCasters = false;
 
         var state = new SpriteQueryState(this, viewportBounds);
         foreach (var (treeUid, tree) in _spriteTree.GetIntersectingTrees(mapId, queryBounds))
@@ -177,6 +179,8 @@ public sealed partial class ScpShadowCasterOverlay
         var contourBounds = default(Box2);
         var hasOpaqueBounds = false;
         var opaqueBounds = default(Box2);
+        var spriteFovAlpha = 1f;
+        var spriteFovAlphaReady = !_directionalFovActive;
 
         if (shadow != null)
         {
@@ -228,11 +232,24 @@ public sealed partial class ScpShadowCasterOverlay
 
                 if (worldMatrix.TransformBox(quad).Intersects(viewportBounds))
                 {
-                    _protectedSpriteLayers.Add(new ProtectedSpriteLayer(
-                        texture,
-                        worldMatrix,
-                        quad,
-                        sprite.Color * layer.Color));
+                    if (!spriteFovAlphaReady)
+                    {
+                        spriteFovAlpha = GetSpriteDirectionalFovAlpha(candidate.Owner, candidate.Comp2);
+                        if (MathF.Abs(sprite.Color.A - sprite.Color.A * spriteFovAlpha) <= 0.01f)
+                            spriteFovAlpha = 1f;
+                        spriteFovAlphaReady = true;
+                    }
+
+                    var modulate = sprite.Color * layer.Color;
+                    modulate = modulate.WithAlpha(modulate.A * spriteFovAlpha);
+                    if (modulate.A >= SpriteAlphaThreshold)
+                    {
+                        _protectedSpriteLayers.Add(new ProtectedSpriteLayer(
+                            texture,
+                            worldMatrix,
+                            quad,
+                            modulate));
+                    }
                 }
 
                 if (isForeground)
@@ -305,11 +322,16 @@ public sealed partial class ScpShadowCasterOverlay
 
         if (hasContourBounds)
         {
+            var fovVisibility = GetCasterDirectionalFovVisibility(
+                candidate.Owner,
+                candidate.Comp2);
             _frameCasters.Add(new CachedCaster(
                 candidate.Owner,
                 contourStart,
                 _frameContours.Count - contourStart,
-                contourBounds));
+                contourBounds,
+                fovVisibility));
+            _hasOutsideFovCasters |= (fovVisibility & DirectionalFovVisibility.Outside) != 0;
         }
     }
 
@@ -343,9 +365,10 @@ public sealed partial class ScpShadowCasterOverlay
 
     #region Caster mask
 
-    private void BuildCasterMask(in LightData light, EntityUid? excludedCaster, EntityUid? onlyCaster)
+    private void BuildCasterMasks(in LightData light, bool buildOutsideMask)
     {
         _casterVertices.Clear();
+        _outsideCasterVertices.Clear();
         var lightCircle = new Circle(light.Position, light.Component.Radius);
         var projectionPosition = light.ProjectionPosition;
 
@@ -353,20 +376,19 @@ public sealed partial class ScpShadowCasterOverlay
         {
             var caster = _frameCasters[i];
             if (caster.Owner == light.Owner ||
-                excludedCaster == caster.Owner ||
-                onlyCaster != null && onlyCaster != caster.Owner ||
                 !lightCircle.Intersects(caster.Bounds))
             {
                 continue;
             }
 
-            // A light visually overlapping a silhouette cannot define a stable extrusion
-            // direction. Skip only this light-caster pair; other lights still cast its shadow.
-            if (caster.Bounds.Enlarged(NearLightDistance).Contains(projectionPosition) &&
-                ProjectionTouchesCaster(caster, projectionPosition))
-            {
+            var renderInside = (caster.FovVisibility & DirectionalFovVisibility.Inside) != 0;
+            var outsideVertices = buildOutsideMask &&
+                (caster.FovVisibility & DirectionalFovVisibility.Outside) != 0
+                ? _outsideCasterVertices
+                : null;
+
+            if (!renderInside && outsideVertices == null)
                 continue;
-            }
 
             for (var contourIndex = 0; contourIndex < caster.ContourCount; contourIndex++)
             {
@@ -376,13 +398,23 @@ public sealed partial class ScpShadowCasterOverlay
 
                 var vertices = CollectionsMarshal.AsSpan(_frameContourVertices)
                     .Slice(contour.VertexStart, contour.VertexCount);
+
+                // Only the overlapping sprite layer is geometrically ambiguous. Skipping
+                // the whole multi-layer caster makes the body disappear when a hand touches a lamp.
+                if (contour.Bounds.Enlarged(NearLightDistance).Contains(projectionPosition) &&
+                    ContainsOrNear(vertices, projectionPosition, NearLightDistance))
+                {
+                    continue;
+                }
+
                 AppendShadowVolume(
                     vertices,
                     contour.Winding,
                     projectionPosition,
                     light.Position,
                     light.Component.Radius,
-                    _casterVertices);
+                    renderInside ? _casterVertices : null,
+                    outsideVertices);
             }
         }
     }
@@ -490,7 +522,8 @@ public sealed partial class ScpShadowCasterOverlay
         Vector2 projectionOrigin,
         Vector2 lightPosition,
         float lightRadius,
-        List<DrawVertexUV2DColor> vertices)
+        List<DrawVertexUV2DColor>? vertices,
+        List<DrawVertexUV2DColor>? duplicateVertices = null)
     {
         if (contour.Length < 2)
             return;
@@ -508,7 +541,10 @@ public sealed partial class ScpShadowCasterOverlay
 
             var farStart = ProjectToLightRadius(start, projectionOrigin, lightPosition, lightRadius);
             var farEnd = ProjectToLightRadius(end, projectionOrigin, lightPosition, lightRadius);
-            AppendQuad(start, end, farEnd, farStart, vertices);
+            if (vertices != null)
+                AppendQuad(start, end, farEnd, farStart, vertices);
+            if (duplicateVertices != null)
+                AppendQuad(start, end, farEnd, farStart, duplicateVertices);
         }
     }
 
@@ -579,23 +615,6 @@ public sealed partial class ScpShadowCasterOverlay
     #endregion
 
     #region Point and edge checks
-
-    private bool ProjectionTouchesCaster(in CachedCaster caster, Vector2 projectionPosition)
-    {
-        for (var contourIndex = 0; contourIndex < caster.ContourCount; contourIndex++)
-        {
-            var contour = _frameContours[caster.ContourStart + contourIndex];
-            if (!contour.Bounds.Enlarged(NearLightDistance).Contains(projectionPosition))
-                continue;
-
-            var vertices = CollectionsMarshal.AsSpan(_frameContourVertices)
-                .Slice(contour.VertexStart, contour.VertexCount);
-            if (ContainsOrNear(vertices, projectionPosition, NearLightDistance))
-                return true;
-        }
-
-        return false;
-    }
 
     private static bool ContainsOrNear(ReadOnlySpan<Vector2> contour, Vector2 point, float maximumDistance)
     {
@@ -720,7 +739,8 @@ public sealed partial class ScpShadowCasterOverlay
         EntityUid Owner,
         int ContourStart,
         int ContourCount,
-        Box2 Bounds);
+        Box2 Bounds,
+        DirectionalFovVisibility FovVisibility);
 
     private readonly record struct CachedContour(
         int VertexStart,

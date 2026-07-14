@@ -14,6 +14,9 @@ public sealed partial class ScpShadowCasterOverlay
     private const float FovAdditionalMarginMeters = 0.4f;
     private const float MinimumFovFeatherPixels = 0.0001f;
     private const float MinimumFovConeThresholdSpan = 0.0001f;
+    private const int HardFovStencilBit = 0x80;
+    private const int InsideProtectionStencilBit = 0x01;
+    private const int OutsideProtectionStencilBit = 0x02;
 
     #region FOV frame state
 
@@ -28,7 +31,7 @@ public sealed partial class ScpShadowCasterOverlay
     private bool _directionalFovActive;
     private bool _renderLocalFovException;
     private readonly CompositeFovShaderState _normalCompositeFovState = new();
-    private readonly CompositeFovShaderState _localCompositeFovState = new();
+    private readonly CompositeFovShaderState _outsideCompositeFovState = new();
 
     private void PrepareFovContext(in OverlayDrawArgs args, IEye eye)
     {
@@ -59,6 +62,65 @@ public sealed partial class ScpShadowCasterOverlay
 
         var quality = shadow.Kind == ScpShadowCasterKind.Mob ? _mobQuality : _objectQuality;
         _renderLocalFovException = quality != ScpShadowQuality.Disabled;
+    }
+
+    private DirectionalFovVisibility GetSpriteDirectionalFovVisibility(
+        EntityUid uid,
+        TransformComponent transform)
+    {
+        if (!_directionalFovActive)
+            return DirectionalFovVisibility.Inside;
+
+        if (!_fovOccludableQuery.TryGetComponent(uid, out var occludable))
+            return DirectionalFovVisibility.Both;
+
+        if (occludable.Source == _localPlayerCaster ||
+            transform.Anchored && !occludable.OccludeIfAnchored)
+        {
+            return DirectionalFovVisibility.Both;
+        }
+
+        return occludable.Inverted
+            ? DirectionalFovVisibility.Outside
+            : DirectionalFovVisibility.Inside;
+    }
+
+    private DirectionalFovVisibility GetCasterDirectionalFovVisibility(
+        EntityUid caster,
+        TransformComponent transform)
+    {
+        var visibility = GetSpriteDirectionalFovVisibility(caster, transform);
+        if (caster != _localPlayerCaster)
+            return visibility;
+
+        visibility |= DirectionalFovVisibility.Inside;
+        return _renderLocalFovException
+            ? visibility | DirectionalFovVisibility.Outside
+            : visibility & ~DirectionalFovVisibility.Outside;
+    }
+
+    private float GetSpriteDirectionalFovAlpha(EntityUid uid, TransformComponent transform)
+    {
+        if (!_directionalFovActive ||
+            !_fovOccludableQuery.TryGetComponent(uid, out var occludable) ||
+            occludable.Source == _localPlayerCaster ||
+            transform.Anchored && !occludable.OccludeIfAnchored ||
+            _localPlayerCaster is not { } localPlayer ||
+            _directionalFov == null ||
+            _directionalTransform == null)
+        {
+            return 1f;
+        }
+
+        var alpha = _fieldOfViewSystem.GetVisibilityAlpha(
+            (localPlayer, _directionalTransform),
+            (uid, transform),
+            _directionalFov.Angle,
+            _directionalFov.AngleFeather,
+            true,
+            _directionalFov.ConeIgnoreRadius,
+            _directionalFov.ConeIgnoreFeather);
+        return occludable.Inverted ? 1f - alpha : alpha;
     }
 
     private void PrepareFovRenderParameters(Vector2 lightScale)
@@ -133,8 +195,8 @@ public sealed partial class ScpShadowCasterOverlay
             _normalCompositeFovState,
             _directionalFovActive ? 1 : 0);
         SetCompositeFovParameters(
-            _localSubtractShader,
-            _localCompositeFovState,
+            _outsideSubtractShader,
+            _outsideCompositeFovState,
             _directionalFovActive ? 2 : 0);
     }
 
@@ -167,20 +229,22 @@ public sealed partial class ScpShadowCasterOverlay
 
     private void ConfigureStencilShaders()
     {
+        // Hard FOV leaves all bits set in visible pixels. The two low bits gate
+        // inside/outside composites and are cleared together under visible sprites.
         _subtractShader.Stencil = new StencilParameters
         {
             Enabled = true,
-            Ref = 0x80,
-            ReadMask = 0x80,
+            Ref = HardFovStencilBit | InsideProtectionStencilBit,
+            ReadMask = HardFovStencilBit | InsideProtectionStencilBit,
             WriteMask = 0,
             Func = StencilFunc.Equal,
             Op = StencilOp.Keep,
         };
-        _localSubtractShader.Stencil = new StencilParameters
+        _outsideSubtractShader.Stencil = new StencilParameters
         {
             Enabled = true,
-            Ref = 0xFE,
-            ReadMask = 0xFF,
+            Ref = HardFovStencilBit | OutsideProtectionStencilBit,
+            ReadMask = HardFovStencilBit | OutsideProtectionStencilBit,
             WriteMask = 0,
             Func = StencilFunc.Equal,
             Op = StencilOp.Keep,
@@ -188,18 +252,9 @@ public sealed partial class ScpShadowCasterOverlay
         _stencilShader.Stencil = new StencilParameters
         {
             Enabled = true,
-            Ref = 0,
-            ReadMask = 0xFF,
-            WriteMask = 0xFF,
-            Func = StencilFunc.Always,
-            Op = StencilOp.Replace,
-        };
-        _localStencilShader.Stencil = new StencilParameters
-        {
-            Enabled = true,
-            Ref = 0xFE,
-            ReadMask = 0x80,
-            WriteMask = 0xFF,
+            Ref = HardFovStencilBit,
+            ReadMask = HardFovStencilBit,
+            WriteMask = InsideProtectionStencilBit | OutsideProtectionStencilBit,
             Func = StencilFunc.Equal,
             Op = StencilOp.Replace,
         };
@@ -223,6 +278,15 @@ public sealed partial class ScpShadowCasterOverlay
             Parameters[index] = value;
             dirty = true;
         }
+    }
+
+    [Flags]
+    private enum DirectionalFovVisibility : byte
+    {
+        None = 0,
+        Inside = 1 << 0,
+        Outside = 1 << 1,
+        Both = Inside | Outside,
     }
 
     #endregion

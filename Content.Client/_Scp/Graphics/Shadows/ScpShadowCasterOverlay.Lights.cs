@@ -108,8 +108,7 @@ public sealed partial class ScpShadowCasterOverlay
     private ShaderInstance GetContributionShader(
         in LightData light,
         CachedResources resources,
-        float softness,
-        bool localContribution)
+        float softness)
     {
         var casterMask = resources.CasterMask!;
         var occluderMask = resources.OccluderMask!;
@@ -121,7 +120,6 @@ public sealed partial class ScpShadowCasterOverlay
         return resources.GetContributionShader(
             _contributionPrototype,
             light.Owner,
-            localContribution,
             casterMask.Texture,
             occluderMask.Texture,
             light.Component.Color,

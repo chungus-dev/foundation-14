@@ -18,6 +18,11 @@ public sealed partial class ScpShadowCasterOverlay
         DrawMaskVertices(_casterVertices);
     }
 
+    private void DrawOutsideCasterMask()
+    {
+        DrawMaskVertices(_outsideCasterVertices);
+    }
+
     private void DrawOccluderMask()
     {
         DrawMaskVertices(_occluderVertices);
@@ -37,18 +42,6 @@ public sealed partial class ScpShadowCasterOverlay
         }
 
         DrawTriangleList(handle, CollectionsMarshal.AsSpan(vertices));
-        handle.UseShader(null);
-    }
-
-    private void DrawLocalShadowStencil()
-    {
-        if (_localShadowVertices.Count == 0)
-            return;
-
-        var handle = _drawHandle!;
-        handle.SetTransform(_targetMatrix);
-        handle.UseShader(_localStencilShader);
-        DrawTriangleList(handle, CollectionsMarshal.AsSpan(_localShadowVertices));
         handle.UseShader(null);
     }
 
@@ -92,16 +85,16 @@ public sealed partial class ScpShadowCasterOverlay
         var handle = _drawHandle!;
         handle.SetTransform(_targetMatrix);
         handle.UseShader(_subtractShader);
-        handle.DrawTextureRect(_currentResources!.Contribution!.Texture, _worldBounds);
+        handle.DrawTextureRect(_currentCompositeTexture!, _worldBounds);
         handle.UseShader(null);
     }
 
-    private void DrawLocalComposite()
+    private void DrawOutsideComposite()
     {
         var handle = _drawHandle!;
         handle.SetTransform(_targetMatrix);
-        handle.UseShader(_localSubtractShader);
-        handle.DrawTextureRect(_currentResources!.Contribution!.Texture, _worldBounds);
+        handle.UseShader(_outsideSubtractShader);
+        handle.DrawTextureRect(_currentCompositeTexture!, _worldBounds);
         handle.UseShader(null);
     }
 
@@ -118,6 +111,7 @@ public sealed partial class ScpShadowCasterOverlay
         public IRenderTexture? CasterMask;
         public IRenderTexture? OccluderMask;
         public IRenderTexture? Contribution;
+        public IRenderTexture? OutsideContribution;
         public IRenderTexture? Blur;
 
         private readonly Dictionary<LightShaderKey, CachedLightShader> _lightShaders = new(256);
@@ -148,7 +142,6 @@ public sealed partial class ScpShadowCasterOverlay
         public ShaderInstance GetContributionShader(
             ShaderPrototype prototype,
             EntityUid owner,
-            bool localContribution,
             Texture casterMask,
             Texture occluderMask,
             Color lightColor,
@@ -159,7 +152,7 @@ public sealed partial class ScpShadowCasterOverlay
             float lightSoftness,
             Vector2 lightCenterUv)
         {
-            var key = new LightShaderKey(owner, localContribution);
+            var key = new LightShaderKey(owner);
             if (!_lightShaders.TryGetValue(key, out var cached))
             {
                 if (_lightShaders.Count >= MaxCachedLightShaders)
@@ -205,22 +198,34 @@ public sealed partial class ScpShadowCasterOverlay
 
         public void EnsureSize(IClyde clyde, Vector2i size)
         {
-            if (CasterMask?.Size == size &&
+            var baseResourcesReady = CasterMask?.Size == size &&
                 OccluderMask?.Size == size &&
                 Contribution?.Size == size &&
-                Blur?.Size == size)
+                Blur?.Size == size;
+            if (!baseResourcesReady)
             {
-                return;
+                Dispose();
+
+                var maskFormat = new RenderTargetFormatParameters(RenderTargetColorFormat.R8);
+                var maskSamples = new TextureSampleParameters { Filter = true };
+                CasterMask = clyde.CreateRenderTarget(size, maskFormat, maskSamples, "scp-shadow-caster-mask");
+                OccluderMask = clyde.CreateRenderTarget(size, maskFormat, maskSamples, "scp-shadow-occluder-mask");
+                Contribution = clyde.CreateLightRenderTarget(size, "scp-shadow-contribution", false);
+                Blur = clyde.CreateLightRenderTarget(size, "scp-shadow-contribution-blur", false);
             }
 
-            Dispose();
+        }
 
-            var maskFormat = new RenderTargetFormatParameters(RenderTargetColorFormat.R8);
-            var maskSamples = new TextureSampleParameters { Filter = true };
-            CasterMask = clyde.CreateRenderTarget(size, maskFormat, maskSamples, "scp-shadow-caster-mask");
-            OccluderMask = clyde.CreateRenderTarget(size, maskFormat, maskSamples, "scp-shadow-occluder-mask");
-            Contribution = clyde.CreateLightRenderTarget(size, "scp-shadow-contribution", false);
-            Blur = clyde.CreateLightRenderTarget(size, "scp-shadow-contribution-blur", false);
+        public void EnsureOutsideSize(IClyde clyde, Vector2i size)
+        {
+            if (OutsideContribution?.Size == size)
+                return;
+
+            OutsideContribution?.Dispose();
+            OutsideContribution = clyde.CreateLightRenderTarget(
+                size,
+                "scp-shadow-outside-fov-contribution",
+                false);
         }
 
         public void Dispose()
@@ -233,15 +238,17 @@ public sealed partial class ScpShadowCasterOverlay
             CasterMask?.Dispose();
             OccluderMask?.Dispose();
             Contribution?.Dispose();
+            OutsideContribution?.Dispose();
             Blur?.Dispose();
 
             CasterMask = null;
             OccluderMask = null;
             Contribution = null;
+            OutsideContribution = null;
             Blur = null;
         }
 
-        private readonly record struct LightShaderKey(EntityUid Owner, bool LocalContribution);
+        private readonly record struct LightShaderKey(EntityUid Owner);
 
         private sealed class CachedLightShader(ShaderInstance shader) : IDisposable
         {
