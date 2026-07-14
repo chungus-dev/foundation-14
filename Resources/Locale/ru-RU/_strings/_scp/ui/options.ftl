@@ -16,7 +16,6 @@ ui-options-scp-local-player-shadow-outside-fov = Показывать свою �
 ui-options-scp-local-player-shadow-outside-fov-tooltip = Показывает собственную тень за пределами направленного поля зрения. Стены и закрытые двери по-прежнему её обрезают.
 ui-options-scp-shadow-quality-disabled = Отключены
 ui-options-scp-shadow-quality-bounds = Границы
-ui-options-scp-shadow-quality-hull = Выпуклая оболочка
 ui-options-scp-shadow-quality-sprite = Спрайт
 
 ui-options-grain-toggle-overlay = Использовать шейдер зернистости

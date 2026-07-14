@@ -26,27 +26,18 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly List<CachedOccluder> _frameOccluders = new(256);
     private readonly List<Vector2> _frameOccluderVertices = new(1024);
     private readonly List<ProtectedSpriteLayer> _protectedSpriteLayers = new(512);
-    private readonly List<DrawVertexUV2DColor> _casterVertices = new(2048);
-    private readonly List<DrawVertexUV2DColor> _outsideCasterVertices = new(1024);
-    private readonly List<DrawVertexUV2DColor> _occluderVertices = new(2048);
+    private readonly HashSet<EntityUid> _frameSpriteEntities = new(256);
+    private readonly List<Box2> _spriteQueryBounds = new(16);
+    private static readonly Color InsideMaskColor = new(1f, 0f, 0f, 1f);
+    private static readonly Color OutsideMaskColor = new(0f, 1f, 0f, 1f);
+    private static readonly Color BothMaskColor = new(1f, 1f, 0f, 1f);
+    private static readonly Color OccluderMaskColor = new(0f, 0f, 1f, 1f);
+
     private readonly Dictionary<EntityUid, Vector2> _foregroundProjectionPositions = new(32);
     private readonly Vector2[] _boxContour = new Vector2[4];
     private Vector2[] _worldContour = new Vector2[32];
     private bool _hasOutsideFovCasters;
-
-    private Box2 GetFrameQueryBounds(Box2 worldAabb)
-    {
-        var result = worldAabb;
-
-        for (var i = 0; i < _lights.Count; i++)
-        {
-            var light = _lights[i];
-            var radius = new Vector2(light.Component.Radius);
-            result = result.Union(new Box2(light.Position - radius, light.Position + radius));
-        }
-
-        return result;
-    }
+    private bool _outsideMaskMatchesInside;
 
     private Box2 GetFrameOccluderQueryBounds(Box2 worldAabb)
     {
@@ -74,7 +65,7 @@ public sealed partial class ScpShadowCasterOverlay
         {
             var localBounds = _transformSystem.GetInvWorldMatrix(treeUid).TransformBox(queryBounds);
             tree.Tree.QueryAabb(ref state, QueryOccluder, localBounds);
-            if (_frameOccluders.Count >= _maxOccluders)
+            if (_frameOccluders.Count >= _system.MaxOccluders)
                 break;
         }
     }
@@ -84,7 +75,7 @@ public sealed partial class ScpShadowCasterOverlay
         in ComponentTreeEntry<OccluderComponent> entry)
     {
         var overlay = state.Overlay;
-        if (overlay._frameOccluders.Count >= overlay._maxOccluders)
+        if (overlay._frameOccluders.Count >= overlay._system.MaxOccluders)
             return false;
 
         var occluder = entry.Component;
@@ -109,18 +100,55 @@ public sealed partial class ScpShadowCasterOverlay
             vertexStart,
             new Box2(minimum, maximum),
             GetWinding(overlay._boxContour)));
-        return overlay._frameOccluders.Count < overlay._maxOccluders;
+        return overlay._frameOccluders.Count < overlay._system.MaxOccluders;
     }
 
-    private void BuildFrameCache(MapId mapId, Box2 queryBounds, Box2 viewportBounds)
+    private void BuildFrameCache(MapId mapId, Box2 viewportBounds)
     {
         _frameCasters.Clear();
         _frameContours.Clear();
         _frameContourVertices.Clear();
         _protectedSpriteLayers.Clear();
+        _frameSpriteEntities.Clear();
+        _spriteQueryBounds.Clear();
         _foregroundProjectionPositions.Clear();
         _hasOutsideFovCasters = false;
+        _outsideMaskMatchesInside = true;
 
+        AddSpriteQueryBounds(viewportBounds);
+
+        for (var i = 0; i < _lights.Count; i++)
+        {
+            var light = _lights[i];
+            var radius = new Vector2(light.Radius);
+            AddSpriteQueryBounds(new Box2(light.Position - radius, light.Position + radius));
+        }
+
+        for (var i = 0; i < _spriteQueryBounds.Count; i++)
+            QuerySpriteBounds(mapId, _spriteQueryBounds[i], viewportBounds);
+    }
+
+    private void AddSpriteQueryBounds(Box2 bounds)
+    {
+        for (var i = 0; i < _spriteQueryBounds.Count; i++)
+        {
+            var current = _spriteQueryBounds[i];
+            if (current.Contains(bounds))
+                return;
+
+            if (!current.Intersects(bounds))
+                continue;
+
+            bounds = current.Union(bounds);
+            _spriteQueryBounds.RemoveAt(i);
+            i = -1;
+        }
+
+        _spriteQueryBounds.Add(bounds);
+    }
+
+    private void QuerySpriteBounds(MapId mapId, Box2 queryBounds, Box2 viewportBounds)
+    {
         var state = new SpriteQueryState(this, viewportBounds);
         foreach (var (treeUid, tree) in _spriteTree.GetIntersectingTrees(mapId, queryBounds))
         {
@@ -138,6 +166,9 @@ public sealed partial class ScpShadowCasterOverlay
         if (!sprite.Visible || sprite.ContainerOccluded || sprite.Color.A == 0f)
             return true;
 
+        if (!overlay._frameSpriteEntities.Add(entry.Uid))
+            return true;
+
         var isForeground = overlay._foregroundQuery.HasComp(entry.Uid);
         var isCaster = overlay._shadowQuery.TryGetComponent(entry.Uid, out var shadow);
         var quality = ScpShadowQuality.Disabled;
@@ -145,8 +176,8 @@ public sealed partial class ScpShadowCasterOverlay
         if (isCaster)
         {
             quality = shadow!.Kind == ScpShadowCasterKind.Mob
-                ? overlay._mobQuality
-                : overlay._objectQuality;
+                ? overlay._system.MobQuality
+                : overlay._system.ObjectQuality;
             isCaster = quality != ScpShadowQuality.Disabled &&
                 (!overlay._occluderQuery.TryGetComponent(entry.Uid, out var occluder) || !occluder.Enabled);
         }
@@ -285,9 +316,8 @@ public sealed partial class ScpShadowCasterOverlay
                         layer.State,
                         drawDirection,
                         layer.AnimationFrame,
-                        quality,
                         out contours)
-                    : layer.Texture != null && _contourCache.TryGetContours(layer.Texture, quality, out contours);
+                    : layer.Texture != null && _contourCache.TryGetContours(layer.Texture, out contours);
 
                 if (!hasContours)
                     continue;
@@ -332,6 +362,7 @@ public sealed partial class ScpShadowCasterOverlay
                 contourBounds,
                 fovVisibility));
             _hasOutsideFovCasters |= (fovVisibility & DirectionalFovVisibility.Outside) != 0;
+            _outsideMaskMatchesInside &= fovVisibility == DirectionalFovVisibility.Both;
         }
     }
 
@@ -365,11 +396,12 @@ public sealed partial class ScpShadowCasterOverlay
 
     #region Caster mask
 
-    private void BuildCasterMasks(in LightData light, bool buildOutsideMask)
+    private void BuildCasterMasks(
+        in LightData light,
+        bool buildOutsideMask,
+        LightGeometryBuffer geometry)
     {
-        _casterVertices.Clear();
-        _outsideCasterVertices.Clear();
-        var lightCircle = new Circle(light.Position, light.Component.Radius);
+        var lightCircle = new Circle(light.Position, light.Radius);
         var projectionPosition = light.ProjectionPosition;
 
         for (var i = 0; i < _frameCasters.Count; i++)
@@ -382,13 +414,15 @@ public sealed partial class ScpShadowCasterOverlay
             }
 
             var renderInside = (caster.FovVisibility & DirectionalFovVisibility.Inside) != 0;
-            var outsideVertices = buildOutsideMask &&
-                (caster.FovVisibility & DirectionalFovVisibility.Outside) != 0
-                ? _outsideCasterVertices
-                : null;
+            var renderOutside = buildOutsideMask &&
+                (caster.FovVisibility & DirectionalFovVisibility.Outside) != 0;
 
-            if (!renderInside && outsideVertices == null)
+            if (!renderInside && !renderOutside)
                 continue;
+
+            var maskColor = renderInside
+                ? renderOutside ? BothMaskColor : InsideMaskColor
+                : OutsideMaskColor;
 
             for (var contourIndex = 0; contourIndex < caster.ContourCount; contourIndex++)
             {
@@ -407,14 +441,22 @@ public sealed partial class ScpShadowCasterOverlay
                     continue;
                 }
 
-                AppendShadowVolume(
+                var vertexStart = geometry.Vertices.Count;
+                if (!AppendShadowVolume(
                     vertices,
                     contour.Winding,
                     projectionPosition,
                     light.Position,
-                    light.Component.Radius,
-                    renderInside ? _casterVertices : null,
-                    outsideVertices);
+                    light.Radius,
+                    geometry.Vertices,
+                    maskColor))
+                {
+                    continue;
+                }
+
+                geometry.ExtendCasterBounds(vertexStart, renderInside, renderOutside);
+                geometry.HasInsideMask |= renderInside;
+                geometry.HasOutsideMask |= renderOutside;
             }
         }
     }
@@ -423,11 +465,9 @@ public sealed partial class ScpShadowCasterOverlay
 
     #region Stock occluder mask
 
-    private void BuildOccluderMask(in LightData light)
+    private void BuildOccluderMask(in LightData light, LightGeometryBuffer geometry)
     {
-        _occluderVertices.Clear();
-
-        var lightCircle = new Circle(light.Position, light.Component.Radius);
+        var lightCircle = new Circle(light.Position, light.Radius);
         for (var i = 0; i < _frameOccluders.Count; i++)
         {
             var occluder = _frameOccluders[i];
@@ -436,7 +476,10 @@ public sealed partial class ScpShadowCasterOverlay
 
             var vertices = CollectionsMarshal.AsSpan(_frameOccluderVertices)
                 .Slice(occluder.VertexStart, 4);
-            AppendFilledContour(vertices, _occluderVertices);
+            geometry.HasOccluderMask |= AppendFilledContour(
+                vertices,
+                geometry.Vertices,
+                OccluderMaskColor);
 
             var projectionOrigin = occluder.Bounds.Enlarged(NearLightDistance).Contains(light.Position)
                 ? GetSafeOccluderProjectionOrigin(
@@ -445,13 +488,14 @@ public sealed partial class ScpShadowCasterOverlay
                     light.Position,
                     NearLightDistance)
                 : light.Position;
-            AppendShadowVolume(
+            geometry.HasOccluderMask |= AppendShadowVolume(
                 vertices,
                 occluder.Winding,
                 projectionOrigin,
                 light.Position,
-                light.Component.Radius,
-                _occluderVertices);
+                light.Radius,
+                geometry.Vertices,
+                OccluderMaskColor);
         }
     }
 
@@ -516,17 +560,19 @@ public sealed partial class ScpShadowCasterOverlay
 
     #region Shadow volumes
 
-    private static void AppendShadowVolume(
+    private static bool AppendShadowVolume(
         ReadOnlySpan<Vector2> contour,
         float winding,
         Vector2 projectionOrigin,
         Vector2 lightPosition,
         float lightRadius,
-        List<DrawVertexUV2DColor>? vertices,
-        List<DrawVertexUV2DColor>? duplicateVertices = null)
+        List<DrawVertexUV2DColor> vertices,
+        Color color)
     {
         if (contour.Length < 2)
-            return;
+            return false;
+
+        var appended = false;
 
         for (var i = 0; i < contour.Length; i++)
         {
@@ -541,11 +587,11 @@ public sealed partial class ScpShadowCasterOverlay
 
             var farStart = ProjectToLightRadius(start, projectionOrigin, lightPosition, lightRadius);
             var farEnd = ProjectToLightRadius(end, projectionOrigin, lightPosition, lightRadius);
-            if (vertices != null)
-                AppendQuad(start, end, farEnd, farStart, vertices);
-            if (duplicateVertices != null)
-                AppendQuad(start, end, farEnd, farStart, duplicateVertices);
+            AppendQuad(start, end, farEnd, farStart, vertices, color);
+            appended = true;
         }
+
+        return appended;
     }
 
     private static Vector2 ProjectToLightRadius(
@@ -582,19 +628,22 @@ public sealed partial class ScpShadowCasterOverlay
         return projectionOrigin + direction * amount;
     }
 
-    private static void AppendFilledContour(
+    private static bool AppendFilledContour(
         ReadOnlySpan<Vector2> contour,
-        List<DrawVertexUV2DColor> vertices)
+        List<DrawVertexUV2DColor> vertices,
+        Color color)
     {
         if (contour.Length < 3)
-            return;
+            return false;
 
         for (var i = 1; i < contour.Length - 1; i++)
         {
-            vertices.Add(new DrawVertexUV2DColor(contour[0], Color.White));
-            vertices.Add(new DrawVertexUV2DColor(contour[i], Color.White));
-            vertices.Add(new DrawVertexUV2DColor(contour[i + 1], Color.White));
+            vertices.Add(new DrawVertexUV2DColor(contour[0], color));
+            vertices.Add(new DrawVertexUV2DColor(contour[i], color));
+            vertices.Add(new DrawVertexUV2DColor(contour[i + 1], color));
         }
+
+        return true;
     }
 
     private static void AppendQuad(
@@ -602,14 +651,15 @@ public sealed partial class ScpShadowCasterOverlay
         Vector2 bottomRight,
         Vector2 topRight,
         Vector2 topLeft,
-        List<DrawVertexUV2DColor> vertices)
+        List<DrawVertexUV2DColor> vertices,
+        Color color)
     {
-        vertices.Add(new DrawVertexUV2DColor(bottomLeft, Color.White));
-        vertices.Add(new DrawVertexUV2DColor(bottomRight, Color.White));
-        vertices.Add(new DrawVertexUV2DColor(topRight, Color.White));
-        vertices.Add(new DrawVertexUV2DColor(bottomLeft, Color.White));
-        vertices.Add(new DrawVertexUV2DColor(topRight, Color.White));
-        vertices.Add(new DrawVertexUV2DColor(topLeft, Color.White));
+        vertices.Add(new DrawVertexUV2DColor(bottomLeft, color));
+        vertices.Add(new DrawVertexUV2DColor(bottomRight, color));
+        vertices.Add(new DrawVertexUV2DColor(topRight, color));
+        vertices.Add(new DrawVertexUV2DColor(bottomLeft, color));
+        vertices.Add(new DrawVertexUV2DColor(topRight, color));
+        vertices.Add(new DrawVertexUV2DColor(topLeft, color));
     }
 
     #endregion

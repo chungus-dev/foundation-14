@@ -59,7 +59,7 @@ public sealed partial class ScpCCVars
     /// Controls the rendering quality of visual shadows cast by mobs.
     /// </summary>
     public static readonly CVarDef<int> MobShadowQuality =
-        CVarDef.Create("scp.mob_shadow_quality", 3, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("scp.mob_shadow_quality", 2, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// Controls the rendering quality of visual shadows cast by objects.

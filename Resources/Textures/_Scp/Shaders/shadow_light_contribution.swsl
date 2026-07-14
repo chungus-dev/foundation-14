@@ -1,26 +1,26 @@
 light_mode unshaded;
 blend_mode add;
 
-uniform sampler2D casterMask;
-uniform sampler2D occluderMask;
+uniform sampler2D shadowMask;
 uniform highp vec4[1] lightColor;
 uniform highp vec2[1] lightCenterUv;
-// Range, power, softness, falloff and curve factor. Kept in one reusable
+// Range, power, softness, falloff, curve factor, outside channel and
+// occluder presence. Kept in one reusable
 // array so moving lights and cameras do not box shader parameters on the CPU.
-uniform highp float[5] lightParameters;
+uniform highp float[7] lightParameters;
 
-highp float sampleMask7(sampler2D maskTexture, highp vec2 uv, highp vec2 offset)
+highp vec3 sampleMask7(sampler2D maskTexture, highp vec2 uv, highp vec2 offset)
 {
     if (lightParameters[2] <= 0.0)
-        return zTextureSpec(maskTexture, uv).r;
+        return zTextureSpec(maskTexture, uv).rgb;
 
-    highp float value = zTextureSpec(maskTexture, uv).r * (20.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv + offset).r * (15.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv - offset).r * (15.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv + offset * 2.0).r * (6.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv - offset * 2.0).r * (6.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv + offset * 3.0).r * (1.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv - offset * 3.0).r * (1.0 / 64.0);
+    highp vec3 value = zTextureSpec(maskTexture, uv).rgb * (20.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv + offset).rgb * (15.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv - offset).rgb * (15.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv + offset * 2.0).rgb * (6.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv - offset * 2.0).rgb * (6.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv + offset * 3.0).rgb * (1.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv - offset * 3.0).rgb * (1.0 / 64.0);
     return value;
 }
 
@@ -33,11 +33,12 @@ void fragment()
         perpendicular = normalize(vec2(-fromLight.y, fromLight.x));
 
     highp vec2 softOffset = perpendicular * SCREEN_PIXEL_SIZE * lightParameters[2];
-    highp float caster = sampleMask7(casterMask, screenUv, softOffset);
+    highp vec3 masks = sampleMask7(shadowMask, screenUv, softOffset);
+    highp float caster = mix(masks.r, masks.g, lightParameters[5]);
     if (caster <= 0.0)
         discard;
 
-    highp float stockOcclusion = sampleMask7(occluderMask, screenUv, softOffset);
+    highp float stockOcclusion = lightParameters[6] > 0.0 ? masks.b : 0.0;
     highp float shadow = caster * (1.0 - clamp(stockOcclusion, 0.0, 1.0));
     highp float mask = zTexture(UV).r;
     if (shadow <= 0.0 || mask <= 0.0)

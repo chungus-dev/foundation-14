@@ -26,10 +26,10 @@ internal sealed class ScpShadowContourCache
 
     #region Public API
 
-    public bool TryGetContours(Texture texture, ScpShadowQuality quality, out ScpShadowContours contours)
+    public bool TryGetContours(Texture texture, out ScpShadowContours contours)
     {
         if (_textureCache.TryGetValue(texture, out var entry) &&
-            TryGetCachedContours(entry, quality, out contours))
+            TryGetCachedContours(entry, out contours))
         {
             return contours.Loops.Length != 0;
         }
@@ -46,7 +46,7 @@ internal sealed class ScpShadowContourCache
             _textureCache.Add(texture, entry);
         }
 
-        contours = GetOrBuild(entry, region, quality);
+        contours = GetOrBuild(entry, region);
         return contours.Loops.Length != 0;
     }
 
@@ -55,12 +55,11 @@ internal sealed class ScpShadowContourCache
         RSI.StateId state,
         RsiDirection direction,
         int frame,
-        ScpShadowQuality quality,
         out ScpShadowContours contours)
     {
         var key = new RsiFrameKey(rsi, state, direction, frame);
         if (_rsiCache.TryGetValue(key, out var entry) &&
-            TryGetCachedContours(entry, quality, out contours))
+            TryGetCachedContours(entry, out contours))
         {
             return contours.Loops.Length != 0;
         }
@@ -77,7 +76,7 @@ internal sealed class ScpShadowContourCache
             _rsiCache.Add(key, entry);
         }
 
-        contours = GetOrBuild(entry, region, quality);
+        contours = GetOrBuild(entry, region);
         return contours.Loops.Length != 0;
     }
 
@@ -131,23 +130,14 @@ internal sealed class ScpShadowContourCache
 
     #region Contour building
 
-    private static ScpShadowContours GetOrBuild(
-        CacheEntry entry,
-        ClickMapRegion region,
-        ScpShadowQuality quality)
+    private static ScpShadowContours GetOrBuild(CacheEntry entry, ClickMapRegion region)
     {
-        if (quality == ScpShadowQuality.Hull)
-            return entry.Hull ??= BuildHull(region);
-
         return entry.Sprite ??= BuildPixelContours(region);
     }
 
-    private static bool TryGetCachedContours(
-        CacheEntry entry,
-        ScpShadowQuality quality,
-        out ScpShadowContours contours)
+    private static bool TryGetCachedContours(CacheEntry entry, out ScpShadowContours contours)
     {
-        var cached = quality == ScpShadowQuality.Hull ? entry.Hull : entry.Sprite;
+        var cached = entry.Sprite;
         if (cached == null)
         {
             contours = ScpShadowContours.Empty;
@@ -207,76 +197,6 @@ internal sealed class ScpShadowContourCache
             (maximum - center) / EyeManager.PixelsPerMeter);
         entry.OpaqueBounds = bounds;
         return true;
-    }
-
-    private static ScpShadowContours BuildHull(ClickMapRegion region)
-    {
-        var points = new List<Vector2i>();
-        var width = region.Size.X;
-        var height = region.Size.Y;
-
-        for (var y = 0; y < height; y++)
-        {
-            for (var x = 0; x < width; x++)
-            {
-                if (!region.IsOccluded(x, y))
-                    continue;
-
-                var bottom = height - y - 1;
-                points.Add(new Vector2i(x, bottom));
-                points.Add(new Vector2i(x + 1, bottom));
-                points.Add(new Vector2i(x, bottom + 1));
-                points.Add(new Vector2i(x + 1, bottom + 1));
-            }
-        }
-
-        if (points.Count < 3)
-            return ScpShadowContours.Empty;
-
-        points.Sort(static (left, right) =>
-        {
-            var x = left.X.CompareTo(right.X);
-            return x != 0 ? x : left.Y.CompareTo(right.Y);
-        });
-
-        var uniqueCount = 0;
-        for (var i = 0; i < points.Count; i++)
-        {
-            if (uniqueCount != 0 && points[uniqueCount - 1] == points[i])
-                continue;
-
-            points[uniqueCount++] = points[i];
-        }
-
-        points.RemoveRange(uniqueCount, points.Count - uniqueCount);
-        if (points.Count < 3)
-            return ScpShadowContours.Empty;
-
-        var hull = new Vector2i[points.Count * 2];
-        var count = 0;
-
-        for (var i = 0; i < points.Count; i++)
-        {
-            while (count >= 2 && Cross(hull[count - 2], hull[count - 1], points[i]) <= 0)
-                count--;
-
-            hull[count++] = points[i];
-        }
-
-        var lowerCount = count;
-        for (var i = points.Count - 2; i >= 0; i--)
-        {
-            while (count > lowerCount && Cross(hull[count - 2], hull[count - 1], points[i]) <= 0)
-                count--;
-
-            hull[count++] = points[i];
-        }
-
-        count--;
-        if (count < 3)
-            return ScpShadowContours.Empty;
-
-        return new ScpShadowContours([ConvertLoop(hull.AsSpan(0, count), width, height)]);
     }
 
     private static ScpShadowContours BuildPixelContours(ClickMapRegion region)
@@ -429,17 +349,6 @@ internal sealed class ScpShadowContourCache
         return result;
     }
 
-    private static Vector2[] ConvertLoop(ReadOnlySpan<Vector2i> loop, int width, int height)
-    {
-        var result = new Vector2[loop.Length];
-        var center = new Vector2(width, height) * 0.5f;
-
-        for (var i = 0; i < loop.Length; i++)
-            result[i] = ((Vector2) loop[i] - center) / EyeManager.PixelsPerMeter;
-
-        return result;
-    }
-
     private static Vector2[] ConvertLoop(List<Vector2i> loop, int width, int height)
     {
         var result = new Vector2[loop.Count];
@@ -464,11 +373,6 @@ internal sealed class ScpShadowContourCache
         return area;
     }
 
-    private static long Cross(Vector2i origin, Vector2i left, Vector2i right)
-    {
-        return Cross(left - origin, right - origin);
-    }
-
     private static int Cross(Vector2i left, Vector2i right)
     {
         return left.X * right.Y - left.Y * right.X;
@@ -485,7 +389,6 @@ internal sealed class ScpShadowContourCache
 
     private sealed class CacheEntry
     {
-        public ScpShadowContours? Hull;
         public ScpShadowContours? Sprite;
         public bool OpaqueBoundsCached;
         public Box2? OpaqueBounds;

@@ -12,7 +12,6 @@ public enum ScpShadowQuality : byte
 {
     Disabled,
     Bounds,
-    Hull,
     Sprite,
 }
 

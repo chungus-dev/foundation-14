@@ -54,13 +54,15 @@ public sealed partial class ScpShadowCasterOverlay
         _directionalTransform = player.Comp3;
         _directionalFovActive = true;
 
-        if (!_localPlayerShadowOutsideFov ||
+        if (!_system.LocalPlayerShadowOutsideFov ||
             !_shadowQuery.TryGetComponent(player.Owner, out var shadow))
         {
             return;
         }
 
-        var quality = shadow.Kind == ScpShadowCasterKind.Mob ? _mobQuality : _objectQuality;
+        var quality = shadow.Kind == ScpShadowCasterKind.Mob
+            ? _system.MobQuality
+            : _system.ObjectQuality;
         _renderLocalFovException = quality != ScpShadowQuality.Disabled;
     }
 

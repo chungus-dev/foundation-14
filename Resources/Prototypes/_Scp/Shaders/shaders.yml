@@ -56,6 +56,12 @@
   path: "/Textures/_Scp/Shaders/shadow_light_contribution.swsl"
 
 - type: shader
+  id: ScpShadowMask
+  kind: canvas
+  light_mode: unshaded
+  blend_mode: Add
+
+- type: shader
   id: ScpShadowSubtract
   kind: source
   path: "/Textures/_Scp/Shaders/shadow_subtract.swsl"

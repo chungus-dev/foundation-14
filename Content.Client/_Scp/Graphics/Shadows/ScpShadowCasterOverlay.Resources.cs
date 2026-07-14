@@ -13,34 +13,21 @@ public sealed partial class ScpShadowCasterOverlay
 
     #region Render callbacks
 
-    private void DrawCasterMask()
-    {
-        DrawMaskVertices(_casterVertices);
-    }
-
-    private void DrawOutsideCasterMask()
-    {
-        DrawMaskVertices(_outsideCasterVertices);
-    }
-
-    private void DrawOccluderMask()
-    {
-        DrawMaskVertices(_occluderVertices);
-    }
-
-    private void DrawMaskVertices(List<DrawVertexUV2DColor> vertices)
+    private void DrawShadowMask()
     {
         var handle = _drawHandle!;
         handle.SetTransform(_targetMatrix);
         handle.UseShader(_unshadedShader);
         handle.DrawRect(_currentMaskBounds, Color.Black);
 
+        var vertices = _currentShadowMaskVertices!;
         if (vertices.Count == 0)
         {
             handle.UseShader(null);
             return;
         }
 
+        handle.UseShader(_maskShader);
         DrawTriangleList(handle, CollectionsMarshal.AsSpan(vertices));
         handle.UseShader(null);
     }
@@ -108,8 +95,7 @@ public sealed partial class ScpShadowCasterOverlay
         private const int ShaderLifetimeFrames = 600;
         private const int MaxCachedLightShaders = 2048;
 
-        public IRenderTexture? CasterMask;
-        public IRenderTexture? OccluderMask;
+        public IRenderTexture? ShadowMask;
         public IRenderTexture? Contribution;
         public IRenderTexture? OutsideContribution;
         public IRenderTexture? Blur;
@@ -142,14 +128,15 @@ public sealed partial class ScpShadowCasterOverlay
         public ShaderInstance GetContributionShader(
             ShaderPrototype prototype,
             EntityUid owner,
-            Texture casterMask,
-            Texture occluderMask,
+            Texture shadowMask,
             Color lightColor,
             float lightRange,
             float lightPower,
             float lightFalloff,
             float lightCurveFactor,
             float lightSoftness,
+            bool outsideFov,
+            bool hasOccluders,
             Vector2 lightCenterUv)
         {
             var key = new LightShaderKey(owner);
@@ -164,14 +151,15 @@ public sealed partial class ScpShadowCasterOverlay
 
             cached.LastUsedFrame = _frame;
             cached.Update(
-                casterMask,
-                occluderMask,
+                shadowMask,
                 lightColor,
                 lightRange,
                 lightPower,
                 lightFalloff,
                 lightCurveFactor,
                 lightSoftness,
+                outsideFov,
+                hasOccluders,
                 lightCenterUv);
             return cached.Shader;
         }
@@ -198,18 +186,20 @@ public sealed partial class ScpShadowCasterOverlay
 
         public void EnsureSize(IClyde clyde, Vector2i size)
         {
-            var baseResourcesReady = CasterMask?.Size == size &&
-                OccluderMask?.Size == size &&
+            var baseResourcesReady = ShadowMask?.Size == size &&
                 Contribution?.Size == size &&
                 Blur?.Size == size;
             if (!baseResourcesReady)
             {
                 Dispose();
 
-                var maskFormat = new RenderTargetFormatParameters(RenderTargetColorFormat.R8);
+                var maskFormat = new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8);
                 var maskSamples = new TextureSampleParameters { Filter = true };
-                CasterMask = clyde.CreateRenderTarget(size, maskFormat, maskSamples, "scp-shadow-caster-mask");
-                OccluderMask = clyde.CreateRenderTarget(size, maskFormat, maskSamples, "scp-shadow-occluder-mask");
+                ShadowMask = clyde.CreateRenderTarget(
+                    size,
+                    maskFormat,
+                    maskSamples,
+                    "scp-shadow-packed-mask");
                 Contribution = clyde.CreateLightRenderTarget(size, "scp-shadow-contribution", false);
                 Blur = clyde.CreateLightRenderTarget(size, "scp-shadow-contribution-blur", false);
             }
@@ -235,14 +225,12 @@ public sealed partial class ScpShadowCasterOverlay
             _lightShaders.Clear();
             _staleLightShaders.Clear();
 
-            CasterMask?.Dispose();
-            OccluderMask?.Dispose();
+            ShadowMask?.Dispose();
             Contribution?.Dispose();
             OutsideContribution?.Dispose();
             Blur?.Dispose();
 
-            CasterMask = null;
-            OccluderMask = null;
+            ShadowMask = null;
             Contribution = null;
             OutsideContribution = null;
             Blur = null;
@@ -255,37 +243,31 @@ public sealed partial class ScpShadowCasterOverlay
             public readonly ShaderInstance Shader = shader;
             public int LastUsedFrame;
 
-            private Texture? _casterMask;
-            private Texture? _occluderMask;
+            private Texture? _shadowMask;
             // Arrays are kept for the lifetime of the shader. ShaderInstance stores
             // scalar and vector values as object, which boxes every changed value;
             // reusing reference-type uniform arrays avoids that per-frame garbage.
             private readonly Color[] _lightColor = [new(float.NaN, float.NaN, float.NaN, float.NaN)];
             private readonly float[] _lightParameters =
-                [float.NaN, float.NaN, float.NaN, float.NaN, float.NaN];
+                [float.NaN, float.NaN, float.NaN, float.NaN, float.NaN, float.NaN, float.NaN];
             private readonly Vector2[] _lightCenterUv = [new(float.NaN)];
 
             public void Update(
-                Texture casterMask,
-                Texture occluderMask,
+                Texture shadowMask,
                 Color lightColor,
                 float lightRange,
                 float lightPower,
                 float lightFalloff,
                 float lightCurveFactor,
                 float lightSoftness,
+                bool outsideFov,
+                bool hasOccluders,
                 Vector2 lightCenterUv)
             {
-                if (!ReferenceEquals(_casterMask, casterMask))
+                if (!ReferenceEquals(_shadowMask, shadowMask))
                 {
-                    _casterMask = casterMask;
-                    Shader.SetParameter("casterMask", casterMask);
-                }
-
-                if (!ReferenceEquals(_occluderMask, occluderMask))
-                {
-                    _occluderMask = occluderMask;
-                    Shader.SetParameter("occluderMask", occluderMask);
+                    _shadowMask = shadowMask;
+                    Shader.SetParameter("shadowMask", shadowMask);
                 }
 
                 if (_lightColor[0] != lightColor)
@@ -300,6 +282,8 @@ public sealed partial class ScpShadowCasterOverlay
                 SetFloat(2, lightSoftness, ref parametersDirty);
                 SetFloat(3, lightFalloff, ref parametersDirty);
                 SetFloat(4, lightCurveFactor, ref parametersDirty);
+                SetFloat(5, outsideFov ? 1f : 0f, ref parametersDirty);
+                SetFloat(6, hasOccluders ? 1f : 0f, ref parametersDirty);
                 if (parametersDirty)
                     Shader.SetParameter("lightParameters", _lightParameters);
 

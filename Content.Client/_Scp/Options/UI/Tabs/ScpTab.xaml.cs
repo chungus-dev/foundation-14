@@ -33,8 +33,7 @@ public sealed partial class ScpTab : Control
         [
             new(0, Loc.GetString("ui-options-scp-shadow-quality-disabled")),
             new(1, Loc.GetString("ui-options-scp-shadow-quality-bounds")),
-            new(2, Loc.GetString("ui-options-scp-shadow-quality-hull")),
-            new(3, Loc.GetString("ui-options-scp-shadow-quality-sprite")),
+            new(2, Loc.GetString("ui-options-scp-shadow-quality-sprite")),
         ];
 
         Control.AddOptionDropDown(ScpCCVars.MobShadowQuality, DropDownMobShadowQuality, shadowQualityOptions);

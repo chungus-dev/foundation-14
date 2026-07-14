@@ -1,3 +1,4 @@
+using Content.Client.Clickable;
 using Robust.Client.Graphics;
 
 namespace Content.Client._Scp.Graphics.Shadows;
@@ -9,11 +10,14 @@ public sealed partial class ScpShadowCasterSystem : EntitySystem
 {
     #region Dependencies
 
+    [Dependency] private IClickMapManager _clickMaps = default!;
     [Dependency] private IOverlayManager _overlayManager = default!;
 
     #endregion
 
     private ScpShadowCasterOverlay _overlay = default!;
+
+    internal ScpShadowContourCache ContourCache { get; private set; } = default!;
 
     #region EntitySystem lifecycle
 
@@ -21,7 +25,9 @@ public sealed partial class ScpShadowCasterSystem : EntitySystem
     {
         base.Initialize();
 
-        _overlay = new ScpShadowCasterOverlay();
+        InitializeConfiguration();
+        ContourCache = new ScpShadowContourCache(_clickMaps);
+        _overlay = new ScpShadowCasterOverlay(this);
         _overlayManager.AddOverlay(_overlay);
     }
 
@@ -29,6 +35,7 @@ public sealed partial class ScpShadowCasterSystem : EntitySystem
     {
         _overlayManager.RemoveOverlay(_overlay);
         _overlay.Dispose();
+        ShutdownConfiguration();
 
         base.Shutdown();
     }

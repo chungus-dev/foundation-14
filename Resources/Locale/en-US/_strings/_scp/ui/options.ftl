@@ -14,7 +14,6 @@ ui-options-scp-local-player-shadow-outside-fov = Show your shadow behind you
 ui-options-scp-local-player-shadow-outside-fov-tooltip = Shows your own shadow outside the directional field of view. Walls and closed doors still clip it.
 ui-options-scp-shadow-quality-disabled = Disabled
 ui-options-scp-shadow-quality-bounds = Bounds
-ui-options-scp-shadow-quality-hull = Hull
 ui-options-scp-shadow-quality-sprite = Sprite
 ui-options-grain-toggle-overlay = Use grain shader
 ui-options-grain-toggle-overlay-tooltip =

@@ -26,24 +26,24 @@ public sealed partial class ScpShadowCasterOverlay
         _lights.Clear();
         _nonShadowLightPositions.Clear();
 
-        if (_maxLights == 0 || _maxShadowLights == 0)
+        if (_system.MaxLights == 0 || _system.MaxShadowLights == 0)
             return 0;
 
         var state = new LightQueryState(this, worldAabb);
         foreach (var (treeUid, tree) in _lightTree.GetIntersectingTrees(
                      mapId,
-                     worldAabb.Enlarged(_maxLightRadius)))
+                     worldAabb.Enlarged(_system.MaxLightRadius)))
         {
             var localBounds = _transformSystem.GetInvWorldMatrix(treeUid).TransformBox(worldBounds);
             tree.Tree.QueryAabb(ref state, QueryLight, localBounds);
-            if (state.AcceptedLights >= _maxLights)
+            if (state.AcceptedLights >= _system.MaxLights)
                 break;
         }
 
-        if (_lights.Count > _maxShadowLights)
+        if (_lights.Count > _system.MaxShadowLights)
         {
             _lights.Sort(static (left, right) => left.DistanceSquared.CompareTo(right.DistanceSquared));
-            _lights.RemoveRange(_maxShadowLights, _lights.Count - _maxShadowLights);
+            _lights.RemoveRange(_system.MaxShadowLights, _lights.Count - _system.MaxShadowLights);
         }
 
         return _lights.Count;
@@ -54,7 +54,7 @@ public sealed partial class ScpShadowCasterOverlay
         in ComponentTreeEntry<PointLightComponent> entry)
     {
         var overlay = state.Overlay;
-        if (state.AcceptedLights >= overlay._maxLights)
+        if (state.AcceptedLights >= overlay._system.MaxLights)
             return false;
 
         var light = entry.Component;
@@ -68,14 +68,22 @@ public sealed partial class ScpShadowCasterOverlay
             return true;
 
         state.AcceptedLights++;
-        if (light.CastShadows)
+        if (light.CastShadows && light.Radius > 0f && light.Energy > 0f)
         {
             overlay._lights.Add(new LightData(
                 entry.Uid,
-                light,
                 position,
                 position,
                 rotation,
+                light.Color,
+                light.MaskPath,
+                light.Rotation,
+                light.Radius,
+                light.Energy,
+                light.Falloff,
+                light.CurveFactor,
+                light.Softness,
+                light.MaskAutoRotate,
                 Vector2.DistanceSquared(position, state.WorldAabb.Center)));
         }
         else
@@ -83,7 +91,7 @@ public sealed partial class ScpShadowCasterOverlay
             overlay._nonShadowLightPositions.Add(position);
         }
 
-        return state.AcceptedLights < overlay._maxLights;
+        return state.AcceptedLights < overlay._system.MaxLights;
     }
 
     private void ApplyProjectionPositions()
@@ -98,7 +106,7 @@ public sealed partial class ScpShadowCasterOverlay
 
     private float GetLightSoftness(in LightData light)
     {
-        return _softShadows ? Math.Clamp(light.Component.Softness, 0f, 4f) : 0f;
+        return _system.SoftShadows ? Math.Clamp(light.Softness, 0f, 4f) : 0f;
     }
 
     #endregion
@@ -108,39 +116,61 @@ public sealed partial class ScpShadowCasterOverlay
     private ShaderInstance GetContributionShader(
         in LightData light,
         CachedResources resources,
-        float softness)
+        float softness,
+        bool outsideFov,
+        bool hasOccluders)
     {
-        var casterMask = resources.CasterMask!;
-        var occluderMask = resources.OccluderMask!;
+        var shadowMask = resources.ShadowMask!;
         var localCenter = Vector2.Transform(light.Position, _targetMatrix);
-        var targetSize = (Vector2) casterMask.Size;
+        var targetSize = (Vector2) shadowMask.Size;
         var lightCenterUv = localCenter / targetSize;
         lightCenterUv.Y = 1f - lightCenterUv.Y;
 
         return resources.GetContributionShader(
             _contributionPrototype,
             light.Owner,
-            casterMask.Texture,
-            occluderMask.Texture,
-            light.Component.Color,
-            light.Component.Radius,
-            light.Component.Energy,
-            light.Component.Falloff,
-            light.Component.CurveFactor,
+            shadowMask.Texture,
+            light.Color,
+            light.Radius,
+            light.Energy,
+            light.Falloff,
+            light.CurveFactor,
             softness,
+            outsideFov,
+            hasOccluders,
             lightCenterUv);
     }
 
-    private void SetLightQuad(in LightData light)
+    private void SetLightQuad(in LightData light, Box2 casterBounds, float softness)
     {
-        var radius = light.Component.Radius;
-        var right = new Vector2(radius, 0f);
-        if (light.Component.MaskPath != null)
+        var radius = light.Radius;
+        if (light.MaskPath == null)
         {
-            var rotation = light.Component.Rotation +
-                (light.Component.MaskAutoRotate ? light.Rotation : Angle.Zero);
-            right = rotation.RotateVec(right);
+            var radiusVector = new Vector2(radius);
+            var lightBounds = new Box2(
+                light.Position - radiusVector,
+                light.Position + radiusVector);
+            var padding = (1f + 3f * softness) * _worldUnitsPerMaskPixel;
+            var bounds = casterBounds.Enlarged(padding).Intersect(lightBounds);
+            var inverseDiameter = 0.5f / radius;
+            var uvLeft = (bounds.Left - lightBounds.Left) * inverseDiameter;
+            var uvRight = (bounds.Right - lightBounds.Left) * inverseDiameter;
+            var uvBottom = 1f - (bounds.Bottom - lightBounds.Bottom) * inverseDiameter;
+            var uvTop = 1f - (bounds.Top - lightBounds.Bottom) * inverseDiameter;
+
+            SetLightQuadPositions(
+                bounds.BottomLeft,
+                bounds.BottomRight,
+                bounds.TopRight,
+                bounds.TopLeft);
+            SetLightQuadUvs(uvLeft, uvBottom, uvRight, uvTop);
+            return;
         }
+
+        var right = new Vector2(radius, 0f);
+        var rotation = light.MaskRotation +
+            (light.MaskAutoRotate ? light.EntityRotation : Angle.Zero);
+        right = rotation.RotateVec(right);
 
         var up = new Vector2(-right.Y, right.X);
         var bottomLeft = light.Position - right - up;
@@ -148,6 +178,21 @@ public sealed partial class ScpShadowCasterOverlay
         var topRight = light.Position + right + up;
         var topLeft = light.Position - right + up;
 
+        SetLightQuadPositions(bottomLeft, bottomRight, topRight, topLeft);
+        SetLightQuadUvs(0f, 1f, 1f, 0f);
+    }
+
+    private void InitializeLightQuad()
+    {
+        SetLightQuadUvs(0f, 1f, 1f, 0f);
+    }
+
+    private void SetLightQuadPositions(
+        Vector2 bottomLeft,
+        Vector2 bottomRight,
+        Vector2 topRight,
+        Vector2 topLeft)
+    {
         _lightQuad[0].Position = bottomLeft;
         _lightQuad[1].Position = bottomRight;
         _lightQuad[2].Position = topRight;
@@ -156,14 +201,14 @@ public sealed partial class ScpShadowCasterOverlay
         _lightQuad[5].Position = topLeft;
     }
 
-    private void InitializeLightQuad()
+    private void SetLightQuadUvs(float left, float bottom, float right, float top)
     {
-        _lightQuad[0].UV = new Vector2(0f, 1f);
-        _lightQuad[1].UV = new Vector2(1f, 1f);
-        _lightQuad[2].UV = new Vector2(1f, 0f);
-        _lightQuad[3].UV = new Vector2(0f, 1f);
-        _lightQuad[4].UV = new Vector2(1f, 0f);
-        _lightQuad[5].UV = new Vector2(0f, 0f);
+        _lightQuad[0].UV = new Vector2(left, bottom);
+        _lightQuad[1].UV = new Vector2(right, bottom);
+        _lightQuad[2].UV = new Vector2(right, top);
+        _lightQuad[3].UV = new Vector2(left, bottom);
+        _lightQuad[4].UV = new Vector2(right, top);
+        _lightQuad[5].UV = new Vector2(left, top);
     }
 
     #endregion
@@ -172,10 +217,18 @@ public sealed partial class ScpShadowCasterOverlay
 
     private readonly record struct LightData(
         EntityUid Owner,
-        PointLightComponent Component,
         Vector2 Position,
         Vector2 ProjectionPosition,
-        Angle Rotation,
+        Angle EntityRotation,
+        Color Color,
+        string? MaskPath,
+        Angle MaskRotation,
+        float Radius,
+        float Energy,
+        float Falloff,
+        float CurveFactor,
+        float Softness,
+        bool MaskAutoRotate,
         float DistanceSquared);
 
     private struct LightQueryState(ScpShadowCasterOverlay overlay, Box2 worldAabb)
