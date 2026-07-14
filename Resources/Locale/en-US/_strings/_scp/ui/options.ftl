@@ -6,6 +6,14 @@ ui-options-tab-hover-to-see-details = Hover over an option to see a tooltip abou
 ui-options-fps-impact-attention =
     These settings directly affect game performance.
     Changing these settings will alter the FPS.
+ui-options-scp-mob-shadow-quality = Mob shadow quality
+ui-options-scp-mob-shadow-quality-tooltip = Selects how accurately mob shadows follow their visuals. Higher quality may reduce performance.
+ui-options-scp-object-shadow-quality = Object shadow quality
+ui-options-scp-object-shadow-quality-tooltip = Selects how accurately object shadows follow their visuals. Higher quality may reduce performance.
+ui-options-scp-shadow-quality-disabled = Disabled
+ui-options-scp-shadow-quality-bounds = Bounds
+ui-options-scp-shadow-quality-hull = Hull
+ui-options-scp-shadow-quality-sprite = Sprite
 ui-options-grain-toggle-overlay = Use grain shader
 ui-options-grain-toggle-overlay-tooltip =
     Whether to enable the grain shader.

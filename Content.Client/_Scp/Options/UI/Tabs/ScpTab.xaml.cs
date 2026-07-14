@@ -1,3 +1,4 @@
+using Content.Client.Options.UI;
 using Content.Shared._Scp.Graphics.Shaders.Grain;
 using Content.Shared._Scp.Graphics.Shaders.SinCity;
 using Content.Shared._Scp.ScpCCVars;
@@ -26,6 +27,18 @@ public sealed partial class ScpTab : Control
         /*
          * Графика
          */
+
+        // Тени сущностей
+        OptionDropDownCVar<int>.ValueOption[] shadowQualityOptions =
+        [
+            new(0, Loc.GetString("ui-options-scp-shadow-quality-disabled")),
+            new(1, Loc.GetString("ui-options-scp-shadow-quality-bounds")),
+            new(2, Loc.GetString("ui-options-scp-shadow-quality-hull")),
+            new(3, Loc.GetString("ui-options-scp-shadow-quality-sprite")),
+        ];
+
+        Control.AddOptionDropDown(ScpCCVars.MobShadowQuality, DropDownMobShadowQuality, shadowQualityOptions);
+        Control.AddOptionDropDown(ScpCCVars.ObjectShadowQuality, DropDownObjectShadowQuality, shadowQualityOptions);
 
         // Зернистость
         Control.AddOptionCheckBox(ScpCCVars.GrainToggleOverlay, GrainToggleOverlayCheckBox);

@@ -45,6 +45,10 @@
   suffix: Empty
   abstract: true
   components:
+  # Scp added start - visual contour shadows
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.18,-0.48,0.18,0.48"
+  # Scp added end - visual contour shadows
   - type: Storage
     grid:
     - 0,0,9,3
@@ -133,6 +137,10 @@
   id: filingCabinetDrawer
   description: A small drawer for all your filing needs, Now with wheels!
   components:
+  # Scp added start - visual contour shadows
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.22,-0.42,0.22,0.34"
+  # Scp added end - visual contour shadows
   - type: Sprite
     state: chestdrawer
     layers:

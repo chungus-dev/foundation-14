@@ -2,8 +2,18 @@
   parent: [BaseWallmountMetallic, BaseItemCabinet]
   id: BaseWallmountCabinet
   abstract: true
+  components:
+  # Scp added start - visual contour shadows
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.30,-0.35,0.30,0.35"
+  # Scp added end - visual contour shadows
 
 - type: entity
   parent: [BaseWallmountGlass, BaseItemCabinetGlass]
   id: BaseWallmountCabinetGlass
   abstract: true
+  components:
+  # Scp added start - visual contour shadows
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.47,-0.32,0.47,0.32"
+  # Scp added end - visual contour shadows

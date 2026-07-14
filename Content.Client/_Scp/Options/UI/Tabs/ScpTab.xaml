@@ -11,6 +11,14 @@
                 <Label Text="{Loc ui-options-scp-graphics}" StyleClasses="LabelKeyText"/>
                 <Label Text="{Loc ui-options-fps-impact-attention}" StyleClasses="LabelWeak"/>
 
+                <!-- Тени сущностей -->
+                <ui:OptionDropDown Name="DropDownMobShadowQuality"
+                                   Title="{Loc ui-options-scp-mob-shadow-quality}"
+                                   ToolTip="{Loc ui-options-scp-mob-shadow-quality-tooltip}"/>
+                <ui:OptionDropDown Name="DropDownObjectShadowQuality"
+                                   Title="{Loc ui-options-scp-object-shadow-quality}"
+                                   ToolTip="{Loc ui-options-scp-object-shadow-quality-tooltip}"/>
+
                 <!-- Зернистость -->
                 <CheckBox Name="GrainToggleOverlayCheckBox"
                           Text="{Loc ui-options-grain-toggle-overlay}"

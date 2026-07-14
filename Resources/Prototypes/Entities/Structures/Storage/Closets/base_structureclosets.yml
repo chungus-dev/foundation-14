@@ -5,6 +5,10 @@
   description: A standard-issue Nanotrasen storage unit.
   abstract: true
   components:
+  # Scp added start - visual contour shadows
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.25,-0.48,0.25,0.48"
+  # Scp added end - visual contour shadows
   - type: Animateable
   - type: ResistLocker
   - type: Transform
@@ -120,6 +124,10 @@
   name: wall closet
   description: A standard-issue Nanotrasen storage unit, now on walls.
   components:
+  # Scp added start - visual contour shadows
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.25,-0.35,0.25,0.35"
+  # Scp added end - visual contour shadows
   - type: ResistLocker
   - type: Weldable
   - type: StaticPrice
@@ -212,6 +220,10 @@
   name: suit storage unit
   description: A fancy hi-tech storage unit made for storing space suits.
   components:
+  # Scp added start - visual contour shadows
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.25,-0.48,0.25,0.48"
+  # Scp added end - visual contour shadows
   - type: AccessReader
   - type: Lock
   - type: Anchorable

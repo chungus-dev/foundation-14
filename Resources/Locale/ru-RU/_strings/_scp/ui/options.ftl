@@ -8,6 +8,15 @@ ui-options-fps-impact-attention =
     Данные настройки напрямую влияют на производительность игры.
     Изменение настроек вызовет изменение FPS
 
+ui-options-scp-mob-shadow-quality = Качество теней мобов
+ui-options-scp-mob-shadow-quality-tooltip = Определяет, насколько точно тени мобов повторяют их изображение. Более высокое качество может снизить производительность.
+ui-options-scp-object-shadow-quality = Качество теней объектов
+ui-options-scp-object-shadow-quality-tooltip = Определяет, насколько точно тени объектов повторяют их изображение. Более высокое качество может снизить производительность.
+ui-options-scp-shadow-quality-disabled = Отключены
+ui-options-scp-shadow-quality-bounds = Границы
+ui-options-scp-shadow-quality-hull = Выпуклая оболочка
+ui-options-scp-shadow-quality-sprite = Спрайт
+
 ui-options-grain-toggle-overlay = Использовать шейдер зернистости
 ui-options-grain-toggle-overlay-tooltip =
     Будет ли включен шейдер зернистости?

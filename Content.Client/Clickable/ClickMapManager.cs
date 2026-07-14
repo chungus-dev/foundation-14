@@ -73,6 +73,20 @@ namespace Content.Client.Clickable
             return SampleClickMap(clickMap, pos, clickMap.Size, Vector2i.Zero);
         }
 
+        // Scp added start - expose cached alpha maps for content shadow contours
+        public bool TryGetRegion(Texture texture, out ClickMapRegion region)
+        {
+            if (!_textureMaps.TryGetValue(texture, out var clickMap))
+            {
+                region = default;
+                return false;
+            }
+
+            region = clickMap.GetRegion(clickMap.Size, Vector2i.Zero);
+            return true;
+        }
+        // Scp added end - expose cached alpha maps for content shadow contours
+
         public bool IsOccluding(RSI rsi, RSI.StateId state, RsiDirection dir, int frame, Vector2i pos)
         {
             if (!_rsiMaps.TryGetValue(rsi, out var rsiData))
@@ -94,6 +108,28 @@ namespace Content.Client.Clickable
             var offset = dirDat[frame];
             return SampleClickMap(rsiData.ClickMap, pos, rsi.Size, offset);
         }
+
+        // Scp added start - expose cached alpha maps for content shadow contours
+        public bool TryGetRegion(
+            RSI rsi,
+            RSI.StateId state,
+            RsiDirection dir,
+            int frame,
+            out ClickMapRegion region)
+        {
+            if (!_rsiMaps.TryGetValue(rsi, out var rsiData) ||
+                !rsiData.Offsets.TryGetValue(state, out var stateData) ||
+                stateData.Length <= (int) dir ||
+                stateData[(int) dir].Length <= frame)
+            {
+                region = default;
+                return false;
+            }
+
+            region = rsiData.ClickMap.GetRegion(rsi.Size, stateData[(int) dir][frame]);
+            return true;
+        }
+        // Scp added end - expose cached alpha maps for content shadow contours
 
         private static bool SampleClickMap(ClickMap map, Vector2i pos, Vector2i bounds, Vector2i offset)
         {
@@ -166,6 +202,12 @@ namespace Content.Client.Clickable
                 _data = data;
             }
 
+            // Scp added - expose a read-only slice without copying the bit map
+            public ClickMapRegion GetRegion(Vector2i size, Vector2i offset)
+            {
+                return new ClickMapRegion(_data, Width, size, offset);
+            }
+
             public static ClickMap FromImage<T>(Image<T> image, float threshold) where T : unmanaged, IPixel<T>
             {
                 var threshByte = (byte) (threshold * 255);
@@ -213,5 +255,50 @@ namespace Content.Client.Clickable
         public bool IsOccluding(Texture texture, Vector2i pos);
 
         public bool IsOccluding(RSI rsi, RSI.StateId state, RsiDirection dir, int frame, Vector2i pos);
+
+        // Scp added start - expose cached alpha maps for content shadow contours
+        public bool TryGetRegion(Texture texture, out ClickMapRegion region);
+
+        public bool TryGetRegion(
+            RSI rsi,
+            RSI.StateId state,
+            RsiDirection dir,
+            int frame,
+            out ClickMapRegion region);
+        // Scp added end - expose cached alpha maps for content shadow contours
     }
+
+    // Scp added start - expose cached alpha maps for content shadow contours
+    /// <summary>
+    /// Provides read-only access to a rectangular slice of a cached alpha click map.
+    /// </summary>
+    public readonly struct ClickMapRegion
+    {
+        private readonly ReadOnlyMemory<byte> _data;
+        private readonly int _atlasWidth;
+        private readonly Vector2i _offset;
+
+        public Vector2i Size { get; }
+
+        internal ClickMapRegion(ReadOnlyMemory<byte> data, int atlasWidth, Vector2i size, Vector2i offset)
+        {
+            _data = data;
+            _atlasWidth = atlasWidth;
+            _offset = offset;
+            Size = size;
+        }
+
+        /// <summary>
+        /// Returns whether the pixel is opaque according to the click-map alpha threshold.
+        /// </summary>
+        public bool IsOccluded(int x, int y)
+        {
+            if ((uint) x >= (uint) Size.X || (uint) y >= (uint) Size.Y)
+                return false;
+
+            var index = (y + _offset.Y) * _atlasWidth + x + _offset.X;
+            return (_data.Span[index / 8] & 1 << (index % 8)) != 0;
+        }
+    }
+    // Scp added end - expose cached alpha maps for content shadow contours
 }

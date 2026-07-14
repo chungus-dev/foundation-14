@@ -3,6 +3,8 @@
   parent: ClosetBase
   abstract: true
   components:
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.25,0,0.25,0.48"
   - type: Sprite
     sprite: _Scp/Structures/Storage/closet.rsi
   - type: Transform

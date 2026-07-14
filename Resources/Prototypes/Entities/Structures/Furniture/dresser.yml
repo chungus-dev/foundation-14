@@ -5,6 +5,10 @@
   name: dresser
   description: Wooden dresser, can store things inside itself, ideal for underwear, and someone's kidneys?...
   components:
+  # Scp added start - visual contour shadows
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.45,-0.45,0.45,0.45"
+  # Scp added end - visual contour shadows
   - type: Sprite
     sprite: Structures/Furniture/furniture.rsi
     state: dresser

@@ -1,0 +1,67 @@
+light_mode unshaded;
+blend_mode add;
+
+uniform sampler2D casterMask;
+uniform sampler2D occluderMask;
+uniform highp vec4 lightColor;
+uniform highp vec2 lightCenterUv;
+uniform highp float lightRange;
+uniform highp float lightPower;
+uniform highp float lightSoftness;
+uniform highp float lightFalloff;
+uniform highp float lightCurveFactor;
+
+highp float sampleMask7(sampler2D maskTexture, highp vec2 uv, highp vec2 offset)
+{
+    if (lightSoftness <= 0.0)
+        return zTextureSpec(maskTexture, uv).r;
+
+    highp float value = zTextureSpec(maskTexture, uv).r * (20.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv + offset).r * (15.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv - offset).r * (15.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv + offset * 2.0).r * (6.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv - offset * 2.0).r * (6.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv + offset * 3.0).r * (1.0 / 64.0);
+    value += zTextureSpec(maskTexture, uv - offset * 3.0).r * (1.0 / 64.0);
+    return value;
+}
+
+void fragment()
+{
+    highp vec2 screenUv = FRAGCOORD.xy * SCREEN_PIXEL_SIZE;
+    highp vec2 fromLight = screenUv - lightCenterUv;
+    highp vec2 perpendicular = vec2(1.0, 0.0);
+    if (dot(fromLight, fromLight) > 0.0000001)
+        perpendicular = normalize(vec2(-fromLight.y, fromLight.x));
+
+    highp vec2 softOffset = perpendicular * SCREEN_PIXEL_SIZE * lightSoftness;
+    highp float caster = sampleMask7(casterMask, screenUv, softOffset);
+    if (caster <= 0.0)
+        discard;
+
+    highp float stockOcclusion = sampleMask7(occluderMask, screenUv, softOffset);
+    highp float shadow = caster * (1.0 - clamp(stockOcclusion, 0.0, 1.0));
+    highp float mask = zTexture(UV).r;
+    if (shadow <= 0.0 || mask <= 0.0)
+        discard;
+
+    highp vec2 diff = (UV - vec2(0.5)) * (2.0 * lightRange);
+    highp float squareDistance = dot(diff, diff) + 1.0;
+    highp float relativeDistance = clamp(sqrt(squareDistance) / lightRange, 0.0, 1.0);
+    highp float relativeDistanceSquared = relativeDistance * relativeDistance;
+    highp float curve = mix(
+        relativeDistance,
+        relativeDistanceSquared,
+        clamp(lightCurveFactor, 0.0, 1.0));
+    highp float strength = clamp(
+        ((1.0 - relativeDistanceSquared) * (1.0 - relativeDistanceSquared)) /
+        (1.0 + lightFalloff * curve),
+        0.0,
+        1.0);
+
+    strength *= lightPower * mask * shadow;
+    if (strength <= 0.0)
+        discard;
+
+    COLOR = vec4(lightColor.rgb, strength);
+}

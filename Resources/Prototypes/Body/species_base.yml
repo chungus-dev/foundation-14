@@ -11,6 +11,9 @@
   save: false
   components:
   # Scp added start
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.35,-0.35,0.35,0.35"
+    kind: Mob
   - type: ScpHoldable
   - type: FieldOfView
   - type: HoldToFace

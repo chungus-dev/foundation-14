@@ -8,6 +8,11 @@
   suffix: AI
   abstract: true
   components:
+  # Scp added start - visual contour shadows
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.35,-0.35,0.35,0.35"
+    kind: Mob
+  # Scp added end - visual contour shadows
   - type: Reactive
     groups:
       Flammable: [Touch]
