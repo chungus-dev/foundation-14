@@ -13,6 +13,7 @@
   # Scp added start
   - type: LightFlicking
   - type: BloomOverlayVisuals
+  - type: ScpShadowForegroundVisuals
   # Scp added end
   - type: MeleeSound
     soundGroups:

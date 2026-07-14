@@ -55,6 +55,6 @@ public sealed partial class AfterLightTargetOverlay : Overlay
 
                 worldHandle.SetTransform(localMatrix);
                 worldHandle.DrawTextureRectRegion(lightRes.EnlargedLightTarget.Texture, bounds, subRegion: subRegion);
-            }, Color.Transparent);
+            }, null); // Scp edit - preserve the engine hard-FOV stencil while replacing the full color target
     }
 }

@@ -67,6 +67,13 @@ public sealed partial class ScpCCVars
     public static readonly CVarDef<int> ObjectShadowQuality =
         CVarDef.Create("scp.object_shadow_quality", 2, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    /// <summary>
+    /// Allows the local player to see their own visual shadow outside the directional field of view.
+    /// Hard FOV still clips the shadow behind occluders.
+    /// </summary>
+    public static readonly CVarDef<bool> LocalPlayerShadowOutsideFov =
+        CVarDef.Create("scp.local_player_shadow_outside_fov", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
     /*
      * Режим совместимости
      */

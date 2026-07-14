@@ -4,6 +4,7 @@
   description: "UH?! Sorry, all I can hear is WEE-OOO-WEE-OOO!"
   suffix: Always powered
   components:
+  - type: ScpShadowForegroundVisuals # Scp added
   - type: AmbientSound
     volume: -15
     range: 2

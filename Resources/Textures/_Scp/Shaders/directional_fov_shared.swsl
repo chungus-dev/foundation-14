@@ -1,0 +1,38 @@
+// Returns how strongly the directional SCP FOV hides a screen pixel:
+// 0.0 is visible and 1.0 is fully outside the visible cone.
+mediump float scpDirectionalFovOcclusionMask(
+    highp vec2 pixelSize,
+    highp vec2 finalCoords,
+    highp float coneAngle,
+    highp float coneFeather,
+    highp float coneIgnoreRadius,
+    highp float coneIgnoreFeather,
+    highp float viewAngle)
+{
+    highp float safeConeIgnoreFeather = max(coneIgnoreFeather, 0.0001);
+    mediump float mask = 1.0;
+    mediump float radial = zCircleGradient(
+        pixelSize,
+        finalCoords,
+        1.0,
+        safeConeIgnoreFeather,
+        (coneIgnoreRadius / safeConeIgnoreFeather),
+        1.0);
+    mask -= radial;
+
+    highp vec2 fromCenter = finalCoords - (pixelSize * 0.5);
+    highp vec2 delta = vec2(0.0, -1.0);
+    if (dot(fromCenter, fromCenter) > 0.0000001)
+        delta = normalize(fromCenter);
+    highp vec2 viewDir = vec2(sin(viewAngle), -cos(viewAngle));
+
+    mediump float cosDelta = dot(delta, viewDir);
+    mediump float coneLimit = cos(radians(coneAngle * 0.5 + 5.0));
+    mediump float deltaAngle = smoothstep(
+        coneLimit,
+        coneLimit + (radians(coneFeather) * 0.5),
+        cosDelta);
+
+    mask += clamp(deltaAngle, 0.0, 1.0);
+    return 1.0 - clamp(mask, 0.0, 1.0);
+}

@@ -76,38 +76,71 @@ public sealed partial class ScpShadowCasterOverlay
                 Vector2.DistanceSquared(position, worldAabb.Center)));
         }
 
-        if (_lights.Count <= maxShadowLights)
-            return _lights.Count;
+        if (_lights.Count > maxShadowLights)
+        {
+            _lights.Sort(static (left, right) => left.DistanceSquared.CompareTo(right.DistanceSquared));
+            _lights.RemoveRange(maxShadowLights, _lights.Count - maxShadowLights);
+        }
 
-        _lights.Sort(static (left, right) => left.DistanceSquared.CompareTo(right.DistanceSquared));
-        _lights.RemoveRange(maxShadowLights, _lights.Count - maxShadowLights);
         return _lights.Count;
+    }
+
+    private int FilterVisibleLights()
+    {
+        var visibleCount = 0;
+        for (var i = 0; i < _lights.Count; i++)
+        {
+            var light = _lights[i];
+            if (!IsLightHardFovVisible(light.Position))
+                continue;
+
+            var directionalVisibility = GetDirectionalSourceVisibility(light.Position);
+            if (directionalVisibility <= 0f && !_renderLocalFovException)
+                continue;
+
+            _lights[visibleCount++] = light with { DirectionalVisibility = directionalVisibility };
+        }
+
+        if (visibleCount < _lights.Count)
+            _lights.RemoveRange(visibleCount, _lights.Count - visibleCount);
+
+        return visibleCount;
     }
 
     #endregion
 
     #region Light contribution
 
-    private void SetContributionParameters(in LightData light, CachedResources resources)
+    private ShaderInstance GetContributionShader(
+        in LightData light,
+        CachedResources resources,
+        float visibility,
+        bool localContribution)
     {
-        _contributionShader.SetParameter("casterMask", resources.CasterMask!.Texture);
-        _contributionShader.SetParameter("occluderMask", resources.OccluderMask!.Texture);
-        _contributionShader.SetParameter("lightColor", light.Component.Color);
-        _contributionShader.SetParameter("lightRange", light.Component.Radius);
-        _contributionShader.SetParameter("lightPower", light.Component.Energy);
-        _contributionShader.SetParameter("lightFalloff", light.Component.Falloff);
-        _contributionShader.SetParameter("lightCurveFactor", light.Component.CurveFactor);
-
         var softness = _configuration.GetCVar(CVars.LightSoftShadows)
             ? Math.Clamp(light.Component.Softness, 0f, 4f)
             : 0f;
-        _contributionShader.SetParameter("lightSoftness", softness);
 
+        var casterMask = resources.CasterMask!;
+        var occluderMask = resources.OccluderMask!;
         var localCenter = Vector2.Transform(light.Position, _targetMatrix);
-        var targetSize = (Vector2) resources.CasterMask.Size;
+        var targetSize = (Vector2) casterMask.Size;
         var lightCenterUv = localCenter / targetSize;
         lightCenterUv.Y = 1f - lightCenterUv.Y;
-        _contributionShader.SetParameter("lightCenterUv", lightCenterUv);
+
+        return resources.GetContributionShader(
+            _contributionPrototype,
+            light.Owner,
+            localContribution,
+            casterMask.Texture,
+            occluderMask.Texture,
+            light.Component.Color,
+            light.Component.Radius,
+            light.Component.Energy * visibility,
+            light.Component.Falloff,
+            light.Component.CurveFactor,
+            softness,
+            lightCenterUv);
     }
 
     private void SetLightQuad(in LightData light)
@@ -139,7 +172,8 @@ public sealed partial class ScpShadowCasterOverlay
         PointLightComponent Component,
         Vector2 Position,
         Angle Rotation,
-        float DistanceSquared);
+        float DistanceSquared,
+        float DirectionalVisibility = 1f);
 
     #endregion
 }

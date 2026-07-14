@@ -39,6 +39,7 @@ public sealed partial class ScpTab : Control
 
         Control.AddOptionDropDown(ScpCCVars.MobShadowQuality, DropDownMobShadowQuality, shadowQualityOptions);
         Control.AddOptionDropDown(ScpCCVars.ObjectShadowQuality, DropDownObjectShadowQuality, shadowQualityOptions);
+        Control.AddOptionCheckBox(ScpCCVars.LocalPlayerShadowOutsideFov, LocalPlayerShadowOutsideFov);
 
         // Зернистость
         Control.AddOptionCheckBox(ScpCCVars.GrainToggleOverlay, GrainToggleOverlayCheckBox);

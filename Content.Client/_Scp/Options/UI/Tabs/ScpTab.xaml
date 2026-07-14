@@ -18,6 +18,9 @@
                 <ui:OptionDropDown Name="DropDownObjectShadowQuality"
                                    Title="{Loc ui-options-scp-object-shadow-quality}"
                                    ToolTip="{Loc ui-options-scp-object-shadow-quality-tooltip}"/>
+                <CheckBox Name="LocalPlayerShadowOutsideFov"
+                          Text="{Loc ui-options-scp-local-player-shadow-outside-fov}"
+                          ToolTip="{Loc ui-options-scp-local-player-shadow-outside-fov-tooltip}"/>
 
                 <!-- Зернистость -->
                 <CheckBox Name="GrainToggleOverlayCheckBox"
