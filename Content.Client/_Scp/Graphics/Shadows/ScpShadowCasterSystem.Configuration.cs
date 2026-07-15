@@ -12,6 +12,7 @@ public sealed partial class ScpShadowCasterSystem
 
     private ConfigurationMultiSubscriptionBuilder _configurationSubscription = default!;
 
+    internal bool ContentLightingEnabled { get; private set; }
     internal ScpShadowQuality MobQuality { get; private set; }
     internal ScpShadowQuality ObjectQuality { get; private set; }
     internal bool LocalPlayerShadowOutsideFov { get; private set; }
@@ -28,6 +29,10 @@ public sealed partial class ScpShadowCasterSystem
         NormalizeQualityCVar(ScpCCVars.ObjectShadowQuality);
 
         _configurationSubscription = _configuration.SubscribeMultiple()
+            .OnValueChanged(
+                ScpCCVars.ContentLighting,
+                value => ContentLightingEnabled = value,
+                true)
             .OnValueChanged(
                 ScpCCVars.MobShadowQuality,
                 value => MobQuality = ClampQuality(value),

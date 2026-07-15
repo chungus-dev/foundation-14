@@ -1,6 +1,4 @@
-using System.Numerics;
 using Robust.Client.Graphics;
-using Robust.Shared.Maths;
 using Robust.Shared.Threading;
 
 namespace Content.Client._Scp.Graphics.Shadows;
@@ -12,18 +10,34 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly List<LightGeometryBuffer> _lightGeometryBuffers = new(16);
     private readonly LightGeometryJob _lightGeometryJob;
 
-    private void PrepareGeometryBatch(
-        int lightStart,
-        int lightCount,
-        bool buildOutsideMask)
+    private void PrepareGeometryBatch(int lightStart, int lightCount, bool drawShadows)
     {
         while (_lightGeometryBuffers.Count < lightCount)
             _lightGeometryBuffers.Add(new LightGeometryBuffer());
 
-        _lightGeometryJob.LightStart = lightStart;
-        _lightGeometryJob.BuildOutsideMask = buildOutsideMask;
+        var validLightCount = 0;
+        for (var i = 0; i < lightCount; i++)
+        {
+            var light = _lights[lightStart + i];
+            if (!drawShadows ||
+                !light.CastShadows ||
+                light.Radius <= 0f ||
+                light.Energy <= 0f)
+            {
+                _lightGeometryBuffers[i].Clear();
+                continue;
+            }
 
-        var intersectionChecks = (long) lightCount *
+            validLightCount++;
+        }
+
+        if (validLightCount == 0)
+            return;
+
+        _lightGeometryJob.LightStart = lightStart;
+        _lightGeometryJob.BuildOutsideMask = _directionalFovActive;
+
+        var intersectionChecks = (long) validLightCount *
             (_frameCasters.Count + _frameOccluders.Count);
         _system.ProcessGeometryBatch(_lightGeometryJob, lightCount, intersectionChecks);
     }
@@ -34,9 +48,11 @@ public sealed partial class ScpShadowCasterOverlay
         geometry.Clear();
 
         var light = _lights[lightIndex];
+        if (!light.CastShadows || light.Radius <= 0f || light.Energy <= 0f)
+            return;
+
         BuildCasterMasks(light, buildOutsideMask, geometry);
-        if (geometry.HasInsideMask || geometry.HasOutsideMask)
-            BuildOccluderMask(light, geometry);
+        BuildOccluderMask(light, geometry);
     }
 
     private sealed class LightGeometryBuffer
@@ -45,8 +61,9 @@ public sealed partial class ScpShadowCasterOverlay
         public bool HasInsideMask;
         public bool HasOutsideMask;
         public bool HasOccluderMask;
-        public Box2 InsideBounds;
-        public Box2 OutsideBounds;
+
+        public bool HasCasterMask => HasInsideMask || HasOutsideMask;
+        public bool HasMask => HasCasterMask || HasOccluderMask;
 
         public void Clear()
         {
@@ -54,41 +71,13 @@ public sealed partial class ScpShadowCasterOverlay
             HasInsideMask = false;
             HasOutsideMask = false;
             HasOccluderMask = false;
-            InsideBounds = default;
-            OutsideBounds = default;
-        }
-
-        public Box2 CombinedCasterBounds()
-        {
-            if (!HasInsideMask)
-                return OutsideBounds;
-            if (!HasOutsideMask)
-                return InsideBounds;
-            return InsideBounds.Union(OutsideBounds);
-        }
-
-        public void ExtendCasterBounds(int vertexStart, bool inside, bool outside)
-        {
-            var minimum = new Vector2(float.PositiveInfinity);
-            var maximum = new Vector2(float.NegativeInfinity);
-            for (var i = vertexStart; i < Vertices.Count; i++)
-            {
-                var position = Vertices[i].Position;
-                minimum = Vector2.Min(minimum, position);
-                maximum = Vector2.Max(maximum, position);
-            }
-
-            var bounds = new Box2(minimum, maximum);
-            if (inside)
-                InsideBounds = HasInsideMask ? InsideBounds.Union(bounds) : bounds;
-            if (outside)
-                OutsideBounds = HasOutsideMask ? OutsideBounds.Union(bounds) : bounds;
         }
     }
 
     private sealed class LightGeometryJob(ScpShadowCasterOverlay overlay) : IParallelRobustJob
     {
         public int MinimumBatchParallel => 1;
+        public int BatchSize => 2;
 
         public int LightStart;
         public bool BuildOutsideMask;

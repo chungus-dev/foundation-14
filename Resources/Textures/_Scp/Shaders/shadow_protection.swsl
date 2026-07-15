@@ -1,0 +1,9 @@
+light_mode unshaded;
+
+void fragment()
+{
+    if (zTexture(UV).a * MODULATE.a < 0.1)
+        discard;
+
+    COLOR = vec4(1.0);
+}

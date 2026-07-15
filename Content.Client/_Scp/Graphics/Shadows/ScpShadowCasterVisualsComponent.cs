@@ -1,5 +1,3 @@
-using Robust.Shared.Maths;
-
 namespace Content.Client._Scp.Graphics.Shadows;
 
 public enum ScpShadowCasterKind : byte
@@ -21,8 +19,6 @@ public enum ScpShadowQuality : byte
 [RegisterComponent]
 public sealed partial class ScpShadowCasterVisualsComponent : Component
 {
-    #region Prototype data
-
     /// <summary>
     /// Local fallback contour used by the low-quality mode and near-light rejection.
     /// </summary>
@@ -34,6 +30,4 @@ public sealed partial class ScpShadowCasterVisualsComponent : Component
     /// </summary>
     [DataField]
     public ScpShadowCasterKind Kind = ScpShadowCasterKind.Object;
-
-    #endregion
 }

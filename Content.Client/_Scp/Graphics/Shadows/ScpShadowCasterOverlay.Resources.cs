@@ -1,7 +1,6 @@
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Robust.Client.Graphics;
-using Robust.Shared;
 using Robust.Shared.Graphics;
 using Robust.Shared.Maths;
 
@@ -17,19 +16,38 @@ public sealed partial class ScpShadowCasterOverlay
     {
         var handle = _drawHandle!;
         handle.SetTransform(_targetMatrix);
-        handle.UseShader(_unshadedShader);
-        handle.DrawRect(_currentMaskBounds, Color.Black);
-
         var vertices = _currentShadowMaskVertices!;
-        if (vertices.Count == 0)
+        if (vertices.Count != 0)
         {
-            handle.UseShader(null);
-            return;
+            handle.UseShader(_maskShader);
+            DrawTriangleList(handle, CollectionsMarshal.AsSpan(vertices));
         }
 
-        handle.UseShader(_maskShader);
-        DrawTriangleList(handle, CollectionsMarshal.AsSpan(vertices));
         handle.UseShader(null);
+    }
+
+    private void ClearAndDrawShadowMask(CachedResources resources)
+    {
+        var renderHandle = _renderHandle!;
+        var targetSize = resources.ShadowMask!.Size;
+        var pixelBounds = _targetMatrix.TransformBox(_currentMaskBounds);
+        var left = Math.Clamp((int) MathF.Floor(pixelBounds.Left), 0, targetSize.X);
+        var top = Math.Clamp((int) MathF.Floor(pixelBounds.Bottom), 0, targetSize.Y);
+        var right = Math.Clamp((int) MathF.Ceiling(pixelBounds.Right), left, targetSize.X);
+        var bottom = Math.Clamp((int) MathF.Ceiling(pixelBounds.Top), top, targetSize.Y);
+
+        renderHandle.SetScissor(new UIBox2i(left, top, right, bottom));
+        try
+        {
+            renderHandle.RenderInRenderTarget(
+                resources.ShadowMask,
+                _drawShadowMask,
+                Color.Black);
+        }
+        finally
+        {
+            renderHandle.SetScissor(null);
+        }
     }
 
     private void DrawTriangleList(DrawingHandleWorld handle, ReadOnlySpan<DrawVertexUV2DColor> vertices)
@@ -42,16 +60,15 @@ public sealed partial class ScpShadowCasterOverlay
         }
     }
 
-    private void DrawProtectedSprites()
+    private void DrawProtectionMask()
     {
         var handle = _drawHandle!;
-        handle.UseShader(_stencilShader);
+        handle.UseShader(_protectionShader);
 
         for (var i = 0; i < _protectedSpriteLayers.Count; i++)
         {
             var layer = _protectedSpriteLayers[i];
-            var matrix = Matrix3x2.Multiply(layer.WorldMatrix, _targetMatrix);
-            handle.SetTransform(matrix);
+            handle.SetTransform(Matrix3x2.Multiply(layer.WorldMatrix, _targetMatrix));
             handle.DrawTextureRectRegion(layer.Texture, layer.Quad, layer.Modulate);
         }
 
@@ -67,24 +84,6 @@ public sealed partial class ScpShadowCasterOverlay
         handle.UseShader(null);
     }
 
-    private void DrawComposite()
-    {
-        var handle = _drawHandle!;
-        handle.SetTransform(_targetMatrix);
-        handle.UseShader(_subtractShader);
-        handle.DrawTextureRect(_currentCompositeTexture!, _worldBounds);
-        handle.UseShader(null);
-    }
-
-    private void DrawOutsideComposite()
-    {
-        var handle = _drawHandle!;
-        handle.SetTransform(_targetMatrix);
-        handle.UseShader(_outsideSubtractShader);
-        handle.DrawTextureRect(_currentCompositeTexture!, _worldBounds);
-        handle.UseShader(null);
-    }
-
     #endregion
 
     #region Per-viewport resources
@@ -96,9 +95,7 @@ public sealed partial class ScpShadowCasterOverlay
         private const int MaxCachedLightShaders = 2048;
 
         public IRenderTexture? ShadowMask;
-        public IRenderTexture? Contribution;
-        public IRenderTexture? OutsideContribution;
-        public IRenderTexture? Blur;
+        public IRenderTexture? ProtectionMask;
 
         private readonly Dictionary<LightShaderKey, CachedLightShader> _lightShaders = new(256);
         private readonly List<LightShaderKey> _staleLightShaders = new(64);
@@ -129,15 +126,21 @@ public sealed partial class ScpShadowCasterOverlay
             ShaderPrototype prototype,
             EntityUid owner,
             Texture shadowMask,
+            Texture protectionMask,
             Color lightColor,
             float lightRange,
             float lightPower,
             float lightFalloff,
             float lightCurveFactor,
             float lightSoftness,
-            bool outsideFov,
-            bool hasOccluders,
-            Vector2 lightCenterUv)
+            bool hasShadows,
+            bool hasProtection,
+            Vector2 lightCenterUv,
+            bool directionalFovActive,
+            Vector2 directionalFovOffset,
+            Vector2 directionalViewDirection,
+            Vector2 directionalRadialParameters,
+            Vector2 directionalConeThresholds)
         {
             var key = new LightShaderKey(owner);
             if (!_lightShaders.TryGetValue(key, out var cached))
@@ -152,15 +155,21 @@ public sealed partial class ScpShadowCasterOverlay
             cached.LastUsedFrame = _frame;
             cached.Update(
                 shadowMask,
+                protectionMask,
                 lightColor,
                 lightRange,
                 lightPower,
                 lightFalloff,
                 lightCurveFactor,
                 lightSoftness,
-                outsideFov,
-                hasOccluders,
-                lightCenterUv);
+                hasShadows,
+                hasProtection,
+                lightCenterUv,
+                directionalFovActive,
+                directionalFovOffset,
+                directionalViewDirection,
+                directionalRadialParameters,
+                directionalConeThresholds);
             return cached.Shader;
         }
 
@@ -186,36 +195,22 @@ public sealed partial class ScpShadowCasterOverlay
 
         public void EnsureSize(IClyde clyde, Vector2i size)
         {
-            var baseResourcesReady = ShadowMask?.Size == size &&
-                Contribution?.Size == size &&
-                Blur?.Size == size;
-            if (!baseResourcesReady)
-            {
-                Dispose();
-
-                var maskFormat = new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8);
-                var maskSamples = new TextureSampleParameters { Filter = true };
-                ShadowMask = clyde.CreateRenderTarget(
-                    size,
-                    maskFormat,
-                    maskSamples,
-                    "scp-shadow-packed-mask");
-                Contribution = clyde.CreateLightRenderTarget(size, "scp-shadow-contribution", false);
-                Blur = clyde.CreateLightRenderTarget(size, "scp-shadow-contribution-blur", false);
-            }
-
-        }
-
-        public void EnsureOutsideSize(IClyde clyde, Vector2i size)
-        {
-            if (OutsideContribution?.Size == size)
+            if (ShadowMask?.Size == size && ProtectionMask?.Size == size)
                 return;
 
-            OutsideContribution?.Dispose();
-            OutsideContribution = clyde.CreateLightRenderTarget(
+            Dispose();
+
+            var samples = new TextureSampleParameters { Filter = true };
+            ShadowMask = clyde.CreateRenderTarget(
                 size,
-                "scp-shadow-outside-fov-contribution",
-                false);
+                new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8),
+                samples,
+                "scp-shadow-packed-mask");
+            ProtectionMask = clyde.CreateRenderTarget(
+                size,
+                new RenderTargetFormatParameters(RenderTargetColorFormat.R8),
+                samples,
+                "scp-shadow-protection-mask");
         }
 
         public void Dispose()
@@ -226,14 +221,9 @@ public sealed partial class ScpShadowCasterOverlay
             _staleLightShaders.Clear();
 
             ShadowMask?.Dispose();
-            Contribution?.Dispose();
-            OutsideContribution?.Dispose();
-            Blur?.Dispose();
-
+            ProtectionMask?.Dispose();
             ShadowMask = null;
-            Contribution = null;
-            OutsideContribution = null;
-            Blur = null;
+            ProtectionMask = null;
         }
 
         private readonly record struct LightShaderKey(EntityUid Owner);
@@ -244,30 +234,45 @@ public sealed partial class ScpShadowCasterOverlay
             public int LastUsedFrame;
 
             private Texture? _shadowMask;
-            // Arrays are kept for the lifetime of the shader. ShaderInstance stores
-            // scalar and vector values as object, which boxes every changed value;
-            // reusing reference-type uniform arrays avoids that per-frame garbage.
+            private Texture? _protectionMask;
+
+            // ShaderInstance boxes individual values. Reused arrays keep the hot path allocation-free.
             private readonly Color[] _lightColor = [new(float.NaN, float.NaN, float.NaN, float.NaN)];
             private readonly float[] _lightParameters =
                 [float.NaN, float.NaN, float.NaN, float.NaN, float.NaN, float.NaN, float.NaN];
             private readonly Vector2[] _lightCenterUv = [new(float.NaN)];
+            private readonly Vector2[] _directionalFovParameters =
+                [new(float.NaN), new(float.NaN), new(float.NaN), new(float.NaN)];
+            private int _directionalFovMode = int.MinValue;
 
             public void Update(
                 Texture shadowMask,
+                Texture protectionMask,
                 Color lightColor,
                 float lightRange,
                 float lightPower,
                 float lightFalloff,
                 float lightCurveFactor,
                 float lightSoftness,
-                bool outsideFov,
-                bool hasOccluders,
-                Vector2 lightCenterUv)
+                bool hasShadows,
+                bool hasProtection,
+                Vector2 lightCenterUv,
+                bool directionalFovActive,
+                Vector2 directionalFovOffset,
+                Vector2 directionalViewDirection,
+                Vector2 directionalRadialParameters,
+                Vector2 directionalConeThresholds)
             {
                 if (!ReferenceEquals(_shadowMask, shadowMask))
                 {
                     _shadowMask = shadowMask;
                     Shader.SetParameter("shadowMask", shadowMask);
+                }
+
+                if (!ReferenceEquals(_protectionMask, protectionMask))
+                {
+                    _protectionMask = protectionMask;
+                    Shader.SetParameter("protectionMask", protectionMask);
                 }
 
                 if (_lightColor[0] != lightColor)
@@ -282,8 +287,8 @@ public sealed partial class ScpShadowCasterOverlay
                 SetFloat(2, lightSoftness, ref parametersDirty);
                 SetFloat(3, lightFalloff, ref parametersDirty);
                 SetFloat(4, lightCurveFactor, ref parametersDirty);
-                SetFloat(5, outsideFov ? 1f : 0f, ref parametersDirty);
-                SetFloat(6, hasOccluders ? 1f : 0f, ref parametersDirty);
+                SetFloat(5, hasShadows ? 1f : 0f, ref parametersDirty);
+                SetFloat(6, hasProtection ? 1f : 0f, ref parametersDirty);
                 if (parametersDirty)
                     Shader.SetParameter("lightParameters", _lightParameters);
 
@@ -292,6 +297,24 @@ public sealed partial class ScpShadowCasterOverlay
                     _lightCenterUv[0] = lightCenterUv;
                     Shader.SetParameter("lightCenterUv", _lightCenterUv);
                 }
+
+                var fovMode = directionalFovActive ? 1 : 0;
+                if (_directionalFovMode != fovMode)
+                {
+                    _directionalFovMode = fovMode;
+                    Shader.SetParameter("directionalFovMode", fovMode);
+                }
+
+                if (!directionalFovActive)
+                    return;
+
+                var fovDirty = false;
+                SetFovVector(0, directionalFovOffset, ref fovDirty);
+                SetFovVector(1, directionalViewDirection, ref fovDirty);
+                SetFovVector(2, directionalRadialParameters, ref fovDirty);
+                SetFovVector(3, directionalConeThresholds, ref fovDirty);
+                if (fovDirty)
+                    Shader.SetParameter("directionalFovParameters", _directionalFovParameters);
             }
 
             private void SetFloat(int index, float value, ref bool dirty)
@@ -300,6 +323,15 @@ public sealed partial class ScpShadowCasterOverlay
                     return;
 
                 _lightParameters[index] = value;
+                dirty = true;
+            }
+
+            private void SetFovVector(int index, Vector2 value, ref bool dirty)
+            {
+                if (_directionalFovParameters[index] == value)
+                    return;
+
+                _directionalFovParameters[index] = value;
                 dirty = true;
             }
 

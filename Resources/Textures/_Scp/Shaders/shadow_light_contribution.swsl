@@ -1,13 +1,18 @@
 light_mode unshaded;
 blend_mode add;
 
+#include "/Textures/_Scp/Shaders/directional_fov_shared.swsl"
+
 uniform sampler2D shadowMask;
+uniform sampler2D protectionMask;
 uniform highp vec4[1] lightColor;
 uniform highp vec2[1] lightCenterUv;
-// Range, power, softness, falloff, curve factor, outside channel and
-// occluder presence. Kept in one reusable
-// array so moving lights and cameras do not box shader parameters on the CPU.
+// Range, power, softness, falloff, curve factor, shadow-mask presence and
+// protection-mask presence. Arrays let the CPU reuse parameter objects.
 uniform highp float[7] lightParameters;
+uniform highp int directionalFovMode;
+// Offset, view direction, radial parameters and cone thresholds.
+uniform highp vec2[4] directionalFovParameters;
 
 highp vec3 sampleMask7(sampler2D maskTexture, highp vec2 uv, highp vec2 offset)
 {
@@ -24,9 +29,28 @@ highp vec3 sampleMask7(sampler2D maskTexture, highp vec2 uv, highp vec2 offset)
     return value;
 }
 
-void fragment()
+mediump float getDirectionalFovOcclusion(highp vec2 fragmentCoords)
 {
-    highp vec2 screenUv = FRAGCOORD.xy * SCREEN_PIXEL_SIZE;
+    if (directionalFovMode == 0)
+        return 0.0;
+
+    highp vec2 targetSize = vec2(
+        1.0 / SCREEN_PIXEL_SIZE.x,
+        1.0 / SCREEN_PIXEL_SIZE.y);
+    highp vec2 finalCoords = fragmentCoords - directionalFovParameters[0];
+    return scpDirectionalFovOcclusionMask(
+        targetSize,
+        finalCoords,
+        directionalFovParameters[1],
+        directionalFovParameters[2],
+        directionalFovParameters[3]);
+}
+
+mediump float getShadowVisibility(highp vec2 screenUv, highp vec2 fragmentCoords)
+{
+    if (lightParameters[5] <= 0.0)
+        return 1.0;
+
     highp vec2 fromLight = screenUv - lightCenterUv[0];
     highp vec2 perpendicular = vec2(1.0, 0.0);
     if (dot(fromLight, fromLight) > 0.0000001)
@@ -34,14 +58,29 @@ void fragment()
 
     highp vec2 softOffset = perpendicular * SCREEN_PIXEL_SIZE * lightParameters[2];
     highp vec3 masks = sampleMask7(shadowMask, screenUv, softOffset);
-    highp float caster = mix(masks.r, masks.g, lightParameters[5]);
-    if (caster <= 0.0)
+    mediump float directionalOcclusion = getDirectionalFovOcclusion(fragmentCoords);
+    mediump float caster = mix(masks.r, masks.g, directionalOcclusion);
+
+    if (lightParameters[6] > 0.0)
+    {
+        mediump float protection = zTextureSpec(protectionMask, screenUv).r;
+        caster *= 1.0 - clamp(protection, 0.0, 1.0);
+    }
+
+    mediump float casterVisibility = 1.0 - clamp(caster, 0.0, 1.0);
+    mediump float occluderVisibility = 1.0 - clamp(masks.b, 0.0, 1.0);
+    return casterVisibility * occluderVisibility;
+}
+
+void fragment()
+{
+    highp float pointLightMask = zTexture(UV).r;
+    if (pointLightMask <= 0.0)
         discard;
 
-    highp float stockOcclusion = lightParameters[6] > 0.0 ? masks.b : 0.0;
-    highp float shadow = caster * (1.0 - clamp(stockOcclusion, 0.0, 1.0));
-    highp float mask = zTexture(UV).r;
-    if (shadow <= 0.0 || mask <= 0.0)
+    highp vec2 screenUv = FRAGCOORD.xy * SCREEN_PIXEL_SIZE;
+    mediump float shadowVisibility = getShadowVisibility(screenUv, FRAGCOORD.xy);
+    if (shadowVisibility <= 0.0)
         discard;
 
     highp float lightRange = lightParameters[0];
@@ -59,7 +98,7 @@ void fragment()
         0.0,
         1.0);
 
-    strength *= lightParameters[1] * mask * shadow;
+    strength *= lightParameters[1] * pointLightMask * shadowVisibility;
     if (strength <= 0.0)
         discard;
 

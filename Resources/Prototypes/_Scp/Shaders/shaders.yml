@@ -62,14 +62,9 @@
   blend_mode: Add
 
 - type: shader
-  id: ScpShadowSubtract
+  id: ScpShadowProtection
   kind: source
-  path: "/Textures/_Scp/Shaders/shadow_subtract.swsl"
-
-- type: shader
-  id: ScpShadowStencil
-  kind: source
-  path: "/Textures/_Scp/Shaders/shadow_stencil.swsl"
+  path: "/Textures/_Scp/Shaders/shadow_protection.swsl"
 
 - type: shader
   id: Scp096Rage

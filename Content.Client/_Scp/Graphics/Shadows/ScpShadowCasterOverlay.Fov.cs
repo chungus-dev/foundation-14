@@ -2,9 +2,7 @@ using System.Numerics;
 using Content.Shared._Scp.Vision.FOV;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
-using Robust.Shared;
 using Robust.Shared.Graphics;
-using Robust.Shared.Map;
 using Robust.Shared.Maths;
 
 namespace Content.Client._Scp.Graphics.Shadows;
@@ -14,9 +12,6 @@ public sealed partial class ScpShadowCasterOverlay
     private const float FovAdditionalMarginMeters = 0.4f;
     private const float MinimumFovFeatherPixels = 0.0001f;
     private const float MinimumFovConeThresholdSpan = 0.0001f;
-    private const int HardFovStencilBit = 0x80;
-    private const int InsideProtectionStencilBit = 0x01;
-    private const int OutsideProtectionStencilBit = 0x02;
 
     #region FOV frame state
 
@@ -30,8 +25,6 @@ public sealed partial class ScpShadowCasterOverlay
     private Vector2 _directionalConeThresholds;
     private bool _directionalFovActive;
     private bool _renderLocalFovException;
-    private readonly CompositeFovShaderState _normalCompositeFovState = new();
-    private readonly CompositeFovShaderState _outsideCompositeFovState = new();
 
     private void PrepareFovContext(in OverlayDrawArgs args, IEye eye)
     {
@@ -125,7 +118,7 @@ public sealed partial class ScpShadowCasterOverlay
         return occludable.Inverted ? 1f - alpha : alpha;
     }
 
-    private void PrepareFovRenderParameters(Vector2 lightScale)
+    private void PrepareFovRenderParameters(IClydeViewport viewport, Vector2 lightScale)
     {
         if (!_directionalFovActive ||
             _localPlayerCaster is not { } localPlayer ||
@@ -139,7 +132,8 @@ public sealed partial class ScpShadowCasterOverlay
         _directionalFovOffset = GetDirectionalFovOffset(
             localPlayer,
             _directionalTransform,
-            _directionalEye) * lightScale;
+            _directionalEye,
+            viewport) * lightScale;
 
         var pixelScale = (lightScale.X + lightScale.Y) * 0.5f;
         var ignoreRadiusPixels =
@@ -171,116 +165,22 @@ public sealed partial class ScpShadowCasterOverlay
     private Vector2 GetDirectionalFovOffset(
         EntityUid localPlayer,
         TransformComponent transform,
-        EyeComponent eye)
+        EyeComponent eye,
+        IClydeViewport viewport)
     {
         if (eye.Offset == Vector2.Zero)
             return Vector2.Zero;
 
         var playerCoordinates = _transformSystem.GetMapCoordinates(localPlayer, transform);
-        var offsetCoordinates = new MapCoordinates(
-            playerCoordinates.Position + eye.Offset,
-            playerCoordinates.MapId);
-        var playerScreen = _eyeManager.MapToScreen(playerCoordinates);
-        var offsetScreen = _eyeManager.MapToScreen(offsetCoordinates);
-        var offset = playerScreen.Position - offsetScreen.Position;
+        var playerScreen = viewport.WorldToLocal(playerCoordinates.Position);
+        var offsetScreen = viewport.WorldToLocal(playerCoordinates.Position + eye.Offset);
+        var offset = playerScreen - offsetScreen;
         return offset * new Vector2(1f, -1f);
     }
 
     #endregion
 
-    #region Directional FOV composite
-
-    private void SetCompositeFovParameters()
-    {
-        SetCompositeFovParameters(
-            _subtractShader,
-            _normalCompositeFovState,
-            _directionalFovActive ? 1 : 0);
-        SetCompositeFovParameters(
-            _outsideSubtractShader,
-            _outsideCompositeFovState,
-            _directionalFovActive ? 2 : 0);
-    }
-
-    private void SetCompositeFovParameters(
-        ShaderInstance shader,
-        CompositeFovShaderState state,
-        int mode)
-    {
-        if (state.Mode != mode)
-        {
-            state.Mode = mode;
-            shader.SetParameter("directionalFovMode", mode);
-        }
-
-        if (mode == 0)
-            return;
-
-        var parametersDirty = false;
-        state.SetParameter(0, _directionalFovOffset, ref parametersDirty);
-        state.SetParameter(1, _directionalViewDirection, ref parametersDirty);
-        state.SetParameter(2, _directionalRadialParameters, ref parametersDirty);
-        state.SetParameter(3, _directionalConeThresholds, ref parametersDirty);
-        if (parametersDirty)
-            shader.SetParameter("directionalFovParameters", state.Parameters);
-    }
-
-    #endregion
-
-    #region Stencil setup
-
-    private void ConfigureStencilShaders()
-    {
-        // Hard FOV leaves all bits set in visible pixels. The two low bits gate
-        // inside/outside composites and are cleared together under visible sprites.
-        _subtractShader.Stencil = new StencilParameters
-        {
-            Enabled = true,
-            Ref = HardFovStencilBit | InsideProtectionStencilBit,
-            ReadMask = HardFovStencilBit | InsideProtectionStencilBit,
-            WriteMask = 0,
-            Func = StencilFunc.Equal,
-            Op = StencilOp.Keep,
-        };
-        _outsideSubtractShader.Stencil = new StencilParameters
-        {
-            Enabled = true,
-            Ref = HardFovStencilBit | OutsideProtectionStencilBit,
-            ReadMask = HardFovStencilBit | OutsideProtectionStencilBit,
-            WriteMask = 0,
-            Func = StencilFunc.Equal,
-            Op = StencilOp.Keep,
-        };
-        _stencilShader.Stencil = new StencilParameters
-        {
-            Enabled = true,
-            Ref = HardFovStencilBit,
-            ReadMask = HardFovStencilBit,
-            WriteMask = InsideProtectionStencilBit | OutsideProtectionStencilBit,
-            Func = StencilFunc.Equal,
-            Op = StencilOp.Replace,
-        };
-    }
-
-    #endregion
-
-    #region Cached shader parameters
-
-    private sealed class CompositeFovShaderState
-    {
-        public int Mode = int.MinValue;
-        public readonly Vector2[] Parameters =
-            [new(float.NaN), new(float.NaN), new(float.NaN), new(float.NaN)];
-
-        public void SetParameter(int index, Vector2 value, ref bool dirty)
-        {
-            if (Parameters[index] == value)
-                return;
-
-            Parameters[index] = value;
-            dirty = true;
-        }
-    }
+    #region Cached FOV classification
 
     [Flags]
     private enum DirectionalFovVisibility : byte

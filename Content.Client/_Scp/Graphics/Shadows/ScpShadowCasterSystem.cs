@@ -26,6 +26,7 @@ public sealed partial class ScpShadowCasterSystem : EntitySystem
         base.Initialize();
 
         InitializeConfiguration();
+        InitializeViewportLighting();
         ContourCache = new ScpShadowContourCache(_clickMaps);
         _overlay = new ScpShadowCasterOverlay(this);
         _overlayManager.AddOverlay(_overlay);
@@ -35,6 +36,7 @@ public sealed partial class ScpShadowCasterSystem : EntitySystem
     {
         _overlayManager.RemoveOverlay(_overlay);
         _overlay.Dispose();
+        ShutdownViewportLighting();
         ShutdownConfiguration();
 
         base.Shutdown();

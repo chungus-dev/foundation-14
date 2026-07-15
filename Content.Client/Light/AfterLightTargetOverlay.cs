@@ -13,12 +13,22 @@ public sealed partial class AfterLightTargetOverlay : Overlay
 
     [Dependency] private IOverlayManager _overlay = default!;
 
-    public const int ContentZIndex = LightBlurOverlay.ContentZIndex + 1;
+    private readonly Action _copyLightTarget;
+    private DrawingHandleWorld? _drawHandle;
+    private Texture? _sourceTexture;
+    private Box2Rotated _destinationBounds;
+    private UIBox2i _sourceRegion;
+    private Matrix3x2 _targetMatrix;
+
+    // Scp edit start - reserve LightBlurOverlay.ContentZIndex + 1 for SCP lighting.
+    public const int ContentZIndex = LightBlurOverlay.ContentZIndex + 2;
+    // Scp edit end
 
     public AfterLightTargetOverlay()
     {
         IoCManager.InjectDependencies(this);
         ZIndex = ContentZIndex;
+        _copyLightTarget = CopyLightTarget;
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -42,19 +52,40 @@ public sealed partial class AfterLightTargetOverlay : Overlay
         var diff = (lightRes.EnlargedLightTarget.Size - viewport.LightRenderTarget.Size);
         var halfDiff = diff / 2;
 
-        // Pixels -> Metres -> Half distance.
-        // If we're zoomed in need to enlarge the bounds further.
-        args.WorldHandle.RenderInRenderTarget(viewport.LightRenderTarget,
-            () =>
-            {
-                // We essentially need to draw the cropped version onto the lightrendertarget.
-                var subRegion = new UIBox2i(halfDiff.X,
-                    halfDiff.Y,
-                    viewport.LightRenderTarget.Size.X + halfDiff.X,
-                    viewport.LightRenderTarget.Size.Y + halfDiff.Y);
+        _drawHandle = worldHandle;
+        _sourceTexture = lightRes.EnlargedLightTarget.Texture;
+        _destinationBounds = bounds;
+        _targetMatrix = localMatrix;
+        _sourceRegion = new UIBox2i(
+            halfDiff.X,
+            halfDiff.Y,
+            viewport.LightRenderTarget.Size.X + halfDiff.X,
+            viewport.LightRenderTarget.Size.Y + halfDiff.Y);
 
-                worldHandle.SetTransform(localMatrix);
-                worldHandle.DrawTextureRectRegion(lightRes.EnlargedLightTarget.Texture, bounds, subRegion: subRegion);
-            }, null); // Scp edit - preserve the engine hard-FOV stencil while replacing the full color target
+        try
+        {
+            // Scp edit start - preserve hard-FOV stencil without allocating a frame callback.
+            worldHandle.RenderInRenderTarget(
+                viewport.LightRenderTarget,
+                _copyLightTarget,
+                null);
+            // Scp edit end
+        }
+        finally
+        {
+            _drawHandle = null;
+            _sourceTexture = null;
+        }
     }
+
+    // Scp added start - cached callback for the enlarged-target copy.
+    private void CopyLightTarget()
+    {
+        _drawHandle!.SetTransform(_targetMatrix);
+        _drawHandle!.DrawTextureRectRegion(
+            _sourceTexture!,
+            _destinationBounds,
+            subRegion: _sourceRegion);
+    }
+    // Scp added end
 }

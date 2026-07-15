@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+// Scp edit start
+using Content.Client._Scp.Graphics.Shadows;
+// Scp edit end
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.UserInterface;
@@ -154,7 +157,21 @@ namespace Content.Client.Viewport
 
             DebugTools.AssertNotNull(_viewport);
 
-            _viewport!.Render();
+            // Scp edit start
+            var suppressEngineLights =
+                _entityManager.EntitySysManager.TryGetEntitySystem<ScpShadowCasterSystem>(out var shadowSystem) &&
+                shadowSystem.BeginViewportLighting(_viewport!);
+
+            try
+            {
+                _viewport!.Render();
+            }
+            finally
+            {
+                if (suppressEngineLights)
+                    shadowSystem!.EndViewportLighting();
+            }
+            // Scp edit end
 
             if (_queuedScreenshots.Count != 0)
             {

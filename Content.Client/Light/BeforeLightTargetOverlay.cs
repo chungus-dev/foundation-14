@@ -42,14 +42,20 @@ public sealed partial class BeforeLightTargetOverlay : Overlay
         // This just exists to copy the lightrendertarget and write back to it.
         if (res.EnlargedLightTarget?.Size != size)
         {
+            // Scp edit start - preserve HDR point-light energy in the Content target.
+            res.EnlargedLightTarget?.Dispose();
             res.EnlargedLightTarget = _clyde
-                .CreateRenderTarget(size, new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb), name: "enlarged-light-copy");
+                .CreateLightRenderTarget(size, "enlarged-light-copy", depthStencil: false);
+            // Scp edit end
         }
 
+        // Scp edit start - additive light blending requires an opaque ambient base.
+        var clearColor = _clyde.GetClearColor(args.MapUid).WithAlpha(1f);
         args.WorldHandle.RenderInRenderTarget(res.EnlargedLightTarget,
             () =>
             {
-            }, _clyde.GetClearColor(args.MapUid));
+            }, clearColor);
+        // Scp edit end
     }
 
     internal CachedResources GetCachedForViewport(IClydeViewport viewport)

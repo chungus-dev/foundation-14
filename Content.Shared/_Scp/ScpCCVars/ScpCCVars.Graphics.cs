@@ -56,6 +56,12 @@ public sealed partial class ScpCCVars
      */
 
     /// <summary>
+    /// Replaces engine point-light rendering with the Content lighting pass.
+    /// </summary>
+    public static readonly CVarDef<bool> ContentLighting =
+        CVarDef.Create("scp.content_lighting", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
     /// Controls the rendering quality of visual shadows cast by mobs.
     /// </summary>
     public static readonly CVarDef<int> MobShadowQuality =
