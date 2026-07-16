@@ -25,7 +25,9 @@ public sealed partial class RoofOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.BeforeLighting;
 
-    public const int ContentZIndex = BeforeLightTargetOverlay.ContentZIndex + 1;
+    // Scp edit start - roofs must cover sun shadows inside the complex.
+    public const int ContentZIndex = SunShadowOverlay.ContentZIndex + 1;
+    // Scp edit end
 
     public RoofOverlay(IEntityManager entManager)
     {

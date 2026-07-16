@@ -19,6 +19,7 @@ public sealed partial class SunShadowOverlay : Overlay
     [Dependency] private IClyde _clyde = default!;
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private IPrototypeManager _protoManager = default!;
+    [Dependency] private IOverlayManager _overlay = default!; // Scp added - access the Content lighting target.
     private readonly EntityLookupSystem _lookup;
     private readonly SharedMapSystem _mapSys;
     private readonly SharedTransformSystem _xformSys;
@@ -26,6 +27,9 @@ public sealed partial class SunShadowOverlay : Overlay
     private readonly HashSet<Entity<SunShadowCastComponent>> _shadows = new();
 
     private readonly OverlayResourceCache<CachedResources> _resources = new();
+    public const int ContentZIndex = BeforeLightTargetOverlay.ContentZIndex + 1; // Scp added - sun shadows must be covered by roofs and point lights.
+
+    private BeforeLightTargetOverlay? _beforeLightOverlay;
 
     public SunShadowOverlay()
     {
@@ -33,7 +37,7 @@ public sealed partial class SunShadowOverlay : Overlay
         _xformSys = _entManager.System<SharedTransformSystem>();
         _mapSys = _entManager.System<SharedMapSystem>();
         _lookup = _entManager.System<EntityLookupSystem>();
-        ZIndex = AfterLightTargetOverlay.ContentZIndex + 1;
+        ZIndex = ContentZIndex; // Scp edit - render before roofs.
     }
 
     private List<Entity<MapGridComponent>> _grids = new();
@@ -46,20 +50,26 @@ public sealed partial class SunShadowOverlay : Overlay
         if (eye == null)
             return;
 
+        // Scp edit start - render into the enlarged Content lighting target.
+        _beforeLightOverlay ??= _overlay.GetOverlay<BeforeLightTargetOverlay>();
+        var lightTarget = _beforeLightOverlay.GetCachedForViewport(viewport).EnlargedLightTarget;
+        var worldBounds = _beforeLightOverlay.EnlargedBounds;
+
         _grids.Clear();
         _mapSys.FindGridsIntersecting(args.MapId,
-            args.WorldBounds.Enlarged(SunShadowComponent.MaxLength),
+            worldBounds.Enlarged(SunShadowComponent.MaxLength),
             ref _grids);
 
         var worldHandle = args.WorldHandle;
         var mapId = args.MapId;
-        var worldBounds = args.WorldBounds;
-        var targetSize = viewport.LightRenderTarget.Size;
+        var targetSize = lightTarget.Size;
+        // Scp edit end
 
         var res = _resources.GetForViewport(args.Viewport, static _ => new CachedResources());
 
         if (res.Target?.Size != targetSize)
         {
+            res.Target?.Dispose();  // Scp added - release targets when the light resolution changes.
             res.Target = _clyde
                 .CreateRenderTarget(targetSize,
                     new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb),
@@ -67,6 +77,7 @@ public sealed partial class SunShadowOverlay : Overlay
 
             if (res.BlurTarget?.Size != targetSize)
             {
+                res.BlurTarget?.Dispose(); // Scp added - release targets when the light resolution changes.
                 res.BlurTarget = _clyde
                     .CreateRenderTarget(targetSize, new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb), name: "sun-shadow-blur");
             }
@@ -148,11 +159,11 @@ public sealed partial class SunShadowOverlay : Overlay
             _clyde.BlurRenderTarget(viewport, res.Target, res.BlurTarget!, eye, 1f);
 
             // Draw stencil (see roofoverlay).
-            args.WorldHandle.RenderInRenderTarget(viewport.LightRenderTarget,
+            args.WorldHandle.RenderInRenderTarget(lightTarget,  // Scp edit - roofs and point lights are composed after this target.
                 () =>
                 {
                     var invMatrix =
-                        viewport.LightRenderTarget.GetWorldToLocalMatrix(eye, scale);
+                        lightTarget.GetWorldToLocalMatrix(eye, scale);  // Scp edit - roofs and point lights are composed after this target.
                     worldHandle.SetTransform(invMatrix);
 
                     var maskShader = _protoManager.Index(MixShader).Instance();
