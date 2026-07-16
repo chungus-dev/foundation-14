@@ -29,8 +29,6 @@ public sealed partial class VignetteOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
-    public override bool RequestScreenTexture => true;
-
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
         if (CurrentStrength == 0)
@@ -46,10 +44,6 @@ public sealed partial class VignetteOverlay : Overlay
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        if (ScreenTexture is null)
-            return;
-
-        _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
         _shader.SetParameter("vignette_color", Color.Black.WithAlpha(0.9f));
         _shader.SetParameter("effect_overall_strength", CurrentStrength);
 

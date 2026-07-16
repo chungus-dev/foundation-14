@@ -5,7 +5,6 @@ using System.Numerics;
 using Content.Client.Graphics;
 using Robust.Client.GameObjects;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 
 namespace Content.Client._Scp.Graphics.Shaders.FieldOfView.Overlays;

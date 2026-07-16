@@ -1,5 +1,4 @@
-﻿uniform sampler2D SCREEN_TEXTURE;
-uniform lowp vec4 vignette_color;
+﻿uniform lowp vec4 vignette_color;
 
 uniform highp float effect_overall_strength;
 

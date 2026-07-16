@@ -66,6 +66,13 @@ public sealed partial class BlinkingOverlay : Overlay
             StopAnimating();
     }
 
+    protected override bool BeforeDraw(in OverlayDrawArgs args)
+    {
+        // Skipping the draw is required: disabling only the screen request leaves
+        // ScreenTexture pointing at Clyde's shared, potentially stale texture.
+        return IsAnimating || _blinkingProgress > 0f;
+    }
+
     private void StopAnimating()
     {
         _blinkingProgress = _targetProgress;
