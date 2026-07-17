@@ -1,9 +1,19 @@
+preset raw;
 light_mode unshaded;
+
+varying lowp float vertexAlpha;
+
+void vertex()
+{
+    VERTEX = pixel_snap(apply_mvp(VERTEX));
+    vertexAlpha = modulate.a;
+}
 
 void fragment()
 {
-    if (zTexture(UV).a * MODULATE.a < 0.1)
+    if (zTexture(UV).a * vertexAlpha < 0.1)
         discard;
 
+    // Keep this mask binary so grouping layers by source texture is order-independent.
     COLOR = vec4(1.0);
 }

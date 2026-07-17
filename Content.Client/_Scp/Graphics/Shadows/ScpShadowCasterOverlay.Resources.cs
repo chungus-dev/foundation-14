@@ -8,7 +8,7 @@ namespace Content.Client._Scp.Graphics.Shadows;
 
 public sealed partial class ScpShadowCasterOverlay
 {
-    private const int MaxPrimitiveVerticesPerDraw = 65_529;
+    private const int MaxPrimitiveVerticesPerDraw = ScpLightingBatchPlanner.MaxVerticesPerDraw;
 
     #region Render callbacks
 
@@ -16,46 +16,20 @@ public sealed partial class ScpShadowCasterOverlay
     {
         var handle = _drawHandle!;
         handle.SetTransform(_targetMatrix);
-        var vertices = _currentShadowMaskVertices!;
-        if (vertices.Count != 0)
-        {
-            handle.UseShader(_maskShader);
-            DrawTriangleList(handle, CollectionsMarshal.AsSpan(vertices));
-        }
-
+        handle.UseShader(_maskShader);
+        DrawTriangleList(handle, _whiteTexture, CollectionsMarshal.AsSpan(_atlasMaskVertices));
         handle.UseShader(null);
     }
 
-    private void ClearAndDrawShadowMask(CachedResources resources)
-    {
-        var renderHandle = _renderHandle!;
-        var targetSize = resources.ShadowMask!.Size;
-        var pixelBounds = _targetMatrix.TransformBox(_currentMaskBounds);
-        var left = Math.Clamp((int) MathF.Floor(pixelBounds.Left), 0, targetSize.X);
-        var top = Math.Clamp((int) MathF.Floor(pixelBounds.Bottom), 0, targetSize.Y);
-        var right = Math.Clamp((int) MathF.Ceiling(pixelBounds.Right), left, targetSize.X);
-        var bottom = Math.Clamp((int) MathF.Ceiling(pixelBounds.Top), top, targetSize.Y);
-
-        renderHandle.SetScissor(new UIBox2i(left, top, right, bottom));
-        try
-        {
-            renderHandle.RenderInRenderTarget(
-                resources.ShadowMask,
-                _drawShadowMask,
-                Color.Black);
-        }
-        finally
-        {
-            renderHandle.SetScissor(null);
-        }
-    }
-
-    private void DrawTriangleList(DrawingHandleWorld handle, ReadOnlySpan<DrawVertexUV2DColor> vertices)
+    private static void DrawTriangleList(
+        DrawingHandleWorld handle,
+        Texture texture,
+        ReadOnlySpan<DrawVertexUV2DColor> vertices)
     {
         while (!vertices.IsEmpty)
         {
             var count = Math.Min(vertices.Length, MaxPrimitiveVerticesPerDraw);
-            handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, _whiteTexture, vertices[..count]);
+            handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, texture, vertices[..count]);
             vertices = vertices[count..];
         }
     }
@@ -63,24 +37,20 @@ public sealed partial class ScpShadowCasterOverlay
     private void DrawProtectionMask()
     {
         var handle = _drawHandle!;
+        PrepareProtectionBatches();
         handle.UseShader(_protectionShader);
 
-        for (var i = 0; i < _protectedSpriteLayers.Count; i++)
+        for (var batchIndex = 0; batchIndex < _activeProtectionBatches; batchIndex++)
         {
-            var layer = _protectedSpriteLayers[i];
-            handle.SetTransform(Matrix3x2.Multiply(layer.WorldMatrix, _targetMatrix));
-            handle.DrawTextureRectRegion(layer.Texture, layer.Quad, layer.Modulate);
+            var batch = _protectionBatches[batchIndex];
+            for (var layerIndex = 0; layerIndex < batch.Layers.Count; layerIndex++)
+            {
+                var layer = batch.Layers[layerIndex];
+                handle.SetTransform(Matrix3x2.Multiply(layer.WorldMatrix, _targetMatrix));
+                handle.DrawTextureRectRegion(layer.Texture, layer.Quad, layer.Modulate);
+            }
         }
 
-        handle.UseShader(null);
-    }
-
-    private void DrawContribution()
-    {
-        var handle = _drawHandle!;
-        handle.SetTransform(_targetMatrix);
-        handle.UseShader(_currentContributionShader);
-        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, _currentLightMask, _lightQuad);
         handle.UseShader(null);
     }
 
@@ -90,122 +60,98 @@ public sealed partial class ScpShadowCasterOverlay
 
     private sealed class CachedResources : IDisposable
     {
-        private const int ShaderPruneInterval = 300;
-        private const int ShaderLifetimeFrames = 600;
-        private const int MaxCachedLightShaders = 2048;
-
         public IRenderTexture? ShadowMask;
         public IRenderTexture? ProtectionMask;
 
-        private readonly Dictionary<LightShaderKey, CachedLightShader> _lightShaders = new(256);
-        private readonly List<LightShaderKey> _staleLightShaders = new(64);
-        private int _frame;
+        private readonly List<ShaderInstance> _standardShaders = new(8);
+        private readonly List<PooledShadowShader> _shadowShaders = new(16);
+        private int _standardShaderCount;
+        private int _shadowShaderCount;
+        private Vector2i _targetSize;
 
         public void BeginFrame()
         {
-            _frame++;
-            if (_frame % ShaderPruneInterval != 0)
-                return;
-
-            _staleLightShaders.Clear();
-            foreach (var (key, shader) in _lightShaders)
-            {
-                if (_frame - shader.LastUsedFrame > ShaderLifetimeFrames)
-                    _staleLightShaders.Add(key);
-            }
-
-            for (var i = 0; i < _staleLightShaders.Count; i++)
-            {
-                var key = _staleLightShaders[i];
-                if (_lightShaders.Remove(key, out var shader))
-                    shader.Dispose();
-            }
+            _standardShaderCount = 0;
+            _shadowShaderCount = 0;
         }
 
-        public ShaderInstance GetContributionShader(
+        public ShaderInstance GetStandardShader(ShaderPrototype prototype, float curveFactor)
+        {
+            if (_standardShaderCount == _standardShaders.Count)
+                _standardShaders.Add(prototype.InstanceUnique());
+
+            var shader = _standardShaders[_standardShaderCount++];
+            shader.SetParameter("curveFactor", curveFactor);
+            return shader;
+        }
+
+        public ShaderInstance GetShadowShader(
             ShaderPrototype prototype,
-            EntityUid owner,
             Texture shadowMask,
             Texture protectionMask,
-            Color lightColor,
-            float lightRange,
-            float lightPower,
-            float lightFalloff,
-            float lightCurveFactor,
-            float lightSoftness,
-            bool hasShadows,
+            ReadOnlySpan<Color> lightAtlasData,
+            float softness,
+            float falloff,
+            float curveFactor,
             bool hasProtection,
-            Vector2 lightCenterUv,
             bool directionalFovActive,
             Vector2 directionalFovOffset,
             Vector2 directionalViewDirection,
             Vector2 directionalRadialParameters,
             Vector2 directionalConeThresholds)
         {
-            var key = new LightShaderKey(owner);
-            if (!_lightShaders.TryGetValue(key, out var cached))
-            {
-                if (_lightShaders.Count >= MaxCachedLightShaders)
-                    EvictOldestShader();
+            if (_shadowShaderCount == _shadowShaders.Count)
+                _shadowShaders.Add(new PooledShadowShader(prototype.InstanceUnique()));
 
-                cached = new CachedLightShader(prototype.InstanceUnique());
-                _lightShaders.Add(key, cached);
-            }
-
-            cached.LastUsedFrame = _frame;
-            cached.Update(
+            return _shadowShaders[_shadowShaderCount++].Configure(
                 shadowMask,
                 protectionMask,
-                lightColor,
-                lightRange,
-                lightPower,
-                lightFalloff,
-                lightCurveFactor,
-                lightSoftness,
-                hasShadows,
+                lightAtlasData,
+                softness,
+                falloff,
+                curveFactor,
                 hasProtection,
-                lightCenterUv,
                 directionalFovActive,
                 directionalFovOffset,
                 directionalViewDirection,
                 directionalRadialParameters,
                 directionalConeThresholds);
-            return cached.Shader;
         }
 
-        private void EvictOldestShader()
+        public void SetSize(Vector2i size)
         {
-            var hasOldest = false;
-            var oldestKey = default(LightShaderKey);
-            var oldestFrame = int.MaxValue;
-
-            foreach (var (key, shader) in _lightShaders)
-            {
-                if (hasOldest && shader.LastUsedFrame >= oldestFrame)
-                    continue;
-
-                hasOldest = true;
-                oldestKey = key;
-                oldestFrame = shader.LastUsedFrame;
-            }
-
-            if (hasOldest && _lightShaders.Remove(oldestKey, out var oldest))
-                oldest.Dispose();
-        }
-
-        public void EnsureSize(IClyde clyde, Vector2i size)
-        {
-            if (ShadowMask?.Size == size && ProtectionMask?.Size == size)
+            if (_targetSize == size)
                 return;
 
-            Dispose();
+            _targetSize = size;
+            ShadowMask?.Dispose();
+            ProtectionMask?.Dispose();
+            ShadowMask = null;
+            ProtectionMask = null;
+        }
+
+        public void EnsureShadowMask(IClyde clyde)
+        {
+            if (ShadowMask?.Size == _targetSize)
+                return;
 
             var samples = new TextureSampleParameters { Filter = true };
             ShadowMask = clyde.CreateRenderTarget(
-                size,
+                _targetSize,
                 new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8),
                 samples,
                 "scp-shadow-packed-mask");
+        }
+
+        public void EnsureProtectionMask(IClyde clyde)
+        {
+            EnsureShadowMask(clyde);
+            var size = _targetSize;
+            if (ProtectionMask?.Size == size)
+                return;
+
+            ProtectionMask?.Dispose();
+            var samples = new TextureSampleParameters { Filter = true };
             ProtectionMask = clyde.CreateRenderTarget(
                 size,
                 new RenderTargetFormatParameters(RenderTargetColorFormat.R8),
@@ -215,129 +161,66 @@ public sealed partial class ScpShadowCasterOverlay
 
         public void Dispose()
         {
-            foreach (var shader in _lightShaders.Values)
-                shader.Dispose();
-            _lightShaders.Clear();
-            _staleLightShaders.Clear();
+            for (var i = 0; i < _standardShaders.Count; i++)
+                _standardShaders[i].Dispose();
+            _standardShaders.Clear();
+
+            for (var i = 0; i < _shadowShaders.Count; i++)
+                _shadowShaders[i].Dispose();
+            _shadowShaders.Clear();
 
             ShadowMask?.Dispose();
             ProtectionMask?.Dispose();
             ShadowMask = null;
             ProtectionMask = null;
+            _targetSize = default;
         }
 
-        private readonly record struct LightShaderKey(EntityUid Owner);
-
-        private sealed class CachedLightShader(ShaderInstance shader) : IDisposable
+        private sealed class PooledShadowShader(ShaderInstance shader) : IDisposable
         {
-            public readonly ShaderInstance Shader = shader;
-            public int LastUsedFrame;
+            private readonly ShaderInstance _shader = shader;
+            private readonly Color[] _lightAtlasData = new Color[GeometryBatchSize];
+            private readonly float[] _lightGroupParameters = new float[4];
+            private readonly Vector2[] _directionalFovParameters = new Vector2[4];
 
-            private Texture? _shadowMask;
-            private Texture? _protectionMask;
-
-            // ShaderInstance boxes individual values. Reused arrays keep the hot path allocation-free.
-            private readonly Color[] _lightColor = [new(float.NaN, float.NaN, float.NaN, float.NaN)];
-            private readonly float[] _lightParameters =
-                [float.NaN, float.NaN, float.NaN, float.NaN, float.NaN, float.NaN, float.NaN];
-            private readonly Vector2[] _lightCenterUv = [new(float.NaN)];
-            private readonly Vector2[] _directionalFovParameters =
-                [new(float.NaN), new(float.NaN), new(float.NaN), new(float.NaN)];
-            private int _directionalFovMode = int.MinValue;
-
-            public void Update(
+            public ShaderInstance Configure(
                 Texture shadowMask,
                 Texture protectionMask,
-                Color lightColor,
-                float lightRange,
-                float lightPower,
-                float lightFalloff,
-                float lightCurveFactor,
-                float lightSoftness,
-                bool hasShadows,
+                ReadOnlySpan<Color> lightAtlasData,
+                float softness,
+                float falloff,
+                float curveFactor,
                 bool hasProtection,
-                Vector2 lightCenterUv,
                 bool directionalFovActive,
                 Vector2 directionalFovOffset,
                 Vector2 directionalViewDirection,
                 Vector2 directionalRadialParameters,
                 Vector2 directionalConeThresholds)
             {
-                if (!ReferenceEquals(_shadowMask, shadowMask))
-                {
-                    _shadowMask = shadowMask;
-                    Shader.SetParameter("shadowMask", shadowMask);
-                }
+                lightAtlasData.CopyTo(_lightAtlasData);
+                _lightGroupParameters[0] = softness;
+                _lightGroupParameters[1] = falloff;
+                _lightGroupParameters[2] = curveFactor;
+                _lightGroupParameters[3] = hasProtection ? 1f : 0f;
+                _directionalFovParameters[0] = directionalFovOffset;
+                _directionalFovParameters[1] = directionalViewDirection;
+                _directionalFovParameters[2] = directionalRadialParameters;
+                _directionalFovParameters[3] = directionalConeThresholds;
 
-                if (!ReferenceEquals(_protectionMask, protectionMask))
-                {
-                    _protectionMask = protectionMask;
-                    Shader.SetParameter("protectionMask", protectionMask);
-                }
+                _shader.SetParameter("shadowMask", shadowMask);
+                _shader.SetParameter("protectionMask", protectionMask);
+                _shader.SetParameter("lightAtlasData", _lightAtlasData);
+                _shader.SetParameter("lightGroupParameters", _lightGroupParameters);
+                _shader.SetParameter("directionalFovMode", directionalFovActive ? 1 : 0);
+                if (directionalFovActive)
+                    _shader.SetParameter("directionalFovParameters", _directionalFovParameters);
 
-                if (_lightColor[0] != lightColor)
-                {
-                    _lightColor[0] = lightColor;
-                    Shader.SetParameter("lightColor", _lightColor);
-                }
-
-                var parametersDirty = false;
-                SetFloat(0, lightRange, ref parametersDirty);
-                SetFloat(1, lightPower, ref parametersDirty);
-                SetFloat(2, lightSoftness, ref parametersDirty);
-                SetFloat(3, lightFalloff, ref parametersDirty);
-                SetFloat(4, lightCurveFactor, ref parametersDirty);
-                SetFloat(5, hasShadows ? 1f : 0f, ref parametersDirty);
-                SetFloat(6, hasProtection ? 1f : 0f, ref parametersDirty);
-                if (parametersDirty)
-                    Shader.SetParameter("lightParameters", _lightParameters);
-
-                if (_lightCenterUv[0] != lightCenterUv)
-                {
-                    _lightCenterUv[0] = lightCenterUv;
-                    Shader.SetParameter("lightCenterUv", _lightCenterUv);
-                }
-
-                var fovMode = directionalFovActive ? 1 : 0;
-                if (_directionalFovMode != fovMode)
-                {
-                    _directionalFovMode = fovMode;
-                    Shader.SetParameter("directionalFovMode", fovMode);
-                }
-
-                if (!directionalFovActive)
-                    return;
-
-                var fovDirty = false;
-                SetFovVector(0, directionalFovOffset, ref fovDirty);
-                SetFovVector(1, directionalViewDirection, ref fovDirty);
-                SetFovVector(2, directionalRadialParameters, ref fovDirty);
-                SetFovVector(3, directionalConeThresholds, ref fovDirty);
-                if (fovDirty)
-                    Shader.SetParameter("directionalFovParameters", _directionalFovParameters);
-            }
-
-            private void SetFloat(int index, float value, ref bool dirty)
-            {
-                if (_lightParameters[index] == value)
-                    return;
-
-                _lightParameters[index] = value;
-                dirty = true;
-            }
-
-            private void SetFovVector(int index, Vector2 value, ref bool dirty)
-            {
-                if (_directionalFovParameters[index] == value)
-                    return;
-
-                _directionalFovParameters[index] = value;
-                dirty = true;
+                return _shader;
             }
 
             public void Dispose()
             {
-                Shader.Dispose();
+                _shader.Dispose();
             }
         }
     }

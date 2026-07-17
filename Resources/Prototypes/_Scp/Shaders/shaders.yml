@@ -56,6 +56,11 @@
   path: "/Textures/_Scp/Shaders/shadow_light_contribution.swsl"
 
 - type: shader
+  id: ScpLightBatch
+  kind: source
+  path: "/Textures/_Scp/Shaders/light_batch.swsl"
+
+- type: shader
   id: ScpShadowMask
   kind: canvas
   light_mode: unshaded

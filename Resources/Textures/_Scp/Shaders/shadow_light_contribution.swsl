@@ -1,3 +1,4 @@
+preset raw;
 light_mode unshaded;
 blend_mode add;
 
@@ -5,27 +6,60 @@ blend_mode add;
 
 uniform sampler2D shadowMask;
 uniform sampler2D protectionMask;
-uniform highp vec4[1] lightColor;
-uniform highp vec2[1] lightCenterUv;
-// Range, power, softness, falloff, curve factor, shadow-mask presence and
-// protection-mask presence. Arrays let the CPU reuse parameter objects.
-uniform highp float[7] lightParameters;
+// Original light centre (xy) and atlas sampling offset (zw) for each batched light.
+uniform highp vec4[16] lightAtlasData;
+// Softness, falloff, curve factor and protection-mask presence.
+uniform highp float[4] lightGroupParameters;
 uniform highp int directionalFovMode;
 // Offset, view direction, radial parameters and cone thresholds.
 uniform highp vec2[4] directionalFovParameters;
 
-highp vec3 sampleMask7(sampler2D maskTexture, highp vec2 uv, highp vec2 offset)
-{
-    if (lightParameters[2] <= 0.0)
-        return zTextureSpec(maskTexture, uv).rgb;
+varying highp vec4 vertexLight;
+varying highp vec2 vertexLightParameters;
 
-    highp vec3 value = zTextureSpec(maskTexture, uv).rgb * (20.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv + offset).rgb * (15.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv - offset).rgb * (15.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv + offset * 2.0).rgb * (6.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv - offset * 2.0).rgb * (6.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv + offset * 3.0).rgb * (1.0 / 64.0);
-    value += zTextureSpec(maskTexture, uv - offset * 3.0).rgb * (1.0 / 64.0);
+void vertex()
+{
+    VERTEX = pixel_snap(apply_mvp(VERTEX));
+    vertexLight = modulate;
+    vertexLightParameters = tCoord2;
+}
+
+highp vec2 clampSourceUv(highp vec2 uv)
+{
+    highp vec2 halfPixel = SCREEN_PIXEL_SIZE * 0.5;
+    return clamp(uv, halfPixel, vec2(1.0) - halfPixel);
+}
+
+highp vec3 sampleMask7(
+    sampler2D maskTexture,
+    highp vec2 sourceUv,
+    highp vec2 atlasOffset,
+    highp vec2 sampleOffset)
+{
+    if (lightGroupParameters[0] <= 0.0)
+        return zTextureSpec(maskTexture, clampSourceUv(sourceUv) + atlasOffset).rgb;
+
+    highp vec3 value = zTextureSpec(
+        maskTexture,
+        clampSourceUv(sourceUv) + atlasOffset).rgb * (20.0 / 64.0);
+    value += zTextureSpec(
+        maskTexture,
+        clampSourceUv(sourceUv + sampleOffset) + atlasOffset).rgb * (15.0 / 64.0);
+    value += zTextureSpec(
+        maskTexture,
+        clampSourceUv(sourceUv - sampleOffset) + atlasOffset).rgb * (15.0 / 64.0);
+    value += zTextureSpec(
+        maskTexture,
+        clampSourceUv(sourceUv + sampleOffset * 2.0) + atlasOffset).rgb * (6.0 / 64.0);
+    value += zTextureSpec(
+        maskTexture,
+        clampSourceUv(sourceUv - sampleOffset * 2.0) + atlasOffset).rgb * (6.0 / 64.0);
+    value += zTextureSpec(
+        maskTexture,
+        clampSourceUv(sourceUv + sampleOffset * 3.0) + atlasOffset).rgb * (1.0 / 64.0);
+    value += zTextureSpec(
+        maskTexture,
+        clampSourceUv(sourceUv - sampleOffset * 3.0) + atlasOffset).rgb * (1.0 / 64.0);
     return value;
 }
 
@@ -48,20 +82,23 @@ mediump float getDirectionalFovOcclusion(highp vec2 fragmentCoords)
 
 mediump float getShadowVisibility(highp vec2 screenUv, highp vec2 fragmentCoords)
 {
-    if (lightParameters[5] <= 0.0)
-        return 1.0;
+    lowp int lightIndex = int(floor(vertexLightParameters.y + 0.5));
 
-    highp vec2 fromLight = screenUv - lightCenterUv[0];
+    highp vec2 fromLight = screenUv - lightAtlasData[lightIndex].xy;
     highp vec2 perpendicular = vec2(1.0, 0.0);
     if (dot(fromLight, fromLight) > 0.0000001)
         perpendicular = normalize(vec2(-fromLight.y, fromLight.x));
 
-    highp vec2 softOffset = perpendicular * SCREEN_PIXEL_SIZE * lightParameters[2];
-    highp vec3 masks = sampleMask7(shadowMask, screenUv, softOffset);
+    highp vec2 softOffset = perpendicular * SCREEN_PIXEL_SIZE * lightGroupParameters[0];
+    highp vec3 masks = sampleMask7(
+        shadowMask,
+        screenUv,
+        lightAtlasData[lightIndex].zw,
+        softOffset);
     mediump float directionalOcclusion = getDirectionalFovOcclusion(fragmentCoords);
     mediump float caster = mix(masks.r, masks.g, directionalOcclusion);
 
-    if (lightParameters[6] > 0.0)
+    if (lightGroupParameters[3] > 0.0)
     {
         mediump float protection = zTextureSpec(protectionMask, screenUv).r;
         caster *= 1.0 - clamp(protection, 0.0, 1.0);
@@ -83,7 +120,7 @@ void fragment()
     if (shadowVisibility <= 0.0)
         discard;
 
-    highp float lightRange = lightParameters[0];
+    highp float lightRange = vertexLightParameters.x;
     highp vec2 diff = (UV - vec2(0.5)) * (2.0 * lightRange);
     highp float squareDistance = dot(diff, diff) + 1.0;
     highp float relativeDistance = clamp(sqrt(squareDistance) / lightRange, 0.0, 1.0);
@@ -91,16 +128,16 @@ void fragment()
     highp float curve = mix(
         relativeDistance,
         relativeDistanceSquared,
-        clamp(lightParameters[4], 0.0, 1.0));
+        clamp(lightGroupParameters[2], 0.0, 1.0));
     highp float strength = clamp(
         ((1.0 - relativeDistanceSquared) * (1.0 - relativeDistanceSquared)) /
-        (1.0 + lightParameters[3] * curve),
+        (1.0 + lightGroupParameters[1] * curve),
         0.0,
         1.0);
 
-    strength *= lightParameters[1] * pointLightMask * shadowVisibility;
+    strength *= vertexLight.a * pointLightMask * shadowVisibility;
     if (strength <= 0.0)
         discard;
 
-    COLOR = vec4(lightColor[0].rgb, strength);
+    COLOR = vec4(vertexLight.rgb, strength);
 }

@@ -33,37 +33,22 @@ public sealed partial class ScpShadowCasterOverlay
 
     #region Light contribution
 
-    private ShaderInstance GetContributionShader(
+    private void AppendLightQuad(
+        List<DrawVertexUV2DColor> vertices,
         in ScpShadowLightData light,
-        CachedResources resources,
-        float softness,
-        bool hasShadows,
-        bool hasProtection)
+        Vector2 parameters)
     {
-        var shadowMask = resources.ShadowMask!;
-        var localCenter = Vector2.Transform(light.Position, _targetMatrix);
-        var lightCenterUv = localCenter / (Vector2) shadowMask.Size;
-        lightCenterUv.Y = 1f - lightCenterUv.Y;
+        SetLightQuad(light);
 
-        return resources.GetContributionShader(
-            _contributionPrototype,
-            light.Owner,
-            shadowMask.Texture,
-            resources.ProtectionMask!.Texture,
-            light.Color,
-            light.Radius,
-            light.Energy,
-            light.Falloff,
-            light.CurveFactor,
-            softness,
-            hasShadows,
-            hasProtection,
-            lightCenterUv,
-            _directionalFovActive,
-            _directionalFovOffset,
-            _directionalViewDirection,
-            _directionalRadialParameters,
-            _directionalConeThresholds);
+        var color = Color.FromSrgb(light.Color).WithAlpha(light.Energy);
+        for (var i = 0; i < _lightQuad.Length; i++)
+        {
+            var source = _lightQuad[i];
+            vertices.Add(new DrawVertexUV2DColor(source.Position, source.UV, color)
+            {
+                UV2 = parameters,
+            });
+        }
     }
 
     private void SetLightQuad(in ScpShadowLightData light)

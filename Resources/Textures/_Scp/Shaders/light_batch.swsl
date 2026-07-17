@@ -1,0 +1,43 @@
+preset raw;
+light_mode unshaded;
+blend_mode add;
+
+uniform highp float curveFactor;
+
+varying highp vec4 vertexLight;
+varying highp vec2 vertexLightParameters;
+
+void vertex()
+{
+    VERTEX = pixel_snap(apply_mvp(VERTEX));
+    vertexLight = modulate;
+    vertexLightParameters = tCoord2;
+}
+
+void fragment()
+{
+    highp float pointLightMask = zTexture(UV).r;
+    if (pointLightMask <= 0.0)
+        discard;
+
+    highp float lightRange = vertexLightParameters.x;
+    highp vec2 diff = (UV - vec2(0.5)) * (2.0 * lightRange);
+    highp float squareDistance = dot(diff, diff) + 1.0;
+    highp float relativeDistance = clamp(sqrt(squareDistance) / lightRange, 0.0, 1.0);
+    highp float relativeDistanceSquared = relativeDistance * relativeDistance;
+    highp float curve = mix(
+        relativeDistance,
+        relativeDistanceSquared,
+        clamp(curveFactor, 0.0, 1.0));
+    highp float strength = clamp(
+        ((1.0 - relativeDistanceSquared) * (1.0 - relativeDistanceSquared)) /
+        (1.0 + vertexLightParameters.y * curve),
+        0.0,
+        1.0);
+
+    strength *= vertexLight.a * pointLightMask;
+    if (strength <= 0.0)
+        discard;
+
+    COLOR = vec4(vertexLight.rgb, strength);
+}

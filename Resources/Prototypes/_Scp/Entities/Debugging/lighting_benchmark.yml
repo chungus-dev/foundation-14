@@ -1,0 +1,52 @@
+# Scp added - deterministic point-light draw-call benchmark fixtures.
+- type: entity
+  id: ScpLightingBenchmarkMarker
+  name: lighting benchmark marker
+  suffix: Debug
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+
+- type: entity
+  id: ScpLightingBenchmarkLight
+  name: lighting benchmark light
+  suffix: Debug
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: PointLight
+    enabled: true
+    color: "#FFF4DC"
+    radius: 1.35
+    energy: 1
+    softness: 0.4
+    castShadows: true
+    netsync: false
+
+- type: entity
+  id: ScpLightingBenchmarkOccluder
+  name: lighting benchmark occluder
+  suffix: Debug
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Occluder
+    boundingBox: "-0.25,-0.35,0.25,0.35"
+
+- type: entity
+  id: ScpLightingBenchmarkCaster
+  name: lighting benchmark caster
+  suffix: Debug
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _Scp/Structures/Storage/closet.rsi
+    state: generic
+    scale: 0.5,0.5
+  - type: ScpShadowCasterVisuals
+    bounds: "-0.375,-0.375,0.375,0.375"

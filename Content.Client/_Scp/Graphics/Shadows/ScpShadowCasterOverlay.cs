@@ -21,6 +21,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     #region Shader prototypes
 
     private static readonly ProtoId<ShaderPrototype> ContributionShader = "ScpShadowLightContribution";
+    private static readonly ProtoId<ShaderPrototype> StandardContributionShader = "ScpLightBatch";
     private static readonly ProtoId<ShaderPrototype> MaskShader = "ScpShadowMask";
     private static readonly ProtoId<ShaderPrototype> ProtectionShader = "ScpShadowProtection";
 
@@ -30,6 +31,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.BeforeLighting;
     public const int ContentZIndex = LightBlurOverlay.ContentZIndex + 1;
+    private const int GeometryBatchSize = ScpLightingBatchPlanner.GeometryBatchSize;
 
     #endregion
 
@@ -60,6 +62,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     #region Render state
 
     private readonly ShaderPrototype _contributionPrototype;
+    private readonly ShaderPrototype _standardContributionPrototype;
     private readonly ShaderInstance _maskShader;
     private readonly ShaderInstance _protectionShader;
     private readonly Texture _whiteTexture;
@@ -71,14 +74,10 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private readonly Action _drawProtectionMask;
 
     private DrawingHandleWorld? _drawHandle;
-    private IRenderHandle? _renderHandle;
-    private List<DrawVertexUV2DColor>? _currentShadowMaskVertices;
-    private ShaderInstance? _currentContributionShader;
     private CachedResources? _currentResources;
-    private Texture _currentLightMask;
-    private Box2 _currentMaskBounds;
-    private float _worldUnitsPerMaskPixel;
+    private Vector2i _targetSize;
     private Matrix3x2 _targetMatrix;
+    private Matrix3x2 _inverseTargetMatrix;
     private Angle _eyeRotation;
     private bool _currentDrawShadows;
     private bool _currentHasProtection;
@@ -108,9 +107,9 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         _contourCache = system.ContourCache;
         _lightGeometryJob = new LightGeometryJob(this);
         _whiteTexture = Texture.White;
-        _currentLightMask = _whiteTexture;
 
         _contributionPrototype = _prototypes.Index(ContributionShader);
+        _standardContributionPrototype = _prototypes.Index(StandardContributionShader);
         _maskShader = _prototypes.Index(MaskShader).Instance();
         _protectionShader = _prototypes.Index(ProtectionShader).Instance();
         InitializeLightQuad();
@@ -124,7 +123,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        if (!_system.IsLightingViewport(args.Viewport) || _lights.Count == 0)
+        if (!_system.IsLightingViewport(args.Viewport) || !HasRenderableLights())
             return;
 
         var eye = args.Viewport.Eye;
@@ -164,21 +163,9 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
             ClearFrameOccluderCache();
 
         var resources = BeginRenderPass(args, eye, beforeResources.EnlargedLightTarget);
-        var hasProtection = drawShadows &&
-            _frameCasters.Count != 0 &&
-            _protectedSpriteLayers.Count != 0;
-
-        if (hasProtection)
-        {
-            _drawHandle!.RenderInRenderTarget(
-                resources.ProtectionMask!,
-                _drawProtectionMask,
-                Color.Black);
-        }
-
         _currentResources = resources;
         _currentDrawShadows = drawShadows;
-        _currentHasProtection = hasProtection;
+        _currentHasProtection = false;
 
         try
         {
@@ -199,40 +186,25 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     {
         var resources = _currentResources!;
         var lightCount = _lights.Count;
-        var geometryBatchSize = _system.GeometryBatchSize;
-        for (var batchStart = 0; batchStart < lightCount; batchStart += geometryBatchSize)
+        BeginStandardLightBatches();
+
+        for (var batchStart = 0; batchStart < lightCount; batchStart += GeometryBatchSize)
         {
-            var batchCount = Math.Min(geometryBatchSize, lightCount - batchStart);
-            PrepareGeometryBatch(batchStart, batchCount, _currentDrawShadows);
-
-            for (var batchIndex = 0; batchIndex < batchCount; batchIndex++)
+            var batchCount = Math.Min(GeometryBatchSize, lightCount - batchStart);
+            using (_prof.IsEnabled || _prof.IsTracyEnabled
+                       ? _prof.Group("ScpContentLighting.Geometry")
+                       : (ProfManager.GroupGuard?) null)
             {
-                var light = _lights[batchStart + batchIndex];
-                if (light.Radius <= 0f || light.Energy <= 0f)
-                    continue;
-
-                var geometry = _lightGeometryBuffers[batchIndex];
-                var hasShadowMask = _currentDrawShadows && light.CastShadows && geometry.HasMask;
-                var softness = hasShadowMask ? GetLightSoftness(light) : 0f;
-
-                PrepareLightRenderState(light, softness);
-                SetLightQuad(light);
-
-                if (hasShadowMask)
-                {
-                    _currentShadowMaskVertices = geometry.Vertices;
-                    ClearAndDrawShadowMask(resources);
-                }
-
-                _currentContributionShader = GetContributionShader(
-                    light,
-                    resources,
-                    softness,
-                    hasShadowMask,
-                    _currentHasProtection && geometry.HasCasterMask);
-                DrawContribution();
+                PrepareGeometryBatch(batchStart, batchCount, _currentDrawShadows);
             }
+
+            DrawGeometryBatch(batchStart, batchCount, resources);
         }
+
+        using var contributionProfile = _prof.IsEnabled || _prof.IsTracyEnabled
+            ? _prof.Group("ScpContentLighting.StandardLights")
+            : (ProfManager.GroupGuard?) null;
+        DrawStandardLightBatches(resources);
     }
 
     private CachedResources BeginRenderPass(
@@ -242,32 +214,19 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     {
         var viewport = args.Viewport;
         var resources = _resources.GetForViewport(viewport, static _ => new CachedResources());
-        resources.EnsureSize(_clyde, lightTarget.Size);
+        resources.SetSize(lightTarget.Size);
         resources.BeginFrame();
 
         _drawHandle = args.WorldHandle;
-        _renderHandle = args.RenderHandle;
+        _targetSize = lightTarget.Size;
 
         var lightScale = viewport.LightRenderTarget.Size / (Vector2) viewport.Size;
         var scale = viewport.RenderScale / (Vector2.One / lightScale);
-        var minimumLightScale = MathF.Max(MathF.Min(lightScale.X, lightScale.Y), GeometryEpsilon);
-        _worldUnitsPerMaskPixel = MathF.Max(eye.Zoom.X, eye.Zoom.Y) /
-            (EyeManager.PixelsPerMeter * minimumLightScale);
         _targetMatrix = lightTarget.GetWorldToLocalMatrix(eye, scale);
+        Matrix3x2.Invert(_targetMatrix, out _inverseTargetMatrix);
         PrepareFovRenderParameters(viewport, lightScale);
 
         return resources;
-    }
-
-    private void PrepareLightRenderState(in ScpShadowLightData light, float softness)
-    {
-        _currentLightMask = light.Mask ?? _whiteTexture;
-
-        var padding = (1f + 3f * softness) * _worldUnitsPerMaskPixel;
-        var radius = new Vector2(light.Radius);
-        _currentMaskBounds = new Box2(
-            light.Position - radius,
-            light.Position + radius).Enlarged(padding);
     }
 
     private bool HasShadowCastingLights()
@@ -283,6 +242,17 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         return false;
     }
 
+    private bool HasRenderableLights()
+    {
+        for (var i = 0; i < _lights.Count; i++)
+        {
+            if (_lights[i].Radius > 0f && _lights[i].Energy > 0f)
+                return true;
+        }
+
+        return false;
+    }
+
     #endregion
 
     #region Cleanup
@@ -290,11 +260,8 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private void ClearDrawState()
     {
         _drawHandle = null;
-        _renderHandle = null;
-        _currentContributionShader = null;
         _currentResources = null;
-        _currentShadowMaskVertices = null;
-        _currentLightMask = _whiteTexture;
+        _targetSize = default;
         _currentDrawShadows = false;
         _currentHasProtection = false;
         _localPlayerCaster = null;
