@@ -64,6 +64,10 @@ public sealed partial class ScpShadowCasterSystem
         if (!_mapQuery.TryGetComponent(mapUid, out var map) || !map.LightingEnabled)
             return false;
 
+        using var profile = _prof.IsEnabled || _prof.IsTracyEnabled
+            ? _prof.Group("ScpContentLighting.Snapshot")
+            : (Robust.Shared.Profiling.ProfManager.GroupGuard?) null;
+
         _viewportLights.Clear();
         _suppressedLights.Clear();
         _activeViewport = viewport;
@@ -95,6 +99,9 @@ public sealed partial class ScpShadowCasterSystem
 
     internal void EndViewportLighting()
     {
+        using var profile = _prof.IsEnabled || _prof.IsTracyEnabled
+            ? _prof.Group("ScpContentLighting.Restore")
+            : (Robust.Shared.Profiling.ProfManager.GroupGuard?) null;
         RestoreSuppressedLights();
         _activeViewport = null;
     }

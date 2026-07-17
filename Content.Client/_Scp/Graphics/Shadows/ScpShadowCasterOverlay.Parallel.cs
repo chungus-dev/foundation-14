@@ -16,18 +16,23 @@ public sealed partial class ScpShadowCasterOverlay
             _lightGeometryBuffers.Add(new LightGeometryBuffer());
 
         var validLightCount = 0;
+        long intersectionChecks = 0;
         for (var i = 0; i < lightCount; i++)
         {
+            var geometry = _lightGeometryBuffers[i];
+            geometry.Clear();
             var light = _lights[lightStart + i];
             if (!drawShadows ||
                 !light.CastShadows ||
                 light.Radius <= 0f ||
                 light.Energy <= 0f)
             {
-                _lightGeometryBuffers[i].Clear();
                 continue;
             }
 
+            geometry.CasterCandidates = GetCasterCandidateRange(light);
+            geometry.OccluderCandidates = GetOccluderCandidateRange(light);
+            intersectionChecks += geometry.CasterCandidates.Count + geometry.OccluderCandidates.Count;
             validLightCount++;
         }
 
@@ -37,22 +42,19 @@ public sealed partial class ScpShadowCasterOverlay
         _lightGeometryJob.LightStart = lightStart;
         _lightGeometryJob.BuildOutsideMask = _directionalFovActive;
 
-        var intersectionChecks = (long) validLightCount *
-            (_frameCasters.Count + _frameOccluders.Count);
         _system.ProcessGeometryBatch(_lightGeometryJob, lightCount, intersectionChecks);
     }
 
     private void BuildLightGeometry(int lightIndex, int bufferIndex, bool buildOutsideMask)
     {
         var geometry = _lightGeometryBuffers[bufferIndex];
-        geometry.Clear();
 
         var light = _lights[lightIndex];
         if (!light.CastShadows || light.Radius <= 0f || light.Energy <= 0f)
             return;
 
-        BuildCasterMasks(light, buildOutsideMask, geometry);
-        BuildOccluderMask(light, geometry);
+        BuildCasterMasks(light, buildOutsideMask, geometry, geometry.CasterCandidates);
+        BuildOccluderMask(light, geometry, geometry.OccluderCandidates);
     }
 
     private sealed class LightGeometryBuffer
@@ -61,6 +63,8 @@ public sealed partial class ScpShadowCasterOverlay
         public bool HasInsideMask;
         public bool HasOutsideMask;
         public bool HasOccluderMask;
+        public ScpAxisCandidateRange CasterCandidates;
+        public ScpAxisCandidateRange OccluderCandidates;
 
         public bool HasCasterMask => HasInsideMask || HasOutsideMask;
         public bool HasMask => HasCasterMask || HasOccluderMask;
@@ -71,6 +75,8 @@ public sealed partial class ScpShadowCasterOverlay
             HasInsideMask = false;
             HasOutsideMask = false;
             HasOccluderMask = false;
+            CasterCandidates = default;
+            OccluderCandidates = default;
         }
     }
 

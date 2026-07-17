@@ -74,10 +74,12 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private readonly Action _drawProtectionMask;
 
     private DrawingHandleWorld? _drawHandle;
+    private IRenderHandle? _renderHandle;
     private CachedResources? _currentResources;
     private Vector2i _targetSize;
     private Matrix3x2 _targetMatrix;
     private Matrix3x2 _inverseTargetMatrix;
+    private Vector2 _targetPixelScale;
     private Angle _eyeRotation;
     private bool _currentDrawShadows;
     private bool _currentHasProtection;
@@ -149,8 +151,13 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
         if (querySprites)
         {
-            BuildFrameCache(args.MapId, worldAabb);
-            ApplyProjectionPositions();
+            using (_prof.IsEnabled || _prof.IsTracyEnabled
+                       ? _prof.Group("ScpContentLighting.SpriteCache")
+                       : (ProfManager.GroupGuard?) null)
+            {
+                BuildFrameCache(args.MapId, worldAabb);
+                ApplyProjectionPositions();
+            }
         }
         else
         {
@@ -158,9 +165,18 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         }
 
         if (drawShadows)
-            BuildFrameOccluderCache(args.MapId, GetFrameOccluderQueryBounds(worldAabb));
+        {
+            using (_prof.IsEnabled || _prof.IsTracyEnabled
+                       ? _prof.Group("ScpContentLighting.OccluderCache")
+                       : (ProfManager.GroupGuard?) null)
+            {
+                BuildFrameOccluderCache(args.MapId, GetFrameOccluderQueryBounds(worldAabb));
+            }
+        }
         else
+        {
             ClearFrameOccluderCache();
+        }
 
         var resources = BeginRenderPass(args, eye, beforeResources.EnlargedLightTarget);
         _currentResources = resources;
@@ -188,6 +204,19 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         var lightCount = _lights.Count;
         BeginStandardLightBatches();
 
+        if (!_currentDrawShadows)
+        {
+            for (var i = 0; i < lightCount; i++)
+            {
+                var light = _lights[i];
+                if (light.Radius > 0f && light.Energy > 0f)
+                    AddStandardLight(light);
+            }
+
+            DrawProfiledStandardLightBatches(resources);
+            return;
+        }
+
         for (var batchStart = 0; batchStart < lightCount; batchStart += GeometryBatchSize)
         {
             var batchCount = Math.Min(GeometryBatchSize, lightCount - batchStart);
@@ -201,6 +230,11 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
             DrawGeometryBatch(batchStart, batchCount, resources);
         }
 
+        DrawProfiledStandardLightBatches(resources);
+    }
+
+    private void DrawProfiledStandardLightBatches(CachedResources resources)
+    {
         using var contributionProfile = _prof.IsEnabled || _prof.IsTracyEnabled
             ? _prof.Group("ScpContentLighting.StandardLights")
             : (ProfManager.GroupGuard?) null;
@@ -218,12 +252,16 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         resources.BeginFrame();
 
         _drawHandle = args.WorldHandle;
+        _renderHandle = args.RenderHandle;
         _targetSize = lightTarget.Size;
 
         var lightScale = viewport.LightRenderTarget.Size / (Vector2) viewport.Size;
         var scale = viewport.RenderScale / (Vector2.One / lightScale);
         _targetMatrix = lightTarget.GetWorldToLocalMatrix(eye, scale);
         Matrix3x2.Invert(_targetMatrix, out _inverseTargetMatrix);
+        _targetPixelScale = new Vector2(
+            MathF.Sqrt(_targetMatrix.M11 * _targetMatrix.M11 + _targetMatrix.M21 * _targetMatrix.M21),
+            MathF.Sqrt(_targetMatrix.M12 * _targetMatrix.M12 + _targetMatrix.M22 * _targetMatrix.M22));
         PrepareFovRenderParameters(viewport, lightScale);
 
         return resources;
@@ -260,8 +298,10 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private void ClearDrawState()
     {
         _drawHandle = null;
+        _renderHandle = null;
         _currentResources = null;
         _targetSize = default;
+        _targetPixelScale = default;
         _currentDrawShadows = false;
         _currentHasProtection = false;
         _localPlayerCaster = null;

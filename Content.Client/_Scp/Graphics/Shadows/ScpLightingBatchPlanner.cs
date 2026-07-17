@@ -10,6 +10,8 @@ namespace Content.Client._Scp.Graphics.Shadows;
 /// </summary>
 internal static class ScpLightingBatchPlanner
 {
+    private const float IntersectionTolerance = 0.00001f;
+
     public const int GeometryBatchSize = 16;
     public const int MaxVerticesPerDraw = 65_529;
     public const int VerticesPerLight = 6;
@@ -78,6 +80,29 @@ internal static class ScpLightingBatchPlanner
         return page + 1;
     }
 
+    public static UIBox2i GetPlacementUnion(ReadOnlySpan<ScpAtlasPlacement> placements)
+    {
+        if (placements.IsEmpty)
+            throw new ArgumentException("At least one atlas placement is required.", nameof(placements));
+
+        var first = placements[0].Bounds;
+        var left = first.Left;
+        var top = first.Top;
+        var right = first.Right;
+        var bottom = first.Bottom;
+
+        for (var i = 1; i < placements.Length; i++)
+        {
+            var bounds = placements[i].Bounds;
+            left = Math.Min(left, bounds.Left);
+            top = Math.Min(top, bounds.Top);
+            right = Math.Max(right, bounds.Right);
+            bottom = Math.Max(bottom, bounds.Bottom);
+        }
+
+        return new UIBox2i(left, top, right, bottom);
+    }
+
     public static Vector2 RelocateWorldPoint(
         Vector2 worldPoint,
         in Matrix3x2 worldToPixels,
@@ -119,6 +144,48 @@ internal static class ScpLightingBatchPlanner
         if (!ReferenceEquals(scratchA, output))
             Array.Copy(scratchA, output, count);
         return count;
+    }
+
+    public static ScpTriangleBoundsRelation ClassifyTriangle(
+        Vector2 first,
+        Vector2 second,
+        Vector2 third,
+        in UIBox2 bounds)
+    {
+        var firstCode = GetClipCode(first, bounds);
+        var secondCode = GetClipCode(second, bounds);
+        var thirdCode = GetClipCode(third, bounds);
+        var union = firstCode | secondCode | thirdCode;
+
+        if (union == 0)
+            return ScpTriangleBoundsRelation.Inside;
+
+        return (firstCode & secondCode & thirdCode) != 0
+            ? ScpTriangleBoundsRelation.Outside
+            : ScpTriangleBoundsRelation.Intersecting;
+    }
+
+    public static ScpAxisCandidateRange GetAxisCandidateRange(
+        ReadOnlySpan<float> sortedCenters,
+        float center,
+        float radius,
+        float maximumHalfExtent)
+    {
+        if (radius < 0f)
+            throw new ArgumentOutOfRangeException(nameof(radius));
+        if (maximumHalfExtent < 0f)
+            throw new ArgumentOutOfRangeException(nameof(maximumHalfExtent));
+
+        // Circle.Intersects accepts nearly touching bounds through CloseToPercent.
+        // Keep this broad phase at least as conservative as that exact check.
+        var radiusSquared = radius * radius;
+        var toleratedRadiusSquared = MathF.Max(
+            radiusSquared + IntersectionTolerance,
+            radiusSquared / (1f - IntersectionTolerance));
+        var extent = MathF.Sqrt(toleratedRadiusSquared) + maximumHalfExtent;
+        return new ScpAxisCandidateRange(
+            LowerBound(sortedCenters, center - extent),
+            UpperBound(sortedCenters, center + extent));
     }
 
     public static int GetStandardLightDrawCount(ScpStandardLightPlanKey[] lights)
@@ -207,6 +274,78 @@ internal static class ScpLightingBatchPlanner
 
         return outputCount;
     }
+
+    private static int GetClipCode(Vector2 point, in UIBox2 bounds)
+    {
+        var result = 0;
+        if (point.X < bounds.Left)
+            result |= 1;
+        else if (point.X > bounds.Right)
+            result |= 2;
+
+        if (point.Y < bounds.Top)
+            result |= 4;
+        else if (point.Y > bounds.Bottom)
+            result |= 8;
+
+        return result;
+    }
+
+    private static int LowerBound(ReadOnlySpan<float> sortedValues, float value)
+    {
+        var first = 0;
+        var count = sortedValues.Length;
+        while (count > 0)
+        {
+            var step = count / 2;
+            var index = first + step;
+            if (sortedValues[index] < value)
+            {
+                first = index + 1;
+                count -= step + 1;
+            }
+            else
+            {
+                count = step;
+            }
+        }
+
+        return first;
+    }
+
+    private static int UpperBound(ReadOnlySpan<float> sortedValues, float value)
+    {
+        var first = 0;
+        var count = sortedValues.Length;
+        while (count > 0)
+        {
+            var step = count / 2;
+            var index = first + step;
+            if (sortedValues[index] <= value)
+            {
+                first = index + 1;
+                count -= step + 1;
+            }
+            else
+            {
+                count = step;
+            }
+        }
+
+        return first;
+    }
+}
+
+internal enum ScpTriangleBoundsRelation : byte
+{
+    Inside,
+    Outside,
+    Intersecting,
+}
+
+internal readonly record struct ScpAxisCandidateRange(int Start, int End)
+{
+    public int Count => End - Start;
 }
 
 internal readonly record struct ScpAtlasPlacement(int Page, UIBox2i Bounds);

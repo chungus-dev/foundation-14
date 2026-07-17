@@ -23,8 +23,10 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly List<CachedCaster> _frameCasters = new(256);
     private readonly List<CachedContour> _frameContours = new(512);
     private readonly List<Vector2> _frameContourVertices = new(4096);
+    private readonly List<float> _frameCasterCentersX = new(256);
     private readonly List<CachedOccluder> _frameOccluders = new(256);
     private readonly List<Vector2> _frameOccluderVertices = new(1024);
+    private readonly List<float> _frameOccluderCentersX = new(256);
     private readonly List<ProtectedSpriteLayer> _protectedSpriteLayers = new(512);
     private readonly HashSet<EntityUid> _frameSpriteEntities = new(256);
     private readonly List<Box2> _spriteQueryBounds = new(16);
@@ -36,6 +38,8 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly Dictionary<EntityUid, Vector2> _foregroundProjectionPositions = new(32);
     private readonly Vector2[] _boxContour = new Vector2[4];
     private Vector2[] _worldContour = new Vector2[32];
+    private float _maximumCasterHalfWidth;
+    private float _maximumOccluderHalfWidth;
 
     private Box2 GetFrameOccluderQueryBounds(Box2 worldAabb)
     {
@@ -54,6 +58,8 @@ public sealed partial class ScpShadowCasterOverlay
     {
         _frameOccluders.Clear();
         _frameOccluderVertices.Clear();
+        _frameOccluderCentersX.Clear();
+        _maximumOccluderHalfWidth = 0f;
     }
 
     private void BuildFrameOccluderCache(MapId mapId, Box2 queryBounds)
@@ -68,6 +74,8 @@ public sealed partial class ScpShadowCasterOverlay
             if (_frameOccluders.Count >= _system.MaxOccluders)
                 break;
         }
+
+        FinalizeFrameOccluderCache();
     }
 
     private static bool QueryOccluder(
@@ -118,6 +126,8 @@ public sealed partial class ScpShadowCasterOverlay
 
         for (var i = 0; i < _spriteQueryBounds.Count; i++)
             QuerySpriteBounds(mapId, _spriteQueryBounds[i], viewportBounds);
+
+        FinalizeFrameCasterCache();
     }
 
     private void ClearFrameSpriteCache()
@@ -125,10 +135,79 @@ public sealed partial class ScpShadowCasterOverlay
         _frameCasters.Clear();
         _frameContours.Clear();
         _frameContourVertices.Clear();
+        _frameCasterCentersX.Clear();
         _protectedSpriteLayers.Clear();
         _frameSpriteEntities.Clear();
         _spriteQueryBounds.Clear();
         _foregroundProjectionPositions.Clear();
+        _maximumCasterHalfWidth = 0f;
+    }
+
+    private void FinalizeFrameCasterCache()
+    {
+        _frameCasters.Sort(static (left, right) => CompareBounds(left.Bounds, right.Bounds));
+        _frameCasterCentersX.Clear();
+        _maximumCasterHalfWidth = 0f;
+
+        for (var i = 0; i < _frameCasters.Count; i++)
+        {
+            var bounds = _frameCasters[i].Bounds;
+            _frameCasterCentersX.Add(bounds.Center.X);
+            _maximumCasterHalfWidth = MathF.Max(
+                _maximumCasterHalfWidth,
+                (bounds.Right - bounds.Left) * 0.5f);
+        }
+    }
+
+    private void FinalizeFrameOccluderCache()
+    {
+        _frameOccluders.Sort(static (left, right) => CompareBounds(left.Bounds, right.Bounds));
+        _frameOccluderCentersX.Clear();
+        _maximumOccluderHalfWidth = 0f;
+
+        for (var i = 0; i < _frameOccluders.Count; i++)
+        {
+            var bounds = _frameOccluders[i].Bounds;
+            _frameOccluderCentersX.Add(bounds.Center.X);
+            _maximumOccluderHalfWidth = MathF.Max(
+                _maximumOccluderHalfWidth,
+                (bounds.Right - bounds.Left) * 0.5f);
+        }
+    }
+
+    private static int CompareBounds(Box2 left, Box2 right)
+    {
+        var comparison = left.Center.X.CompareTo(right.Center.X);
+        if (comparison != 0)
+            return comparison;
+
+        comparison = left.Center.Y.CompareTo(right.Center.Y);
+        if (comparison != 0)
+            return comparison;
+
+        comparison = left.Left.CompareTo(right.Left);
+        if (comparison != 0)
+            return comparison;
+
+        return left.Bottom.CompareTo(right.Bottom);
+    }
+
+    private ScpAxisCandidateRange GetCasterCandidateRange(in ScpShadowLightData light)
+    {
+        return ScpLightingBatchPlanner.GetAxisCandidateRange(
+            CollectionsMarshal.AsSpan(_frameCasterCentersX),
+            light.Position.X,
+            light.Radius,
+            _maximumCasterHalfWidth);
+    }
+
+    private ScpAxisCandidateRange GetOccluderCandidateRange(in ScpShadowLightData light)
+    {
+        return ScpLightingBatchPlanner.GetAxisCandidateRange(
+            CollectionsMarshal.AsSpan(_frameOccluderCentersX),
+            light.Position.X,
+            light.Radius,
+            _maximumOccluderHalfWidth);
     }
 
     private void AddSpriteQueryBounds(Box2 bounds)
@@ -400,12 +479,13 @@ public sealed partial class ScpShadowCasterOverlay
     private void BuildCasterMasks(
         in ScpShadowLightData light,
         bool buildOutsideMask,
-        LightGeometryBuffer geometry)
+        LightGeometryBuffer geometry,
+        ScpAxisCandidateRange candidates)
     {
         var lightCircle = new Circle(light.Position, light.Radius);
         var projectionPosition = light.ProjectionPosition;
 
-        for (var i = 0; i < _frameCasters.Count; i++)
+        for (var i = candidates.Start; i < candidates.End; i++)
         {
             var caster = _frameCasters[i];
             if (caster.Owner == light.Owner ||
@@ -464,10 +544,13 @@ public sealed partial class ScpShadowCasterOverlay
 
     #region Stock occluder mask
 
-    private void BuildOccluderMask(in ScpShadowLightData light, LightGeometryBuffer geometry)
+    private void BuildOccluderMask(
+        in ScpShadowLightData light,
+        LightGeometryBuffer geometry,
+        ScpAxisCandidateRange candidates)
     {
         var lightCircle = new Circle(light.Position, light.Radius);
-        for (var i = 0; i < _frameOccluders.Count; i++)
+        for (var i = candidates.Start; i < candidates.End; i++)
         {
             var occluder = _frameOccluders[i];
             if (!lightCircle.Intersects(occluder.Bounds))

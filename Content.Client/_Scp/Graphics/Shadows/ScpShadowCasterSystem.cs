@@ -1,5 +1,6 @@
 using Content.Client.Clickable;
 using Robust.Client.Graphics;
+using Robust.Shared.Profiling;
 
 namespace Content.Client._Scp.Graphics.Shadows;
 
@@ -12,6 +13,7 @@ public sealed partial class ScpShadowCasterSystem : EntitySystem
 
     [Dependency] private IClickMapManager _clickMaps = default!;
     [Dependency] private IOverlayManager _overlayManager = default!;
+    [Dependency] private ProfManager _prof = default!;
 
     #endregion
 

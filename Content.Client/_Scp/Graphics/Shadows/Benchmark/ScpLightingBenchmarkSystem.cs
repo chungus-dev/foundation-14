@@ -39,15 +39,34 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
     private const string CasterPrototype = "ScpLightingBenchmarkCaster";
     private const string ResultMarker = "SCP_LIGHT_BENCH_RESULT ";
     private const int ExpectedLights = 128;
+    private const float CameraZoom = 1.5f;
     private static readonly TimeSpan SceneWaitTimeout = TimeSpan.FromMinutes(2);
 
     private static readonly BenchmarkPhase[] Phases =
     [
-        new("baseline", false, false, false, false),
-        new("engineLight", false, true, true, false),
-        new("engineShadows", false, true, true, true),
-        new("contentLight", true, true, true, false),
-        new("contentShadows", true, true, true, true),
+        new("baseline", false, false, false, false, 2),
+        new("engineLight", false, true, true, false, 2),
+        new("engineShadows", false, true, true, true, 2),
+        new("contentLight", true, true, true, false, 2),
+        new("contentOccluders", true, true, true, true, 0),
+        new("contentShadows", true, true, true, true, 2),
+    ];
+
+    private static readonly string[] ProfileGroups =
+    [
+        "ScpContentLighting.Snapshot",
+        "ScpContentLighting.Restore",
+        "ScpContentLighting",
+        "ScpContentLighting.SpriteCache",
+        "ScpContentLighting.OccluderCache",
+        "ScpContentLighting.Geometry",
+        "ScpContentLighting.AtlasGeometry",
+        "ScpContentLighting.ShadowAtlas",
+        "ScpContentLighting.ShadowContributions",
+        "ScpContentLighting.ProtectionMask",
+        "ScpContentLighting.StandardLights",
+        "UpdateOcclusionGeometry",
+        "Draw Lights",
     ];
 
     [Dependency] private IClyde _clyde = default!;
@@ -64,8 +83,13 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
     private readonly List<EntityUid> _outlines = new(256);
     private readonly List<FrameMetrics> _samples = new(600);
     private readonly List<PhaseResult> _phaseResults = new(Phases.Length);
+    private readonly Dictionary<int, int> _profileGroupSlots = new(ProfileGroups.Length);
+    private readonly bool[] _registeredProfileGroups = new bool[ProfileGroups.Length];
+    private readonly ProfileFrameMetrics[] _currentProfileGroups = new ProfileFrameMetrics[ProfileGroups.Length];
+    private readonly List<ProfileFrameMetrics>[] _profileSamples = CreateProfileSampleLists();
 
     private SharedTransformSystem _transform = default!;
+    private ScpShadowCasterSystem _shadowCaster = default!;
     private ISawmill _logger = default!;
     private readonly FixedEye _fixedEye = new();
     private IEye? _previousEye;
@@ -114,6 +138,7 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
         base.Initialize();
 
         _transform = EntityManager.System<SharedTransformSystem>();
+        _shadowCaster = EntityManager.System<ScpShadowCasterSystem>();
         _logger = _log.GetSawmill("scp.light.benchmark");
 
         if (!ScpLightingBenchmarkCommand.TryTakeStartupRequest(out var request))
@@ -165,6 +190,7 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
         _phaseIndex = 0;
         _phaseResults.Clear();
         _samples.Clear();
+        ClearProfileSamples();
         _lastProfilerIndex = _prof.Buffer.IndexWriteOffset - 1;
 
         SaveAndApplyEnvironment();
@@ -210,16 +236,23 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
                 return;
 
             _samples.Clear();
+            ClearProfileSamples();
             _remainingFrames = _sampleFrames;
             _state = BenchmarkState.Sampling;
             return;
         }
 
         _samples.Add(metrics);
+        for (var i = 0; i < _profileSamples.Length; i++)
+            _profileSamples[i].Add(_currentProfileGroups[i]);
+
         if (--_remainingFrames > 0)
             return;
 
-        _phaseResults.Add(BuildPhaseResult(Phases[_phaseIndex].Name, _samples));
+        _phaseResults.Add(BuildPhaseResult(
+            Phases[_phaseIndex].Name,
+            _samples,
+            _profileSamples));
         _phaseIndex++;
         if (_phaseIndex < Phases.Length)
         {
@@ -452,7 +485,7 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
         _fixedEye.Position = _cameraCoordinates;
         _fixedEye.Offset = Vector2.Zero;
         _fixedEye.Rotation = Angle.Zero;
-        _fixedEye.Zoom = Vector2.One;
+        _fixedEye.Zoom = new Vector2(CameraZoom);
         _fixedEye.DrawFov = false;
         _fixedEye.DrawLight = true;
 
@@ -464,6 +497,8 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
     {
         var phase = Phases[index];
         _configuration.SetCVar(ScpCCVars.ContentLighting, phase.ContentLighting);
+        _configuration.SetCVar(ScpCCVars.MobShadowQuality, phase.ShadowQuality);
+        _configuration.SetCVar(ScpCCVars.ObjectShadowQuality, phase.ShadowQuality);
         _light.Enabled = phase.LightEnabled;
         _light.DrawLighting = phase.DrawLighting;
         _light.DrawShadows = phase.DrawShadows;
@@ -476,6 +511,8 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
     private bool TryReadLatestFrame(out FrameMetrics metrics)
     {
         metrics = default;
+        Array.Clear(_currentProfileGroups);
+        RegisterProfileGroups();
         var buffer = _prof.Buffer;
         var profilerIndex = buffer.IndexWriteOffset - 1;
         if (profilerIndex <= _lastProfilerIndex || profilerIndex < 0)
@@ -499,6 +536,17 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
         for (var i = index.StartPos; i < index.EndPos; i++)
         {
             ref var entry = ref buffer.Log(i);
+            if (entry.Type == ProfLogType.GroupEnd &&
+                entry.GroupEnd.Value.Type == ProfValueType.TimeAllocSample &&
+                _profileGroupSlots.TryGetValue(entry.GroupEnd.StringId, out var slot))
+            {
+                ref var profile = ref _currentProfileGroups[slot];
+                profile.Seconds += entry.GroupEnd.Value.TimeAllocSample.Time;
+                profile.AllocatedBytes += entry.GroupEnd.Value.TimeAllocSample.Alloc;
+                profile.Occurrences++;
+                continue;
+            }
+
             if (entry.Type != ProfLogType.Value || entry.Value.Value.Type != ProfValueType.Int32)
                 continue;
 
@@ -529,14 +577,49 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
             }
         }
 
+        metrics.ViewportLights = _shadowCaster.ViewportLights.Count;
+
         return found == 7;
     }
 
-    private static PhaseResult BuildPhaseResult(string name, List<FrameMetrics> samples)
+    private void RegisterProfileGroups()
+    {
+        for (var slot = 0; slot < ProfileGroups.Length; slot++)
+        {
+            if (_registeredProfileGroups[slot] ||
+                _prof.GetStringIdx(ProfileGroups[slot]) is not { } stringId)
+            {
+                continue;
+            }
+
+            _registeredProfileGroups[slot] = true;
+            _profileGroupSlots[stringId] = slot;
+        }
+    }
+
+    private void ClearProfileSamples()
+    {
+        for (var i = 0; i < _profileSamples.Length; i++)
+            _profileSamples[i].Clear();
+    }
+
+    private static List<ProfileFrameMetrics>[] CreateProfileSampleLists()
+    {
+        var result = new List<ProfileFrameMetrics>[ProfileGroups.Length];
+        for (var i = 0; i < result.Length; i++)
+            result[i] = new List<ProfileFrameMetrics>(600);
+        return result;
+    }
+
+    private static PhaseResult BuildPhaseResult(
+        string name,
+        List<FrameMetrics> samples,
+        List<ProfileFrameMetrics>[] profileSamples)
     {
         var gl = new int[samples.Count];
         var clyde = new int[samples.Count];
         var batches = new int[samples.Count];
+        var viewportLights = new int[samples.Count];
         var frameMilliseconds = new double[samples.Count];
         var framesPerSecond = new double[samples.Count];
         for (var i = 0; i < samples.Count; i++)
@@ -544,10 +627,32 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
             gl[i] = samples[i].GlDrawCalls;
             clyde[i] = samples[i].ClydeDrawCalls;
             batches[i] = samples[i].Batches;
+            viewportLights[i] = samples[i].ViewportLights;
             frameMilliseconds[i] = samples[i].FrameSeconds * 1_000d;
             framesPerSecond[i] = samples[i].FrameSeconds > 0f
                 ? 1d / samples[i].FrameSeconds
                 : 0d;
+        }
+
+        var profileResults = new ProfileGroupResult[ProfileGroups.Length];
+        for (var group = 0; group < ProfileGroups.Length; group++)
+        {
+            var groupSamples = profileSamples[group];
+            var timeMilliseconds = new double[groupSamples.Count];
+            var allocatedBytes = new double[groupSamples.Count];
+            var occurrences = new int[groupSamples.Count];
+            for (var i = 0; i < groupSamples.Count; i++)
+            {
+                timeMilliseconds[i] = groupSamples[i].Seconds * 1_000d;
+                allocatedBytes[i] = groupSamples[i].AllocatedBytes;
+                occurrences[i] = groupSamples[i].Occurrences;
+            }
+
+            profileResults[group] = new ProfileGroupResult(
+                ProfileGroups[group],
+                CalculateReferenceStats(timeMilliseconds),
+                CalculateReferenceStats(allocatedBytes),
+                CalculateStats(occurrences));
         }
 
         var glStats = CalculateStats(gl);
@@ -557,8 +662,10 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
             glStats,
             CalculateStats(clyde),
             CalculateStats(batches),
+            CalculateStats(viewportLights),
             CalculateReferenceStats(frameMilliseconds),
-            CalculateReferenceStats(framesPerSecond));
+            CalculateReferenceStats(framesPerSecond),
+            profileResults);
     }
 
     private static MetricSummary CalculateStats(int[] values)
@@ -611,7 +718,8 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
         var median = values.Length % 2 == 0
             ? (values[middle - 1] + values[middle]) / 2d
             : values[middle];
-        return new ReferenceMetricSummary(median, values[0], values[^1]);
+        var percentile95 = values[(int) Math.Ceiling(values.Length * 0.95) - 1];
+        return new ReferenceMetricSummary(median, percentile95, values[0], values[^1]);
     }
 
     private void Finish()
@@ -625,6 +733,7 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
                 "ScpLightingBenchmark",
                 size.X,
                 size.Y,
+                CameraZoom,
                 _configuration.GetCVar(Robust.Shared.CVars.LightResolutionScale),
                 new BenchmarkConfiguration(
                     _configuration.GetCVar(CCVars.AmbientOcclusion),
@@ -684,6 +793,7 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
         AppendStringProperty(builder, "scene", result.Scene, false);
         AppendIntProperty(builder, "width", result.Width);
         AppendIntProperty(builder, "height", result.Height);
+        AppendFloatProperty(builder, "cameraZoom", result.CameraZoom);
         AppendFloatProperty(builder, "lightResolutionScale", result.LightResolutionScale);
 
         builder.Append(",\"configuration\":{");
@@ -723,8 +833,24 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
             AppendMetric(builder, "glDrawCalls", phase.GlDrawCalls);
             AppendMetric(builder, "clydeDrawCalls", phase.ClydeDrawCalls);
             AppendMetric(builder, "batches", phase.Batches);
+            AppendMetric(builder, "viewportLights", phase.ViewportLights);
             AppendReferenceMetric(builder, "frameMilliseconds", phase.FrameMilliseconds);
             AppendReferenceMetric(builder, "framesPerSecond", phase.FramesPerSecond);
+            builder.Append(",\"cpuGroups\":[");
+            for (var groupIndex = 0; groupIndex < phase.ProfileGroups.Length; groupIndex++)
+            {
+                if (groupIndex != 0)
+                    builder.Append(',');
+
+                var group = phase.ProfileGroups[groupIndex];
+                builder.Append('{');
+                AppendStringProperty(builder, "name", group.Name, false);
+                AppendReferenceMetric(builder, "timeMilliseconds", group.TimeMilliseconds);
+                AppendReferenceMetric(builder, "allocatedBytes", group.AllocatedBytes);
+                AppendMetric(builder, "occurrences", group.Occurrences);
+                builder.Append('}');
+            }
+            builder.Append(']');
             builder.Append('}');
         }
 
@@ -750,6 +876,7 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
     {
         builder.Append(",\"").Append(name).Append("\":{");
         AppendDoubleProperty(builder, "median", metric.Median, false);
+        AppendDoubleProperty(builder, "percentile95", metric.Percentile95);
         AppendDoubleProperty(builder, "minimum", metric.Minimum);
         AppendDoubleProperty(builder, "maximum", metric.Maximum);
         builder.Append('}');
@@ -817,14 +944,23 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
         bool ContentLighting,
         bool LightEnabled,
         bool DrawLighting,
-        bool DrawShadows);
+        bool DrawShadows,
+        int ShadowQuality);
 
     private struct FrameMetrics
     {
         public int GlDrawCalls;
         public int ClydeDrawCalls;
         public int Batches;
+        public int ViewportLights;
         public float FrameSeconds;
+    }
+
+    private struct ProfileFrameMetrics
+    {
+        public float Seconds;
+        public long AllocatedBytes;
+        public int Occurrences;
     }
 
     private sealed record MetricSummary(
@@ -840,11 +976,20 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
         MetricSummary GlDrawCalls,
         MetricSummary ClydeDrawCalls,
         MetricSummary Batches,
+        MetricSummary ViewportLights,
         ReferenceMetricSummary FrameMilliseconds,
-        ReferenceMetricSummary FramesPerSecond);
+        ReferenceMetricSummary FramesPerSecond,
+        ProfileGroupResult[] ProfileGroups);
+
+    private sealed record ProfileGroupResult(
+        string Name,
+        ReferenceMetricSummary TimeMilliseconds,
+        ReferenceMetricSummary AllocatedBytes,
+        MetricSummary Occurrences);
 
     private sealed record ReferenceMetricSummary(
         double Median,
+        double Percentile95,
         double Minimum,
         double Maximum);
 
@@ -852,6 +997,7 @@ public sealed partial class ScpLightingBenchmarkSystem : EntitySystem
         string Scene,
         int Width,
         int Height,
+        float CameraZoom,
         float LightResolutionScale,
         BenchmarkConfiguration Configuration,
         int LightCount,
