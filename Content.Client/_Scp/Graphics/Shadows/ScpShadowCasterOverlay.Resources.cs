@@ -63,7 +63,7 @@ public sealed partial class ScpShadowCasterOverlay
         public IRenderTexture? ShadowMask;
         public IRenderTexture? ProtectionMask;
 
-        private readonly List<ShaderInstance> _standardShaders = new(8);
+        private readonly List<PooledStandardShader> _standardShaders = new(8);
         private readonly List<PooledShadowShader> _shadowShaders = new(16);
         private int _standardShaderCount;
         private int _shadowShaderCount;
@@ -78,11 +78,9 @@ public sealed partial class ScpShadowCasterOverlay
         public ShaderInstance GetStandardShader(ShaderPrototype prototype, float curveFactor)
         {
             if (_standardShaderCount == _standardShaders.Count)
-                _standardShaders.Add(prototype.InstanceUnique());
+                _standardShaders.Add(new PooledStandardShader(prototype.InstanceUnique()));
 
-            var shader = _standardShaders[_standardShaderCount++];
-            shader.SetParameter("curveFactor", curveFactor);
-            return shader;
+            return _standardShaders[_standardShaderCount++].Configure(curveFactor);
         }
 
         public ShaderInstance GetShadowShader(
@@ -176,12 +174,39 @@ public sealed partial class ScpShadowCasterOverlay
             _targetSize = default;
         }
 
+        private sealed class PooledStandardShader(ShaderInstance shader) : IDisposable
+        {
+            private readonly ShaderInstance _shader = shader;
+            private float _curveFactor;
+            private bool _configured;
+
+            public ShaderInstance Configure(float curveFactor)
+            {
+                if (!_configured || _curveFactor != curveFactor)
+                {
+                    _configured = true;
+                    _curveFactor = curveFactor;
+                    _shader.SetParameter("curveFactor", curveFactor);
+                }
+
+                return _shader;
+            }
+
+            public void Dispose()
+            {
+                _shader.Dispose();
+            }
+        }
+
         private sealed class PooledShadowShader(ShaderInstance shader) : IDisposable
         {
             private readonly ShaderInstance _shader = shader;
             private readonly Color[] _lightAtlasData = new Color[GeometryBatchSize];
             private readonly float[] _lightGroupParameters = new float[4];
             private readonly Vector2[] _directionalFovParameters = new Vector2[4];
+            private Texture? _shadowMask;
+            private Texture? _protectionMask;
+            private int _directionalFovMode = -1;
 
             public ShaderInstance Configure(
                 Texture shadowMask,
@@ -207,11 +232,27 @@ public sealed partial class ScpShadowCasterOverlay
                 _directionalFovParameters[2] = directionalRadialParameters;
                 _directionalFovParameters[3] = directionalConeThresholds;
 
-                _shader.SetParameter("shadowMask", shadowMask);
-                _shader.SetParameter("protectionMask", protectionMask);
+                if (!ReferenceEquals(_shadowMask, shadowMask))
+                {
+                    _shadowMask = shadowMask;
+                    _shader.SetParameter("shadowMask", shadowMask);
+                }
+
+                if (!ReferenceEquals(_protectionMask, protectionMask))
+                {
+                    _protectionMask = protectionMask;
+                    _shader.SetParameter("protectionMask", protectionMask);
+                }
+
                 _shader.SetParameter("lightAtlasData", _lightAtlasData);
                 _shader.SetParameter("lightGroupParameters", _lightGroupParameters);
-                _shader.SetParameter("directionalFovMode", directionalFovActive ? 1 : 0);
+                var directionalFovMode = directionalFovActive ? 1 : 0;
+                if (_directionalFovMode != directionalFovMode)
+                {
+                    _directionalFovMode = directionalFovMode;
+                    _shader.SetParameter("directionalFovMode", directionalFovMode);
+                }
+
                 if (directionalFovActive)
                     _shader.SetParameter("directionalFovParameters", _directionalFovParameters);
 
