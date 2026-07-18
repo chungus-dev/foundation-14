@@ -56,11 +56,6 @@
   path: "/Textures/_Scp/Shaders/shadow_light_contribution.swsl"
 
 - type: shader
-  id: ScpPersistentShadowLightContribution
-  kind: source
-  path: "/Textures/_Scp/Shaders/persistent_shadow_light_contribution.swsl"
-
-- type: shader
   id: ScpLightBatch
   kind: source
   path: "/Textures/_Scp/Shaders/light_batch.swsl"
@@ -70,12 +65,6 @@
   kind: canvas
   light_mode: unshaded
   blend_mode: Add
-
-- type: shader
-  id: ScpShadowAtlasClear
-  kind: canvas
-  light_mode: unshaded
-  blend_mode: None
 
 - type: shader
   id: ScpShadowProtection

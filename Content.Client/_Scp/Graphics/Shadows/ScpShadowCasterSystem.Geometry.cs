@@ -11,9 +11,10 @@ public sealed partial class ScpShadowCasterSystem
     internal void ProcessGeometryBatch(
         IParallelRobustJob job,
         int lightCount,
+        int validLightCount,
         long intersectionChecks)
     {
-        if (_parallel.ParallelProcessCount < 2 || lightCount < 2 || intersectionChecks < 512)
+        if (_parallel.ParallelProcessCount < 2 || validLightCount < 2 || intersectionChecks < 512)
         {
             _parallel.ProcessSerialNow(job, lightCount);
             return;

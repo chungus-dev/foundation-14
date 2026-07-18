@@ -1,7 +1,4 @@
-using System.Numerics;
-using System.Runtime.InteropServices;
 using Robust.Client.Graphics;
-using Robust.Shared.Profiling;
 using Robust.Shared.Threading;
 
 namespace Content.Client._Scp.Graphics.Shadows;
@@ -11,319 +8,41 @@ public sealed partial class ScpShadowCasterOverlay
     #region Parallel light geometry
 
     private readonly List<LightGeometryBuffer> _lightGeometryBuffers = new(16);
-    private readonly LightGeometryBuffer _emptyLightGeometryBuffer = new();
-    private readonly List<DeferredGeometryTask> _dirtyGeometryTasks = new(128);
-    private static readonly Comparison<DeferredGeometryTask> DeferredGeometryTaskComparison =
-        static (left, right) =>
-        {
-            var comparison = left.PendingSinceFrame.CompareTo(right.PendingSinceFrame);
-            if (comparison != 0)
-                return comparison;
-
-            comparison = left.HasCommittedMask.CompareTo(right.HasCommittedMask);
-            if (comparison != 0)
-                return comparison;
-
-            comparison = left.DistanceSquared.CompareTo(right.DistanceSquared);
-            return comparison != 0 ? comparison : left.Identity.CompareTo(right.Identity);
-        };
     private readonly LightGeometryJob _lightGeometryJob;
-    private readonly AtlasGeometryJob _atlasGeometryJob;
-    private readonly List<AtlasGeometryTask> _dirtyAtlasGeometryTasks = new(128);
-    private int[] _dirtyGeometryIndices = new int[16];
 
-    private void BindGeometryBuffers(CachedResources resources, int lightCount)
+    private void PrepareGeometryBatch(int lightStart, int lightCount, bool drawShadows)
     {
-        resources.BindGeometryFrame(
-            _currentMapId,
-            _lights,
-            lightCount,
-            _emptyLightGeometryBuffer,
-            _lightGeometryBuffers);
-    }
+        while (_lightGeometryBuffers.Count < lightCount)
+            _lightGeometryBuffers.Add(new LightGeometryBuffer());
 
-    private void PrepareGeometryBatch(
-        int lightStart,
-        int lightCount,
-        bool drawShadows,
-        PersistentAtlasState? persistentState)
-    {
-        EnsureDirtyGeometryCapacity(lightCount);
-        _dirtyGeometryTasks.Clear();
-        using (_prof.IsEnabled || _prof.IsTracyEnabled
-                   ? _prof.Group("ScpContentLighting.CacheValidation")
-                   : (ProfManager.GroupGuard?) null)
+        var validLightCount = 0;
+        long intersectionChecks = 0;
+        for (var i = 0; i < lightCount; i++)
         {
-            using (_prof.IsEnabled || _prof.IsTracyEnabled
-                       ? _prof.Group("ScpContentLighting.SourceRevisionValidation")
-                       : (ProfManager.GroupGuard?) null)
+            var geometry = _lightGeometryBuffers[i];
+            geometry.Clear();
+            var light = _lights[lightStart + i];
+            if (!drawShadows ||
+                !light.CastShadows ||
+                light.Radius <= 0f ||
+                light.Energy <= 0f)
             {
-                UpdateGeometrySnapshots();
-            }
-
-            using (_prof.IsEnabled || _prof.IsTracyEnabled
-                       ? _prof.Group("ScpContentLighting.DependencyValidation")
-                       : (ProfManager.GroupGuard?) null)
-            {
-                for (var i = 0; i < lightCount; i++)
-                {
-                    var geometry = _lightGeometryBuffers[i];
-                    geometry.BeginValidation();
-                    var light = _lights[lightStart + i];
-                    if (!drawShadows ||
-                        !light.CastShadows ||
-                        light.Radius <= 0f ||
-                        light.Energy <= 0f)
-                    {
-                        continue;
-                    }
-
-                    long intersectionChecks = 0;
-                    long estimatedGeometryVertices = 0;
-
-                    var casterKey = new ScpCasterGeometryCacheKey(
-                        light.Owner,
-                        light.Position,
-                        light.ProjectionPosition,
-                        light.Radius,
-                        _directionalFovActive);
-                    var casterKeyChanged = !geometry.CasterCache.IsCurrent(casterKey);
-                    var casterEpochChanged = geometry.CasterSourceEpoch != _casterSnapshotEpoch;
-                    var hasOnlyLatestCasterChanges = ScpGeometrySourceEpoch.HasOnlyLatestChanges(
-                        geometry.CasterSourceEpoch,
-                        _casterSnapshotEpoch);
-                    var validateCasterDependencies = casterKeyChanged ||
-                        casterEpochChanged &&
-                        (!hasOnlyLatestCasterChanges || CasterChangesMayAffectLight(light));
-                    if (validateCasterDependencies)
-                    {
-                        geometry.CasterCandidates = GatherCasterDependencies(
-                            light,
-                            _directionalFovActive,
-                            geometry.PendingCasterDependencies,
-                            out var casterGeometryVertices);
-                        var dependencies = CollectionsMarshal.AsSpan(geometry.PendingCasterDependencies);
-                        var dependenciesCurrent = geometry.CasterDependencies.IsCurrent(
-                            dependencies,
-                            out geometry.PendingCasterDependencyHash);
-                        if (casterKeyChanged || !dependenciesCurrent)
-                        {
-                            geometry.PendingCasterKey = casterKey;
-                            geometry.PendingCasterSourceEpoch = _casterSnapshotEpoch;
-                            geometry.PendingCasterMappingCompatible = !casterKeyChanged;
-                            geometry.RebuildCaster = true;
-                            intersectionChecks += geometry.CasterCandidates.Count;
-                            estimatedGeometryVertices += casterGeometryVertices;
-                        }
-                        else
-                        {
-                            geometry.CasterSourceEpoch = _casterSnapshotEpoch;
-                        }
-                    }
-                    else if (casterEpochChanged)
-                    {
-                        geometry.CasterSourceEpoch = _casterSnapshotEpoch;
-                    }
-
-                    var occluderKey = new ScpOccluderGeometryCacheKey(
-                        light.Owner,
-                        light.Position,
-                        light.Radius);
-                    var occluderKeyChanged = !geometry.OccluderCache.IsCurrent(occluderKey);
-                    var occluderEpochChanged = geometry.OccluderSourceEpoch != _occluderSnapshotEpoch;
-                    var hasOnlyLatestOccluderChanges = ScpGeometrySourceEpoch.HasOnlyLatestChanges(
-                        geometry.OccluderSourceEpoch,
-                        _occluderSnapshotEpoch);
-                    var validateOccluderDependencies = occluderKeyChanged ||
-                        occluderEpochChanged &&
-                        (!hasOnlyLatestOccluderChanges || OccluderChangesMayAffectLight(light));
-                    if (validateOccluderDependencies)
-                    {
-                        geometry.OccluderCandidates = GatherOccluderDependencies(
-                            light,
-                            geometry.PendingOccluderDependencies,
-                            out var occluderGeometryVertices);
-                        var dependencies = CollectionsMarshal.AsSpan(geometry.PendingOccluderDependencies);
-                        var dependenciesCurrent = geometry.OccluderDependencies.IsCurrent(
-                            dependencies,
-                            out geometry.PendingOccluderDependencyHash);
-                        if (occluderKeyChanged || !dependenciesCurrent)
-                        {
-                            geometry.PendingOccluderKey = occluderKey;
-                            geometry.PendingOccluderSourceEpoch = _occluderSnapshotEpoch;
-                            geometry.PendingOccluderMappingCompatible = !occluderKeyChanged;
-                            geometry.RebuildOccluder = true;
-                            intersectionChecks += geometry.OccluderCandidates.Count;
-                            estimatedGeometryVertices += occluderGeometryVertices;
-                        }
-                        else
-                        {
-                            geometry.OccluderSourceEpoch = _occluderSnapshotEpoch;
-                        }
-                    }
-                    else if (occluderEpochChanged)
-                    {
-                        geometry.OccluderSourceEpoch = _occluderSnapshotEpoch;
-                    }
-
-                    if (geometry.RebuildCaster || geometry.RebuildOccluder)
-                    {
-                        var identity = new PersistentLightIdentity(light.Owner, light.CreationTick);
-                        var pendingSinceFrame = persistentState?.TrackGeometryDirty(
-                            identity,
-                            geometry) ?? 0UL;
-                        var hasCommittedMask = persistentState != null &&
-                            persistentState.TryGet(identity, out var entry) &&
-                            entry.HasCommittedMask;
-                        geometry.GeometryPending = true;
-                        _dirtyGeometryTasks.Add(new DeferredGeometryTask(
-                            i,
-                            identity,
-                            intersectionChecks,
-                            Math.Max(1L, intersectionChecks + estimatedGeometryVertices),
-                            pendingSinceFrame,
-                            hasCommittedMask,
-                            light.DistanceSquared));
-                    }
-                }
-            }
-        }
-
-        persistentState?.CancelInvisibleGeometryDirty();
-        if (_dirtyGeometryTasks.Count == 0)
-            return;
-
-        if (persistentState == null || _system.MaxDeferredShadowFrames == 0)
-        {
-            var intersectionChecks = 0L;
-            for (var index = 0; index < _dirtyGeometryTasks.Count; index++)
-            {
-                var task = _dirtyGeometryTasks[index];
-                _dirtyGeometryIndices[index] = task.GeometryIndex;
-                _lightGeometryBuffers[task.GeometryIndex].GeometryPending = false;
-                intersectionChecks += task.IntersectionChecks;
-            }
-
-            ProcessSelectedGeometry(
-                lightStart,
-                _dirtyGeometryTasks.Count,
-                intersectionChecks,
-                persistentState);
-            return;
-        }
-
-        _dirtyGeometryTasks.Sort(DeferredGeometryTaskComparison);
-        var deferredFrames = _system.MaxDeferredShadowFrames;
-        var oldestAge = 0;
-        var totalWork = 0L;
-        for (var index = 0; index < _dirtyGeometryTasks.Count; index++)
-        {
-            var task = _dirtyGeometryTasks[index];
-            oldestAge = Math.Max(oldestAge, GetGeometryTaskAge(persistentState, task));
-            totalWork += task.EstimatedWork;
-        }
-
-        // Keep the configured maximum as the hard deadline. Normal work is
-        // budgeted to finish one frame earlier so the tail does not sit at the
-        // maximum age during continuous PVS or geometry churn.
-        var remainingFrames = Math.Max(1, deferredFrames - oldestAge);
-        var workBudget = Math.Max(1L, (totalWork + remainingFrames - 1L) / remainingFrames);
-        var selectedCount = 0;
-        var selectedWork = 0L;
-        var selectedIntersectionChecks = 0L;
-        for (var index = 0; index < _dirtyGeometryTasks.Count; index++)
-        {
-            var task = _dirtyGeometryTasks[index];
-            var forced = GetGeometryTaskAge(persistentState, task) >= deferredFrames;
-            if (!forced && selectedCount != 0 && selectedWork >= workBudget)
                 continue;
+            }
 
-            _dirtyGeometryIndices[selectedCount++] = task.GeometryIndex;
-            _lightGeometryBuffers[task.GeometryIndex].GeometryPending = false;
-            selectedWork += task.EstimatedWork;
-            selectedIntersectionChecks += task.IntersectionChecks;
+            geometry.CasterCandidates = GetCasterCandidateRange(light);
+            geometry.OccluderCandidates = GetOccluderCandidateRange(light);
+            intersectionChecks += geometry.CasterCandidates.Count + geometry.OccluderCandidates.Count;
+            validLightCount++;
         }
 
-        ProcessSelectedGeometry(
-            lightStart,
-            selectedCount,
-            selectedIntersectionChecks,
-            persistentState);
-    }
-
-    private static int GetGeometryTaskAge(
-        PersistentAtlasState state,
-        in DeferredGeometryTask task)
-    {
-        return (int) Math.Min(int.MaxValue, state.FrameStamp - task.PendingSinceFrame);
-    }
-
-    private void CompleteDeferredGeometryBatch(
-        int lightStart,
-        PersistentAtlasState persistentState)
-    {
-        var selectedCount = 0;
-        var intersectionChecks = 0L;
-        for (var index = 0; index < _dirtyGeometryTasks.Count; index++)
-        {
-            var task = _dirtyGeometryTasks[index];
-            var geometry = _lightGeometryBuffers[task.GeometryIndex];
-            if (!geometry.GeometryPending)
-                continue;
-
-            geometry.GeometryPending = false;
-            _dirtyGeometryIndices[selectedCount++] = task.GeometryIndex;
-            intersectionChecks += task.IntersectionChecks;
-        }
-
-        ProcessSelectedGeometry(
-            lightStart,
-            selectedCount,
-            intersectionChecks,
-            persistentState);
-    }
-
-    private void ProcessSelectedGeometry(
-        int lightStart,
-        int selectedCount,
-        long intersectionChecks,
-        PersistentAtlasState? persistentState)
-    {
-        if (selectedCount == 0)
+        if (validLightCount == 0)
             return;
 
         _lightGeometryJob.LightStart = lightStart;
         _lightGeometryJob.BuildOutsideMask = _directionalFovActive;
-        _lightGeometryJob.DirtyGeometryIndices = _dirtyGeometryIndices;
 
-        using (_prof.IsEnabled || _prof.IsTracyEnabled
-                   ? _prof.Group("ScpContentLighting.GeometryGather")
-                   : (ProfManager.GroupGuard?) null)
-        {
-            _system.ProcessGeometryBatch(_lightGeometryJob, selectedCount, intersectionChecks);
-        }
-
-        for (var index = 0; index < selectedCount; index++)
-        {
-            var geometryIndex = _dirtyGeometryIndices[index];
-            var geometry = _lightGeometryBuffers[geometryIndex];
-            geometry.CommitRebuiltParts();
-            if (persistentState == null)
-                continue;
-
-            var light = _lights[lightStart + geometryIndex];
-            persistentState.CompleteGeometryDirty(
-                new PersistentLightIdentity(light.Owner, light.CreationTick),
-                geometry);
-        }
-    }
-
-    private void EnsureDirtyGeometryCapacity(int capacity)
-    {
-        if (_dirtyGeometryIndices.Length >= capacity)
-            return;
-
-        Array.Resize(ref _dirtyGeometryIndices, Math.Max(capacity, _dirtyGeometryIndices.Length * 2));
+        _system.ProcessGeometryBatch(_lightGeometryJob, lightCount, validLightCount, intersectionChecks);
     }
 
     private void BuildLightGeometry(int lightIndex, int bufferIndex, bool buildOutsideMask)
@@ -334,156 +53,32 @@ public sealed partial class ScpShadowCasterOverlay
         if (!light.CastShadows || light.Radius <= 0f || light.Energy <= 0f)
             return;
 
-        if (geometry.RebuildCaster)
-        {
-            geometry.CasterVertices.Clear();
-            geometry.HasInsideMask = false;
-            geometry.HasOutsideMask = false;
-            BuildCasterMasks(light, buildOutsideMask, geometry, geometry.CasterCandidates);
-        }
-
-        if (geometry.RebuildOccluder)
-        {
-            geometry.OccluderVertices.Clear();
-            geometry.HasOccluderMask = false;
-            BuildOccluderMask(light, geometry, geometry.OccluderCandidates);
-        }
-    }
-
-    private void ProcessAtlasGeometryBatch(long estimatedWork)
-    {
-        if (_dirtyAtlasGeometryTasks.Count == 0)
-            return;
-
-        _atlasGeometryJob.Tasks = _dirtyAtlasGeometryTasks;
-        _system.ProcessGeometryBatch(
-            _atlasGeometryJob,
-            _dirtyAtlasGeometryTasks.Count,
-            estimatedWork);
+        BuildCasterMasks(light, buildOutsideMask, geometry, geometry.CasterCandidates);
+        BuildOccluderMask(light, geometry, geometry.OccluderCandidates);
     }
 
     private sealed class LightGeometryBuffer
     {
-        public readonly uint Incarnation;
-        public readonly List<DrawVertexUV2DColor> CasterVertices = new(256);
-        public readonly List<DrawVertexUV2DColor> OccluderVertices = new(256);
-        public readonly List<DrawVertexUV2DColor> AtlasCasterVertices = new(256);
-        public readonly List<DrawVertexUV2DColor> AtlasOccluderVertices = new(256);
-        public readonly Vector2[] AtlasClipPolygonA = new Vector2[8];
-        public readonly Vector2[] AtlasClipPolygonB = new Vector2[8];
-        public readonly ScpOrderedGeometryDependencyCache CasterDependencies = new();
-        public readonly ScpOrderedGeometryDependencyCache OccluderDependencies = new();
-        public readonly List<ScpGeometryDependency> PendingCasterDependencies = new(32);
-        public readonly List<ScpGeometryDependency> PendingOccluderDependencies = new(32);
-        public ScpGeometryCacheState<ScpCasterGeometryCacheKey> CasterCache;
-        public ScpGeometryCacheState<ScpOccluderGeometryCacheKey> OccluderCache;
-        public ScpGeometryCacheState<ScpAtlasGeometryCacheKey> AtlasCasterCache;
-        public ScpGeometryCacheState<ScpAtlasGeometryCacheKey> AtlasOccluderCache;
-        public ScpCasterGeometryCacheKey PendingCasterKey;
-        public ScpOccluderGeometryCacheKey PendingOccluderKey;
-        public ulong PendingCasterDependencyHash;
-        public ulong PendingOccluderDependencyHash;
-        public uint CasterSourceEpoch;
-        public uint OccluderSourceEpoch;
-        public uint PendingCasterSourceEpoch;
-        public uint PendingOccluderSourceEpoch;
-        public Vector2 AtlasCasterOffset;
-        public Vector2 AtlasOccluderOffset;
+        public readonly List<DrawVertexUV2DColor> Vertices = new(512);
         public bool HasInsideMask;
         public bool HasOutsideMask;
         public bool HasOccluderMask;
-        public bool AtlasHasCasterMask;
-        public bool AtlasHasOccluderMask;
-        public bool RebuildCaster;
-        public bool RebuildOccluder;
-        public bool PendingCasterMappingCompatible;
-        public bool PendingOccluderMappingCompatible;
-        public bool GeometryPending;
-        public ulong GeometryPendingSinceFrame;
-        public ulong MaskPendingSinceFrame;
-        public ulong AtlasContentGeneration { get; private set; }
         public ScpAxisCandidateRange CasterCandidates;
         public ScpAxisCandidateRange OccluderCandidates;
 
         public bool HasCasterMask => HasInsideMask || HasOutsideMask;
         public bool HasMask => HasCasterMask || HasOccluderMask;
-        public bool HasRenderableCasterMask => HasCasterMask &&
-            (!GeometryPending || !RebuildCaster || PendingCasterMappingCompatible);
-        public bool HasRenderableOccluderMask => HasOccluderMask &&
-            (!GeometryPending || !RebuildOccluder || PendingOccluderMappingCompatible);
-        public bool HasRenderableMask => HasRenderableCasterMask || HasRenderableOccluderMask;
 
-        public LightGeometryBuffer(uint incarnation = 0)
+        public void Clear()
         {
-            Incarnation = incarnation;
-        }
-
-        public void MarkAtlasContentChanged()
-        {
-            AtlasContentGeneration = unchecked(AtlasContentGeneration + 1);
-            if (AtlasContentGeneration == 0)
-                AtlasContentGeneration = 1;
-        }
-
-        public long EstimatedBytes =>
-            640L +
-            (long) CasterVertices.Capacity * 40L +
-            (long) OccluderVertices.Capacity * 40L +
-            (long) AtlasCasterVertices.Capacity * 40L +
-            (long) AtlasOccluderVertices.Capacity * 40L +
-            (long) PendingCasterDependencies.Capacity * 16L +
-            (long) PendingOccluderDependencies.Capacity * 16L +
-            CasterDependencies.EstimatedBytes +
-            OccluderDependencies.EstimatedBytes;
-
-        public void BeginValidation()
-        {
-            RebuildCaster = false;
-            RebuildOccluder = false;
-            PendingCasterMappingCompatible = true;
-            PendingOccluderMappingCompatible = true;
-            GeometryPending = false;
-        }
-
-        public void CommitRebuiltParts()
-        {
-            if (RebuildCaster)
-            {
-                CasterDependencies.Commit(
-                    CollectionsMarshal.AsSpan(PendingCasterDependencies),
-                    PendingCasterDependencyHash);
-                CasterCache.Commit(PendingCasterKey);
-                CasterSourceEpoch = PendingCasterSourceEpoch;
-            }
-            if (RebuildOccluder)
-            {
-                OccluderDependencies.Commit(
-                    CollectionsMarshal.AsSpan(PendingOccluderDependencies),
-                    PendingOccluderDependencyHash);
-                OccluderCache.Commit(PendingOccluderKey);
-                OccluderSourceEpoch = PendingOccluderSourceEpoch;
-            }
+            Vertices.Clear();
+            HasInsideMask = false;
+            HasOutsideMask = false;
+            HasOccluderMask = false;
+            CasterCandidates = default;
+            OccluderCandidates = default;
         }
     }
-
-    private readonly record struct AtlasGeometryTask(
-        LightGeometryBuffer Geometry,
-        Matrix3x2 SourceRelativeTargetMatrix,
-        Vector2i SourceSize,
-        Vector2 AtlasOffset,
-        ScpAtlasGeometryCacheKey CasterKey,
-        ScpAtlasGeometryCacheKey OccluderKey,
-        bool RebuildCaster,
-        bool RebuildOccluder);
-
-    private readonly record struct DeferredGeometryTask(
-        int GeometryIndex,
-        PersistentLightIdentity Identity,
-        long IntersectionChecks,
-        long EstimatedWork,
-        ulong PendingSinceFrame,
-        bool HasCommittedMask,
-        float DistanceSquared);
 
     private sealed class LightGeometryJob(ScpShadowCasterOverlay overlay) : IParallelRobustJob
     {
@@ -492,25 +87,10 @@ public sealed partial class ScpShadowCasterOverlay
 
         public int LightStart;
         public bool BuildOutsideMask;
-        public int[] DirtyGeometryIndices = [];
 
         public void Execute(int index)
         {
-            var bufferIndex = DirtyGeometryIndices[index];
-            overlay.BuildLightGeometry(LightStart + bufferIndex, bufferIndex, BuildOutsideMask);
-        }
-    }
-
-    private sealed class AtlasGeometryJob(ScpShadowCasterOverlay overlay) : IParallelRobustJob
-    {
-        public int MinimumBatchParallel => 1;
-        public int BatchSize => 2;
-
-        public List<AtlasGeometryTask> Tasks = [];
-
-        public void Execute(int index)
-        {
-            overlay.RebuildAtlasGeometry(Tasks[index]);
+            overlay.BuildLightGeometry(LightStart + index, index, BuildOutsideMask);
         }
     }
 

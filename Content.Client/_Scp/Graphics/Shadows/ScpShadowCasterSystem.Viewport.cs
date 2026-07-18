@@ -1,5 +1,4 @@
 using System.Numerics;
-using System.Runtime.InteropServices;
 using Robust.Client.ComponentTrees;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -9,7 +8,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Maths;
 using Robust.Shared.Physics;
-using Robust.Shared.Timing;
 
 namespace Content.Client._Scp.Graphics.Shadows;
 
@@ -25,15 +23,6 @@ public sealed partial class ScpShadowCasterSystem
     [Dependency] private IResourceCache _resourceCache = default!;
 
     private readonly List<ScpShadowLightData> _viewportLights = new(128);
-    // Scp added - keep MaxLights selection independent from LightTree/PVS traversal order.
-    private readonly List<ScpPointLightCandidate> _viewportLightCandidates = new(128);
-    private static readonly Comparison<ScpPointLightCandidate> PointLightCandidateComparison =
-        ScpPointLightCandidateComparer.Instance.Compare;
-    private static readonly Comparison<ScpShadowLightData> LightCapacityComparison =
-        ScpLightCapacityComparer.Instance.Compare;
-    private static readonly Comparison<ScpShadowLightData> ShadowDistanceComparison =
-        ScpShadowDistanceComparer.Instance.Compare;
-    private bool _viewportLightCandidatesHeapified;
     private readonly List<SuppressedLight> _suppressedLights = new(256);
     private List<Entity<MapGridComponent>> _intersectingLightTreeGrids = new(4);
 
@@ -57,8 +46,6 @@ public sealed partial class ScpShadowCasterSystem
     {
         RestoreSuppressedLights();
         _viewportLights.Clear();
-        _viewportLightCandidates.Clear();
-        _viewportLightCandidatesHeapified = false;
         _activeViewport = null;
     }
 
@@ -95,8 +82,6 @@ public sealed partial class ScpShadowCasterSystem
             : (Robust.Shared.Profiling.ProfManager.GroupGuard?) null;
 
         _viewportLights.Clear();
-        _viewportLightCandidates.Clear();
-        _viewportLightCandidatesHeapified = false;
         _suppressedLights.Clear();
         _activeViewport = viewport;
 
@@ -130,14 +115,13 @@ public sealed partial class ScpShadowCasterSystem
                 mapTree.Tree.QueryAabb(ref state, QueryAndSuppressLight, localBounds);
             }
 
-            FinalizeViewportLights();
+            ApplyShadowLightLimit(state.ShadowLights);
             return true;
         }
         catch
         {
             RestoreSuppressedLights();
             _viewportLights.Clear();
-            _viewportLightCandidates.Clear();
             _activeViewport = null;
             throw;
         }
@@ -171,120 +155,24 @@ public sealed partial class ScpShadowCasterSystem
             system._transformSystem.GetWorldPositionRotation(entry.Transform);
         var lightPosition = entityPosition + entityRotation.RotateVec(originalOffset);
 
-        if (light.Enabled &&
+        if (state.AcceptedLights < system.MaxLights &&
+            light.Enabled &&
             !light.ContainerOccluded &&
             new Circle(lightPosition, light.Radius).Intersects(state.WorldAabb))
         {
-            // Scp added start - retain only the deterministic best K visible lights.
-            var candidate = new ScpPointLightCandidate(
-                entry.Uid,
-                light.CreationTick,
-                light,
-                lightPosition,
-                entityRotation,
-                Vector2.DistanceSquared(lightPosition, state.WorldAabb.Center));
-            system.ConsiderViewportLight(in candidate);
-            // Scp added end
-        }
-
-        // ponytail: Clyde has no per-viewport PointLight gate. Its callback reads the
-        // live offset after the tree query, so a temporary finite sentinel culls the
-        // entry without dirtying network state or rebuilding the tree.
-        light.Offset = SuppressedLightOffset;
-        return true;
-    }
-
-    // Scp added start - bounded, allocation-free top-K for stable PVS churn behavior.
-    private void ConsiderViewportLight(in ScpPointLightCandidate candidate)
-    {
-        if (MaxLights <= 0)
-            return;
-
-        if (_viewportLightCandidates.Count < MaxLights)
-        {
-            _viewportLightCandidates.Add(candidate);
-            return;
-        }
-
-        // Most viewports are below MaxLights. Build the bounded max-heap only
-        // when a query actually overflows instead of maintaining it for every
-        // ordinary light and then sorting the same list again.
-        if (!_viewportLightCandidatesHeapified)
-        {
-            HeapifyViewportLights();
-            _viewportLightCandidatesHeapified = true;
-        }
-
-        // The max-heap root is the worst currently selected light.
-        if (ScpPointLightCandidateComparer.Instance.Compare(candidate, _viewportLightCandidates[0]) >= 0)
-            return;
-
-        _viewportLightCandidates[0] = candidate;
-        SiftViewportLightDown(0);
-    }
-
-    private void HeapifyViewportLights()
-    {
-        for (var index = _viewportLightCandidates.Count / 2 - 1; index >= 0; index--)
-            SiftViewportLightDown(index);
-    }
-
-    private void SiftViewportLightDown(int index)
-    {
-        var count = _viewportLightCandidates.Count;
-        var candidate = _viewportLightCandidates[index];
-        while (true)
-        {
-            var left = index * 2 + 1;
-            if (left >= count)
-                break;
-
-            var worstChild = left;
-            var right = left + 1;
-            if (right < count &&
-                ScpPointLightCandidateComparer.Instance.Compare(
-                    _viewportLightCandidates[right],
-                    _viewportLightCandidates[left]) > 0)
-            {
-                worstChild = right;
-            }
-
-            if (ScpPointLightCandidateComparer.Instance.Compare(candidate, _viewportLightCandidates[worstChild]) >= 0)
-                break;
-
-            _viewportLightCandidates[index] = _viewportLightCandidates[worstChild];
-            index = worstChild;
-        }
-
-        _viewportLightCandidates[index] = candidate;
-    }
-
-    private void FinalizeViewportLights()
-    {
-        // Stable ordering is required when MaxLights actually cuts the set. Below
-        // the cap, frame order owns no cache state: persistent/wide shadows sort by
-        // identity themselves and standard-light blending is purely additive.
-        if (_viewportLightCandidatesHeapified)
-            _viewportLightCandidates.Sort(PointLightCandidateComparison);
-
-        var shadowLights = 0;
-        for (var i = 0; i < _viewportLightCandidates.Count; i++)
-        {
-            var candidate = _viewportLightCandidates[i];
-            var light = candidate.Component;
+            state.AcceptedLights++;
             if (light.CastShadows)
-                shadowLights++;
+                state.ShadowLights++;
 
             var mask = light.MaskPath == null
                 ? null
-                : _resourceCache.GetResource<TextureResource>(light.MaskPath).Texture;
+                : system._resourceCache.GetResource<TextureResource>(light.MaskPath).Texture;
 
-            _viewportLights.Add(new ScpShadowLightData(
-                candidate.Owner,
-                candidate.CreationTick,
-                candidate.Position,
-                candidate.Position,
-                candidate.EntityRotation,
+            system._viewportLights.Add(new ScpShadowLightData(
+                entry.Uid,
+                lightPosition,
+                lightPosition,
+                entityRotation,
                 light.Color,
                 mask,
                 light.Rotation,
@@ -295,25 +183,27 @@ public sealed partial class ScpShadowCasterSystem
                 light.Softness,
                 light.MaskAutoRotate,
                 light.CastShadows,
-                candidate.DistanceSquared));
+                Vector2.DistanceSquared(lightPosition, state.WorldAabb.Center)));
         }
 
-        _viewportLightCandidates.Clear();
-        _viewportLightCandidatesHeapified = false;
-        ApplyShadowLightLimit(shadowLights);
+        // ponytail: Clyde has no per-viewport PointLight gate. Its callback reads the
+        // live offset after the tree query, so a temporary finite sentinel culls the
+        // entry without dirtying network state or rebuilding the tree.
+        light.Offset = SuppressedLightOffset;
+        return true;
     }
-    // Scp added end
 
     private void ApplyShadowLightLimit(int shadowLights)
     {
         if (shadowLights <= MaxShadowLights)
             return;
 
-        _viewportLights.Sort(LightCapacityComparison);
+        _viewportLights.Sort(ScpLightCapacityComparer.Instance);
         var shadowStart = _viewportLights.Count - shadowLights;
-        CollectionsMarshal.AsSpan(_viewportLights)
-            .Slice(shadowStart, shadowLights)
-            .Sort(ShadowDistanceComparison);
+        _viewportLights.Sort(
+            shadowStart,
+            shadowLights,
+            ScpShadowDistanceComparer.Instance);
         _viewportLights.RemoveRange(
             shadowStart + MaxShadowLights,
             shadowLights - MaxShadowLights);
@@ -350,34 +240,9 @@ public sealed partial class ScpShadowCasterSystem
     {
         public readonly ScpShadowCasterSystem System = system;
         public readonly Box2 WorldAabb = worldAabb;
+        public int AcceptedLights;
+        public int ShadowLights;
     }
-
-    // Scp added start - stable PointLight identity is the final top-K tie-break.
-    private readonly record struct ScpPointLightCandidate(
-        EntityUid Owner,
-        GameTick CreationTick,
-        PointLightComponent Component,
-        Vector2 Position,
-        Angle EntityRotation,
-        float DistanceSquared);
-
-    private sealed class ScpPointLightCandidateComparer : IComparer<ScpPointLightCandidate>
-    {
-        public static readonly ScpPointLightCandidateComparer Instance = new();
-
-        public int Compare(ScpPointLightCandidate left, ScpPointLightCandidate right)
-        {
-            var comparison = left.DistanceSquared.CompareTo(right.DistanceSquared);
-            if (comparison != 0)
-                return comparison;
-
-            comparison = left.Owner.CompareTo(right.Owner);
-            return comparison != 0
-                ? comparison
-                : left.CreationTick.CompareTo(right.CreationTick);
-        }
-    }
-    // Scp added end
 
     private sealed class ScpLightCapacityComparer : IComparer<ScpShadowLightData>
     {
@@ -385,10 +250,10 @@ public sealed partial class ScpShadowCasterSystem
 
         public int Compare(ScpShadowLightData left, ScpShadowLightData right)
         {
-            if (left.CastShadows != right.CastShadows)
-                return left.CastShadows ? 1 : -1;
+            if (left.CastShadows == right.CastShadows)
+                return 0;
 
-            return CompareStablePriority(left, right);
+            return left.CastShadows ? 1 : -1;
         }
     }
 
@@ -398,21 +263,8 @@ public sealed partial class ScpShadowCasterSystem
 
         public int Compare(ScpShadowLightData left, ScpShadowLightData right)
         {
-            return CompareStablePriority(left, right);
+            return left.DistanceSquared.CompareTo(right.DistanceSquared);
         }
-    }
-
-    // Scp added - stabilize both the total-light and shadow-light capacity cuts.
-    private static int CompareStablePriority(ScpShadowLightData left, ScpShadowLightData right)
-    {
-        var comparison = left.DistanceSquared.CompareTo(right.DistanceSquared);
-        if (comparison != 0)
-            return comparison;
-
-        comparison = left.Owner.CompareTo(right.Owner);
-        return comparison != 0
-            ? comparison
-            : left.CreationTick.CompareTo(right.CreationTick);
     }
 
     #endregion
@@ -420,7 +272,6 @@ public sealed partial class ScpShadowCasterSystem
 
 internal readonly record struct ScpShadowLightData(
     EntityUid Owner,
-    GameTick CreationTick,
     Vector2 Position,
     Vector2 ProjectionPosition,
     Angle EntityRotation,
