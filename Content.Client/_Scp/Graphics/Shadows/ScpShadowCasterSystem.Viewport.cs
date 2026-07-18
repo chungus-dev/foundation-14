@@ -24,6 +24,7 @@ public sealed partial class ScpShadowCasterSystem
 
     private readonly List<ScpShadowLightData> _viewportLights = new(128);
     private readonly List<SuppressedLight> _suppressedLights = new(256);
+    private List<Entity<MapGridComponent>> _intersectingLightTreeGrids = new(4);
 
     private LightTreeSystem _lightTree = default!;
     private SharedMapSystem _mapSystem = default!;
@@ -60,6 +61,18 @@ public sealed partial class ScpShadowCasterSystem
         if (!_lightManager.Enabled || !_lightManager.DrawLighting)
             return false;
 
+        // With both content shadow qualities disabled there is no sprite shadow
+        // work to add. Let Clyde render its native lights and occluders directly;
+        // suppressing them only to rebuild the same occluder pass in content costs
+        // an extra light-tree query and an extra geometry pass.
+        if (_lightManager.DrawShadows &&
+            MobQuality == ScpShadowQuality.Disabled &&
+            ObjectQuality == ScpShadowQuality.Disabled)
+        {
+            _viewportLights.Clear();
+            return false;
+        }
+
         var mapUid = _mapSystem.GetMapOrInvalid(eye.Position.MapId);
         if (!_mapQuery.TryGetComponent(mapUid, out var map) || !map.LightingEnabled)
             return false;
@@ -79,10 +92,27 @@ public sealed partial class ScpShadowCasterSystem
             var state = new LightSnapshotQueryState(this, worldAabb);
             var queryBounds = worldAabb.Enlarged(MaxLightRadius);
 
-            foreach (var (treeUid, tree) in _lightTree.GetIntersectingTrees(eye.Position.MapId, queryBounds))
+            _lightTree.UpdateTreePositions();
+            _intersectingLightTreeGrids.Clear();
+            _mapSystem.FindGridsIntersecting(
+                eye.Position.MapId,
+                queryBounds,
+                ref _intersectingLightTreeGrids,
+                includeMap: false);
+            for (var i = 0; i < _intersectingLightTreeGrids.Count; i++)
             {
+                var treeUid = _intersectingLightTreeGrids[i].Owner;
+                if (!TryComp(treeUid, out LightTreeComponent? tree))
+                    continue;
+
                 var localBounds = _transformSystem.GetInvWorldMatrix(treeUid).TransformBox(worldBounds);
                 tree.Tree.QueryAabb(ref state, QueryAndSuppressLight, localBounds);
+            }
+
+            if (TryComp(mapUid, out LightTreeComponent? mapTree))
+            {
+                var localBounds = _transformSystem.GetInvWorldMatrix(mapUid).TransformBox(worldBounds);
+                mapTree.Tree.QueryAabb(ref state, QueryAndSuppressLight, localBounds);
             }
 
             ApplyShadowLightLimit(state.ShadowLights);

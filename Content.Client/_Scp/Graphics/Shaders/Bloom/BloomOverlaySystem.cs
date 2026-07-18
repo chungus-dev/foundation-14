@@ -4,6 +4,8 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.Maths;
+using Robust.Shared.Profiling;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._Scp.Graphics.Shaders.Bloom;
@@ -20,12 +22,14 @@ public sealed partial class LightingOverlaySystem : EntitySystem
     [Dependency] private TransformSystem _transform = default!;
     [Dependency] private ProximitySystem _proximity = default!;
     [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private ProfManager _prof = default!;
 
     [Dependency] private EntityQuery<EyeComponent> _eyeQuery;
     [Dependency] private EntityQuery<TransformComponent> _transformQuery;
 
     private ConeLightingOverlay _cone = default!;
     private PointLightingOverlay _point = default!;
+    private readonly List<BloomOverlayEntry> _entities = [];
 
     private static readonly ProtoId<ShaderPrototype> Shader = "LightingOverlay";
 
@@ -33,7 +37,6 @@ public sealed partial class LightingOverlaySystem : EntitySystem
     private bool _coneEnabled;
     private bool _optimizationsEnabled;
 
-    private float _coneOpacity;
     private float _strength;
 
     private ConfigurationMultiSubscriptionBuilder _configSub = default!;
@@ -42,13 +45,13 @@ public sealed partial class LightingOverlaySystem : EntitySystem
     {
         base.Initialize();
 
-        _cone = new ConeLightingOverlay(ProtoMan, _sprite, Shader);
-        _point = new PointLightingOverlay(ProtoMan, _sprite, Shader);
+        _cone = new ConeLightingOverlay(ProtoMan, _sprite, _prof, Shader, _entities);
+        _point = new PointLightingOverlay(ProtoMan, _sprite, _prof, Shader, _entities);
 
         _configSub = _cfg.SubscribeMultiple()
             .OnValueChanged(ScpCCVars.LightBloomEnable, OnAllEnabledChanged, true)
             .OnValueChanged(ScpCCVars.LightBloomConeEnable, OnConeEnabledChanged, true)
-            .OnValueChanged(ScpCCVars.LightBloomConeOpacity, x => _coneOpacity = x, true)
+            .OnValueChanged(ScpCCVars.LightBloomConeOpacity, x => _cone.Opacity = x, true)
             .OnValueChanged(ScpCCVars.LightBloomOptimizations, b => _optimizationsEnabled = b, true)
             .OnValueChanged(ScpCCVars.LightBloomStrength, OnStrengthChanged, true);
     }
@@ -63,8 +66,11 @@ public sealed partial class LightingOverlaySystem : EntitySystem
         if (!_allEnabled)
             return;
 
-        _cone.Entities.Clear();
-        _point.Entities.Clear();
+        using var gatherGroup = _prof.IsEnabled || _prof.IsTracyEnabled
+            ? _prof.Group("ScpLightBloom.Gather")
+            : (ProfManager.GroupGuard?) null;
+
+        _entities.Clear();
 
         var drawFov = _eyeQuery.TryComp(_player.LocalEntity.Value, out var eye) && eye.DrawFov;
 
@@ -83,11 +89,8 @@ public sealed partial class LightingOverlaySystem : EntitySystem
                 && !_proximity.IsRightType(_player.LocalEntity.Value, uid, LineOfSightBlockerLevel.Transparent, out _))
                 continue;
 
-            var (worldPos, _, worldMatrix) = _transform.GetWorldPositionRotationMatrix(xform, _transformQuery);
-
-            var color = pointLight.Color;
-            _cone.Entities.Add((xform, worldMatrix, worldPos, color.WithAlpha(color.A * _coneOpacity)));
-            _point.Entities.Add((xform, worldMatrix, worldPos, pointLight.Color));
+            var (worldPos, worldRotation) = _transform.GetWorldPositionRotation(xform, _transformQuery);
+            _entities.Add(new BloomOverlayEntry(xform, worldPos, worldRotation, pointLight.Color));
         }
     }
 
@@ -140,3 +143,9 @@ public sealed partial class LightingOverlaySystem : EntitySystem
             _overlayManager.RemoveOverlay(overlay);
     }
 }
+
+internal readonly record struct BloomOverlayEntry(
+    TransformComponent Transform,
+    System.Numerics.Vector2 WorldPosition,
+    Angle WorldRotation,
+    Color Color);

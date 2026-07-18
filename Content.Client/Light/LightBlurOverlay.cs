@@ -37,6 +37,7 @@ public sealed partial class LightBlurOverlay : Overlay
 
         if (res.BlurTarget?.Size != size)
         {
+            res.BlurTarget?.Dispose(); // Scp edit - release the old viewport-sized target before resize.
             res.BlurTarget = _clyde
                 .CreateRenderTarget(size, new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb), name: "enlarged-light-blur");
         }

@@ -1,7 +1,9 @@
 ﻿using System.Numerics;
+using System.Runtime.InteropServices;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
+using Robust.Shared.Profiling;
 using Robust.Shared.Prototypes;
 using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
 
@@ -13,35 +15,60 @@ public sealed class PointLightingOverlay : Overlay
     public override bool RequestScreenTexture => true;
 
     private readonly ShaderInstance _shader;
+    private readonly ProfManager _prof;
 
     private readonly Texture _pointTexture;
-    private readonly Vector2 _pointOffset;
+    private readonly Box2 _pointQuad;
+    private readonly List<WorldTextureRect> _drawRects = [];
+    private readonly List<BloomOverlayEntry> _entities;
+    private Texture? _screenTexture;
+    private float _strength = 1f;
 
-    /// <summary>
-    /// Главный список для хранения сущностей для рендеринга эффекта.
-    /// Создается в системе и передается сюда
-    /// </summary>
-    public readonly List<(TransformComponent xform, Matrix3x2 matrix, Vector2 worldPos, Color color)> Entities = [];
     public bool Enabled;
-    public float Strength = 1f;
+    public float Strength
+    {
+        get => _strength;
+        set
+        {
+            if (_strength.Equals(value))
+                return;
 
-    public PointLightingOverlay(IPrototypeManager prototypeManager, SpriteSystem spriteSystem, ProtoId<ShaderPrototype> shader)
+            _strength = value;
+            _shader.SetParameter(
+                "hueta_divisor",
+                BloomOverlayVisualsComponent.DefaultPointHuetaDivisor / value);
+        }
+    }
+
+    internal PointLightingOverlay(
+        IPrototypeManager prototypeManager,
+        SpriteSystem spriteSystem,
+        ProfManager prof,
+        ProtoId<ShaderPrototype> shader,
+        List<BloomOverlayEntry> entities)
     {
         _shader = prototypeManager.Index(shader).InstanceUnique();
+        _prof = prof;
+        _entities = entities;
         ZIndex = (int) DrawDepth.Effects + 1;
 
         _pointTexture = spriteSystem.Frame0(BloomOverlayVisualsComponent.Point);
 
         var xOffset = BloomOverlayVisualsComponent.PointOffset.X - (_pointTexture.Width / 2f) / EyeManager.PixelsPerMeter;
         var yOffset = BloomOverlayVisualsComponent.PointOffset.Y - (_pointTexture.Height / 2f) / EyeManager.PixelsPerMeter;
-        _pointOffset = new Vector2(xOffset, yOffset);
+        var pointOffset = new Vector2(xOffset, yOffset);
+        _pointQuad = Box2.FromDimensions(pointOffset, _pointTexture.Size / (float) EyeManager.PixelsPerMeter);
+        _shader.SetParameter("base_haze", BloomOverlayVisualsComponent.DefaultPointBaseHaze);
+        _shader.SetParameter(
+            "hueta_divisor",
+            BloomOverlayVisualsComponent.DefaultPointHuetaDivisor / _strength);
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
         base.BeforeDraw(in args);
 
-        return Enabled;
+        return Enabled && _entities.Count > 0;
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -49,28 +76,38 @@ public sealed class PointLightingOverlay : Overlay
         if (ScreenTexture == null)
             return;
 
+        using var pointGroup = _prof.IsEnabled || _prof.IsTracyEnabled
+            ? _prof.Group("ScpLightBloom.PointDraw")
+            : (ProfManager.GroupGuard?) null;
+
         var handle = args.WorldHandle;
         var bounds = args.WorldAABB.Enlarged(5f);
+        _drawRects.Clear();
 
-        _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
-        _shader.SetParameter("base_haze", BloomOverlayVisualsComponent.DefaultPointBaseHaze);
-        _shader.SetParameter("hueta_divisor", BloomOverlayVisualsComponent.DefaultPointHuetaDivisor / Strength);
-        handle.UseShader(_shader);
-
-        foreach (var (xform, matrix, worldPos, color) in Entities)
+        foreach (var entity in _entities)
         {
-            if (xform.MapID != args.MapId)
+            if (entity.Transform.MapID != args.MapId)
                 continue;
 
-            if (!bounds.Contains(worldPos))
+            if (!bounds.Contains(entity.WorldPosition))
                 continue;
 
-            handle.SetTransform(matrix);
-            handle.DrawTexture(_pointTexture, _pointOffset, color);
+            var quad = new Box2Rotated(
+                _pointQuad.Translated(entity.WorldPosition),
+                entity.WorldRotation,
+                entity.WorldPosition);
+            _drawRects.Add(new WorldTextureRect(quad, entity.Color));
         }
 
-        handle.UseShader(null);
+        if (!ReferenceEquals(_screenTexture, ScreenTexture))
+        {
+            _screenTexture = ScreenTexture;
+            _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
+        }
+        handle.UseShader(_shader);
         handle.SetTransform(Matrix3x2.Identity);
+        handle.DrawTextureRects(_pointTexture, CollectionsMarshal.AsSpan(_drawRects));
+        handle.UseShader(null);
     }
 
     protected override void DisposeBehavior()
