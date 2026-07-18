@@ -8,6 +8,8 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using Robust.Shared.Graphics;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Profiling;
 using Robust.Shared.Prototypes;
 
@@ -47,6 +49,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private readonly FieldOfViewOverlayManagementSystem _fieldOfViewManagement;
     private readonly FieldOfViewSystem _fieldOfViewSystem;
     private readonly OccluderSystem _occluderSystem;
+    private readonly SharedMapSystem _mapSystem;
     private readonly SpriteSystem _spriteSystem;
     private readonly SpriteTreeSystem _spriteTree;
     private readonly SharedTransformSystem _transformSystem;
@@ -56,6 +59,8 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private readonly EntityQuery<FieldOfViewOccludableComponent> _fovOccludableQuery;
     private readonly EntityQuery<ScpShadowForegroundVisualsComponent> _foregroundQuery;
     private readonly EntityQuery<ScpShadowCasterVisualsComponent> _shadowQuery;
+    private readonly EntityQuery<OccluderTreeComponent> _occluderTreeQuery;
+    private readonly EntityQuery<SpriteTreeComponent> _spriteTreeQuery;
 
     #endregion
 
@@ -68,6 +73,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private readonly Texture _whiteTexture;
     private readonly OverlayResourceCache<CachedResources> _resources = new();
     private readonly ScpShadowContourCache _contourCache;
+    private List<Entity<MapGridComponent>> _intersectingTreeGrids = new(4);
 
     private readonly Action _drawShadowMask;
     private readonly Action _drawLights;
@@ -97,6 +103,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         _fieldOfViewManagement = _entityManager.System<FieldOfViewOverlayManagementSystem>();
         _fieldOfViewSystem = _entityManager.System<FieldOfViewSystem>();
         _occluderSystem = _entityManager.System<OccluderSystem>();
+        _mapSystem = _entityManager.System<SharedMapSystem>();
         _spriteSystem = _entityManager.System<SpriteSystem>();
         _spriteTree = _entityManager.System<SpriteTreeSystem>();
         _transformSystem = _entityManager.System<SharedTransformSystem>();
@@ -105,6 +112,8 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         _fovOccludableQuery = _entityManager.GetEntityQuery<FieldOfViewOccludableComponent>();
         _foregroundQuery = _entityManager.GetEntityQuery<ScpShadowForegroundVisualsComponent>();
         _shadowQuery = _entityManager.GetEntityQuery<ScpShadowCasterVisualsComponent>();
+        _occluderTreeQuery = _entityManager.GetEntityQuery<OccluderTreeComponent>();
+        _spriteTreeQuery = _entityManager.GetEntityQuery<SpriteTreeComponent>();
 
         _contourCache = system.ContourCache;
         _lightGeometryJob = new LightGeometryJob(this);

@@ -116,6 +116,16 @@ public sealed partial class ScpShadowCasterSystem
             }
 
             ApplyShadowLightLimit(state.ShadowLights);
+            // Keep 16-light batches stable across PVS reordering and pack larger masks first.
+            _viewportLights.Sort(static (left, right) =>
+            {
+                var comparison = left.CastShadows.CompareTo(right.CastShadows);
+                if (comparison != 0)
+                    return comparison;
+
+                comparison = right.Radius.CompareTo(left.Radius);
+                return comparison != 0 ? comparison : left.Owner.CompareTo(right.Owner);
+            });
             return true;
         }
         catch

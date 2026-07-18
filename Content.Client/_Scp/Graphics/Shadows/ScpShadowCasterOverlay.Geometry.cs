@@ -29,7 +29,6 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly List<float> _frameOccluderCentersX = new(256);
     private readonly List<ProtectedSpriteLayer> _protectedSpriteLayers = new(512);
     private readonly HashSet<EntityUid> _frameSpriteEntities = new(256);
-    private readonly List<Box2> _spriteQueryBounds = new(16);
     private static readonly Color InsideMaskColor = new(1f, 0f, 0f, 1f);
     private static readonly Color OutsideMaskColor = new(0f, 1f, 0f, 1f);
     private static readonly Color BothMaskColor = new(1f, 1f, 0f, 1f);
@@ -67,12 +66,28 @@ public sealed partial class ScpShadowCasterOverlay
         ClearFrameOccluderCache();
 
         var state = new OccluderQueryState(this);
-        foreach (var (treeUid, tree) in _occluderSystem.GetIntersectingTrees(mapId, queryBounds))
+        _occluderSystem.UpdateTreePositions();
+        _intersectingTreeGrids.Clear();
+        _mapSystem.FindGridsIntersecting(mapId, queryBounds, ref _intersectingTreeGrids, includeMap: false);
+
+        for (var i = 0; i < _intersectingTreeGrids.Count; i++)
         {
+            var treeUid = _intersectingTreeGrids[i].Owner;
+            if (!_occluderTreeQuery.TryGetComponent(treeUid, out var tree))
+                continue;
+
             var localBounds = _transformSystem.GetInvWorldMatrix(treeUid).TransformBox(queryBounds);
             tree.Tree.QueryAabb(ref state, QueryOccluder, localBounds);
             if (_frameOccluders.Count >= _system.MaxOccluders)
                 break;
+        }
+
+        var mapUid = _mapSystem.GetMapOrInvalid(mapId);
+        if (_frameOccluders.Count < _system.MaxOccluders &&
+            _occluderTreeQuery.TryGetComponent(mapUid, out var mapTree))
+        {
+            var localBounds = _transformSystem.GetInvWorldMatrix(mapUid).TransformBox(queryBounds);
+            mapTree.Tree.QueryAabb(ref state, QueryOccluder, localBounds);
         }
 
         FinalizeFrameOccluderCache();
@@ -115,17 +130,16 @@ public sealed partial class ScpShadowCasterOverlay
     {
         ClearFrameSpriteCache();
 
-        AddSpriteQueryBounds(viewportBounds);
-
+        var queryBounds = viewportBounds;
         for (var i = 0; i < _lights.Count; i++)
         {
             var light = _lights[i];
             var radius = new Vector2(light.Radius);
-            AddSpriteQueryBounds(new Box2(light.Position - radius, light.Position + radius));
+            queryBounds = queryBounds.Union(new Box2(light.Position - radius, light.Position + radius));
         }
 
-        for (var i = 0; i < _spriteQueryBounds.Count; i++)
-            QuerySpriteBounds(mapId, _spriteQueryBounds[i], viewportBounds);
+        _spriteTree.UpdateTreePositions();
+        QuerySpriteBounds(mapId, queryBounds, viewportBounds);
 
         FinalizeFrameCasterCache();
     }
@@ -138,7 +152,6 @@ public sealed partial class ScpShadowCasterOverlay
         _frameCasterCentersX.Clear();
         _protectedSpriteLayers.Clear();
         _frameSpriteEntities.Clear();
-        _spriteQueryBounds.Clear();
         _foregroundProjectionPositions.Clear();
         _maximumCasterHalfWidth = 0f;
     }
@@ -210,32 +223,27 @@ public sealed partial class ScpShadowCasterOverlay
             _maximumOccluderHalfWidth);
     }
 
-    private void AddSpriteQueryBounds(Box2 bounds)
-    {
-        for (var i = 0; i < _spriteQueryBounds.Count; i++)
-        {
-            var current = _spriteQueryBounds[i];
-            if (current.Contains(bounds))
-                return;
-
-            if (!current.Intersects(bounds))
-                continue;
-
-            bounds = current.Union(bounds);
-            _spriteQueryBounds.RemoveAt(i);
-            i = -1;
-        }
-
-        _spriteQueryBounds.Add(bounds);
-    }
-
     private void QuerySpriteBounds(MapId mapId, Box2 queryBounds, Box2 viewportBounds)
     {
         var state = new SpriteQueryState(this, viewportBounds);
-        foreach (var (treeUid, tree) in _spriteTree.GetIntersectingTrees(mapId, queryBounds))
+        _intersectingTreeGrids.Clear();
+        _mapSystem.FindGridsIntersecting(mapId, queryBounds, ref _intersectingTreeGrids, includeMap: false);
+
+        for (var i = 0; i < _intersectingTreeGrids.Count; i++)
         {
+            var treeUid = _intersectingTreeGrids[i].Owner;
+            if (!_spriteTreeQuery.TryGetComponent(treeUid, out var tree))
+                continue;
+
             var localBounds = _transformSystem.GetInvWorldMatrix(treeUid).TransformBox(queryBounds);
             tree.Tree.QueryAabb(ref state, QuerySprite, localBounds, true);
+        }
+
+        var mapUid = _mapSystem.GetMapOrInvalid(mapId);
+        if (_spriteTreeQuery.TryGetComponent(mapUid, out var mapTree))
+        {
+            var localBounds = _transformSystem.GetInvWorldMatrix(mapUid).TransformBox(queryBounds);
+            mapTree.Tree.QueryAabb(ref state, QuerySprite, localBounds, true);
         }
     }
 
