@@ -1,8 +1,11 @@
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Robust.Client.Graphics;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using Robust.Shared.Profiling;
+using Robust.Shared.Timing;
+using SixLabors.ImageSharp.PixelFormats;
 
 namespace Content.Client._Scp.Graphics.Shadows;
 
@@ -18,25 +21,45 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly List<ShadowLightBatch> _shadowLightBatches = new(16);
     private int _activeShadowLightBatches;
 
-    private readonly List<AtlasLight> _atlasLights = new(GeometryBatchSize);
-    private readonly List<AtlasPage> _atlasPages = new(GeometryBatchSize);
-    private readonly Vector2i[] _atlasRectangleSizes = new Vector2i[GeometryBatchSize];
-    private readonly ScpAtlasPlacement[] _atlasPlacements = new ScpAtlasPlacement[GeometryBatchSize];
+    private readonly List<AtlasLight> _atlasLights = new(16);
+    private readonly List<AtlasPage> _atlasPages = new(16);
+    private static readonly Comparison<AtlasLight> AtlasLightIdentityComparison = static (left, right) =>
+    {
+        var result = left.Light.Owner.CompareTo(right.Light.Owner);
+        return result != 0
+            ? result
+            : left.Light.CreationTick.CompareTo(right.Light.CreationTick);
+    };
+    private Vector2i[] _atlasRectangleSizes = new Vector2i[16];
+    private Vector2i[] _atlasCandidateRectangleSizes = new Vector2i[16];
+    private int[] _atlasCandidateOrder = new int[16];
+    private ScpAtlasPlacement[] _atlasPlacements = new ScpAtlasPlacement[16];
+    private ScpAtlasPlacement[] _atlasCandidatePlacements = new ScpAtlasPlacement[16];
+    private AtlasLight[] _atlasCandidateLights = new AtlasLight[16];
     private readonly List<DrawVertexUV2DColor> _atlasMaskVertices = new(4096);
-    private readonly Color[] _pageLightAtlasData = new Color[GeometryBatchSize];
-    private readonly bool[] _pageHasMask = new bool[GeometryBatchSize];
-    private readonly bool[] _pageHasCasterMask = new bool[GeometryBatchSize];
+    private Rgba32[] _lightMetadataPixels = new Rgba32[32];
+    private bool[] _pageHasMask = new bool[16];
+    private bool[] _pageHasCasterMask = new bool[16];
+    private readonly List<WideMaskPageStamp> _wideMaskPageStamps = new(128);
+    private readonly DrawVertexUV2DColor[] _wideMaskClearVertices = new DrawVertexUV2DColor[6];
     private readonly Vector2[] _clipPolygonA = new Vector2[8];
     private readonly Vector2[] _clipPolygonB = new Vector2[8];
+    private Vector2i _wideAtlasSize;
+    private UIBox2i _wideMaskDrawBounds;
 
+    private readonly Dictionary<Texture, int> _protectionBatchLookup = new(16);
     private readonly List<ProtectionSourceBatch> _protectionBatches = new(16);
     private int _activeProtectionBatches;
+    private Vector4 _lightCenterDecode;
 
     #endregion
 
     #region Geometry batch rendering
 
-    private void DrawGeometryBatch(int lightStart, int lightCount, CachedResources resources)
+    private void DrawGeometryBatch(
+        int lightStart,
+        int lightCount,
+        CachedResources resources)
     {
         _atlasLights.Clear();
 
@@ -62,39 +85,117 @@ public sealed partial class ScpShadowCasterOverlay
                 continue;
             }
 
+            var screenCenter = Vector2.Transform(light.Position, _targetMatrix);
+            var padding = ScpLightingBatchPlanner.GetSoftShadowPaddingPixels(softness);
+            var pixelExtent = new Vector2(
+                light.Radius * _targetPixelScale.X + padding,
+                light.Radius * _targetPixelScale.Y + padding);
+            var translationInvariant =
+                ScpLightingBatchPlanner.TryGetTranslationInvariantMaskBounds(
+                    screenCenter,
+                    pixelExtent,
+                    _targetSize,
+                    out var stableSource,
+                    out var localCenter,
+                    out var phase);
+            if (translationInvariant)
+                source = stableSource;
+
             _atlasLights.Add(new AtlasLight(
                 light,
                 batchIndex,
                 source,
                 default,
-                softness));
+                softness,
+                translationInvariant,
+                localCenter,
+                phase));
         }
 
         if (_atlasLights.Count == 0)
             return;
 
-        PackAtlasLights(_targetSize);
+        using (_prof.IsEnabled || _prof.IsTracyEnabled
+                   ? _prof.Group("ScpContentLighting.AtlasPacking")
+                   : (ProfManager.GroupGuard?) null)
+        {
+            _wideAtlasSize = GetWideAtlasSize(_targetSize);
+            PackAtlasLights();
+        }
+        using (_prof.IsEnabled || _prof.IsTracyEnabled
+                   ? _prof.Group("ScpContentLighting.MetadataUpload")
+                   : (ProfManager.GroupGuard?) null)
+        {
+            PrepareLightMetadata(resources, _targetSize, _wideAtlasSize);
+        }
+        using (_prof.IsEnabled || _prof.IsTracyEnabled
+                   ? _prof.Group("ScpContentLighting.AtlasGeometry")
+                   : (ProfManager.GroupGuard?) null)
+        {
+            PrepareAtlasGeometry();
+        }
+
+        var allowWideMaskReuse = _atlasPages.Count == 1;
+        if (!allowWideMaskReuse)
+            resources.InvalidateWideShadowMask();
 
         for (var pageIndex = 0; pageIndex < _atlasPages.Count; pageIndex++)
         {
             using var pageProfile = _prof.IsEnabled || _prof.IsTracyEnabled
                 ? _prof.Group("ScpContentLighting.ShadowAtlas")
                 : (ProfManager.GroupGuard?) null;
-            DrawAtlasPage(_atlasPages[pageIndex], resources);
+            DrawAtlasPage(_atlasPages[pageIndex], resources, allowWideMaskReuse);
         }
     }
 
-    private void PackAtlasLights(Vector2i targetSize)
+    private void PackAtlasLights()
     {
         _atlasPages.Clear();
+        EnsureAtlasScratchCapacity(_atlasLights.Count);
+
+        // Light-tree traversal order changes as PVS nodes enter and leave. Keep
+        // otherwise identical atlas layouts stable so cached geometry is not
+        // translated just because the query returned a different order.
+        // List.Sort(IComparer<T>) allocates a comparer helper on current .NET.
+        // The cached Comparison overload keeps the steady render path at zero GC.
+        _atlasLights.Sort(AtlasLightIdentityComparison);
         for (var i = 0; i < _atlasLights.Count; i++)
             _atlasRectangleSizes[i] = _atlasLights[i].Source.Size;
 
+        var atlasSize = _wideAtlasSize;
         var pageCount = ScpLightingBatchPlanner.PackShelves(
             _atlasRectangleSizes,
             _atlasLights.Count,
-            targetSize,
+            atlasSize,
             _atlasPlacements);
+
+        // A moving viewport and PVS churn can produce an arbitrary light order.
+        // Height-first shelves waste less vertical space, but retain the input
+        // order unless the candidate actually removes a render-target page.
+        if (pageCount > 1 && _atlasLights.Count > 1)
+        {
+            if (TryPackHeightSortedShelves(
+                _atlasRectangleSizes,
+                _atlasLights.Count,
+                atlasSize,
+                pageCount,
+                _atlasCandidateRectangleSizes,
+                _atlasCandidateOrder,
+                _atlasCandidatePlacements,
+                out var sortedPageCount))
+            {
+                for (var i = 0; i < _atlasLights.Count; i++)
+                    _atlasCandidateLights[i] = _atlasLights[_atlasCandidateOrder[i]];
+                for (var i = 0; i < _atlasLights.Count; i++)
+                    _atlasLights[i] = _atlasCandidateLights[i];
+
+                (_atlasRectangleSizes, _atlasCandidateRectangleSizes) =
+                    (_atlasCandidateRectangleSizes, _atlasRectangleSizes);
+                (_atlasPlacements, _atlasCandidatePlacements) =
+                    (_atlasCandidatePlacements, _atlasPlacements);
+                pageCount = sortedPageCount;
+            }
+        }
 
         for (var i = 0; i < _atlasLights.Count; i++)
             _atlasLights[i] = _atlasLights[i] with { Destination = _atlasPlacements[i].Bounds.TopLeft };
@@ -114,23 +215,74 @@ public sealed partial class ScpShadowCasterOverlay
         }
     }
 
-    private void DrawAtlasPage(AtlasPage page, CachedResources resources)
+    private void EnsureAtlasScratchCapacity(int capacity)
     {
-        using (_prof.IsEnabled || _prof.IsTracyEnabled
-                   ? _prof.Group("ScpContentLighting.AtlasGeometry")
-                   : (ProfManager.GroupGuard?) null)
+        if (_atlasRectangleSizes.Length >= capacity)
+            return;
+
+        var newCapacity = Math.Max(capacity, _atlasRectangleSizes.Length * 2);
+        Array.Resize(ref _atlasRectangleSizes, newCapacity);
+        Array.Resize(ref _atlasCandidateRectangleSizes, newCapacity);
+        Array.Resize(ref _atlasCandidateOrder, newCapacity);
+        Array.Resize(ref _atlasPlacements, newCapacity);
+        Array.Resize(ref _atlasCandidatePlacements, newCapacity);
+        Array.Resize(ref _atlasCandidateLights, newCapacity);
+    }
+
+    internal static bool TryPackHeightSortedShelves(
+        Vector2i[] rectangleSizes,
+        int rectangleCount,
+        Vector2i pageSize,
+        int currentPageCount,
+        Vector2i[] candidateSizes,
+        int[] candidateOrder,
+        ScpAtlasPlacement[] candidatePlacements,
+        out int candidatePageCount)
+    {
+        if (rectangleCount < 0 || rectangleCount > rectangleSizes.Length)
+            throw new ArgumentOutOfRangeException(nameof(rectangleCount));
+        if (currentPageCount < 1)
+            throw new ArgumentOutOfRangeException(nameof(currentPageCount));
+        if (candidateSizes.Length < rectangleCount ||
+            candidateOrder.Length < rectangleCount ||
+            candidatePlacements.Length < rectangleCount)
         {
-            BuildAtlasMask(page);
+            throw new ArgumentException("Candidate scratch buffers are too small.");
         }
 
-        if (_atlasMaskVertices.Count == 0)
+        for (var i = 0; i < rectangleCount; i++)
         {
+            candidateSizes[i] = rectangleSizes[i];
+            candidateOrder[i] = i;
+        }
+
+        candidateSizes.AsSpan(0, rectangleCount).Sort(
+            candidateOrder.AsSpan(0, rectangleCount),
+            AtlasRectangleSizeComparer.Instance);
+        candidatePageCount = ScpLightingBatchPlanner.PackShelves(
+            candidateSizes,
+            rectangleCount,
+            pageSize,
+            candidatePlacements);
+        return candidatePageCount < currentPageCount;
+    }
+
+    private void DrawAtlasPage(
+        AtlasPage page,
+        CachedResources resources,
+        bool allowWideMaskReuse)
+    {
+        var hasMask = PrepareAtlasMaskState(page, allowWideMaskReuse);
+
+        if (!hasMask)
+        {
+            resources.InvalidateWideShadowMask();
             for (var index = 0; index < page.Count; index++)
                 AddStandardLight(_atlasLights[page.Start + index].Light);
             return;
         }
 
-        resources.EnsureShadowMask(_clyde);
+        var recreated = resources.EnsureShadowMask(_clyde, _wideAtlasSize);
         var pageHasCasterMask = PageHasCasterMask(page.Count);
         if (!_currentHasProtection &&
             _protectedSpriteLayers.Count != 0 &&
@@ -139,17 +291,37 @@ public sealed partial class ScpShadowCasterOverlay
             EnsureProtectionMask(resources);
         }
 
-        _renderHandle!.SetScissor(page.Bounds);
-        try
+        var reuseMask = allowWideMaskReuse &&
+            !recreated &&
+            resources.IsWideShadowMaskCurrent(
+                _currentMapId,
+                _targetSize,
+                page.Bounds,
+                CollectionsMarshal.AsSpan(_wideMaskPageStamps));
+        if (!reuseMask)
         {
-            _renderHandle.RenderInRenderTarget(resources.ShadowMask!, _drawShadowMask, Color.Black);
-        }
-        finally
-        {
-            _renderHandle.SetScissor(null);
+            BuildAtlasMaskVertices(page);
+            _wideMaskDrawBounds = page.Bounds;
+            try
+            {
+                _renderHandle!.RenderInRenderTarget(resources.ShadowMask!, _drawShadowMask, null);
+            }
+            catch
+            {
+                resources.InvalidateWideShadowMask();
+                throw;
+            }
+
+            if (allowWideMaskReuse)
+            {
+                resources.CommitWideShadowMask(
+                    _currentMapId,
+                    _targetSize,
+                    page.Bounds,
+                    CollectionsMarshal.AsSpan(_wideMaskPageStamps));
+            }
         }
 
-        PreparePageLightAtlas(page, _targetSize);
         BeginShadowLightBatches();
 
         for (var index = 0; index < page.Count; index++)
@@ -170,7 +342,9 @@ public sealed partial class ScpShadowCasterOverlay
                 atlasLight.Softness,
                 hasProtection);
             var batch = GetShadowLightBatch(key);
-            AppendLightQuad(batch.Vertices, light, new Vector2(light.Radius, index));
+            var metadataX = (2f * (page.Start + index) + 0.5f) /
+                resources.LightMetadata!.Width;
+            AppendLightQuad(batch.Vertices, light, new Vector2(light.Radius, metadataX));
         }
 
         using var contributionProfile = _prof.IsEnabled || _prof.IsTracyEnabled
@@ -209,46 +383,225 @@ public sealed partial class ScpShadowCasterOverlay
         return new UIBox2i(left, top, right, bottom);
     }
 
+    internal static Vector2i GetWideAtlasSize(Vector2i targetSize)
+    {
+        return targetSize;
+    }
+
     #endregion
 
     #region Atlas mask geometry
 
-    private void BuildAtlasMask(AtlasPage page)
+    private void PrepareAtlasGeometry()
     {
-        _atlasMaskVertices.Clear();
-        Array.Clear(_pageHasMask);
-        Array.Clear(_pageHasCasterMask);
+        _dirtyAtlasGeometryTasks.Clear();
+        var estimatedWork = 0L;
+
+        for (var atlasIndex = 0; atlasIndex < _atlasLights.Count; atlasIndex++)
+        {
+            var atlasLight = _atlasLights[atlasIndex];
+            var geometry = _lightGeometryBuffers[atlasLight.GeometryIndex];
+            var sourceRelativeTargetMatrix = atlasLight.TranslationInvariant
+                ? ScpLightingBatchPlanner.GetLightRelativeTargetMatrix(
+                    _targetMatrix,
+                    atlasLight.Light.Position,
+                    atlasLight.LocalCenter)
+                : ScpLightingBatchPlanner.GetSourceRelativeTargetMatrix(
+                    _targetMatrix,
+                    atlasLight.Source.TopLeft);
+            var atlasOffset = (Vector2) atlasLight.Destination +
+                              (atlasLight.TranslationInvariant ? atlasLight.Phase : Vector2.Zero);
+
+            var casterKey = new ScpAtlasGeometryCacheKey(
+                atlasLight.Light.Owner,
+                geometry.CasterCache.Revision,
+                0,
+                sourceRelativeTargetMatrix,
+                atlasLight.Source.Size);
+            var rebuildCaster = geometry.HasCasterMask &&
+                                !geometry.AtlasCasterCache.IsCurrent(casterKey);
+            if (geometry.HasCasterMask && !rebuildCaster)
+            {
+                if (geometry.AtlasCasterOffset != atlasOffset)
+                {
+                    if (TranslateAtlasVertices(
+                        geometry.AtlasCasterVertices,
+                        atlasOffset - geometry.AtlasCasterOffset))
+                    {
+                        geometry.MarkAtlasContentChanged();
+                    }
+                }
+
+                geometry.AtlasCasterOffset = atlasOffset;
+            }
+
+            var occluderKey = new ScpAtlasGeometryCacheKey(
+                atlasLight.Light.Owner,
+                0,
+                geometry.OccluderCache.Revision,
+                sourceRelativeTargetMatrix,
+                atlasLight.Source.Size);
+            var rebuildOccluder = geometry.HasOccluderMask &&
+                                  !geometry.AtlasOccluderCache.IsCurrent(occluderKey);
+            if (geometry.HasOccluderMask && !rebuildOccluder)
+            {
+                if (geometry.AtlasOccluderOffset != atlasOffset)
+                {
+                    if (TranslateAtlasVertices(
+                        geometry.AtlasOccluderVertices,
+                        atlasOffset - geometry.AtlasOccluderOffset))
+                    {
+                        geometry.MarkAtlasContentChanged();
+                    }
+                }
+
+                geometry.AtlasOccluderOffset = atlasOffset;
+            }
+
+            if (!rebuildCaster && !rebuildOccluder)
+                continue;
+
+            if (rebuildCaster)
+                estimatedWork += geometry.CasterVertices.Count;
+            if (rebuildOccluder)
+                estimatedWork += geometry.OccluderVertices.Count;
+            _dirtyAtlasGeometryTasks.Add(new AtlasGeometryTask(
+                geometry,
+                sourceRelativeTargetMatrix,
+                atlasLight.Source.Size,
+                atlasOffset,
+                casterKey,
+                occluderKey,
+                rebuildCaster,
+                rebuildOccluder));
+        }
+
+        ProcessAtlasGeometryBatch(estimatedWork);
+    }
+
+    private void RebuildAtlasGeometry(AtlasGeometryTask task)
+    {
+        var geometry = task.Geometry;
+        if (task.RebuildCaster)
+        {
+            geometry.AtlasCasterVertices.Clear();
+            geometry.AtlasHasCasterMask = AppendClippedAtlasGeometry(
+                CollectionsMarshal.AsSpan(geometry.CasterVertices),
+                task.SourceRelativeTargetMatrix,
+                task.SourceSize,
+                task.AtlasOffset,
+                geometry.AtlasCasterVertices,
+                geometry.AtlasClipPolygonA,
+                geometry.AtlasClipPolygonB);
+            geometry.AtlasCasterCache.Commit(task.CasterKey);
+            geometry.AtlasCasterOffset = task.AtlasOffset;
+            geometry.MarkAtlasContentChanged();
+        }
+
+        if (task.RebuildOccluder)
+        {
+            geometry.AtlasOccluderVertices.Clear();
+            AppendClippedAtlasGeometry(
+                CollectionsMarshal.AsSpan(geometry.OccluderVertices),
+                task.SourceRelativeTargetMatrix,
+                task.SourceSize,
+                task.AtlasOffset,
+                geometry.AtlasOccluderVertices,
+                geometry.AtlasClipPolygonA,
+                geometry.AtlasClipPolygonB);
+            geometry.AtlasHasOccluderMask = geometry.AtlasOccluderVertices.Count != 0;
+            geometry.AtlasOccluderCache.Commit(task.OccluderKey);
+            geometry.AtlasOccluderOffset = task.AtlasOffset;
+            geometry.MarkAtlasContentChanged();
+        }
+    }
+
+    private bool PrepareAtlasMaskState(AtlasPage page, bool collectWideMaskStamps)
+    {
+        if (collectWideMaskStamps)
+            _wideMaskPageStamps.Clear();
+        EnsurePageScratchCapacity(page.Count);
+        Array.Clear(_pageHasMask, 0, page.Count);
+        Array.Clear(_pageHasCasterMask, 0, page.Count);
+        var hasMask = false;
 
         for (var index = 0; index < page.Count; index++)
         {
             var atlasLight = _atlasLights[page.Start + index];
             var geometry = _lightGeometryBuffers[atlasLight.GeometryIndex];
-            var vertexStart = _atlasMaskVertices.Count;
-            _pageHasCasterMask[index] = AppendClippedAtlasGeometry(
-                CollectionsMarshal.AsSpan(geometry.Vertices),
-                atlasLight.Source,
-                atlasLight.Destination);
-            _pageHasMask[index] = _atlasMaskVertices.Count != vertexStart;
+            var hasCasterMask = geometry.HasCasterMask && geometry.AtlasHasCasterMask;
+            var hasOccluderMask = geometry.HasOccluderMask && geometry.AtlasHasOccluderMask;
+            _pageHasCasterMask[index] = hasCasterMask;
+            _pageHasMask[index] = hasCasterMask || hasOccluderMask;
+            hasMask |= hasCasterMask || hasOccluderMask;
+            if (collectWideMaskStamps)
+            {
+                _wideMaskPageStamps.Add(new WideMaskPageStamp(
+                    atlasLight.Light.Owner,
+                    atlasLight.Light.CreationTick,
+                    geometry.Incarnation,
+                    geometry.AtlasContentGeneration,
+                    hasCasterMask,
+                    hasOccluderMask,
+                    geometry.AtlasCasterVertices.Count,
+                    geometry.AtlasOccluderVertices.Count,
+                    geometry.AtlasCasterOffset,
+                    geometry.AtlasOccluderOffset));
+            }
+        }
+
+        return hasMask;
+    }
+
+    private void BuildAtlasMaskVertices(AtlasPage page)
+    {
+        _atlasMaskVertices.Clear();
+        for (var index = 0; index < page.Count; index++)
+        {
+            var geometry = _lightGeometryBuffers[_atlasLights[page.Start + index].GeometryIndex];
+            if (_pageHasCasterMask[index])
+                _atlasMaskVertices.AddRange(geometry.AtlasCasterVertices);
+            if (_pageHasMask[index] && !_pageHasCasterMask[index])
+                _atlasMaskVertices.AddRange(geometry.AtlasOccluderVertices);
+            else if (_pageHasCasterMask[index] && geometry.HasOccluderMask && geometry.AtlasHasOccluderMask)
+                _atlasMaskVertices.AddRange(geometry.AtlasOccluderVertices);
         }
     }
 
-    private bool AppendClippedAtlasGeometry(
-        ReadOnlySpan<DrawVertexUV2DColor> vertices,
-        UIBox2i source,
-        Vector2i destination)
+    private void EnsurePageScratchCapacity(int capacity)
     {
-        var polygonA = _clipPolygonA;
-        var polygonB = _clipPolygonB;
-        var offset = destination - source.TopLeft;
-        var bounds = new UIBox2(source.Left, source.Top, source.Right, source.Bottom);
-        var worldOffset = Vector2.TransformNormal(offset, _inverseTargetMatrix);
-        var hasCasterMask = false;
+        if (_pageHasMask.Length >= capacity)
+            return;
+
+        var newCapacity = Math.Max(capacity, _pageHasMask.Length * 2);
+        Array.Resize(ref _pageHasMask, newCapacity);
+        Array.Resize(ref _pageHasCasterMask, newCapacity);
+    }
+
+    private static bool AppendClippedAtlasGeometry(
+        ReadOnlySpan<DrawVertexUV2DColor> vertices,
+        in Matrix3x2 sourceRelativeTargetMatrix,
+        Vector2i sourceSize,
+        Vector2 destination,
+        List<DrawVertexUV2DColor> output,
+        Vector2[] polygonA,
+        Vector2[] polygonB)
+    {
+        var atlasOffset = destination;
+        var bounds = new UIBox2(0f, 0f, sourceSize.X, sourceSize.Y);
+        var appended = false;
 
         for (var vertex = 0; vertex + 2 < vertices.Length; vertex += 3)
         {
-            var firstPixel = Vector2.Transform(vertices[vertex].Position, _targetMatrix);
-            var secondPixel = Vector2.Transform(vertices[vertex + 1].Position, _targetMatrix);
-            var thirdPixel = Vector2.Transform(vertices[vertex + 2].Position, _targetMatrix);
+            var firstPixel = Vector2.Transform(
+                vertices[vertex].Position,
+                sourceRelativeTargetMatrix);
+            var secondPixel = Vector2.Transform(
+                vertices[vertex + 1].Position,
+                sourceRelativeTargetMatrix);
+            var thirdPixel = Vector2.Transform(
+                vertices[vertex + 2].Position,
+                sourceRelativeTargetMatrix);
             var relation = ScpLightingBatchPlanner.ClassifyTriangle(
                 firstPixel,
                 secondPixel,
@@ -260,10 +613,10 @@ public sealed partial class ScpShadowCasterOverlay
             var color = vertices[vertex].Color;
             if (relation == ScpTriangleBoundsRelation.Inside)
             {
-                hasCasterMask |= color.R > 0f || color.G > 0f;
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(vertices[vertex].Position + worldOffset, color));
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(vertices[vertex + 1].Position + worldOffset, color));
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(vertices[vertex + 2].Position + worldOffset, color));
+                output.Add(new DrawVertexUV2DColor(firstPixel + atlasOffset, color));
+                output.Add(new DrawVertexUV2DColor(secondPixel + atlasOffset, color));
+                output.Add(new DrawVertexUV2DColor(thirdPixel + atlasOffset, color));
+                appended = true;
                 continue;
             }
 
@@ -278,29 +631,34 @@ public sealed partial class ScpShadowCasterOverlay
             if (count < 3)
                 continue;
 
-            hasCasterMask |= color.R > 0f || color.G > 0f;
-            var first = AtlasPixelToWorld(polygonA[0], offset);
+            var first = polygonA[0] + atlasOffset;
             for (var triangle = 1; triangle < count - 1; triangle++)
             {
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(first, color));
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(
-                    AtlasPixelToWorld(polygonA[triangle], offset),
+                output.Add(new DrawVertexUV2DColor(first, color));
+                output.Add(new DrawVertexUV2DColor(
+                    polygonA[triangle] + atlasOffset,
                     color));
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(
-                    AtlasPixelToWorld(polygonA[triangle + 1], offset),
+                output.Add(new DrawVertexUV2DColor(
+                    polygonA[triangle + 1] + atlasOffset,
                     color));
             }
+            appended = true;
         }
 
-        return hasCasterMask;
+        return appended;
     }
 
-    private Vector2 AtlasPixelToWorld(Vector2 position, Vector2 offset)
+    internal static bool TranslateAtlasVertices(
+        List<DrawVertexUV2DColor> vertices,
+        Vector2 offset)
     {
-        return ScpLightingBatchPlanner.RelocatePixelPoint(
-            position,
-            _inverseTargetMatrix,
-            offset);
+        if (offset == Vector2.Zero)
+            return false;
+
+        var span = CollectionsMarshal.AsSpan(vertices);
+        for (var i = 0; i < span.Length; i++)
+            span[i].Position += offset;
+        return true;
     }
 
     #endregion
@@ -377,30 +735,61 @@ public sealed partial class ScpShadowCasterOverlay
         return batch;
     }
 
-    private void PreparePageLightAtlas(AtlasPage page, Vector2i targetSize)
+    private void PrepareLightMetadata(
+        CachedResources resources,
+        Vector2i targetSize,
+        Vector2i atlasSize)
     {
-        Array.Clear(_pageLightAtlasData);
+        resources.EnsureLightMetadata(_clyde, _lights.Count);
+        var metadata = resources.LightMetadata!;
+        var pixelCount = _atlasLights.Count * 2;
+        if (_lightMetadataPixels.Length < pixelCount)
+            Array.Resize(ref _lightMetadataPixels, Math.Max(pixelCount, _lightMetadataPixels.Length * 2));
         var size = (Vector2) targetSize;
+        _lightCenterDecode = ScpLightingBatchPlanner.GetStableLightCenterDecode(
+            targetSize,
+            _targetPixelScale,
+            _system.MaxLightRadius,
+            4f);
+        var minimumCenter = new Vector2(_lightCenterDecode.X, _lightCenterDecode.Y);
+        var centerExtent = new Vector2(_lightCenterDecode.Z, _lightCenterDecode.W);
 
-        for (var index = 0; index < page.Count; index++)
+        for (var index = 0; index < _atlasLights.Count; index++)
         {
-            var atlasLight = _atlasLights[page.Start + index];
-            var localCenter = Vector2.Transform(atlasLight.Light.Position, _targetMatrix);
-            var centerUv = localCenter / size;
+            var atlasLight = _atlasLights[index];
+            var centerUv = Vector2.Transform(atlasLight.Light.Position, _targetMatrix) / size;
             centerUv.Y = 1f - centerUv.Y;
-
             var pixelOffset = atlasLight.Destination - atlasLight.Source.TopLeft;
-            var sampleOffset = new Vector2(
-                pixelOffset.X / size.X,
-                -pixelOffset.Y / size.Y);
-            // ShaderInstance has no Vector4[] parameter overload. Color[] uses the
-            // same vec4 transport; pre-encoding cancels Clyde's automatic sRGB conversion.
-            _pageLightAtlasData[index] = Color.ToSrgb(new Color(
-                centerUv.X,
-                centerUv.Y,
-                sampleOffset.X,
-                sampleOffset.Y));
+            // FRAGCOORD and texture UVs use a bottom-left origin, while the
+            // shelf packer and UIBox2i use a top-left origin. When the atlas is
+            // taller than the viewport, preserve that change of origin in the
+            // encoded Y offset.
+            var atlasBottomOriginOffset = atlasSize.Y - targetSize.Y - pixelOffset.Y;
+            var centerValues = new Vector2(
+                ScpShadowMetadataCodec.NormalizeAffine(
+                    centerUv.X,
+                    minimumCenter.X,
+                    centerExtent.X),
+                ScpShadowMetadataCodec.NormalizeAffine(
+                    centerUv.Y,
+                    minimumCenter.Y,
+                    centerExtent.Y));
+            ScpShadowMetadataCodec.EncodeWithSignedPixelOffsets(
+                centerValues,
+                new Vector2i(pixelOffset.X, atlasBottomOriginOffset),
+                out _lightMetadataPixels[index * 2],
+                out _lightMetadataPixels[index * 2 + 1]);
         }
+
+        var encoded = _lightMetadataPixels.AsSpan(0, pixelCount);
+        if (resources.IsWideMetadataCurrent(encoded))
+            return;
+
+        metadata.SetSubImage(
+            Vector2i.Zero,
+            new Vector2i(pixelCount, 1),
+            encoded);
+        resources.CommitWideMetadata(encoded);
     }
 
     private void DrawShadowLightBatches(CachedResources resources, bool pageHasCasterMask)
@@ -408,6 +797,9 @@ public sealed partial class ScpShadowCasterOverlay
         var handle = _drawHandle!;
         var shadowMask = resources.ShadowMask!.Texture;
         var protectionMask = resources.ProtectionMask?.Texture ?? shadowMask;
+        var lightMetadata = resources.LightMetadata!;
+        var metadataPixelSize = 1f / lightMetadata.Width;
+        var shadowUvScale = (Vector2) _targetSize / (Vector2) _wideAtlasSize;
         handle.SetTransform(_targetMatrix);
 
         for (var batchIndex = 0; batchIndex < _activeShadowLightBatches; batchIndex++)
@@ -418,7 +810,10 @@ public sealed partial class ScpShadowCasterOverlay
                 _contributionPrototype,
                 shadowMask,
                 protectionMask,
-                _pageLightAtlasData,
+                lightMetadata,
+                metadataPixelSize,
+                shadowUvScale,
+                _lightCenterDecode,
                 key.Softness,
                 key.Falloff,
                 key.CurveFactor,
@@ -446,16 +841,24 @@ public sealed partial class ScpShadowCasterOverlay
         using var protectionProfile = _prof.IsEnabled || _prof.IsTracyEnabled
             ? _prof.Group("ScpContentLighting.ProtectionMask")
             : (ProfManager.GroupGuard?) null;
-        resources.EnsureProtectionMask(_clyde);
+        var recreated = resources.EnsureProtectionMask(_clyde);
+        if (!recreated && resources.IsProtectionMaskCurrent(_targetMatrix, _protectedSpriteLayers))
+        {
+            _currentHasProtection = true;
+            return;
+        }
+
         _drawHandle!.RenderInRenderTarget(
             resources.ProtectionMask!,
             _drawProtectionMask,
             Color.Black);
+        resources.CommitProtectionMask(_targetMatrix, _protectedSpriteLayers);
         _currentHasProtection = true;
     }
 
     private void PrepareProtectionBatches()
     {
+        _protectionBatchLookup.Clear();
         _activeProtectionBatches = 0;
 
         for (var layerIndex = 0; layerIndex < _protectedSpriteLayers.Count; layerIndex++)
@@ -464,28 +867,44 @@ public sealed partial class ScpShadowCasterOverlay
             var source = layer.Texture is AtlasTexture atlas
                 ? atlas.SourceTexture
                 : layer.Texture;
-            var batchIndex = -1;
-
-            for (var i = 0; i < _activeProtectionBatches; i++)
-            {
-                if (!ReferenceEquals(_protectionBatches[i].Source, source))
-                    continue;
-
-                batchIndex = i;
-                break;
-            }
-
-            if (batchIndex == -1)
+            if (!_protectionBatchLookup.TryGetValue(source, out var batchIndex))
             {
                 batchIndex = _activeProtectionBatches++;
                 if (batchIndex == _protectionBatches.Count)
                     _protectionBatches.Add(new ProtectionSourceBatch());
 
                 _protectionBatches[batchIndex].Reset(source);
+                _protectionBatchLookup.Add(source, batchIndex);
             }
 
-            _protectionBatches[batchIndex].Layers.Add(layer);
+            AppendProtectionQuad(_protectionBatches[batchIndex].Vertices, layer, source);
         }
+    }
+
+    private static void AppendProtectionQuad(
+        List<DrawVertexUV2DColor> vertices,
+        in ProtectedSpriteLayer layer,
+        Texture source)
+    {
+        var region = layer.Texture is AtlasTexture atlas
+            ? atlas.SubRegion
+            : new UIBox2(0, 0, source.Width, source.Height);
+        var uv = new Box2(
+            region.Left / source.Width,
+            (source.Height - region.Bottom) / source.Height,
+            region.Right / source.Width,
+            (source.Height - region.Top) / source.Height);
+        var bottomLeft = Vector2.Transform(layer.Quad.BottomLeft, layer.WorldMatrix);
+        var bottomRight = Vector2.Transform(layer.Quad.BottomRight, layer.WorldMatrix);
+        var topRight = Vector2.Transform(layer.Quad.TopRight, layer.WorldMatrix);
+        var topLeft = Vector2.Transform(layer.Quad.TopLeft, layer.WorldMatrix);
+
+        vertices.Add(new DrawVertexUV2DColor(bottomLeft, uv.BottomLeft, layer.Modulate));
+        vertices.Add(new DrawVertexUV2DColor(bottomRight, uv.BottomRight, layer.Modulate));
+        vertices.Add(new DrawVertexUV2DColor(topRight, uv.TopRight, layer.Modulate));
+        vertices.Add(new DrawVertexUV2DColor(bottomLeft, uv.BottomLeft, layer.Modulate));
+        vertices.Add(new DrawVertexUV2DColor(topRight, uv.TopRight, layer.Modulate));
+        vertices.Add(new DrawVertexUV2DColor(topLeft, uv.TopLeft, layer.Modulate));
     }
 
     #endregion
@@ -530,19 +949,45 @@ public sealed partial class ScpShadowCasterOverlay
         int GeometryIndex,
         UIBox2i Source,
         Vector2i Destination,
-        float Softness);
+        float Softness,
+        bool TranslationInvariant,
+        Vector2 LocalCenter,
+        Vector2 Phase);
 
     private readonly record struct AtlasPage(int Start, int Count, UIBox2i Bounds);
+
+    private readonly record struct WideMaskPageStamp(
+        EntityUid Owner,
+        GameTick CreationTick,
+        uint GeometryIncarnation,
+        ulong ContentGeneration,
+        bool HasCasterMask,
+        bool HasOccluderMask,
+        int CasterVertexCount,
+        int OccluderVertexCount,
+        Vector2 CasterOffset,
+        Vector2 OccluderOffset);
+
+    private sealed class AtlasRectangleSizeComparer : IComparer<Vector2i>
+    {
+        public static readonly AtlasRectangleSizeComparer Instance = new();
+
+        public int Compare(Vector2i left, Vector2i right)
+        {
+            var result = right.Y.CompareTo(left.Y);
+            return result != 0 ? result : right.X.CompareTo(left.X);
+        }
+    }
 
     private sealed class ProtectionSourceBatch
     {
         public Texture Source = default!;
-        public readonly List<ProtectedSpriteLayer> Layers = new(64);
+        public readonly List<DrawVertexUV2DColor> Vertices = new(384);
 
         public void Reset(Texture source)
         {
             Source = source;
-            Layers.Clear();
+            Vertices.Clear();
         }
     }
 

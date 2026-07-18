@@ -67,6 +67,12 @@
   blend_mode: Add
 
 - type: shader
+  id: ScpShadowAtlasClear
+  kind: canvas
+  light_mode: unshaded
+  blend_mode: None
+
+- type: shader
   id: ScpShadowProtection
   kind: source
   path: "/Textures/_Scp/Shaders/shadow_protection.swsl"

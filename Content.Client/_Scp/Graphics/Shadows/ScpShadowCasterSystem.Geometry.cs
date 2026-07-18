@@ -8,8 +8,6 @@ public sealed partial class ScpShadowCasterSystem
 
     [Dependency] private IParallelManager _parallel = default!;
 
-    internal int GeometryBatchSize => Math.Clamp(_parallel.ParallelProcessCount * 2, 1, 16);
-
     internal void ProcessGeometryBatch(
         IParallelRobustJob job,
         int lightCount,
