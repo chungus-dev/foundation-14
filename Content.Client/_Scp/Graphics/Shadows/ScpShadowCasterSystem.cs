@@ -66,3 +66,14 @@ public sealed partial class ScpShadowCasterSystem : EntitySystem
         _overlay?.RemoveGeometrySource(entity.Owner, entity.Comp.NetEntity);
     }
 }
+
+internal enum ScpPersistentFallbackReason : byte
+{
+    None,
+    HardShadow,
+    OversizedCell,
+    KnownLayoutFailure,
+    LayoutOverflow,
+    AllocationFailure,
+    CpuBudget,
+}

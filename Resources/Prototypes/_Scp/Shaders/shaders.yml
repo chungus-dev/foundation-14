@@ -56,6 +56,11 @@
   path: "/Textures/_Scp/Shaders/shadow_light_contribution.swsl"
 
 - type: shader
+  id: ScpPersistentShadowLightContribution
+  kind: source
+  path: "/Textures/_Scp/Shaders/persistent_shadow_light_contribution.swsl"
+
+- type: shader
   id: ScpLightBatch
   kind: source
   path: "/Textures/_Scp/Shaders/light_batch.swsl"

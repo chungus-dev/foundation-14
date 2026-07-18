@@ -1,10 +1,8 @@
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Robust.Client.Graphics;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using Robust.Shared.Profiling;
-using Robust.Shared.Timing;
 using SixLabors.ImageSharp.PixelFormats;
 
 namespace Content.Client._Scp.Graphics.Shadows;
@@ -385,7 +383,9 @@ public sealed partial class ScpShadowCasterOverlay
 
     internal static Vector2i GetWideAtlasSize(Vector2i targetSize)
     {
-        return targetSize;
+        return new Vector2i(
+            Math.Max(targetSize.X, ScpShadowAtlasBuddyAllocator.AtlasSize),
+            Math.Max(targetSize.Y, ScpShadowAtlasBuddyAllocator.AtlasSize));
     }
 
     #endregion
@@ -418,9 +418,9 @@ public sealed partial class ScpShadowCasterOverlay
                 0,
                 sourceRelativeTargetMatrix,
                 atlasLight.Source.Size);
-            var rebuildCaster = geometry.HasCasterMask &&
+            var rebuildCaster = geometry.HasRenderableCasterMask &&
                                 !geometry.AtlasCasterCache.IsCurrent(casterKey);
-            if (geometry.HasCasterMask && !rebuildCaster)
+            if (geometry.HasRenderableCasterMask && !rebuildCaster)
             {
                 if (geometry.AtlasCasterOffset != atlasOffset)
                 {
@@ -441,9 +441,9 @@ public sealed partial class ScpShadowCasterOverlay
                 geometry.OccluderCache.Revision,
                 sourceRelativeTargetMatrix,
                 atlasLight.Source.Size);
-            var rebuildOccluder = geometry.HasOccluderMask &&
+            var rebuildOccluder = geometry.HasRenderableOccluderMask &&
                                   !geometry.AtlasOccluderCache.IsCurrent(occluderKey);
-            if (geometry.HasOccluderMask && !rebuildOccluder)
+            if (geometry.HasRenderableOccluderMask && !rebuildOccluder)
             {
                 if (geometry.AtlasOccluderOffset != atlasOffset)
                 {
@@ -529,16 +529,15 @@ public sealed partial class ScpShadowCasterOverlay
         {
             var atlasLight = _atlasLights[page.Start + index];
             var geometry = _lightGeometryBuffers[atlasLight.GeometryIndex];
-            var hasCasterMask = geometry.HasCasterMask && geometry.AtlasHasCasterMask;
-            var hasOccluderMask = geometry.HasOccluderMask && geometry.AtlasHasOccluderMask;
+            var hasCasterMask = geometry.HasRenderableCasterMask && geometry.AtlasHasCasterMask;
+            var hasOccluderMask = geometry.HasRenderableOccluderMask && geometry.AtlasHasOccluderMask;
             _pageHasCasterMask[index] = hasCasterMask;
             _pageHasMask[index] = hasCasterMask || hasOccluderMask;
             hasMask |= hasCasterMask || hasOccluderMask;
             if (collectWideMaskStamps)
             {
                 _wideMaskPageStamps.Add(new WideMaskPageStamp(
-                    atlasLight.Light.Owner,
-                    atlasLight.Light.CreationTick,
+                    new PersistentLightIdentity(atlasLight.Light.Owner, atlasLight.Light.CreationTick),
                     geometry.Incarnation,
                     geometry.AtlasContentGeneration,
                     hasCasterMask,
@@ -563,7 +562,7 @@ public sealed partial class ScpShadowCasterOverlay
                 _atlasMaskVertices.AddRange(geometry.AtlasCasterVertices);
             if (_pageHasMask[index] && !_pageHasCasterMask[index])
                 _atlasMaskVertices.AddRange(geometry.AtlasOccluderVertices);
-            else if (_pageHasCasterMask[index] && geometry.HasOccluderMask && geometry.AtlasHasOccluderMask)
+            else if (_pageHasCasterMask[index] && geometry.HasRenderableOccluderMask && geometry.AtlasHasOccluderMask)
                 _atlasMaskVertices.AddRange(geometry.AtlasOccluderVertices);
         }
     }
@@ -957,8 +956,7 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly record struct AtlasPage(int Start, int Count, UIBox2i Bounds);
 
     private readonly record struct WideMaskPageStamp(
-        EntityUid Owner,
-        GameTick CreationTick,
+        PersistentLightIdentity Identity,
         uint GeometryIncarnation,
         ulong ContentGeneration,
         bool HasCasterMask,

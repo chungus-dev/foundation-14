@@ -22,6 +22,8 @@ public sealed partial class ScpShadowCasterSystem
     internal float MaxLightRadius { get; private set; }
     internal bool SoftShadows { get; private set; }
     internal bool LightBlur { get; private set; }
+    internal bool PersistentShadowAtlas { get; private set; }
+    internal int MaxDeferredShadowFrames { get; private set; }
 
     private void InitializeConfiguration()
     {
@@ -53,7 +55,15 @@ public sealed partial class ScpShadowCasterSystem
             .OnValueChanged(CVars.MaxOccluderCount, value => MaxOccluders = Math.Max(1024, value), true)
             .OnValueChanged(CVars.MaxLightRadius, value => MaxLightRadius = Math.Max(0f, value), true)
             .OnValueChanged(CVars.LightSoftShadows, value => SoftShadows = value, true)
-            .OnValueChanged(CVars.LightBlur, value => LightBlur = value, true);
+            .OnValueChanged(CVars.LightBlur, value => LightBlur = value, true)
+            .OnValueChanged(
+                ScpCCVars.ContentShadowPersistentAtlas,
+                value => PersistentShadowAtlas = value,
+                true)
+            .OnValueChanged(
+                ScpCCVars.ContentShadowMaxDeferredFrames,
+                value => MaxDeferredShadowFrames = Math.Clamp(value, 0, 3),
+                true);
     }
 
     private void ShutdownConfiguration()

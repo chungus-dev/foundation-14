@@ -80,6 +80,19 @@ public sealed partial class ScpCCVars
     public static readonly CVarDef<bool> LocalPlayerShadowOutsideFov =
         CVarDef.Create("scp.local_player_shadow_outside_fov", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    /// <summary>
+    /// Keeps soft Content shadow masks in a per-viewport atlas between frames.
+    /// </summary>
+    public static readonly CVarDef<bool> ContentShadowPersistentAtlas =
+        CVarDef.Create("scp.content_shadow_persistent_atlas", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Maximum number of frames over which dirty Content shadow masks may be distributed.
+    /// Zero updates every changed mask in the current frame.
+    /// </summary>
+    public static readonly CVarDef<int> ContentShadowMaxDeferredFrames =
+        CVarDef.Create("scp.content_shadow_max_deferred_frames", 0, CVar.CLIENTONLY | CVar.ARCHIVE);
+
     /*
      * Режим совместимости
      */

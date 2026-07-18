@@ -309,6 +309,7 @@ public sealed partial class ScpShadowCasterOverlay
         public IRenderTexture? ShadowMask;
         public IRenderTexture? ProtectionMask;
         public OwnedTexture? LightMetadata;
+        public readonly PersistentAtlasState Persistent = new();
         public GeometrySnapshotState GeometrySnapshots = new();
         public bool UseSpriteTreeForActiveSet;
 
@@ -319,8 +320,10 @@ public sealed partial class ScpShadowCasterOverlay
 
         private readonly List<PooledStandardShader> _standardShaders = new(8);
         private readonly List<PooledShadowShader> _shadowShaders = new(16);
+        private readonly List<PooledShadowShader> _persistentShadowShaders = new(16);
         private int _standardShaderCount;
         private int _shadowShaderCount;
+        private int _persistentShadowShaderCount;
         private int _lightMetadataCapacity;
         private Rgba32[] _wideMetadataPixels = Array.Empty<Rgba32>();
         private int _wideMetadataPixelCount;
@@ -332,6 +335,7 @@ public sealed partial class ScpShadowCasterOverlay
         private UIBox2i _wideMaskBounds;
         private bool _wideMaskValid;
         private Vector2i _targetSize;
+        private bool _shadowMaskPersistent;
         private readonly List<ProtectedSpriteLayer> _protectionLayers = new(256);
         private Matrix3x2 _protectionMatrix;
         private bool _protectionValid;
@@ -345,11 +349,13 @@ public sealed partial class ScpShadowCasterOverlay
         {
             _standardShaderCount = 0;
             _shadowShaderCount = 0;
+            _persistentShadowShaderCount = 0;
         }
 
         public void RemovePointLight(PersistentLightIdentity identity)
         {
             _lightGeometry.Remove(identity);
+            Persistent.Remove(identity);
             InvalidateWideShadowMask();
         }
 
@@ -545,6 +551,43 @@ public sealed partial class ScpShadowCasterOverlay
                 directionalConeThresholds);
         }
 
+        public ShaderInstance GetPersistentShadowShader(
+            ShaderPrototype prototype,
+            Texture shadowMask,
+            Texture protectionMask,
+            Texture lightMetadata,
+            float metadataPixelSize,
+            float softness,
+            float falloff,
+            float curveFactor,
+            bool hasProtection,
+            bool directionalFovActive,
+            Vector2 directionalFovOffset,
+            Vector2 directionalViewDirection,
+            Vector2 directionalRadialParameters,
+            Vector2 directionalConeThresholds)
+        {
+            if (_persistentShadowShaderCount == _persistentShadowShaders.Count)
+                _persistentShadowShaders.Add(new PooledShadowShader(prototype.InstanceUnique()));
+
+            return _persistentShadowShaders[_persistentShadowShaderCount++].Configure(
+                shadowMask,
+                protectionMask,
+                lightMetadata,
+                metadataPixelSize,
+                null,
+                null,
+                softness,
+                falloff,
+                curveFactor,
+                hasProtection,
+                directionalFovActive,
+                directionalFovOffset,
+                directionalViewDirection,
+                directionalRadialParameters,
+                directionalConeThresholds);
+        }
+
         public void SetSize(Vector2i size)
         {
             if (_targetSize == size)
@@ -560,7 +603,7 @@ public sealed partial class ScpShadowCasterOverlay
 
         public bool EnsureShadowMask(IClyde clyde, Vector2i atlasSize)
         {
-            if (ShadowMask?.Size == atlasSize)
+            if (!_shadowMaskPersistent && ShadowMask?.Size == atlasSize)
                 return false;
 
             InvalidateWideShadowMask();
@@ -571,6 +614,27 @@ public sealed partial class ScpShadowCasterOverlay
                 new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8),
                 samples,
                 "scp-shadow-packed-mask");
+            _shadowMaskPersistent = false;
+            return true;
+        }
+
+        public bool EnsurePersistentShadowMask(IClyde clyde)
+        {
+            InvalidateWideShadowMask();
+            var size = new Vector2i(
+                ScpShadowAtlasBuddyAllocator.AtlasSize,
+                ScpShadowAtlasBuddyAllocator.AtlasSize);
+            if (_shadowMaskPersistent && ShadowMask?.Size == size)
+                return false;
+
+            ShadowMask?.Dispose();
+            var samples = new TextureSampleParameters { Filter = true };
+            ShadowMask = clyde.CreateRenderTarget(
+                size,
+                new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8),
+                samples,
+                "scp-shadow-packed-mask");
+            _shadowMaskPersistent = true;
             return true;
         }
 
@@ -695,6 +759,7 @@ public sealed partial class ScpShadowCasterOverlay
                 parameters);
             _lightMetadataCapacity = requiredCapacity;
             _wideMetadataValid = false;
+            Persistent.InvalidateMetadata();
         }
 
         public bool IsWideMetadataCurrent(ReadOnlySpan<Rgba32> pixels)
@@ -712,6 +777,17 @@ public sealed partial class ScpShadowCasterOverlay
             pixels.CopyTo(_wideMetadataPixels);
             _wideMetadataPixelCount = pixels.Length;
             _wideMetadataValid = true;
+
+            // The persistent path shares the same ordinary texture. It must not
+            // mistake bounds from an older upload for the texture's contents.
+            Persistent.InvalidateMetadata();
+        }
+
+        public void CommitPersistentMetadataUpload()
+        {
+            // Likewise, a later wide frame must upload its exact screen-space
+            // records even when its CPU-side values did not change.
+            _wideMetadataValid = false;
         }
 
         public void Dispose()
@@ -724,6 +800,11 @@ public sealed partial class ScpShadowCasterOverlay
                 _shadowShaders[i].Dispose();
             _shadowShaders.Clear();
 
+            for (var i = 0; i < _persistentShadowShaders.Count; i++)
+                _persistentShadowShaders[i].Dispose();
+            _persistentShadowShaders.Clear();
+
+            Persistent.Dispose();
             _lightGeometry.Clear();
 
             ShadowMask?.Dispose();
@@ -737,6 +818,7 @@ public sealed partial class ScpShadowCasterOverlay
             _wideMetadataValid = false;
             InvalidateWideShadowMask();
             _targetSize = default;
+            _shadowMaskPersistent = false;
             _protectionValid = false;
             _protectionLayers.Clear();
             _geometryMapId = MapId.Nullspace;
@@ -771,8 +853,8 @@ public sealed partial class ScpShadowCasterOverlay
                 Texture protectionMask,
                 Texture lightMetadata,
                 float metadataPixelSize,
-                Vector2 shadowUvScale,
-                Vector4 lightCenterDecode,
+                Vector2? shadowUvScale,
+                Vector4? lightCenterDecode,
                 float softness,
                 float falloff,
                 float curveFactor,
@@ -807,16 +889,18 @@ public sealed partial class ScpShadowCasterOverlay
                     _shader.SetParameter("metadataPixelSize", metadataPixelSize);
                 }
 
-                if (!_configured || _shadowUvScale != shadowUvScale)
+                if (shadowUvScale is { } scale &&
+                    (!_configured || _shadowUvScale != scale))
                 {
-                    _shadowUvScale = shadowUvScale;
-                    _shader.SetParameter("shadowUvScale", shadowUvScale);
+                    _shadowUvScale = scale;
+                    _shader.SetParameter("shadowUvScale", scale);
                 }
 
-                if (!_configured || _lightCenterDecode != lightCenterDecode)
+                if (lightCenterDecode is { } decode &&
+                    (!_configured || _lightCenterDecode != decode))
                 {
-                    _lightCenterDecode = lightCenterDecode;
-                    _shader.SetParameter("lightCenterDecode", lightCenterDecode);
+                    _lightCenterDecode = decode;
+                    _shader.SetParameter("lightCenterDecode", decode);
                 }
 
                 var lightGroupParameters = new Vector4(softness, falloff, curveFactor, hasProtection ? 1f : 0f);

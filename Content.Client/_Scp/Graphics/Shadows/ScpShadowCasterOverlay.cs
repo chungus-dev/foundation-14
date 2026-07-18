@@ -25,6 +25,8 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     #region Shader prototypes
 
     private static readonly ProtoId<ShaderPrototype> ContributionShader = "ScpShadowLightContribution";
+    private static readonly ProtoId<ShaderPrototype> PersistentContributionShader =
+        "ScpPersistentShadowLightContribution";
     private static readonly ProtoId<ShaderPrototype> StandardContributionShader = "ScpLightBatch";
     private static readonly ProtoId<ShaderPrototype> MaskShader = "ScpShadowMask";
     private static readonly ProtoId<ShaderPrototype> AtlasClearShader = "ScpShadowAtlasClear";
@@ -70,6 +72,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     #region Render state
 
     private readonly ShaderPrototype _contributionPrototype;
+    private readonly ShaderPrototype _persistentContributionPrototype;
     private readonly ShaderPrototype _standardContributionPrototype;
     private readonly ShaderInstance _maskShader;
     private readonly ShaderInstance _atlasClearShader;
@@ -82,6 +85,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private List<Entity<MapGridComponent>> _intersectingTreeGrids = new(4);
 
     private readonly Action _drawShadowMask;
+    private readonly Action _drawPersistentMaskUpdate;
     private readonly Action _drawLights;
     private readonly Action _drawProtectionMask;
 
@@ -129,6 +133,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         _whiteTexture = Texture.White;
 
         _contributionPrototype = _prototypes.Index(ContributionShader);
+        _persistentContributionPrototype = _prototypes.Index(PersistentContributionShader);
         _standardContributionPrototype = _prototypes.Index(StandardContributionShader);
         _maskShader = _prototypes.Index(MaskShader).Instance();
         _atlasClearShader = _prototypes.Index(AtlasClearShader).Instance();
@@ -136,6 +141,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         InitializeLightQuad();
 
         _drawShadowMask = DrawShadowMask;
+        _drawPersistentMaskUpdate = DrawPersistentMaskUpdate;
         _drawLights = DrawLights;
         _drawProtectionMask = DrawProtectionMask;
     }
@@ -237,6 +243,8 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
         if (!_currentDrawShadows)
         {
+            ClearPersistentPackingReferences();
+            resources.Persistent.CancelAllGeometryDirty();
             for (var i = 0; i < lightCount; i++)
             {
                 var light = _lights[i];
@@ -248,14 +256,44 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
             return;
         }
 
+        var persistentRequested = _system.PersistentShadowAtlas;
+        resources.Persistent.BeginFrame(_currentMapId);
+        if (!persistentRequested)
+            resources.Persistent.CancelAllGeometryDirty();
         using (_prof.IsEnabled || _prof.IsTracyEnabled
                    ? _prof.Group("ScpContentLighting.Geometry")
                    : (ProfManager.GroupGuard?) null)
         {
             BindGeometryBuffers(resources, lightCount);
-            PrepareGeometryBatch(0, lightCount, _currentDrawShadows);
+            PrepareGeometryBatch(
+                0,
+                lightCount,
+                _currentDrawShadows,
+                persistentRequested ? resources.Persistent : null);
         }
         resources.PruneGeometryCache(_system.MaxShadowLights);
+
+        if (persistentRequested && TryDrawPersistentLights(resources, lightCount))
+        {
+            DrawProfiledStandardLightBatches(resources);
+            return;
+        }
+
+        ClearPersistentPackingReferences();
+
+        // Delay zero remains pixel-exact in the current frame. With an explicit
+        // 1..3-frame smoothing budget, wide fallback may reuse only geometry whose
+        // light-to-mask mapping is unchanged; a moved light is drawn without its
+        // stale shadow until its task is processed.
+        if (_system.MaxDeferredShadowFrames == 0)
+            CompleteDeferredGeometryBatch(0, resources.Persistent);
+        resources.PruneGeometryCache(_system.MaxShadowLights);
+
+        // Persistent planning may discover a hard shadow or atlas overflow after
+        // touching reusable scratch state. Rebuild only the cheap standard batches.
+        BeginStandardLightBatches();
+        resources.Persistent.CancelAllPending();
+        resources.Persistent.InvalidateAtlas();
         DrawGeometryBatch(0, lightCount, resources);
 
         DrawProfiledStandardLightBatches(resources);
@@ -357,6 +395,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         // These are frame aliases into viewport-owned cache entries. Keeping them
         // here would retain a disposed viewport's CPU cache until another draw.
         _lightGeometryBuffers.Clear();
+        ClearPersistentPackingReferences();
         _atlasLights.Clear();
         _atlasPages.Clear();
 

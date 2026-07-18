@@ -12,6 +12,21 @@ public sealed partial class ScpShadowCasterOverlay
 
     private readonly List<LightGeometryBuffer> _lightGeometryBuffers = new(16);
     private readonly LightGeometryBuffer _emptyLightGeometryBuffer = new();
+    private readonly List<DeferredGeometryTask> _dirtyGeometryTasks = new(128);
+    private static readonly Comparison<DeferredGeometryTask> DeferredGeometryTaskComparison =
+        static (left, right) =>
+        {
+            var comparison = left.PendingSinceFrame.CompareTo(right.PendingSinceFrame);
+            if (comparison != 0)
+                return comparison;
+
+            comparison = left.HasCommittedMask.CompareTo(right.HasCommittedMask);
+            if (comparison != 0)
+                return comparison;
+
+            comparison = left.DistanceSquared.CompareTo(right.DistanceSquared);
+            return comparison != 0 ? comparison : left.Identity.CompareTo(right.Identity);
+        };
     private readonly LightGeometryJob _lightGeometryJob;
     private readonly AtlasGeometryJob _atlasGeometryJob;
     private readonly List<AtlasGeometryTask> _dirtyAtlasGeometryTasks = new(128);
@@ -30,11 +45,11 @@ public sealed partial class ScpShadowCasterOverlay
     private void PrepareGeometryBatch(
         int lightStart,
         int lightCount,
-        bool drawShadows)
+        bool drawShadows,
+        PersistentAtlasState? persistentState)
     {
         EnsureDirtyGeometryCapacity(lightCount);
-        var dirtyCount = 0;
-        var intersectionChecks = 0L;
+        _dirtyGeometryTasks.Clear();
         using (_prof.IsEnabled || _prof.IsTracyEnabled
                    ? _prof.Group("ScpContentLighting.CacheValidation")
                    : (ProfManager.GroupGuard?) null)
@@ -63,7 +78,8 @@ public sealed partial class ScpShadowCasterOverlay
                         continue;
                     }
 
-                    var lightIntersectionChecks = 0L;
+                    long intersectionChecks = 0;
+                    long estimatedGeometryVertices = 0;
 
                     var casterKey = new ScpCasterGeometryCacheKey(
                         light.Owner,
@@ -85,7 +101,7 @@ public sealed partial class ScpShadowCasterOverlay
                             light,
                             _directionalFovActive,
                             geometry.PendingCasterDependencies,
-                            out _);
+                            out var casterGeometryVertices);
                         var dependencies = CollectionsMarshal.AsSpan(geometry.PendingCasterDependencies);
                         var dependenciesCurrent = geometry.CasterDependencies.IsCurrent(
                             dependencies,
@@ -94,8 +110,10 @@ public sealed partial class ScpShadowCasterOverlay
                         {
                             geometry.PendingCasterKey = casterKey;
                             geometry.PendingCasterSourceEpoch = _casterSnapshotEpoch;
+                            geometry.PendingCasterMappingCompatible = !casterKeyChanged;
                             geometry.RebuildCaster = true;
-                            lightIntersectionChecks += geometry.CasterCandidates.Count;
+                            intersectionChecks += geometry.CasterCandidates.Count;
+                            estimatedGeometryVertices += casterGeometryVertices;
                         }
                         else
                         {
@@ -124,7 +142,7 @@ public sealed partial class ScpShadowCasterOverlay
                         geometry.OccluderCandidates = GatherOccluderDependencies(
                             light,
                             geometry.PendingOccluderDependencies,
-                            out _);
+                            out var occluderGeometryVertices);
                         var dependencies = CollectionsMarshal.AsSpan(geometry.PendingOccluderDependencies);
                         var dependenciesCurrent = geometry.OccluderDependencies.IsCurrent(
                             dependencies,
@@ -133,8 +151,10 @@ public sealed partial class ScpShadowCasterOverlay
                         {
                             geometry.PendingOccluderKey = occluderKey;
                             geometry.PendingOccluderSourceEpoch = _occluderSnapshotEpoch;
+                            geometry.PendingOccluderMappingCompatible = !occluderKeyChanged;
                             geometry.RebuildOccluder = true;
-                            lightIntersectionChecks += geometry.OccluderCandidates.Count;
+                            intersectionChecks += geometry.OccluderCandidates.Count;
+                            estimatedGeometryVertices += occluderGeometryVertices;
                         }
                         else
                         {
@@ -148,20 +168,126 @@ public sealed partial class ScpShadowCasterOverlay
 
                     if (geometry.RebuildCaster || geometry.RebuildOccluder)
                     {
-                        _dirtyGeometryIndices[dirtyCount++] = i;
-                        intersectionChecks += lightIntersectionChecks;
+                        var identity = new PersistentLightIdentity(light.Owner, light.CreationTick);
+                        var pendingSinceFrame = persistentState?.TrackGeometryDirty(
+                            identity,
+                            geometry) ?? 0UL;
+                        var hasCommittedMask = persistentState != null &&
+                            persistentState.TryGet(identity, out var entry) &&
+                            entry.HasCommittedMask;
+                        geometry.GeometryPending = true;
+                        _dirtyGeometryTasks.Add(new DeferredGeometryTask(
+                            i,
+                            identity,
+                            intersectionChecks,
+                            Math.Max(1L, intersectionChecks + estimatedGeometryVertices),
+                            pendingSinceFrame,
+                            hasCommittedMask,
+                            light.DistanceSquared));
                     }
                 }
             }
         }
 
-        ProcessSelectedGeometry(lightStart, dirtyCount, intersectionChecks);
+        persistentState?.CancelInvisibleGeometryDirty();
+        if (_dirtyGeometryTasks.Count == 0)
+            return;
+
+        if (persistentState == null || _system.MaxDeferredShadowFrames == 0)
+        {
+            var intersectionChecks = 0L;
+            for (var index = 0; index < _dirtyGeometryTasks.Count; index++)
+            {
+                var task = _dirtyGeometryTasks[index];
+                _dirtyGeometryIndices[index] = task.GeometryIndex;
+                _lightGeometryBuffers[task.GeometryIndex].GeometryPending = false;
+                intersectionChecks += task.IntersectionChecks;
+            }
+
+            ProcessSelectedGeometry(
+                lightStart,
+                _dirtyGeometryTasks.Count,
+                intersectionChecks,
+                persistentState);
+            return;
+        }
+
+        _dirtyGeometryTasks.Sort(DeferredGeometryTaskComparison);
+        var deferredFrames = _system.MaxDeferredShadowFrames;
+        var oldestAge = 0;
+        var totalWork = 0L;
+        for (var index = 0; index < _dirtyGeometryTasks.Count; index++)
+        {
+            var task = _dirtyGeometryTasks[index];
+            oldestAge = Math.Max(oldestAge, GetGeometryTaskAge(persistentState, task));
+            totalWork += task.EstimatedWork;
+        }
+
+        // Keep the configured maximum as the hard deadline. Normal work is
+        // budgeted to finish one frame earlier so the tail does not sit at the
+        // maximum age during continuous PVS or geometry churn.
+        var remainingFrames = Math.Max(1, deferredFrames - oldestAge);
+        var workBudget = Math.Max(1L, (totalWork + remainingFrames - 1L) / remainingFrames);
+        var selectedCount = 0;
+        var selectedWork = 0L;
+        var selectedIntersectionChecks = 0L;
+        for (var index = 0; index < _dirtyGeometryTasks.Count; index++)
+        {
+            var task = _dirtyGeometryTasks[index];
+            var forced = GetGeometryTaskAge(persistentState, task) >= deferredFrames;
+            if (!forced && selectedCount != 0 && selectedWork >= workBudget)
+                continue;
+
+            _dirtyGeometryIndices[selectedCount++] = task.GeometryIndex;
+            _lightGeometryBuffers[task.GeometryIndex].GeometryPending = false;
+            selectedWork += task.EstimatedWork;
+            selectedIntersectionChecks += task.IntersectionChecks;
+        }
+
+        ProcessSelectedGeometry(
+            lightStart,
+            selectedCount,
+            selectedIntersectionChecks,
+            persistentState);
+    }
+
+    private static int GetGeometryTaskAge(
+        PersistentAtlasState state,
+        in DeferredGeometryTask task)
+    {
+        return (int) Math.Min(int.MaxValue, state.FrameStamp - task.PendingSinceFrame);
+    }
+
+    private void CompleteDeferredGeometryBatch(
+        int lightStart,
+        PersistentAtlasState persistentState)
+    {
+        var selectedCount = 0;
+        var intersectionChecks = 0L;
+        for (var index = 0; index < _dirtyGeometryTasks.Count; index++)
+        {
+            var task = _dirtyGeometryTasks[index];
+            var geometry = _lightGeometryBuffers[task.GeometryIndex];
+            if (!geometry.GeometryPending)
+                continue;
+
+            geometry.GeometryPending = false;
+            _dirtyGeometryIndices[selectedCount++] = task.GeometryIndex;
+            intersectionChecks += task.IntersectionChecks;
+        }
+
+        ProcessSelectedGeometry(
+            lightStart,
+            selectedCount,
+            intersectionChecks,
+            persistentState);
     }
 
     private void ProcessSelectedGeometry(
         int lightStart,
         int selectedCount,
-        long intersectionChecks)
+        long intersectionChecks,
+        PersistentAtlasState? persistentState)
     {
         if (selectedCount == 0)
             return;
@@ -180,7 +306,15 @@ public sealed partial class ScpShadowCasterOverlay
         for (var index = 0; index < selectedCount; index++)
         {
             var geometryIndex = _dirtyGeometryIndices[index];
-            _lightGeometryBuffers[geometryIndex].CommitRebuiltParts();
+            var geometry = _lightGeometryBuffers[geometryIndex];
+            geometry.CommitRebuiltParts();
+            if (persistentState == null)
+                continue;
+
+            var light = _lights[lightStart + geometryIndex];
+            persistentState.CompleteGeometryDirty(
+                new PersistentLightIdentity(light.Owner, light.CreationTick),
+                geometry);
         }
     }
 
@@ -262,12 +396,22 @@ public sealed partial class ScpShadowCasterOverlay
         public bool AtlasHasOccluderMask;
         public bool RebuildCaster;
         public bool RebuildOccluder;
+        public bool PendingCasterMappingCompatible;
+        public bool PendingOccluderMappingCompatible;
+        public bool GeometryPending;
+        public ulong GeometryPendingSinceFrame;
+        public ulong MaskPendingSinceFrame;
         public ulong AtlasContentGeneration { get; private set; }
         public ScpAxisCandidateRange CasterCandidates;
         public ScpAxisCandidateRange OccluderCandidates;
 
         public bool HasCasterMask => HasInsideMask || HasOutsideMask;
         public bool HasMask => HasCasterMask || HasOccluderMask;
+        public bool HasRenderableCasterMask => HasCasterMask &&
+            (!GeometryPending || !RebuildCaster || PendingCasterMappingCompatible);
+        public bool HasRenderableOccluderMask => HasOccluderMask &&
+            (!GeometryPending || !RebuildOccluder || PendingOccluderMappingCompatible);
+        public bool HasRenderableMask => HasRenderableCasterMask || HasRenderableOccluderMask;
 
         public LightGeometryBuffer(uint incarnation = 0)
         {
@@ -296,6 +440,9 @@ public sealed partial class ScpShadowCasterOverlay
         {
             RebuildCaster = false;
             RebuildOccluder = false;
+            PendingCasterMappingCompatible = true;
+            PendingOccluderMappingCompatible = true;
+            GeometryPending = false;
         }
 
         public void CommitRebuiltParts()
@@ -328,6 +475,15 @@ public sealed partial class ScpShadowCasterOverlay
         ScpAtlasGeometryCacheKey OccluderKey,
         bool RebuildCaster,
         bool RebuildOccluder);
+
+    private readonly record struct DeferredGeometryTask(
+        int GeometryIndex,
+        PersistentLightIdentity Identity,
+        long IntersectionChecks,
+        long EstimatedWork,
+        ulong PendingSinceFrame,
+        bool HasCommittedMask,
+        float DistanceSquared);
 
     private sealed class LightGeometryJob(ScpShadowCasterOverlay overlay) : IParallelRobustJob
     {
