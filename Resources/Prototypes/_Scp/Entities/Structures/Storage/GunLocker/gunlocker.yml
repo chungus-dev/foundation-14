@@ -5,6 +5,7 @@
   components:
   - type: ScpShadowCasterVisuals
     bounds: "-0.45,-0.45,0.45,0.45"
+  - type: ScpShadowProtectedTextureVisuals
   - type: Appearance
   - type: Sprite
     sprite: _Scp/Structures/Storage/GunLocker/gunlocker/base.rsi

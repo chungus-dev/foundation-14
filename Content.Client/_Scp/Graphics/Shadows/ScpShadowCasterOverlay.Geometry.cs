@@ -15,6 +15,8 @@ public sealed partial class ScpShadowCasterOverlay
     private const float GeometryEpsilon = 0.0001f;
     private const float NearLightDistance = 1f / EyeManager.PixelsPerMeter;
     private const float SpriteAlphaThreshold = 0.1f;
+    private const ushort AlwaysProtectionOwnerId = ushort.MaxValue;
+    private const int MaximumSelfProtectionOwnerId = ushort.MaxValue - 1;
 
     #region Frame geometry cache
 
@@ -27,14 +29,17 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly List<float> _frameOccluderCentersX = new(256);
     private readonly List<ProtectedSpriteLayer> _protectedSpriteLayers = new(512);
     private readonly HashSet<EntityUid> _frameSpriteEntities = new(256);
+    private readonly Dictionary<EntityUid, ushort> _protectionOwnerIds = new(256);
     private static readonly Color InsideMaskColor = new(1f, 0f, 0f);
     private static readonly Color OutsideMaskColor = new(0f, 1f, 0f);
     private static readonly Color BothMaskColor = new(1f, 1f, 0f);
     private static readonly Color OccluderMaskColor = new(0f, 0f, 1f);
 
-    private readonly Dictionary<EntityUid, Vector2> _foregroundProjectionPositions = new(32);
+    private readonly Dictionary<EntityUid, Vector2> _alphaProjectionPositions = new(32);
+    private readonly HashSet<EntityUid> _frameLightEntities = new(32);
     private readonly Vector2[] _boxContour = new Vector2[4];
     private Vector2[] _worldContour = new Vector2[32];
+    private int _nextProtectionOwnerId = 1;
     private float _maximumCasterHalfWidth;
     private float _maximumOccluderHalfWidth;
 
@@ -134,6 +139,7 @@ public sealed partial class ScpShadowCasterOverlay
         for (var i = 0; i < _lights.Count; i++)
         {
             var light = _lights[i];
+            _frameLightEntities.Add(light.Owner);
             var radius = new Vector2(light.Radius);
             queryBounds = queryBounds.Union(new Box2(light.Position - radius, light.Position + radius));
         }
@@ -152,13 +158,17 @@ public sealed partial class ScpShadowCasterOverlay
         _frameCasterCentersX.Clear();
         _protectedSpriteLayers.Clear();
         _frameSpriteEntities.Clear();
-        _foregroundProjectionPositions.Clear();
+        _protectionOwnerIds.Clear();
+        _nextProtectionOwnerId = 1;
+        _alphaProjectionPositions.Clear();
+        _frameLightEntities.Clear();
         _maximumCasterHalfWidth = 0f;
     }
 
     private void FinalizeFrameCasterCache()
     {
         _frameCasters.Sort(static (left, right) => CompareBounds(left.Bounds, right.Bounds));
+        _protectedSpriteLayers.Sort(static (left, right) => CompareProtectedLayers(left, right));
         _frameCasterCentersX.Clear();
         _maximumCasterHalfWidth = 0f;
 
@@ -203,6 +213,26 @@ public sealed partial class ScpShadowCasterOverlay
             return comparison;
 
         return left.Bottom.CompareTo(right.Bottom);
+    }
+
+    private static int CompareProtectedLayers(ProtectedSpriteLayer left, ProtectedSpriteLayer right)
+    {
+        var comparison = left.DrawDepth.CompareTo(right.DrawDepth);
+        if (comparison != 0)
+            return comparison;
+
+        comparison = left.RenderOrder.CompareTo(right.RenderOrder);
+        if (comparison != 0)
+            return comparison;
+
+        comparison = left.YSort.CompareTo(right.YSort);
+        if (comparison != 0)
+            return comparison;
+
+        comparison = left.Owner.CompareTo(right.Owner);
+        return comparison != 0
+            ? comparison
+            : left.LayerIndex.CompareTo(right.LayerIndex);
     }
 
     private ScpAxisCandidateRange GetCasterCandidateRange(in ScpShadowLightData light)
@@ -256,7 +286,8 @@ public sealed partial class ScpShadowCasterOverlay
         if (!sprite.Visible || sprite.ContainerOccluded || sprite.Color.A == 0f)
             return true;
 
-        var isForeground = overlay._foregroundQuery.HasComp(entry.Uid);
+        var isLight = overlay._frameLightEntities.Contains(entry.Uid);
+        var hasProtection = overlay._protectedTextureQuery.TryGetComponent(entry.Uid, out var protection);
         var isCaster = overlay._shadowQuery.TryGetComponent(entry.Uid, out var shadow);
         var quality = ScpShadowQuality.Disabled;
 
@@ -269,7 +300,7 @@ public sealed partial class ScpShadowCasterOverlay
                 (!overlay._occluderQuery.TryGetComponent(entry.Uid, out var occluder) || !occluder.Enabled);
         }
 
-        if (!isCaster && !isForeground)
+        if (!isCaster && !hasProtection)
             return true;
 
         if (!overlay._frameSpriteEntities.Add(entry.Uid))
@@ -279,7 +310,8 @@ public sealed partial class ScpShadowCasterOverlay
             entry,
             isCaster ? shadow : null,
             quality,
-            isForeground,
+            hasProtection ? protection : null,
+            isLight,
             state.ViewportBounds);
         return true;
     }
@@ -288,7 +320,8 @@ public sealed partial class ScpShadowCasterOverlay
         Entity<SpriteComponent, TransformComponent> candidate,
         ScpShadowCasterVisualsComponent? shadow,
         ScpShadowQuality quality,
-        bool isForeground,
+        ScpShadowProtectedTextureVisualsComponent? protection,
+        bool isLight,
         Box2 viewportBounds)
     {
         var sprite = candidate.Comp1;
@@ -302,6 +335,18 @@ public sealed partial class ScpShadowCasterOverlay
         var opaqueBounds = default(Box2);
         var spriteFovAlpha = 1f;
         var spriteFovAlphaReady = !_directionalFovActive;
+        var protectionOwnerId = protection == null
+            ? (ushort) 0
+            : GetProtectionOwnerId(candidate.Owner, protection.Mode);
+        var drawInProtectedTexture = protectionOwnerId != 0;
+        var finalSpriteRotation = sprite.NoRotation
+            ? sprite.Rotation
+            : sprite.Rotation + rotation + _eyeRotation;
+        var sortMatrix = Matrix3Helpers.CreateTransform(
+            _eyeRotation.RotateVec(position),
+            finalSpriteRotation);
+        var ySort = -sortMatrix.TransformBox(
+            _spriteSystem.GetLocalBounds((candidate.Owner, sprite))).Bottom;
 
         if (shadow != null)
         {
@@ -350,7 +395,7 @@ public sealed partial class ScpShadowCasterOverlay
                 var textureSize = texture.Size / (float) EyeManager.PixelsPerMeter;
                 var quad = Box2.FromDimensions(textureSize / -2f, textureSize);
 
-                if (worldMatrix.TransformBox(quad).Intersects(viewportBounds))
+                if (drawInProtectedTexture && worldMatrix.TransformBox(quad).Intersects(viewportBounds))
                 {
                     if (!spriteFovAlphaReady)
                     {
@@ -368,15 +413,20 @@ public sealed partial class ScpShadowCasterOverlay
                             texture,
                             worldMatrix,
                             quad,
-                            modulate));
+                            EncodeProtectionOwner(protectionOwnerId, modulate.A),
+                            sprite.DrawDepth,
+                            sprite.RenderOrder,
+                            ySort,
+                            candidate.Owner,
+                            layerIndex));
                     }
                 }
 
-                if (isForeground)
+                if (isLight)
                 {
                     var localOpaqueBounds = default(Box2);
-                    var hasLayerBounds = state != null && rsi != null
-                    && _contourCache.TryGetOpaqueBounds(
+                    var hasLayerBounds = state != null && rsi != null &&
+                    _contourCache.TryGetOpaqueBounds(
                         rsi,
                         layer.State,
                         drawDirection,
@@ -425,8 +475,8 @@ public sealed partial class ScpShadowCasterOverlay
             }
         }
 
-        if (isForeground && hasOpaqueBounds)
-            _foregroundProjectionPositions[candidate.Owner] = opaqueBounds.Center;
+        if (isLight && hasOpaqueBounds)
+            _alphaProjectionPositions[candidate.Owner] = opaqueBounds.Center;
 
         if (shadow == null)
             return;
@@ -448,8 +498,34 @@ public sealed partial class ScpShadowCasterOverlay
                 contourStart,
                 _frameContours.Count - contourStart,
                 contourBounds,
-                fovVisibility));
+                fovVisibility,
+                protectionOwnerId));
         }
+    }
+
+    private ushort GetProtectionOwnerId(EntityUid owner, ScpShadowProtectionMode mode)
+    {
+        if (mode == ScpShadowProtectionMode.Always)
+            return AlwaysProtectionOwnerId;
+
+        if (_protectionOwnerIds.TryGetValue(owner, out var ownerId))
+            return ownerId;
+
+        if (_nextProtectionOwnerId > MaximumSelfProtectionOwnerId)
+            return 0;
+
+        ownerId = (ushort) _nextProtectionOwnerId++;
+        _protectionOwnerIds.Add(owner, ownerId);
+        return ownerId;
+    }
+
+    private static Color EncodeProtectionOwner(ushort ownerId, float alpha)
+    {
+        return new Color(
+            (ownerId & byte.MaxValue) / (float) byte.MaxValue,
+            (ownerId >> 8) / (float) byte.MaxValue,
+            0f,
+            alpha);
     }
 
     private Box2 CacheContour(ReadOnlySpan<Vector2> contour)
@@ -535,7 +611,8 @@ public sealed partial class ScpShadowCasterOverlay
                     light.Position,
                     light.Radius,
                     geometry.Vertices,
-                    maskColor))
+                    maskColor,
+                    caster.ProtectionOwnerId))
                 {
                     continue;
                 }
@@ -655,7 +732,8 @@ public sealed partial class ScpShadowCasterOverlay
         Vector2 lightPosition,
         float lightRadius,
         List<DrawVertexUV2DColor> vertices,
-        Color color)
+        Color color,
+        ushort protectionOwnerId = 0)
     {
         if (contour.Length < 2)
             return false;
@@ -675,7 +753,7 @@ public sealed partial class ScpShadowCasterOverlay
 
             var farStart = ProjectToLightRadius(start, projectionOrigin, lightPosition, lightRadius);
             var farEnd = ProjectToLightRadius(end, projectionOrigin, lightPosition, lightRadius);
-            AppendQuad(start, end, farEnd, farStart, vertices, color);
+            AppendQuad(start, end, farEnd, farStart, vertices, color, protectionOwnerId);
             appended = true;
         }
 
@@ -740,14 +818,16 @@ public sealed partial class ScpShadowCasterOverlay
         Vector2 topRight,
         Vector2 topLeft,
         List<DrawVertexUV2DColor> vertices,
-        Color color)
+        Color color,
+        ushort protectionOwnerId = 0)
     {
-        vertices.Add(new DrawVertexUV2DColor(bottomLeft, color));
-        vertices.Add(new DrawVertexUV2DColor(bottomRight, color));
-        vertices.Add(new DrawVertexUV2DColor(topRight, color));
-        vertices.Add(new DrawVertexUV2DColor(bottomLeft, color));
-        vertices.Add(new DrawVertexUV2DColor(topRight, color));
-        vertices.Add(new DrawVertexUV2DColor(topLeft, color));
+        var ownerData = new Vector2(protectionOwnerId, 0f);
+        vertices.Add(new DrawVertexUV2DColor(bottomLeft, color) { UV2 = ownerData });
+        vertices.Add(new DrawVertexUV2DColor(bottomRight, color) { UV2 = ownerData });
+        vertices.Add(new DrawVertexUV2DColor(topRight, color) { UV2 = ownerData });
+        vertices.Add(new DrawVertexUV2DColor(bottomLeft, color) { UV2 = ownerData });
+        vertices.Add(new DrawVertexUV2DColor(topRight, color) { UV2 = ownerData });
+        vertices.Add(new DrawVertexUV2DColor(topLeft, color) { UV2 = ownerData });
     }
 
     #endregion
@@ -878,7 +958,8 @@ public sealed partial class ScpShadowCasterOverlay
         int ContourStart,
         int ContourCount,
         Box2 Bounds,
-        DirectionalFovVisibility FovVisibility);
+        DirectionalFovVisibility FovVisibility,
+        ushort ProtectionOwnerId);
 
     private readonly record struct CachedContour(
         int VertexStart,
@@ -895,7 +976,12 @@ public sealed partial class ScpShadowCasterOverlay
         Texture Texture,
         Matrix3x2 WorldMatrix,
         Box2 Quad,
-        Color Modulate);
+        Color OwnerColor,
+        int DrawDepth,
+        uint RenderOrder,
+        float YSort,
+        EntityUid Owner,
+        int LayerIndex);
 
     private readonly record struct SpriteMatrices(
         Angle ScreenAngle,

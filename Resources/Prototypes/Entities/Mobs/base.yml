@@ -54,6 +54,9 @@
   parent: BaseControllable
   id: BaseMob
   components:
+  # Scp added start
+  - type: ScpShadowProtectedTextureVisuals
+  # Scp added end
   - type: MobCollision
   - type: Physics
     bodyType: KinematicController

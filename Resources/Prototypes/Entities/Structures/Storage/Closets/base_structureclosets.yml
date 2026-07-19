@@ -8,6 +8,7 @@
   # Scp added start - visual contour shadows
   - type: ScpShadowCasterVisuals
     bounds: "-0.25,-0.48,0.25,0.48"
+  - type: ScpShadowProtectedTextureVisuals
   # Scp added end - visual contour shadows
   - type: Animateable
   - type: ResistLocker
@@ -127,6 +128,7 @@
   # Scp added start - visual contour shadows
   - type: ScpShadowCasterVisuals
     bounds: "-0.25,-0.35,0.25,0.35"
+  - type: ScpShadowProtectedTextureVisuals
   # Scp added end - visual contour shadows
   - type: ResistLocker
   - type: Weldable
@@ -223,6 +225,7 @@
   # Scp added start - visual contour shadows
   - type: ScpShadowCasterVisuals
     bounds: "-0.25,-0.48,0.25,0.48"
+  - type: ScpShadowProtectedTextureVisuals
   # Scp added end - visual contour shadows
   - type: AccessReader
   - type: Lock

@@ -62,9 +62,8 @@
 
 - type: shader
   id: ScpShadowMask
-  kind: canvas
-  light_mode: unshaded
-  blend_mode: Add
+  kind: source
+  path: "/Textures/_Scp/Shaders/shadow_mask.swsl"
 
 - type: shader
   id: ScpShadowProtection

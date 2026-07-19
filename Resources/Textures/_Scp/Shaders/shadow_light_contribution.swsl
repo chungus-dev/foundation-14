@@ -5,11 +5,10 @@ blend_mode add;
 #include "/Textures/_Scp/Shaders/directional_fov_shared.swsl"
 
 uniform sampler2D shadowMask;
-uniform sampler2D protectionMask;
 // Original light centre (xy) and atlas sampling offset (zw) for each batched light.
 uniform highp vec4[16] lightAtlasData;
-// Softness, falloff, curve factor and protection-mask presence.
-uniform highp float[4] lightGroupParameters;
+// Softness, falloff and curve factor.
+uniform highp float[3] lightGroupParameters;
 uniform highp int directionalFovMode;
 // Offset, view direction, radial parameters and cone thresholds.
 uniform highp vec2[4] directionalFovParameters;
@@ -97,12 +96,6 @@ mediump float getShadowVisibility(highp vec2 screenUv, highp vec2 fragmentCoords
         softOffset);
     mediump float directionalOcclusion = getDirectionalFovOcclusion(fragmentCoords);
     mediump float caster = mix(masks.r, masks.g, directionalOcclusion);
-
-    if (lightGroupParameters[3] > 0.0)
-    {
-        mediump float protection = zTextureSpec(protectionMask, screenUv).r;
-        caster *= 1.0 - clamp(protection, 0.0, 1.0);
-    }
 
     mediump float casterVisibility = 1.0 - clamp(caster, 0.0, 1.0);
     mediump float occluderVisibility = 1.0 - clamp(masks.b, 0.0, 1.0);

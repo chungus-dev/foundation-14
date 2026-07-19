@@ -14,12 +14,12 @@ public sealed partial class ScpShadowCasterOverlay
 
     #region Light preparation
 
-    private void ApplyProjectionPositions()
+    private void ApplyAlphaProjectionPositions()
     {
         for (var i = 0; i < _lights.Count; i++)
         {
             var light = _lights[i];
-            if (_foregroundProjectionPositions.TryGetValue(light.Owner, out var projectionPosition))
+            if (_alphaProjectionPositions.TryGetValue(light.Owner, out var projectionPosition))
                 _lights[i] = light with { ProjectionPosition = projectionPosition };
         }
     }

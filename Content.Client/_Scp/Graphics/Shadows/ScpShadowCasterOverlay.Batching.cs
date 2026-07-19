@@ -23,13 +23,11 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly ScpAtlasPlacement[] _atlasPlacements = new ScpAtlasPlacement[GeometryBatchSize];
     private readonly List<DrawVertexUV2DColor> _atlasMaskVertices = new(4096);
     private readonly Color[] _pageLightAtlasData = new Color[GeometryBatchSize];
+    private readonly float[] _pageLightSoftness = new float[GeometryBatchSize];
     private readonly bool[] _pageHasMask = new bool[GeometryBatchSize];
     private readonly bool[] _pageHasCasterMask = new bool[GeometryBatchSize];
     private readonly Vector2[] _clipPolygonA = new Vector2[8];
     private readonly Vector2[] _clipPolygonB = new Vector2[8];
-
-    private readonly List<ProtectionSourceBatch> _protectionBatches = new(16);
-    private int _activeProtectionBatches;
 
     #endregion
 
@@ -148,6 +146,8 @@ public sealed partial class ScpShadowCasterOverlay
             EnsureProtectionMask(resources);
         }
 
+        PreparePageLightAtlas(page, _targetSize);
+
         _renderHandle!.SetScissor(page.Bounds);
         try
         {
@@ -158,7 +158,6 @@ public sealed partial class ScpShadowCasterOverlay
             _renderHandle.SetScissor(null);
         }
 
-        PreparePageLightAtlas(page, _targetSize);
         BeginShadowLightBatches();
 
         for (var index = 0; index < page.Count; index++)
@@ -171,13 +170,11 @@ public sealed partial class ScpShadowCasterOverlay
                 continue;
             }
 
-            var hasProtection = _currentHasProtection && _pageHasCasterMask[index];
             var key = new ShadowLightBatchKey(
                 light.Mask ?? _whiteTexture,
                 light.Falloff,
                 light.CurveFactor,
-                atlasLight.Softness,
-                hasProtection);
+                atlasLight.Softness);
             var batch = GetShadowLightBatch(key);
             AppendLightQuad(batch.Vertices, light, new Vector2(light.Radius, index));
         }
@@ -234,7 +231,8 @@ public sealed partial class ScpShadowCasterOverlay
             _pageHasCasterMask[index] = AppendClippedAtlasGeometry(
                 CollectionsMarshal.AsSpan(geometry.Vertices),
                 atlasLight.Source,
-                atlasLight.Destination);
+                atlasLight.Destination,
+                index);
             _pageHasMask[index] = _atlasMaskVertices.Count != vertexStart;
         }
     }
@@ -242,7 +240,8 @@ public sealed partial class ScpShadowCasterOverlay
     private bool AppendClippedAtlasGeometry(
         ReadOnlySpan<DrawVertexUV2DColor> vertices,
         UIBox2i source,
-        Vector2i destination)
+        Vector2i destination,
+        int lightIndex)
     {
         var polygonA = _clipPolygonA;
         var polygonB = _clipPolygonB;
@@ -265,12 +264,13 @@ public sealed partial class ScpShadowCasterOverlay
                 continue;
 
             var color = vertices[vertex].Color;
+            var ownerId = vertices[vertex].UV2.X;
             if (relation == ScpTriangleBoundsRelation.Inside)
             {
                 hasCasterMask |= color.R > 0f || color.G > 0f;
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(vertices[vertex].Position + worldOffset, color));
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(vertices[vertex + 1].Position + worldOffset, color));
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(vertices[vertex + 2].Position + worldOffset, color));
+                AddAtlasMaskVertex(vertices[vertex].Position + worldOffset, color, ownerId, lightIndex);
+                AddAtlasMaskVertex(vertices[vertex + 1].Position + worldOffset, color, ownerId, lightIndex);
+                AddAtlasMaskVertex(vertices[vertex + 2].Position + worldOffset, color, ownerId, lightIndex);
                 continue;
             }
 
@@ -289,17 +289,29 @@ public sealed partial class ScpShadowCasterOverlay
             var first = AtlasPixelToWorld(polygonA[0], offset);
             for (var triangle = 1; triangle < count - 1; triangle++)
             {
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(first, color));
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(
+                AddAtlasMaskVertex(first, color, ownerId, lightIndex);
+                AddAtlasMaskVertex(
                     AtlasPixelToWorld(polygonA[triangle], offset),
-                    color));
-                _atlasMaskVertices.Add(new DrawVertexUV2DColor(
+                    color,
+                    ownerId,
+                    lightIndex);
+                AddAtlasMaskVertex(
                     AtlasPixelToWorld(polygonA[triangle + 1], offset),
-                    color));
+                    color,
+                    ownerId,
+                    lightIndex);
             }
         }
 
         return hasCasterMask;
+    }
+
+    private void AddAtlasMaskVertex(Vector2 position, Color color, float ownerId, int lightIndex)
+    {
+        _atlasMaskVertices.Add(new DrawVertexUV2DColor(position, color)
+        {
+            UV2 = new Vector2(ownerId, lightIndex),
+        });
     }
 
     private Vector2 AtlasPixelToWorld(Vector2 position, Vector2 offset)
@@ -406,6 +418,7 @@ public sealed partial class ScpShadowCasterOverlay
                 centerUv.Y,
                 sampleOffset.X,
                 sampleOffset.Y));
+            _pageLightSoftness[index] = atlasLight.Softness;
         }
     }
 
@@ -413,7 +426,6 @@ public sealed partial class ScpShadowCasterOverlay
     {
         var handle = _drawHandle!;
         var shadowMask = resources.ShadowMask!.Texture;
-        var protectionMask = resources.ProtectionMask?.Texture ?? shadowMask;
         handle.SetTransform(_targetMatrix);
 
         for (var batchIndex = 0; batchIndex < _activeShadowLightBatches; batchIndex++)
@@ -423,12 +435,10 @@ public sealed partial class ScpShadowCasterOverlay
             handle.UseShader(resources.GetShadowShader(
                 _contributionPrototype,
                 shadowMask,
-                protectionMask,
                 _pageLightAtlasData,
                 key.Softness,
                 key.Falloff,
                 key.CurveFactor,
-                key.HasProtection,
                 _directionalFovActive && pageHasCasterMask,
                 _directionalFovOffset,
                 _directionalViewDirection,
@@ -445,7 +455,7 @@ public sealed partial class ScpShadowCasterOverlay
 
     #endregion
 
-    #region Protection mask batching
+    #region Protection mask
 
     private void EnsureProtectionMask(CachedResources resources)
     {
@@ -458,40 +468,6 @@ public sealed partial class ScpShadowCasterOverlay
             _drawProtectionMask,
             Color.Black);
         _currentHasProtection = true;
-    }
-
-    private void PrepareProtectionBatches()
-    {
-        _activeProtectionBatches = 0;
-
-        for (var layerIndex = 0; layerIndex < _protectedSpriteLayers.Count; layerIndex++)
-        {
-            var layer = _protectedSpriteLayers[layerIndex];
-            var source = layer.Texture is AtlasTexture atlas
-                ? atlas.SourceTexture
-                : layer.Texture;
-            var batchIndex = -1;
-
-            for (var i = 0; i < _activeProtectionBatches; i++)
-            {
-                if (!ReferenceEquals(_protectionBatches[i].Source, source))
-                    continue;
-
-                batchIndex = i;
-                break;
-            }
-
-            if (batchIndex == -1)
-            {
-                batchIndex = _activeProtectionBatches++;
-                if (batchIndex == _protectionBatches.Count)
-                    _protectionBatches.Add(new ProtectionSourceBatch());
-
-                _protectionBatches[batchIndex].Reset(source);
-            }
-
-            _protectionBatches[batchIndex].Layers.Add(layer);
-        }
     }
 
     #endregion
@@ -516,8 +492,7 @@ public sealed partial class ScpShadowCasterOverlay
         Texture Mask,
         float Falloff,
         float CurveFactor,
-        float Softness,
-        bool HasProtection);
+        float Softness);
 
     private sealed class ShadowLightBatch
     {
@@ -539,18 +514,6 @@ public sealed partial class ScpShadowCasterOverlay
         float Softness);
 
     private readonly record struct AtlasPage(int Start, int Count, UIBox2i Bounds);
-
-    private sealed class ProtectionSourceBatch
-    {
-        public Texture Source = default!;
-        public readonly List<ProtectedSpriteLayer> Layers = new(64);
-
-        public void Reset(Texture source)
-        {
-            Source = source;
-            Layers.Clear();
-        }
-    }
 
     #endregion
 }

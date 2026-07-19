@@ -2,11 +2,13 @@ preset raw;
 light_mode unshaded;
 
 varying lowp float vertexAlpha;
+varying mediump vec2 vertexOwner;
 
 void vertex()
 {
     VERTEX = pixel_snap(apply_mvp(VERTEX));
     vertexAlpha = modulate.a;
+    vertexOwner = modulate.rg;
 }
 
 void fragment()
@@ -14,6 +16,5 @@ void fragment()
     if (zTexture(UV).a * vertexAlpha < 0.1)
         discard;
 
-    // Keep this mask binary so grouping layers by source texture is order-independent.
-    COLOR = vec4(1.0);
+    COLOR = vec4(vertexOwner, 0.0, 1.0);
 }

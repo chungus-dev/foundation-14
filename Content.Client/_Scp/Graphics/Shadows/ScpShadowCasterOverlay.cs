@@ -56,7 +56,8 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     private readonly EntityQuery<OccluderComponent> _occluderQuery;
     private readonly EntityQuery<FieldOfViewOccludableComponent> _fovOccludableQuery;
-    private readonly EntityQuery<ScpShadowForegroundVisualsComponent> _foregroundQuery;
+    // Scp added - unified protection-texture membership query.
+    private readonly EntityQuery<ScpShadowProtectedTextureVisualsComponent> _protectedTextureQuery;
     private readonly EntityQuery<ScpShadowCasterVisualsComponent> _shadowQuery;
     private readonly EntityQuery<OccluderTreeComponent> _occluderTreeQuery;
     private readonly EntityQuery<SpriteTreeComponent> _spriteTreeQuery;
@@ -71,6 +72,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private readonly ShaderPrototype _standardContributionPrototype;
     private readonly ShaderInstance _maskShader;
     private readonly ShaderInstance _protectionShader;
+    private readonly Texture _blackTexture;
     private readonly Texture _whiteTexture;
     private readonly OverlayResourceCache<CachedResources> _resources = new();
     private readonly ScpShadowContourCache _contourCache;
@@ -109,18 +111,20 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
         _occluderQuery = _entityManager.GetEntityQuery<OccluderComponent>();
         _fovOccludableQuery = _entityManager.GetEntityQuery<FieldOfViewOccludableComponent>();
-        _foregroundQuery = _entityManager.GetEntityQuery<ScpShadowForegroundVisualsComponent>();
+        // Scp added - unified protection-texture membership query.
+        _protectedTextureQuery = _entityManager.GetEntityQuery<ScpShadowProtectedTextureVisualsComponent>();
         _shadowQuery = _entityManager.GetEntityQuery<ScpShadowCasterVisualsComponent>();
         _occluderTreeQuery = _entityManager.GetEntityQuery<OccluderTreeComponent>();
         _spriteTreeQuery = _entityManager.GetEntityQuery<SpriteTreeComponent>();
 
         _contourCache = system.ContourCache;
         _lightGeometryJob = new LightGeometryJob(this);
+        _blackTexture = Texture.Black;
         _whiteTexture = Texture.White;
 
         _contributionPrototype = _prototypes.Index(ContributionShader);
         _standardContributionPrototype = _prototypes.Index(StandardContributionShader);
-        _maskShader = _prototypes.Index(MaskShader).Instance();
+        _maskShader = _prototypes.Index(MaskShader).InstanceUnique();
         _protectionShader = _prototypes.Index(ProtectionShader).Instance();
         InitializeLightQuad();
 
@@ -199,7 +203,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
                        : (ProfManager.GroupGuard?) null)
             {
                 BuildFrameCache(args.MapId, worldAabb);
-                ApplyProjectionPositions();
+                ApplyAlphaProjectionPositions();
             }
         }
         else

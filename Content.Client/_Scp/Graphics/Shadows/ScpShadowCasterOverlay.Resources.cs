@@ -15,6 +15,11 @@ public sealed partial class ScpShadowCasterOverlay
     {
         var handle = _drawHandle!;
         handle.SetTransform(_targetMatrix);
+        _maskShader.SetParameter(
+            "protectionMask",
+            _currentHasProtection ? _currentResources!.ProtectionMask!.Texture : _blackTexture);
+        _maskShader.SetParameter("lightAtlasData", _pageLightAtlasData);
+        _maskShader.SetParameter("lightSoftness", _pageLightSoftness);
         handle.UseShader(_maskShader);
         DrawTriangleList(handle, _whiteTexture, CollectionsMarshal.AsSpan(_atlasMaskVertices));
         handle.UseShader(null);
@@ -36,17 +41,12 @@ public sealed partial class ScpShadowCasterOverlay
     private void DrawProtectionMask()
     {
         var handle = _drawHandle!;
-        PrepareProtectionBatches();
         handle.UseShader(_protectionShader);
 
-        for (var batchIndex = 0; batchIndex < _activeProtectionBatches; batchIndex++)
+        foreach (var layer in _protectedSpriteLayers)
         {
-            var batch = _protectionBatches[batchIndex];
-            foreach (var layer in batch.Layers)
-            {
-                handle.SetTransform(Matrix3x2.Multiply(layer.WorldMatrix, _targetMatrix));
-                handle.DrawTextureRectRegion(layer.Texture, layer.Quad, layer.Modulate);
-            }
+            handle.SetTransform(Matrix3x2.Multiply(layer.WorldMatrix, _targetMatrix));
+            handle.DrawTextureRectRegion(layer.Texture, layer.Quad, layer.OwnerColor);
         }
 
         handle.UseShader(null);
@@ -84,12 +84,10 @@ public sealed partial class ScpShadowCasterOverlay
         public ShaderInstance GetShadowShader(
             ShaderPrototype prototype,
             Texture shadowMask,
-            Texture protectionMask,
             ReadOnlySpan<Color> lightAtlasData,
             float softness,
             float falloff,
             float curveFactor,
-            bool hasProtection,
             bool directionalFovActive,
             Vector2 directionalFovOffset,
             Vector2 directionalViewDirection,
@@ -102,12 +100,10 @@ public sealed partial class ScpShadowCasterOverlay
             return _shadowShaders[_shadowShaderCount++]
                 .Configure(
                 shadowMask,
-                protectionMask,
                 lightAtlasData,
                 softness,
                 falloff,
                 curveFactor,
-                hasProtection,
                 directionalFovActive,
                 directionalFovOffset,
                 directionalViewDirection,
@@ -148,10 +144,10 @@ public sealed partial class ScpShadowCasterOverlay
                 return;
 
             ProtectionMask?.Dispose();
-            var samples = new TextureSampleParameters { Filter = true };
+            var samples = new TextureSampleParameters { Filter = false };
             ProtectionMask = clyde.CreateRenderTarget(
                 size,
-                new RenderTargetFormatParameters(RenderTargetColorFormat.R8),
+                new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8),
                 samples,
                 "scp-shadow-protection-mask");
         }
@@ -202,20 +198,17 @@ public sealed partial class ScpShadowCasterOverlay
         private sealed class PooledShadowShader(ShaderInstance shader) : IDisposable
         {
             private readonly Color[] _lightAtlasData = new Color[GeometryBatchSize];
-            private readonly float[] _lightGroupParameters = new float[4];
+            private readonly float[] _lightGroupParameters = new float[3];
             private readonly Vector2[] _directionalFovParameters = new Vector2[4];
             private Texture? _shadowMask;
-            private Texture? _protectionMask;
             private int _directionalFovMode = -1;
 
             public ShaderInstance Configure(
                 Texture shadowMask,
-                Texture protectionMask,
                 ReadOnlySpan<Color> lightAtlasData,
                 float softness,
                 float falloff,
                 float curveFactor,
-                bool hasProtection,
                 bool directionalFovActive,
                 Vector2 directionalFovOffset,
                 Vector2 directionalViewDirection,
@@ -226,7 +219,6 @@ public sealed partial class ScpShadowCasterOverlay
                 _lightGroupParameters[0] = softness;
                 _lightGroupParameters[1] = falloff;
                 _lightGroupParameters[2] = curveFactor;
-                _lightGroupParameters[3] = hasProtection ? 1f : 0f;
                 _directionalFovParameters[0] = directionalFovOffset;
                 _directionalFovParameters[1] = directionalViewDirection;
                 _directionalFovParameters[2] = directionalRadialParameters;
@@ -236,12 +228,6 @@ public sealed partial class ScpShadowCasterOverlay
                 {
                     _shadowMask = shadowMask;
                     shader.SetParameter("shadowMask", shadowMask);
-                }
-
-                if (!ReferenceEquals(_protectionMask, protectionMask))
-                {
-                    _protectionMask = protectionMask;
-                    shader.SetParameter("protectionMask", protectionMask);
                 }
 
                 shader.SetParameter("lightAtlasData", _lightAtlasData);

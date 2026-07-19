@@ -1,0 +1,76 @@
+preset raw;
+light_mode unshaded;
+blend_mode add;
+
+uniform sampler2D protectionMask;
+// Original light centre (xy) and atlas sampling offset (zw) for each batched light.
+uniform highp vec4[16] lightAtlasData;
+uniform highp float[16] lightSoftness;
+
+varying lowp vec3 vertexMask;
+varying highp vec2 vertexOwnerAndLight;
+
+void vertex()
+{
+    VERTEX = pixel_snap(apply_mvp(VERTEX));
+    vertexMask = modulate.rgb;
+    vertexOwnerAndLight = tCoord2;
+}
+
+highp vec2 clampSourceUv(highp vec2 uv)
+{
+    highp vec2 halfPixel = SCREEN_PIXEL_SIZE * 0.5;
+    return clamp(uv, halfPixel, vec2(1.0) - halfPixel);
+}
+
+highp float decodeProtectionOwner(highp vec2 encodedOwner)
+{
+    highp vec2 bytes = floor(encodedOwner * 255.0 + 0.5);
+    return bytes.x + bytes.y * 256.0;
+}
+
+bool matchesProtectionOwner(highp vec2 sourceUv, highp float casterOwner)
+{
+    highp vec2 encodedOwner = zTextureSpec(
+        protectionMask,
+        clampSourceUv(sourceUv)).rg;
+    highp float protectionOwner = decodeProtectionOwner(encodedOwner);
+    return protectionOwner > 0.5 &&
+        (protectionOwner > 65534.5 || abs(protectionOwner - casterOwner) < 0.5);
+}
+
+void fragment()
+{
+    highp float casterOwner = vertexOwnerAndLight.x;
+    if (casterOwner > 0.5)
+    {
+        lowp int lightIndex = int(floor(vertexOwnerAndLight.y + 0.5));
+        highp vec2 atlasUv = FRAGCOORD.xy * SCREEN_PIXEL_SIZE;
+        highp vec2 sourceUv = atlasUv - lightAtlasData[lightIndex].zw;
+
+        if (matchesProtectionOwner(sourceUv, casterOwner))
+            discard;
+
+        highp float softness = lightSoftness[lightIndex];
+        if (softness > 0.0)
+        {
+            highp vec2 fromLight = sourceUv - lightAtlasData[lightIndex].xy;
+            highp vec2 perpendicular = vec2(1.0, 0.0);
+            if (dot(fromLight, fromLight) > 0.0000001)
+                perpendicular = normalize(vec2(-fromLight.y, fromLight.x));
+
+            highp vec2 softOffset = perpendicular * SCREEN_PIXEL_SIZE * softness;
+            if (matchesProtectionOwner(sourceUv + softOffset, casterOwner) ||
+                matchesProtectionOwner(sourceUv - softOffset, casterOwner) ||
+                matchesProtectionOwner(sourceUv + softOffset * 2.0, casterOwner) ||
+                matchesProtectionOwner(sourceUv - softOffset * 2.0, casterOwner) ||
+                matchesProtectionOwner(sourceUv + softOffset * 3.0, casterOwner) ||
+                matchesProtectionOwner(sourceUv - softOffset * 3.0, casterOwner))
+            {
+                discard;
+            }
+        }
+    }
+
+    COLOR = vec4(vertexMask, 1.0);
+}

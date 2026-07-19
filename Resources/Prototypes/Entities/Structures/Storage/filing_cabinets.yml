@@ -48,6 +48,7 @@
   # Scp added start - visual contour shadows
   - type: ScpShadowCasterVisuals
     bounds: "-0.18,-0.48,0.18,0.48"
+  - type: ScpShadowProtectedTextureVisuals
   # Scp added end - visual contour shadows
   - type: Storage
     grid:
