@@ -1,7 +1,6 @@
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Robust.Client.Graphics;
-using Robust.Shared.Maths;
 using Robust.Shared.Profiling;
 
 namespace Content.Client._Scp.Graphics.Shadows;
@@ -80,6 +79,7 @@ public sealed partial class ScpShadowCasterOverlay
             using var pageProfile = _prof.IsEnabled || _prof.IsTracyEnabled
                 ? _prof.Group("ScpContentLighting.ShadowAtlas")
                 : (ProfManager.GroupGuard?) null;
+
             DrawAtlasPage(_atlasPages[pageIndex], resources);
         }
     }
@@ -88,7 +88,9 @@ public sealed partial class ScpShadowCasterOverlay
     {
         _atlasPages.Clear();
         for (var i = 0; i < _atlasLights.Count; i++)
+        {
             _atlasRectangleSizes[i] = _atlasLights[i].Source.Size;
+        }
 
         var pageCount = ScpLightingBatchPlanner.PackShelves(
             _atlasRectangleSizes,
@@ -97,14 +99,18 @@ public sealed partial class ScpShadowCasterOverlay
             _atlasPlacements);
 
         for (var i = 0; i < _atlasLights.Count; i++)
+        {
             _atlasLights[i] = _atlasLights[i] with { Destination = _atlasPlacements[i].Bounds.TopLeft };
+        }
 
         var pageStart = 0;
         for (var page = 0; page < pageCount; page++)
         {
             var pageEnd = pageStart;
             while (pageEnd < _atlasLights.Count && _atlasPlacements[pageEnd].Page == page)
+            {
                 pageEnd++;
+            }
 
             var lightCount = pageEnd - pageStart;
             var bounds = ScpLightingBatchPlanner.GetPlacementUnion(
@@ -126,7 +132,10 @@ public sealed partial class ScpShadowCasterOverlay
         if (_atlasMaskVertices.Count == 0)
         {
             for (var index = 0; index < page.Count; index++)
+            {
                 AddStandardLight(_atlasLights[page.Start + index].Light);
+            }
+
             return;
         }
 
@@ -142,7 +151,7 @@ public sealed partial class ScpShadowCasterOverlay
         _renderHandle!.SetScissor(page.Bounds);
         try
         {
-            _renderHandle.RenderInRenderTarget(resources.ShadowMask!, _drawShadowMask, Color.Black);
+            _renderHandle.RenderInRenderTarget(resources.ShadowMask!, DrawShadowMask, Color.Black);
         }
         finally
         {

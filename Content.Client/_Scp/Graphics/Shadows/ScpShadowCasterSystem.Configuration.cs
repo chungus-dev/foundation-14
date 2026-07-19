@@ -1,4 +1,5 @@
 using Content.Shared._Scp.ScpCCVars;
+using JetBrains.Annotations;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 
@@ -8,63 +9,67 @@ public sealed partial class ScpShadowCasterSystem
 {
     #region Cached configuration
 
-    [Dependency] private IConfigurationManager _configuration = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
-    private ConfigurationMultiSubscriptionBuilder _configurationSubscription = default!;
-
-    internal bool ContentLightingEnabled { get; private set; }
-    internal ScpShadowQuality MobQuality { get; private set; }
-    internal ScpShadowQuality ObjectQuality { get; private set; }
-    internal bool LocalPlayerShadowOutsideFov { get; private set; }
-    internal int MaxLights { get; private set; }
-    internal int MaxShadowLights { get; private set; }
-    internal int MaxOccluders { get; private set; }
-    internal float MaxLightRadius { get; private set; }
-    internal bool SoftShadows { get; private set; }
+    [PublicAPI] public bool ContentLightingEnabled { get; private set; }
+    [PublicAPI] public ScpShadowQuality MobQuality { get; private set; }
+    [PublicAPI] public ScpShadowQuality ObjectQuality { get; private set; }
+    [PublicAPI] public bool LocalPlayerShadowOutsideFov { get; private set; }
+    [PublicAPI] public int MaxLights { get; private set; }
+    [PublicAPI] public int MaxShadowLights { get; private set; }
+    [PublicAPI] public int MaxOccluders { get; private set; }
+    [PublicAPI] public float MaxLightRadius { get; private set; }
+    [PublicAPI] public bool SoftShadows { get; private set; }
 
     private void InitializeConfiguration()
     {
         NormalizeQualityCVar(ScpCCVars.MobShadowQuality);
         NormalizeQualityCVar(ScpCCVars.ObjectShadowQuality);
 
-        _configurationSubscription = _configuration.SubscribeMultiple()
-            .OnValueChanged(
-                ScpCCVars.ContentLighting,
-                value => ContentLightingEnabled = value,
-                true)
-            .OnValueChanged(
-                ScpCCVars.MobShadowQuality,
-                value => MobQuality = ClampQuality(value),
-                true)
-            .OnValueChanged(
-                ScpCCVars.ObjectShadowQuality,
-                value => ObjectQuality = ClampQuality(value),
-                true)
-            .OnValueChanged(
-                ScpCCVars.LocalPlayerShadowOutsideFov,
-                value => LocalPlayerShadowOutsideFov = value,
-                true)
-            .OnValueChanged(CVars.MaxLightCount, value => MaxLights = Math.Max(0, value), true)
-            .OnValueChanged(
-                CVars.MaxShadowcastingLights,
-                value => MaxShadowLights = Math.Max(0, value),
-                true)
-            .OnValueChanged(CVars.MaxOccluderCount, value => MaxOccluders = Math.Max(1024, value), true)
-            .OnValueChanged(CVars.MaxLightRadius, value => MaxLightRadius = Math.Max(0f, value), true)
-            .OnValueChanged(CVars.LightSoftShadows, value => SoftShadows = value, true);
-    }
-
-    private void ShutdownConfiguration()
-    {
-        _configurationSubscription.Dispose();
+        Subs.CVar(_cfg,
+            ScpCCVars.ContentLighting,
+            value => ContentLightingEnabled = value,
+            true);
+        Subs.CVar(_cfg,
+            ScpCCVars.MobShadowQuality,
+            value => MobQuality = ClampQuality(value),
+            true);
+        Subs.CVar(_cfg,
+            ScpCCVars.ObjectShadowQuality,
+            value => ObjectQuality = ClampQuality(value),
+            true);
+        Subs.CVar(_cfg,
+            ScpCCVars.LocalPlayerShadowOutsideFov,
+            value => LocalPlayerShadowOutsideFov = value,
+            true);
+        Subs.CVar(_cfg,
+            CVars.MaxLightCount,
+            value => MaxLights = Math.Max(0, value),
+            true);
+        Subs.CVar(_cfg,
+            CVars.MaxShadowcastingLights,
+            value => MaxShadowLights = Math.Max(0, value),
+            true);
+        Subs.CVar(_cfg,
+            CVars.MaxOccluderCount,
+            value => MaxOccluders = Math.Max(1024, value),
+            true);
+        Subs.CVar(_cfg,
+            CVars.MaxLightRadius,
+            value => MaxLightRadius = Math.Max(0f, value),
+            true);
+        Subs.CVar(_cfg,
+            CVars.LightSoftShadows,
+            value => SoftShadows = value,
+            true);
     }
 
     private void NormalizeQualityCVar(CVarDef<int> cVar)
     {
-        var value = _configuration.GetCVar(cVar);
+        var value = _cfg.GetCVar(cVar);
         var normalized = (int) ClampQuality(value);
         if (normalized != value)
-            _configuration.SetCVar(cVar, normalized);
+            _cfg.SetCVar(cVar, normalized);
     }
 
     private static ScpShadowQuality ClampQuality(int value)

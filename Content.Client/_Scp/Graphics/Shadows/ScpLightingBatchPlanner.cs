@@ -1,6 +1,4 @@
-using System;
 using System.Numerics;
-using Robust.Shared.Maths;
 
 namespace Content.Client._Scp.Graphics.Shadows;
 

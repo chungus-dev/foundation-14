@@ -6,7 +6,6 @@ using Robust.Client.ResourceManagement;
 using Robust.Shared.Graphics;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Maths;
 using Robust.Shared.Physics;
 
 namespace Content.Client._Scp.Graphics.Shadows;
@@ -22,25 +21,18 @@ public sealed partial class ScpShadowCasterSystem
     [Dependency] private ILightManager _lightManager = default!;
     [Dependency] private IResourceCache _resourceCache = default!;
 
+    [Dependency] private LightTreeSystem _lightTree = default!;
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private EntityQuery<MapComponent> _mapQuery;
+
     private readonly List<ScpShadowLightData> _viewportLights = new(128);
     private readonly List<SuppressedLight> _suppressedLights = new(256);
     private List<Entity<MapGridComponent>> _intersectingLightTreeGrids = new(4);
 
-    private LightTreeSystem _lightTree = default!;
-    private SharedMapSystem _mapSystem = default!;
-    private SharedTransformSystem _transformSystem = default!;
-    private EntityQuery<MapComponent> _mapQuery;
     private IClydeViewport? _activeViewport;
 
     internal List<ScpShadowLightData> ViewportLights => _viewportLights;
-
-    private void InitializeViewportLighting()
-    {
-        _lightTree = EntityManager.System<LightTreeSystem>();
-        _mapSystem = EntityManager.System<SharedMapSystem>();
-        _transformSystem = EntityManager.System<SharedTransformSystem>();
-        _mapQuery = GetEntityQuery<MapComponent>();
-    }
 
     private void ShutdownViewportLighting()
     {

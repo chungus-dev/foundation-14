@@ -2,53 +2,19 @@ using System.Numerics;
 using Content.Client.Clickable;
 using Robust.Client.Graphics;
 using Robust.Shared.Graphics.RSI;
-using Robust.Shared.Maths;
 
 namespace Content.Client._Scp.Graphics.Shadows;
 
 /// <summary>
 /// Lazily converts cached sprite alpha maps into reusable local-space shadow contours.
 /// </summary>
-internal sealed class ScpShadowContourCache
+public sealed partial class ScpShadowContourCache : EntitySystem
 {
-    #region Dependencies and cache
+    [Dependency] private IClickMapManager _clickMaps = default!;
 
-    private readonly IClickMapManager _clickMaps;
-    private readonly Dictionary<Texture, CacheEntry> _textureCache = new();
-    private readonly Dictionary<RsiFrameKey, CacheEntry> _rsiCache = new();
-
-    #endregion
-
-    public ScpShadowContourCache(IClickMapManager clickMaps)
-    {
-        _clickMaps = clickMaps;
-    }
+    private readonly Dictionary<RsiFrameKey, CacheEntry> _rsiCache = new(1024);
 
     #region Public API
-
-    public bool TryGetContours(Texture texture, out ScpShadowContours contours)
-    {
-        if (_textureCache.TryGetValue(texture, out var entry) &&
-            TryGetCachedContours(entry, out contours))
-        {
-            return contours.Loops.Length != 0;
-        }
-
-        if (!_clickMaps.TryGetRegion(texture, out var region))
-        {
-            contours = ScpShadowContours.Empty;
-            return false;
-        }
-
-        if (entry == null)
-        {
-            entry = new CacheEntry();
-            _textureCache.Add(texture, entry);
-        }
-
-        contours = GetOrBuild(entry, region);
-        return contours.Loops.Length != 0;
-    }
 
     public bool TryGetContours(
         RSI rsi,
@@ -78,26 +44,6 @@ internal sealed class ScpShadowContourCache
 
         contours = GetOrBuild(entry, region);
         return contours.Loops.Length != 0;
-    }
-
-    public bool TryGetOpaqueBounds(Texture texture, out Box2 bounds)
-    {
-        if (_textureCache.TryGetValue(texture, out var entry) && entry.OpaqueBoundsCached)
-            return TryGetCachedOpaqueBounds(entry, out bounds);
-
-        if (!_clickMaps.TryGetRegion(texture, out var region))
-        {
-            bounds = default;
-            return false;
-        }
-
-        if (entry == null)
-        {
-            entry = new CacheEntry();
-            _textureCache.Add(texture, entry);
-        }
-
-        return BuildAndCacheOpaqueBounds(entry, region, out bounds);
     }
 
     public bool TryGetOpaqueBounds(
@@ -355,7 +301,9 @@ internal sealed class ScpShadowContourCache
         var center = new Vector2(width, height) * 0.5f;
 
         for (var i = 0; i < loop.Count; i++)
-            result[i] = ((Vector2) loop[i] - center) / EyeManager.PixelsPerMeter;
+        {
+            result[i] = (loop[i] - center) / EyeManager.PixelsPerMeter;
+        }
 
         return result;
     }
@@ -405,7 +353,7 @@ internal sealed class ScpShadowContourCache
     #endregion
 }
 
-internal sealed class ScpShadowContours(Vector2[][] loops)
+public sealed class ScpShadowContours(Vector2[][] loops)
 {
     public static readonly ScpShadowContours Empty = new([]);
 

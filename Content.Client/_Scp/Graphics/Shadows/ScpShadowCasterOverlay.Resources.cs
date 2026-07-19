@@ -2,7 +2,6 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using Robust.Client.Graphics;
 using Robust.Shared.Graphics;
-using Robust.Shared.Maths;
 
 namespace Content.Client._Scp.Graphics.Shadows;
 
@@ -43,9 +42,8 @@ public sealed partial class ScpShadowCasterOverlay
         for (var batchIndex = 0; batchIndex < _activeProtectionBatches; batchIndex++)
         {
             var batch = _protectionBatches[batchIndex];
-            for (var layerIndex = 0; layerIndex < batch.Layers.Count; layerIndex++)
+            foreach (var layer in batch.Layers)
             {
-                var layer = batch.Layers[layerIndex];
                 handle.SetTransform(Matrix3x2.Multiply(layer.WorldMatrix, _targetMatrix));
                 handle.DrawTextureRectRegion(layer.Texture, layer.Quad, layer.Modulate);
             }
@@ -101,7 +99,8 @@ public sealed partial class ScpShadowCasterOverlay
             if (_shadowShaderCount == _shadowShaders.Count)
                 _shadowShaders.Add(new PooledShadowShader(prototype.InstanceUnique()));
 
-            return _shadowShaders[_shadowShaderCount++].Configure(
+            return _shadowShaders[_shadowShaderCount++]
+                .Configure(
                 shadowMask,
                 protectionMask,
                 lightAtlasData,
@@ -159,48 +158,49 @@ public sealed partial class ScpShadowCasterOverlay
 
         public void Dispose()
         {
-            for (var i = 0; i < _standardShaders.Count; i++)
-                _standardShaders[i].Dispose();
+            foreach (var shader in _standardShaders)
+            {
+                shader.Dispose();
+            }
+
             _standardShaders.Clear();
 
-            for (var i = 0; i < _shadowShaders.Count; i++)
-                _shadowShaders[i].Dispose();
+            foreach (var shader in _shadowShaders)
+            {
+                shader.Dispose();
+            }
+
             _shadowShaders.Clear();
 
             ShadowMask?.Dispose();
             ProtectionMask?.Dispose();
             ShadowMask = null;
             ProtectionMask = null;
-            _targetSize = default;
         }
 
         private sealed class PooledStandardShader(ShaderInstance shader) : IDisposable
         {
-            private readonly ShaderInstance _shader = shader;
             private float _curveFactor;
-            private bool _configured;
 
             public ShaderInstance Configure(float curveFactor)
             {
-                if (!_configured || _curveFactor != curveFactor)
+                if (!MathHelper.CloseTo(_curveFactor, curveFactor))
                 {
-                    _configured = true;
                     _curveFactor = curveFactor;
-                    _shader.SetParameter("curveFactor", curveFactor);
+                    shader.SetParameter("curveFactor", curveFactor);
                 }
 
-                return _shader;
+                return shader;
             }
 
             public void Dispose()
             {
-                _shader.Dispose();
+                shader.Dispose();
             }
         }
 
         private sealed class PooledShadowShader(ShaderInstance shader) : IDisposable
         {
-            private readonly ShaderInstance _shader = shader;
             private readonly Color[] _lightAtlasData = new Color[GeometryBatchSize];
             private readonly float[] _lightGroupParameters = new float[4];
             private readonly Vector2[] _directionalFovParameters = new Vector2[4];
@@ -235,33 +235,33 @@ public sealed partial class ScpShadowCasterOverlay
                 if (!ReferenceEquals(_shadowMask, shadowMask))
                 {
                     _shadowMask = shadowMask;
-                    _shader.SetParameter("shadowMask", shadowMask);
+                    shader.SetParameter("shadowMask", shadowMask);
                 }
 
                 if (!ReferenceEquals(_protectionMask, protectionMask))
                 {
                     _protectionMask = protectionMask;
-                    _shader.SetParameter("protectionMask", protectionMask);
+                    shader.SetParameter("protectionMask", protectionMask);
                 }
 
-                _shader.SetParameter("lightAtlasData", _lightAtlasData);
-                _shader.SetParameter("lightGroupParameters", _lightGroupParameters);
+                shader.SetParameter("lightAtlasData", _lightAtlasData);
+                shader.SetParameter("lightGroupParameters", _lightGroupParameters);
                 var directionalFovMode = directionalFovActive ? 1 : 0;
                 if (_directionalFovMode != directionalFovMode)
                 {
                     _directionalFovMode = directionalFovMode;
-                    _shader.SetParameter("directionalFovMode", directionalFovMode);
+                    shader.SetParameter("directionalFovMode", directionalFovMode);
                 }
 
                 if (directionalFovActive)
-                    _shader.SetParameter("directionalFovParameters", _directionalFovParameters);
+                    shader.SetParameter("directionalFovParameters", _directionalFovParameters);
 
-                return _shader;
+                return shader;
             }
 
             public void Dispose()
             {
-                _shader.Dispose();
+                shader.Dispose();
             }
         }
     }

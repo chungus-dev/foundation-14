@@ -9,17 +9,11 @@ namespace Content.Client._Scp.Graphics.Shadows;
 /// </summary>
 public sealed partial class ScpShadowCasterSystem : EntitySystem
 {
-    #region Dependencies
-
-    [Dependency] private IClickMapManager _clickMaps = default!;
     [Dependency] private IOverlayManager _overlayManager = default!;
     [Dependency] private ProfManager _prof = default!;
+    [Dependency] public ScpShadowContourCache ContourCache = default!;
 
-    #endregion
-
-    private ScpShadowCasterOverlay _overlay = default!;
-
-    internal ScpShadowContourCache ContourCache { get; private set; } = default!;
+    private ScpShadowCasterOverlay? _overlay;
 
     #region EntitySystem lifecycle
 
@@ -28,18 +22,20 @@ public sealed partial class ScpShadowCasterSystem : EntitySystem
         base.Initialize();
 
         InitializeConfiguration();
-        InitializeViewportLighting();
-        ContourCache = new ScpShadowContourCache(_clickMaps);
+
         _overlay = new ScpShadowCasterOverlay(this);
         _overlayManager.AddOverlay(_overlay);
     }
 
     public override void Shutdown()
     {
-        _overlayManager.RemoveOverlay(_overlay);
-        _overlay.Dispose();
+        if (_overlay != null)
+        {
+            _overlayManager.RemoveOverlay(_overlay);
+            _overlay.Dispose();
+        }
+
         ShutdownViewportLighting();
-        ShutdownConfiguration();
 
         base.Shutdown();
     }

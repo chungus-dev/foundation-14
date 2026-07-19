@@ -3,10 +3,8 @@ using System.Runtime.InteropServices;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Utility;
-using Robust.Shared;
 using Robust.Shared.Graphics.RSI;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
 using Robust.Shared.Physics;
 using static Robust.Client.GameObjects.SpriteComponent;
 
@@ -29,10 +27,10 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly List<float> _frameOccluderCentersX = new(256);
     private readonly List<ProtectedSpriteLayer> _protectedSpriteLayers = new(512);
     private readonly HashSet<EntityUid> _frameSpriteEntities = new(256);
-    private static readonly Color InsideMaskColor = new(1f, 0f, 0f, 1f);
-    private static readonly Color OutsideMaskColor = new(0f, 1f, 0f, 1f);
-    private static readonly Color BothMaskColor = new(1f, 1f, 0f, 1f);
-    private static readonly Color OccluderMaskColor = new(0f, 0f, 1f, 1f);
+    private static readonly Color InsideMaskColor = new(1f, 0f, 0f);
+    private static readonly Color OutsideMaskColor = new(0f, 1f, 0f);
+    private static readonly Color BothMaskColor = new(1f, 1f, 0f);
+    private static readonly Color OccluderMaskColor = new(0f, 0f, 1f);
 
     private readonly Dictionary<EntityUid, Vector2> _foregroundProjectionPositions = new(32);
     private readonly Vector2[] _boxContour = new Vector2[4];
@@ -48,7 +46,9 @@ public sealed partial class ScpShadowCasterOverlay
         // every selected light. Light radii must not expand this query because that
         // would change which occluders survive the global cap.
         for (var i = 0; i < _lights.Count; i++)
+        {
             result = result.ExtendToContain(_lights[i].Position);
+        }
 
         return result;
     }
@@ -329,8 +329,7 @@ public sealed partial class ScpShadowCasterOverlay
 
                 var rsi = layer.ActualRsi;
                 RSI.State? state = null;
-                if (rsi != null)
-                    rsi.TryGetState(layer.State, out state);
+                rsi?.TryGetState(layer.State, out state);
 
                 var matrixDirection = state == null
                     ? RsiDirection.South
@@ -377,14 +376,12 @@ public sealed partial class ScpShadowCasterOverlay
                 {
                     var localOpaqueBounds = default(Box2);
                     var hasLayerBounds = state != null && rsi != null
-                        ? _contourCache.TryGetOpaqueBounds(
-                            rsi,
-                            layer.State,
-                            drawDirection,
-                            layer.AnimationFrame,
-                            out localOpaqueBounds)
-                        : layer.Texture != null &&
-                        _contourCache.TryGetOpaqueBounds(layer.Texture, out localOpaqueBounds);
+                    && _contourCache.TryGetOpaqueBounds(
+                        rsi,
+                        layer.State,
+                        drawDirection,
+                        layer.AnimationFrame,
+                        out localOpaqueBounds);
 
                     if (hasLayerBounds)
                     {
@@ -401,13 +398,12 @@ public sealed partial class ScpShadowCasterOverlay
 
                 var contours = ScpShadowContours.Empty;
                 var hasContours = state != null && rsi != null
-                    ? _contourCache.TryGetContours(
-                        rsi,
-                        layer.State,
-                        drawDirection,
-                        layer.AnimationFrame,
-                        out contours)
-                    : layer.Texture != null && _contourCache.TryGetContours(layer.Texture, out contours);
+                && _contourCache.TryGetContours(
+                    rsi,
+                    layer.State,
+                    drawDirection,
+                    layer.AnimationFrame,
+                    out contours);
 
                 if (!hasContours)
                     continue;
@@ -418,7 +414,9 @@ public sealed partial class ScpShadowCasterOverlay
                     EnsureWorldContourCapacity(localLoop.Length);
 
                     for (var vertex = 0; vertex < localLoop.Length; vertex++)
+                    {
                         _worldContour[vertex] = Vector2.Transform(localLoop[vertex], worldMatrix);
+                    }
 
                     var cachedBounds = CacheContour(_worldContour.AsSpan(0, localLoop.Length));
                     contourBounds = hasContourBounds ? contourBounds.Union(cachedBounds) : cachedBounds;

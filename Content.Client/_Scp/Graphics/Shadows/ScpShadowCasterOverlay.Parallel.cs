@@ -13,7 +13,9 @@ public sealed partial class ScpShadowCasterOverlay
     private void PrepareGeometryBatch(int lightStart, int lightCount, bool drawShadows)
     {
         while (_lightGeometryBuffers.Count < lightCount)
+        {
             _lightGeometryBuffers.Add(new LightGeometryBuffer());
+        }
 
         var validLightCount = 0;
         long intersectionChecks = 0;

@@ -8,7 +8,6 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using Robust.Shared.Graphics;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Profiling;
 using Robust.Shared.Prototypes;
@@ -32,7 +31,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     #region Overlay configuration
 
     public override OverlaySpace Space => OverlaySpace.BeforeLighting;
-    public const int ContentZIndex = LightBlurOverlay.ContentZIndex + 1;
+    private const int ContentZIndex = LightBlurOverlay.ContentZIndex + 1;
     private const int GeometryBatchSize = ScpLightingBatchPlanner.GeometryBatchSize;
 
     #endregion
@@ -62,6 +61,8 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private readonly EntityQuery<OccluderTreeComponent> _occluderTreeQuery;
     private readonly EntityQuery<SpriteTreeComponent> _spriteTreeQuery;
 
+    private BeforeLightTargetOverlay? _beforeLightTargetOverlay;
+
     #endregion
 
     #region Render state
@@ -75,8 +76,6 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private readonly ScpShadowContourCache _contourCache;
     private List<Entity<MapGridComponent>> _intersectingTreeGrids = new(4);
 
-    private readonly Action _drawShadowMask;
-    private readonly Action _drawLights;
     private readonly Action _drawProtectionMask;
 
     private DrawingHandleWorld? _drawHandle;
@@ -125,41 +124,73 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         _protectionShader = _prototypes.Index(ProtectionShader).Instance();
         InitializeLightQuad();
 
-        _drawShadowMask = DrawShadowMask;
-        _drawLights = DrawLights;
         _drawProtectionMask = DrawProtectionMask;
     }
 
     #region Main render pass
 
-    protected override void Draw(in OverlayDrawArgs args)
+    protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
         if (!_system.IsLightingViewport(args.Viewport) || !HasRenderableLights())
-            return;
+            return false;
 
         var eye = args.Viewport.Eye;
         if (eye == null)
-            return;
+            return false;
+
+        if (_beforeLightTargetOverlay == null)
+        {
+            if (!_overlayManager.TryGetOverlay(out _beforeLightTargetOverlay))
+                return false;
+        }
+
+        return true;
+    }
+
+    protected override void Draw(in OverlayDrawArgs args)
+    {
+        var eye = args.Viewport.Eye!;
 
         using var profile = _prof.IsEnabled || _prof.IsTracyEnabled
             ? _prof.Group("ScpContentLighting")
             : (ProfManager.GroupGuard?) null;
 
-        var beforeOverlay = _overlayManager.GetOverlay<BeforeLightTargetOverlay>();
-        var beforeResources = beforeOverlay.GetCachedForViewport(args.Viewport);
-
         var drawShadows = _lightManager.DrawShadows && HasShadowCastingLights();
-        var querySprites = drawShadows &&
-            (_system.MobQuality != ScpShadowQuality.Disabled ||
-             _system.ObjectQuality != ScpShadowQuality.Disabled);
 
-        Box2 worldAabb = default;
         if (drawShadows)
+            PrepareShadows(in args, eye);
+        else
+            ClearFrameOccluderCache();
+
+        var beforeResources = _beforeLightTargetOverlay!.GetCachedForViewport(args.Viewport);
+        var resources = BeginRenderPass(args, eye, beforeResources.EnlargedLightTarget, drawShadows);
+        _currentResources = resources;
+        _currentDrawShadows = drawShadows;
+        _currentHasProtection = false;
+
+        try
         {
-            _eyeRotation = eye.Rotation;
-            PrepareFovContext(args, eye);
-            worldAabb = beforeOverlay.EnlargedBounds.CalcBoundingBox();
+            // Keep the enlarged target bound for the complete point-light pass. Only
+            // shadow-mask draws temporarily switch away from it.
+            _drawHandle!.RenderInRenderTarget(
+                beforeResources.EnlargedLightTarget,
+                DrawLights,
+                null);
         }
+        finally
+        {
+            ClearDrawState();
+        }
+    }
+
+    private void PrepareShadows(in OverlayDrawArgs args, IEye eye)
+    {
+        var querySprites = _system.MobQuality != ScpShadowQuality.Disabled
+                           || _system.ObjectQuality != ScpShadowQuality.Disabled;
+
+        _eyeRotation = eye.Rotation;
+        PrepareFovContext(args);
+        var worldAabb = _beforeLightTargetOverlay!.EnlargedBounds.CalcBoundingBox();
 
         if (querySprites)
         {
@@ -176,37 +207,11 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
             ClearFrameSpriteCache();
         }
 
-        if (drawShadows)
+        using (_prof.IsEnabled || _prof.IsTracyEnabled
+                   ? _prof.Group("ScpContentLighting.OccluderCache")
+                   : (ProfManager.GroupGuard?) null)
         {
-            using (_prof.IsEnabled || _prof.IsTracyEnabled
-                       ? _prof.Group("ScpContentLighting.OccluderCache")
-                       : (ProfManager.GroupGuard?) null)
-            {
-                BuildFrameOccluderCache(args.MapId, GetFrameOccluderQueryBounds(worldAabb));
-            }
-        }
-        else
-        {
-            ClearFrameOccluderCache();
-        }
-
-        var resources = BeginRenderPass(args, eye, beforeResources.EnlargedLightTarget, drawShadows);
-        _currentResources = resources;
-        _currentDrawShadows = drawShadows;
-        _currentHasProtection = false;
-
-        try
-        {
-            // Keep the enlarged target bound for the complete point-light pass. Only
-            // shadow-mask draws temporarily switch away from it.
-            _drawHandle!.RenderInRenderTarget(
-                beforeResources.EnlargedLightTarget,
-                _drawLights,
-                null);
-        }
-        finally
-        {
-            ClearDrawState();
+            BuildFrameOccluderCache(args.MapId, GetFrameOccluderQueryBounds(worldAabb));
         }
     }
 
@@ -298,9 +303,9 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     private bool HasRenderableLights()
     {
-        for (var i = 0; i < _lights.Count; i++)
+        foreach (var light in _lights)
         {
-            if (_lights[i].Radius > 0f && _lights[i].Energy > 0f)
+            if (light.Radius > 0f && light.Energy > 0f)
                 return true;
         }
 

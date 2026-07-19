@@ -1,9 +1,6 @@
 using System.Numerics;
 using Content.Shared._Scp.Vision.FOV;
-using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
-using Robust.Shared.Graphics;
-using Robust.Shared.Maths;
 
 namespace Content.Client._Scp.Graphics.Shadows;
 
@@ -26,7 +23,7 @@ public sealed partial class ScpShadowCasterOverlay
     private bool _directionalFovActive;
     private bool _renderLocalFovException;
 
-    private void PrepareFovContext(in OverlayDrawArgs args, IEye eye)
+    private void PrepareFovContext(in OverlayDrawArgs args)
     {
         _directionalFovActive = false;
         _renderLocalFovException = false;
@@ -185,7 +182,6 @@ public sealed partial class ScpShadowCasterOverlay
     [Flags]
     private enum DirectionalFovVisibility : byte
     {
-        None = 0,
         Inside = 1 << 0,
         Outside = 1 << 1,
         Both = Inside | Outside,
