@@ -7,7 +7,6 @@ public sealed partial class ScpShadowCasterOverlay
 {
     #region Light frame state
 
-    private readonly List<ScpShadowLightData> _lights;
     private readonly DrawVertexUV2D[] _lightQuad = new DrawVertexUV2D[6];
 
     #endregion
@@ -16,11 +15,11 @@ public sealed partial class ScpShadowCasterOverlay
 
     private void ApplyAlphaProjectionPositions()
     {
-        for (var i = 0; i < _lights.Count; i++)
+        for (var i = 0; i < _system.ViewportLights.Count; i++)
         {
-            var light = _lights[i];
+            var light = _system.ViewportLights[i];
             if (_alphaProjectionPositions.TryGetValue(light.Owner, out var projectionPosition))
-                _lights[i] = light with { ProjectionPosition = projectionPosition };
+                _system.ViewportLights[i] = light with { ProjectionPosition = projectionPosition };
         }
     }
 

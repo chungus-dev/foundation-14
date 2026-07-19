@@ -23,7 +23,7 @@ public sealed partial class ScpShadowCasterOverlay
         {
             var geometry = _lightGeometryBuffers[i];
             geometry.Clear();
-            var light = _lights[lightStart + i];
+            var light = _system.ViewportLights[lightStart + i];
             if (!drawShadows ||
                 !light.CastShadows ||
                 light.Radius <= 0f ||
@@ -51,7 +51,7 @@ public sealed partial class ScpShadowCasterOverlay
     {
         var geometry = _lightGeometryBuffers[bufferIndex];
 
-        var light = _lights[lightIndex];
+        var light = _system.ViewportLights[lightIndex];
         if (!light.CastShadows || light.Radius <= 0f || light.Energy <= 0f)
             return;
 

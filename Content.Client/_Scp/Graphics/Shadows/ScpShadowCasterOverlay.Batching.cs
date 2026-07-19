@@ -39,7 +39,7 @@ public sealed partial class ScpShadowCasterOverlay
 
         for (var batchIndex = 0; batchIndex < lightCount; batchIndex++)
         {
-            var light = _lights[lightStart + batchIndex];
+            var light = _system.ViewportLights[lightStart + batchIndex];
             if (light.Radius <= 0f || light.Energy <= 0f)
                 continue;
 

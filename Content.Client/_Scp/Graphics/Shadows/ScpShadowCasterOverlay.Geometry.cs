@@ -50,9 +50,9 @@ public sealed partial class ScpShadowCasterOverlay
         // Match Clyde's occluder selection bounds: the viewport plus the centres of
         // every selected light. Light radii must not expand this query because that
         // would change which occluders survive the global cap.
-        for (var i = 0; i < _lights.Count; i++)
+        for (var i = 0; i < _system.ViewportLights.Count; i++)
         {
-            result = result.ExtendToContain(_lights[i].Position);
+            result = result.ExtendToContain(_system.ViewportLights[i].Position);
         }
 
         return result;
@@ -136,9 +136,9 @@ public sealed partial class ScpShadowCasterOverlay
         ClearFrameSpriteCache();
 
         var queryBounds = viewportBounds;
-        for (var i = 0; i < _lights.Count; i++)
+        for (var i = 0; i < _system.ViewportLights.Count; i++)
         {
-            var light = _lights[i];
+            var light = _system.ViewportLights[i];
             _frameLightEntities.Add(light.Owner);
             var radius = new Vector2(light.Radius);
             queryBounds = queryBounds.Union(new Box2(light.Position - radius, light.Position + radius));

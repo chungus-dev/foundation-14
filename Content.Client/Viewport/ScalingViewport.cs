@@ -11,6 +11,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Graphics;
 using Robust.Shared.IoC;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -42,6 +43,8 @@ namespace Content.Client.Viewport
 
         // Scp edit start
         public ShaderInstance? Shader;
+
+        private ScpShadowCasterSystem? _shadowCaster;
         // Scp edit end
 
         public int CurrentRenderScale => _curRenderScale;
@@ -158,9 +161,8 @@ namespace Content.Client.Viewport
             DebugTools.AssertNotNull(_viewport);
 
             // Scp edit start
-            var suppressEngineLights =
-                _entityManager.EntitySysManager.TryGetEntitySystem<ScpShadowCasterSystem>(out var shadowSystem) &&
-                shadowSystem.BeginViewportLighting(_viewport!);
+            _shadowCaster ??= _entityManager.System<ScpShadowCasterSystem>();
+            var suppressEngineLights = _shadowCaster.BeginViewportLighting(_viewport!);
 
             try
             {
@@ -169,7 +171,7 @@ namespace Content.Client.Viewport
             finally
             {
                 if (suppressEngineLights)
-                    shadowSystem!.EndViewportLighting();
+                    _shadowCaster.EndViewportLighting();
             }
             // Scp edit end
 

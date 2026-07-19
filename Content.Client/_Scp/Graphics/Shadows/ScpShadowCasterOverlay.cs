@@ -56,11 +56,11 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     private readonly EntityQuery<OccluderComponent> _occluderQuery;
     private readonly EntityQuery<FieldOfViewOccludableComponent> _fovOccludableQuery;
-    // Scp added - unified protection-texture membership query.
     private readonly EntityQuery<ScpShadowProtectedTextureVisualsComponent> _protectedTextureQuery;
     private readonly EntityQuery<ScpShadowCasterVisualsComponent> _shadowQuery;
     private readonly EntityQuery<OccluderTreeComponent> _occluderTreeQuery;
     private readonly EntityQuery<SpriteTreeComponent> _spriteTreeQuery;
+    private readonly EntityQuery<MapComponent> _mapQuery;
 
     private BeforeLightTargetOverlay? _beforeLightTargetOverlay;
 
@@ -99,7 +99,6 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         IoCManager.InjectDependencies(this);
 
         _system = system;
-        _lights = system.ViewportLights;
 
         _fieldOfViewManagement = _entityManager.System<FieldOfViewOverlayManagementSystem>();
         _fieldOfViewSystem = _entityManager.System<FieldOfViewSystem>();
@@ -111,11 +110,11 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
         _occluderQuery = _entityManager.GetEntityQuery<OccluderComponent>();
         _fovOccludableQuery = _entityManager.GetEntityQuery<FieldOfViewOccludableComponent>();
-        // Scp added - unified protection-texture membership query.
         _protectedTextureQuery = _entityManager.GetEntityQuery<ScpShadowProtectedTextureVisualsComponent>();
         _shadowQuery = _entityManager.GetEntityQuery<ScpShadowCasterVisualsComponent>();
         _occluderTreeQuery = _entityManager.GetEntityQuery<OccluderTreeComponent>();
         _spriteTreeQuery = _entityManager.GetEntityQuery<SpriteTreeComponent>();
+        _mapQuery = _entityManager.GetEntityQuery<MapComponent>();
 
         _contourCache = system.ContourCache;
         _lightGeometryJob = new LightGeometryJob(this);
@@ -184,13 +183,16 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         finally
         {
             ClearDrawState();
+
+            var mapComp = _mapQuery.CompOrNull(args.MapUid);
+            mapComp?.LightingEnabled = true;
         }
     }
 
     private void PrepareShadows(in OverlayDrawArgs args, IEye eye)
     {
         var querySprites = _system.MobQuality != ScpShadowQuality.Disabled
-                           || _system.ObjectQuality != ScpShadowQuality.Disabled;
+                              || _system.ObjectQuality != ScpShadowQuality.Disabled;
 
         _eyeRotation = eye.Rotation;
         PrepareFovContext(args);
@@ -222,14 +224,14 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private void DrawLights()
     {
         var resources = _currentResources!;
-        var lightCount = _lights.Count;
+        var lightCount = _system.ViewportLights.Count;
         BeginStandardLightBatches();
 
         if (!_currentDrawShadows)
         {
             for (var i = 0; i < lightCount; i++)
             {
-                var light = _lights[i];
+                var light = _system.ViewportLights[i];
                 if (light.Radius > 0f && light.Energy > 0f)
                     AddStandardLight(light);
             }
@@ -294,11 +296,11 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     private bool HasShadowCastingLights()
     {
-        for (var i = 0; i < _lights.Count; i++)
+        foreach (var light in _system.ViewportLights)
         {
-            if (_lights[i].CastShadows &&
-                _lights[i].Radius > 0f &&
-                _lights[i].Energy > 0f)
+            if (light.CastShadows &&
+                light.Radius > 0f &&
+                light.Energy > 0f)
                 return true;
         }
 
@@ -307,7 +309,7 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
 
     private bool HasRenderableLights()
     {
-        foreach (var light in _lights)
+        foreach (var light in _system.ViewportLights)
         {
             if (light.Radius > 0f && light.Energy > 0f)
                 return true;

@@ -24,24 +24,22 @@ public sealed partial class ScpShadowCasterSystem
     [Dependency] private LightTreeSystem _lightTree = default!;
     [Dependency] private SharedMapSystem _mapSystem = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
-    [Dependency] private EntityQuery<MapComponent> _mapQuery;
+    [Dependency] private EntityQuery<LightTreeComponent> _lightTreeQuery;
 
-    private readonly List<ScpShadowLightData> _viewportLights = new(128);
+    public readonly List<ScpShadowLightData> ViewportLights = new(128);
     private readonly List<SuppressedLight> _suppressedLights = new(256);
     private List<Entity<MapGridComponent>> _intersectingLightTreeGrids = new(4);
 
     private IClydeViewport? _activeViewport;
 
-    internal List<ScpShadowLightData> ViewportLights => _viewportLights;
-
     private void ShutdownViewportLighting()
     {
         RestoreSuppressedLights();
-        _viewportLights.Clear();
+        ViewportLights.Clear();
         _activeViewport = null;
     }
 
-    internal bool BeginViewportLighting(IClydeViewport viewport)
+    public bool BeginViewportLighting(IClydeViewport viewport)
     {
         if (!ContentLightingEnabled || _activeViewport != null)
             return false;
@@ -61,19 +59,22 @@ public sealed partial class ScpShadowCasterSystem
             MobQuality == ScpShadowQuality.Disabled &&
             ObjectQuality == ScpShadowQuality.Disabled)
         {
-            _viewportLights.Clear();
+            ViewportLights.Clear();
             return false;
         }
 
         var mapUid = _mapSystem.GetMapOrInvalid(eye.Position.MapId);
+
+        /* This is false only in table-top game maps so it will be better to pass this is every draw frame
         if (!_mapQuery.TryGetComponent(mapUid, out var map) || !map.LightingEnabled)
             return false;
+        */
 
         using var profile = _prof.IsEnabled || _prof.IsTracyEnabled
             ? _prof.Group("ScpContentLighting.Snapshot")
             : (Robust.Shared.Profiling.ProfManager.GroupGuard?) null;
 
-        _viewportLights.Clear();
+        ViewportLights.Clear();
         _suppressedLights.Clear();
         _activeViewport = viewport;
 
@@ -91,17 +92,17 @@ public sealed partial class ScpShadowCasterSystem
                 queryBounds,
                 ref _intersectingLightTreeGrids,
                 includeMap: false);
-            for (var i = 0; i < _intersectingLightTreeGrids.Count; i++)
+
+            foreach (var treeUid in _intersectingLightTreeGrids)
             {
-                var treeUid = _intersectingLightTreeGrids[i].Owner;
-                if (!TryComp(treeUid, out LightTreeComponent? tree))
+                if (!_lightTreeQuery.TryComp(treeUid, out var tree))
                     continue;
 
                 var localBounds = _transformSystem.GetInvWorldMatrix(treeUid).TransformBox(worldBounds);
                 tree.Tree.QueryAabb(ref state, QueryAndSuppressLight, localBounds);
             }
 
-            if (TryComp(mapUid, out LightTreeComponent? mapTree))
+            if (_lightTreeQuery.TryComp(mapUid, out var mapTree))
             {
                 var localBounds = _transformSystem.GetInvWorldMatrix(mapUid).TransformBox(worldBounds);
                 mapTree.Tree.QueryAabb(ref state, QueryAndSuppressLight, localBounds);
@@ -109,7 +110,7 @@ public sealed partial class ScpShadowCasterSystem
 
             ApplyShadowLightLimit(state.ShadowLights);
             // Keep 16-light batches stable across PVS reordering and pack larger masks first.
-            _viewportLights.Sort(static (left, right) =>
+            ViewportLights.Sort(static (left, right) =>
             {
                 var comparison = left.CastShadows.CompareTo(right.CastShadows);
                 if (comparison != 0)
@@ -123,7 +124,7 @@ public sealed partial class ScpShadowCasterSystem
         catch
         {
             RestoreSuppressedLights();
-            _viewportLights.Clear();
+            ViewportLights.Clear();
             _activeViewport = null;
             throw;
         }
@@ -170,7 +171,7 @@ public sealed partial class ScpShadowCasterSystem
                 ? null
                 : system._resourceCache.GetResource<TextureResource>(light.MaskPath).Texture;
 
-            system._viewportLights.Add(new ScpShadowLightData(
+            system.ViewportLights.Add(new ScpShadowLightData(
                 entry.Uid,
                 lightPosition,
                 lightPosition,
@@ -188,7 +189,7 @@ public sealed partial class ScpShadowCasterSystem
                 Vector2.DistanceSquared(lightPosition, state.WorldAabb.Center)));
         }
 
-        // ponytail: Clyde has no per-viewport PointLight gate. Its callback reads the
+        // Clyde has no per-viewport PointLight gate. Its callback reads the
         // live offset after the tree query, so a temporary finite sentinel culls the
         // entry without dirtying network state or rebuilding the tree.
         light.Offset = SuppressedLightOffset;
@@ -200,22 +201,21 @@ public sealed partial class ScpShadowCasterSystem
         if (shadowLights <= MaxShadowLights)
             return;
 
-        _viewportLights.Sort(ScpLightCapacityComparer.Instance);
-        var shadowStart = _viewportLights.Count - shadowLights;
-        _viewportLights.Sort(
+        ViewportLights.Sort(ScpLightCapacityComparer.Instance);
+        var shadowStart = ViewportLights.Count - shadowLights;
+        ViewportLights.Sort(
             shadowStart,
             shadowLights,
             ScpShadowDistanceComparer.Instance);
-        _viewportLights.RemoveRange(
+        ViewportLights.RemoveRange(
             shadowStart + MaxShadowLights,
             shadowLights - MaxShadowLights);
     }
 
     private void RestoreSuppressedLights()
     {
-        for (var i = 0; i < _suppressedLights.Count; i++)
+        foreach (var suppressed in _suppressedLights)
         {
-            var suppressed = _suppressedLights[i];
             suppressed.Component.Offset = suppressed.Offset;
         }
 
@@ -272,7 +272,7 @@ public sealed partial class ScpShadowCasterSystem
     #endregion
 }
 
-internal readonly record struct ScpShadowLightData(
+public readonly record struct ScpShadowLightData(
     EntityUid Owner,
     Vector2 Position,
     Vector2 ProjectionPosition,
