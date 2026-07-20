@@ -50,16 +50,17 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
     private readonly OccluderSystem _occluderSystem;
     private readonly SharedMapSystem _mapSystem;
     private readonly SpriteSystem _spriteSystem;
-    private readonly SpriteTreeSystem _spriteTree;
+    private readonly LightTreeSystem _lightTree;
     private readonly SharedTransformSystem _transformSystem;
     private readonly ScpShadowCasterSystem _system;
 
+    private readonly EntityQuery<SpriteComponent> _spriteQuery;
     private readonly EntityQuery<OccluderComponent> _occluderQuery;
     private readonly EntityQuery<FieldOfViewOccludableComponent> _fovOccludableQuery;
     private readonly EntityQuery<ScpShadowProtectedTextureVisualsComponent> _protectedTextureQuery;
     private readonly EntityQuery<ScpShadowCasterVisualsComponent> _shadowQuery;
     private readonly EntityQuery<OccluderTreeComponent> _occluderTreeQuery;
-    private readonly EntityQuery<SpriteTreeComponent> _spriteTreeQuery;
+    private readonly EntityQuery<LightTreeComponent> _lightTreeQuery;
     private readonly EntityQuery<MapComponent> _mapQuery;
 
     private BeforeLightTargetOverlay? _beforeLightTargetOverlay;
@@ -105,15 +106,16 @@ public sealed partial class ScpShadowCasterOverlay : Overlay
         _occluderSystem = _entityManager.System<OccluderSystem>();
         _mapSystem = _entityManager.System<SharedMapSystem>();
         _spriteSystem = _entityManager.System<SpriteSystem>();
-        _spriteTree = _entityManager.System<SpriteTreeSystem>();
+        _lightTree = _entityManager.System<LightTreeSystem>();
         _transformSystem = _entityManager.System<SharedTransformSystem>();
 
+        _spriteQuery = _entityManager.GetEntityQuery<SpriteComponent>();
         _occluderQuery = _entityManager.GetEntityQuery<OccluderComponent>();
         _fovOccludableQuery = _entityManager.GetEntityQuery<FieldOfViewOccludableComponent>();
         _protectedTextureQuery = _entityManager.GetEntityQuery<ScpShadowProtectedTextureVisualsComponent>();
         _shadowQuery = _entityManager.GetEntityQuery<ScpShadowCasterVisualsComponent>();
         _occluderTreeQuery = _entityManager.GetEntityQuery<OccluderTreeComponent>();
-        _spriteTreeQuery = _entityManager.GetEntityQuery<SpriteTreeComponent>();
+        _lightTreeQuery = _entityManager.GetEntityQuery<LightTreeComponent>();
         _mapQuery = _entityManager.GetEntityQuery<MapComponent>();
 
         _contourCache = system.ContourCache;

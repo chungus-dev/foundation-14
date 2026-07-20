@@ -25,18 +25,17 @@ public sealed partial class ScpShadowCasterOverlay
     private readonly List<Vector2> _frameContourVertices = new(4096);
     private readonly List<float> _frameCasterCentersX = new(256);
     private readonly List<CachedOccluder> _frameOccluders = new(256);
-    private readonly List<Vector2> _frameOccluderVertices = new(1024);
+    private readonly List<Vector2> _frameOccluderVertices = new(4096);
     private readonly List<float> _frameOccluderCentersX = new(256);
     private readonly List<ProtectedSpriteLayer> _protectedSpriteLayers = new(512);
-    private readonly HashSet<EntityUid> _frameSpriteEntities = new(256);
     private readonly Dictionary<EntityUid, ushort> _protectionOwnerIds = new(256);
     private static readonly Color InsideMaskColor = new(1f, 0f, 0f);
     private static readonly Color OutsideMaskColor = new(0f, 1f, 0f);
     private static readonly Color BothMaskColor = new(1f, 1f, 0f);
     private static readonly Color OccluderMaskColor = new(0f, 0f, 1f);
 
-    private readonly Dictionary<EntityUid, Vector2> _alphaProjectionPositions = new(32);
-    private readonly HashSet<EntityUid> _frameLightEntities = new(32);
+    private readonly Dictionary<EntityUid, Vector2> _alphaProjectionPositions = new(128);
+
     private readonly Vector2[] _boxContour = new Vector2[4];
     private Vector2[] _worldContour = new Vector2[32];
     private int _nextProtectionOwnerId = 1;
@@ -50,9 +49,9 @@ public sealed partial class ScpShadowCasterOverlay
         // Match Clyde's occluder selection bounds: the viewport plus the centres of
         // every selected light. Light radii must not expand this query because that
         // would change which occluders survive the global cap.
-        for (var i = 0; i < _system.ViewportLights.Count; i++)
+        foreach (var light in _system.ViewportLights)
         {
-            result = result.ExtendToContain(_system.ViewportLights[i].Position);
+            result = result.ExtendToContain(light.Position);
         }
 
         return result;
@@ -116,9 +115,9 @@ public sealed partial class ScpShadowCasterOverlay
         var vertexStart = overlay._frameOccluderVertices.Count;
         var minimum = new Vector2(float.PositiveInfinity);
         var maximum = new Vector2(float.NegativeInfinity);
-        for (var vertex = 0; vertex < overlay._boxContour.Length; vertex++)
+
+        foreach (var point in overlay._boxContour)
         {
-            var point = overlay._boxContour[vertex];
             overlay._frameOccluderVertices.Add(point);
             minimum = Vector2.Min(minimum, point);
             maximum = Vector2.Max(maximum, point);
@@ -131,21 +130,18 @@ public sealed partial class ScpShadowCasterOverlay
         return overlay._frameOccluders.Count < overlay._system.MaxOccluders;
     }
 
-    private void BuildFrameCache(MapId mapId, Box2 viewportBounds)
+    private void BuildFrameCache(MapId mapId, Box2 worldAabb)
     {
         ClearFrameSpriteCache();
 
-        var queryBounds = viewportBounds;
-        for (var i = 0; i < _system.ViewportLights.Count; i++)
+        var queryBounds = worldAabb;
+        foreach (var light in _system.ViewportLights)
         {
-            var light = _system.ViewportLights[i];
-            _frameLightEntities.Add(light.Owner);
             var radius = new Vector2(light.Radius);
             queryBounds = queryBounds.Union(new Box2(light.Position - radius, light.Position + radius));
         }
 
-        _spriteTree.UpdateTreePositions();
-        QuerySpriteBounds(mapId, queryBounds, viewportBounds);
+        QueryTrees(mapId, queryBounds, worldAabb);
 
         FinalizeFrameCasterCache();
     }
@@ -157,11 +153,9 @@ public sealed partial class ScpShadowCasterOverlay
         _frameContourVertices.Clear();
         _frameCasterCentersX.Clear();
         _protectedSpriteLayers.Clear();
-        _frameSpriteEntities.Clear();
         _protectionOwnerIds.Clear();
         _nextProtectionOwnerId = 1;
         _alphaProjectionPositions.Clear();
-        _frameLightEntities.Clear();
         _maximumCasterHalfWidth = 0f;
     }
 
@@ -253,77 +247,81 @@ public sealed partial class ScpShadowCasterOverlay
             _maximumOccluderHalfWidth);
     }
 
-    private void QuerySpriteBounds(MapId mapId, Box2 queryBounds, Box2 viewportBounds)
+    private void QueryTrees(MapId mapId, Box2 queryBounds, Box2 worldAabb)
     {
-        var state = new SpriteQueryState(this, viewportBounds);
-        _intersectingTreeGrids.Clear();
-        _mapSystem.FindGridsIntersecting(mapId, queryBounds, ref _intersectingTreeGrids, includeMap: false);
+        _lightTree.UpdateTreePositions();
 
-        for (var i = 0; i < _intersectingTreeGrids.Count; i++)
+        var state = new LightQueryState(this, worldAabb);
+
+        foreach (var (treeUid, _) in _lightTree.GetIntersectingTrees(mapId, worldAabb))
         {
-            var treeUid = _intersectingTreeGrids[i].Owner;
-            if (!_spriteTreeQuery.TryGetComponent(treeUid, out var tree))
+            if (!_lightTreeQuery.TryGetComponent(treeUid, out var tree))
                 continue;
 
             var localBounds = _transformSystem.GetInvWorldMatrix(treeUid).TransformBox(queryBounds);
-            tree.Tree.QueryAabb(ref state, QuerySprite, localBounds, true);
+            tree.Tree.QueryAabb(ref state, QueryLight, localBounds, true);
         }
 
-        var mapUid = _mapSystem.GetMapOrInvalid(mapId);
-        if (_spriteTreeQuery.TryGetComponent(mapUid, out var mapTree))
+        QueryShadowCaster(in worldAabb);
+    }
+
+    private void QueryShadowCaster(in Box2 viewportBounds)
+    {
+        var query = _entityManager.EntityQueryEnumerator<ScpShadowCasterVisualsComponent, SpriteComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var shadow, out var sprite, out var xform))
         {
-            var localBounds = _transformSystem.GetInvWorldMatrix(mapUid).TransformBox(queryBounds);
-            mapTree.Tree.QueryAabb(ref state, QuerySprite, localBounds, true);
+            var quality = shadow.Kind == ScpShadowCasterKind.Mob
+                ? _system.MobQuality
+                : _system.ObjectQuality;
+
+            if (quality == ScpShadowQuality.Disabled)
+                continue;
+
+            if (!ShouldQuery(sprite))
+                continue;
+
+            if (_occluderQuery.TryGetComponent(uid, out var occluder) && !occluder.Enabled)
+                continue;
+
+            var hasProtection = _protectedTextureQuery.TryGetComponent(uid, out var protection);
+            CacheSprite((uid, sprite, xform, shadow),
+                quality,
+                hasProtection ? protection : null,
+                viewportBounds);
         }
     }
 
-    private static bool QuerySprite(
-        ref SpriteQueryState state,
-        in ComponentTreeEntry<SpriteComponent> entry)
+    private static bool ShouldQuery(SpriteComponent sprite)
     {
-        var overlay = state.Overlay;
-        var sprite = entry.Component;
-        if (!sprite.Visible || sprite.ContainerOccluded || sprite.Color.A == 0f)
-            return true;
+        if (!sprite.Visible || sprite.ContainerOccluded || MathHelper.CloseTo(sprite.Color.A, 0f))
+            return false;
 
-        var isLight = overlay._frameLightEntities.Contains(entry.Uid);
-        var hasProtection = overlay._protectedTextureQuery.TryGetComponent(entry.Uid, out var protection);
-        var isCaster = overlay._shadowQuery.TryGetComponent(entry.Uid, out var shadow);
-        var quality = ScpShadowQuality.Disabled;
-
-        if (isCaster)
-        {
-            quality = shadow!.Kind == ScpShadowCasterKind.Mob
-                ? overlay._system.MobQuality
-                : overlay._system.ObjectQuality;
-            isCaster = quality != ScpShadowQuality.Disabled &&
-                (!overlay._occluderQuery.TryGetComponent(entry.Uid, out var occluder) || !occluder.Enabled);
-        }
-
-        if (!isCaster && !hasProtection)
-            return true;
-
-        if (!overlay._frameSpriteEntities.Add(entry.Uid))
-            return true;
-
-        overlay.CacheSprite(
-            entry,
-            isCaster ? shadow : null,
-            quality,
-            hasProtection ? protection : null,
-            isLight,
-            state.ViewportBounds);
         return true;
     }
 
+    private static bool QueryLight(
+        ref LightQueryState state,
+        in ComponentTreeEntry<PointLightComponent> entry)
+    {
+        var overlay = state.Overlay;
+        if (!overlay._spriteQuery.TryComp(entry.Uid, out var sprite))
+            return true;
+
+        if (!ShouldQuery(sprite))
+            return true;
+
+        overlay.CacheSpriteForLight((entry.Uid, sprite, entry.Transform));
+        return true;
+    }
+
+    // TODO: Разобраться это разделить
     private void CacheSprite(
-        Entity<SpriteComponent, TransformComponent> candidate,
-        ScpShadowCasterVisualsComponent? shadow,
+        Entity<SpriteComponent, TransformComponent, ScpShadowCasterVisualsComponent> candidate,
         ScpShadowQuality quality,
         ScpShadowProtectedTextureVisualsComponent? protection,
-        bool isLight,
         Box2 viewportBounds)
     {
+        var shadow = candidate.Comp3;
         var sprite = candidate.Comp1;
         var (position, rotation) = _transformSystem.GetWorldPositionRotation(candidate.Comp2);
         var matrices = GetSpriteMatrices(sprite, position, rotation);
@@ -331,8 +329,6 @@ public sealed partial class ScpShadowCasterOverlay
         var contourStart = _frameContours.Count;
         var hasContourBounds = false;
         var contourBounds = default(Box2);
-        var hasOpaqueBounds = false;
-        var opaqueBounds = default(Box2);
         var spriteFovAlpha = 1f;
         var spriteFovAlphaReady = !_directionalFovActive;
         var protectionOwnerId = protection == null
@@ -346,31 +342,30 @@ public sealed partial class ScpShadowCasterOverlay
             _eyeRotation.RotateVec(position),
             finalSpriteRotation);
         var ySort = -sortMatrix.TransformBox(
-            _spriteSystem.GetLocalBounds((candidate.Owner, sprite))).Bottom;
+            _spriteSystem.GetLocalBounds((candidate.Owner, sprite)))
+            .Bottom;
 
-        if (shadow != null)
+        if (quality == ScpShadowQuality.Bounds)
         {
-            if (quality == ScpShadowQuality.Bounds)
-            {
-                TransformBounds(shadow.Bounds, matrices.Sprite, _boxContour);
-                contourBounds = CacheContour(_boxContour);
-                hasContourBounds = true;
-            }
+            TransformBounds(shadow.Bounds, matrices.Sprite, _boxContour);
+            contourBounds = CacheContour(_boxContour);
+            hasContourBounds = true;
         }
 
+        // ПЖБ насрал мне в штаны
+        // Если бы Layer.Index был бы public, а не internal, то проверка на тип исчезла бы и вместо for тут стоял бы foreach
+        // А количество отступов было бы меньше.
         if (sprite.AllLayers is IReadOnlyList<ISpriteLayer> layers)
         {
             var overrideDirection = sprite.EnableDirectionOverride ? sprite.DirectionOverride : (Direction?) null;
 
             for (var layerIndex = 0; layerIndex < layers.Count; layerIndex++)
             {
-                if (layers[layerIndex] is not Layer layer ||
-                    !_spriteSystem.IsVisible(layer) ||
-                    layer.Blank ||
-                    sprite.Color.A * layer.Color.A < SpriteAlphaThreshold)
-                {
+                if (layers[layerIndex] is not Layer layer)
                     continue;
-                }
+
+                if (!_spriteSystem.IsVisible(layer) || layer.Blank || sprite.Color.A * layer.Color.A < SpriteAlphaThreshold)
+                    continue;
 
                 var rsi = layer.ActualRsi;
                 RSI.State? state = null;
@@ -422,28 +417,7 @@ public sealed partial class ScpShadowCasterOverlay
                     }
                 }
 
-                if (isLight)
-                {
-                    var localOpaqueBounds = default(Box2);
-                    var hasLayerBounds = state != null && rsi != null &&
-                    _contourCache.TryGetOpaqueBounds(
-                        rsi,
-                        layer.State,
-                        drawDirection,
-                        layer.AnimationFrame,
-                        out localOpaqueBounds);
-
-                    if (hasLayerBounds)
-                    {
-                        var worldOpaqueBounds = worldMatrix.TransformBox(localOpaqueBounds);
-                        opaqueBounds = hasOpaqueBounds
-                            ? opaqueBounds.Union(worldOpaqueBounds)
-                            : worldOpaqueBounds;
-                        hasOpaqueBounds = true;
-                    }
-                }
-
-                if (shadow == null || quality is ScpShadowQuality.Bounds or ScpShadowQuality.Disabled)
+                if (quality is ScpShadowQuality.Bounds or ScpShadowQuality.Disabled)
                     continue;
 
                 var contours = ScpShadowContours.Empty;
@@ -475,12 +449,6 @@ public sealed partial class ScpShadowCasterOverlay
             }
         }
 
-        if (isLight && hasOpaqueBounds)
-            _alphaProjectionPositions[candidate.Owner] = opaqueBounds.Center;
-
-        if (shadow == null)
-            return;
-
         if (_frameContours.Count == contourStart)
         {
             TransformBounds(shadow.Bounds, matrices.Sprite, _boxContour);
@@ -501,6 +469,65 @@ public sealed partial class ScpShadowCasterOverlay
                 fovVisibility,
                 protectionOwnerId));
         }
+    }
+
+    private void CacheSpriteForLight(Entity<SpriteComponent, TransformComponent> candidate)
+    {
+        var sprite = candidate.Comp1;
+        var (position, rotation) = _transformSystem.GetWorldPositionRotation(candidate.Comp2);
+        var matrices = GetSpriteMatrices(sprite, position, rotation);
+
+        var hasOpaqueBounds = false;
+        var opaqueBounds = default(Box2);
+
+        var overrideDirection = sprite.EnableDirectionOverride ? sprite.DirectionOverride : (Direction?) null;
+
+        foreach (var pseudoLayer in sprite.AllLayers)
+        {
+            if (pseudoLayer is not Layer layer)
+                continue;
+
+            if (!_spriteSystem.IsVisible(layer) || layer.Blank || sprite.Color.A * layer.Color.A < SpriteAlphaThreshold)
+                continue;
+
+            var rsi = layer.ActualRsi;
+            RSI.State? state = null;
+            rsi?.TryGetState(layer.State, out state);
+
+            var matrixDirection = state == null
+                ? RsiDirection.South
+                : Layer.GetDirection(state.RsiDirections, matrices.ScreenAngle);
+            layer.GetLayerDrawMatrix(matrixDirection, out var layerMatrix);
+
+            var drawDirection = matrixDirection;
+            if (overrideDirection != null && state != null)
+                drawDirection = overrideDirection.Value.Convert(state.RsiDirections);
+            drawDirection = drawDirection.OffsetRsiDir(layer.DirOffset);
+
+            var layerBase = GetLayerBaseMatrix(layer.RenderingStrategy, sprite.GranularLayersRendering, matrices);
+            var worldMatrix = Matrix3x2.Multiply(layerMatrix, layerBase);
+
+            var localOpaqueBounds = default(Box2);
+            var hasLayerBounds = state != null && rsi != null &&
+                                 _contourCache.TryGetOpaqueBounds(
+                                     rsi,
+                                     layer.State,
+                                     drawDirection,
+                                     layer.AnimationFrame,
+                                     out localOpaqueBounds);
+
+            if (hasLayerBounds)
+            {
+                var worldOpaqueBounds = worldMatrix.TransformBox(localOpaqueBounds);
+                opaqueBounds = hasOpaqueBounds
+                    ? opaqueBounds.Union(worldOpaqueBounds)
+                    : worldOpaqueBounds;
+                hasOpaqueBounds = true;
+            }
+        }
+
+        if (hasOpaqueBounds)
+            _alphaProjectionPositions[candidate.Owner] = opaqueBounds.Center;
     }
 
     private ushort GetProtectionOwnerId(EntityUid owner, ScpShadowProtectionMode mode)
@@ -995,7 +1022,7 @@ public sealed partial class ScpShadowCasterOverlay
         public readonly ScpShadowCasterOverlay Overlay = overlay;
     }
 
-    private readonly struct SpriteQueryState(ScpShadowCasterOverlay overlay, Box2 viewportBounds)
+    private readonly struct LightQueryState(ScpShadowCasterOverlay overlay, Box2 viewportBounds)
     {
         public readonly ScpShadowCasterOverlay Overlay = overlay;
         public readonly Box2 ViewportBounds = viewportBounds;

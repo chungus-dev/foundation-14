@@ -1,4 +1,5 @@
 using System.Numerics;
+using System.Runtime.InteropServices;
 using Robust.Client.Graphics;
 
 namespace Content.Client._Scp.Graphics.Shadows;
@@ -15,11 +16,12 @@ public sealed partial class ScpShadowCasterOverlay
 
     private void ApplyAlphaProjectionPositions()
     {
-        for (var i = 0; i < _system.ViewportLights.Count; i++)
+        var lightsSpan = CollectionsMarshal.AsSpan(_system.ViewportLights);
+        for (var i = 0; i < lightsSpan.Length; i++)
         {
-            var light = _system.ViewportLights[i];
+            ref var light = ref lightsSpan[i];
             if (_alphaProjectionPositions.TryGetValue(light.Owner, out var projectionPosition))
-                _system.ViewportLights[i] = light with { ProjectionPosition = projectionPosition };
+                light = light with { ProjectionPosition = projectionPosition };
         }
     }
 
